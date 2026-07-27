@@ -1,0 +1,8 @@
+#!/bin/sh
+# KB guard — blocks any commit that violates the knowledge-base structure rules.
+# Enable once per clone with:  git config core.hooksPath .githooks
+python3 "$(git rev-parse --show-toplevel)/tools/check_kb.py" || {
+  echo ""
+  echo "Commit blocked by tools/check_kb.py — fix the failures above (see CLAUDE.md)."
+  exit 1
+}

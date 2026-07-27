@@ -1,0 +1,131 @@
+> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Granular part D (4 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Comment & red flag policy; constraints.
+> All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
+
+<!-- KB-PART-BODY-START -->
+## Comment & Red Flag Policy
+ 
+HTML comments are routinely **missed by designers** and have shipped to live modules. For interactives this is worse than untidy: a comment that records the correct answers can be read by any student using the browser's inspect tool. Therefore comments are **not** a channel for communicating with designers.
+ 
+### The rule
+ 
+- **Anything a designer needs to know or action → a VISIBLE red flag**, never a hidden comment. A visible red flag forces the designer to deal with it before the module can go live.
+- **NEVER write a comment that discloses an interactive's correct answer(s)** or answer key. Correct answers live ONLY in the functional markup attributes the engine reads (`option`, `answer`, `value="correct"`, etc.). Do not duplicate them in human-readable form anywhere in the output.
+- **Do not add gratuitous "helpful" commentary.** Writer context, rationale, "this used to be…" notes, and similar asides do not belong in the output. If it matters to the designer, it is a red flag; if it does not, it is omitted.
+### The permitted comment exceptions
+ 
+These comment uses survive — each is a stable *mechanism* (a swap-in payload or a machine token paired with a visible element or consumed by tooling), **not** a *message* to a designer:
+ 
+1. **Mode P commented-out image reference.** In Placeholder Mode, the real `images/iStock-XXXXXXXXX.jpg` reference is carried as a commented-out `<img>` tag beneath the visible `placehold.co` placeholder. The large visible placeholder is itself the action trigger; the comment is only the swap-in payload. (Mode D has no comment block at all.) See `01_PIPELINE_EXTRACTION_TAGS.md` — Images.
+2. **MTK `<!-- CS: Item N -->` media-catalogue annotation.** MTK conversions tag each media placeholder with its catalogue item number. This is a stable catalogue key, not a note to action, and is mandated by the MTK pathway. See `07_MTK_DOCX_CONVERSION.md` — Section 10.
+3. **Split Mode (Mode 5) splice/section markers — `SPLIT MODE` output only.** When a single-page module is emitted in stitchable pieces, the base homepage and section files carry the structural tokens `<!-- PAGEFORGE-SPLICE id="X" -->`, `<!-- PAGEFORGE-SECTION id="X" -->`, and `<!-- /PAGEFORGE-SECTION -->`. These are **machine markers** read and then **removed** by PageForge's Page Stitcher — they carry no student content, no designer note, and no answer; they are **consumed by tooling and never survive into the stitched / human-facing module** (the stitched `#body` is byte-identical to a one-pass build, with no `PAGEFORGE-*` markers remaining). They are a packaging mechanism, not a communication channel. Emit them **only** in Split Mode output, **exactly** as specified — never in a normal conversion and never anywhere a human reads the final file. See `13_SPLIT_MODE.md`.
+4. **Split Mode (Mode 5) manual-stitch guidance blocks — `SPLIT MODE` output only.** When a single-page module is emitted in stitchable pieces, the base homepage and each section file additionally carry **highly detailed manual-stitch guidance** wrapped in a clearly delimited block: `<!-- PAGEFORGE-GUIDE-START -->` … `<!-- PAGEFORGE-GUIDE-END -->`. The block tells a human developer who assembles the files **by hand** exactly how and where to stitch — which splice point each section replaces, the order, and where each section's insertable content begins and ends. It carries **no student content, no designer-action note about the module, and no interactive answer** — only mechanical stitch directions. PageForge's Page Stitcher **strips every `PAGEFORGE-GUIDE` block** during automated stitching, so the finalised unified HTML contains none of them (they are transient, exactly like the splice/section markers in item 3). They exist purely to help manual assembly. Emit them **only** in Split Mode output, **exactly** as specified — never in a normal conversion. See `13_SPLIT_MODE.md`.
+5. **Creative-Services Vimeo scaffold time-parameter placeholders.** The designer-supplied Vimeo embed scaffold for Creative Services videos (constraint 64; see `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Video Embed → Creative Services Videos) ends with the two placeholders `<!-- &amp;start=0 --> <!-- &amp;end=0 -->`, carried verbatim from the design team's supplied code. They are a scaffold *mechanism* — start/end time parameters the developer may activate when embedding the Vimeo ID — and carry no student content, no designer note, and no answer. Emit them **only** inside that exact scaffold, never anywhere else, and never as a channel for any message.
+
+6. **Acknowledgements page-label annotation — `<!-- Lesson N.N -->`.** Inside the acknowledgements block, each media-carrying `acksLesson` div opens with a comment naming the page whose media it covers — `<!-- Lesson 0.0 -->`, `<!-- Lesson 1.0 -->`, `<!-- Lesson 2.0 -->`, … (the word is **Lesson**, never **Page** — constraint 73). This is a **structural grouping label** that pairs a machine-ordered sequence of identical `acksLesson` divs with the page each one belongs to; it carries no student content, no designer-action note, no ambiguity, and no answer. The `05` acks worked example has used this annotation throughout; it is recorded here as a permitted exception. Emit it **only** on the media-carrying `acksLesson` divs — the three standard boilerplate divs (opening apology, "All other images ©…", closing Te Kura copyright) carry no label. See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Acknowledgements → Accordion structure.
+
+Everything else that used to be a comment — CS instructions, writer design directions, image-sourcing notes, ambiguities, "the answer is X" notes — is now a VISIBLE red **bold** flag carrying its source-specific prefix (see Source-Specific Red-Note Prefixes).
+ 
+### Source-Specific Red-Note Prefixes
+
+Every red designer note is **chosen by where it came from** and rendered identically — **coloured red and in bold** — differing only in its leading prefix. There are exactly four prefixes:
+
+| Source of the note | Prefix | Rendered form |
+|---|---|---|
+| **Captured reviewer comment** — a native Word comment captured by PageForge from a whitelisted reviewer (copyright / editor / Creative-Services). PageForge supplies the lead already. | `Note from {author}:` (**verbatim** — never reworded, never the author dropped, never replaced by another prefix) | `<p style="color: red; font-weight: bold;">Note from {Author}: …</p>` |
+| **Writer's own note/instruction** — writer-authored red text / a CS instruction the writer placed in the Writer's Template or Media List (red text that does **not** carry a `Note from {author}:` lead). | `Writers Note:` | `<p style="color: red; font-weight: bold;">Writers Note: …</p>` |
+| **Issue detected by the Convertor** — an ambiguity, missing/unconfirmed information, a structure that cannot safely be built, etc., surfaced during conversion. | `Red Flag:` | `<p style="color: red; font-weight: bold;">Red Flag: …</p>` |
+| **Developer action pending** — a **known pattern whose asset/URL/setup is not yet finalised**: the structure is built correctly, but a specific piece must be completed during production (e.g. an Audiovisual item to be added, an image to be created and embedded, a `stickyNav.js` file to be set up, a placeholder character/persona/overview to be confirmed, a curriculum statement to be added as a later revision request). This is the standing "TO DO / TBC / placeholder / under development" flag — most often raised by a subject **global-parameter** convention (`14_SUBJECT_GLOBAL_PARAMETERS.md`). | `Designer/Developer To Do:` | `<p style="color: red; font-weight: bold;">Designer/Developer To Do: …</p>` |
+
+- **Recognition.** A captured reviewer comment is recognised by its `Note from {whitelisted author}:` lead (see Captured Reviewer Comments below). Anything the writer placed in red text without that lead is a **`Writers Note:`**. Anything the Convertor itself raises about a genuine defect/ambiguity is a **`Red Flag:`**. A note about a **deliberately-deferred piece of a known, correctly-built pattern** — an asset/URL/setup the developer must supply during production — is a **`Designer/Developer To Do:`** (distinct from `Red Flag:`, which signals something wrong or unbuildable; a `Designer/Developer To Do:` signals something right-but-pending).
+- **A Convertor-made change to writer content is a `Red Flag:`.** Where a documented rule requires the Convertor to alter the writer's content — currently the **emoji removal** of constraint 74 (`01_PIPELINE_EXTRACTION_TAGS.md` → No Emoji in Modules) — the change is **disclosed**, never silent, using the `Red Flag:` prefix: the Convertor made the change, so it is neither the writer's note (`Writers Note:`) nor a pending production task (`Designer/Developer To Do:`). Standard wording for the emoji case, emitted **once per page** at the first removal on that page:
+
+  ```html
+  <p style="color: red; font-weight: bold;">Red Flag: Emoji have been removed from this content per the no-emoji rule. Ticks and crosses are retained.</p>
+  ```
+- **Bold is required.** All four render in the `<p style="color: red; font-weight: bold;">…</p>` form — red **and** bold. This is the project's single permitted designer-message inline style; the `font-weight: bold` is part of it (see `00` constraint 2). The note is always **visible** — never a hidden HTML comment, never student-facing.
+- **Only the prefix and the bold weight changed.** The visibility, verbatim-author rule, in-position placement, and "comments are not a communication channel" discipline are unchanged.
+
+### Red Flag Protocol
+
+When anything is unclear, ambiguous, cannot be implemented, or otherwise needs the designer's attention before go-live — i.e. an **issue the Convertor itself detects** — surface it as a visible red **bold** flag with the `Red Flag:` prefix:
+
+```html
+<p style="color: red; font-weight: bold;">Red Flag: Description of issue</p>
+```
+
+- **ALWAYS render affected content visibly** — the red flag is supplementary to the visible content, never a replacement for it.
+- Place the red flag adjacent to the content it concerns.
+- Common triggers: missing media, unclear interactive specs, unrecognised tags, genuine artefacts, and any Convertor-detected gap that previously would have been an HTML comment.
+- A note the **writer** placed (a CS instruction in red text) uses the `Writers Note:` prefix instead; a captured reviewer comment uses `Note from {author}:` (see Source-Specific Red-Note Prefixes above).
+
+### Captured Reviewer Comments (red designer messages)
+
+PageForge captures the **actionable** native Word margin comments authored by the whitelisted Creative-Services reviewers and re-emits each into the parsed `.txt` as a red-text note **already carrying the `Note from {author}:` lead**: `🔴[RED TEXT] Note from {Author}: {verbatim text} [/RED TEXT]🔴`. These are **copyright, editorial, and Creative-Services directions a designer must see** — and under this policy they belong in **visible red bold**, exactly like every other important message to the designer.
+
+- **Whitelisted authors:** Kate Scanlon, Nadia Stanton, Caroline Schwer, Simon Vita, Amanda Griffiths, Creative Services. (PageForge has already normalised Word's author strings to these canonical names and filtered to the actionable; a note that reaches you must be shown.)
+- **Render as a VISIBLE red bold designer message** in the established style — `<p style="color: red; font-weight: bold;">Note from {Author}: {verbatim comment text}</p>` — preserving the **`Note from {author}:` lead, author, and text verbatim** and placing it **immediately before the element it refers to** (mirroring where PageForge positioned it; a media-anchored note sits before the body element using the same media). Do **not** reword the lead, drop the author, or substitute any other prefix.
+- The `Note from {author}:` lead **distinguishes** a captured reviewer comment from a writer's own red-font CS instruction (which renders `Writers Note: …`) and from a Convertor-detected issue (`Red Flag: …`) — see Source-Specific Red-Note Prefixes above. The firm requirements are the **red bold style**, the **preserved lead + author + text**, and that the attribution is **never lost**.
+- **Never** paraphrase, summarise, truncate, drop, tag-parse, or relocate it into an HTML comment. A reviewer comment that references an interactive is fine to show — it is a *visible* red message, so the answer-secrecy rule (which targets *hidden* comments only) is satisfied.
+- This is an **extension of the existing Red Text Handling / Comment & Red Flag rule**, not a new mechanism — a reviewer comment is a substantive, tagless red-text block, so it already tends to surface as visible red; the requirement makes that reliable, attributed, and intentional. Full intake/positioning detail: `01_PIPELINE_EXTRACTION_TAGS.md` → Red Text → Captured Reviewer Comments; constraint reference: `00` constraint 57.
+---
+ 
+## Constraints
+ 
+1. **never_modify_text:** NEVER change writer text. Trust the content source — PageForge `.txt`, raw Writers Template `.docx`, or MTK `.docx` — as-is. EXCEPTION: genuinely corrupt/nonsensical text (extremely rare).
+2. **never_add_code:** NEVER add inline CSS, JavaScript, or non-pattern code. EXCEPTION: `infoTrigger` percentage positioning inside `infoImage` is a documented pattern.
+3. **never_invent_classes:** NEVER invent CSS class names or HTML structures.
+4. **never_invent_inner_structure:** NEVER generate HTML for undocumented components.
+5. **never_hide_content_in_comments:** NEVER place student content exclusively in comments. NEVER use comments to pass designer-facing notes, CS instructions, ambiguities, or interactive answers — these are VISIBLE red flags. See Comment & Red Flag Policy.
+6. **never_repurpose_class_names:** NEVER use a class outside its documented context (e.g., `imageCentral` is ONLY for centralised template assets, NOT writer-specified images).
+7. **component_tag_crossref:** ALWAYS cross-reference component files before writing HTML.
+8. **writer_tag_primacy:** Writer's tag determines component, not table headers.
+9. **never_display_tags:** NEVER render square-bracket tags as visible content.
+10. **never_guess_interactives:** Red flag + visible fallback when ambiguous.
+11. **always_match_divs:** Opening = closing div tags.
+12. **always_use_grid:** Body content inside row/col with `col-md-8 col-12` as default.
+13. **always_use_template_skeleton:** Copy from provided structural reference (dedicated template or reference module files).
+14. **never_fabricate_overview_content:** Don't invent Learning Intentions etc.
+15. **scope_boundaries:** Don't convert the metadata block, submission checklists, LOT tags tables, Section A merging-resources tables, Section B guidance boxes, contents pages, or sign-off lines. Convert ONLY content from the first `[TITLE BAR]` tag onward. This applies to all content-source formats — and is especially important for the raw Writers Template `.docx`, which contains all of this front-matter in full (PageForge strips most of it).
+16. **interactive_parity:** Verify element count parity.
+17. **always_split_dual_titles:** Separate English / Te Reo Māori titles.
+18. **always_verify_completeness:** Check for mid-sentence truncation.
+19. **shuffle_default:** No `noShuffle` unless writer requested.
+20. **always_apply_boundary_validation:** All 4 rules.
+21. **always_normalise_tags:** Before component mapping.
+22. **always_recognise_data_patterns:** Identify pattern before extracting data.
+23. **always_use_documented_components:** Use documented patterns from component files.
+24. **always_no_hover_display_bubbles:** Add `no-hover` to all text-only/display-only speech bubbles.
+25. **never_imageCentral_on_writer_images:** Never add `imageCentral` to writer-specified images.
+26. **always_canvasImage_in_sketcher:** Always include `canvasImage` class on images inside sketcher `.canvasContainer`.
+27. **always_group_clickDrop:** Group all clickDrop buttons first, then all clickDropContent divs.
+28. **never_lazy_load_sketcher_images:** NEVER add `loading="lazy"` to images inside sketcher `.canvasContainer` — this breaks sketcher functionality by interfering with canvas overlay alignment.
+29. **lesson_page_header_title:** On lesson pages, use the MODULE title (not a lesson-specific title) in the `<h1><span>` header bar. If the first heading after `[Lesson content]` begins with "Lesson N", render it as a body `<h3>` (stripped of the "Lesson N" prefix) — do not use it as the header title.
+30. **lesson_page_module_code:** On lesson pages (-01, -02, etc.), use only the zero-padded lesson number (e.g., `01`, `02`) in `#module-code`, not the full module code and not decimal format (e.g., `1.0`).
+31. **wide_interactive_containers:** D&D column layout activities use `col-md-12 col-12` outer wrappers; a D&D column with many images uses `col-12` / `col-md-11 col-12` by module type (never `col-md-10` — see constraint 56 and COMP_01). Activity wrappers never use `col-md-10`. ALL carousel types (image, video, and external nav button) use `col-md-8 col-12` for the `.viewer` column — no carousel variant uses `col-md-12`. Inside **any** activity wrapper — default or widened — plain text content stays at `col-md-8 col-12` in its own inner row and the interactive sits in a separate inner row at the wrapper's width (see Interactive Wrapper Width / `00` constraint 63).
+32. **no_body_heading_spans:** NEVER add `<span>` wrappers to body headings (`<h2>`–`<h5>`) at ANY year level — spans are only for `<h1>` header titles.
+33. **reference_module_replacement:** When using reference module files (Mode B), ALWAYS replace ALL reference module codes, titles, and Te Reo titles with the new module's values — never leave stale references from the source module.
+34. **no_leading_spaces_in_classes:** NEVER begin a class attribute value with a leading space. Always write `class="activityButton reset"`, never `class=" activityButton reset"`. This applies to ALL elements in ALL generated HTML files.
+35. **text_left_image_right:** When standard body text appears alongside a standard image in a side-by-side layout, text ALWAYS goes on the LEFT and image ALWAYS goes on the RIGHT. The only exception is the `speechBubble` design pattern.
+36. **radio_quiz_headings:** True/False radio quizzes MUST include a `<div class="row headings">` section with T/F column headers and a Description label — see COMP_02 Radio Quiz.
+37. **reorder_re_standard:** Standard sequential reorder activities use `layout="re-standard"` with the `row` class, `reorderList col-12` wrapper, and NO `item` attributes or `grid` attribute — see COMP_05 Reorder.
+38. **carousel_external_nav:** Carousels with labeled navigation buttons use the `exSlideBtns` attribute on both the `carousel-btns` container and the `carousel` row, with matching attribute values — see COMP_07 Carousel.
+39. **never_hide_writer_requests:** Writer requests for visual elements (scrolling marquees, banners, image displays, etc.) must NEVER be hidden exclusively in HTML comments. Always implement the closest matching component with placeholder content and a CS comment noting the writer's original request.
+40. **module_menu_label_normalisation:** On lesson pages, ALWAYS normalise module menu label headings to the standard pattern for the template level (e.g., `<h5>We are learning:</h5>` + `<h5>I can:</h5>` for Years 7–8 and 9–10). Do NOT preserve the writer's verbatim label text. Do NOT add intermediate `<p>` elements or separate section titles.
+41. **module_menu_list_items:** Module menu list items must not be wrapped in `<i>` tags, must begin lowercase, and must use verb forms matching the heading context.
+42. **dnd_images_text_in_questions:** D&D standard layout with `images` class: text descriptions go in `questionContainer` (col-7), images go in `dragContainer` (col-5). Do NOT place images in the questionContainer.
+43. **dropquiz_list_vs_paragraph:** DropQuiz with standalone question-answer pairs uses the list layout (no `layout` attribute, `<ol><li>` with row/column structure). DropQuiz with inline fill-in-the-blank uses the paragraph layout (`layout="paragraph"`, `dropParaContainer`). Do NOT use paragraph layout for standalone Q&A pairs.
+44. **dual_title_on_lesson_pages:** Years 9–10 and NCEA lesson pages must include BOTH English and Te Reo `<h1><span>` titles (module-level titles, same as overview page) on every lesson page.
+45. **speech_bubble_positional_class:** Single-character speech bubbles MUST use `bubble-basic` combined with a positional class (`bubble-left`, `bubble-right`, `bubble-top`, `bubble-bottom`). The positional class is determined by the writer template layout (text-left/image-right → `bubble-left`; image-left/text-right → `bubble-right`). Writer CS instructions specifying placement (e.g., "above the cat's head") override the default and use `bubble-top`/`bubble-bottom` with the image in a separate row.
+46. **speech_bubble_multi_paragraph_wrap:** When a speech bubble contains multiple `<p>` elements, they MUST be wrapped in an additional `<div>` inside the bubble element. Single-paragraph bubbles do not need this wrapper.
+47. **speech_bubble_image_padding:** Image columns adjacent to speech bubbles in horizontal layouts MUST include padding classes: `paddingL` when the image is on the right, `paddingR` when the image is on the left.
+48. **acknowledgements_on_overview_page:** The acknowledgements accordion is ALWAYS placed at the bottom of the FIRST page — the overview page (`-00` / lesson 0.0) — after (outside) the footer `<div>`. It is NEVER placed on the last page or on any lesson page. This applies to every conversion regardless of content-source format (PageForge, raw `.docx`, or MTK). If a Mode B reference carries acks on its last page (old convention), take the structure but reposition the populated block onto the overview page.
+49. **content_source_formats:** The content source may be a PageForge `.txt`, a raw (non-MTK) Writers Template `.docx`, or an MTK `.docx`. For a raw Writers Template `.docx`, skip ALL administrative front-matter and convert ONLY content from the first `[TITLE BAR]` onward — see `01_PIPELINE_EXTRACTION_TAGS.md` Section 02. If both a `.txt` and a `.docx` of the same module are supplied, prefer the `.txt`.
+50. **media_list_optional_aid:** A Media List `.docx` may be optionally supplied. Use it to verify external media links and to source accurate media titles/descriptions for the acknowledgements. It never supplies student content and never changes page boundaries.
+51. **mcq_some_selected_for_graded_multiselect:** Graded multi-select MCQs (some options correct, some wrong, with right/wrong scoring) use `multiChoiceQuiz mcqSomeSelected` with the `mcqQuestion` / `mcqQuestionText` / `mcqOptions` / `mcqOption` structure — correct options carry `value="correct"`, wrong options carry no `value` attribute. Do NOT build these as the standard `multiQuiz` (`mQContainer`/`mQOption`) and do NOT use the `checkAll` self-assessment variant (which marks every option `value="correct"`). See COMP_02.
+52. **comments_are_not_a_channel:** HTML comments are NOT a way to communicate with designers — they are routinely missed and have shipped live. Any note, CS instruction, ambiguity, design direction, or pending developer action a designer must see goes in a VISIBLE red flag, prefixed by source (`Note from {author}:` / `Writers Note:` / `Red Flag:` / `Designer/Developer To Do:`) and rendered red **and bold** — including a **captured reviewer comment** (a `Note from {author}:` red-text note), which is rendered as a VISIBLE red designer message (`<p style="color: red; font-weight: bold;">Note from {author}: …</p>`), never a hidden comment. The only permitted comments are the Mode P commented-out image reference, the MTK `<!-- CS: Item N -->` media-catalogue annotation, the `<!-- &amp;start=0 --> <!-- &amp;end=0 -->` placeholders inside the Creative-Services Vimeo scaffold (constraint 64), the acknowledgements `<!-- Lesson N.N -->` page-label annotation (constraint 73), the `PAGEFORGE-GUIDE` manual-stitch guidance blocks (Split Mode output only), and — in **Split Mode (Mode 5) output only** — the `PAGEFORGE-SPLICE` / `PAGEFORGE-SECTION` / `/PAGEFORGE-SECTION` machine markers (all consumed and removed by PageForge's Page Stitcher; never present in a normal conversion or any human-facing final file). See Comment & Red Flag Policy, Source-Specific Red-Note Prefixes, and `13_SPLIT_MODE.md`.
+53. **never_comment_interactive_answers:** NEVER emit a comment that states or hints at an interactive's correct answer(s). Answers exist only in the functional markup attributes the engine reads. A comment listing answers is a security leak — students can read it via browser inspect tools.
+54. **autocheck_auto_apply:** For templates `refresh_template_0.0_1_template_ECH`, `refresh_template_0.0_2_template_1-3`, and `refresh_template_0.0_3_template_4-6`, automatically apply the `autoCheck` attribute to every interactive that supports it — see `03_COMP_CORE_INTERACTIVES.md` COMP_00 (autoCheck Auto-Application).
+55. **supervisor_super_content_family:** Supervisor buttons are built with the `super-content-button` family only (Shape A activity-integrated / Shape B section standalone / Shape C section paired; outer `<div class="row supervisor">` except when nested inside another widget). The legacy `supervisorContainer`/`supervisorButton`/`supervisorContent` trio is retired — recognise it in old references, never emit it. See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Supervisor Button and `00` constraint 68.
+---
+ 

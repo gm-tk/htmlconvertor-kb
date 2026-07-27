@@ -1,0 +1,376 @@
+{
+ "sentinel": "<!-- KB-PART-BODY-START -->",
+ "source_snapshot": "HTML Convertor Claude Files (2026-07-16 state)",
+ "topics": {
+  "00_MASTER_INSTRUCTIONS": {
+   "original": "00_MASTER_INSTRUCTIONS.md",
+   "parts": [
+    {
+     "file": "00A_CONTROL_CORE.md",
+     "start_line": 1,
+     "end_line": 128,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "00B_CONVERSION_PIPELINE.md",
+     "start_line": 129,
+     "end_line": 350,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "00C_FILE_REFERENCE_INDEX.md",
+     "start_line": 351,
+     "end_line": 393,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "00D_CONSTRAINTS_1.md",
+     "start_line": 394,
+     "end_line": 452,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "00E_CONSTRAINTS_2.md",
+     "start_line": 453,
+     "end_line": 473,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "00F_WHEN_TO_LOAD.md",
+     "start_line": 474,
+     "end_line": 508,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "01_PIPELINE_EXTRACTION_TAGS": {
+   "original": "01_PIPELINE_EXTRACTION_TAGS.md",
+   "parts": [
+    {
+     "file": "01A_TEMPLATE_LEVELS_CORE.md",
+     "start_line": 1,
+     "end_line": 273,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "01B_MODULE_MENUS_FOOTER.md",
+     "start_line": 274,
+     "end_line": 680,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "01C_CONTENT_SOURCE_FORMATS.md",
+     "start_line": 681,
+     "end_line": 1047,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "01D_PAGE_BOUNDARIES_TAG_TAXONOMY.md",
+     "start_line": 1048,
+     "end_line": 1399,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "01E_TAG_INTERPRETATION.md",
+     "start_line": 1400,
+     "end_line": 1757,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "02_DATA_CONTENT_VERIFICATION": {
+   "original": "02_DATA_CONTENT_VERIFICATION.md",
+   "parts": [
+    {
+     "file": "02A_DATA_PATTERNS.md",
+     "start_line": 1,
+     "end_line": 295,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "02B_CONTENT_RULES.md",
+     "start_line": 296,
+     "end_line": 551,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "02C_VERIFICATION_CHECKLIST.md",
+     "start_line": 552,
+     "end_line": 696,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "02D_COMMENT_POLICY_CONSTRAINTS.md",
+     "start_line": 697,
+     "end_line": 822,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "02E_EDGE_CASES_OUTPUT.md",
+     "start_line": 823,
+     "end_line": 902,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "03_COMP_CORE_INTERACTIVES": {
+   "original": "03_COMP_CORE_INTERACTIVES.md",
+   "parts": [
+    {
+     "file": "03A_COMP00_INDEX_UNIVERSAL.md",
+     "start_line": 1,
+     "end_line": 136,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "03B_COMP01_DRAG_AND_DROP.md",
+     "start_line": 137,
+     "end_line": 528,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "03C_COMP02_QUIZZES_1.md",
+     "start_line": 529,
+     "end_line": 918,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "03D_COMP02_QUIZZES_2.md",
+     "start_line": 919,
+     "end_line": 1218,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "03E_COMP03_04_SELFCHECK_GAMES.md",
+     "start_line": 1219,
+     "end_line": 1459,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "03F_COMP05_06_ORDERING_SLIDERS.md",
+     "start_line": 1460,
+     "end_line": 1727,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "04_COMP_SEGMENTS_OVERLAYS": {
+   "original": "04_COMP_SEGMENTS_OVERLAYS.md",
+   "parts": [
+    {
+     "file": "04A_COMP07_SEGMENTATION.md",
+     "start_line": 1,
+     "end_line": 453,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "04B_COMP08_TRIGGERS_OVERLAYS.md",
+     "start_line": 454,
+     "end_line": 751,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md",
+     "start_line": 752,
+     "end_line": 1210,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "05_COMP_LANGUAGE_MEDIA_LAYOUT": {
+   "original": "05_COMP_LANGUAGE_MEDIA_LAYOUT.md",
+   "parts": [
+    {
+     "file": "05A_COMP12_13_LANGUAGE_MEDIA.md",
+     "start_line": 1,
+     "end_line": 278,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "05B_COMP14_LAYOUT_STRUCTURE.md",
+     "start_line": 279,
+     "end_line": 775,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "05C_COMP14_ACKNOWLEDGEMENTS.md",
+     "start_line": 776,
+     "end_line": 900,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "07_MTK_DOCX_CONVERSION": {
+   "original": "07_MTK_DOCX_CONVERSION.md",
+   "parts": [
+    {
+     "file": "07A_MTK_IDENTIFY_AND_EXTRACT.md",
+     "start_line": 1,
+     "end_line": 300,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "07B_MTK_CONTENT_PATTERNS.md",
+     "start_line": 301,
+     "end_line": 669,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "07C_MTK_PAGE_FURNITURE.md",
+     "start_line": 670,
+     "end_line": 903,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "07D_MTK_HTML_SKELETONS.md",
+     "start_line": 904,
+     "end_line": 1235,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "09_COMPARISON_MODE": {
+   "original": "09_COMPARISON_MODE.md",
+   "parts": [
+    {
+     "file": "09A_COMPARISON_CORE.md",
+     "start_line": 1,
+     "end_line": 275,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "09B_COMPARISON_REPORTS.md",
+     "start_line": 276,
+     "end_line": 565,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "11_UPDATE_MODE": {
+   "original": "11_UPDATE_MODE.md",
+   "parts": [
+    {
+     "file": "11A_UPDATE_MODE_CORE.md",
+     "start_line": 1,
+     "end_line": 235,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "11B_UPDATE_MODE_WORKFLOW.md",
+     "start_line": 236,
+     "end_line": 393,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "12_CHANGE_LEDGER": {
+   "original": "12_CHANGE_LEDGER.md",
+   "parts": [
+    {
+     "file": "12A_LEDGER_CORE_AND_LOCKS.md",
+     "start_line": 1,
+     "end_line": 80,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "12B_CHANGE_HISTORY_CL0001_0028.md",
+     "start_line": 81,
+     "end_line": 114,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "12C_CHANGE_HISTORY_CL0029_0040.md",
+     "start_line": 115,
+     "end_line": 126,
+     "injected_lines_after_sentinel": 2
+    },
+    {
+     "file": "12D_CHANGE_HISTORY_CL0041_0052.md",
+     "start_line": 127,
+     "end_line": 138,
+     "injected_lines_after_sentinel": 2
+    },
+    {
+     "file": "12E_CHANGE_HISTORY_FOOTNOTES.md",
+     "start_line": 139,
+     "end_line": 161,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "12F_LEDGER_LOGS_AND_NOTES.md",
+     "start_line": 162,
+     "end_line": 183,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "14_SUBJECT_GLOBAL_PARAMETERS": {
+   "original": "14_SUBJECT_GLOBAL_PARAMETERS.md",
+   "parts": [
+    {
+     "file": "14A_SGP_PURPOSE_FAMILIES_1_5.md",
+     "start_line": 1,
+     "end_line": 132,
+     "injected_lines_after_sentinel": 0
+    },
+    {
+     "file": "14B_SGP_FAMILIES_6_11.md",
+     "start_line": 133,
+     "end_line": 318,
+     "injected_lines_after_sentinel": 0
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "06_TEMPLATE_RECOGNITION": {
+   "original": "06_TEMPLATE_RECOGNITION.md",
+   "parts": [
+    {
+     "file": "06_TEMPLATE_RECOGNITION.md",
+     "whole_file": true
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "08_MODULE_SUPPORT_DEBUGGING": {
+   "original": "08_MODULE_SUPPORT_DEBUGGING.md",
+   "parts": [
+    {
+     "file": "08_MODULE_SUPPORT_DEBUGGING.md",
+     "whole_file": true
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "10_CORPUS_VALIDATED_SCAFFOLDING": {
+   "original": "10_CORPUS_VALIDATED_SCAFFOLDING.md",
+   "parts": [
+    {
+     "file": "10_CORPUS_VALIDATED_SCAFFOLDING.md",
+     "whole_file": true
+    }
+   ],
+   "verified_byte_identical": true
+  },
+  "13_SPLIT_MODE": {
+   "original": "13_SPLIT_MODE.md",
+   "parts": [
+    {
+     "file": "13_SPLIT_MODE.md",
+     "whole_file": true
+    }
+   ],
+   "verified_byte_identical": true
+  }
+ }
+}
