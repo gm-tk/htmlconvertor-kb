@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Monday, 27th July, 2026 12:34 PM
 > **Granular part A (1 of 6) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions, PART 2 pending approval.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -7,13 +7,13 @@
 
 # 12 — Change Ledger (Conflict & Lock Registry)
 
-> **When to load:** At the **start of every Update Mode run** (read it to check new changes for conflicts and locked decisions) and at the **end** (append outcomes and regenerate this file). Comparison Mode and the conversion pipeline do **not** read or edit this file.
+> **When to load:** At the **start of every Update Mode run** (read it to check new changes for conflicts and locked decisions) and at the **end** (draft the outcome row(s) for the Repo Update Brief, which the linked Claude Code session appends to the latest history part — the ledger is never regenerated in full; see `11_UPDATE_MODE.md` → Sections 4 and 10). Comparison Mode and the conversion pipeline do **not** read or edit this file.
 
 ---
 
 ## PURPOSE
 
-This single file is the project's **complete, permanent, in-house record** of every change actioned through Update Mode. **Nothing is stored externally** — there is no spreadsheet, no export, and no manual step for the designer to maintain. Update Mode keeps it current automatically by regenerating it like any other project file.
+This ledger (in the repository: the `12_CHANGE_LEDGER/` folder of parts — Parts 1 and 2 in this part, the Part 3 history across the `12x_CHANGE_HISTORY_…` parts) is the project's **complete, permanent, in-house record** of every change actioned through Update Mode. **Nothing is stored externally** — there is no spreadsheet, no export, and no manual step for the designer to maintain. Every Repo Update Brief carries the drafted row(s), and the linked Claude Code session appends them, so the ledger stays current as a by-product of actioning changes (`11_UPDATE_MODE.md` → Section 4).
 
 It does three jobs:
 
@@ -31,7 +31,7 @@ Keeping everything here does **not** slow the project's main job or eat into cha
 - **Project knowledge is retrieved, not pre-loaded, once it is large enough** — Claude searches the knowledge base and pulls in only what's relevant, so this file is not sitting in full in every conversation.
 - **The conflict check only needs Part 1 (Locked Decisions)**, which stays compact — it is just the list of binding rules, which grows slowly and levels off. The long history in Part 3 is inert audit data.
 
-So this file can accumulate for years with no practical downside. **The designer never has to do anything to maintain it.** (If, many years out, Part 3 ever became unwieldy, there is an *optional, one-off* trim — see Housekeeping. It is never part of normal use.)
+So this ledger can accumulate for years with no practical downside. **The designer never has to do anything to maintain it.** Growth is absorbed structurally: when the latest Part 3 history part passes 30 KB, the Claude Code session starts a new `12x_CHANGE_HISTORY_…` part (repo `CLAUDE.md`) — no trimming, no archiving, nothing removed.
 
 ---
 
@@ -39,10 +39,10 @@ So this file can accumulate for years with no practical downside. **The designer
 
 | Status | Meaning |
 |---|---|
-| **Implemented** | A change that is actioned and in effect. Covers both routine changes **and non-conflicting Major changes** — any non-conflicting change is actioned directly, and when it arrived through Update Mode it is collated into a finalized difference report emailed to the designer (Gavin). No authority sign-off needed. Lives in Part 3. |
+| **Implemented** | A change that is actioned and in effect. Covers both routine changes **and non-conflicting Major changes** — any non-conflicting change is actioned directly via the Repo Update Brief and accounted for in the run's restated change list and per-change log (**no difference report is produced for the designer** — constraint 76, `CL-0052`). No authority sign-off needed. Lives in Part 3. |
 | **Pending approval** | A **report-vs-report conflict** actioned provisionally, awaiting the design authority's (Persephone's) resolution — i.e. a change that arrived via a finalized difference report and clashes with a prior change that *also* arrived via a finalized difference report. Lives in Part 2 until resolved. *(Legacy note: CL-0001–CL-0004 carry this status under the pre-19-June model, in which every Major change awaited sign-off; CL-0005 was reverted on 30th June 2026, superseded by CL-0007 — see the note under Part 3.)* |
 | **Locked** | Major change the design authority approved. **Immutable.** Lives in Part 1; also recorded in Part 3. |
-| **Reverted** | A change rejected, withdrawn, superseded, or unlocked. Edit undone in the files; row kept in Part 3 for audit. |
+| **Reverted** | A change rejected, withdrawn, superseded, or unlocked. Edit undone in the repository via a follow-up Repo Update Brief; row kept in Part 3 for audit. |
 | **Blocked (conflict)** | A requested change **not** actioned because it clashed with a `Locked` row. Logged in Part 3 + the Blocked-request log; needs an unlock decision to proceed. |
 
 **Classification:** `Routine` or `Major` (Major = universal scope, structural/design change, or guardrail-affecting — see `11_UPDATE_MODE.md` → Section 5).
@@ -56,7 +56,7 @@ So this file can accumulate for years with no practical downside. **The designer
 - **Conflict scan order:** check **Part 1 (Locked)** first — those are the rows that can *block* a new change. Then scan **Part 3** for any prior *unlocked* decision on the same thing (a soft duplicate/reversal check). Match on the affected file/section/constraint and the behaviour described, not just on wording.
 - **Locked rows are protected.** A new change that contradicts a Part 1 row is logged `Blocked (conflict)` and not actioned (see `11_UPDATE_MODE.md` → Section 6).
 - **Source = intake channel.** The `Source` column records *how* each change entered the project — `Finalized difference report`, `Direct-typed (Update Mode)`, or `Project instruction` — and this is what drives conflict routing. A clash is escalated to the design authority (Persephone) **only when both sides arrived via a finalized difference report**. If the new change contradicts a `Locked` row it is **blocked** regardless of channel; if it clashes with a prior change that came in by any non-report channel (direct-typed or project instruction), Update Mode **pauses for the designer to confirm** rather than escalating. See `11_UPDATE_MODE.md` → Sections 6–7.
-- Every Update Mode run that touches this file refreshes the top **Last updated** timestamp.
+- Every ledger part the Claude Code session touches gets its header **Last updated** timestamp refreshed (per the Repo Update Brief's standing instructions).
 
 ---
 

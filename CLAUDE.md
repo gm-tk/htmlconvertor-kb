@@ -71,7 +71,10 @@ out. They were therefore split (2026-07-27, byte-identical — proof in
    part's sentinel. No rewording, no re-ordering.
 4. Ledger history parts only: if the split lands mid-table, repeat the table's
    two header lines directly below the sentinel and note the repetition in the
-   provenance header (see `12C`/`12D` for the pattern).
+   provenance header (see `12C`/`12D` for the pattern). The OPEN history part
+   (the one new CL rows are appended to) is named `…_CL00nn_ONWARD.md`; when it
+   passes 30 KB, rename it to its closed range (`…_CL00nn_00mm.md`) and start
+   the next `…_ONWARD.md` part — update `INDEX.md` for both in the same commit.
 5. Update `INDEX.md` (new entry + adjusted "contains" lines) and re-run the guard.
 6. If a single-file topic (e.g. `13_SPLIT_MODE.md`) outgrows the limit: create a
    folder of that exact name, split into `13A_…`/`13B_…` inside it, delete the

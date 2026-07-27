@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Monday, 27th July, 2026 12:34 PM
 > **Granular part A (1 of 2) of `11_UPDATE_MODE.md`** — Update Mode: trigger, input, scope, ledger use, classification, conflicts, sweep (SS1-9).
 > All sibling parts live in `11_UPDATE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -15,14 +15,14 @@
 
 Comparison Mode (`09_COMPARISON_MODE.md`) is the *capture* half of the project's self-improvement loop: it documents what a designer corrected and records, per difference, how widely that correction should apply. Comparison Mode deliberately **never edits the project files** — it ends with a finalized report and hands off.
 
-**Update Mode is the *actioning* half of that same loop.** It takes the designer's intended changes, **checks them against the permanent change ledger for conflicts**, **permanently folds the safe, non-conflicting ones into the project's own stored instruction files (`00`–`12`, plus the project-instructions field)**, **regenerates every affected file in full**, and — **when a change submitted via a finalized difference report conflicts with a prior decision that was also lodged via a finalized difference report** — **catalogs the conflicting differences for the team's design authority (Persephone)** to review and resolve, so the surviving decision can be **locked** against future override. Non-conflicting changes (whatever their class) are actioned directly and reported **in-run** via the restated change list and the per-file change log. After an Update Mode run, all *future* conversions, advisory answers, and comparison reports reflect the change.
+**Update Mode is the *actioning* half of that same loop.** It takes the designer's intended changes, **checks them against the permanent change ledger for conflicts**, and — since 27 July 2026 (ledger `CL-0053`), when the knowledge base moved into the **`htmlconvertor-kb` GitHub repository** as granular part files — **actions the safe, non-conflicting ones by producing ONE Repo Update Brief**: a precisely-worded, copy-paste instruction block for a **Claude Code session opened on that repository**, which edits the exact part files in place, appends the ledger row(s), runs the repo's checks, and commits (`11B` → Section 10). Update Mode **no longer regenerates or outputs any project file**. When **a change submitted via a finalized difference report conflicts with a prior decision that was also lodged via a finalized difference report**, it **catalogs the conflicting differences for the team's design authority (Persephone)** to review and resolve, so the surviving decision can be **locked** against future override. Non-conflicting changes (whatever their class) are actioned directly via the brief and reported **in-run** via the restated change list and the per-change log. After the brief's commit is pushed and the project's GitHub knowledge sync refreshes, all *future* conversions, advisory answers, and comparison reports reflect the change.
 
-> **⚠️ NO DIFFERENCE REPORT IS PRODUCED FOR THE DESIGNER (constraint 76).** Update Mode does **not** generate, write out, or present a finalized difference report of the actioned changes for Gavin — permanently, for every run, whatever the intake channel or classification. The run's own output (the restated change list, the conflict report, the regenerated files, and the per-file change log) **is** the record. Do not offer to produce one; do not remind anyone to email one. Standing designer instruction, 16 July 2026 (ledger `CL-0052`), superseding the report-to-Gavin limb of `CL-0006`. The **Persephone conflict catalog is unaffected** — it is a different artefact on a different path (Section 7.1) and is still produced whenever a report-vs-report conflict occurs.
+> **⚠️ NO DIFFERENCE REPORT IS PRODUCED FOR THE DESIGNER (constraint 76).** Update Mode does **not** generate, write out, or present a finalized difference report of the actioned changes for Gavin — permanently, for every run, whatever the intake channel or classification. The run's own output (the restated change list, the conflict report, the Repo Update Brief, and the per-change log) **is** the record. Do not offer to produce one; do not remind anyone to email one. Standing designer instruction, 16 July 2026 (ledger `CL-0052`), superseding the report-to-Gavin limb of `CL-0006`. The **Persephone conflict catalog is unaffected** — it is a different artefact on a different path (Section 7.1) and is still produced whenever a report-vs-report conflict occurs.
 
 In short:
 
 - **Comparison Mode** = *"Here is what I changed and how broadly each change should apply."* (report only — no file edits)
-- **Update Mode** = *"Check this against what we've already decided, make the safe changes permanent, hand me the rewritten files, and catalog any report-vs-report conflict for the design authority to resolve."*
+- **Update Mode** = *"Check this against what we've already decided, then hand me the Repo Update Brief that makes the safe changes permanent via Claude Code on the repository, and catalog any report-vs-report conflict for the design authority to resolve."*
 
 Update Mode is what `09_COMPARISON_MODE.md` → Section 10 ("What happens after — actioning is a separate conversation") refers to. The separate conversation is **this mode**.
 
@@ -39,7 +39,7 @@ The changes to action may arrive in **either** of two ways — Update Mode accep
 
 If `UPDATE MODE` arrives with **no accompanying changes and none in the immediately preceding/following turn**, do not start editing. Acknowledge that Update Mode is active and ask the designer to supply the changes they want implemented (in any format — see Section 2). Wait until received.
 
-> Update Mode is a **deliberate, file-rewriting action.** Unlike Advisory/Support answers, it changes the project's source of truth. Treat the trigger as explicit authorisation to edit the project files — but still run the conflict check (Section 6), confirm scope and guardrail-level changes (Section 8), and route any report-vs-report conflict through the escalation/lock gate (Section 7) before anything is treated as final.
+> Update Mode is a **deliberate, source-of-truth-changing action.** Unlike Advisory/Support answers, its output (the Repo Update Brief) changes the project's stored instruction files once run in Claude Code. Treat the trigger as explicit authorisation to draft those edits — but still run the conflict check (Section 6), confirm scope and guardrail-level changes (Section 8), and route any report-vs-report conflict through the escalation/lock gate (Section 7) before anything is treated as final.
 
 ---
 
@@ -91,8 +91,8 @@ The ledger serves three jobs, and is organised into three parts so the conflict-
 
 ### 4.1 How Update Mode uses the ledger every run
 
-- **Read it first.** At the start of every run, read `12_CHANGE_LEDGER.md` (it is project knowledge — retrieve it with `project_knowledge_search`). Check Part 1 (Locked) and Part 2 (Pending) in full, and search Part 3 (History) for prior decisions on the same rule. If the ledger does not yet exist, treat all parts as empty and create it during this run.
-- **Regenerate it last.** Every Update Mode run that actions anything **appends new rows and regenerates `12_CHANGE_LEDGER.md` in full**, with a refreshed timestamp, and presents it for the designer to swap in alongside the other regenerated files. The ledger is itself a project file and follows the same regenerate-and-replace workflow.
+- **Read it first.** At the start of every run, read the ledger (it is project knowledge — retrieve it with `project_knowledge_search`; in the repo it is the `12_CHANGE_LEDGER/` folder of parts — Part 1 Locked and Part 2 Pending live in `12A_LEDGER_CORE_AND_LOCKS.md`, the Part 3 history spans the `12x_CHANGE_HISTORY_…` parts). Check Part 1 (Locked) and Part 2 (Pending) in full, and search the Part 3 history parts for prior decisions on the same rule.
+- **Append via the brief, last.** Every Update Mode run that actions anything **drafts the new ledger row(s) in exact table format and includes them in the Repo Update Brief** (`11B` → Section 10); the Claude Code session appends them to the **latest** history part (starting a new part first if it exceeds 30 KB, per the repo `CLAUDE.md`) and refreshes that part's timestamp. The ledger is never regenerated in full.
 
 ### 4.2 Status lifecycle of a ledger entry
 
@@ -101,7 +101,7 @@ The ledger serves three jobs, and is organised into three parts so the conflict-
 | **Implemented** | A non-conflicting change (routine **or** major) that was actioned and is now in effect. No authority sign-off required; collated into the designer's difference report. | Part 3 |
 | **Pending approval** | A **report-vs-report conflict** actioned provisionally, awaiting Persephone's resolution (it has been catalogued — Section 7). *(Legacy: the pre-19-June model also used this for any major change awaiting sign-off.)* | Part 2 |
 | **Locked** | A major change the design authority approved. **Immutable** — no future report may override it unless the authority explicitly unlocks it first. | Part 1 (+ a history row in Part 3) |
-| **Reverted** | A change the design authority rejected (or the designer withdrew/superseded). The edit is undone in the regenerated files; the row is kept for audit. | Part 3 |
+| **Reverted** | A change the design authority rejected (or the designer withdrew/superseded). The edit is undone in the repository via a follow-up Repo Update Brief; the row is kept for audit. | Part 3 |
 | **Blocked (conflict)** | A newly-requested change that was **not** actioned because it conflicts with a Locked entry. Logged for audit; requires an unlock decision before it can proceed (Section 6). | Part 3 + Blocked-request log |
 
 ### 4.3 What each entry records
@@ -112,13 +112,13 @@ Every ledger row carries: a unique **ID** (e.g. `CL-0007`, permanent and sequent
 
 ### 4.4 Everything stays in-house — no external store
 
-The whole ledger lives in `12_CHANGE_LEDGER.md` inside project knowledge. There is **no spreadsheet, no export, and no manual step** for the designer to maintain — Update Mode keeps the file current automatically by regenerating it. This is feasible at scale because:
+The whole ledger lives in the `12_CHANGE_LEDGER/` parts inside project knowledge (synced from the `htmlconvertor-kb` repository). There is **no spreadsheet, no export, and no manual step** for the designer to maintain — every Repo Update Brief carries the drafted row(s) and the Claude Code session appends them, so the ledger stays current as a by-product of actioning changes. This is feasible at scale because:
 
 - **Conversion chats never read this file** (only Update Mode does), so its length never affects day-to-day Word-to-HTML conversions.
 - **Project knowledge is retrieved, not bulk-loaded, once large enough** — so the file is not sitting in full in ordinary conversations.
 - **Conflict-checking depends only on Part 1 (Locked)**, which stays compact; Part 3's growing history is inert audit data.
 
-If, after years of use, Part 3 ever became unwieldy, there is an **optional, one-off trim** (move old history rows to a downloadable archive and remove them from the live file; Part 1 is never trimmed). This is never part of normal operation — routine use requires zero manual upkeep.
+Part 3 can never become unwieldy: the repo's size guard splits the history into a new `12x_CHANGE_HISTORY_…` part whenever the latest one passes 30 KB (repo `CLAUDE.md`), so growth is absorbed structurally. Old rows are never trimmed or archived; Part 1 is never trimmed. Routine use requires zero manual upkeep.
 
 ---
 
@@ -149,7 +149,7 @@ For each proposed change:
 1. **Search the ledger** (`12_CHANGE_LEDGER.md`, Section 4) for any prior entry affecting the **same rule, file, behaviour, or element** — check **Part 1 (Locked Decisions)** first (these can *block* the change), then scan **Part 3 (Change History)** for any prior unlocked decision. Match on the affected file/section/constraint and on the behaviour described, not just on wording.
 2. **If a prior entry targets the same thing with the SAME result** → it is already in effect. Note "already in effect — no change needed" and do not duplicate it.
 3. **If a prior entry targets the same thing with a DIFFERENT result** → it is a **conflict**. Resolve it by the prior entry's lock state and by the **intake channel** (Section 4.3) of *both* sides:
-   - **Prior entry is `Locked`** → **BLOCK.** Do **not** action the new change and do **not** regenerate any file for it. Record a `Blocked (conflict)` ledger row referencing the locked entry, and surface it prominently to the designer: *this contradicts a locked decision ([ID], approved by [name] on [date]); it cannot be actioned unless the design authority explicitly unlocks that decision first.* (Channel is irrelevant here — a lock blocks regardless of source.)
+   - **Prior entry is `Locked`** → **BLOCK.** Do **not** action the new change and do **not** include any edit for it in the Repo Update Brief. Draft a `Blocked (conflict)` ledger row for the brief referencing the locked entry, and surface it prominently to the designer: *this contradicts a locked decision ([ID], approved by [name] on [date]); it cannot be actioned unless the design authority explicitly unlocks that decision first.* (Channel is irrelevant here — a lock blocks regardless of source.)
    - **Both sides arrived via a `finalized difference report`** (and the prior is not locked) → **CATALOG FOR THE DESIGN AUTHORITY.** Do **not** silently flip the decision and do **not** resolve it in-chat. Add the item to the **"Cataloged differences that require approval"** block (Section 7.1), showing the *previously submitted difference* and the *current difference*, and route it to **Persephone** to resolve. Log the new row `Pending approval`. On her decision the surviving difference is `Locked` and the other `Reverted`.
    - **The conflict involves any non-report source on either side** — the prior decision came from a `project instruction` or a `direct-typed` Update Mode message, **or** the new change was typed directly rather than submitted via a finalized difference report (and the prior is not locked) → **PAUSE for the designer's own confirmation.** Show the previous decision vs the new request (old result → new result) and ask whether they intend to **overturn** the earlier decision. Action only on explicit confirmation; if confirmed, the new entry supersedes the old (mark the old row `Reverted — superseded by [new ID]`). This case is **never** escalated to Persephone's approval catalog. Never silently flip-flop a prior decision.
 4. **If no prior entry exists** → no conflict; continue to classification and the normal pipeline.
@@ -164,13 +164,13 @@ Most changes need no sign-off. A change that **clashes with nothing** — whatev
 
 **The escalation path** — a change that arrived via a **finalized difference report** and **conflicts** with a prior decision that **also** arrived via a finalized difference report, where the prior decision is not `Locked` (Section 6):
 
-1. **Action it provisionally** — make the edits and regenerate the affected files as normal (so the work is ready), and log a row in **Part 2 (Pending approval)** with status **`Pending approval`**.
+1. **Action it provisionally** — include the edits in the Repo Update Brief as normal but marked **PROVISIONAL** (so the work is ready), and draft the row for **Part 2 (Pending approval)** with status **`Pending approval`**.
 2. **Catalog the conflict** in the **"Cataloged differences that require approval"** block (Section 7.1) — one item per conflicting pair, showing the *previously submitted difference* and the *current difference* — and route it to **Persephone** to resolve. This block is part of the run's output for the designer to forward to her.
 3. **On Persephone's decision** (relayed back by the designer in a later message or a short follow-up Update Mode turn):
-   - **Current difference wins →** move the row into **Part 1 (Locked Decisions)** with status **`Locked`** (record approver + date), add a corresponding history row in Part 3, and mark the superseded prior decision `Reverted — superseded by [new ID]`. The surviving decision is now immutable; future reports that contradict it hit the Section 6 block. Regenerate `12_CHANGE_LEDGER.md`.
-   - **Prior difference stands →** **revert** the provisional edit in the affected files, regenerate them, and record the row in **Part 3** as **`Reverted`**. Regenerate `12_CHANGE_LEDGER.md`.
+   - **Current difference wins →** issue a follow-up Repo Update Brief that moves the row into **Part 1 (Locked Decisions)** with status **`Locked`** (record approver + date), adds a corresponding history row in Part 3, and marks the superseded prior decision `Reverted — superseded by [new ID]`. The surviving decision is now immutable; future reports that contradict it hit the Section 6 block.
+   - **Prior difference stands →** issue a follow-up Repo Update Brief that **reverts** the provisional edit in the affected parts and records the row in **Part 3** as **`Reverted`**.
 
-> If the team prefers a conflict is **held and not applied until Persephone decides** (rather than applied provisionally), follow that preference instead: skip the provisional edit, log the row `Pending approval`, catalog the conflict, and only edit/regenerate the affected files once the decision comes back. Either way, **a conflicting decision is never `Locked` without Persephone's sign-off.**
+> If the team prefers a conflict is **held and not applied until Persephone decides** (rather than applied provisionally), follow that preference instead: leave the edit out of the brief, log the row `Pending approval`, catalog the conflict, and only include the edit in a later brief once the decision comes back. Either way, **a conflicting decision is never `Locked` without Persephone's sign-off.**
 
 **Conflicts that are NOT report-vs-report never reach Persephone.** A clash with a `Locked` decision is **blocked** (Section 6); a clash with a `project instruction` or `direct-typed` decision **pauses for the designer's own confirmation** (Section 6). Neither appears in the approval catalog.
 
@@ -205,7 +205,7 @@ resolve.
 
 ## 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING
 
-Before rewriting any file, resolve these. Ask only about what is genuinely unresolved — keep it to one concise round of questions where possible.
+Before drafting any edit for the Repo Update Brief, resolve these. Ask only about what is genuinely unresolved — keep it to one concise round of questions where possible.
 
 1. **Scope for every change.** Each normalised change must have exactly one breadth (a/b/c/d/e or a clear paraphrase, or a permitted multi-scope like `A&B`). List any change missing a scope and ask.
 2. **Conflicts (Section 6).** Surface every `Blocked (conflict)` item. For a **non-report conflict** that overturns a prior unlocked decision, get the designer's confirmation before editing. For a **report-vs-report conflict**, catalog it for Persephone (Section 7.1) rather than resolving it in-chat.
@@ -234,7 +234,7 @@ For each change, before editing, locate **all** of these that apply:
 
 > **Search, don't recall.** Use `project_knowledge_search` (and a literal text scan of the files) for the rule's distinctive keywords to catch every occurrence. Do not rely on memory of where a rule appears. Missing a downstream reference is the most likely failure of Update Mode — sweep thoroughly.
 
-Record the full set of affected files for each change; that set drives what gets regenerated in Section 10.
+Record the full set of affected files (granular part paths where known) for each change; that set drives the edit list in the Repo Update Brief (`11B` → Section 10).
 
 ---
 

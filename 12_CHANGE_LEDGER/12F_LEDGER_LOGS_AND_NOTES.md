@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Monday, 27th July, 2026 12:34 PM
 > **Granular part F (6 of 6) of `12_CHANGE_LEDGER.md`** — Blocked-request log, housekeeping, notes.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -15,12 +15,12 @@ Requests that were **not** actioned because they clashed with a locked decision 
 
 ## HOUSEKEEPING (optional — nothing here is a recurring task)
 
-- **Normal use requires zero manual upkeep.** Update Mode appends rows and regenerates this file for you; you just replace it in the project like the other files.
-- **Optional one-off trim (only if ever needed):** if Part 3 grows very large after years of use, you can ask Update Mode, in a single run, to move history rows older than a date you choose into a downloadable archive file and remove them from the live Part 3. **Part 1 (Locked) is never trimmed** — it must stay complete for conflict-checking. This is entirely optional and not part of the regular workflow.
+- **Normal use requires zero manual upkeep.** Every Repo Update Brief carries the drafted ledger row(s); the linked Claude Code session appends them to the latest history part and commits — nothing to download or replace.
+- **Growth is absorbed structurally, never trimmed:** when the latest Part 3 history part passes 30 KB, the Claude Code session starts a new `12x_CHANGE_HISTORY_…` part (repo `CLAUDE.md`; the repo's `check_kb.py` guard also verifies the CL id sequence stays unique and ascending across parts). **Part 1 (Locked) is never trimmed** — it must stay complete for conflict-checking.
 
 ---
 
 ## NOTES
 
-- This file is created/seeded by the first Update Mode run that needs it and regenerated thereafter. If it is ever missing, Update Mode treats all parts as empty and recreates it.
+- The ledger lives as the `12_CHANGE_LEDGER/` parts in the `htmlconvertor-kb` repository and syncs into project knowledge from there. If any part is ever missing from project knowledge, say so and treat it as a sync problem to raise with the designer — never invent or re-seed ledger content in chat.
 - Keep this ledger in the project-knowledge area alongside the other project files so every Update Mode run can read it.

@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Monday, 27th July, 2026
+> **Last updated:** Monday, 27th July, 2026 12:34 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -105,8 +105,8 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 11_UPDATE_MODE
 - **`11_UPDATE_MODE/11A_UPDATE_MODE_CORE.md`** (28 KB) — Update Mode: trigger, input, scope, ledger use, classification, conflicts, sweep (SS1-9)
   - Sections: 11 — Update Mode (Mode 4) · PURPOSE · 1. THE TRIGGER · 2. ACCEPTED INPUT — ANY FORMAT · 3. SCOPE / GRANULARITY VOCABULARY · 4. THE CHANGE LEDGER (`12_CHANGE_LEDGER.md`) — CONFLICT & LOCK REGISTRY · 5. MAJOR vs ROUTINE CLASSIFICATION · 6. CONFLICT CHECK (runs before any file is edited) · 7. CONFLICT ESCALATION & LOCKING · 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
-- **`11_UPDATE_MODE/11B_UPDATE_MODE_WORKFLOW.md`** (12 KB) — Update Mode: regeneration, exclusions, workflow pseudo-code, timestamps (SS10-16)
-  - Sections: 10. REGENERATION — FULL FILES, NOT PATCHES · 11. (e) IGNORE ALWAYS — GROWING THE EXCLUSIONS LIST · 12. WORKFLOW (pseudo-code) · 13. THE TIMESTAMP CONVENTION (project-wide) · 14. RELATIONSHIP TO COMPARISON MODE & ONE-OFF OVERRIDES · 15. WHAT UPDATE MODE DOES NOT DO · 16. OUTPUT EXPECTATION
+- **`11_UPDATE_MODE/11B_UPDATE_MODE_WORKFLOW.md`** (12 KB) — Update Mode: the Repo Update Brief (SS10 — Claude Code actions edits on this repo; no file regeneration), exclusions, workflow pseudo-code, timestamps (SS10-16)
+  - Sections: 10. THE REPO UPDATE BRIEF — PRECISE EDITS FOR CLAUDE CODE, NOT FILE REGENERATION · 11. (e) IGNORE ALWAYS — GROWING THE EXCLUSIONS LIST · 12. WORKFLOW (pseudo-code) · 13. THE TIMESTAMP CONVENTION (project-wide) · 14. RELATIONSHIP TO COMPARISON MODE & ONE-OFF OVERRIDES · 15. WHAT UPDATE MODE DOES NOT DO · 16. OUTPUT EXPECTATION
 
 ## 12_CHANGE_LEDGER
 - **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (9 KB) — Ledger purpose, status values, PART 1 locked decisions, PART 2 pending approval
@@ -115,7 +115,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
 - **`12_CHANGE_LEDGER/12C_CHANGE_HISTORY_CL0029_0040.md`** (20 KB) — PART 3 change history: CL-0029 to CL-0040 (continued)
   - Sections: 
-- **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0052.md`** (19 KB) — PART 3 change history: CL-0041 to CL-0052 (continued) - APPEND NEW ENTRIES TO THE LATEST HISTORY PART
+- **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_ONWARD.md`** (19 KB) — PART 3 change history: CL-0041 onward (continued) — THE OPEN PART: append new CL entries here (start 12E2/next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
