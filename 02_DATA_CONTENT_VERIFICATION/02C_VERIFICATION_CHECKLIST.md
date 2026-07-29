@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -136,7 +136,7 @@ Run ALL checks before presenting output:
 ### Flags & Fallbacks
 - [ ] Undocumented components → Tiered Fallback with visible content
 - [ ] All red flags have visible fallback
-- [ ] No inline CSS, JavaScript, or invented class names (exception: `infoTrigger` percentage positioning inside `infoImage`)
+- [ ] No inline CSS, JavaScript, or invented class names (exceptions: `infoTrigger` percentage positioning inside `infoImage`; WJFUN static word-highlighter spans — CL-0066)
 ### Comments & Designer-Facing Notes
 - [ ] NO HTML comment discloses an interactive's correct answer(s) or answer key
 - [ ] All designer-facing notes, CS instructions, and ambiguities are VISIBLE red **bold** flags — not hidden comments — each carrying its source-specific prefix (`Note from {author}:` / `Writers Note:` / `Red Flag:` / `Designer/Developer To Do:` — see Source-Specific Red-Note Prefixes)

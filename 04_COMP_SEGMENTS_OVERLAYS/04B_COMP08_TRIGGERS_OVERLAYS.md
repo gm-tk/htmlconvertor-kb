@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 > **Granular part B (2 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -304,3 +304,17 @@ Inside an accordion (wrapper added to `accContent`):
 **`highlightBtn` vs bare `colour` span:**
 - `<span class="highlightBtn" colour="primary-N">word</span>` → an **interactive** highlight the student clicks. Only valid inside a `wordHighlighter` wrapper.
 - `<span colour="primary-N">word</span>` (NO `highlightBtn`) → a **static** colour reference — e.g. when re-citing a previously-highlighted word inside a later quiz question or sentence. Keep it bare; do NOT add `highlightBtn`.
+ 
+### WJFUN series — static highlight spans, NOT the interactive component (CL-0066)
+ 
+**In WJFUN modules, a writer's `[word highlighter]` content is NOT built with the `wordHighlighter` / `highlightBtn colour="primary-N"` interactive component.** Instead the highlighted words/phrases are emitted as static inline-styled spans, with no wrapper:
+ 
+```html
+<span class="highlight" style="background-color: #00ffff;">items</span>
+<span class="highlight" style="background-color: yellow;">adverbial phrase</span>
+<span class="highlight" style="background-color: primary;">conjunctions</span>
+```
+ 
+- The spans are **presentational, not clickable**.
+- The designer's colour values are reproduced **as given** — the third value is the literal string `primary`, recorded verbatim by explicit designer instruction (WJFUN204 finalized report, Difference 1, decision (a), 29 July 2026). Do **not** "correct" it.
+- **This is a documented, designer-confirmed exception to constraint 2 (no inline CSS), scoped to WJFUN word-highlighter output only — it licenses nothing else.** Every other module family continues to use the `wordHighlighter` forms above; no other inline style is permitted by this rule.

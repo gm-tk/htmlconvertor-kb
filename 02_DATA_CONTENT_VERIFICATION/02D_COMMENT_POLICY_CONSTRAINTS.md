@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 > **Granular part D (4 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Comment & red flag policy; constraints.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -73,7 +73,7 @@ PageForge captures the **actionable** native Word margin comments authored by th
 ## Constraints
  
 1. **never_modify_text:** NEVER change writer text. Trust the content source — PageForge `.txt`, raw Writers Template `.docx`, or MTK `.docx` — as-is. EXCEPTION: genuinely corrupt/nonsensical text (extremely rare).
-2. **never_add_code:** NEVER add inline CSS, JavaScript, or non-pattern code. EXCEPTION: `infoTrigger` percentage positioning inside `infoImage` is a documented pattern.
+2. **never_add_code:** NEVER add inline CSS, JavaScript, or non-pattern code. EXCEPTIONS: `infoTrigger` percentage positioning inside `infoImage` is a documented pattern; WJFUN static word-highlighter spans carry documented inline `background-color` styles (designer-confirmed, WJFUN-scoped — `04B` → Word Highlighter / CL-0066).
 3. **never_invent_classes:** NEVER invent CSS class names or HTML structures.
 4. **never_invent_inner_structure:** NEVER generate HTML for undocumented components.
 5. **never_hide_content_in_comments:** NEVER place student content exclusively in comments. NEVER use comments to pass designer-facing notes, CS instructions, ambiguities, or interactive answers — these are VISIBLE red flags. See Comment & Red Flag Policy.

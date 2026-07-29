@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -95,6 +95,8 @@
  
 Apply to bubble div: `primary-1`, `primary-2`, `primary-3`, `primary-4`, `secondary-1`, `secondary-2`, `tertiary-1`, `tertiary-2`
  
+**Observed values (HPE, CL-0067):** `primary-light` and `secondary-light` — existing template classes recorded from the designer-refined HPRE301 files (see `14` §14.8). Not invented; use within the HPE patterns that document them.
+ 
 ---
  
 ## Other Modifier Classes
@@ -123,6 +125,18 @@ Apply to bubble div: `primary-1`, `primary-2`, `primary-3`, `primary-4`, `second
     <audio preload="none" src="audio/file.mp3" class="audioPlayer" title="Track title"></audio>
 </div>
 ```
+ 
+### WJFUN series — inline audio button inside the sentence `<p>` (CL-0063)
+ 
+**In WJFUN modules, a speech-bubble audio button is emitted INSIDE the sentence's `<p>`, as an inline span after a line break — never as a separate block `<div class="audioButton">` sibling:**
+ 
+```html
+<p>Today are travelling to the Pancake Rocks. <br><span class="audioButton" audioName="kea-sentences-1"></span></p>
+```
+ 
+Never `<p>…</p><div class="audioButton" audioName="…"></div>` in WJFUN. This applies to **all Kea speech bubbles and any other WJFUN bubble audio button**. Outside WJFUN, the generic block-`div` forms above remain correct.
+ 
+> **No style attribute.** The designer's refined WJFUN108 file carried a malformed inline `style` attribute (`style="vertical-align:bottom;top;left;right;"`) on this span. That attribute is **NOT** part of the codified pattern and is never emitted — the structural change only is recorded, preserving constraint 2 with no new exception. (WJFUN108 finalized report, Difference 1, designer decision (c), 29 July 2026.)
  
 ---
  
@@ -238,7 +252,7 @@ When the character image column is adjacent to the bubble in a horizontal layout
 | Image on RIGHT (text-left layout) | `paddingL` |
 | Image on LEFT (text-right layout) | `paddingR` |
  
-**Do not mirror a sibling that pads both sides the same.** Some reference files (e.g. HPRE301) apply `paddingR` to both the left- and right-hand image columns; that is a known sibling deviation, not the rule. The right-positioned image column takes `paddingL` even when the Mode B sibling shows otherwise. (HPRE203 finalized report, Difference 4, 29 July 2026.)
+**Do not mirror a sibling that pads both sides the same.** Some reference files (e.g. HPRE301) apply `paddingR` to both the left- and right-hand image columns; that is a known sibling deviation, not the rule. The right-positioned image column takes `paddingL` even when the Mode B sibling shows otherwise. (HPRE203 finalized report, Difference 4, 29 July 2026.) **Scoped exception (CL-0067):** HPE **head-only dialogue strips** deliberately take `paddingR` on both the left- and right-positioned image columns — see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.8; HPE full-body strips and every other module follow the universal rule above.
  
 ### Key Differences from Conversation Speech Bubbles
  

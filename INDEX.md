@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Monday, 27th July, 2026 12:34 PM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -93,9 +93,11 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 08 — Module Support, Advisory & Debugging Mode · PURPOSE · 1. SHARED DISCIPLINE — CARRIES OVER FROM CONVERSION MODE · 2. ADVISORY QUESTIONS — answering "how does X work?" · 3. MODULE COMPLETION — finishing a half-finished module · 4. INTERACTIVE DEBUGGING — diagnosing a broken interactive · 5. ONE-OFF MODULE OVERRIDES — applying a documented-pattern deviation for a single module · 6. SCOPE BOUNDARIES — what Support Mode does NOT do · 7. MODE TRIAGE — recap · 8. OUTPUT EXPECTATION FOR SUPPORT MODE
 
 ## 09_COMPARISON_MODE
-- **`09_COMPARISON_MODE/09A_COMPARISON_CORE.md`** (29 KB) — Comparison Mode: trigger, inputs, workflow, differences, exclusions, inclusion gate (SS1-5)
-  - Sections: 09 — Comparison Mode (Mode 3) · PURPOSE · 1. THE TRIGGER · 2. THE FOUR REQUIRED INPUTS · 3. WORKFLOW · 4. WHAT COUNTS AS A DIFFERENCE · 4.1 DIFFERENCES NOT TO CAPTURE (EXCLUSIONS) · 5. THE INCLUSION GATE — KEEP KNOWLEDGE-DERIVED, FILTER OUT TEMPLATE-DERIVED
-- **`09_COMPARISON_MODE/09B_COMPARISON_REPORTS.md`** (25 KB) — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15)
+- **`09_COMPARISON_MODE/09A_COMPARISON_CORE.md`** (14 KB) — Comparison Mode: trigger, inputs, workflow, what counts as a difference (SS1-4)
+  - Sections: 09 — Comparison Mode (Mode 3) · PURPOSE · 1. THE TRIGGER · 2. THE FOUR REQUIRED INPUTS · 3. WORKFLOW · 4. WHAT COUNTS AS A DIFFERENCE
+- **`09_COMPARISON_MODE/09B_COMPARISON_EXCLUSIONS_GATE.md`** (17 KB) — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5)
+  - Sections: 4.1 DIFFERENCES NOT TO CAPTURE (EXCLUSIONS) · Exclusion 1 — Red flags & designer notes · Exclusion 2 — Overview module-menu heading styling · Exclusion 3 — Bespoke designer presentation / composition decisions · Exclusion 4 — Designer supplying media metadata · Exclusion 5 — Per-instance presentational modifier classes · Exclusion 6 — Red Flag + visible fallback later realised with a library component · Exclusion 7 — Direct-Link (Mode D) derived filename swapped for the actual asset filename · Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set · Applying the exclusions · 5. THE INCLUSION GATE — KEEP KNOWLEDGE-DERIVED, FILTER OUT TEMPLATE-DERIVED
+- **`09_COMPARISON_MODE/09C_COMPARISON_REPORTS.md`** (25 KB) — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15)
   - Sections: 6. THE PHASE 1 REPORT — STRUCTURE (streamlined) · 7. THE FIVE SCOPE OPTIONS (the legend — shown once at the top of the report) · 8. PHASE 2 — PARSING THE DESIGNER'S SCOPE ASSIGNMENTS · 9. PHASE 2 OUTPUT — THE FINALIZED DETAILED REPORT · 10. WHAT HAPPENS AFTER — ACTIONING IS A SEPARATE CONVERSATION (UPDATE MODE) · 11. THE DOWNLOADABLE REPORT · 12. SHARED DISCIPLINE · 13. WHAT COMPARISON MODE DOES NOT DO · 14. RELATIONSHIP TO ONE-OFF OVERRIDES · 15. OUTPUT EXPECTATION
 
 ## 10_CORPUS_VALIDATED_SCAFFOLDING
@@ -115,7 +117,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
 - **`12_CHANGE_LEDGER/12C_CHANGE_HISTORY_CL0029_0040.md`** (20 KB) — PART 3 change history: CL-0029 to CL-0040 (continued)
   - Sections: 
-- **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_ONWARD.md`** (19 KB) — PART 3 change history: CL-0041 onward (continued) — THE OPEN PART: append new CL entries here (start 12E2/next part at 30 KB)
+- **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0062.md`** (25 KB) — PART 3 change history: CL-0041 to CL-0062 (continued) — CLOSED at CL-0062 (29 July 2026, 30 KB soft limit)
+  - Sections: 
+- **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_ONWARD.md`** (6 KB) — PART 3 change history: CL-0063 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
