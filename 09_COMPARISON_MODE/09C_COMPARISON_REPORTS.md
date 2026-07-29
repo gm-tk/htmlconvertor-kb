@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
-> **Granular part B (2 of 2) of `09_COMPARISON_MODE.md`** — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15).
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Granular part C (3 of 3) of `09_COMPARISON_MODE.md`** — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15).
 > All sibling parts live in `09_COMPARISON_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
