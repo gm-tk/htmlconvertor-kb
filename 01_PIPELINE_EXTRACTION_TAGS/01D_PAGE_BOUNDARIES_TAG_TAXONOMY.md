@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part D (4 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -257,6 +257,8 @@ The offer is an **offer, not an automatic action.** Split Mode runs **only** whe
 | `embed desmos`, `desmos graph` | `embed_desmos` |
 
 **⚠️ INFO TRIGGER IMAGE — Special Parsing Note:** Writers sometimes split this tag across bracket boundaries or use inconsistent spacing. The tag may appear as `[info trigger image]`, `[info trigger] image`, `[info trigger] [image]`, or other split variations. When the normaliser encounters `info trigger` followed immediately by `image` (whether inside the same brackets or as a separate adjacent tag/word), normalise to `info_trigger_image`. Do NOT confuse with standalone `[info trigger]` (which is an inline tooltip) or standalone `[image]` (which is a media tag).
+
+**⚠️ WJ SERIES — `[MTK Quiz]` precedence:** in WJ-series modules an activity tagged both `[MTK Quiz]` and an in-page quiz tag (`[Multichoice quiz]`, `[Radio quiz]`, etc.) maps to the MTK Quiz Button pattern (`05` → Buttons → MTK Quiz Button), not to the in-page quiz component. See constraint 65.
 
 ### Structural Sub-tags
 | Writer Variants | Normalised |

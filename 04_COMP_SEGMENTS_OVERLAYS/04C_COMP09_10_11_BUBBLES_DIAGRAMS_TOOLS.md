@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 1st July, 2026 12:39 AM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -237,6 +237,8 @@ When the character image column is adjacent to the bubble in a horizontal layout
 |---|---|
 | Image on RIGHT (text-left layout) | `paddingL` |
 | Image on LEFT (text-right layout) | `paddingR` |
+ 
+**Do not mirror a sibling that pads both sides the same.** Some reference files (e.g. HPRE301) apply `paddingR` to both the left- and right-hand image columns; that is a known sibling deviation, not the rule. The right-positioned image column takes `paddingL` even when the Mode B sibling shows otherwise. (HPRE203 finalized report, Difference 4, 29 July 2026.)
  
 ### Key Differences from Conversation Speech Bubbles
  

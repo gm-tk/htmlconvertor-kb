@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 1st July, 2026 12:39 AM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part B (2 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -137,6 +137,9 @@ Clickable image that plays an associated audio file. The `id` attribute on `.aud
 - `playVisible` class: Makes play button always visible (default: appears on hover)
 - `popCaption`: Shows caption text on hover/click
 - Typical column sizing: `col-md-4 col-6`
+ 
+**WJFUN series — mandatory component.** In WJFUN modules a writer's `[Audio image]` grid (click-the-picture-to-hear-the-word) MUST be built with this `audioImage` / `audioImageOption` component — the audio filename goes on the `id` of `.audioImageOption` — never as `audioTrigger` spans wrapping the images. (WJFUN108 finalized report, Difference 3, scope (b), 29 July 2026.)
+ 
 ---
  
 ## Image Label

@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part B (2 of 6) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -179,7 +179,7 @@ FUNCTION convert_writer_template(content_source, structural_reference, media_lis
     COPY complete skeleton from structural reference (template or derived from reference module)
     POPULATE with converted content:
         - ALL body content inside row > col-* grid
-        - ALL activity divs inside row > col-md-8 col-12 (EXCEPT wide components like D&D column layout which uses col-md-12 col-12, and a D&D column with many images which uses col-12 / col-md-11 col-12 by module type — never col-md-10, see constraint 56; ALL carousel types use col-md-8 col-12 for the viewer). Activity/interactive wrappers NEVER use col-md-10: where more width than col-md-8 is needed, use col-12 (Standard) / col-md-11 col-12 (Inquiry & Fundamentals) / col-md-8 col-12 with a paired alertImage at col-md-4. Inside a WIDENED activity wrapper, plain text stays at col-md-8 col-12 in its own inner row — only the interactive spans the widened width (constraint 63)
+        - ALL activity divs inside row > col-md-8 col-12 (EXCEPT wide components like D&D column layout which uses col-md-12 col-12, and a D&D column with many images which uses col-12 / col-md-11 col-12 by module type — never col-md-10, see constraint 56; carousel viewer width is contextual — col-md-12 col-12 when nested inside a col-md-8 wrapper, col-md-8 col-12 when standalone, see constraint 17). Activity/interactive wrappers NEVER use col-md-10: where more width than col-md-8 is needed, use col-12 (Standard) / col-md-11 col-12 (Inquiry & Fundamentals) / col-md-8 col-12 with a paired alertImage at col-md-4. Inside a WIDENED activity wrapper, plain text stays at col-md-8 col-12 in its own inner row — only the interactive spans the widened width (constraint 63)
         - [MTKquiz] activities end in a "Go to quiz" button with blank href + a visible Designer/Developer To Do: note (create the quiz in MTK) — never a dropbox button (constraint 65); Creative Services videos embed as the pending-ID Vimeo scaffold + Designer/Developer To Do: note (constraint 64); supervisor triggers build the super-content-button family, never the retired supervisorContainer trio (constraint 68)
         - Lesson pages: use module title (not lesson-specific title) in header; render first "Lesson N" H2 as body <h3>; use zero-padded lesson number (not module code) in #module-code
         - Preserve writer text verbatim (trust the content source as-is)

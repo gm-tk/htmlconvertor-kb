@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -87,9 +87,9 @@ Run ALL checks before presenting output:
 - [ ] Speech bubbles: image column has `paddingL` (image on right) or `paddingR` (image on left) in horizontal layouts
 - [ ] Speech bubble images: NO `imageCentral` class on writer-specified images
 - [ ] Flip cards: `flipCardsContainer` on wrapper row; `flipImage` on `.front` with images; `<h5>` for titles
-- [ ] Carousel (image): `col-md-8 col-12` viewer; `image` class on items containing images
-- [ ] Carousel (video): `col-md-8 col-12` viewer; `<h5>` titles; description `<p>` above video embed
-- [ ] Carousel (external nav buttons): `carousel-btns` with matching `exSlideBtns` attribute; button count = item count; `col-md-8 col-12` viewer; `item video` class; description below video
+- [ ] Carousel (image): viewer width per context (constraint 17); `image` class on items containing images
+- [ ] Carousel (video): viewer width per context (constraint 17); `<h5>` titles; description `<p>` above video embed
+- [ ] Carousel (external nav buttons): `carousel-btns` with matching `exSlideBtns` attribute; button count = item count; viewer width per context (constraint 17); `item video` class; description below video
 - [ ] multiChoiceQuiz (survey/self-assessment): `autoCheck emptyOptions checkAll`; `mcqOption` count per question = rating column count; all options `value="correct"`
 - [ ] multiChoiceQuiz (graded multi-select): uses `multiChoiceQuiz mcqSomeSelected` with `mcqQuestion`/`mcqQuestionText`/`mcqOptions`/`mcqOption`; correct options `value="correct"`, wrong options have NO `value` attribute; NOT built as `multiQuiz`/`mQContainer`/`mQOption`
 - [ ] Graded MCQ that is SINGLE-answer / two-option (e.g. "plant cell or animal cell?"): also uses the `multiChoiceQuiz` family (`mcqQuestion`/`mcqQuestionText`/`mcqOptions`/`mcqOption`, correct option `value="correct"`), NEVER the legacy `multiQuiz`/`mQContainer`/`mQOption`/`.answer`; no typed number inside `mcqQuestionText`
@@ -111,6 +111,7 @@ Run ALL checks before presenting output:
 - [ ] Acknowledgements entry titles: official published title verbatim — casing, punctuation, and any trailing ". stock photo" suffix retained when part of the official title (constraint 66); alt text still NEVER contains "stock photo" (constraint 52)
 - [ ] Creative Services videos: Vimeo `videoSection` scaffold with pending ID + visible `Designer/Developer To Do:` note per audiovisual item — never a YouTube embed for a CS production (constraint 64)
 - [ ] Audio triggers in table cells: use `audioButton` (not `audioTrigger`)
+- [ ] WJFUN `[Audio image]` grids: built as `audioImage`/`audioImageOption` (audio filename on the option `id`) — never `audioTrigger` spans wrapping images
 - [ ] Activity + alertImage pairing: `col-md-8 col-12` outer container; alertImage `col-md-4` nested inside with inner row/col structure (8 + 4 = 12)
 ### Media & Image Output Mode
 - [ ] Image output mode (Mode P or Mode D) confirmed with user before generating HTML — not silently defaulted
