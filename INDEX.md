@@ -117,7 +117,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
 - **`12_CHANGE_LEDGER/12C_CHANGE_HISTORY_CL0029_0040.md`** (20 KB) — PART 3 change history: CL-0029 to CL-0040 (continued)
   - Sections: 
-- **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_ONWARD.md`** (19 KB) — PART 3 change history: CL-0041 onward (continued) — THE OPEN PART: append new CL entries here (start 12E2/next part at 30 KB)
+- **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0062.md`** (25 KB) — PART 3 change history: CL-0041 to CL-0062 (continued) — CLOSED at CL-0062 (29 July 2026, 30 KB soft limit)
+  - Sections: 
+- **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_ONWARD.md`** (6 KB) — PART 3 change history: CL-0063 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 

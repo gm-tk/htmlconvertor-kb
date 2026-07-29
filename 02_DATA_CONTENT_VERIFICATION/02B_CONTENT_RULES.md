@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 > **Granular part B (2 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Content rules: preservation, grids, merging, perspective, red text, headings.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -86,7 +86,7 @@ ALL content inside `<div id="body">` must be inside Bootstrap grid:
 The outer activity / interactive wrapper defaults to `col-md-8 col-12`. **Widen it ONLY when the interactive's content does not fit comfortably in a `col-8` — never as a fixed per-component lookup.** There is no "this component always uses col-X" table; the width follows the content's horizontal needs:
  
 - **`col-md-8 col-12` (default):** prose-and-image activities, MCQs, dropdown quizzes, and any interactive whose content sits comfortably in the standard content width.
-- **`col-12` (Standard) or `col-md-11 col-12` (Inquiry & Fundamentals) (widen as needed):** activity/interactive wrappers that need more horizontal room than `col-md-8` — e.g. a wordSelect with an options column beside a text column, a typing quiz with side-by-side image + sentence rows, a vocabulary clickDrop strip of several side-by-side images, or a memory-game grid — use `col-12` in Standard modules and `col-md-11 col-12` in Inquiry/Fundamentals modules. Activity wrappers **never** use `col-md-10` (see constraint 56).
+- **`col-12` (Standard) or `col-md-11 col-12` (Inquiry & Fundamentals) (widen as needed):** activity/interactive wrappers that need more horizontal room than `col-md-8` — e.g. a wordSelect with an options column beside a text column, a typing quiz with side-by-side image + sentence rows, a vocabulary clickDrop strip of several side-by-side images, or a memory-game grid — use `col-12` in Standard modules and `col-md-11 col-12` in Inquiry/Fundamentals modules. Activity wrappers **never** use `col-md-10` (see constraint 56). **WJ-series exception (CL-0065):** WJ modules never use `col-md-11 col-12` — a WJ wrapper that outgrows `col-md-8` widens straight to `col-md-12 col-12`.
 - **`col-md-12 col-12` (full width):** reserved for activities that are simply **too large to fit a `col-8`** — e.g. a Drag & Drop `layout="column"` with multiple drop columns plus a drag bank. Use full width only when narrower wrappers would crowd or clip the content.
 The specific entries in the table above (D&D column → `col-md-12`, activity + alertImage → `col-md-8` with the image at `col-md-4`, carousel viewer → contextual (`col-md-12` nested / `col-md-8` standalone), etc.) are concrete instances of this same fit-based principle, not exceptions to it. When in doubt, start at `col-md-8` and step up only if the component genuinely needs the room.
 

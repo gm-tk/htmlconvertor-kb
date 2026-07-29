@@ -69,11 +69,19 @@ Do NOT report a difference in which the designer replaced a Direct-Link (Mode D)
 
 Rationale: where the source supplies no final filename, the Convertor's derived clean `images/…` path is a correct placeholder; swapping in the real asset name is expected designer production work, not a rule fault. **Reporting suppression only — Mode D derivation behaviour is unchanged.** *(Established via the WJFUN108 finalized difference report, Difference 7, scope (e), 29 July 2026.)*
 
+### Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set (ALL templates, ALL modules)
+
+Do NOT report a difference in which the designer removed, from a refined `[MTKquiz]` activity, the writer-supplied question/sentence set that the conversion correctly rendered on the page per constraint 65, leaving only the "Go to quiz" quicklink button (typically with a real D2L `rcode` wired in). Observed example that must NOT be captured:
+
+- The rendered MTKquiz question set deleted in the designer's proof, with the "Go to quiz" button retained and a live `rcode` substituted for the blank href.
+
+Rationale: the rendered question set exists so the developer can build the quiz in MTK; its deletion while preparing the proof is the anticipated production step, not a rule fault. **Reporting suppression only — conversion behaviour is unchanged:** writer-supplied quiz content is STILL rendered on the page (constraint 65 / CL-0038 / `05` → MTK Quiz Button / the `02` checklist item — all unchanged and correct). *(Established via the WJFUN108 finalized difference report, Difference 6, re-scoped (e) by designer decision, 29 July 2026.)*
+
 > **Note on Phase 2 option (e).** When the designer assigns scope **(e) — Ignore always** to a difference (Section 7), they are telling you that an *entire category* of change like this should never be reported again. That is the designer-driven way to *grow* this exclusions list. A difference scoped (e) is kept in the finalized report **with an explicit instruction for the future project-file-update conversation (Update Mode, `11_UPDATE_MODE.md`)** to add it here as a new standing exclusion (Section 9.3). Comparison Mode itself does not edit this list — it only records the instruction.
  
 ### Applying the exclusions
  
-Run the exclusion check during Phase 1, Detect Differences, before applying the inclusion gate and before building any bundle: if a detected change falls into **any** of Exclusions 1–7, drop it silently — do not mention it.
+Run the exclusion check during Phase 1, Detect Differences, before applying the inclusion gate and before building any bundle: if a detected change falls into **any** of Exclusions 1–8, drop it silently — do not mention it.
  
 ---
  

@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 11:05 AM
+> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
 > **Granular part B (2 of 2) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting).
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -108,12 +108,41 @@
     - **Phase 3:** *Mīharo, you've completed the module! Upload your learning journal to the dropbox so your kaiako can review your full learning journey and see how your ideas have developed. If you want to reflect, explain your choices, or share insights about your learning, you can write in the comment box.*
     - **Phase 4:** *You've reached the end of the module, tau kē! Upload your learning journal to the dropbox so your kaiako can see your full understanding and the thinking behind your completed task. If you'd like to reflect on your learning, discuss your process, or ask questions, feel free to write in the comment box.*
 - **"Working toward" dropbox.** A working-toward dropbox uses the **same link as the checkpoint dropbox** unless otherwise stated.
-- **Characters.** Characters appear in a `[Speech bubble]` with an `[imageCentral]` image. Character set: **Sura, Afi, Alex, Kai, Leila.** Image convention:
-  - Class `imageCentral`; path `health and PE characters/phase #/HP_Name_image#_phase_#.png`. Example (Sura, pose 1, phase 1):
+- **Characters (CL-0067).** Characters appear in a `[Speech bubble]` with an `[imageCentral]` image. Character set: **Sura, Afi, Alex, Kai, Leila.**
+  - **Folder + filename conventions.** Full-body (pose 1): `health & PE characters/phase #/HP_{Name}_1_phase_#.png`. Head-only (pose 3): `health & PE characters/phase #/head_only/HP_{Name}_3_phase_#.png`. **The folder's phase number and the filename's phase number always match.** All character images carry `class="img-fluid imageCentral"` and `alt=""`. (This corrects the previous `health and PE characters/` folder spelling — the ampersand form is canonical.)
+  - **Availability.** **Sura**, **Alex**, and **Kai** — **Kai and Alex are in use** (observed throughout the designer-refined HPRE301 files, 29 July 2026). If a required character is **not yet available**, emit a visible `Designer/Developer To Do:` note in its place. **Developers do not sign off 2nd proof until the missing characters have been created and added.** (Writers have offered to help CS generate characters via a supplied PowerPoint asset.)
+  - **Two-character lesson-intro/outro strip (canonical HPE pattern).** Bubble order follows speaker order (the `secondary-light bubble-left` bubble may come first). This full-body strip DOES follow the universal padding rule (left image `paddingR`, right image `paddingL` — CL-0055 / constraint 29):
     ```html
-    <img class="img-fluid imageCentral" alt="" src="health and PE characters/phase 1/HP_Sura_1_phase_1.png" />
+    <div class="row speechBubble" layout="speech">
+        <div class="col-md-3 col-12 paddingR">
+            <img class="img-fluid imageCentral" alt=""
+                 src="health & PE characters/phase 3/HP_Kai_1_phase_3.png" />
+        </div>
+        <div class="col-md-6 col-6 align-self-center">
+            <div class="bubble-basic primary-light no-hover bubble-right"><p>…</p></div>
+            <div class="bubble-basic secondary-light no-hover bubble-left"><p>…</p></div>
+        </div>
+        <div class="col-md-3 col-12 paddingL">
+            <img class="img-fluid imageCentral" alt=""
+                 src="health & PE characters/phase 3/HP_Alex_1_phase_3.png" />
+        </div>
+    </div>
     ```
-  - **Currently available:** **Sura** and **Alex**. If a required character is **not yet available**, emit a visible `Designer/Developer To Do:` note in its place. **Developers do not sign off 2nd proof until the missing characters have been created and added.** (Writers have offered to help CS generate characters via a supplied PowerPoint asset.)
+  - **Head-only dialogue strips** (alternating conversation, one bubble per row; image column at `col-md-2 col-12`, bubble column at `col-md-10 col-12 align-self-center`; single closing-bubble variant at `col-md-3` + `col-md-9`):
+    ```html
+    <div class="row speechBubble" layout="speech">
+        <div class="col-md-2 col-12 paddingR">
+            <img class="img-fluid imageCentral" alt=""
+                 src="health & PE characters/phase 3/head_only/HP_Alex_3_phase_3.png" />
+        </div>
+        <div class="col-md-10 col-12 align-self-center">
+            <div class="bubble-basic primary-light no-hover bubble-right"><p>…</p></div>
+        </div>
+    </div>
+    ```
+    Speaker-on-right rows reverse the column order, and the image column **STILL takes `paddingR`** — a **deliberate HPE exception** to CL-0055's universal right-positioned → `paddingL` rule, **scoped to HPE head-only dialogue strips only**.
+  - **Bubble colour classes in use:** `primary-light` and `secondary-light` — existing template classes observed in the designer's files (also recorded in `04_COMP_SEGMENTS_OVERLAYS.md` → COMP_09 → Colour Modifier Classes as observed values; nothing is invented beyond these).
+  - **Speaker comments are NOT codified.** The `<!-- Alex -->` / `<!-- Kai -->` speaker comments seen in the designer's files are production annotations — the comments policy is unchanged and the Convertor never emits them.
 - **Button label: "Upload to Dropbox"** (see §14.11).
 
 ---
@@ -184,7 +213,7 @@
 ## 14.11 Cross-cutting notes
 
 - **"Upload to Dropbox" series label (BLL / LS / HPE).** These three families label the dropbox submission button **"Upload to Dropbox"** (also seen as *Upload to dropbox*). This is a **series-scoped label** that sits **alongside** — and does **not** overturn — the universal **"Go to dropbox" / "Go to portfolio"** default (constraint 55 / `05` → Buttons). For any module outside these three families, the universal "Go to …" label still applies. (The HPE celebration page also carries a **"Go to your journal"** button next to its "Upload to dropbox" button.)
-- **Central `imageCentral` assets recur across families.** Languages (per-language `… assets/` folders — §14.1), Taonga (`tui_characters/` — §14.3), HPE (`health and PE characters/` + the celebration `.gif` — §14.8), BLLR (`bookworms/` — §14.9), and MiW (`kea_characters/` + the NZ map — §14.10) all use centralised template assets carrying `class="img-fluid imageCentral"`. These are design-team central-store assets — the `imageCentral` reservation in `01` (never on writer-specified images) is unchanged.
+- **Central `imageCentral` assets recur across families.** Languages (per-language `… assets/` folders — §14.1), Taonga (`tui_characters/` — §14.3), HPE (`health & PE characters/` + the celebration `.gif` — §14.8), BLLR (`bookworms/` — §14.9), and MiW (`kea_characters/` + the NZ map — §14.10) all use centralised template assets carrying `class="img-fluid imageCentral"`. These are design-team central-store assets — the `imageCentral` reservation in `01` (never on writer-specified images) is unchanged.
 - **BLL dropbox-wrapper carve-out.** BLL is the **one** series that does **not** append the `dropbox` modifier to the `.activity` wrapper (§14.7). This carve-out is **scoped to BLL only** — it does **not** extend to the separate **BLLR** series (§14.9). Every other series follows constraint 43 unchanged.
 - **`stickyNav` in the `<head>`.** The sticky-nav script recurs across Languages Phase 1–4 (every page), CED Phase 5 (dictionary links), and HPE (Fundamentals + Help page). Each is documented in its section above. (Split Mode base files are the exception — they carry **no** `stickyNav`; see `13_SPLIT_MODE.md`.)
 - **Deferred-item convention.** Every "TO DO / TBC / placeholder / under development" item across these families is emitted as a **visible `Designer/Developer To Do:` red-note placeholder** (red + bold), never a hidden comment and never silently dropped — the pattern is built and the pending asset/URL/setup is flagged for production. See `02_DATA_CONTENT_VERIFICATION.md` → Source-Specific Red-Note Prefixes; `00` constraint 59.
