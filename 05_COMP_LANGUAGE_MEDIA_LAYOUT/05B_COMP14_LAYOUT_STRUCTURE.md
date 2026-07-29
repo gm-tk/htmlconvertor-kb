@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part B (2 of 3) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 layout & structure (activities, alerts, buttons, tables, columns).
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -284,6 +284,7 @@ When the writer's template uses the **`[MTKquiz]`** tag (any variant/modifier co
 <a href="#" target="_blank"><div class="button">Go to quiz</div></a>
 ```
 
+- **Tag precedence — WJ series.** In WJ-series modules, when `[MTK Quiz]` co-occurs with an in-page quiz tag on the same activity (e.g. `[Multichoice quiz]`, `[Radio quiz]`), `[MTK Quiz]` wins: emit this section's "Go to quiz" button pattern, NOT the in-page quiz component. An in-page quiz tag with no co-occurring `[MTK Quiz]` still builds the in-page component as normal. (WJFUN107 finalized report, Difference 1, scope (b), 29 July 2026.)
 - The finished production form is a D2L quiz quicklink (`/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&type=quiz&rcode=…`) — the developer supplies it; the Convertor never invents an `rcode`.
 - **Writer-supplied quiz content stays visible.** Any question/sentence material the writer attached to the `[MTKquiz]` activity (e.g. the incorrect sentences a quiz will ask students to fix) is writer content: render it on the page as normal so the developer has the data to build the quiz from — never silently delete it (constraint 1; the developer removes it from the page once the quiz is created).
 - The activity wrapper's classes follow the normal rules — the `dropbox` modifier does **not** attach (the activity no longer ends in a dropbox button). A `dropbox` token observed on a designer-refined MTKquiz activity is a leftover, not a rule.
@@ -466,6 +467,23 @@ The `<h3>` heading defaults to **"Supervisor note"**; a heading the writer expli
     </div>
     <div class="col-md-8 col-xs-12 float-md-start">More content</div>
 </div>
+```
+
+**No `col-8` directly inside a `col-8` (constraint 77).** An inner `row` placed inside a `col-md-8 col-12` column must not use a `col-8`-family class (`col-md-8`, `col-8`) for its own column(s) — use `col-md-12 col-12` (or a documented inner pattern such as the `col-md-6` pair). A `col-md-8` inside a `col-md-12`, and a `col-md-12` inside a `col-md-8`, are both fine. This applies inside activities too: an `.activity` whose outer wrapper is `col-md-8 col-12` keeps its inner columns at `col-12`; an activity that genuinely needs an inner `col-8` takes a `col-md-12 col-12` outer wrapper instead.
+
+```html
+<!-- WRONG: col-md-8 nested directly inside col-md-8 -->
+<div class="row"><div class="col-md-8 col-12">
+    <div class="row"><div class="col-md-8 col-12">…</div></div>
+</div></div>
+
+<!-- CORRECT: col-12 inside col-8, or col-8 inside col-12 -->
+<div class="row"><div class="col-md-8 col-12">
+    <div class="row"><div class="col-md-12 col-12">…</div></div>
+</div></div>
+<div class="row"><div class="col-md-12 col-12">
+    <div class="row"><div class="col-md-8 col-12">…</div></div>
+</div></div>
 ```
 
 ---

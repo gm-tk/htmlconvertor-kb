@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 1st July, 2026 12:39 AM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part A (1 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -56,10 +56,9 @@ Carousels have multiple sub-types — **image carousels**, **video carousels**, 
 ```
  
 **Image carousel rules:**
-- Use `col-md-8 col-12` for the `.viewer` column — this constrains images to a reasonable width and prevents them from stretching to fill the entire screen width
+- `.viewer` width per the contextual rule (General Carousel Rules): `col-md-12 col-12` when the carousel is nested inside a `col-md-8` wrapper; `col-md-8 col-12` when standalone (`col-md-12 col-12` permitted for large content / book-page images)
 - When carousel items contain images, add the `image` class to the `.item` div: `<div class="item image">`
 - Caption optional: `<div class="carousel-caption"><p>text</p></div>`
-- **⚠️ CRITICAL:** Do NOT use `col-md-12 col-12` for basic image carousels — images will scale to full page width and take up the entire screen
 ### Video Carousel
  
 **⚠️ CRITICAL — Video carousels use different markup from image carousels.** The `.viewer` column is narrower, item titles use `<h5>`, and the description paragraph is placed ABOVE the video embed (not below it).
@@ -86,7 +85,7 @@ Carousels have multiple sub-types — **image carousels**, **video carousels**, 
 ```
  
 **Video carousel rules:**
-- Use `col-md-8 col-12` for the `.viewer` column (NOT `col-md-12`)
+- `.viewer` width per the contextual rule (General Carousel Rules)
 - Item titles use `<h5>` headings (NOT `<p><i>` or other markup)
 - Description `<p>` goes directly UNDER the `<h5>` title and ABOVE the `<div class="videoSection">` — never below the video
 - Do NOT add the `image` class to video carousel items
@@ -95,7 +94,7 @@ Carousels have multiple sub-types — **image carousels**, **video carousels**, 
  
 When a carousel needs labeled navigation buttons (e.g., year dates, category names) that appear OUTSIDE the carousel as a separate row of clickable buttons, use the `exSlideBtns` attribute to link the buttons to the carousel.
  
-**⚠️ CRITICAL:** Like all carousel types, this variant uses `col-md-8 col-12` for the `.viewer` column. The carousel items use the `video` class when containing video embeds, and the description paragraph is placed BELOW the video embed.
+**⚠️ CRITICAL:** This variant follows the contextual viewer-width rule (General Carousel Rules). The carousel items use the `video` class when containing video embeds, and the description paragraph is placed BELOW the video embed.
  
 ```html
 <div class="row">
@@ -133,14 +132,14 @@ When a carousel needs labeled navigation buttons (e.g., year dates, category nam
 - The number of buttons MUST equal the number of `.item` elements in the carousel
 - Carousel items use `<div class="item video">` when containing video embeds (note the `video` class)
 - For this variant, the description `<p>` goes BELOW the `<div class="videoSection">` (not above)
-- The `.viewer` column uses `col-md-8 col-12` (same as all carousel types)
+- `.viewer` width per the contextual rule (General Carousel Rules)
 - Items do NOT use `<h5>` headings — the external buttons serve as the navigation labels instead
 - When a carousel item has no video available, leave the `<div class="videoSection ratio ratio-16x9"></div>` empty (no iframe)
 - YouTube URLs in external nav carousels may use the standard `youtube.com/embed/` format (with `?si=` sharing parameter) rather than `youtube-nocookie.com` — preserve the URL format provided by the writer
 - YouTube timestamp parameters (`&start=` and `&end=`) can be appended directly to the iframe `src` URL
 ### General Carousel Rules
  
-- **⚠️ CRITICAL:** ALL carousel types (image, video, and external nav button) use `col-md-8 col-12` for the `.viewer` column. NEVER use `col-md-12 col-12` for ANY carousel viewer — content will display too large and take up the full screen width.
+- **⚠️ CRITICAL — Viewer width is contextual.** (1) Carousel nested inside a `col-md-8` wrapper → the `.viewer` column is `col-md-12 col-12` (the outer `col-md-8` already constrains width; a `col-md-8` viewer there would also breach constraint 77). (2) Carousel sitting outside a nested structure (its `row carousel` a direct child of the body flow) → the `.viewer` column is `col-md-8 col-12` by preference; `col-md-12 col-12` is permitted where the content is large or the items are book-page images (e.g. the BLL story-book carousel, `14` §14.7). This applies identically to image, video, and external-nav carousels.
 - Each `<div class="item">` = one slide
 - Text-only slides (no image, no video) can use either column width as appropriate
 - Determine carousel sub-type by content: if items contain `<div class="videoSection">` video embeds → video carousel; if items contain `<img>` images → image carousel; if the writer provides labeled navigation buttons (dates, categories) → external nav button carousel

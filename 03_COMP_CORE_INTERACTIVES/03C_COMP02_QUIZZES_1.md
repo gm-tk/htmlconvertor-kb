@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 14th July, 2026 5:39 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part C (3 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_02 quizzes: dropdown, MCQ, survey variant.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -205,6 +205,8 @@ The list layout presents questions as numbered items with the question text on t
 ---
 
 ## Multiple Choice Quiz (MCQ)
+
+> **WJ series:** if the activity also carries `[MTK Quiz]`, do not build this component — `[MTK Quiz]` takes precedence and the activity ends in the "Go to quiz" button (constraint 65; `05` → MTK Quiz Button).
 
 **Container class:** `multiQuiz`
 **Required wrapper:** `<div class="activity interactive">`

@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 14th July, 2026 5:39 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part E (5 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_03 self check & reflection; COMP_04 games & word components.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -150,7 +150,7 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 ## Crossword
 
 **Container class:** `crossword`
-**Requires:** `<script type="text/javascript" src="../js/crossword.js"></script>`
+**Requires:** `<script type="text/javascript" src="js/crossword.js"></script>`
 
 ```html
 <div class="crossword row" layout="standard" accents="maori" crosswordData="crossword"></div>
@@ -161,12 +161,14 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 - `crosswordData`: Data file name
 - Optional classes: `jpnFont`, `chiFont`, `sassoon-text`, `sassoonI-text`, `secondary`, `tertiary`, `echSize`, `prmSize`
 
+**Script path:** component scripts are referenced same-level (`js/…`), matching how the module's own `idoc_scripts.js` is referenced — never the parent-relative `../js/…` form. (HPRE203 finalized report, Difference 3, 29 July 2026.)
+
 ---
 
 ## Word Find
 
 **Container class:** `wordFind`
-**Requires:** `<script type="text/javascript" src="../js/wordFind.js"></script>`
+**Requires:** `<script type="text/javascript" src="js/wordFind.js"></script>`
 
 ```html
 <div id="WF" class="col-12 wordFind" layout="standard" wordFindData="wordFind"></div>

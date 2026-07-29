@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 27th July, 2026 12:34 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part D (4 of 6) of `00_MASTER_INSTRUCTIONS.md`** — Constraints quick reference (first half).
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -21,7 +21,7 @@
 14. Writer's tag determines component selection (not table headers)
 15. `noShuffle` only when writer explicitly requested
 16. Lesson pages: zero-padded lesson number (e.g., `01`, `02`) in `#module-code`; module title (not lesson-specific title) in `<h1><span>`; first "Lesson N" H2 rendered as body `<h3>` (not consumed into header)
-17. Wide interactives (D&D column) use `col-md-12 col-12` outer wrappers; a D&D column with many images uses `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) — **never** `col-md-10` (see constraint 56). ALL carousel types (image, video, and external nav button) use `col-md-8 col-12` for the viewer
+17. Wide interactives (D&D column) use `col-md-12 col-12` outer wrappers; a D&D column with many images uses `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) — **never** `col-md-10` (see constraint 56). Carousel `.viewer` width is contextual: `col-md-12 col-12` when the carousel is nested inside a `col-md-8` wrapper; `col-md-8 col-12` when standalone (`col-md-12 col-12` permitted for large content / book-page images) — all carousel types alike
 18. `[rotating banner]` maps to `rotateBanner` component, NOT carousel
 19. When using reference module files (Mode B), ALWAYS replace ALL reference module codes and titles with the new module's code and titles — never leave stale references
 20. When using reference module files (Mode B), ALWAYS consult `06_TEMPLATE_RECOGNITION.md` to classify, validate, and check for known pitfalls BEFORE deriving the skeleton
@@ -33,7 +33,7 @@
 26. D&D standard with `images` class: text in `questionContainer` (col-7), images in `dragContainer` (col-5) — NEVER images in questionContainer
 27. DropQuiz standalone Q&A pairs: use list layout (no `layout` attribute, `<ol><li>` with row columns) — NOT paragraph layout
 28. Use lowercase `<!doctype html>` and XHTML-style self-closing tags on void elements
-29. Single-character speech bubbles: use `bubble-basic` + positional class from writer template layout (`bubble-left`/`bubble-right`/`bubble-top`/`bubble-bottom`); writer CS positional instructions override default layout; multi-paragraph content needs wrapping `<div>` inside bubble; image column needs `paddingL`/`paddingR` in horizontal layouts
+29. Single-character speech bubbles: use `bubble-basic` + positional class from writer template layout (`bubble-left`/`bubble-right`/`bubble-top`/`bubble-bottom`); writer CS positional instructions override default layout; multi-paragraph content needs wrapping `<div>` inside bubble; image column needs `paddingL`/`paddingR` in horizontal layouts — a **left-positioned** image column takes `paddingR` and a **right-positioned** image column takes `paddingL` (padding on the inner side, between image and bubble); never mirror a sibling reference that applies the same padding class to both image columns
 30. ALWAYS prompt the user for image output mode (Placeholder or Direct Link) if they have not stated a preference — do NOT silently default to either mode
 31. In Direct Link Mode (Mode D), emit clean `<img>` tags with no HTML comment blocks — the actual filename in `src` is sufficient; comment blocks are only used in Placeholder Mode (Mode P)
 32. Apply the chosen image output mode uniformly to ALL images in the conversion — do NOT mix modes within a single output file

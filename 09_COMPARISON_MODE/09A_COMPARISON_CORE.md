@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part A (1 of 2) of `09_COMPARISON_MODE.md`** — Comparison Mode: trigger, inputs, workflow, differences, exclusions, inclusion gate (SS1-5).
 > All sibling parts live in `09_COMPARISON_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -217,11 +217,26 @@ Do NOT report a difference in which the designer has **added or removed a docume
 
 Rationale: these are **styling calls that vary activity-to-activity within a single module**, not rule faults — the very same module often shows the modifier applied to one instance and omitted from the next, so there is no consistent rule to derive. The component itself was built correctly; only its presentation was tuned. **Scope limit:** this covers modifiers that are **documented but trigger-less** (available for the designer to apply at discretion). A modifier that *does* carry a documented trigger condition (e.g. `autoCheck`'s template-based auto-application, constraint 38) is **not** covered — a wrong `autoCheck` is a genuine rule fault and stays reportable. *(Established via the OSSC401 finalized difference report, Difference 20, scope (e), 16 July 2026.)*
 
+### Exclusion 6 — Red Flag + visible fallback for an unmapped structure, later realised by the designer with an available library component (ALL templates, ALL modules)
+
+Do NOT report a difference in which the conversion correctly raised a `Red Flag:` + visible fallback for a writer-requested interactive/diagram structure that has NO documented tag-to-component mapping, and the designer then realised the request with an available library component. Observed examples that must NOT be captured:
+
+- A "spider / mind-map diagram" request (per-item hover reveals) built by the designer with `shapeHover`.
+- A "horizontal timeline drag-and-drop" request built by the designer with a `scatter` D&D + `imageLabel layout="labelLine"` over a purpose-made timeline image.
+
+Rationale: the conversion behaved exactly as constraint 4 and the When-In-Doubt directive require — never guess an interactive structure; raise a visible red flag with a visible fallback. The designer's later realisation with a library component is design work the flag exists to request, not a rule fault. **This suppresses *reporting* only — the conversion behaviour is unchanged:** an unmapped structure still gets a `Red Flag:` + visible fallback, never a guessed component. *(Established via the HPRE203 finalized difference report, Differences 1–2, scope (e), 29 July 2026.)*
+
+### Exclusion 7 — Direct-Link (Mode D) derived filename swapped for the actual asset filename (ALL templates, ALL modules)
+
+Do NOT report a difference in which the designer replaced a Direct-Link (Mode D) filename the Convertor derived — a kebab-case descriptive name, or `shutterstock-{ID}` — with the actual supplied asset filename (spaced / sentence-style names, or `shutterstock_{ID}`).
+
+Rationale: where the source supplies no final filename, the Convertor's derived clean `images/…` path is a correct placeholder; swapping in the real asset name is expected designer production work, not a rule fault. **Reporting suppression only — Mode D derivation behaviour is unchanged.** *(Established via the WJFUN108 finalized difference report, Difference 7, scope (e), 29 July 2026.)*
+
 > **Note on Phase 2 option (e).** When the designer assigns scope **(e) — Ignore always** to a difference (Section 7), they are telling you that an *entire category* of change like this should never be reported again. That is the designer-driven way to *grow* this exclusions list. A difference scoped (e) is kept in the finalized report **with an explicit instruction for the future project-file-update conversation (Update Mode, `11_UPDATE_MODE.md`)** to add it here as a new standing exclusion (Section 9.3). Comparison Mode itself does not edit this list — it only records the instruction.
  
 ### Applying the exclusions
  
-Run the exclusion check during Phase 1, Detect Differences, before applying the inclusion gate and before building any bundle: if a detected change falls into **any** of Exclusions 1–5, drop it silently — do not mention it.
+Run the exclusion check during Phase 1, Detect Differences, before applying the inclusion gate and before building any bundle: if a detected change falls into **any** of Exclusions 1–7, drop it silently — do not mention it.
  
 ---
  

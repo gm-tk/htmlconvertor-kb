@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part B (2 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Content rules: preservation, grids, merging, perspective, red text, headings.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -43,6 +43,8 @@ ALL content inside `<div id="body">` must be inside Bootstrap grid:
  
 **IMPORTANT:** Apply `col-md-8` ONLY to the FIRST and ONLY direct child `<div>` of the `.row` element. Do NOT apply `col-md-8` to any grandchildren or deeper descendants within the row.
  
+**A `col-md-8` never sits directly inside another `col-md-8`.** An inner `row` placed inside a `col-md-8 col-12` column must not use a `col-8`-family class (`col-md-8`, `col-8`) for its own column(s) — use `col-md-12 col-12` (or a documented inner pattern such as the `col-md-6` pair). Both directions of mixed nesting are fine: a `col-md-8` inside a `col-md-12`, and a `col-md-12` inside a `col-md-8`. This applies inside activities too: an `.activity` whose outer wrapper is `col-md-8 col-12` keeps its inner columns at `col-12`; an activity that genuinely needs an inner `col-8` takes a `col-md-12 col-12` outer wrapper instead. (Design-authority instruction, 29 July 2026.)
+ 
 ```html
 <!-- CORRECT: col-md-8 on direct child of .row only -->
 <div class="row">
@@ -75,9 +77,9 @@ ALL content inside `<div id="body">` must be inside Bootstrap grid:
 | Drag & Drop column layout (`layout="column"`) | `col-md-12 col-12` — needs wider container for multiple drop columns + drag items |
 | Drag & Drop column with many images (`images` class, 6+ items) | `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) — never `col-md-10` (see constraint 56) |
 | Interactive activity + alertImage pairing | Activity: `col-md-8 col-12` (outer container); alertImage: `col-md-4 offset-md-0 col-12` (nested inside, 8 + 4 = 12) — applies in every module type, overriding the sub-type default |
-| Carousel — image (`.viewer` column) | `col-md-8 col-12` — constrained width prevents images stretching to full page width |
-| Carousel — video (`.viewer` column) | `col-md-8 col-12` — narrower width; `<h5>` titles + description above video |
-| Carousel — external nav buttons (`.viewer` column) | `col-md-8 col-12` — same as all carousel types; external `carousel-btns` provide navigation |
+| Carousel — image (`.viewer` column) | `col-md-12 col-12` when nested inside a `col-md-8` wrapper; `col-md-8 col-12` standalone (`col-md-12` permitted for large/book-page content) — see constraint 17 |
+| Carousel — video (`.viewer` column) | `col-md-12 col-12` when nested inside a `col-md-8` wrapper; `col-md-8 col-12` standalone (`col-md-12` permitted for large/book-page content) — see constraint 17; `<h5>` titles + description above video |
+| Carousel — external nav buttons (`.viewer` column) | `col-md-12 col-12` when nested inside a `col-md-8` wrapper; `col-md-8 col-12` standalone (`col-md-12` permitted for large/book-page content) — see constraint 17; external `carousel-btns` provide navigation |
  
 ### Interactive Wrapper Width — Fit-Based Principle
  
@@ -86,7 +88,7 @@ The outer activity / interactive wrapper defaults to `col-md-8 col-12`. **Widen 
 - **`col-md-8 col-12` (default):** prose-and-image activities, MCQs, dropdown quizzes, and any interactive whose content sits comfortably in the standard content width.
 - **`col-12` (Standard) or `col-md-11 col-12` (Inquiry & Fundamentals) (widen as needed):** activity/interactive wrappers that need more horizontal room than `col-md-8` — e.g. a wordSelect with an options column beside a text column, a typing quiz with side-by-side image + sentence rows, a vocabulary clickDrop strip of several side-by-side images, or a memory-game grid — use `col-12` in Standard modules and `col-md-11 col-12` in Inquiry/Fundamentals modules. Activity wrappers **never** use `col-md-10` (see constraint 56).
 - **`col-md-12 col-12` (full width):** reserved for activities that are simply **too large to fit a `col-8`** — e.g. a Drag & Drop `layout="column"` with multiple drop columns plus a drag bank. Use full width only when narrower wrappers would crowd or clip the content.
-The specific entries in the table above (D&D column → `col-md-12`, activity + alertImage → `col-md-8` with the image at `col-md-4`, carousel viewer → `col-md-8`, etc.) are concrete instances of this same fit-based principle, not exceptions to it. When in doubt, start at `col-md-8` and step up only if the component genuinely needs the room.
+The specific entries in the table above (D&D column → `col-md-12`, activity + alertImage → `col-md-8` with the image at `col-md-4`, carousel viewer → contextual (`col-md-12` nested / `col-md-8` standalone), etc.) are concrete instances of this same fit-based principle, not exceptions to it. When in doubt, start at `col-md-8` and step up only if the component genuinely needs the room.
 
 > **Activity/interactive wrappers never use `col-md-10`.** A wide interactive that needs more than `col-md-8` uses `col-12` (Standard) or `col-md-11 col-12` (Inquiry & Fundamentals); an activity paired with an `alertImage` uses `col-md-8 col-12` with the image at `col-md-4`. `col-md-10` is no longer an activity width. Plain content **sectioning** uses `col-md-8 col-12` (standard) or `col-12` / `col-md-12 col-12` (full width); a plain, non-activity *narrowed* content block may still use `col-md-10` (it is outside this rule). This is forward-only — existing `col-md-10` activity wrappers are pre-rule and not retro-flagged. See constraint 56.
 
@@ -157,7 +159,7 @@ When text and image are WITHIN the standard `col-md-8` content area (inner row p
 </div>
 ```
  
-**Activity and interactive divs** MUST be inside `<div class="row"><div class="col-md-8 col-12">`, EXCEPT for wide interactive components (D&D column layout) which use `col-md-12 col-12`, and a D&D column with many images which uses `col-12` / `col-md-11 col-12` by module type (never `col-md-10`). Activity wrappers never use `col-md-10` — where more width than `col-md-8` is needed use `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) / `col-md-8 col-12` with an alertImage at `col-md-4` (see constraint 56). Note: ALL carousel types (image, video, and external nav button) use `col-md-8 col-12` for the `.viewer` column — see COMP_07 in `04_COMP_SEGMENTS_OVERLAYS.md`.
+**Activity and interactive divs** MUST be inside `<div class="row"><div class="col-md-8 col-12">`, EXCEPT for wide interactive components (D&D column layout) which use `col-md-12 col-12`, and a D&D column with many images which uses `col-12` / `col-md-11 col-12` by module type (never `col-md-10`). Activity wrappers never use `col-md-10` — where more width than `col-md-8` is needed use `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) / `col-md-8 col-12` with an alertImage at `col-md-4` (see constraint 56). Note: carousel `.viewer` width is contextual — `col-md-12 col-12` when nested inside a `col-md-8` wrapper, `col-md-8 col-12` standalone — see COMP_07 in `04_COMP_SEGMENTS_OVERLAYS.md` and constraint 17.
  
 ```html
 <!-- CORRECT: Activity with col-md-8 -->

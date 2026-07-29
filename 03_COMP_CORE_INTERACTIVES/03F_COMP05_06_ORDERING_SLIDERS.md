@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 14th July, 2026 5:39 PM
+> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
 > **Granular part F (6 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_05 ordering & selecting; COMP_06 sliders.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -189,6 +189,8 @@ When unscrambling a phrase with multiple words, use a SINGLE `.reorder` div. Eac
     </div>
 </div>
 ```
+
+**WJFUN Year 4 sentence marking.** For WJFUN modules at Year 4, mark exactly ONE `spanValue` span per sentence, covering the complete target phrase (e.g. the whole adverbial phrase — `<span spanValue="where">through the Manawatū Gorge</span>`), with the rest of the sentence left as plain text. Do not tag every qualifying word/phrase in the sentence as a separate selectable span. (WJFUN204 finalized report, Difference 3, scope (a), 29 July 2026.)
 
 **Colour values:** `blue`, `purple`, `green`, `orange`
 
