@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Thursday, 30th July, 2026 2:02 PM
 > **Granular part F (6 of 6) of `00_MASTER_INSTRUCTIONS.md`** — When to load which files.
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -11,6 +11,7 @@
 | The message contains `COMPARISON MODE` + uploaded finished HTML | `09_COMPARISON_MODE.md` (whole file) |
 | The message contains `UPDATE MODE` (changes follow in any format) | `11_UPDATE_MODE.md` (whole file) + `12_CHANGE_LEDGER.md` (read for conflicts/locks) |
 | The message contains `SPLIT MODE` (single-page module too long to emit at once) | `13_SPLIT_MODE.md` (whole file) + the normal conversion files (`01` sections 01–02, the relevant COMP files) — all conversion rules still apply |
+| The message contains `INTERACTIVES MODE`, **or** an uploaded `.txt` is a PageForge interactives worklist (`INTERACTIVE REFERENCE — {CODE}` header + `REFERENCE CODE:` lines) | `15_INTERACTIVES_BUILD_MODE.md` (`15A` mode + anchor contract, `15B` worklist format + build rules; `15C` worked example when useful) + `03_COMP_CORE_INTERACTIVES.md` (COMP_00 + the section for each type on the entry's `Type:` line) + `04`/`05` COMP files as the types require + `02_DATA_CONTENT_VERIFICATION.md` (section 06) for data patterns / an `unclassified` entry + `14_SUBJECT_GLOBAL_PARAMETERS.md` when the module code is a documented family |
 | Converting/advising on a module in a documented subject cohort/series (Languages Phase 1–4, Pathways, Taonga, CED Phase 5, FUNdamentals H&PE, LS, BLL, BLLR, MiW/WJ, HPE content) | `14_SUBJECT_GLOBAL_PARAMETERS.md` (the relevant subject section) + the normal conversion files + `06_TEMPLATE_RECOGNITION.md` (sub-type/sibling authority) |
 | Checking whether a proposed change conflicts with, or is locked by, a past decision | `12_CHANGE_LEDGER.md` + `11_UPDATE_MODE.md` (Sections 4, 6, 7) |
 | A designer asks for a one-off, module-specific deviation from the documented patterns | `08_MODULE_SUPPORT_DEBUGGING.md` (One-Off Module Overrides) |

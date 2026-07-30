@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Last updated:** Thursday, 30th July, 2026 2:02 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -135,6 +135,14 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 14 — Subject Global Parameters · PURPOSE · 14.1 Languages Phase 1–4 · 14.2 Pathways · 14.3 Taonga (The Arts) · 14.4 ConnectED (CED) Phase 5 · 14.5 FUNdamentals (Health & PE, Y1–10)
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (26 KB) — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting)
   - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing · 14.11 Cross-cutting notes
+
+## 15_INTERACTIVES_BUILD_MODE
+- **`15_INTERACTIVES_BUILD_MODE/15A_MODE_CORE_AND_CONTRACT.md`** (13 KB) — Mode 6 core: trigger/auto-detection, the `cv2-built` anchor contract, output files + splitting, quality gate, authority order
+  - Sections: 15 — Interactives Build Mode (Mode 6) · 1. TRIGGER & AUTO-DETECTION · 2. WHERE THIS MODE SITS IN THE PIPELINE · 3. FIRST ACTION on every uploaded worklist · 4. THE ANCHOR CONTRACT — the golden rule · 5. WHAT THE PAGE STITCHER DOES WITH IT · 6. OUTPUT FILES + THE SPLITTING SAFEGUARD · 7. QUALITY CHECK before emitting each file · 8. WHICH KNOWLEDGE TO LOAD — and the authority order · 9. MULTI-COMPONENT ENTRIES AND THE ACTIVITY-BOX CARVE-OUT · 10. TONE + INTERACTION
+- **`15_INTERACTIVES_BUILD_MODE/15B_WORKLIST_FORMAT_AND_BUILD_RULES.md`** (12 KB) — The `{CODE}_interactives.txt` anatomy and the fragment-specific build rules
+  - Sections: 15B — The worklist format, and how to build from it · 1. THE INPUT FILE — `{CODE}_interactives.txt` (file header · one entry line by line · reading the `Content:` block) · 2. THE BUILD RULES (declarative only · build the widget not the page · writer content verbatim · media placeholders · choosing the type · answer keys — the load-bearing attributes · shuffle, feedback and buttons · never emit) · 3. FAMILY CONVENTIONS STILL APPLY
+- **`15_INTERACTIVES_BUILD_MODE/15C_WORKED_EXAMPLE.md`** (6 KB) — One worklist entry end to end: input, reading, output, why it is right
+  - Sections: 15C — Worked example: one worklist entry → one finished build · The input entry · Reading it · The output · Why this is right
 
 ## Repo infrastructure
 - **`_project_instructions_.md`** — the Claude.ai project's system-prompt text (paste into Project Instructions when it changes)
