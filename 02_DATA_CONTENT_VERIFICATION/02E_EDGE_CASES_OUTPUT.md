@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Sunday, 3rd August, 2026
 > **Granular part E (5 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Edge cases, component whitelist, output specifications.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -38,8 +38,10 @@
 | DropQuiz with standalone Q&A pairs (numbered) | Use list layout (no `layout` attribute, `<ol><li>` with row/column) — NOT paragraph layout |
 | DropQuiz with inline blanks in sentences | Use paragraph layout (`layout="paragraph"`, `dropParaContainer`) |
 | Interactive activity paired with alertImage | Use `col-md-8 col-12` container with `col-md-4` alertImage nested inside (8 + 4 = 12) — see COMP_14 |
-| Lesson page title (Years 9–10/NCEA) | Use MODULE title in header bar; render lesson-specific H2 as body `<h3>` |
-| Lesson page missing Te Reo title | Ask user for Te Reo module title before proceeding (Years 9–10/NCEA) |
+| Lesson page title (any level, incl. Years 9–10/NCEA) | Use THAT LESSON'S OWN title in the header bar (constraint 79); strip any `Lesson N` prefix; drop the duplicate body heading, not the header title. One `<h1><span>` unless the writer gave the lesson its own bilingual name |
+| Lesson name written twice (boundary tag + opening `[H2]`) | One title, not a conflict — header takes it, duplicate body heading dropped; never fall back to the module title |
+| Lesson page with no lesson title anywhere | Module title in the header **plus** a visible `Designer/Developer To Do:` note that no lesson title was supplied |
+| Lesson page missing Te Reo title | Not an error — a lesson page needs Te Reo only where the writer gave that lesson a bilingual name. Ask the user only for a missing Te Reo **module** title on the overview page (Years 9–10/NCEA) |
 | Revision requests | Apply only requested changes; re-verify |
 | `[LINK: URL]` in text | Preceding `__underlined text__` is the visible link text |
 | Bare URL after media tag | Media reference (video URL, image URL) — not a text hyperlink |

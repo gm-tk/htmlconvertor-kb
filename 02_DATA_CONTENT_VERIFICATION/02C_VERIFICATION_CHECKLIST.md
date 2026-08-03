@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Last updated:** Sunday, 3rd August, 2026
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -50,7 +50,7 @@ Run ALL checks before presenting output:
 - [ ] English and Te Reo titles in separate `<h1><span>` elements
 - [ ] `<title>` element: overview pages use `MODULE_CODE English Title`; lesson pages use `MODULE_CODE lesson#` only (no lesson-specific title, no Te Reo)
 - [ ] Lesson pages: `#module-code` contains zero-padded lesson number only (e.g., `01`), NOT full module code, NOT decimal format (e.g., `1.0`)
-- [ ] Lesson pages: `<h1><span>` uses MODULE title (not lesson-specific title); first "Lesson N" H2 rendered as body `<h3>`
+- [ ] Lesson pages: `<h1><span>` uses THAT LESSON'S OWN title (never the module title) — constraint 79; any leading `Lesson N` / `Lesson N:` prefix stripped; the duplicate body heading dropped, not the header title; a lesson name the writer supplied twice (boundary tag + `[H2]`) has NOT caused a fallback to the module title; where no lesson title exists anywhere, the module title is used AND a visible `Designer/Developer To Do:` note is present
 - [ ] Years 9–10 / NCEA lesson pages: dual `<h1><span>` titles (English + Te Reo) present on EVERY lesson page
 - [ ] Module menu (overview pages, tabbed): built from the CANONICAL tab set (Overview → Knowledge → Practices → Information → Standards/Assessment), content-driven omission — never mirrored from the reference's tab selection; each `<li>` paired 1:1 with its `.tab-pane` (constraint 67)
 - [ ] Module menu (overview pages, tabbed): headings follow the canonical table — `<h4><span>` for Overview/Knowledge/Practices titles; `<h5>` no-span for the We-are-learning:/I-can: labels and ALL Information/Standards headings; success title reads "How will I know I have learned it?"
@@ -142,7 +142,7 @@ Run ALL checks before presenting output:
 - [ ] All designer-facing notes, CS instructions, and ambiguities are VISIBLE red **bold** flags — not hidden comments — each carrying its source-specific prefix (`Note from {author}:` / `Writers Note:` / `Red Flag:` / `Designer/Developer To Do:` — see Source-Specific Red-Note Prefixes)
 - [ ] **No emoji anywhere in the output** except the exempt ticks/crosses (`✅ ✓ ✔ ☑ ✗ ✘ ❌ ❎`); every page from which emoji were removed carries exactly ONE visible `Red Flag: Emoji have been removed…` note at the first removal; a run of 2+ emoji-prefixed lines became a `<ul>`/`<li>` list; wording is otherwise untouched (constraint 74)
 - [ ] Every standalone `[external link]` (own line / call to action) renders as `<div class="externalButton">`; every inline one (prose, list item, table cell) stays a plain `<a>` (constraint 75)
-- [ ] **OSSC series only:** each lesson page carries a SINGLE `<h1><span>` holding the lesson title (no dual module title at any level, no duplicate body `<h3>`) — constraint 69; and a `[Lesson Overview]` descriptive sentence, where present, sits as a `<p>` ABOVE the first `<h5>` in the module menu — constraint 70
+- [ ] **All series (was OSSC-only; generalised by constraint 79):** each lesson page carries a SINGLE `<h1><span>` holding the lesson title (no dual module title at any level, no duplicate body `<h3>`) — a second `<h1><span>` only where the writer gave that lesson its own bilingual name. **OSSC series:** a `[Lesson Overview]` descriptive sentence, where present, sits as a `<p>` ABOVE the first `<h5>` in the module menu — constraint 70
 - [ ] Any captured whitelisted reviewer comment (the `Note from {author}:` red-text lead) is rendered as a VISIBLE red bold designer message (`<p style="color: red; font-weight: bold;">Note from {Author}: …</p>`), lead + author + text verbatim, in position — never a hidden comment, never dropped
 - [ ] Every red designer note renders **red and bold** in the `<p style="color: red; font-weight: bold;">…</p>` form (the bold weight is required)
 - [ ] The only comments present are the permitted exceptions (Mode P commented-out image reference; MTK `<!-- CS: Item N -->` annotation; the `<!-- &amp;start=0 --> <!-- &amp;end=0 -->` placeholders inside the Creative-Services Vimeo scaffold; the acknowledgements `<!-- Lesson N.N -->` page-label annotation; and — in Split Mode output only — the `PAGEFORGE-SPLICE` / `PAGEFORGE-SECTION` / `/PAGEFORGE-SECTION` markers and the `PAGEFORGE-GUIDE-START` … `PAGEFORGE-GUIDE-END` manual-stitch guidance blocks)

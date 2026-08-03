@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Sunday, 3rd August, 2026
 > **Granular part A (1 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Template levels: structural reference workflow, levels, head/heading/title patterns.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -228,35 +228,55 @@ Local stickyNav:
 
 ```html
 <div id="module-code"><h1>01</h1></div>
-<h1><span>Module Title </span></h1>
+<h1><span>Lesson Title </span></h1>
 ```
 
-**⚠️ CRITICAL — Lesson Page `<h1>` Title — Module Title, Not Lesson Title:** On lesson pages, the `<h1><span>` title bar should use the **MODULE title** (English), the same title used on the overview page. Do NOT use a lesson-specific title in the header bar. If the first heading after `[Lesson content]` is an H2 that begins with "Lesson N" (e.g., "Lesson 1 The Evolution of Film"), render the lesson-specific title (minus the "Lesson N" prefix) as a body `<h3>` instead. Do NOT duplicate it as a body `<h2>`.
+**⚠️ CRITICAL — Lesson Page `<h1>` Title — the LESSON's own title (constraint 79).** On a lesson page (`-01`, `-02`, …) the `<h1><span>` title bar carries **that lesson's own title**, NOT the module title. The header of a lesson page is lesson-scoped throughout: the `#module-code` `<h1>` holds the lesson **number** and the title `<h1><span>` holds the lesson **name**. The full module code and the module title belong to the overview page (`-00`).
 
-> **⚠️ SERIES EXCEPTION — OSSC (Online Safety — Scams): the lesson title IS the `<h1>` (constraint 69).** *For OSSC-series modules at **every** year level*, a lesson page (`-01`, `-02`, …) carries a **single** `<h1><span>` holding that page's **LESSON title** — not the module title — and the lesson title is **NOT** repeated as a body `<h3>`. The `#module-code` `<h1>` (lesson number) and the overview page (`-00`, which keeps the module title, dual where its level calls for it) are unchanged. The de-duplication rule below ("drop a body heading that duplicates the `<h1>`") still holds and now bites differently for OSSC: since the lesson title *is* the header title, the body heading that repeats it is the one dropped.
->
-> ```html
-> <div id="module-code"><h1>01</h1></div>
-> <h1><span>What are online scams?</span></h1>
-> ```
->
-> Source of the lesson title: the lesson's own opening H2 (e.g. `[H2] Lesson 1: What are online scams?`), minus any `Lesson N` / `Lesson N:` prefix. Scoped to the **OSSC series only** — every other series follows the module-title rule above. See `00_MASTER_INSTRUCTIONS.md` constraint 69.
+> **This supersedes the former "lesson `<h1>` = MODULE title" rule and retires the OSSC series exception, which described the corpus norm rather than an exception.** Verified directly against the finalized corpus: **1,105** lesson pages carry the lesson's own title against **252** that repeat the module title, and that minority is almost entirely pages where the writer supplied **no** lesson title at all, plus the BLL phonics series (whose lesson title genuinely *is* the module's letter-team list) and single-file Fundamentals modules (which have no separate lesson pages). Per subject family the lesson title is effectively universal — CEDK, CEDO, CEDT, CEDW, ENGC, ENGI, ENGR, ENGS, HES, HIS, MXDI, MXEO, MXEX, MXFU, PES, PHE, XDLS and XGF all sit at **0.94–1.00**. The `#module-code` chip agrees: **1,390** lesson pages carry a lesson number against **49** carrying the module code.
 
-For example:
-- Module title: "Films in Focus"
-- PageForge content: `[H2] Lesson 1 The Evolution of Film`
-- Header output: `<h1><span>Films in Focus </span></h1>`
-- Body output: `<h3>The evolution of film</h3>`
+The lesson title is **NOT** repeated as a body heading — see the de-duplication rule in `01_PIPELINE_EXTRACTION_TAGS.md` → Headings. Since the lesson title *is* the header title, the body heading that repeats it is the one dropped.
 
-**YEARS 9–10 and NCEA lesson pages (dual title):** Include BOTH `<h1><span>` elements (English + Te Reo Māori) on every lesson page, not just the overview page. The titles used should be the MODULE-level English and Te Reo titles (same as the overview page), not lesson-specific titles. **This does NOT apply to the OSSC series** — an OSSC lesson page carries a single lesson-title `<h1><span>` at every level, including Years 9–10 (see the OSSC series exception above and constraint 69); the dual module title remains on the OSSC overview page:
+**⚠️ WRITER VARIATION IS OVERRIDDEN — fixed source order.** Writers name a lesson in several different places and formats, and none of that variation may change where the title lands. Take the **first** source below that yields a non-empty title, then normalise it:
+
+1. text the writer put **inside** the lesson boundary tag — `[LESSON 2: Puanga]`
+2. text the writer put **immediately after** the boundary tag, on the same line — `[LESSON 1] The night sky`, `[LESSON 2] Cook's First Voyage`
+3. the lesson's opening `[H2]` after `[Lesson content]` — `[H2] Lesson 1: The sky above us.` or `[H2] The night sky`
+4. a `[Lesson Overview]` / lesson-menu heading that names the lesson
+5. **fallback** — the module English title, with a visible note (see below)
+
+> **Why the boundary tag outranks the opening `[H2]`:** a name the writer attached to the lesson boundary is an explicit statement of *this lesson's* name, whereas the first heading inside the body may be a content sub-heading. ANZH203 is the worked case — `[LESSON 2] Cook's First Voyage` followed by `[H2] James Cook (1728 – 1779)`; the human-built page carries **Cook's First Voyage**. Where the writer supplies both and they agree (the common case, and SCES201's), the order makes no difference. A boundary label that normalises to **nothing** — e.g. `[LESSON 2] Lesson 2` — falls through to the next source, as does an empty one.
+
+**Normalisation** applied to whichever source wins: strip a leading `Lesson N` / `Lesson N:` / `Lesson N -` / `Lesson N.N` prefix; strip a trailing full stop; strip tag residue and `**` markers; then apply the standard title-casing rules below (sentence/title/mixed case is trusted exactly as written — see *Title casing*).
+
+**⚠️ A DUPLICATED LESSON NAME IS NOT A CONFLICT — never fall back because of one.** Where the writer supplies the lesson name **twice** — in the boundary tag *and* again as the opening `[H2]` (`[LESSON 2: Puanga]` … `[H2] Lesson 2: Puanga`) — those are the **same** title, not two competing titles: source 1 wins, the prefix is stripped, the header takes it, and the duplicate body heading is dropped. Equally, the **presence or absence of a `Lesson N` prefix on the `[H2]` changes nothing** — the prefix is stripped either way and the title still lands in the header. A prefixed `[H2]` is *not* a signal to demote the title to the body. (This is the exact failure the rule was rewritten to close: a writer whose `[H2]`s all read `Lesson N: Name` had every lesson page fall back to the module title, while a sibling module whose `[H2]`s carried no prefix converted correctly.)
+
+For example — writer variation, identical output:
+
+| Writers Template | Header output |
+|---|---|
+| `[LESSON 1]` … `[H2] Lesson 1: The sky above us.` | `<h1>01</h1>` + `<h1><span>The sky above us</span></h1>` |
+| `[LESSON 2: Puanga]` … `[H2] Lesson 2: Puanga` | `<h1>02</h1>` + `<h1><span>Puanga</span></h1>` |
+| `[LESSON 3] Galaxies` … `[H2] Galaxies` | `<h1>03</h1>` + `<h1><span>Galaxies</span></h1>` |
+| `[LESSON 1]` … `[H2] Lesson 1 The Evolution of Film` | `<h1>01</h1>` + `<h1><span>The Evolution of Film</span></h1>` |
+
+**FALLBACK — no lesson title supplied anywhere (constraint 79).** Only when all four sources are genuinely empty does the header fall back to the module English title, and the fallback is **disclosed, never silent** — emit one visible note at the top of the page body:
 
 ```html
-<div id="module-code"><h1>01</h1></div>
-<h1><span>Films in Focus </span></h1>
-<h1><span>Ngā Kiriata Arinui </span></h1>
+<p style="color: red; font-weight: bold;">Designer/Developer To Do: no lesson title was supplied for this lesson in the Writers Template — the module title is shown in the header as a fallback. Please confirm the intended lesson title with the writer and update the header.</p>
 ```
 
-**Te Reo title sourcing:** The Te Reo module title may come from the PageForge metadata, the overview page content, or the `[TITLE BAR]` section. If no Te Reo title is found in any of these sources, ask the user for it before proceeding. Do NOT omit the Te Reo title on Years 9–10/NCEA lesson pages.
+**YEARS 9–10 and NCEA lesson pages — a single title, unless the LESSON itself is bilingual.** A lesson page carries **one** `<h1><span>` holding the lesson title. The module-level Te Reo title is **not** repeated beside a lesson title — measured in the corpus, dual-title modules ship **909** lesson pages with a single lesson-title `<h1>` against **118** repeating the module pair. A **second** `<h1><span>` appears only where the writer gave *that lesson* its own bilingual name, in which case the pair is the **lesson's** English + Te Reo (70 corpus pages, e.g. ANZH104 `Ngā Whare` / `Housing`), split by the same TITLE BAR parsing rule, never the module's:
+
+```html
+<div id="module-code"><h1>02</h1></div>
+<h1><span>Ngā Whare </span></h1>
+<h1><span>Housing </span></h1>
+```
+
+The **overview page (`-00`) is unchanged** — it keeps the module title, dual where its year level requires it.
+
+**Te Reo title sourcing:** The Te Reo **module** title (for the overview page) may come from the PageForge metadata, the overview page content, or the `[TITLE BAR]` section. If no Te Reo title is found in any of these sources, ask the user for it before proceeding. Do NOT omit the Te Reo title on a Years 9–10/NCEA **overview** page. A **lesson** page needs a Te Reo title only when the writer gave that lesson a bilingual name — never ask for, or invent, a Te Reo lesson title that the writer did not supply.
 
 **TITLE BAR PARSING RULE:** English and Te Reo titles MUST be split into two separate `<h1><span>` elements. Never merge into one.
 

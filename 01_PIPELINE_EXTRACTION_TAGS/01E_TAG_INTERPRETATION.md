@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Sunday, 3rd August, 2026
 > **Granular part E (5 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation: structural, headings, body, media, styling, activities, links.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -33,7 +33,7 @@
 | `heading` level 4 | `<h4>` (no span) |
 | `heading` level 5 | `<h5>` (no span) |
 
-**⚠️ Drop a body heading that duplicates the `<h1>` header title.** On a lesson page, the module title already appears in the header `<h1><span>`. If the writer's first body heading (typically an `[H3]`) repeats that same title text — e.g. header `<h1><span>Inside animal cells</span></h1>` followed by a body `<h3>Inside animal cells</h3>` — **omit the redundant body heading entirely** and let the first body `<p>` follow directly. This is a documented *casing/format* normalisation, not a wording change: it removes a duplicate, it does not alter any writer text. Only drop the body heading when its text is **identical** (ignoring case/punctuation) to the h1 header title; a body heading that introduces a *different* sub-topic is kept as a normal `<h3>`.
+**⚠️ Drop a body heading that duplicates the `<h1>` header title.** On a lesson page the **lesson's own title** already appears in the header `<h1><span>` (constraint 79), so the heading this normally drops is the lesson's opening `[H2]` — compare ignoring any leading `Lesson N` / `Lesson N:` prefix, and note that dropping the duplicate is **never** a reason to leave the header title empty or fall back to the module title. If the writer's body heading (typically an `[H2]` or `[H3]`) repeats that same title text — e.g. header `<h1><span>Inside animal cells</span></h1>` followed by a body `<h3>Inside animal cells</h3>` — **omit the redundant body heading entirely** and let the first body `<p>` follow directly. This is a documented *casing/format* normalisation, not a wording change: it removes a duplicate, it does not alter any writer text. Only drop the body heading when its text is **identical** (ignoring case/punctuation) to the h1 header title; a body heading that introduces a *different* sub-topic is kept as a normal `<h3>`.
 
 ---
 
