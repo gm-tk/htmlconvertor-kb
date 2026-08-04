@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Thursday, 30th July, 2026 2:02 PM
+> **Last updated:** Wednesday, 5th August, 2026 8:45 AM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -119,7 +119,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 
 - **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0062.md`** (25 KB) — PART 3 change history: CL-0041 to CL-0062 (continued) — CLOSED at CL-0062 (29 July 2026, 30 KB soft limit)
   - Sections: 
-- **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_ONWARD.md`** (6 KB) — PART 3 change history: CL-0063 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
+- **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_ONWARD.md`** (17 KB) — PART 3 change history: CL-0063 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -131,7 +131,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 13 — Split Mode (Mode 5) · PURPOSE — what Split Mode is, and the problem it solves · 1. SPLIT MODE ≠ THE PAGE BOUNDARY SYSTEM (read first) · 2. PROACTIVE SINGLE-PAGE IDENTIFICATION + OFFERING SPLIT MODE · 3. TRIGGER, TRIAGE & APPLICABILITY · 4. OUTPUT #1 — THE BASE HOMEPAGE (`<CODE>-base.html`) · 5. OUTPUT #2 — ONE SECTION FILE PER SLOT (`<CODE>-lesson-<id>.html`) · 5A. EMISSION CADENCE — ONE FILE PER RESPONSE · 5B. MANUAL-STITCH GUIDANCE BLOCKS (`PAGEFORGE-GUIDE`) · 6. ID AND FILENAME CONVENTIONS · 7. KEYWORD / MARKER REFERENCE (reproduce these EXACTLY) · 8. THE ROUND-TRIP GUARANTEE (why the exactness matters) · 9. HOW PAGEFORGE'S PAGE STITCHER CONSUMES THE OUTPUT (so the split is valid) · 10. VALIDATION AND FAILURE HANDLING THE CONVERTER MUST HONOUR · …
 
 ## 14_SUBJECT_GLOBAL_PARAMETERS
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (17 KB) — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals)
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (23 KB) — Purpose + families 14.1-14.5 (Languages incl. the finalised Audiovisual Package asset/tag registry, Pathways, Taonga, CED, FUNdamentals)
   - Sections: 14 — Subject Global Parameters · PURPOSE · 14.1 Languages Phase 1–4 · 14.2 Pathways · 14.3 Taonga (The Arts) · 14.4 ConnectED (CED) Phase 5 · 14.5 FUNdamentals (Health & PE, Y1–10)
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (26 KB) — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting)
   - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing · 14.11 Cross-cutting notes
