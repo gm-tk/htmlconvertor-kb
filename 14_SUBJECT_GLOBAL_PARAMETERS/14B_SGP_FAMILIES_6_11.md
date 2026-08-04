@@ -1,5 +1,5 @@
 > **Last updated:** Wednesday, 29th July, 2026 6:41 PM
-> **Granular part B (2 of 2) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting).
+> **Granular part B (2 of 3) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting).
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
