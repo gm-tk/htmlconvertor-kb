@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 30th July, 2026 2:02 PM
+> **Last updated:** Friday, 31st July, 2026 10:30 AM
 > **Granular part C (3 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — One worklist entry taken end to end: input, reading, output, and why it is right.
 > All sibling parts live in `15_INTERACTIVES_BUILD_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -15,9 +15,9 @@ developer shipped for this exact activity in the finished module.
 INTERACTIVE 1 of 65
 -------------------------------------
 REFERENCE CODE:  XDLS908-INT-01-01-dragAndDrop
-   ↳ search this exact code in XDLS908-01.html to place the finished interactive
+   ↳ search this exact code in XDLS908_1_0.html to place the finished interactive
 
-File: XDLS908-01.html
+File: XDLS908_1_0.html
 Placeholder marker: data-cv2-index="1" (the placeholder div to replace)
 Activity: 1A
 Type: dragAndDrop
@@ -109,7 +109,7 @@ please place outside the table for this activity for learners to drag to the cor
 ## Why this is right
 
 - **The reference code is untouched** — the stitcher finds `XDLS908-INT-01-01-dragAndDrop`,
-  splices the `<div class="dragAndDrop" …>` into `XDLS908-01.html` where the marker sits (inside
+  splices the `<div class="dragAndDrop" …>` into `XDLS908_1_0.html` where the marker sits (inside
   activity 1A, which the page already renders), and deletes both anchors.
 - **It matches the documented component pattern and the shipped human build of this exact
   activity**: a plain `dragAndDrop layout="column"` wrapper, drops paired to columns by shared

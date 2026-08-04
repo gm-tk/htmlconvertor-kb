@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 30th July, 2026 2:02 PM
+> **Last updated:** Friday, 31st July, 2026 10:30 AM
 > **Granular part B (2 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — The `{CODE}_interactives.txt` worklist anatomy and the fragment-specific build rules.
 > All sibling parts live in `15_INTERACTIVES_BUILD_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -26,7 +26,7 @@ TOTAL INTERACTIVES: 65
   STILL UN-BUILT (placeholders to develop): 65
   NOTE: this file is the hand-off WORKLIST — it lists ONLY the 65 un-built
   placeholder(s); the 0 BUILT interactive(s) are already live in the HTML and are omitted.
-FILES: XDLS908-00.html, XDLS908-01.html, …
+FILES: XDLS908_0_0.html, XDLS908_1_0.html, XDLS908_2_0.html, XDLS908_3_0.html, …
 
 MODE: HAND-OFF (default) — each un-built interactive renders as its REFERENCE CODE box on the
 page, with the raw captured content present but COLLAPSED inside it (click the arrow at the right
@@ -50,9 +50,9 @@ needs no toggle. (A worklist from an older generator build may instead read
 INTERACTIVE 1 of 65
 -------------------------------------
 REFERENCE CODE:  XDLS908-INT-01-01-dragAndDrop
-   ↳ search this exact code in XDLS908-01.html to place the finished interactive
+   ↳ search this exact code in XDLS908_1_0.html to place the finished interactive
 
-File: XDLS908-01.html
+File: XDLS908_1_0.html
 Placeholder marker: data-cv2-index="1" (the placeholder div to replace)
 Activity: 1A
 Type: dragAndDrop
@@ -70,8 +70,8 @@ please place outside the table for this activity for learners to drag to the cor
 
 | Line | Meaning | Do you use it? |
 |---|---|---|
-| `REFERENCE CODE:` | The anchor. Format `{CODE}-INT-{NN}-{SS}-{type}`: `NN` = the page file number, `SS` = running number on that page, `type` = the first detected widget type. | **YES — copied verbatim into the section's `data-cv2-ref`.** |
-| `File:` | Which module page the marker sits in. | Context only. |
+| `REFERENCE CODE:` | The anchor. Format `{CODE}-INT-{NN}-{SS}-{type}`: `NN` = the page's **position** in the module's page list (overview = `00`), `SS` = running number on that page, `type` = the first detected widget type. **`NN` is a stable index, not part of the filename** — page 2 of `BLL240` is `BLL240_1_1.html` but its codes read `BLL240-INT-02-…`. Never try to derive one from the other; read the `File:` line instead. | **YES — copied verbatim into the section's `data-cv2-ref`.** |
+| `File:` | Which module page the marker sits in — named the site-library way, `{CODE}_{lesson}_{part}.html` (`XDLS908_1_0.html`; a sub-paginated or dotted lesson gives `_1_1`, `_2_1`). | Context only. |
 | `Placeholder marker:` | The generator's internal index. | Context only — the code is the anchor, not this. |
 | `Activity:` | The activity box the interactive belongs to (e.g. `1A`), or `(none — inline component)`. **The page already renders that box — never rebuild it.** | Context only. |
 | `Type:` | The widget type(s) detected from the writer's tags. Multiple types joined with ` + ` = the captured region holds several components: build them ALL, in `Content:` order, inside the one section (`15A` §9). The reference code carries only the FIRST type. | **YES — what to build.** |
