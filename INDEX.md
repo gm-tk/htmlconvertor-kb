@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
+> **Last updated:** Thursday, 6th August, 2026 1:14 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -13,12 +13,14 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
 - **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (13 KB) — File reference index
   - Sections: FILE REFERENCE INDEX
-- **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (25 KB) — Constraints quick reference (first half)
-  - Sections: CONSTRAINTS (Quick Reference)
-- **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (23 KB) — Constraints quick reference (second half)
-  - Sections: 
-- **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (4 KB) — When to load which files
+- **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (28 KB) — Constraints quick reference, part 1 of 3 — **constraints 1–57**
+  - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E` and `00G` as ONE continuous numbering
+- **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (21 KB) — Constraints quick reference, part 2 of 3 — **constraints 58–74**
+  - Sections: (continuation of the numbered list from `00D` — no headings of its own)
+- **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (5 KB) — When to load which files
   - Sections: WHEN TO LOAD WHICH FILES
+- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (10 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward; THE OPEN PART, new constraints are appended here**
+  - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
 - **`01_PIPELINE_EXTRACTION_TAGS/01A_TEMPLATE_LEVELS_CORE.md`** (22 KB) — Template levels: structural reference workflow, levels, head/heading/title patterns

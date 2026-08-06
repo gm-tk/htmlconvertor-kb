@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
-> **Granular part F (6 of 6) of `00_MASTER_INSTRUCTIONS.md`** — When to load which files.
+> **Last updated:** Thursday, 6th August, 2026 1:14 PM
+> **Granular part F (6 of 7) of `00_MASTER_INSTRUCTIONS.md`** — When to load which files.
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

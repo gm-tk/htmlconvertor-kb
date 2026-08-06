@@ -1,5 +1,5 @@
-> **Last updated:** Sunday, 3rd August, 2026
-> **Granular part B (2 of 6) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
+> **Last updated:** Thursday, 6th August, 2026 1:14 PM
+> **Granular part B (2 of 7) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

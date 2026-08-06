@@ -1,5 +1,6 @@
-> **Last updated:** Sunday, 3rd August, 2026
-> **Granular part D (4 of 6) of `00_MASTER_INSTRUCTIONS.md`** — Constraints quick reference (first half).
+> **Last updated:** Thursday, 6th August, 2026 1:14 PM
+> **Granular part D (4 of 7) of `00_MASTER_INSTRUCTIONS.md`** — Constraints quick reference (first part: constraints 1–57).
+> *The numbered constraint list runs on into `00E` (58–74) and `00G` (75 onward).*
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
