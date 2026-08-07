@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
-> **Granular part A (1 of 3) of `09_COMPARISON_MODE.md`** — Comparison Mode: trigger, inputs, workflow, what counts as a difference (SS1-4).
+> **Last updated:** Friday, 7th August, 2026 10:05 AM
+> **Granular part A (1 of 3) of `09_COMPARISON_MODE.md`** — Comparison Mode: trigger (incl. the PageForge discriminator and the prohibition on ever raising Mode 7 here), inputs, workflow, what counts as a difference (SS1-4).
 > All sibling parts live in `09_COMPARISON_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -8,6 +8,8 @@
 # 09 — Comparison Mode (Mode 3)
  
 > **When to load:** Whenever a message contains the trigger phrase **`COMPARISON MODE`** — almost always accompanied by uploaded finished HTML files — OR when the designer replies to a freshly-generated comparison report with a list of difference-number → scope-letter pairings (the Phase 2 scope-assignment step, see Section 8). This is **Mode 3 — Comparison** (see `00_MASTER_INSTRUCTIONS.md` → Operating Modes). The `COMPARISON MODE` trigger takes precedence over every other mode signal — **with one exception: if the phrase is preceded by the word `PAGEFORGE`** (`PAGEFORGE COMPARISON MODE`, `PAGEFORGE COMPARE MODE`, `PAGEFORGE COMPARE`), the request is **Mode 7 — PageForge Compare** (`16_PAGEFORGE_COMPARE_MODE.md`), a different comparison with a different target, and this file does not apply. Check for the `PAGEFORGE` prefix before entering Comparison Mode.
+ 
+> **NEVER MENTION PAGEFORGE COMPARE MODE DURING A COMPARISON MODE RUN.** The `PAGEFORGE` check above exists so Mode 7 is not entered **by accident** — it is not a licence to raise it. Only some developers are testing PageForge; for everyone else it is a tool they are not running, and naming it in a Comparison Mode reply is noise. So: do **not** close the run by suggesting `PAGEFORGE COMPARE MODE` as a next step, do **not** ask whether the developer also ran the module through PageForge or has PageForge files, and do **not** mention the report for Gavin or the `{CODE}_interactives.txt` worklist. **Mode 7 is entered only when the developer types the trigger phrase themselves** (the sole exception being a developer who raises PageForge first — then answer plainly). See `16_PAGEFORGE_COMPARE_MODE.md` §1.3.
  
 ---
  

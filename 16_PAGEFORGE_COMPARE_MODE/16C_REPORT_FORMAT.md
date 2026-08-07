@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
-> **Granular part C (3 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The report file: structure, the finding bundle, the interactive inventory, the exclusion summary, worked examples, and how the run closes in chat.
+> **Last updated:** Friday, 7th August, 2026 10:05 AM
+> **Granular part C (3 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The report file: structure, the finding bundle, the interactive inventory, the exclusion summary (incl. the notes-and-comments counter), worked examples, and how the run closes in chat.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -47,14 +47,19 @@ WHAT IT DELIBERATELY LEAVES OUT
 - Complex interactives PageForge is not yet expected to build, and any interactive built by
   Claude and stitched in. Their internals are out of scope — but their BOUNDARIES are in
   scope and are checked in full.
+- ALL comments, developer notes and restated writer instructions, in both files and in both
+  directions — PageForge's own red notes (Writers Note: / Red Flag: / Designer/Developer To
+  Do: / Note from …), notes the developer added, reworded or deleted, and HTML comments.
+  These change constantly as the writer and developer exchange information during a build and
+  are never module content, so they are ignored entirely.
 - Real assets, media URLs and publish-time links (PageForge ships placeholders by design),
-  PageForge's own visible designer notes, and cosmetic formatting.
+  and cosmetic formatting.
 [If any interactive's state could not be established:]
 - NOTE: the {CODE}_interactives.txt worklist was not supplied, so for [N] interactive(s)
   already present as finished markup it could not be established whether PageForge or
-  Claude built them. Those are marked "state unknown" in the inventory and carry no
-  "non-complex interactive not built" finding. Every interactive still in a PageForge
-  reference box was judged normally.
+  Claude built them, and PageForge's own content boundary for them could not be read. Those
+  are marked "state unknown" in the inventory and carry no "non-complex interactive not
+  built" finding. Every interactive still in a PageForge reference box was judged normally.
 ```
 
 Never omit the two "what this is / what it leaves out" blocks. They are what let Gavin trust the
@@ -187,14 +192,15 @@ Differences seen and deliberately excluded (counts only):
   developer decisions not traceable to the writer's template   [n]
   complex interactives — build/internals out of scope          [n]
   interactives built by Claude and stitched in                 [n]
-  PageForge's own designer notes (stripped by the developer)   [n]
+  comments, developer notes & restated writer instructions     [n]
   assets, media URLs and publish-time links                    [n]
   cosmetic / formatting only                                   [n]
   developer corrections to the writer's own material           [n]
 ```
 
 One counter per exclusion in `16B` §5, in that order — seven lines, printed even when a count is
-zero.
+zero. The notes counter covers `16B` §5.4 in full: PageForge's own red notes, notes the developer
+added or deleted, and HTML comments, in both files and both directions.
 
 The exclusion counts matter: they tell Gavin the report is a filtered view and roughly how much was
 filtered, which is exactly what stops him assuming a quiet report means a perfect conversion.

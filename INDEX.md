@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Thursday, 6th August, 2026 1:14 PM
+> **Last updated:** Friday, 7th August, 2026 10:05 AM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -19,7 +19,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: (continuation of the numbered list from `00D` — no headings of its own)
 - **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (5 KB) — When to load which files
   - Sections: WHEN TO LOAD WHICH FILES
-- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (10 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward; THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (13 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward; THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -95,7 +95,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 08 — Module Support, Advisory & Debugging Mode · PURPOSE · 1. SHARED DISCIPLINE — CARRIES OVER FROM CONVERSION MODE · 2. ADVISORY QUESTIONS — answering "how does X work?" · 3. MODULE COMPLETION — finishing a half-finished module · 4. INTERACTIVE DEBUGGING — diagnosing a broken interactive · 5. ONE-OFF MODULE OVERRIDES — applying a documented-pattern deviation for a single module · 6. SCOPE BOUNDARIES — what Support Mode does NOT do · 7. MODE TRIAGE — recap · 8. OUTPUT EXPECTATION FOR SUPPORT MODE
 
 ## 09_COMPARISON_MODE
-- **`09_COMPARISON_MODE/09A_COMPARISON_CORE.md`** (14 KB) — Comparison Mode: trigger, inputs, workflow, what counts as a difference (SS1-4)
+- **`09_COMPARISON_MODE/09A_COMPARISON_CORE.md`** (16 KB) — Comparison Mode: trigger (incl. the PageForge discriminator and the prohibition on ever raising Mode 7 here), inputs, workflow, what counts as a difference (SS1-4)
   - Sections: 09 — Comparison Mode (Mode 3) · PURPOSE · 1. THE TRIGGER · 2. THE FOUR REQUIRED INPUTS · 3. WORKFLOW · 4. WHAT COUNTS AS A DIFFERENCE
 - **`09_COMPARISON_MODE/09B_COMPARISON_EXCLUSIONS_GATE.md`** (17 KB) — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5)
   - Sections: 4.1 DIFFERENCES NOT TO CAPTURE (EXCLUSIONS) · Exclusion 1 — Red flags & designer notes · Exclusion 2 — Overview module-menu heading styling · Exclusion 3 — Bespoke designer presentation / composition decisions · Exclusion 4 — Designer supplying media metadata · Exclusion 5 — Per-instance presentational modifier classes · Exclusion 6 — Red Flag + visible fallback later realised with a library component · Exclusion 7 — Direct-Link (Mode D) derived filename swapped for the actual asset filename · Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set · Applying the exclusions · 5. THE INCLUSION GATE — KEEP KNOWLEDGE-DERIVED, FILTER OUT TEMPLATE-DERIVED
@@ -121,7 +121,8 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 
 - **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0062.md`** (25 KB) — PART 3 change history: CL-0041 to CL-0062 (continued) — CLOSED at CL-0062 (29 July 2026, 30 KB soft limit)
   - Sections: 
-- **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_ONWARD.md`** (17 KB) — PART 3 change history: CL-0063 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
+- **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_0071.md`** (24 KB) — PART 3 change history: CL-0063 to CL-0071 (continued) — CLOSED at CL-0071 (7 August 2026, 30 KB soft limit)
+- **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_ONWARD.md`** (7 KB) — PART 3 change history: CL-0072 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -149,10 +150,10 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 15C — Worked example: one worklist entry → one finished build · The input entry · Reading it · The output · Why this is right
 
 ## 16_PAGEFORGE_COMPARE_MODE
-- **`16_PAGEFORGE_COMPARE_MODE/16A_MODE_CORE_AND_INPUTS.md`** (17 KB) — Mode 7 core: trigger + the `PAGEFORGE` discriminator, same-chat-only rule, the tester workflow, the three required inputs, the two PageForge upload formats, the workflow
-  - Sections: 16 — PageForge Compare Mode (Mode 7) · 1. THE TRIGGER (same chat only · precedence and the one collision to watch) · 2. WHERE THIS SITS IN THE TESTER WORKFLOW · 3. WHAT THE REPORT IS FOR (and who reads it) · 4. THE THREE REQUIRED INPUTS (plus one optional) · 5. THE TWO PAGEFORGE UPLOAD FORMATS — AND HOW TO TELL THEM APART (hand-off · stitched · mixed) · 6. WORKFLOW · 7. TONE + INTERACTION
-- **`16_PAGEFORGE_COMPARE_MODE/16B_WHAT_TO_REPORT.md`** (19 KB) — The five finding classes, the boundary check, complex vs non-complex interactives, the exclusions, the uncertainty rule
-  - Sections: 1. THE FIVE FINDING CLASSES · 2. NOTES ON EACH CLASS · 3. THE BOUNDARY CHECK (class B) — SPILL/SWALLOW, the per-box membership procedure, boundaries checked for EVERY interactive · 4. COMPLEX vs NON-COMPLEX INTERACTIVES (class C) — the non-complex list · 5. THE EXCLUSIONS · 6. WHEN THE ORIGIN IS UNCLEAR — "For Gavin to judge" · 7. WHAT THIS MODE NEVER DOES
+- **`16_PAGEFORGE_COMPARE_MODE/16A_MODE_CORE_AND_INPUTS.md`** (20 KB) — Mode 7 core: trigger + the `PAGEFORGE` discriminator + the never-advertise rule, same-chat-only rule, the tester workflow, the four required inputs (incl. the `{CODE}_interactives.txt` worklist), the two PageForge upload formats, the workflow
+  - Sections: 16 — PageForge Compare Mode (Mode 7) · 1. THE TRIGGER (same chat only · precedence and the one collision to watch · NEVER ADVERTISE THIS MODE) · 2. WHERE THIS SITS IN THE TESTER WORKFLOW · 3. WHAT THE REPORT IS FOR (and who reads it) · 4. THE FOUR REQUIRED INPUTS (the worklist — who built each widget, the boundary evidence, reconciling the inventory) · 5. THE TWO PAGEFORGE UPLOAD FORMATS — AND HOW TO TELL THEM APART (hand-off · stitched · mixed) · 6. WORKFLOW · 7. TONE + INTERACTION
+- **`16_PAGEFORGE_COMPARE_MODE/16B_WHAT_TO_REPORT.md`** (21 KB) — The five finding classes, the boundary check (incl. reading the worklist's `Activity:` / `Content:` evidence), complex vs non-complex interactives, the exclusions (incl. the total comments-and-developer-notes exclusion), the uncertainty rule
+  - Sections: 1. THE FIVE FINDING CLASSES · 2. NOTES ON EACH CLASS · 3. THE BOUNDARY CHECK (class B) — SPILL/SWALLOW, the per-box membership procedure, boundaries checked for EVERY interactive · 4. COMPLEX vs NON-COMPLEX INTERACTIVES (class C) — the non-complex list · 5. THE EXCLUSIONS (incl. comments, developer notes & restated writer instructions — ignored entirely) · 6. WHEN THE ORIGIN IS UNCLEAR — "For Gavin to judge" · 7. WHAT THIS MODE NEVER DOES
 - **`16_PAGEFORGE_COMPARE_MODE/16C_REPORT_FORMAT.md`** (14 KB) — The one-shot report for Gavin: header, finding bundle, uncertain section, interactive inventory, coverage + exclusion counts, worked examples
   - Sections: 1. REPORT HEADER · 2. SECTION 1 — FINDINGS (class B extra requirement · confidence) · 3. SECTION 2 — FOR GAVIN TO JUDGE · 4. SECTION 3 — INTERACTIVE INVENTORY · 5. SECTION 4 — SCOPE AND COVERAGE · 6. WORKED EXAMPLES · 7. HOW THE RUN CLOSES IN CHAT
 

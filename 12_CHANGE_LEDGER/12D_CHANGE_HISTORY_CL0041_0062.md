@@ -1,5 +1,5 @@
 > **Last updated:** Sunday, 3rd August, 2026
-> **Granular part D (4 of 7) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0041 to CL-0062 (continued). **CLOSED** at CL-0062 — new entries go to `12E2_CHANGE_HISTORY_CL0063_ONWARD.md`.
+> **Granular part D (4 of 8) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0041 to CL-0062 (continued). **CLOSED** at CL-0062 — new entries continued in `12E2_CHANGE_HISTORY_CL0063_0071.md`, now closed; the OPEN part is `12E3_CHANGE_HISTORY_CL0072_ONWARD.md`.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *The table header row below is repeated for readability; the rows continue the PART 3 history table.*
 

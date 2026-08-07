@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
-> **Granular part B (2 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The five finding classes, the boundary check, the complex/non-complex interactive rule, the exclusions, and the uncertainty rule.
+> **Last updated:** Friday, 7th August, 2026 10:05 AM
+> **Granular part B (2 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The five finding classes, the boundary check (including reading the worklist's `Activity:` / `Content:` evidence), the complex/non-complex interactive rule, the exclusions (incl. the total notes-and-comments exclusion), and the uncertainty rule.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -119,6 +119,20 @@ For **every** activity box and **every** interactive in the module, in page orde
    collapsed `cv2-int-raw` content counts as captured** — that raw block *is* the interactive's
    boundary, and comparing it to the human's widget contents is exactly how an un-built
    interactive's boundary is judged.
+
+   **Where the widget has been STITCHED, read P's membership from the worklist instead.** The
+   stitcher replaced PageForge's reference box with Claude's finished widget, so the page no
+   longer shows what PageForge captured — but the `{CODE}_interactives.txt` entry for that
+   position still does, and it is authoritative: its **`Activity:`** line is the activity box
+   PageForge assigned the interactive to, and its **`Content:`** block is precisely the content
+   PageForge pulled into it (`16A` §4.3). This is the main reason the worklist is a required
+   input: without it, every stitched interactive's boundary becomes unverifiable.
+
+   **Check the `Activity:` line on its own account.** Compare it with the activity the *writer*
+   placed the interactive in. `Activity: 1B` where the writer's tag sits inside Activity 1A, or
+   `(none — inline component)` where the writer plainly tagged an owning activity, is a class B
+   finding in its own right — a boundary fault visible from the worklist even when the page looks
+   perfectly ordinary.
 4. **Compare the two membership lists**, and report:
    - content in H's box but outside P's → **SPILL**;
    - content outside H's box but inside P's → **SWALLOW**;
@@ -262,17 +276,47 @@ internals, their answer keys, or their styling. **Their boundaries are still che
 
 In format 2, a stitched widget's markup came from **Claude** (Mode 6), not from PageForge.
 Comparing it to the human's widget measures the wrong thing. Ignore the internals; check the
-boundary of the region it occupies.
+boundary of the region it occupies — reading PageForge's own assignment from the worklist entry's
+`Activity:` line and `Content:` block, since the page no longer carries it (§3.2 step 3).
 
-### 5.4 PageForge's own designer-facing notes
+### 5.4 Comments, developer notes and restated writer instructions — IGNORE THEM ENTIRELY
 
-PageForge deliberately emits visible red notes — `Writers Note:`, `Red Flag:`,
-`Designer/Developer To Do:`, `Note from {author}:` — and the human developer deliberately strips
-them once actioned. **That difference is by design, in both directions, and is never a finding.**
+**This exclusion works exactly the same way it does in the ordinary `COMPARISON MODE`** (Mode 3,
+`09B` Exclusion 1), and it is total. Notes and comments are **developer scaffolding, not module
+content**: they are added, reworded, actioned and deleted continually as the writer and developer
+pass information back and forth during a build, so they are guaranteed to differ between the two
+outputs and that difference says nothing whatever about how PageForge read the writer's template.
+
+**Never report — in either output, in either direction, added or removed:**
+
+- PageForge's own visible red notes — `Writers Note:`, `Red Flag:`,
+  `Designer/Developer To Do:`, `Note from {author}:` — and their absence from the human's file
+  (the developer strips each one once actioned; that is the intended lifecycle);
+- a note the **human developer added** that has no counterpart in PageForge's output — including
+  one aimed at the course writer asking them to clarify something, one recording work still to
+  do, and one left for another developer;
+- a note the human **reworded, relabelled, restyled or re-prefixed** (`RED FLAG:` →
+  `Designer note:`, a changed colour or `font-weight`, a dropped prefix, a trailing semicolon);
+- HTML **comments** (`<!-- … -->`) present in one file and not the other, or reworded between
+  them, whatever they say;
+- a **restated writer instruction** or source link carried into the HTML as a visible note;
+- the **presence, absence, position or ordering** of any of the above.
+
+**The one thing that is NOT excluded:** a writer's `[tag]` or the writer's actual content
+**leaking onto the page as visible bracketed text** is module content gone wrong, not a note —
+that stays a class A finding (and class D if content was lost with it). The test is whether the
+text is *addressed to a developer* (excluded) or is *the writer's material rendered badly*
+(reported).
 
 A corollary worth applying: where a PageForge `Designer/Developer To Do:` note already discloses
 that something is pending (an asset to source, a URL to wire, a journal document to create), the
 thing it names is **correct-but-pending, not a fault** — do not report it.
+
+**Boundary work is unaffected.** Ignoring a note means ignoring it *as a difference*; it does not
+mean ignoring where it sits. Where a note is the thing that appears to have closed an activity
+early (`16A`'s own `[Supervisor note]` example, §6.1 of `16C`), the **boundary** is still the
+finding — described in terms of the content that landed in the wrong container, never in terms of
+the note's own wording.
 
 ### 5.5 Assets, URLs and publish-time wiring
 

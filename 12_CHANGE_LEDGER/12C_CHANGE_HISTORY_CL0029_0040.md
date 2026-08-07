@@ -1,5 +1,5 @@
 > **Last updated:** Wednesday, 29th July, 2026 6:41 PM
-> **Granular part C (3 of 7) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0029 to CL-0040 (continued).
+> **Granular part C (3 of 8) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0029 to CL-0040 (continued).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *The table header row below is repeated for readability; the rows continue the PART 3 history table.*
 

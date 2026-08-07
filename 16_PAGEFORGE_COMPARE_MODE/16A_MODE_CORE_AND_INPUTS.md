@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
-> **Granular part A (1 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — Mode purpose, trigger + precedence, where it sits in the tester workflow, the four inputs, the two PageForge upload formats and how to tell them apart, the workflow.
+> **Last updated:** Friday, 7th August, 2026 10:05 AM
+> **Granular part A (1 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — Mode purpose, trigger + precedence + the never-advertise rule, where it sits in the tester workflow, the four required inputs (including the `{CODE}_interactives.txt` worklist), the two PageForge upload formats and how to tell them apart, the workflow.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -22,7 +22,7 @@
 > **not PageForge faults and are never reported.** See `16B` §5.
 
 **This mode changes nothing about Modes 1–6.** It converts nothing, builds nothing, edits nothing.
-It reads three artefacts and writes one report.
+It reads four artefacts and writes one report.
 
 ---
 
@@ -33,10 +33,16 @@ The mode runs when **both** of the following are true in one message:
 1. The message contains the phrase **`PAGEFORGE COMPARE MODE`** (case-insensitive). The
    variants **`PAGEFORGE COMPARISON MODE`** and **`PAGEFORGE COMPARE`** mean the same thing and
    are accepted.
-2. The **PageForge-generated HTML files** for the module are uploaded with it.
+2. The **PageForge-generated HTML files** for the module are uploaded with it, **together with the
+   `{CODE}_interactives.txt` worklist — a required input** (§4.3).
 
 If the phrase appears with no PageForge files uploaded, do not start — ask the tester to upload
-the HTML files PageForge produced (the set they saved aside, clearly marked as PageForge output).
+the HTML files PageForge produced (the set they saved aside, clearly marked as PageForge output)
+and the `{CODE}_interactives.txt` that PageForge produced alongside them.
+
+**The typed phrase is the ONLY way in.** Nothing else starts this mode: not the presence of
+PageForge-looking files, not a `cv2-int-ref` box spotted in an upload, not a `{CODE}_interactives.txt`
+arriving on its own, and not the tester having just finished `COMPARISON MODE`. See §1.3.
 
 ### 1.1 Same chat only — this is a hard requirement
 
@@ -72,9 +78,37 @@ message reading `PAGEFORGE COMPARISON MODE` contains the substring `COMPARISON M
 Mode run is not actioned — say so and ask which the designer wants first.
 
 An uploaded `{CODE}_interactives.txt` worklist normally triggers **Mode 6**. Inside a PageForge
-Compare run it does **not** — here the worklist is *evidence*, not a work order (§4.3). If a
-worklist arrives with the `PAGEFORGE COMPARE MODE` phrase, read it as evidence and say so; never
-silently start building interactives.
+Compare run it does **not** — here the worklist is *evidence*, not a work order (§4.3). Because the
+worklist is now a **required** input to this mode it will arrive on every run: read it as evidence,
+say so, and never silently start building interactives.
+
+### 1.3 NEVER ADVERTISE THIS MODE — it is entered by the typed command only
+
+**Only some developers are testing PageForge.** For everyone else this mode does not exist, and
+mentioning it in the middle of their ordinary work is noise about a tool they are not running.
+
+> **NEVER mention, offer, suggest, hint at, or ask about PageForge Compare Mode unless the
+> developer has typed the trigger phrase themselves.**
+
+Concretely, in **every** other mode — and most importantly at the end of a `COMPARISON MODE`
+(Mode 3) run, where the temptation is greatest because the artefacts happen to be to hand:
+
+- do **not** close a Comparison Mode reply with "if you also ran this through PageForge, you can
+  now type `PAGEFORGE COMPARE MODE`", or any wording like it;
+- do **not** ask whether the developer has PageForge files, or whether they are on the PageForge
+  test programme;
+- do **not** name Mode 7, the report for Gavin, or the `{CODE}_interactives.txt` worklist as a
+  next step;
+- do **not** list Mode 7 when summarising what the project can do, unless the developer asked
+  about PageForge specifically.
+
+**The one permitted exception** is a developer who raises PageForge first — they type the trigger
+phrase, ask a direct question about PageForge Compare Mode, or upload files they themselves
+describe as PageForge output and ask what to do with them. Then answer plainly. Everything else is
+silence.
+
+`09A` carries the matching prohibition on the Mode 3 side; the discriminator line that already
+lives there exists so the mode is not entered **by accident**, and is not a licence to raise it.
 
 ---
 
@@ -94,8 +128,8 @@ The tester follows five steps. This mode is step 5.
 4. **`COMPARISON MODE`** (Mode 3), in that same chat, on the refined files — the existing feedback
    loop that improves **this project's** knowledge files.
 5. **`PAGEFORGE COMPARE MODE`** (this mode), in that same chat, with the **PageForge** files from
-   step 1 uploaded — the feedback loop that improves **PageForge's code**. The report goes to
-   Gavin.
+   step 1 uploaded — **the HTML pages AND the `{CODE}_interactives.txt` worklist** (§4.3) — the
+   feedback loop that improves **PageForge's code**. The report goes to Gavin.
 
 Steps 4 and 5 are independent: neither needs the other to have run, and their outputs go to
 different people for different purposes. Running step 4 first is the norm simply because the
@@ -119,14 +153,14 @@ propose code changes to PageForge in the report; describe the behaviour, not the
 
 ---
 
-## 4. THE THREE REQUIRED INPUTS (plus one optional)
+## 4. THE FOUR REQUIRED INPUTS
 
 | Input | What it is | Where it comes from |
 |---|---|---|
 | **W — the writer's template** | The Writers Template (`.docx` or PageForge `.txt`), plus the Media List if one was supplied | Already in **this chat**, from the original conversion turn |
 | **H — the human-developed HTML** | The developer's finished, go-live-quality files | Already in **this chat** — the files uploaded for `COMPARISON MODE` in step 4 |
 | **P — the PageForge-generated HTML** | The pages PageForge produced from the same inputs | **Uploaded now**, with the trigger |
-| **X — the interactives worklist** *(optional but important)* | `{CODE}_interactives.txt`, downloaded from PageForge alongside the pages | Uploaded now, if the tester has it (§4.3) |
+| **X — the interactives worklist** | `{CODE}_interactives.txt`, downloaded from PageForge alongside the pages | **Uploaded now**, with the trigger (§4.3) |
 
 **W is the referee.** Every finding must be traceable to something the writer actually wrote. A
 difference between H and P that cannot be traced back to a writer tag or writer content is either
@@ -146,22 +180,57 @@ the go-live target.
 Try `conversation_search` / `recent_chats` first. If the writer's template genuinely cannot be
 recovered, ask the tester to re-upload it. Do not proceed without it — see §1.1.
 
-### 4.3 Why the worklist (X) matters
+### 4.3 The worklist (X) — REQUIRED, and why
 
-PageForge's `{CODE}_interactives.txt` lists **only the interactives PageForge did NOT build**.
-That single fact answers the question this mode otherwise cannot: when a widget is present in the
-PageForge files as finished markup, did **PageForge** build it, or did **Claude** build it in Mode
-6 and the Page Stitcher splice it in?
+**Ask for `{CODE}_interactives.txt` every time.** The tester downloaded it from PageForge in step
+1, and by the time they run this mode the PageForge pages may have been through Mode 6 and the
+Page Stitcher — at which point the pages alone no longer say what PageForge did. The worklist is
+the record of that, and it does two jobs no other artefact can:
 
-- **Worklist supplied** → the answer is definitive for every interactive in the module.
-- **Worklist not supplied, interactive still in its reference box** → still answerable: a box on
-  the page means PageForge did not build that one.
-- **Worklist not supplied, interactive present as finished markup** → **not answerable for that
-  interactive.** Ask the tester for the `.txt` (they downloaded it in step 1). If they cannot
-  supply it, run the comparison anyway, mark those interactives `state unknown` in the inventory
-  and **make no class C finding about them** — never guess which side built a widget. The class is
-  suppressed only for the interactives whose state is genuinely unknown, never for the module as a
-  whole: any interactive still wearing a reference box is still judged normally.
+**Job 1 — who built each widget.** The `.txt` lists **only the interactives PageForge did NOT
+build**. So a finished widget that appears in a worklist entry's position was built by **Claude**
+and stitched in (not PageForge's work, §5.2); a finished widget matching **no** entry was built by
+**PageForge** and is compared normally. Without the worklist a fully stitched upload is
+indistinguishable from a perfect PageForge run.
+
+**Job 2 — the boundary evidence (this is why Chris asked for it).** Every entry states, in
+PageForge's own words, exactly which content PageForge assigned to that interactive and which
+activity it assigned it to:
+
+- **`Activity:`** — the activity box PageForge decided owns this interactive (`1A`, `2C`, or
+  `(none — inline component)`). Compare it against the activity the **writer** put the interactive
+  in: a mismatch is a boundary fault in its own right, visible from the worklist alone.
+- **`Content:`** — the raw captured writer content, verbatim (red-text sentinels, `[tags]`, the
+  ASCII table box and all). **That block IS the boundary**: everything inside it is content
+  PageForge pulled into the widget, and anything the writer put in that region which is *missing*
+  from it was left outside. Compare it to the membership of the human's widget (`16B` §3).
+- **`File:`** — which page PageForge placed it on, which is also how an entry is matched to a
+  position when the widget has since been stitched (below).
+
+This is why the worklist matters even for a **stitched** upload, where the built markup is
+Claude's and its internals are out of scope: the boundary PageForge chose is still PageForge's
+decision, and the worklist preserves it after the stitcher has removed every trace from the page.
+
+**Job 3 — reconciling the inventory.** The worklist's header states `TOTAL INTERACTIVES`,
+`BUILT AUTOMATICALLY this run`, `STILL UN-BUILT`, and the `FILES:` list. Use those numbers to
+check the interactive inventory (`16C` §4) adds up: built + un-built should equal the total, and
+the inventory should not contain more PageForge-built widgets than the header's "built
+automatically" count. Where it does not add up, say so in the report rather than quietly picking
+a reading.
+
+**If the tester cannot supply it.** Ask once, plainly, naming the file. If they confirm it is
+genuinely unavailable, run the comparison anyway with the following documented limits, and state
+them in the report header (`16C` §1) and the chat reply:
+
+- **Interactive still in its reference box** → unaffected: a box on the page means PageForge did
+  not build that one, and the box's collapsed `cv2-int-raw` content is its boundary.
+- **Interactive present as finished markup** → **who built it is unanswerable.** Mark it
+  `state unknown` in the inventory, make **no class C finding** about it, and never guess.
+- **Boundary checking is weakened, not abandoned** — for a stitched widget with no worklist entry
+  to read, the boundary can only be judged from what is visible on the page.
+
+The suppression applies **only** to the interactives whose state is genuinely unknown, never to
+the module as a whole.
 
 **Matching a worklist entry to a place on the page.** The worklist lists un-built interactives
 only, and a **stitched** widget carries no code at all — the stitcher removes both anchors — so a
@@ -214,7 +283,7 @@ and record the result in the report's interactive inventory (`16C` §4):
 | Reference box present (`cv2-int-ref`) | **Hand-off** — PageForge did not build it | Build ignored unless the type is non-complex (`16B` §4). **Boundary still checked** — the box's captured content IS the boundary. |
 | Finished widget markup, and a worklist entry matches that position (§4.3) | **Stitched** — Claude built it | Build ignored (it is not PageForge's work). **Boundary still checked.** |
 | Finished widget markup, and **no** worklist entry matches that position | **PageForge-built** | Compared normally — this IS PageForge's output. |
-| Finished widget markup, no worklist supplied (or the position is ambiguous) | **Unknown** | Boundary checked; build not judged; no class C finding; recorded in the inventory as `state unknown — worklist not supplied`. |
+| Finished widget markup, no worklist supplied (or the position is ambiguous) | **Unknown** | Boundary checked as far as the page allows; build not judged; no class C finding; recorded in the inventory as `state unknown — worklist not supplied`. **This row should be empty on a normal run** — the worklist is required (§4.3). |
 | Present in the writer's template and in H, but **nothing at all** in P — no widget and no reference box | **Absent** | Not an interactive-state question: the content itself is missing. Report as class D (content dropped), or class A if PageForge rendered it as something else entirely. |
 
 **The rule that survives every format:** whether or not an interactive is built, **the boundary is
@@ -226,20 +295,25 @@ to it. See `16B` §3.
 ## 6. WORKFLOW
 
 ```
-FUNCTION pageforge_compare(W_writers_template, H_human_html, P_pageforge_html, X_worklist?):
+FUNCTION pageforge_compare(W_writers_template, H_human_html, P_pageforge_html, X_worklist):
 
     # 0 — VERIFY
-    CONFIRM the PAGEFORGE COMPARE MODE phrase and that P is uploaded
+    CONFIRM the PAGEFORGE COMPARE MODE phrase was TYPED, and that P is uploaded
+        (never enter this mode on file evidence alone — §1.3)
     CONFIRM this is the original conversion chat; LOCATE W and H in it   (§1.1, §4)
     IF H missing → ASK for the developer's refined files; STOP until supplied
     IF W missing → SEARCH the chat history; if still missing → ASK; STOP until supplied
                    (a successful recovery just continues — nothing to stop for)
+    IF X missing → ASK for {CODE}_interactives.txt by name   (§4.3)
+                   IF the tester confirms it cannot be supplied → PROCEED with the
+                   documented limits and STATE them in the report header and the chat
     IDENTIFY module code, title, series prefix, template level
     NOTE which PageForge build produced P if the files say so
 
     # 1 — DETECT THE UPLOAD FORMAT (per interactive, not per file)   (§5)
     SCAN P for cv2-int-ref / cv2-interactive markers
-    IF X supplied → INDEX it by reference code and type
+    INDEX X by reference code, type, File:, Activity: and Content:
+    RECONCILE X's header counts (total / built / un-built) against what P shows   (§4.3)
     RECORD each interactive's state: hand-off | stitched | PageForge-built | unknown
 
     # 2 — PAIR THE PAGES
@@ -268,6 +342,8 @@ FUNCTION pageforge_compare(W_writers_template, H_human_html, P_pageforge_html, X
     # 5 — CHECK EVERY ACTIVITY AND INTERACTIVE BOUNDARY   (`16B` §3)
     FOR EACH activity box and each interactive in W:
         COMPARE the content assigned to it in H vs in P
+        READ P's assignment from the page, or — where the widget was stitched — from
+            X's Activity: line + Content: block for that position   (§4.3 job 2)
         REPORT spill (P ends it too early) and swallow (P ends it too late)
         (regardless of built state, and regardless of complexity)
 
