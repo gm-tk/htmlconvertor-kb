@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Friday, 7th August, 2026 10:05 AM
+> **Last updated:** Monday, 10th August, 2026 10:45 AM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -11,7 +11,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (16 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
-- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (13 KB) — File reference index
+- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (16 KB) — File reference index
   - Sections: FILE REFERENCE INDEX
 - **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (28 KB) — Constraints quick reference, part 1 of 3 — **constraints 1–57**
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E` and `00G` as ONE continuous numbering
@@ -122,7 +122,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0062.md`** (25 KB) — PART 3 change history: CL-0041 to CL-0062 (continued) — CLOSED at CL-0062 (29 July 2026, 30 KB soft limit)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_0071.md`** (24 KB) — PART 3 change history: CL-0063 to CL-0071 (continued) — CLOSED at CL-0071 (7 August 2026, 30 KB soft limit)
-- **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_ONWARD.md`** (7 KB) — PART 3 change history: CL-0072 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
+- **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_ONWARD.md`** (11 KB) — PART 3 change history: CL-0072 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 

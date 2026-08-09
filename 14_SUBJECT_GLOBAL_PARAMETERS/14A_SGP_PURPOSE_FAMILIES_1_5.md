@@ -1,9 +1,9 @@
-> **Last updated:** Wednesday, 5th August, 2026 8:45 AM
+> **Last updated:** Monday, 10th August, 2026 10:45 AM
 > **Granular part A (1 of 3) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
-> **Last updated:** Wednesday, 5th August, 2026 8:45 AM
+> **Last updated:** Monday, 10th August, 2026 10:45 AM
 
 # 14 — Subject Global Parameters
 
@@ -86,11 +86,18 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
   - **F. Links to: (Optional)** — connects learning across the programme.
 - **Unique overview.** Taonga modules use a **unique overview** (not the generic pattern).
 - **Overview + images are DEFERRED.** The overview is **to be set once the first module is complete**, and images are still to come — **use placeholder images until updated links come through from the first module's Comparison Mode run.** Emit a `Designer/Developer To Do:` note at the overview and at each pending image.
-- **Tui character (markup supplied — art DEFERRED).** A tui character (**Tui Toi**) features in each Taonga module and **varies from phase to phase**. The design team's ARTs global-template update (July 2026 — *"Update template to include tui chars"*) supplies the central-asset convention: folder `tui_characters/`, one image per phase — `tui_phase_1.jpg`, `tui_phase_2.jpg`, `tui_phase_3.jpg`, `tui_phase_4.jpg` — select the file whose phase number matches the module's phase. Supplied markup:
+- **Tui character (art DELIVERED — per-phase folders, multiple poses).** A tui character (**Tui Toi**) features in each Taonga module and **varies from phase to phase**. The illustrations are **now in the refresh template** (design-team upload, August 2026), so the tui is no longer a deferred item. The asset convention is a **folder per phase, several poses per folder**:
+  - **`tui_characters/phase_{N}/`** — **four phase folders**, `phase_1` … `phase_4`. `{N}` is the **module's phase**.
+  - **`tui_{P}.jpg`** — the pose. **Poses 1–6** in phases 1–3; **phase 4 has only 4 poses** (`tui_1.jpg` … `tui_4.jpg`).
+  - Full path: **`tui_characters/phase_{N}/tui_{P}.jpg`**.
+
+  Supplied markup (phase 1, pose 1 shown):
   ```html
-  <img class="img-fluid imageCentral" loading="lazy" src="tui_characters/tui_phase_1.jpg" alt="Tui character" >
+  <img class="img-fluid imageCentral" loading="lazy" src="tui_characters/phase_1/tui_1.jpg" alt="Tui character" >
   ```
-  The tui characters are **still under development** — emit the `<img>` scaffold above with a visible `Designer/Developer To Do:` note (*Tui character art still under development — confirm final asset at production*), never a silently swapped placeholder and never a hidden comment. Where the module's phase is not stated, raise a `Red Flag:` rather than guessing the `tui_phase_N` file.
+  **Phase → folder is derived; pose is a designer choice.** Take `{N}` from the module's phase. Where the module's phase is not stated, raise a `Red Flag:` rather than guessing the folder. The design team has **not** stated how a pose is selected for a given placement, and nothing in the writer's template names one — so emit **`tui_1.jpg`** (the supplied example) as the scaffold and carry a visible `Designer/Developer To Do:` note (*Tui pose is a designer choice — confirm which pose belongs at this placement*). Never invent a pose beyond the phase's ceiling: a pose above **6** (or above **4** in phase 4) does not exist — raise a `Red Flag:` rather than emitting a path to a missing file.
+
+  Reference: the design team's central-images snippet file, `Z:\Development\Online\Templates\Refresh Template - modules\refresh_template_HTML\tools snippets\refresh_imageCentral.html`, carries the full worked examples (updated in the same August 2026 delivery).
 
 ---
 
