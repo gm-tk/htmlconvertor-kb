@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 6th August, 2026 12:02 PM
-> **Granular part A (1 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — Mode purpose, trigger/auto-detection, the anchor contract, output files + splitting, quality gate, authority order.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part A (1 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — Mode purpose, trigger/auto-detection, the anchor contract, output files + splitting (all files in ONE response), quality gate, authority order.
 > All sibling parts live in `15_INTERACTIVES_BUILD_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -133,17 +133,31 @@ may fill a file at 3–4 entries), close it early after the last complete `</sec
 codes moved to the next file, and carry on there. **Never truncate an interactive across files**;
 never leave a section unclosed; **every code lands in exactly one file, exactly once**.
 
-Announce the plan first (one line per file listing its codes), then generate **ONE file per
-response**, ending with "Say **next** for file X of Y." The stitcher accepts any number of built
-files in one upload, so splitting costs the developer nothing.
+### ⚠️ EMIT EVERY FILE IN ONE RESPONSE — never one at a time
+
+**All of the planned files are produced in the SAME response.** Announce the plan first (one line
+per file listing its codes), then emit **every** file, in order, back to back, in that one reply.
+The developer must **never** have to prompt for the next file: there is no "say next", no
+"generating file 1 of 3 now", no waiting turn. A 20-interactive worklist returns its 3 files
+together, and the developer takes all 3 straight to the Page Stitcher, which accepts any number of
+built files in one upload.
+
+Splitting is a **file-size** safeguard, not a pacing device — the ≤8 cap and the early-close
+judgement rule above are unchanged; only the delivery changes. If a run is genuinely too large to
+complete in one reply, finish the file you are in at its last complete `</section>`, then say
+plainly which codes remain and continue **without being asked** — a forced continuation is the
+only case where a second response is acceptable, and it is a limit being hit, not the cadence.
 
 ```
-Build plan — 19 interactives across 3 files:
+Build plan — 19 interactives across 3 files (all 3 delivered below):
   1of3: XDLS908-INT-01-01-dragAndDrop … XDLS908-INT-02-03-carousel   (8 builds)
   2of3: XDLS908-INT-03-01-accordion  … XDLS908-INT-05-02-flipCard    (8 builds)
   3of3: XDLS908-INT-06-01-tabs       … XDLS908-INT-08-01-selfCheck   (3 builds)
-Generating file 1 of 3 now — say "next" for file 2.
 ```
+
+*(This is Mode 6 only. **Split Mode (Mode 5) is unaffected** — it keeps its deliberate
+one-file-per-response cadence under `CL-0011`; the two modes produce different deliverables under
+different contracts. See `13_SPLIT_MODE.md` → §5A.)*
 
 File skeleton (the stitcher reads only the `cv2-built` sections; the rest is for humans):
 
@@ -224,8 +238,9 @@ lists) are **not** counted as interactives — no note is needed for those.
 
 ## 10. TONE + INTERACTION
 
-Reply briefly and practically. Lead with the plan, deliver the file(s), and finish the final
-response with a one-paragraph recap: files produced, codes per file, and any
-`Designer/Developer To Do:` notes the developer must resolve. If several `.txt` worklists are
+Reply briefly and practically. Lead with the plan, deliver **all** the file(s) in that same
+response (§6), and finish with a one-paragraph recap: files produced, codes per file, and any
+`Designer/Developer To Do:` notes the developer must resolve. Never end a build response by
+inviting the developer to ask for the next file. If several `.txt` worklists are
 uploaded at once, process one module at a time (ask which first if unclear). Ask questions only
 when the worklist is unreadable or its codes are missing — otherwise build.

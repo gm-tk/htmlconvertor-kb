@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 7th August, 2026 10:05 AM
-> **Granular part E2 (5 of 8) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0063 to CL-0071 (continued). **CLOSED** at CL-0071 — new entries go to `12E3_CHANGE_HISTORY_CL0072_ONWARD.md`.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part E2 (5 of 9) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0063 to CL-0071 (continued). **CLOSED** at CL-0071 — new entries go to `12E4_CHANGE_HISTORY_CL0078_ONWARD.md` (`12E3` closed at CL-0077 on 13 August 2026).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *The table header row below is repeated for readability; the rows continue the PART 3 history table. Opened 29 July 2026 when `12D` reached the 30 KB soft limit, closed 7 August 2026 when it reached the same limit (`CLAUDE.md` §4).*
 

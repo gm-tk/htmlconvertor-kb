@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
-> **Granular part B (2 of 3) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting).
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part B (2 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ). Cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -10,7 +10,7 @@
 - **Larger font.** The module font is **bigger — the same font as the LS Whakatau.**
 - **Terminology + brackets.** Correct spelling **hoa ako (learning partner)**; **hua ako** → check → **hoa ako**; learner → **ākonga**; WE/US → **you**. **Brackets are used only on the first instance** a term is used in a module (first mention `hoa ako (learning partner)`, plain `hoa ako` thereafter).
 - **Remove tab navs.** LS modules are **lesson-based, not inquiry-based** — remove tab navs (they carry too much media). **Prompts to move on go at the bottom of each page.**
-- **clickDrop activity layout (supplied).** LS activities use the choicePage clickDrop pattern with per-choice icons; the activity content rows sit below in `col-12 col-md-8` (constraint 56 — activity wrappers off `col-md-10`). Representative supplied structure:
+- **clickDrop activity layout (supplied).** LS activities use the choicePage clickDrop pattern with per-choice icons; the `choicePage` **wrapper** sits below in `col-md-8 col-12` (constraint 56 — activity wrappers off `col-md-10`). Note this is the OUTER wrapper width: an activity's *inner* column is `col-12` (constraint 63). Representative supplied structure:
   ```html
   <div class="row">
     <div class="col-md-8 col-12 choicePage choiceHeightMatch">
@@ -97,11 +97,12 @@
   - **Phase 3 — Checkpoint:** *Upload your work so far to the dropbox so your kaiako can check in on your progress. They'll let you know what's going well and give you helpful tips for your next steps. If you have any questions or want to share how you're finding the learning, feel free to message your kaiako in the comment box.*
   - **Phase 4 — Checkpoint:** *It's time to upload the work you've done so far to the dropbox. Your kaiako will let you know what you're doing well and give you helpful tips on what to work on next. If you've got any questions or want to share how you're finding things, just pop a message to your kaiako in the comment box.*
 - **End-of-module celebration page.** An **automated celebration** graphic, a congratulation statement, and an SC checklist: `[automated celebration] [H2] Congratulations! [body] Ka pai, you have completed this module about… [dropbox] [H3] Share your learning [body] [button] Go to your journal [button] Upload to dropbox [alert]/[Image] [Speech bubble] [body] If you enjoyed this learning, you may like to explore: … Talk to your kaiako about these and other learning opportunities.`
-  - The celebration **.gif is still under development**; a draft link is set up to work in the meantime. Emit it with a visible `Designer/Developer To Do:` note (final .gif pending):
+  - The celebration **.gif has been DELIVERED** (August 2026 — see §14.12, where the same central asset is recorded for Technology). The former "still under development" deferral and its `Designer/Developer To Do:` note are **retired**; emit it as a real asset reference:
     ```html
     <img class="img-fluid imageCentral" loading="lazy" src="congradulations/Congradulations animation.gif" alt="Congradulations animation">
     ```
-  - **Layout note:** the celebration .gif is **1×1 and too large to sit in a `col-8`** — **redesign the layout around the related content** so the graphic fits (do not force it into a `col-8`).
+    > **The misspelling in the path is deliberate — never correct it.** *Congradulations* is misspelt in the delivered folder name, filename and `alt`; modules carrying it are live, the string is never learner-visible, and the design decision is to leave it (§14.12).
+  - **Layout note — HPE celebration pages only.** On an **HPE** celebration page the .gif is **1×1 and too large to sit in a `col-8`** — **redesign the layout around the related content** so the graphic fits (do not force it into a `col-8`). **This is HPE's own page composition, not a property of the asset:** §14.12 records a different suggested layout for **Technology** (`col-8` text beside `col-4` gif) using the same shared file. Follow the layout of the family you are converting; neither overrides the other.
   - End-of-module **"Share Your Learning"** phase-specific copy (supplied):
     - **Phase 1:** *You've finished the whole module, ka rawe! Now it's time to share your final work. Upload your learning journal to the dropbox so your kaiako can see all the great learning you've done. If you want to tell your kaiako something about your work, you can say it in the comment box.*
     - **Phase 2:** *You've reached the end of the module, ka pai! Upload your learning journal to the dropbox so your kaiako can see everything you've learned and created. If you'd like to explain your thinking, ask a question, or share what you're most proud of, add a message in the comment box.*
@@ -210,10 +211,4 @@
 
 ---
 
-## 14.11 Cross-cutting notes
-
-- **"Upload to Dropbox" series label (BLL / LS / HPE).** These three families label the dropbox submission button **"Upload to Dropbox"** (also seen as *Upload to dropbox*). This is a **series-scoped label** that sits **alongside** — and does **not** overturn — the universal **"Go to dropbox" / "Go to portfolio"** default (constraint 55 / `05` → Buttons). For any module outside these three families, the universal "Go to …" label still applies. (The HPE celebration page also carries a **"Go to your journal"** button next to its "Upload to dropbox" button.)
-- **Central `imageCentral` assets recur across families.** Languages (per-language `… assets/` folders — §14.1), Taonga (`tui_characters/` — §14.3), HPE (`health & PE characters/` + the celebration `.gif` — §14.8), BLLR (`bookworms/` — §14.9), and MiW (`kea_characters/` + the NZ map — §14.10) all use centralised template assets carrying `class="img-fluid imageCentral"`. These are design-team central-store assets — the `imageCentral` reservation in `01` (never on writer-specified images) is unchanged.
-- **BLL dropbox-wrapper carve-out.** BLL is the **one** series that does **not** append the `dropbox` modifier to the `.activity` wrapper (§14.7). This carve-out is **scoped to BLL only** — it does **not** extend to the separate **BLLR** series (§14.9). Every other series follows constraint 43 unchanged.
-- **`stickyNav` in the `<head>`.** The sticky-nav script recurs across Languages Phase 1–4 (every page), CED Phase 5 (dictionary links), and HPE (Fundamentals + Help page). Each is documented in its section above. (Split Mode base files are the exception — they carry **no** `stickyNav`; see `13_SPLIT_MODE.md`.)
-- **Deferred-item convention.** Every "TO DO / TBC / placeholder / under development" item across these families is emitted as a **visible `Designer/Developer To Do:` red-note placeholder** (red + bold), never a hidden comment and never silently dropped — the pattern is built and the pending asset/URL/setup is flagged for production. See `02_DATA_CONTENT_VERIFICATION.md` → Source-Specific Red-Note Prefixes; `00` constraint 59.
+> **Sections 14.11 and 14.12 continue in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** — the cross-cutting notes and the Technology family. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), this part (14.6-14.10) and `14D` (14.11-14.12).

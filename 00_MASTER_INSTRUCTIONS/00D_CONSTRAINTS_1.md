@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 6th August, 2026 1:14 PM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part D (4 of 7) of `00_MASTER_INSTRUCTIONS.md`** — Constraints quick reference (first part: constraints 1–57).
 > *The numbered constraint list runs on into `00E` (58–74) and `00G` (75 onward).*
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
@@ -30,7 +30,7 @@
 22. When using reference module files (Mode B), do NOT carry over custom CSS links or stickyNav.js from reference — these are module-specific
 23. Lesson page module menus use `<h5>` label headings normalised to standard patterns (e.g., `<h5>We are learning:</h5>` + `<h5>I can:</h5>`) — NOT writer's verbatim text, NOT `<h4>` headings, NOT intermediate `<p>` elements
 24. Module menu list items: no italic wrapping, lowercase start, verb form matching heading context
-25. Years 9–10 / NCEA lesson pages: include dual `<h1><span>` titles (English + Te Reo, module-level) on EVERY lesson page
+25. **(SUPERSEDED by constraint 79 — 3rd August 2026, ledger `CL-0069`; corrected 13 August 2026, `CL-0076`. Retained for history — do NOT follow the original wording.)** ~~Years 9–10 / NCEA lesson pages: include dual `<h1><span>` titles (English + Te Reo, module-level) on EVERY lesson page.~~ **The rule now:** a lesson page carries a **SINGLE** `<h1><span>` holding **that lesson's own title**, at every series and every year level — Years 9–10 and NCEA included. A **second** `<h1><span>` appears only where the writer gave **that specific lesson** its own bilingual (English + Te Reo) name. The **dual module-title pair belongs to the OVERVIEW page (`-00`)**, never to a lesson page. See constraint 79 and constraint 16
 26. D&D standard with `images` class: text in `questionContainer` (col-7), images in `dragContainer` (col-5) — NEVER images in questionContainer
 27. DropQuiz standalone Q&A pairs: use list layout (no `layout` attribute, `<ol><li>` with row columns) — NOT paragraph layout
 28. Use lowercase `<!doctype html>` and XHTML-style self-closing tags on void elements

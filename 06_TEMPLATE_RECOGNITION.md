@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 11:05 AM
+> **Last updated:** Thursday, 13th August, 2026
 
 # 06 — Template Recognition & Structural Validation
 
@@ -219,6 +219,19 @@ These have been observed in existing files:
 
 **Action:** Never carry missing `<body>` tags or malformed paths into new modules. If the reference has these issues, fix them silently in the output.
 
+> **⚠️ THE OPENING `<body class="…">` TAG IS MANDATORY IN THE OUTPUT — constraint 82.** The rule
+> above is about not *inheriting* the defect; this is about not *producing* it. A generated page
+> whose `</head>` runs straight into `<div id="header">` has been observed in delivered modules,
+> and it is a **hard fault**, not a cosmetic one: the browser opens an implicit `<body>` with **no
+> class**, so every rule that hangs off `container-fluid` / `fundamentals` / `inquiry` /
+> `reoTranslate` silently stops applying and the page renders wrongly while the source still looks
+> plausible. Emit the tag on **every** whole-page build, with the class **derived** from the
+> sub-type (Quick Identifier Table above; Document Shell in §6). Where the sub-type cannot be
+> resolved, emit the Standard `container-fluid` default **plus** a visible
+> `Designer/Developer To Do:` note — never a class-less `<body>`, and never none.
+> *(Fragments are out of scope by design: Interactives Build Mode sections and Split Mode section
+> files carry no shell — constraint 78 / `13_SPLIT_MODE.md`.)*
+
 ### 4.3 Non-Standard Module Menu Heading Levels
 
 The project's documented standard (see `01_PIPELINE_EXTRACTION_TAGS.md`, Section 01) specifies: **lesson pages** — plain `<h5>` labels; **overview (`-00`) tabbed menus** — the canonical heading table (constraint 67: `<h4><span>` for the Overview/Knowledge/Practices titles; `<h5>` no-span for the We-are-learning:/I-can: labels and all Information/Standards headings). The overview menu's TAB SET is also canonical and content-driven — never copied from a reference's own tab selection. However, existing reference files use various non-standard patterns:
@@ -260,7 +273,8 @@ Run this checklist when analyzing uploaded reference files, BEFORE starting the 
 - [ ] **Cross-cutting modifiers:** `learningSupport` on `<html>`? `reoTranslate` on `<body>`?
 
 ### Structural Integrity
-- [ ] **`<body>` tag present?** (MXFU401 and XTAS101 are known to be missing it)
+- [ ] **`<body>` tag present in the REFERENCE?** (MXFU401 and XTAS101 are known to be missing it — never inherit the omission)
+- [ ] **`<body class="…">` present in MY OUTPUT, with the correct derived class?** (constraint 82 — `</head>` must never be followed straight by `<div id="header">`)
 - [ ] **Script domain:** `tekura` (prod) or `tekuradev` (dev)? Flag if dev.
 - [ ] **`stickyNav.js`:** Present, commented out, or absent? If present, does the path reference the correct module?
 - [ ] **Module menu heading levels:** Standard (canonical `-00` heading table / lesson-page `<h5>` labels — see `01` Module Menu Structures) or variant? Note which. The `-00` tab set for the NEW module always follows the canonical set (constraint 67) regardless of the reference's tab selection.

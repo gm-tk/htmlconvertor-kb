@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part A (1 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -258,7 +258,7 @@ When multiple clickDrop items exist, wrap all buttons in a `.row` with column cl
  
 ```html
 <div class="activity" number="1A">
-    <div class="row"><div class="col-md-8 col-12">
+    <div class="row"><div class="col-12"><!-- activity inner column is col-12 — constraint 63 -->
         <div class="accordion" layout>
             <div class="accHead"><h4>Section</h4></div>
             <div class="accContent">

@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
-> **Granular part B (2 of 8) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0001 to CL-0028.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part B (2 of 9) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0001 to CL-0028.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part B (2 of 3) of `09_COMPARISON_MODE.md`** — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5).
 > All sibling parts live in `09_COMPARISON_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *Split from `09A_COMPARISON_CORE.md` on 29 July 2026 (soft-limit split per `CLAUDE.md` §2/§4) — content moved verbatim, nothing reworded or re-ordered.*
@@ -77,11 +77,24 @@ Do NOT report a difference in which the designer removed, from a refined `[MTKqu
 
 Rationale: the rendered question set exists so the developer can build the quiz in MTK; its deletion while preparing the proof is the anticipated production step, not a rule fault. **Reporting suppression only — conversion behaviour is unchanged:** writer-supplied quiz content is STILL rendered on the page (constraint 65 / CL-0038 / `05` → MTK Quiz Button / the `02` checklist item — all unchanged and correct). *(Established via the WJFUN108 finalized difference report, Difference 6, re-scoped (e) by designer decision, 29 July 2026.)*
 
+### Exclusion 9 — The filename a media asset is given in `images/` (ALL templates, ALL modules)
+
+Do NOT report a difference in the **filename** an image, gif or other media asset carries in the `images/` directory. This covers departures from **every** documented Mode D filename-construction pattern — iStock, Wikimedia / Creative Commons, Unsplash, writer-supplied and fallback descriptors alike — and any difference of casing, separator, extension or descriptor wording within them. Observed examples that must NOT be captured:
+
+- `images/wiki-milky-way.jpg` → `images/1076_Milky_Way.jpg` — a Wikimedia asset keeping its source filename (underscores, capitalisation) instead of the documented `wiki-{short-descriptor}` kebab-case pattern.
+- `images/wiki-halleys-comet-animation.gif` → `images/Halley's_Comet_animation.gif` — the same, including an apostrophe in the retained source name.
+
+Rationale: the developer settles final asset filenames during production, so a filename difference does not indicate a conversion fault. **Reporting suppression only — the Mode D filename-construction rules are unchanged** and are still applied when generating (`01_PIPELINE_EXTRACTION_TAGS.md` → Images → Mode D).
+
+> **⚠️ SCOPE — the filename STRING only.** This exclusion does **not** suppress: an image **mode** fault (a `placehold.co` URL left in a Mode D build, or a Mode D path in a Mode P build); a **missing or extra `<img>`**; a difference in **`alt` text**; a missing `class`/`loading` attribute; or **the iStock ID itself (constraint 61)** — the ID must still match across the filename, the acknowledgements citation and the acks-file lookup, and a wrong ID remains a reportable fault even though the filename wrapped around it is not. If the difference is about *which asset* or *how it is referenced*, report it; only *what it is called* is excluded.
+
+*(Established via the SCES302 finalized difference report, Difference 13, scope (e), 10 August 2026.)*
+
 > **Note on Phase 2 option (e).** When the designer assigns scope **(e) — Ignore always** to a difference (Section 7), they are telling you that an *entire category* of change like this should never be reported again. That is the designer-driven way to *grow* this exclusions list. A difference scoped (e) is kept in the finalized report **with an explicit instruction for the future project-file-update conversation (Update Mode, `11_UPDATE_MODE.md`)** to add it here as a new standing exclusion (Section 9.3). Comparison Mode itself does not edit this list — it only records the instruction.
  
 ### Applying the exclusions
  
-Run the exclusion check during Phase 1, Detect Differences, before applying the inclusion gate and before building any bundle: if a detected change falls into **any** of Exclusions 1–8, drop it silently — do not mention it.
+Run the exclusion check during Phase 1, Detect Differences, before applying the inclusion gate and before building any bundle: if a detected change falls into **any** of Exclusions 1–9, drop it silently — do not mention it.
  
 ---
  

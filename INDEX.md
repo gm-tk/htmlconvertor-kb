@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Monday, 10th August, 2026 10:45 AM
+> **Last updated:** Thursday, 13th August, 2026
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -7,9 +7,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 
 
 ## 00_MASTER_INSTRUCTIONS
-- **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (19 KB) — Role, philosophy, timestamps, operating modes, input files
+- **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (25 KB) — Role, philosophy, timestamps, operating modes, input files
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
-- **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (16 KB) — Conversion pipeline (Mode 1 pseudo-code)
+- **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (17 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
 - **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (16 KB) — File reference index
   - Sections: FILE REFERENCE INDEX
@@ -17,17 +17,17 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E` and `00G` as ONE continuous numbering
 - **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (21 KB) — Constraints quick reference, part 2 of 3 — **constraints 58–74**
   - Sections: (continuation of the numbered list from `00D` — no headings of its own)
-- **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (5 KB) — When to load which files
+- **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (6 KB) — When to load which files
   - Sections: WHEN TO LOAD WHICH FILES
-- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (13 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward; THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (17 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward; THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
-- **`01_PIPELINE_EXTRACTION_TAGS/01A_TEMPLATE_LEVELS_CORE.md`** (22 KB) — Template levels: structural reference workflow, levels, head/heading/title patterns
+- **`01_PIPELINE_EXTRACTION_TAGS/01A_TEMPLATE_LEVELS_CORE.md`** (25 KB) — Template levels: structural reference workflow, levels, head/heading/title patterns
   - Sections: 01 — Template Levels Reference · CRITICAL WORKFLOW — Structural Reference Approach · Level Identification · Template HTML Tag Patterns · Template Head Sections · Template Heading Patterns · Template Title Patterns
 - **`01_PIPELINE_EXTRACTION_TAGS/01B_MODULE_MENUS_FOOTER.md`** (27 KB) — Module menu structures; footer and acknowledgements
   - Sections: Module Menu Structures · Footer and Acknowledgements
-- **`01_PIPELINE_EXTRACTION_TAGS/01C_CONTENT_SOURCE_FORMATS.md`** (29 KB) — Content source formats: PageForge txt, raw WT docx, Media List, iStock acks
+- **`01_PIPELINE_EXTRACTION_TAGS/01C_CONTENT_SOURCE_FORMATS.md`** (28 KB) — Content source formats: PageForge txt, raw WT docx, Media List, iStock acks
   - Sections: 02 — Content Source Formats · Overview · PageForge Text File Format · File Structure · Format Conventions · Content Integrity · What to IGNORE in the Text File · What to CONVERT · Raw Writers Template Docx Format · Media List Companion Document · iStock Acknowledgements File
 - **`01_PIPELINE_EXTRACTION_TAGS/01D_PAGE_BOUNDARIES_TAG_TAXONOMY.md`** (19 KB) — Page boundary system; tag taxonomy & normalisation
   - Sections: 03 — Page Boundary System · Standard Page Structure · Page Boundary Validation Rules · Page-to-File Mapping · Lesson Numbering · Multi-Page vs Single-Page Modules (and when to offer Split Mode) · 04 — Tag Taxonomy & Normalisation Rules · Normalisation Algorithm · Complete Normalisation Table · Red Text Handling · Writer Intent Interpretation (Ambiguous Requests) · Document Parsing: What to IGNORE · What to CONVERT
@@ -37,13 +37,13 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 02_DATA_CONTENT_VERIFICATION
 - **`02_DATA_CONTENT_VERIFICATION/02A_DATA_PATTERNS.md`** (10 KB) — Interactive data pattern recognition (patterns 1-13, speech bubbles, tag primacy)
   - Sections: 06 — Interactive Data Pattern Recognition · Overview · Pattern 1: Single Data Table (Most Common) · Pattern 2: Front/Back Table Rows · Pattern 3: Hint/Slide Table · Pattern 4: Numbered Items (Dropdown Paragraph) · Pattern 5: Numbered Slides · Pattern 6: Numbered Shapes/Tabs · Pattern 7: Numbered Accordions · Pattern 8: Speech Bubble in Table Row · Pattern 9: Conversation Layout · Pattern 10: Word Select Table · Pattern 11: Axis Labels (Slider Chart) · Pattern 12: Info Trigger Image (Labelled Image Overlay) · …
-- **`02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md`** (17 KB) — Content rules: preservation, grids, merging, perspective, red text, headings
+- **`02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md`** (18 KB) — Content rules: preservation, grids, merging, perspective, red text, headings
   - Sections: 07 — Content Rules · Content Preservation Rules · Grid Structure Rules · Content Merging Rules · Writer Perspective Notes · Red Text Rules · Heading Formatting · Numbered Instructions in Activities · Square-Bracket Tags
-- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (18 KB) — Verification checklist
+- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (19 KB) — Verification checklist
   - Sections: 08 — Verification, Constraints & Output · Verification Checklist
 - **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (26 KB) — Comment & red flag policy; constraints
   - Sections: Comment & Red Flag Policy · Constraints
-- **`02_DATA_CONTENT_VERIFICATION/02E_EDGE_CASES_OUTPUT.md`** (6 KB) — Edge cases, component whitelist, output specifications
+- **`02_DATA_CONTENT_VERIFICATION/02E_EDGE_CASES_OUTPUT.md`** (7 KB) — Edge cases, component whitelist, output specifications
   - Sections: Edge Cases · Component Whitelist — Known Partial/No-Match (v6) · Output Specifications
 
 ## 03_COMP_CORE_INTERACTIVES
@@ -53,39 +53,41 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: COMP_01 — Drag and Drop · Available Layouts · Modifier Classes (on `dragAndDrop` div) · Standard Layout · Column Layout · FIB (Fill in Blank) Layout · Scatter Layout · Area Layout (Free-form, no correct answer) · Venn Layout
 - **`03_COMP_CORE_INTERACTIVES/03C_COMP02_QUIZZES_1.md`** (17 KB) — COMP_02 quizzes: dropdown, MCQ, survey variant
   - Sections: COMP_02 — Quizzes · Dropdown Quiz · Multiple Choice Quiz (MCQ) · Multi Choice Quiz — Survey/Self-Assessment Variant (multiChoiceQuiz)
-- **`03_COMP_CORE_INTERACTIVES/03D_COMP02_QUIZZES_2.md`** (16 KB) — COMP_02 quizzes: graded multi-select, radio, typing
+- **`03_COMP_CORE_INTERACTIVES/03D_COMP02_QUIZZES_2.md`** (15 KB) — COMP_02 quizzes: graded multi-select, radio, typing
   - Sections: Multi Choice Quiz — Graded Multi-Select Variant (multiChoiceQuiz mcqSomeSelected) · Radio Quiz · Typing Quiz
 - **`03_COMP_CORE_INTERACTIVES/03E_COMP03_04_SELFCHECK_GAMES.md`** (10 KB) — COMP_03 self check & reflection; COMP_04 games & word components
   - Sections: COMP_03 — Self Check & Reflection · Self Check · Self Reflection · Reflection Slider · COMP_04 — Games & Word Components · Memory Game · Puzzle · Crossword · Word Find · Bingo · Word Drag
-- **`03_COMP_CORE_INTERACTIVES/03F_COMP05_06_ORDERING_SLIDERS.md`** (11 KB) — COMP_05 ordering & selecting; COMP_06 sliders
+- **`03_COMP_CORE_INTERACTIVES/03F_COMP05_06_ORDERING_SLIDERS.md`** (12 KB) — COMP_05 ordering & selecting; COMP_06 sliders
   - Sections: COMP_05 — Ordering & Selecting · Reorder · Clicking Order · Word Select · Checklist / Selection Box · COMP_06 — Sliders · Slider (Scale/Survey) · Slider Chart
 
 ## 04_COMP_SEGMENTS_OVERLAYS
 - **`04_COMP_SEGMENTS_OVERLAYS/04A_COMP07_SEGMENTATION.md`** (19 KB) — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal)
   - Sections: COMP_07 — Content Segmentation · Accordion · Carousel · Rotating Banner · Click Drop · Flip Card · Tabs · Hint · Hint Slider · Modal
-- **`04_COMP_SEGMENTS_OVERLAYS/04B_COMP08_TRIGGERS_OVERLAYS.md`** (14 KB) — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter)
+- **`04_COMP_SEGMENTS_OVERLAYS/04B_COMP08_TRIGGERS_OVERLAYS.md`** (15 KB) — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter)
   - Sections: COMP_08 — Triggers & Overlays · Info Trigger / Hover Trigger · Info Trigger Image · Audio Trigger · Audio Image · Image Label · Image Zoom · Word Highlighter
-- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (18 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
+- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (19 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
   - Sections: COMP_09 — Speech Bubbles · Basic Conversation Layout · No-Hover Rule · imageCentral Rule · Bubble Direction Classes · Colour Modifier Classes · Other Modifier Classes · With Audio · Height Equalisation · Single Character Speech Bubble · Writer Tag Variants · COMP_10 — Diagrams & Timelines · Shape Hover · Timeline · …
 
 ## 05_COMP_LANGUAGE_MEDIA_LAYOUT
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (10 KB) — COMP_12 language & specialist; COMP_13 media & embeds
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (9 KB) — COMP_12 language & specialist; COMP_13 media & embeds
   - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF · Embed Padlet · Embed Desmos Graph
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (26 KB) — COMP_14 layout & structure (activities, alerts, buttons, tables, columns)
-  - Sections: COMP_14 — Layout & Structure · Activities · Alerts · Buttons · Supervisor Button (constraint 68) · Tables · Columns & Floating Columns · Quote Text · Whakatauki · Rhetorical Question
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (19 KB) — COMP_14 acknowledgements
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (11 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
+  - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (18 KB) — COMP_14 acknowledgements
   - Sections: Acknowledgements
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** (19 KB) — COMP_14 Layout & Structure, second half: Buttons (incl. the "Go to website" default label for an unlabelled standalone external link, and the MTK Quiz button), Supervisor Button, Tables, Columns
+  - Sections: Buttons (MTK Quiz Button) · Supervisor Button (Shape A/B/C · the reveal panel · edge cases) · Tables · Columns & Floating Columns (Standard Grid · Floating clearfix) · Quote Text · Whakatauki · Rhetorical Question
 
 ## 06_TEMPLATE_RECOGNITION
-- **`06_TEMPLATE_RECOGNITION.md`** (21 KB) — single-file topic (small enough to stay whole)
+- **`06_TEMPLATE_RECOGNITION.md`** (22 KB) — single-file topic (small enough to stay whole)
   - Sections: 06 — Template Recognition & Structural Validation · PURPOSE · 1. TEMPLATE SYSTEM DETECTION — Legacy vs Refresh · 2. REFRESH SUB-TYPE IDENTIFICATION · 3. STRUCTURAL NORMS BY SUB-TYPE · 4. KNOWN PITFALLS IN REFERENCE FILES · 5. VALIDATION CHECKLIST — Mode B Reference Files · 6. ELEMENT REFERENCE — Refresh Baseline
 
 ## 07_MTK_DOCX_CONVERSION
-- **`07_MTK_DOCX_CONVERSION/07A_MTK_IDENTIFY_AND_EXTRACT.md`** (15 KB) — MTK: identify, structure, extraction, menu tabs, page boundaries, bilingual rules (SS1-6)
+- **`07_MTK_DOCX_CONVERSION/07A_MTK_IDENTIFY_AND_EXTRACT.md`** (14 KB) — MTK: identify, structure, extraction, menu tabs, page boundaries, bilingual rules (SS1-6)
   - Sections: 07 — MTK Writers Template Direct Conversion (Docx-to-HTML) · PURPOSE · 1. IDENTIFYING AN MTK WRITERS TEMPLATE · 2. DOCUMENT STRUCTURE — What to Ignore vs. Extract · 3. EXTRACTING TEXT FROM THE DOCX · 4. OVERVIEW PAGE STRUCTURE — Module Menu Tabs · 5. PAGE BOUNDARY DETECTION · 6. BILINGUAL CONTENT EXTRACTION RULES
-- **`07_MTK_DOCX_CONVERSION/07B_MTK_CONTENT_PATTERNS.md`** (15 KB) — MTK: body content, alerts, interactive mapping, media, bilingual buttons (SS7-11)
+- **`07_MTK_DOCX_CONVERSION/07B_MTK_CONTENT_PATTERNS.md`** (14 KB) — MTK: body content, alerts, interactive mapping, media, bilingual buttons (SS7-11)
   - Sections: 7. BODY CONTENT PATTERNS · 8. ALERT AND SIDEBAR PATTERNS · 9. INTERACTIVE COMPONENT MAPPING · 10. MEDIA ASSET HANDLING · 11. BILINGUAL BUTTON PATTERNS
-- **`07_MTK_DOCX_CONVERSION/07C_MTK_PAGE_FURNITURE.md`** (11 KB) — MTK: header, footer, acks, word/image, Kiwi Kaiarahi, checklist, pitfalls (SS12-18)
+- **`07_MTK_DOCX_CONVERSION/07C_MTK_PAGE_FURNITURE.md`** (10 KB) — MTK: header, footer, acks, word/image, Kiwi Kaiarahi, checklist, pitfalls (SS12-18)
   - Sections: 12. HEADER CONSTRUCTION · 13. FOOTER CONSTRUCTION · 14. ACKNOWLEDGEMENTS STRUCTURE · 15. WORD/IMAGE DISPLAY PATTERN · 16. KIWI KAIĀRAHI (LEARNING GUIDE) PATTERN · 17. CONVERSION CHECKLIST (MTK Docx-to-HTML) · 18. COMMON PITFALLS
 - **`07_MTK_DOCX_CONVERSION/07D_MTK_HTML_SKELETONS.md`** (15 KB) — MTK: embedded HTML skeletons (SS19)
   - Sections: 19. EMBEDDED HTML SKELETONS
@@ -97,9 +99,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 09_COMPARISON_MODE
 - **`09_COMPARISON_MODE/09A_COMPARISON_CORE.md`** (16 KB) — Comparison Mode: trigger (incl. the PageForge discriminator and the prohibition on ever raising Mode 7 here), inputs, workflow, what counts as a difference (SS1-4)
   - Sections: 09 — Comparison Mode (Mode 3) · PURPOSE · 1. THE TRIGGER · 2. THE FOUR REQUIRED INPUTS · 3. WORKFLOW · 4. WHAT COUNTS AS A DIFFERENCE
-- **`09_COMPARISON_MODE/09B_COMPARISON_EXCLUSIONS_GATE.md`** (17 KB) — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5)
-  - Sections: 4.1 DIFFERENCES NOT TO CAPTURE (EXCLUSIONS) · Exclusion 1 — Red flags & designer notes · Exclusion 2 — Overview module-menu heading styling · Exclusion 3 — Bespoke designer presentation / composition decisions · Exclusion 4 — Designer supplying media metadata · Exclusion 5 — Per-instance presentational modifier classes · Exclusion 6 — Red Flag + visible fallback later realised with a library component · Exclusion 7 — Direct-Link (Mode D) derived filename swapped for the actual asset filename · Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set · Applying the exclusions · 5. THE INCLUSION GATE — KEEP KNOWLEDGE-DERIVED, FILTER OUT TEMPLATE-DERIVED
-- **`09_COMPARISON_MODE/09C_COMPARISON_REPORTS.md`** (25 KB) — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15)
+- **`09_COMPARISON_MODE/09B_COMPARISON_EXCLUSIONS_GATE.md`** (20 KB) — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5)
+  - Sections: 4.1 DIFFERENCES NOT TO CAPTURE (EXCLUSIONS) · Exclusion 1 — Red flags & designer notes · Exclusion 2 — Overview module-menu heading styling · Exclusion 3 — Bespoke designer presentation / composition decisions · Exclusion 4 — Designer supplying media metadata · Exclusion 5 — Per-instance presentational modifier classes · Exclusion 6 — Red Flag + visible fallback later realised with a library component · Exclusion 7 — Direct-Link (Mode D) derived filename swapped for the actual asset filename · Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set · Exclusion 9 — The filename a media asset is given in `images/` · Applying the exclusions · 5. THE INCLUSION GATE — KEEP KNOWLEDGE-DERIVED, FILTER OUT TEMPLATE-DERIVED
+- **`09_COMPARISON_MODE/09C_COMPARISON_REPORTS.md`** (24 KB) — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15)
   - Sections: 6. THE PHASE 1 REPORT — STRUCTURE (streamlined) · 7. THE FIVE SCOPE OPTIONS (the legend — shown once at the top of the report) · 8. PHASE 2 — PARSING THE DESIGNER'S SCOPE ASSIGNMENTS · 9. PHASE 2 OUTPUT — THE FINALIZED DETAILED REPORT · 10. WHAT HAPPENS AFTER — ACTIONING IS A SEPARATE CONVERSATION (UPDATE MODE) · 11. THE DOWNLOADABLE REPORT · 12. SHARED DISCIPLINE · 13. WHAT COMPARISON MODE DOES NOT DO · 14. RELATIONSHIP TO ONE-OFF OVERRIDES · 15. OUTPUT EXPECTATION
 
 ## 10_CORPUS_VALIDATED_SCAFFOLDING
@@ -107,10 +109,12 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 10 — Corpus-Validated Scaffolding Reference · 1. Header title casing · 2. Menu archetype — safe fallbacks (only when no reference/series precedent) · 3. Lesson-menu *style* deviations (series conventions — preserve, don't "correct") · 4. Series that ship NO lesson menu by design · 5. Source-limitation note (important honesty check)
 
 ## 11_UPDATE_MODE
-- **`11_UPDATE_MODE/11A_UPDATE_MODE_CORE.md`** (28 KB) — Update Mode: trigger, input, scope, ledger use, classification, conflicts, sweep (SS1-9)
-  - Sections: 11 — Update Mode (Mode 4) · PURPOSE · 1. THE TRIGGER · 2. ACCEPTED INPUT — ANY FORMAT · 3. SCOPE / GRANULARITY VOCABULARY · 4. THE CHANGE LEDGER (`12_CHANGE_LEDGER.md`) — CONFLICT & LOCK REGISTRY · 5. MAJOR vs ROUTINE CLASSIFICATION · 6. CONFLICT CHECK (runs before any file is edited) · 7. CONFLICT ESCALATION & LOCKING · 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
-- **`11_UPDATE_MODE/11B_UPDATE_MODE_WORKFLOW.md`** (12 KB) — Update Mode: the Repo Update Brief (SS10 — Claude Code actions edits on this repo; no file regeneration), exclusions, workflow pseudo-code, timestamps (SS10-16)
+- **`11_UPDATE_MODE/11A_UPDATE_MODE_CORE.md`** (24 KB) — Update Mode: purpose, trigger, input, scope, ledger use, classification, conflict check and escalation (SS1-7)
+  - Sections: 11 — Update Mode (Mode 4) · PURPOSE · 1. THE TRIGGER · 2. ACCEPTED INPUT — ANY FORMAT · 3. SCOPE / GRANULARITY VOCABULARY · 4. THE CHANGE LEDGER (`12_CHANGE_LEDGER.md`) — CONFLICT & LOCK REGISTRY · 5. MAJOR vs ROUTINE CLASSIFICATION · 6. CONFLICT CHECK (runs before any file is edited) · 7. CONFLICT ESCALATION & LOCKING
+- **`11_UPDATE_MODE/11B_UPDATE_MODE_WORKFLOW.md`** (16 KB) — Update Mode: the Repo Update Brief (SS10 — Claude Code actions edits on this repo; no file regeneration), exclusions, workflow pseudo-code, timestamps (SS10-16)
   - Sections: 10. THE REPO UPDATE BRIEF — PRECISE EDITS FOR CLAUDE CODE, NOT FILE REGENERATION · 11. (e) IGNORE ALWAYS — GROWING THE EXCLUSIONS LIST · 12. WORKFLOW (pseudo-code) · 13. THE TIMESTAMP CONVENTION (project-wide) · 14. RELATIONSHIP TO COMPARISON MODE & ONE-OFF OVERRIDES · 15. WHAT UPDATE MODE DOES NOT DO · 16. OUTPUT EXPECTATION
+- **`11_UPDATE_MODE/11C_UPDATE_MODE_PREFLIGHT_SWEEP.md`** (6 KB) — Update Mode: the pre-flight confirmations (incl. **a settled universal constraint is never a pre-flight question**, and **superseding a rule is not finished until the retired wording is swept out**) and the blast-radius sweep (SS8-9)
+  - Sections: 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
 
 ## 12_CHANGE_LEDGER
 - **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (9 KB) — Ledger purpose, status values, PART 1 locked decisions, PART 2 pending approval
@@ -122,7 +126,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12D_CHANGE_HISTORY_CL0041_0062.md`** (25 KB) — PART 3 change history: CL-0041 to CL-0062 (continued) — CLOSED at CL-0062 (29 July 2026, 30 KB soft limit)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_0071.md`** (24 KB) — PART 3 change history: CL-0063 to CL-0071 (continued) — CLOSED at CL-0071 (7 August 2026, 30 KB soft limit)
-- **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_ONWARD.md`** (11 KB) — PART 3 change history: CL-0072 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
+- **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_0077.md`** (23 KB) — PART 3 change history: CL-0072 to CL-0077 (continued) — CLOSED at CL-0077 (13 August 2026, 30 KB soft limit)
+  - Sections: PART 3 history rows CL-0072 to CL-0077
+- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_ONWARD.md`** (9 KB) — PART 3 change history: CL-0078 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -136,23 +142,25 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 14_SUBJECT_GLOBAL_PARAMETERS
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (21 KB) — Purpose + families 14.1-14.5 (Languages — finalised Audiovisual Package rules, registry data in `14C` —, Pathways, Taonga, CED, FUNdamentals)
   - Sections: 14 — Subject Global Parameters · PURPOSE · 14.1 Languages Phase 1–4 · 14.2 Pathways · 14.3 Taonga (The Arts) · 14.4 ConnectED (CED) Phase 5 · 14.5 FUNdamentals (Health & PE, Y1–10)
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (26 KB) — Families 14.6-14.11 (LS, BLL, HPE, BLLR, MiW/WJ, cross-cutting)
-  - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing · 14.11 Cross-cutting notes
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (27 KB) — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ)
+  - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons (celebration .gif DELIVERED — deferral retired) · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14C_LANGUAGES_AV_ASSET_REGISTRY.md`** (15 KB) — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (CL-0070) — the supplied HTML no longer needs to be consulted
   - Sections: 14C — Languages Audiovisual Package: the complete asset registry · 1. Delivery forms (the supplied markup shapes) · 2. Language icons · 3. German · 4. French · 5. Chinese · 6. Japanese · 7. Spanish · 8. Samoan · 9. Acknowledgements for the iStock-derived registry assets
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** (6 KB) — Cross-cutting notes (14.11) and the Technology family (14.12 — five `Technology/strand/active-*.svg` strand icons copied verbatim including their supplied spelling, the DELIVERED shared `congradulations/` celebration gif whose misspelling is a recorded design decision and is never corrected, suggested `col-8` text / `col-4` gif layout)
+  - Sections: 14.11 Cross-cutting notes · 14.12 Technology — strand icons + the celebration gif
 
 ## 15_INTERACTIVES_BUILD_MODE
-- **`15_INTERACTIVES_BUILD_MODE/15A_MODE_CORE_AND_CONTRACT.md`** (13 KB) — Mode 6 core: trigger/auto-detection, the `cv2-built` anchor contract, output files + splitting, quality gate, authority order
-  - Sections: 15 — Interactives Build Mode (Mode 6) · 1. TRIGGER & AUTO-DETECTION · 2. WHERE THIS MODE SITS IN THE PIPELINE · 3. FIRST ACTION on every uploaded worklist · 4. THE ANCHOR CONTRACT — the golden rule · 5. WHAT THE PAGE STITCHER DOES WITH IT · 6. OUTPUT FILES + THE SPLITTING SAFEGUARD · 7. QUALITY CHECK before emitting each file · 8. WHICH KNOWLEDGE TO LOAD — and the authority order · 9. MULTI-COMPONENT ENTRIES AND THE ACTIVITY-BOX CARVE-OUT · 10. TONE + INTERACTION
-- **`15_INTERACTIVES_BUILD_MODE/15B_WORKLIST_FORMAT_AND_BUILD_RULES.md`** (12 KB) — The `{CODE}_interactives.txt` anatomy and the fragment-specific build rules
+- **`15_INTERACTIVES_BUILD_MODE/15A_MODE_CORE_AND_CONTRACT.md`** (14 KB) — Mode 6 core: trigger/auto-detection, the `cv2-built` anchor contract, output files + splitting (ALL files in one response), quality gate, authority order
+  - Sections: 15 — Interactives Build Mode (Mode 6) · 1. TRIGGER & AUTO-DETECTION · 2. WHERE THIS MODE SITS IN THE PIPELINE · 3. FIRST ACTION on every uploaded worklist · 4. THE ANCHOR CONTRACT — the golden rule · 5. WHAT THE PAGE STITCHER DOES WITH IT · 6. OUTPUT FILES + THE SPLITTING SAFEGUARD (all files emitted in ONE response) · 7. QUALITY CHECK before emitting each file · 8. WHICH KNOWLEDGE TO LOAD — and the authority order · 9. MULTI-COMPONENT ENTRIES AND THE ACTIVITY-BOX CARVE-OUT · 10. TONE + INTERACTION
+- **`15_INTERACTIVES_BUILD_MODE/15B_WORKLIST_FORMAT_AND_BUILD_RULES.md`** (13 KB) — The `{CODE}_interactives.txt` anatomy and the fragment-specific build rules
   - Sections: 15B — The worklist format, and how to build from it · 1. THE INPUT FILE — `{CODE}_interactives.txt` (file header · one entry line by line · reading the `Content:` block) · 2. THE BUILD RULES (declarative only · build the widget not the page · writer content verbatim · media placeholders · choosing the type · answer keys — the load-bearing attributes · shuffle, feedback and buttons · never emit) · 3. FAMILY CONVENTIONS STILL APPLY
 - **`15_INTERACTIVES_BUILD_MODE/15C_WORKED_EXAMPLE.md`** (6 KB) — One worklist entry end to end: input, reading, output, why it is right
   - Sections: 15C — Worked example: one worklist entry → one finished build · The input entry · Reading it · The output · Why this is right
 
 ## 16_PAGEFORGE_COMPARE_MODE
-- **`16_PAGEFORGE_COMPARE_MODE/16A_MODE_CORE_AND_INPUTS.md`** (20 KB) — Mode 7 core: trigger + the `PAGEFORGE` discriminator + the never-advertise rule, same-chat-only rule, the tester workflow, the four required inputs (incl. the `{CODE}_interactives.txt` worklist), the two PageForge upload formats, the workflow
+- **`16_PAGEFORGE_COMPARE_MODE/16A_MODE_CORE_AND_INPUTS.md`** (22 KB) — Mode 7 core: trigger + the `PAGEFORGE` discriminator + the never-advertise rule, same-chat-only rule, the tester workflow, the four required inputs (incl. the `{CODE}_interactives.txt` worklist), the two PageForge upload formats, the workflow
   - Sections: 16 — PageForge Compare Mode (Mode 7) · 1. THE TRIGGER (same chat only · precedence and the one collision to watch · NEVER ADVERTISE THIS MODE) · 2. WHERE THIS SITS IN THE TESTER WORKFLOW · 3. WHAT THE REPORT IS FOR (and who reads it) · 4. THE FOUR REQUIRED INPUTS (the worklist — who built each widget, the boundary evidence, reconciling the inventory) · 5. THE TWO PAGEFORGE UPLOAD FORMATS — AND HOW TO TELL THEM APART (hand-off · stitched · mixed) · 6. WORKFLOW · 7. TONE + INTERACTION
-- **`16_PAGEFORGE_COMPARE_MODE/16B_WHAT_TO_REPORT.md`** (21 KB) — The five finding classes, the boundary check (incl. reading the worklist's `Activity:` / `Content:` evidence), complex vs non-complex interactives, the exclusions (incl. the total comments-and-developer-notes exclusion), the uncertainty rule
+- **`16_PAGEFORGE_COMPARE_MODE/16B_WHAT_TO_REPORT.md`** (22 KB) — The five finding classes, the boundary check (incl. reading the worklist's `Activity:` / `Content:` evidence), complex vs non-complex interactives, the exclusions (incl. the total comments-and-developer-notes exclusion), the uncertainty rule
   - Sections: 1. THE FIVE FINDING CLASSES · 2. NOTES ON EACH CLASS · 3. THE BOUNDARY CHECK (class B) — SPILL/SWALLOW, the per-box membership procedure, boundaries checked for EVERY interactive · 4. COMPLEX vs NON-COMPLEX INTERACTIVES (class C) — the non-complex list · 5. THE EXCLUSIONS (incl. comments, developer notes & restated writer instructions — ignored entirely) · 6. WHEN THE ORIGIN IS UNCLEAR — "For Gavin to judge" · 7. WHAT THIS MODE NEVER DOES
 - **`16_PAGEFORGE_COMPARE_MODE/16C_REPORT_FORMAT.md`** (14 KB) — The one-shot report for Gavin: header, finding bundle, uncertain section, interactive inventory, coverage + exclusion counts, worked examples
   - Sections: 1. REPORT HEADER · 2. SECTION 1 — FINDINGS (class B extra requirement · confidence) · 3. SECTION 2 — FOR GAVIN TO JUDGE · 4. SECTION 3 — INTERACTIVE INVENTORY · 5. SECTION 4 — SCOPE AND COVERAGE · 6. WORKED EXAMPLES · 7. HOW THE RUN CLOSES IN CHAT

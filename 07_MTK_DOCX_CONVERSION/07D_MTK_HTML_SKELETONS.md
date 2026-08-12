@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part D (4 of 4) of `07_MTK_DOCX_CONVERSION.md`** — MTK: embedded HTML skeletons (SS19).
 > All sibling parts live in `07_MTK_DOCX_CONVERSION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -333,5 +333,5 @@ The final lesson page is structurally the same as a middle lesson page; the only
 4. **No jQuery, no stickyNav.js** — MTK modules do not use these.
 5. **No custom CSS links** — MTK modules rely solely on the shared template CSS loaded by `idoc_scripts.js`.
 6. **Body content grid** — all body content sits inside `<div class="row"><div class="col-md-8 col-12">...</div></div>` wrappers (unless a side alert changes the column width).
-7. **Module titles in `<h1><span>`** — Māori title first, English title second, on both overview and lesson pages.
+7. **Titles in `<h1><span>` — Māori first, English second.** On the **overview** page these are the **module** titles. On a **lesson** page the `<h1><span>` carries **that lesson's own title** (constraint 79 — universal, MTK included); the module title belongs to the overview, and a second `<h1><span>` appears on a lesson page only where the writer gave that lesson its own bilingual name. *(The former "module titles on both overview and lesson pages" wording is superseded by constraint 79 / `CL-0069`.)*
 8. **Footer href values** — leave empty (`href=""`); the template JS resolves navigation automatically.

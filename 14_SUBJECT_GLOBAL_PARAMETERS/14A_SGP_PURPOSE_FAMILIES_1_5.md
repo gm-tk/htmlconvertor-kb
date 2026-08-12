@@ -1,5 +1,5 @@
-> **Last updated:** Monday, 10th August, 2026 10:45 AM
-> **Granular part A (1 of 3) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part A (1 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

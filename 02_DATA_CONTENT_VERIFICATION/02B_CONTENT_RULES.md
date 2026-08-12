@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part B (2 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Content rules: preservation, grids, merging, perspective, red text, headings.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -92,14 +92,31 @@ The specific entries in the table above (D&D column → `col-md-12`, activity + 
 
 > **Activity/interactive wrappers never use `col-md-10`.** A wide interactive that needs more than `col-md-8` uses `col-12` (Standard) or `col-md-11 col-12` (Inquiry & Fundamentals); an activity paired with an `alertImage` uses `col-md-8 col-12` with the image at `col-md-4`. `col-md-10` is no longer an activity width. Plain content **sectioning** uses `col-md-8 col-12` (standard) or `col-12` / `col-md-12 col-12` (full width); a plain, non-activity *narrowed* content block may still use `col-md-10` (it is outside this rule). This is forward-only — existing `col-md-10` activity wrappers are pre-rule and not retro-flagged. See constraint 56.
 
-**Text and interactive sit in SEPARATE inner rows — in EVERY activity (constraint 63).** An activity's plain text content — headings, instructions, paragraphs, lists — sits at the standard **`col-md-8 col-12`** reading width inside its **own** inner `<div class="row"><div class="col-md-8 col-12">…</div></div>`, and the interactive follows in a **separate** inner row at the wrapper's own width. This applies **regardless of the wrapper's width**: widening the wrapper (`col-12` Standard / `col-md-11 col-12` Inquiry & Fundamentals / `col-md-12 col-12` full width — constraint 56) widens the **interactive**, never the prose; and in the **default** `col-md-8` case the two-row split still applies, even though both rows then happen to share the same width. A **text-only** activity (no interactive) needs no split. Pattern (widened wrapper shown):
+**The inner text column is `col-12`, and the row split depends on the wrapper's width (constraint 63).** An activity's plain text content — headings, instructions, paragraphs, lists — sits in a **`col-12`** inner column, **never** `col-md-8 col-12`: the wrapper already sets the reading width, so an inner `col-md-8` narrows the prose twice. Whether the interactive shares that column or gets its own row is then decided by the wrapper:
+
+- **DEFAULT wrapper (`col-md-8 col-12`) — ONE inner row.** Heading, instructions and the interactive sit together in a single `<div class="row"><div class="col-12">…</div></div>`. Nothing is split, because there is no width difference to express.
+- **WIDENED wrapper (`col-12` Standard / `col-md-11 col-12` Inquiry & Fundamentals / `col-md-12 col-12` full width — constraint 56) — TWO inner rows.** The text sits in its own `row` > `col-12`, and the interactive follows in a **separate** `row` at the wrapper's own width.
+
+A **text-only** activity (no interactive) needs no split at either width. Patterns:
 
 ```html
+<!-- DEFAULT wrapper — one shared inner row -->
+<div class="activity interactive" number="2B">
+    <div class="row">
+        <div class="col-12">
+            <h3>Activity heading</h3>
+            <p>Instructions</p>
+            <!-- interactive component here, in the same column -->
+        </div>
+    </div>
+</div>
+
+<!-- WIDENED wrapper — the split is retained -->
 <div class="row">
     <div class="col-12"><!-- widened activity wrapper (Standard) -->
-        <div class="activity interactive" number="2B">
+        <div class="activity interactive" number="3C">
             <div class="row">
-                <div class="col-md-8 col-12"><!-- prose stays col-8 -->
+                <div class="col-12">
                     <h3>Activity heading</h3>
                     <p>Instructions</p>
                 </div>

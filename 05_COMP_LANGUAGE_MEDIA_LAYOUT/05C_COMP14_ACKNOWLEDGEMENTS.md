@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
-> **Granular part C (3 of 3) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 acknowledgements.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part C (3 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 acknowledgements.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

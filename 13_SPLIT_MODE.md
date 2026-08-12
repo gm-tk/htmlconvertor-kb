@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 1st July, 2026 12:39 AM
+> **Last updated:** Thursday, 13th August, 2026
 
 # 13 — Split Mode (Mode 5)
 
@@ -141,6 +141,8 @@ Split Mode emits **exactly one HTML file per response** — never more than one 
 - **First response:** the **base** file (`<CODE>-base.html`) **only**. Nothing else — no section files alongside it.
 - **Each subsequent response** (on the designer's next prompt): the **next single section file**, one at a time, **in slot order** (`intro`, then `01`, `02`, …).
 - **Never emit more than one file in a single turn**, and never jump ahead or batch several sections together.
+
+> **This cadence is SPLIT MODE ONLY.** It does not generalise to any other multi-file mode. In particular **Interactives Build Mode (Mode 6) does the opposite** — it emits **all** of its `_XofY` files in one response (`15_INTERACTIVES_BUILD_MODE.md` → `15A` §6). The two are different deliverables under different contracts: a Split Mode section file is one slot of a round-trip the designer reassembles turn by turn, whereas a built-interactives file is an independent batch the Page Stitcher consumes any number of at once.
 
 **Worked cadence** — a single-page module with four embedded lessons:
 

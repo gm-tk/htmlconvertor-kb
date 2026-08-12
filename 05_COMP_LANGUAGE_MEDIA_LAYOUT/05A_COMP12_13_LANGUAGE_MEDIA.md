@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
-> **Granular part A (1 of 3) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist; COMP_13 media & embeds.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part A (1 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist; COMP_13 media & embeds.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

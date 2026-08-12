@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 6th August, 2026 1:14 PM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part B (2 of 7) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -50,6 +50,22 @@ FUNCTION convert_writer_template(content_source, structural_reference, media_lis
                   with no placeholder or comment block."
             STOP until user responds
     APPLY chosen mode uniformly to ALL images in the conversion
+ 
+    # ── ⚠️ THESE ARE THE ONLY TWO PRE-FLIGHT QUESTIONS ──
+    # A settled UNIVERSAL constraint is NEVER offered to the designer as a choice.
+    #   The structural reference and the image output mode are asked because the
+    #   project genuinely cannot know them. Everything a "(Universal)" constraint
+    #   already settles is NOT a question — do not surface it as one, do not offer
+    #   it as an A-or-B, and do not treat a superseded rule found in the knowledge
+    #   base as a live alternative to the rule that superseded it.
+    #   Worked failure (SCES302, Aug 2026): the retired "lesson <h1> = MODULE title"
+    #   wording was surfaced and put to the designer as "module title (constraint 16)
+    #   vs lesson title"; the designer answered "module title" and 8 lesson pages
+    #   shipped with the wrong <h1>. Constraint 79 had already settled it universally.
+    # IF a designer instruction CONTRADICTS a universal constraint:
+    #     SAY SO plainly, cite the constraint, and ask them to confirm the override
+    #     STOP until confirmed — never follow it silently
+    #     (a confirmed override is then a Mode 4 / Update Mode change, not a one-off)
  
     # ── PHASE 1: ANALYZE STRUCTURAL REFERENCE ──
     # → See: section 01 in 01_PIPELINE_EXTRACTION_TAGS.md
@@ -179,7 +195,7 @@ FUNCTION convert_writer_template(content_source, structural_reference, media_lis
     COPY complete skeleton from structural reference (template or derived from reference module)
     POPULATE with converted content:
         - ALL body content inside row > col-* grid
-        - ALL activity divs inside row > col-md-8 col-12 (EXCEPT wide components like D&D column layout which uses col-md-12 col-12, and a D&D column with many images which uses col-12 / col-md-11 col-12 by module type — never col-md-10, see constraint 56; carousel viewer width is contextual — col-md-12 col-12 when nested inside a col-md-8 wrapper, col-md-8 col-12 when standalone, see constraint 17). Activity/interactive wrappers NEVER use col-md-10: where more width than col-md-8 is needed, use col-12 (Standard) / col-md-11 col-12 (Inquiry & Fundamentals) / col-md-8 col-12 with a paired alertImage at col-md-4. Inside a WIDENED activity wrapper, plain text stays at col-md-8 col-12 in its own inner row — only the interactive spans the widened width (constraint 63)
+        - ALL activity divs inside row > col-md-8 col-12 (EXCEPT wide components like D&D column layout which uses col-md-12 col-12, and a D&D column with many images which uses col-12 / col-md-11 col-12 by module type — never col-md-10, see constraint 56; carousel viewer width is contextual — col-md-12 col-12 when nested inside a col-md-8 wrapper, col-md-8 col-12 when standalone, see constraint 17). Activity/interactive wrappers NEVER use col-md-10: where more width than col-md-8 is needed, use col-12 (Standard) / col-md-11 col-12 (Inquiry & Fundamentals) / col-md-8 col-12 with a paired alertImage at col-md-4. Inside an activity wrapper the inner text column is col-12 (never col-md-8 col-12); at the DEFAULT wrapper width text and interactive share ONE inner row, and the two-row split is retained ONLY in a WIDENED wrapper, where the interactive spans the widened width (constraint 63)
         - [MTKquiz] activities end in a "Go to quiz" button with blank href + a visible Designer/Developer To Do: note (create the quiz in MTK) — never a dropbox button (constraint 65); Creative Services videos embed as the pending-ID Vimeo scaffold + Designer/Developer To Do: note (constraint 64); supervisor triggers build the super-content-button family, never the retired supervisorContainer trio (constraint 68)
         - Lesson pages: use THAT LESSON'S OWN title in the header <h1><span> (never the module title) and the zero-padded lesson number (not the module code) in #module-code — constraint 79. Source order: text inside the boundary tag ([LESSON 2: Puanga]) > text after the boundary tag ([LESSON 1] The night sky) > the opening [H2] after [Lesson content] > a [Lesson Overview] heading naming the lesson > module title + a visible Designer/Developer To Do: note. A boundary label that normalises to nothing (e.g. "[LESSON 2] Lesson 2") falls through to the next source. Strip any leading "Lesson N"/"Lesson N:" prefix — a prefix is NEVER a reason to demote the title to a body <h3>, and a lesson name the writer wrote twice is one title, not a conflict. Drop the duplicate body heading (constraint 47). One title <h1> per lesson page at every level unless the writer gave that lesson its own bilingual name
         - Preserve writer text verbatim (trust the content source as-is)

@@ -1,5 +1,5 @@
-> **Last updated:** Monday, 27th July, 2026 12:34 PM
-> **Granular part B (2 of 2) of `11_UPDATE_MODE.md`** — Update Mode: the Repo Update Brief, exclusions, workflow pseudo-code, timestamps (SS10-16).
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part B (2 of 3) of `11_UPDATE_MODE.md`** — Update Mode: the Repo Update Brief, exclusions, workflow pseudo-code, timestamps (SS10-16).
 > All sibling parts live in `11_UPDATE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
