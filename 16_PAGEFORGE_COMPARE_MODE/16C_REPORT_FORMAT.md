@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 7th August, 2026 10:05 AM
+> **Last updated:** Thursday, 13th August, 2026
 > **Granular part C (3 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The report file: structure, the finding bundle, the interactive inventory, the exclusion summary (incl. the notes-and-comments counter), worked examples, and how the run closes in chat.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -27,7 +27,7 @@ tester is not asked to classify anything.
 Generated: [date]                     Module series: [PREFIX]        Template level: [LEVEL]
 Writer's template: [filename]         Media list: [filename | none]
 Human-developed files: [N files]      PageForge files: [N files]
-PageForge upload format: [hand-off | stitched | mixed]  Worklist supplied: [yes | no]
+PageForge upload format: [original (un-stitched) | stitched | mixed | provenance unconfirmed]
 PageForge build: [version if the files state one | not stated]
 
 Findings: [N]   (A tag interpretation [n] · B boundaries [n] · C non-complex not built [n] ·
@@ -54,12 +54,15 @@ WHAT IT DELIBERATELY LEAVES OUT
   are never module content, so they are ignored entirely.
 - Real assets, media URLs and publish-time links (PageForge ships placeholders by design),
   and cosmetic formatting.
-[If any interactive's state could not be established:]
-- NOTE: the {CODE}_interactives.txt worklist was not supplied, so for [N] interactive(s)
-  already present as finished markup it could not be established whether PageForge or
-  Claude built them, and PageForge's own content boundary for them could not be read. Those
-  are marked "state unknown" in the inventory and carry no "non-complex interactive not
-  built" finding. Every interactive still in a PageForge reference box was judged normally.
+[Only if the upload was stitched or mixed, or its provenance could not be confirmed:]
+- NOTE: the PageForge files supplied had been through the Page Stitcher (or could not be
+  confirmed as PageForge's untouched output), and stitching removes the cv2-* markers, so
+  for [N] interactive(s) already present as finished markup it could not
+  be established whether PageForge or Claude built them, and PageForge's own content
+  boundary for them could not be read. Those are marked "state unknown" in the inventory
+  and carry no "non-complex interactive not built" finding. Every interactive still in a
+  PageForge reference box was judged normally. (Uploading PageForge's original, un-stitched
+  output removes this limitation entirely.)
 ```
 
 Never omit the two "what this is / what it leaves out" blocks. They are what let Gavin trust the
@@ -79,8 +82,8 @@ the page count]   **Writer tag(s):** `[tag]`, `[tag]`   **Confidence:** [high | 
 
 ### 1. What the writer wrote
 > The relevant extract from the Writers Template — the tag(s) and the surrounding content,
-> quoted as they appear. For an interactive, the raw captured content (worklist `Content:`
-> block or the page's collapsed cv2-int-raw), verbatim including [tags] and red-text markers.
+> quoted as they appear. For an interactive, the raw captured content (the page's collapsed
+> cv2-int-raw block), verbatim including [tags] and red-text markers.
 
 ### 2. What PageForge produced
 ```html
@@ -168,12 +171,12 @@ glance — including the ones deliberately not reported.
 | 5 | (none — absent from P)       | flipCard    | non-complex | absent from PageForge output | n/a | Finding 11 (D) |
 ```
 
-- **Reference code** — the full `{CODE}-INT-{NN}-{SS}-{type}` form from the worklist or the
-  reference box's visible label. A PageForge-built or stitched widget carries no code: write
+- **Reference code** — the full `{CODE}-INT-{NN}-{SS}-{type}` form from the reference box's
+  visible label. A PageForge-built or stitched widget carries no code: write
   `(no code — built by PageForge)` / `(no code — stitched)`.
 - **Complexity** — per the `16B` §4.2 list, judged on the FIRST type where several are listed.
 - **PageForge state** — `built by PageForge` / `hand-off (not built)` / `stitched (built in Mode
-  6)` / `state unknown — worklist not supplied` / `absent from PageForge output` (the writer's
+  6)` / `state unknown — provenance unconfirmed` / `absent from PageForge output` (the writer's
   interactive produced nothing at all in P — a content finding, class D or A, with boundary `n/a`).
 - **Boundary** — `ok` / `SPILL` / `SWALLOW`, from the `16B` §3 pass. Every row gets a verdict;
   this column is why the table exists.
@@ -269,9 +272,9 @@ same way.
 
 ### 2. What PageForge produced
 ```html
-<div class="cv2-interactive cv2-int-ref" data-cv2-ref="SCCH302-01-01">…raw content collapsed…</div>
+<div class="cv2-interactive cv2-int-ref" data-cv2-ref="SCCH302-01-01">SCCH302-INT-01-01-accordion  ▾…raw content collapsed…</div>
 ```
-Worklist entry: `REFERENCE CODE: SCCH302-INT-01-01-accordion` · `Type: accordion`
+Type read from the last segment of the box's visible label — `SCCH302-INT-01-01-accordion` (`16B` §4).
 
 ### 3. What the developer produced
 ```html
@@ -294,10 +297,10 @@ Single occurrence in this module.
 
 Present the file, then keep the message short:
 
-1. One line on what was compared (module, pages, upload format, worklist yes/no).
+1. One line on what was compared (module, pages, upload format).
 2. The finding counts by class, and the uncertain count.
-3. Anything that could **not** be checked, and why (a missing worklist, an unpaired page, a file
-   that would not parse). Never let a gap go unmentioned.
+3. Anything that could **not** be checked, and why (a stitched rather than original upload, an
+   unpaired page, a file that would not parse). Never let a gap go unmentioned.
 4. One line telling the tester the file is ready to send to Gavin.
 5. **Only if applicable:** one line noting that something in this run looks like a fault in **this
    project's** conversion rules rather than PageForge's, and that it belongs in `COMPARISON MODE`.

@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 7th August, 2026 10:05 AM
-> **Granular part B (2 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The five finding classes, the boundary check (including reading the worklist's `Activity:` / `Content:` evidence), the complex/non-complex interactive rule, the exclusions (incl. the total notes-and-comments exclusion), and the uncertainty rule.
+> **Last updated:** Thursday, 13th August, 2026
+> **Granular part B (2 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The five finding classes, the boundary check (reading PageForge's captured content from the reference box on the page), the complex/non-complex interactive rule, the exclusions (incl. the total notes-and-comments exclusion), and the uncertainty rule.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -120,19 +120,20 @@ For **every** activity box and **every** interactive in the module, in page orde
    boundary, and comparing it to the human's widget contents is exactly how an un-built
    interactive's boundary is judged.
 
-   **Where the widget has been STITCHED, read P's membership from the worklist instead.** The
-   stitcher replaced PageForge's reference box with Claude's finished widget, so the page no
-   longer shows what PageForge captured — but the `{CODE}_interactives.txt` entry for that
-   position still does, and it is authoritative: its **`Activity:`** line is the activity box
-   PageForge assigned the interactive to, and its **`Content:`** block is precisely the content
-   PageForge pulled into it (`16A` §4.3). This is the main reason the worklist is a required
-   input: without it, every stitched interactive's boundary becomes unverifiable.
+   **Check the owning ACTIVITY on its own account.** The reference box sits inside whatever
+   activity wrapper PageForge put it in — that wrapper is PageForge's ownership decision. Compare it
+   with the activity the *writer* placed the interactive in. A box inside Activity 1B where the
+   writer's tag sits inside Activity 1A, or a box sitting loose outside any activity where the writer
+   plainly tagged an owning one, is a class B finding in its own right — a boundary fault even when
+   the widget's own content looks perfectly ordinary.
 
-   **Check the `Activity:` line on its own account.** Compare it with the activity the *writer*
-   placed the interactive in. `Activity: 1B` where the writer's tag sits inside Activity 1A, or
-   `(none — inline component)` where the writer plainly tagged an owning activity, is a class B
-   finding in its own right — a boundary fault visible from the worklist even when the page looks
-   perfectly ordinary.
+   **Where the widget has been STITCHED, the page no longer carries this evidence.** The stitcher
+   replaced PageForge's reference box with Claude's finished widget and removed both anchors, so
+   neither the captured content nor the ownership decision survives on the page. This is why the mode
+   asks for PageForge's **original** output (`16A` §4.3, §5.2). If only a stitched upload exists, judge
+   the boundary from what is visible on the page against the writer's template and mark the interactive
+   `state unknown` — and if the tester happened to attach a `{CODE}_interactives.txt`, its `Activity:`
+   and `Content:` lines restate PageForge's assignment and may be read as corroborating evidence.
 4. **Compare the two membership lists**, and report:
    - content in H's box but outside P's → **SPILL**;
    - content outside H's box but inside P's → **SWALLOW**;
@@ -185,23 +186,24 @@ These are the types PageForge's builder handles, as at **6 August 2026** (PageFo
 `flipCard` · `glossary` · `hint` · `hintSlider` · `modal` · `selfCheck` · `shapeHover` ·
 `speechBubble` · `tabs`
 
-Anything else on a worklist entry's `Type:` line — quizzes, crossword, word find, memory game,
-reorder, word select, slider, timeline, sketcher, `unclassified`, and so on — is **complex** for
-this mode's purposes.
+Any other type — quizzes, crossword, word find, memory game, reorder, word select, slider,
+timeline, sketcher, `unclassified`, and so on — is **complex** for this mode's purposes.
 
-**Judge by the worklist's own `Type:` line**, which carries PageForge's classification of the
-writer's tag. Where an entry lists several types joined by ` + ` (`clickDrop + speechBubble +
-carousel`), **judge on the FIRST type only** — that is the bundle's primary type, the one
-PageForge's builder actually dispatched on and the one carried in the reference code. The
-remaining types were never attempted as builds, so they cannot be "not built". Name them in the
-finding as context, never as separate findings.
+**Judge by PageForge's own classification of the writer's tag**, carried in the reference box's
+visible label — the full code `{CODE}-INT-{NN}-{SS}-{type}`, whose last segment is the type. (A
+volunteered worklist's `Type:` line carries the same value.)
 
-**Where the type comes from when no worklist was supplied:** the reference box's own visible label
-text is the full code, `{CODE}-INT-{NN}-{SS}-{type}` — read the type from there. (The box's
-`data-cv2-ref` attribute carries only the bare `{CODE}-{NN}-{SS}` and no type.) If neither a
-worklist nor a readable label is available, infer the type from the captured content and the
-writer's tag, mark it in the inventory as inferred, and make a class C finding only where the
-writer's own tag names a non-complex type unambiguously.
+Where a volunteered worklist entry lists several types joined by ` + ` (`clickDrop + speechBubble +
+carousel`) — the box's own label carries only the first — **judge on the FIRST type only**. That is
+the bundle's primary type, the one PageForge's builder actually dispatched on and the one carried in
+the reference code. The remaining types were never attempted as builds, so they cannot be "not
+built". Name them in the finding as context where they are knowable, never as separate findings.
+
+**Reading the type off the page.** The reference box's visible label text is the full code — read
+the type from its last segment. (The box's `data-cv2-ref` attribute carries only the bare
+`{CODE}-{NN}-{SS}` and no type.) If the label is unreadable and no worklist was volunteered, infer
+the type from the captured content and the writer's tag, mark it in the inventory as inferred, and
+make a class C finding only where the writer's own tag names a non-complex type unambiguously.
 
 ### 4.3 Why the list is written this way
 
@@ -209,18 +211,18 @@ The list mirrors PageForge's builder set rather than a designer's opinion of dif
 that makes the finding mechanical and honest: *PageForge can build this shape, and here it did
 not.* It also means the list is self-correcting — if a type drops off PageForge's builder set, its
 placeholders stop being findings, and if Gavin adds a builder, the list should gain that type at
-the next update. **If a worklist shows a type not on this list, treat it as complex** and do not
+the next update. **If a type turns up that is not on this list, treat it as complex** and do not
 improvise.
 
-The worklist's own `Tier 1 / Tier 2` header lines are a **different, older classification**
+A volunteered worklist's own `Tier 1 / Tier 2` header lines are a **different, older classification**
 (`accordion, flipCard, speechBubble, tabs`) kept for PageForge's internal routing. **Do not use the
 tier lines for this decision** — use the list above.
 
 ### 4.4 What a class C finding contains
 
-1. The reference code and type from the worklist.
-2. The writer's raw content for that interactive — the `Content:` block from the worklist, or the
-   collapsed `cv2-int-raw` content from the page. **Quote it as it stands**, red-text sentinels,
+1. The reference code and type, read from the box's visible label.
+2. The writer's raw content for that interactive — the collapsed `cv2-int-raw` content from the
+   page. **Quote it as it stands**, red-text sentinels,
    `[tags]`, ASCII table borders and all: the exact authoring shape is the evidence.
 3. What the human built from that same content (the finished widget markup).
 4. One sentence on what about the authoring shape PageForge's builder may have declined on — the
@@ -276,8 +278,9 @@ internals, their answer keys, or their styling. **Their boundaries are still che
 
 In format 2, a stitched widget's markup came from **Claude** (Mode 6), not from PageForge.
 Comparing it to the human's widget measures the wrong thing. Ignore the internals; check the
-boundary of the region it occupies — reading PageForge's own assignment from the worklist entry's
-`Activity:` line and `Content:` block, since the page no longer carries it (§3.2 step 3).
+boundary of the region it occupies as far as the page allows (§3.2 step 3). This is the state the
+mode asks testers to avoid by uploading PageForge's **original** output, where the reference box
+still carries PageForge's own assignment (`16A` §4.3).
 
 ### 5.4 Comments, developer notes and restated writer instructions — IGNORE THEM ENTIRELY
 

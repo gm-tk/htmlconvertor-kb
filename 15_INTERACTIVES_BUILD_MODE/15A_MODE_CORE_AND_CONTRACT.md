@@ -47,10 +47,11 @@ If a message carries **both**, ask which the developer wants first — never sil
 
 **Precedence.** `COMPARISON MODE`, `UPDATE MODE` and `PAGEFORGE COMPARE MODE` still take
 precedence over everything (a worklist uploaded inside a Comparison or Update run is not built; say
-so and ask). **Inside a PageForge Compare run (Mode 7) the worklist is deliberately not a work
-order — it is evidence** of which interactives PageForge did and did not build, and is read as such
-without building anything (`16_PAGEFORGE_COMPARE_MODE.md` → `16A` §4.3). Otherwise a worklist
-upload is unambiguous and outranks the ordinary Conversion/Advisory signals.
+so and ask). **Mode 7 does not ask for a worklist at all** — it reads PageForge's own
+reference boxes off the page — but if a tester volunteers one inside a PageForge Compare run it is
+**evidence, never a work order**: read it as corroboration and build nothing
+(`16_PAGEFORGE_COMPARE_MODE.md` → `16A` §4.3). Otherwise a worklist upload is unambiguous and
+outranks the ordinary Conversion/Advisory signals.
 
 ## 2. WHERE THIS MODE SITS IN THE PIPELINE (why the anchors matter)
 
