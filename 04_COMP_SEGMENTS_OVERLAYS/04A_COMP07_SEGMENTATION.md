@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part A (1 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -35,6 +35,8 @@
 ## Carousel
  
 **Container class:** `carousel`
+ 
+**⚠️ NO `loading="lazy"` on a carousel slide image (constraint 83).** Every slide but the first sits off-screen, so lazy loading defers exactly the images the student is about to swipe to and the slide arrives blank or mis-sized. Emit `<img class="img-fluid" src="…" alt="…">` inside `.item` with **no** `loading` attribute, real images and `placehold.co` placeholders alike, in both image output modes.
  
 Carousels have multiple sub-types — **image carousels**, **video carousels**, and **carousels with external navigation buttons** — which use different `.viewer` column widths and item structures.
  
@@ -192,6 +194,7 @@ When a carousel needs labeled navigation buttons (e.g., year dates, category nam
 ```
  
 **Key rules:**
+- **⚠️ NO `loading="lazy"` on any `bannerItem` image (constraint 83).** The banner's images are in continuous motion, so a lazily-deferred image arrives mid-rotation — blank, or sized wrongly — and breaks the sequence. Emit `<img class="img-fluid" src="…" alt="…">` with **no** `loading` attribute, for real images and `placehold.co` placeholders alike, in both image output modes. (The examples above are shown in the correct form.)
 - Each `<div class="bannerItem">` contains an image and an optional `<span>` caption
 - Captions use `<span>` (not `<div class="carousel-caption"><p>`)
 - No `.viewer` column wrapper needed — the `bannerContainer` handles layout
@@ -203,6 +206,8 @@ When a carousel needs labeled navigation buttons (e.g., year dates, category nam
 ## Click Drop
  
 **Container class:** `clickDrop` / `clickDropContent`
+ 
+**⚠️ NO `loading="lazy"` on an image inside a `.clickDrop` trigger or a `.clickDropContent` panel (constraint 83).** Panel content sits hidden until the student reveals it, so a lazily-deferred image is never fetched in time and the panel opens blank. Emit `<img class="img-fluid" src="…" alt="…">` with **no** `loading` attribute, real images and placeholders alike.
  
 **⚠️ CRITICAL STRUCTURE RULE:** All `.clickDrop` button elements MUST be grouped together FIRST, followed by all `.clickDropContent` divs AFTER. Do NOT interleave them (i.e., do NOT place a `.clickDropContent` immediately after each `.clickDrop`).
  
@@ -289,6 +294,8 @@ When multiple clickDrop items exist, wrap all buttons in a `.row` with column cl
  
 ### Image Flip Cards
  
+**⚠️ NO `loading="lazy"` on a flip-card image (constraint 83).** Card faces animate, and the `.back` face is hidden until the card turns — so the browser never treats it as "near the viewport" and a deferred image flips up blank. Emit `<img class="img-fluid" src="…" alt="…">` with **no** `loading` attribute on both faces, real images and placeholders alike.
+
 When flip cards contain images:
 1. Wrap all cards in `<div class="row flipCardsContainer">`
 2. Add the `flipImage` class to the `.front` div
@@ -299,7 +306,7 @@ When flip cards contain images:
     <div class="col-md-4 col-12 paddingLR">
         <div class="flipCard">
             <div class="front flipImage">
-                <img class="img-fluid" loading="lazy" src="images/image1.jpg" alt="">
+                <img class="img-fluid" src="images/image1.jpg" alt="">
                 <h5>Card Title 1</h5>
             </div>
             <div class="back">
@@ -310,7 +317,7 @@ When flip cards contain images:
     <div class="col-md-4 col-12 paddingLR">
         <div class="flipCard">
             <div class="front flipImage">
-                <img class="img-fluid" loading="lazy" src="images/image2.jpg" alt="">
+                <img class="img-fluid" src="images/image2.jpg" alt="">
                 <h5>Card Title 2</h5>
             </div>
             <div class="back">

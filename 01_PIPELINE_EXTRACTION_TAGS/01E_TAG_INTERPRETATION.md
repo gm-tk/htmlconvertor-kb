@@ -1,4 +1,4 @@
-> **Last updated:** Sunday, 3rd August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part E (5 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation: structural, headings, body, media, styling, activities, links.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -139,7 +139,7 @@ When the writer provides an image reference (e.g., iStock URL, filename, or desc
 - If no iStock ID can be extracted, use a descriptive filename: `images/iStock-DESCRIPTION.jpg`
 - The comment is for CS to later download and link the correct stock image
 
-Always include `class="img-fluid"`, `loading="lazy"`, and `alt=""` on the visible placeholder.
+Always include `class="img-fluid"` and `alt=""` on the visible placeholder, plus `loading="lazy"` — **except** where the placeholder sits inside a **moving-or-draggable interactive**, which carries no `loading` attribute at all (see *No `loading="lazy"` inside moving interactives* under Rules Common to Both Modes below; constraint 83). Placeholders follow the same rule as real images.
 
 ---
 
@@ -192,7 +192,7 @@ Emit a single clean `<img>` tag pointing at the anticipated final filename in th
 
 **Attributes (Mode D) — same as Mode P except for `src` and `alt`:**
 - `class="img-fluid"` — always
-- `loading="lazy"` — always, **except** inside `.canvasContainer` for the sketcher (see COMP_11 in `04_COMP_SEGMENTS_OVERLAYS.md`)
+- `loading="lazy"` — always, **except inside a moving-or-draggable interactive** (see *No `loading="lazy"` inside moving interactives* under Rules Common to Both Modes below)
 - Any component-specific classes required by the surrounding structure (e.g., `canvasImage` inside sketcher, `bubble-img` inside speech bubble) apply equally in Mode D
 
 **Worked example — non-iStock, Unsplash source:**
@@ -211,7 +211,21 @@ Emit a single clean `<img>` tag pointing at the anticipated final filename in th
 
 **⚠️ CRITICAL — No imageCentral:** Do NOT add the `imageCentral` class to any writer-specified images, in either mode. This class is reserved for centralised template assets only (e.g., self-reflection emoji). Adding it to writer images causes a filepath prefix that breaks the image path. See COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md` for details.
 
-**⚠️ CRITICAL — Sketcher images:** Inside `.canvasContainer`, the image MUST have the `canvasImage` class and MUST NOT have `loading="lazy"`, regardless of image output mode. See COMP_11 in `04_COMP_SEGMENTS_OVERLAYS.md`.
+**⚠️ CRITICAL — No `loading="lazy"` inside moving interactives (constraint 83).** `loading="lazy"` defers an image until the browser decides it is near the viewport. That is right for ordinary page images and **wrong** for an image the student drags, flips, or watches slide past: a deferred image can arrive late, arrive mid-animation, or arrive with the wrong measured size, which breaks the interactive's positioning and hit-detection. **Omit `loading="lazy"` from EVERY `<img>` inside these components** — in both image output modes, for real images and placeholders alike:
+
+| Component | Container class | Why |
+|---|---|---|
+| **Rotating banner** | `.rotateBanner` / `.bannerContainer` / `.bannerItem` | Images move continuously; a late image breaks the rotation |
+| **Carousel** | `.carousel` / `.viewer` / `.item` | Off-screen slides are lazily deferred and arrive blank when swiped to |
+| **Drag and drop** | `.dragAndDrop` (`.drag`, `.drop`, `.ddContainer`, `.ddColumn`) | The student physically moves the image; drag positioning needs its real dimensions up front |
+| **Click drop** | `.clickDrop` / `.clickDropContent` | Panel images sit hidden until revealed, so they are never "near the viewport" |
+| **Flip card** | `.flipCard` (`.front`, `.front flipImage`, `.back`) | Card faces animate; a deferred face flips blank |
+| **Memory game** | `.memoryGame` (`.memCard`, `.cardHidden`) | Hidden card faces must be loaded before the first reveal, or a card turns up empty |
+| **Sketcher** | `.canvasContainer` | Lazy loading breaks canvas overlay alignment and event handling (the original case — see COMP_11) |
+
+**Everything else keeps `loading="lazy"`.** Static content images, `alertImage` images, speech-bubble character images, accordion and tab-panel images, self-reflection emoji, and images the student only *clicks* without any movement (e.g. `infoImage` / `infoTrigger` hotspots, `imageLabel` diagrams) are unaffected — they carry `loading="lazy"` exactly as before. **The test when a new component appears:** does an image inside it *move*, animate, or get dragged by the student? If yes, drop `loading="lazy"`. If the image only sits still while something is drawn on top of or beside it, keep it.
+
+**⚠️ CRITICAL — Sketcher images:** Inside `.canvasContainer` the image MUST also have the `canvasImage` class (in addition to carrying no `loading="lazy"`), regardless of image output mode. See COMP_11 in `04_COMP_SEGMENTS_OVERLAYS.md`.
 
 **⚠️ CRITICAL — Component-specific structural rules take precedence:** If a component section in `03_COMP_CORE_INTERACTIVES.md`, `04_COMP_SEGMENTS_OVERLAYS.md`, or `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` specifies required classes, attributes, or wrappers on an image, those requirements apply in both modes. The image output mode only governs the `src`, the `alt`, and whether a placeholder is used — not the component structure around the image.
 
@@ -341,7 +355,7 @@ Activity sidebar:
 | `external_link` — **standalone** (own line/paragraph) | `<a href="URL" target="_blank"><div class="externalButton">Text</div></a>` (constraint 75) |
 | `external_link` — **inline** (inside prose, a list item, or a table cell) | `<a href="URL" target="_blank">Text</a>` |
 | `engagement_quiz_button` | External quiz link button |
-| `mtk_quiz` | **"Go to quiz" button with a blank href** — `<a href="#" target="_blank"><div class="button">Go to quiz</div></a>` — plus a visible `Designer/Developer To Do:` note for the developer to create the new quiz within MTK (My Te Kura) and insert its D2L quicklink URL. **NEVER a dropbox button** (constraint 65). See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Buttons → MTK Quiz Button |
+| `mtk_quiz` | **A numbered `activity` box (next consecutive number, even where the writer assigned none) holding ONLY these children, in order:** `<h3>` quiz title (default `Quiz`, or the writer's own title verbatim) → the writer's quiz instructions as normal `<p>` text (**omitted where the writer supplied none**) → a visible `Designer/Developer To Do:` note (create the quiz in MTK DEV and orgunit link it to the module) → `<a href="#" target="_blank"><div class="button">Go to quiz</div></a>`. **NEVER the quiz's own questions, options or answers** — silently omitted, no `Red Flag:` (constraint 65 / CL-0082). **NEVER a dropbox button.** See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Buttons → MTK Quiz |
 | `supervisor_button` | The **`super-content-button` family** (Shape A activity-integrated / Shape B section standalone / Shape C section paired — outer `<div class="row supervisor">`); the legacy `supervisorContainer`/`supervisorButton`/`supervisorContent` trio is **RETIRED — never emit it** (constraint 68). See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Supervisor Button for the full decision tree and templates |
 | `modal_button` | `<div class="button TKmodalButton">Text</div>` + `<div class="TKmodal" size="S"><p>Content</p></div>` |
 | `audio_button` | `<div class="audioButton" audioName="">` |

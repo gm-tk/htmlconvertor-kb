@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part B (2 of 3) of `09_COMPARISON_MODE.md`** — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5).
 > All sibling parts live in `09_COMPARISON_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *Split from `09A_COMPARISON_CORE.md` on 29 July 2026 (soft-limit split per `CLAUDE.md` §2/§4) — content moved verbatim, nothing reworded or re-ordered.*
@@ -71,11 +71,13 @@ Rationale: where the source supplies no final filename, the Convertor's derived 
 
 ### Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set (ALL templates, ALL modules)
 
-Do NOT report a difference in which the designer removed, from a refined `[MTKquiz]` activity, the writer-supplied question/sentence set that the conversion correctly rendered on the page per constraint 65, leaving only the "Go to quiz" quicklink button (typically with a real D2L `rcode` wired in). Observed example that must NOT be captured:
+Do NOT report a difference in which the designer removed, from a refined `[MTKquiz]` activity, the writer-supplied question/sentence set that the conversion **used to render** on the page (constraint 65 **as it stood before CL-0082** — see the status note below), leaving only the "Go to quiz" quicklink button (typically with a real D2L `rcode` wired in). Observed example that must NOT be captured:
 
 - The rendered MTKquiz question set deleted in the designer's proof, with the "Go to quiz" button retained and a live `rcode` substituted for the blank href.
 
-Rationale: the rendered question set exists so the developer can build the quiz in MTK; its deletion while preparing the proof is the anticipated production step, not a rule fault. **Reporting suppression only — conversion behaviour is unchanged:** writer-supplied quiz content is STILL rendered on the page (constraint 65 / CL-0038 / `05` → MTK Quiz Button / the `02` checklist item — all unchanged and correct). *(Established via the WJFUN108 finalized difference report, Difference 6, re-scoped (e) by designer decision, 29 July 2026.)*
+Rationale (as recorded in 2026): under the pre-CL-0082 rule the question set was rendered so the developer could build the quiz in MTK, and its deletion while preparing the proof was the anticipated production step, not a rule fault. **Since CL-0082 the Convertor no longer renders that content at all, and the designer builds the quiz from the Writers Template instead** — so this rationale describes the historical state the exclusion still has to cover, not current behaviour. *(Established via the WJFUN108 finalized difference report, Difference 6, re-scoped (e) by designer decision, 29 July 2026.)*
+
+> **⚠️ STATUS NOTE — 21 August 2026 (CL-0082).** This exclusion is **retained but largely spent**: since CL-0082 the conversion **no longer renders `[MTKquiz]` question sets at all** (constraint 65 — the activity holds only the title, the writer's quiz instructions, the `Designer/Developer To Do:` note and the "Go to quiz" button, and the questions/answers are silently omitted). There is therefore normally nothing for the designer to delete. The exclusion stays in force for two live cases: **older modules** converted before CL-0082 whose HTML still carries a rendered question set, and any run comparing against a **pre-CL-0082 proof**. It must **never** be read as licence to report the *absence* of quiz content in new output — that absence is now the rule, not a difference.
 
 ### Exclusion 9 — The filename a media asset is given in `images/` (ALL templates, ALL modules)
 

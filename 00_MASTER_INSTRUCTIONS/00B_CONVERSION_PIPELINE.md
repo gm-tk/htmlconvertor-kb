@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part B (2 of 7) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -196,7 +196,11 @@ FUNCTION convert_writer_template(content_source, structural_reference, media_lis
     POPULATE with converted content:
         - ALL body content inside row > col-* grid
         - ALL activity divs inside row > col-md-8 col-12 (EXCEPT wide components like D&D column layout which uses col-md-12 col-12, and a D&D column with many images which uses col-12 / col-md-11 col-12 by module type — never col-md-10, see constraint 56; carousel viewer width is contextual — col-md-12 col-12 when nested inside a col-md-8 wrapper, col-md-8 col-12 when standalone, see constraint 17). Activity/interactive wrappers NEVER use col-md-10: where more width than col-md-8 is needed, use col-12 (Standard) / col-md-11 col-12 (Inquiry & Fundamentals) / col-md-8 col-12 with a paired alertImage at col-md-4. Inside an activity wrapper the inner text column is col-12 (never col-md-8 col-12); at the DEFAULT wrapper width text and interactive share ONE inner row, and the two-row split is retained ONLY in a WIDENED wrapper, where the interactive spans the widened width (constraint 63)
-        - [MTKquiz] activities end in a "Go to quiz" button with blank href + a visible Designer/Developer To Do: note (create the quiz in MTK) — never a dropbox button (constraint 65); Creative Services videos embed as the pending-ID Vimeo scaffold + Designer/Developer To Do: note (constraint 64); supervisor triggers build the super-content-button family, never the retired supervisorContainer trio (constraint 68)
+        - [MTKquiz] builds a numbered activity box (next consecutive number, even if the writer
+          assigned none) holding only these, in order — quiz title h3 (default "Quiz"),
+          the writer's quiz instructions where the writer supplied any, a visible Designer/Developer To Do: note (create the quiz in
+          MTK DEV and orgunit link it), and a blank-href "Go to quiz" button — and NEVER the quiz's
+          own questions/options/answers, which are silently omitted (constraint 65); Creative Services videos embed as the pending-ID Vimeo scaffold + Designer/Developer To Do: note (constraint 64); supervisor triggers build the super-content-button family, never the retired supervisorContainer trio (constraint 68)
         - Lesson pages: use THAT LESSON'S OWN title in the header <h1><span> (never the module title) and the zero-padded lesson number (not the module code) in #module-code — constraint 79. Source order: text inside the boundary tag ([LESSON 2: Puanga]) > text after the boundary tag ([LESSON 1] The night sky) > the opening [H2] after [Lesson content] > a [Lesson Overview] heading naming the lesson > module title + a visible Designer/Developer To Do: note. A boundary label that normalises to nothing (e.g. "[LESSON 2] Lesson 2") falls through to the next source. Strip any leading "Lesson N"/"Lesson N:" prefix — a prefix is NEVER a reason to demote the title to a body <h3>, and a lesson name the writer wrote twice is one title, not a conflict. Drop the duplicate body heading (constraint 47). One title <h1> per lesson page at every level unless the writer gave that lesson its own bilingual name
         - Preserve writer text verbatim (trust the content source as-is)
         - Convert formatting markers to HTML tags

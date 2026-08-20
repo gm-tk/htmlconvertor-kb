@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 14th July, 2026 5:39 PM
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part B (2 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_01 drag and drop (all layouts).
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -96,13 +96,13 @@
             </div>
             <div class="dragContainer">
                 <div class="drag" option="1">
-                    <img class="img-fluid margB0" loading="lazy" src="images/image1.jpg" alt="Dnd image" />
+                    <img class="img-fluid margB0" src="images/image1.jpg" alt="Dnd image" />
                 </div>
                 <div class="drag" option="2">
-                    <img class="img-fluid margB0" loading="lazy" src="images/image2.jpg" alt="Dnd image" />
+                    <img class="img-fluid margB0" src="images/image2.jpg" alt="Dnd image" />
                 </div>
                 <div class="drag" option="3">
-                    <img class="img-fluid margB0" loading="lazy" src="images/image3.jpg" alt="Dnd image" />
+                    <img class="img-fluid margB0" src="images/image3.jpg" alt="Dnd image" />
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
 - Text descriptions = `questionContainer` (LEFT, `col-7`)
 - Images = `dragContainer` items (RIGHT, `col-5`)
 - Use `margB0` on images inside `.drag` items
-- Use `loading="lazy"` on all images
+- **NO `loading="lazy"` on ANY image in a drag and drop** (constraint 83) — the student physically moves these images, and a deferred image arrives with the wrong measured size, breaking drag positioning and drop hit-detection. This applies to `.drag` items, `.drop` slots, `ddColumn` header images and placeholders alike
 - Use descriptive `alt` text (e.g., `alt="Dnd image"`)
 - This ensures the interactive remains compact and fully usable
 
@@ -250,7 +250,7 @@
 ```html
 <div class="ddColumn">
     <div class="col-md-6 offset-md-3 col-12">
-        <img class="img-fluid" loading="lazy" src="images/column_header.jpg" alt="">
+        <img class="img-fluid" src="images/column_header.jpg" alt="">
     </div>
     <div class="drop" option="1"></div>
     <div class="drop" option="1"></div>

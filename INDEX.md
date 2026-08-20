@@ -9,17 +9,17 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 00_MASTER_INSTRUCTIONS
 - **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (25 KB) — Role, philosophy, timestamps, operating modes, input files
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
-- **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (17 KB) — Conversion pipeline (Mode 1 pseudo-code)
+- **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (18 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
 - **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (16 KB) — File reference index
   - Sections: FILE REFERENCE INDEX
 - **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (28 KB) — Constraints quick reference, part 1 of 3 — **constraints 1–57**
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E` and `00G` as ONE continuous numbering
-- **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (21 KB) — Constraints quick reference, part 2 of 3 — **constraints 58–74**
+- **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (22 KB) — Constraints quick reference, part 2 of 3 — **constraints 58–74**
   - Sections: (continuation of the numbered list from `00D` — no headings of its own)
 - **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (6 KB) — When to load which files
   - Sections: WHEN TO LOAD WHICH FILES
-- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (18 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward; THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (19 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward (latest: 83, no `loading="lazy"` inside moving interactives); THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -31,7 +31,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 02 — Content Source Formats · Overview · PageForge Text File Format · File Structure · Format Conventions · Content Integrity · What to IGNORE in the Text File · What to CONVERT · Raw Writers Template Docx Format · Media List Companion Document · iStock Acknowledgements File
 - **`01_PIPELINE_EXTRACTION_TAGS/01D_PAGE_BOUNDARIES_TAG_TAXONOMY.md`** (19 KB) — Page boundary system; tag taxonomy & normalisation
   - Sections: 03 — Page Boundary System · Standard Page Structure · Page Boundary Validation Rules · Page-to-File Mapping · Lesson Numbering · Multi-Page vs Single-Page Modules (and when to offer Split Mode) · 04 — Tag Taxonomy & Normalisation Rules · Normalisation Algorithm · Complete Normalisation Table · Red Text Handling · Writer Intent Interpretation (Ambiguous Requests) · Document Parsing: What to IGNORE · What to CONVERT
-- **`01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md`** (24 KB) — Tag interpretation: structural, headings, body, media, styling, activities, links
+- **`01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md`** (27 KB) — Tag interpretation: structural, headings, body, media (incl. the constraint-83 no-`loading="lazy"`-inside-moving-interactives table), styling, activities, links
   - Sections: 05 — Tag Interpretation · Structural & Page Tags · Headings · Body Text · Media · Content Styling · Activities · Links & Buttons · Interactive Components
 
 ## 02_DATA_CONTENT_VERIFICATION
@@ -39,9 +39,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 06 — Interactive Data Pattern Recognition · Overview · Pattern 1: Single Data Table (Most Common) · Pattern 2: Front/Back Table Rows · Pattern 3: Hint/Slide Table · Pattern 4: Numbered Items (Dropdown Paragraph) · Pattern 5: Numbered Slides · Pattern 6: Numbered Shapes/Tabs · Pattern 7: Numbered Accordions · Pattern 8: Speech Bubble in Table Row · Pattern 9: Conversation Layout · Pattern 10: Word Select Table · Pattern 11: Axis Labels (Slider Chart) · Pattern 12: Info Trigger Image (Labelled Image Overlay) · …
 - **`02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md`** (18 KB) — Content rules: preservation, grids, merging, perspective, red text, headings
   - Sections: 07 — Content Rules · Content Preservation Rules · Grid Structure Rules · Content Merging Rules · Writer Perspective Notes · Red Text Rules · Heading Formatting · Numbered Instructions in Activities · Square-Bracket Tags
-- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (19 KB) — Verification checklist
+- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (21 KB) — Verification checklist
   - Sections: 08 — Verification, Constraints & Output · Verification Checklist
-- **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (26 KB) — Comment & red flag policy; constraints
+- **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (27 KB) — Comment & red flag policy; constraints (incl. 28 `never_lazy_load_moving_interactive_images`)
   - Sections: Comment & Red Flag Policy · Constraints
 - **`02_DATA_CONTENT_VERIFICATION/02E_EDGE_CASES_OUTPUT.md`** (7 KB) — Edge cases, component whitelist, output specifications
   - Sections: Edge Cases · Component Whitelist — Known Partial/No-Match (v6) · Output Specifications
@@ -61,22 +61,22 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: COMP_05 — Ordering & Selecting · Reorder · Clicking Order · Word Select · Checklist / Selection Box · COMP_06 — Sliders · Slider (Scale/Survey) · Slider Chart
 
 ## 04_COMP_SEGMENTS_OVERLAYS
-- **`04_COMP_SEGMENTS_OVERLAYS/04A_COMP07_SEGMENTATION.md`** (19 KB) — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal)
+- **`04_COMP_SEGMENTS_OVERLAYS/04A_COMP07_SEGMENTATION.md`** (21 KB) — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal) — each moving component now carries its own no-`loading="lazy"` rule (constraint 83)
   - Sections: COMP_07 — Content Segmentation · Accordion · Carousel · Rotating Banner · Click Drop · Flip Card · Tabs · Hint · Hint Slider · Modal
 - **`04_COMP_SEGMENTS_OVERLAYS/04B_COMP08_TRIGGERS_OVERLAYS.md`** (15 KB) — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter)
   - Sections: COMP_08 — Triggers & Overlays · Info Trigger / Hover Trigger · Info Trigger Image · Audio Trigger · Audio Image · Image Label · Image Zoom · Word Highlighter
-- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (19 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
+- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (20 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
   - Sections: COMP_09 — Speech Bubbles · Basic Conversation Layout · No-Hover Rule · imageCentral Rule · Bubble Direction Classes · Colour Modifier Classes · Other Modifier Classes · With Audio · Height Equalisation · Single Character Speech Bubble · Writer Tag Variants · COMP_10 — Diagrams & Timelines · Shape Hover · Timeline · …
 
 ## 05_COMP_LANGUAGE_MEDIA_LAYOUT
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (9 KB) — COMP_12 language & specialist; COMP_13 media & embeds
   - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF · Embed Padlet · Embed Desmos Graph
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (11 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (12 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
   - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (18 KB) — COMP_14 acknowledgements
   - Sections: Acknowledgements
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** (19 KB) — COMP_14 Layout & Structure, second half: Buttons (incl. the "Go to website" default label for an unlabelled standalone external link, and the MTK Quiz button), Supervisor Button, Tables, Columns
-  - Sections: Buttons (MTK Quiz Button) · Supervisor Button (Shape A/B/C · the reveal panel · edge cases) · Tables · Columns & Floating Columns (Standard Grid · Floating clearfix) · Quote Text · Whakatauki · Rhetorical Question
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** (21 KB) — COMP_14 Layout & Structure, second half: Buttons (incl. the "Go to website" default label for an unlabelled standalone external link, and the MTK Quiz activity shell — the four-element box, and the never-generate-the-quiz-content rule), Supervisor Button, Tables, Columns
+  - Sections: Buttons (MTK Quiz — the activity shell `[MTKquiz]` builds) · Supervisor Button (Shape A/B/C · the reveal panel · edge cases) · Tables · Columns & Floating Columns (Standard Grid · Floating clearfix) · Quote Text · Whakatauki · Rhetorical Question
 
 ## 06_TEMPLATE_RECOGNITION
 - **`06_TEMPLATE_RECOGNITION.md`** (22 KB) — single-file topic (small enough to stay whole)
@@ -85,7 +85,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 07_MTK_DOCX_CONVERSION
 - **`07_MTK_DOCX_CONVERSION/07A_MTK_IDENTIFY_AND_EXTRACT.md`** (14 KB) — MTK: identify, structure, extraction, menu tabs, page boundaries, bilingual rules (SS1-6)
   - Sections: 07 — MTK Writers Template Direct Conversion (Docx-to-HTML) · PURPOSE · 1. IDENTIFYING AN MTK WRITERS TEMPLATE · 2. DOCUMENT STRUCTURE — What to Ignore vs. Extract · 3. EXTRACTING TEXT FROM THE DOCX · 4. OVERVIEW PAGE STRUCTURE — Module Menu Tabs · 5. PAGE BOUNDARY DETECTION · 6. BILINGUAL CONTENT EXTRACTION RULES
-- **`07_MTK_DOCX_CONVERSION/07B_MTK_CONTENT_PATTERNS.md`** (14 KB) — MTK: body content, alerts, interactive mapping, media, bilingual buttons (SS7-11)
+- **`07_MTK_DOCX_CONVERSION/07B_MTK_CONTENT_PATTERNS.md`** (15 KB) — MTK: body content, alerts, interactive mapping, media, bilingual buttons (SS7-11)
   - Sections: 7. BODY CONTENT PATTERNS · 8. ALERT AND SIDEBAR PATTERNS · 9. INTERACTIVE COMPONENT MAPPING · 10. MEDIA ASSET HANDLING · 11. BILINGUAL BUTTON PATTERNS
 - **`07_MTK_DOCX_CONVERSION/07C_MTK_PAGE_FURNITURE.md`** (10 KB) — MTK: header, footer, acks, word/image, Kiwi Kaiarahi, checklist, pitfalls (SS12-18)
   - Sections: 12. HEADER CONSTRUCTION · 13. FOOTER CONSTRUCTION · 14. ACKNOWLEDGEMENTS STRUCTURE · 15. WORD/IMAGE DISPLAY PATTERN · 16. KIWI KAIĀRAHI (LEARNING GUIDE) PATTERN · 17. CONVERSION CHECKLIST (MTK Docx-to-HTML) · 18. COMMON PITFALLS
@@ -99,7 +99,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 09_COMPARISON_MODE
 - **`09_COMPARISON_MODE/09A_COMPARISON_CORE.md`** (16 KB) — Comparison Mode: trigger (incl. the PageForge discriminator and the prohibition on ever raising Mode 7 here), inputs, workflow, what counts as a difference (SS1-4)
   - Sections: 09 — Comparison Mode (Mode 3) · PURPOSE · 1. THE TRIGGER · 2. THE FOUR REQUIRED INPUTS · 3. WORKFLOW · 4. WHAT COUNTS AS A DIFFERENCE
-- **`09_COMPARISON_MODE/09B_COMPARISON_EXCLUSIONS_GATE.md`** (20 KB) — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5)
+- **`09_COMPARISON_MODE/09B_COMPARISON_EXCLUSIONS_GATE.md`** (21 KB) — Comparison Mode: the exclusions list (Section 4.1) and the inclusion gate (SS4.1-5)
   - Sections: 4.1 DIFFERENCES NOT TO CAPTURE (EXCLUSIONS) · Exclusion 1 — Red flags & designer notes · Exclusion 2 — Overview module-menu heading styling · Exclusion 3 — Bespoke designer presentation / composition decisions · Exclusion 4 — Designer supplying media metadata · Exclusion 5 — Per-instance presentational modifier classes · Exclusion 6 — Red Flag + visible fallback later realised with a library component · Exclusion 7 — Direct-Link (Mode D) derived filename swapped for the actual asset filename · Exclusion 8 — Designer removal of the on-page `[MTKquiz]` question set · Exclusion 9 — The filename a media asset is given in `images/` · Applying the exclusions · 5. THE INCLUSION GATE — KEEP KNOWLEDGE-DERIVED, FILTER OUT TEMPLATE-DERIVED
 - **`09_COMPARISON_MODE/09C_COMPARISON_REPORTS.md`** (24 KB) — Comparison Mode: phase 1 & 2 reports, scope options, discipline (SS6-15)
   - Sections: 6. THE PHASE 1 REPORT — STRUCTURE (streamlined) · 7. THE FIVE SCOPE OPTIONS (the legend — shown once at the top of the report) · 8. PHASE 2 — PARSING THE DESIGNER'S SCOPE ASSIGNMENTS · 9. PHASE 2 OUTPUT — THE FINALIZED DETAILED REPORT · 10. WHAT HAPPENS AFTER — ACTIONING IS A SEPARATE CONVERSATION (UPDATE MODE) · 11. THE DOWNLOADABLE REPORT · 12. SHARED DISCIPLINE · 13. WHAT COMPARISON MODE DOES NOT DO · 14. RELATIONSHIP TO ONE-OFF OVERRIDES · 15. OUTPUT EXPECTATION
@@ -128,7 +128,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_0071.md`** (24 KB) — PART 3 change history: CL-0063 to CL-0071 (continued) — CLOSED at CL-0071 (7 August 2026, 30 KB soft limit)
 - **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_0077.md`** (24 KB) — PART 3 change history: CL-0072 to CL-0077 (continued) — CLOSED at CL-0077 (13 August 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0072 to CL-0077
-- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_ONWARD.md`** (17 KB) — PART 3 change history: CL-0078 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
+- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_ONWARD.md`** (24 KB) — PART 3 change history: CL-0078 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 

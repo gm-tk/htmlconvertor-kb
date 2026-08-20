@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -101,13 +101,15 @@ Run ALL checks before presenting output:
 - [ ] D&D standard with `images` class: text in `questionContainer` (col-7), images in `dragContainer` (col-5); NOT images in questionContainer
 - [ ] D&D standard with `images` class: `margB0` on images inside `.drag` items
 - [ ] Sketcher images: `canvasImage` class present on image inside `.canvasContainer`
-- [ ] Sketcher images: NO `loading="lazy"` attribute on images inside `.canvasContainer`
+- [ ] Sketcher images: NO `loading="lazy"` attribute on images inside `.canvasContainer` (constraint 83)
 - [ ] Clickable labelled DIAGRAM (labels point to parts of an image, reveal text on click): uses `imageLabel` + `layout="labelLine"` with `<div class="label infoTrigger" … direction/top/left/pointTop/pointLeft><p>…</p></div>` children and `imgLabel` on the image — NOT `infoImage` with `<span/p class="infoTrigger" style="top/left">`, NOT flip cards
 - [ ] Simple hotspot overlay (labels float over an image, NO leader lines to parts): uses `infoImage` with positioned `<p class="infoTrigger">` elements
 - [ ] Numbered activity/interactive instructions use `<ol><li>` (with `start="N"` for continuation) — NEVER `<p>1. …</p>` manual numbering; no typed leading number left inside a quiz question string
 - [ ] Each `activity` wrapper contains at most ONE interactive component; two or more interactives under one writer activity heading are split into separate sequential activities, the following activities renumbered, and the split flagged with a visible `Red Flag:` note (constraint 62)
 - [ ] Activity containing a dropbox / "Go to dropbox" / "Upload to dropbox" button carries the `dropbox` modifier on the activity wrapper (`activity dropbox` or `activity interactive dropbox`) — applies to ALL module series
-- [ ] `[MTKquiz]` activities: "Go to quiz" button with blank `href="#"` + visible `Designer/Developer To Do:` note (create the quiz in MTK) — NEVER a dropbox button; writer-supplied quiz content stays rendered on the page; no `dropbox` wrapper modifier (constraint 65)
+- [ ] `[MTKquiz]`: own `activity` wrapper carrying the **next consecutive activity number** even where the writer assigned none (constraint 65)
+- [ ] `[MTKquiz]` activity contains ONLY these children, in this order and nothing else — (1) `<h3>` quiz title (default `Quiz`, or the writer's title verbatim) as the FIRST child, (2) the writer's quiz instructions as normal `<p>` text **— omitted entirely where the writer supplied none, giving a valid three-child box**, (3) visible `Designer/Developer To Do:` note (create the quiz in MTK DEV + orgunit link it to the module), (4) `"Go to quiz"` button with blank `href="#"` — NEVER a dropbox button; no `dropbox` wrapper modifier (constraint 65)
+- [ ] `[MTKquiz]`: **NO quiz questions, options or answers anywhere in the output** — not visible, not listed, not in the red note, not in an HTML comment. The omission is silent — no `Red Flag:` (constraint 65 / CL-0082; reverses CL-0038)
 - [ ] EVERY activity: the inner text column is `col-12`, **never** `col-md-8 col-12` (constraint 63)
 - [ ] Activity at the DEFAULT wrapper width (`col-md-8 col-12`): heading/prose and the interactive share ONE inner row — no split (constraint 63)
 - [ ] Activity in a WIDENED wrapper (`col-12` / `col-md-11 col-12` / `col-md-12 col-12`): the two-row split IS retained — text in its own inner row, interactive in a separate inner row at the wrapper's width (constraint 63)
@@ -123,7 +125,9 @@ Run ALL checks before presenting output:
 - [ ] Mode P: visible placehold.co placeholder + commented-out real reference for each writer-specified image
 - [ ] Mode D: clean `<img>` tags with direct filenames — no HTML comment blocks above images
 - [ ] iStock ID cross-check (constraint 61): every `images/iStock-{ID}.jpg` emitted has `{ID}` equal to the first capture of `gm(\d+)` in the corresponding writer URL — the gm-leading number, which equals the asset page's "Stock photo ID"; NEVER the trailing segment of a dual-ID `gm{A}-{B}` URL — and the acknowledgements block cites the identical ID. Any mismatch is a build error — fix before presenting
-- [ ] All images: `class="img-fluid"` and `loading="lazy"` (EXCEPTION: images inside sketcher `.canvasContainer` must NOT have `loading="lazy"`)
+- [ ] All images: `class="img-fluid"` and `loading="lazy"`
+- [ ] **EXCEPTION — no `loading="lazy"` inside a moving-or-draggable interactive (constraint 83):** every `<img>` inside `.rotateBanner`, `.carousel`/`.viewer`/`.item`, `.dragAndDrop` (`.drag`/`.drop`/`.ddContainer`/`.ddColumn`), `.clickDrop`/`.clickDropContent`, `.flipCard`, `.memoryGame` (`.memCard`/`.cardHidden`) and sketcher `.canvasContainer` carries **no** `loading="lazy"` — real images and `placehold.co` placeholders alike, in both output modes
+- [ ] Images the student only clicks or hovers **without movement** (`infoImage`/`infoTrigger` hotspots, `imageLabel` diagrams), plus `alertImage`, speech-bubble characters, accordion/tab-panel images and self-reflection emoji, DO still carry `loading="lazy"` (constraint 83)
 - [ ] YouTube: `youtube-nocookie.com/embed/`
 - [ ] No TikTok embeds
 - [ ] No `imageCentral` class on writer-specified images

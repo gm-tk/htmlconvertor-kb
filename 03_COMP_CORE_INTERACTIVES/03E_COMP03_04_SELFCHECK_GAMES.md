@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 5:36 PM
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part E (5 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_03 self check & reflection; COMP_04 games & word components.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -108,7 +108,7 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
     <div class="memCard" match="1">
         <div class="cardFace"><h3>?</h3></div>
         <div class="cardHidden">
-            <img class="img-fluid" loading="lazy" src="images/iStock-2224188967.jpg" alt="A meerkat" />
+            <img class="img-fluid" src="images/iStock-2224188967.jpg" alt="A meerkat" />
         </div>
     </div>
     <!-- each pair shares the same match="N"; continue for every pair -->
@@ -121,7 +121,7 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 - `memCardSize`: card size on the `.memoryGame` container — `"lg"` is the production value used for Years 1–3 word/picture matching. There is NO `grid` attribute — sizing is the named `memCardSize` attribute.
 - `match="N"`: numeric pair id on each `.memCard`. The two cards with the same `match` value form the matching pair. Matching is by this attribute — NOT by identical hidden content.
 - Text cards: `<p class="memText sassoonIB-text">…</p>` inside `.cardHidden`. Note the bold infant font class is `sassoonIB-text` (not `sassoonI-text`).
-- Image cards: `<img class="img-fluid" loading="lazy" src="…" alt="…" />` inside `.cardHidden`.
+- Image cards: `<img class="img-fluid" src="…" alt="…" />` inside `.cardHidden` — **no `loading="lazy"`** (constraint 83). The card faces are hidden until the student turns them, so the browser never judges them "near the viewport"; a lazily-deferred face turns up blank on the first reveal and the flip animation measures the wrong size.
 
 **Card structure:** every `.memCard` has exactly two children — `<div class="cardFace"><h3>?</h3></div>` (the face-down "?" the student sees first) and `<div class="cardHidden">…</div>` (revealed on click).
 

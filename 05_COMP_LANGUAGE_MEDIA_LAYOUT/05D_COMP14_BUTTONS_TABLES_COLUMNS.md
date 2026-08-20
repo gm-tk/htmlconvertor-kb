@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part D (4 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, second half: Buttons, Supervisor Button, Tables, Columns & Floating Columns, Quote Text, Whakatauki, Rhetorical Question. Split from `05B` on 13 August 2026 as it approached the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *This part continues COMP_14 from `05B` (Activities, Alerts) — COMP_14 is ONE section split across the two.*
@@ -61,20 +61,38 @@ The resource's own name is never used as the button text. This sits **alongside*
 
 This is the button **label** convention. It is separate from — and additional to — the `dropbox` modifier on the activity *wrapper* (see Activities, above, and constraint 43): an activity that ends in a "Go to dropbox" button both carries the `dropbox` wrapper modifier **and** keeps the full "Go to dropbox" label on the button itself.
 
-### MTK Quiz Button — `[MTKquiz]` (constraint 65)
+### MTK Quiz — the activity shell `[MTKquiz]` builds (constraint 65)
 
-When the writer's template uses the **`[MTKquiz]`** tag (any variant/modifier combination — `[MTKquiz] [engage]`, `[type the answer]`, `[Teacher marked …]`, etc.), **do NOT generate a dropbox button.** Generate a **"Go to quiz"** button with a **blank href**, plus a visible `Designer/Developer To Do:` note telling the developer to create the new quiz within MTK (My Te Kura) and wire its D2L quicklink URL into the href:
+The **`[MTKquiz]`** tag (any variant/modifier combination — `[MTKquiz] [engage]`, `[type the answer]`, `[Teacher marked …]`, etc.) builds a **normal numbered activity box** holding **only the four things below, in this order and nothing else** (three, where the writer supplied no quiz instructions). The quiz itself is built later by the designer inside **MTK DEV**; the Convertor only ever builds the shell that points at it.
+
+**The activity box.** An MTK quiz always gets its **own `activity` wrapper with the next consecutive activity number**, exactly like any other activity — **even when the writer assigned it no number at all**. A writer who simply drops `[MTKquiz]` into the page after Activity 1C gets **Activity 1D**; the Convertor never emits an unnumbered quiz block and never re-uses the preceding activity's number. Numbering continues from there for the rest of the page. The wrapper's classes follow the normal rules.
+
+**The children, in this order — item 2 is the only optional one:**
+
+1. **The quiz title** — an `<h3>`, and the **FIRST child** inside the activity's content column. The default text is **`Quiz`**; where the writer supplied a title for the quiz, that title is used **verbatim** in its place (e.g. `<h3>End of lesson quiz</h3>`).
+2. **The writer's quiz instructions, if any** — anything the writer wrote *about* the quiz that a student needs to know ("You have two attempts", "Answer all ten questions before moving on") renders as **normal paragraph text** directly beneath the title. If the writer supplied none, this element is simply absent.
+3. **The red designer note** — the standard visible `Designer/Developer To Do:` note instructing the designer to create the quiz in MTK DEV and **orgunit link** it to this module.
+4. **The "Go to quiz" button** — blank `href="#"`; the developer wires in the D2L quiz quicklink URL. **Never a dropbox button.**
 
 ```html
-<p style="color: red; font-weight: bold;">Designer/Developer To Do: create a new quiz within MTK for this activity and insert its D2L quicklink URL into the "Go to quiz" button href below.</p>
-<a href="#" target="_blank"><div class="button">Go to quiz</div></a>
+<div class="activity" number="1D">
+    <div class="row"><div class="col-12">
+        <h3>Quiz</h3>
+        <p>The writer's quiz instructions, if the writer supplied any.</p>
+        <p style="color: red; font-weight: bold;">Designer/Developer To Do: create this quiz in MTK DEV and orgunit link it to this module, then insert its D2L quicklink URL into the "Go to quiz" button href below.</p>
+        <a href="#" target="_blank"><div class="button">Go to quiz</div></a>
+    </div></div>
+</div>
 ```
 
-- **Tag precedence — WJ series.** In WJ-series modules, when `[MTK Quiz]` co-occurs with an in-page quiz tag on the same activity (e.g. `[Multichoice quiz]`, `[Radio quiz]`), `[MTK Quiz]` wins: emit this section's "Go to quiz" button pattern, NOT the in-page quiz component. An in-page quiz tag with no co-occurring `[MTK Quiz]` still builds the in-page component as normal. (WJFUN107 finalized report, Difference 1, scope (b), 29 July 2026.)
+**⚠️ CRITICAL — NEVER generate the quiz's own content (CL-0082).** The questions, the answer options, the correct answers, model answers, and any sentence/passage material the quiz will ask students to work on are **never emitted into the HTML in any form** — not as visible content, not as a list or table, not inside the red note, and not as an HTML comment. That material stays in the **Writers Template**, which is where the designer reads it when building the quiz in MTK DEV. **The omission is silent and undisclosed** — no `Red Flag:` is raised — and it is a documented exception to constraint 1's no-silent-removal discipline (recorded in constraint 1 itself). Nothing beyond the four elements above appears inside the activity box.
+
+> **This REVERSES the earlier "writer-supplied quiz content stays visible" rule of CL-0038** (16 July 2026), on the designer's direct instruction of 21 August 2026 (CL-0082). Any older example or reference showing rendered quiz questions beside a "Go to quiz" button is superseded — including the `09` Comparison Mode Exclusion 8, which is retained but now describes a state the Convertor no longer produces.
+
+- **Tag precedence — WJ series.** In WJ-series modules, when `[MTK Quiz]` co-occurs with an in-page quiz tag on the same activity (e.g. `[Multichoice quiz]`, `[Radio quiz]`), `[MTK Quiz]` wins: emit this section's activity-shell pattern, NOT the in-page quiz component. An in-page quiz tag with no co-occurring `[MTK Quiz]` still builds the in-page component as normal. (WJFUN107 finalized report, Difference 1, scope (b), 29 July 2026.)
 - The finished production form is a D2L quiz quicklink (`/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&type=quiz&rcode=…`) — the developer supplies it; the Convertor never invents an `rcode`.
-- **Writer-supplied quiz content stays visible.** Any question/sentence material the writer attached to the `[MTKquiz]` activity (e.g. the incorrect sentences a quiz will ask students to fix) is writer content: render it on the page as normal so the developer has the data to build the quiz from — never silently delete it (constraint 1; the developer removes it from the page once the quiz is created).
-- The activity wrapper's classes follow the normal rules — the `dropbox` modifier does **not** attach (the activity no longer ends in a dropbox button). A `dropbox` token observed on a designer-refined MTKquiz activity is a leftover, not a rule.
-- `MTK` here means **My Te Kura** (the D2L quiz tool) — not the MTK (Te Reo Rangatira) Writers Template pathway of `07_MTK_DOCX_CONVERSION.md`.
+- The `dropbox` wrapper modifier of constraint 43 does **not** attach (the activity does not end in a dropbox button). A `dropbox` token observed on a designer-refined MTKquiz activity is a leftover, not a rule.
+- `MTK` here means **My Te Kura** (the D2L quiz tool) and **MTK DEV** its authoring environment — not the MTK (Te Reo Rangatira) Writers Template pathway of `07_MTK_DOCX_CONVERSION.md`.
 
 ---
 

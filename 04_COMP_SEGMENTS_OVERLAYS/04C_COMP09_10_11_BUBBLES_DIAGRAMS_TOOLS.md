@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -434,6 +434,8 @@ See COMP_01 in `03_COMP_CORE_INTERACTIVES.md` — Venn Layout section.
 **⚠️ CRITICAL — canvasImage class:** The image inside `.canvasContainer` MUST have the `canvasImage` class in addition to `img-fluid`. Without `canvasImage`, the sketcher interactive will not function correctly — the drawing canvas will not align with the background image. This applies to both real images and placeholder images.
  
 **⚠️ CRITICAL — No loading="lazy" on canvasContainer images:** Images inside `.canvasContainer` MUST NOT have the `loading="lazy"` attribute. Adding `loading="lazy"` to a canvas background image breaks the sketcher functionality — the image becomes unresponsive to drawing interactions because lazy loading interferes with the canvas overlay alignment and event handling. This overrides the general rule that all images should have `loading="lazy"`. The prohibition applies to ALL images that are children of `.canvasContainer`, whether real images or placeholders.
+
+> **The sketcher is no longer the only case (constraint 83, 21 August 2026).** The same prohibition now covers every **moving-or-draggable** interactive — the rotating banner (`.rotateBanner`), carousel (`.carousel`/`.item`), drag and drop (`.dragAndDrop`), click drop (`.clickDrop`/`.clickDropContent`), flip card (`.flipCard`) and memory game (`.memoryGame`/`.cardHidden`). Images the student only clicks or hovers **without movement** — the `infoImage`/`infoTrigger` hotspots and `imageLabel` diagrams documented in this same part — are **unaffected** and keep `loading="lazy"`. See `01_PIPELINE_EXTRACTION_TAGS.md` → Images → Rules Common to Both Modes.
  
 ```html
 <!-- CORRECT — canvasImage class present, NO loading="lazy" -->

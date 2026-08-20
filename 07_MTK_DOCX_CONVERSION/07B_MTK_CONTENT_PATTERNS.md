@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part B (2 of 4) of `07_MTK_DOCX_CONVERSION.md`** — MTK: body content, alerts, interactive mapping, media, bilingual buttons (SS7-11).
 > All sibling parts live in `07_MTK_DOCX_CONVERSION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -260,7 +260,7 @@ When the writer describes matching pictures to letters, use `dragAndDrop layout=
     <div class="row">
         <div class="col-3 questionContainer">
             <div class="question">
-                <img class="img-fluid margB0" loading="lazy" src="images/item.jpg" alt="Description" />
+                <img class="img-fluid margB0" src="images/item.jpg" alt="Description" />
             </div>
             <!-- repeat -->
         </div>
@@ -298,7 +298,10 @@ Writer provides: `[Item N] [Image] [Description](SharePoint URL)`
 - Use underscores instead of spaces in filenames
 - Always add `<!-- CS: Item N — description -->` comment above each image (this is for media catalogue tracking, not image detail duplication). This Item-N annotation is a deliberate, documented exception to the project-wide "no designer-facing comments" rule — it is a stable catalogue key, not a note to action. Anything a designer must actually action still goes in a VISIBLE red flag — see `02_DATA_CONTENT_VERIFICATION.md` → Comment & Red Flag Policy
 - Use `class="img-fluid"` on all images
-- Add `loading="lazy"` on images below the fold
+- Add `loading="lazy"` on images below the fold — **except** on any image inside a **moving-or-draggable interactive**
+  (`.rotateBanner`, `.carousel`/`.item`, `.dragAndDrop` incl. `.drag`/`.drop`/`.ddContainer`/`.ddColumn`, `.clickDrop`/`.clickDropContent`,
+  `.flipCard`, `.memoryGame`/`.memCard`/`.cardHidden`, sketcher `.canvasContainer`), which carries **no** `loading` attribute at all
+  (constraint 83). The drag-and-drop example in Section 9 above is shown in the correct form.
 
 ### Audio References
 

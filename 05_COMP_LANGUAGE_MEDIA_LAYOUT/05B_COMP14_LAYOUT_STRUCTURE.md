@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026
 > **Granular part B (2 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, first half: Activities and Alerts. Buttons onward (Buttons, Supervisor Button, Tables, Columns, Quote/Whakatauki/Rhetorical) live in `05D`.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -51,7 +51,7 @@ Do not force `alertPadding` onto a dropbox activity — follow the activity's ow
 
 **One interactive per activity (constraint 62).** Each activity wrapper holds **at most one interactive component**. When a writer's single activity heading carries two or more interactives, split them into separate sequential activities and renumber the following activities, flagging the split with a visible `Red Flag:` note — full rule in `03_COMP_CORE_INTERACTIVES.md` → COMP_00 (Universal Rules).
 
-**MTK quiz activities (constraint 65).** An activity whose writer source carries the `[MTKquiz]` tag (with any modifiers, e.g. `[engage]`, `[type the answer]`, `[Teacher marked …]`) ends in a **"Go to quiz" button**, never a dropbox button — see Buttons → MTK Quiz Button below. Because the activity does not end in a dropbox button, the `dropbox` wrapper modifier of constraint 43 does **not** attach.
+**MTK quiz activities (constraint 65).** An `[MTKquiz]` tag (with any modifiers, e.g. `[engage]`, `[type the answer]`, `[Teacher marked …]`) builds its **own activity box, carrying the next consecutive activity number even where the writer assigned none**, holding only these children in order — quiz title `<h3>` (default `Quiz`), the writer's quiz instructions where supplied, a `Designer/Developer To Do:` note, and a **"Go to quiz" button** — and **never the quiz's own questions or answers**. See Buttons → MTK Quiz in `05D` for the full shell. Because the activity does not end in a dropbox button, the `dropbox` wrapper modifier of constraint 43 does **not** attach.
 
 **The inner text column is `col-12`, and the split is conditional on the wrapper's width (constraint 63).** Two linked rules, both inside the activity wrapper:
 
@@ -254,4 +254,4 @@ When an interactive activity (e.g., a dropQuiz list layout) needs more room than
 
 ---
 
-> **COMP_14 continues in `05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** — Buttons (incl. the external-link default label and the MTK Quiz button), the Supervisor Button, Tables, Columns & Floating Columns, Quote Text, Whakatauki and Rhetorical Question. COMP_14 is ONE section split across `05B` and `05D`.
+> **COMP_14 continues in `05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** — Buttons (incl. the external-link default label and the MTK Quiz activity shell), the Supervisor Button, Tables, Columns & Floating Columns, Quote Text, Whakatauki and Rhetorical Question. COMP_14 is ONE section split across `05B` and `05D`.
