@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026 6:30 PM
 > **Granular part A (1 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -129,6 +129,8 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
   ```
 - **Flip cards.** Thin border so images are as large as possible; the **text on the flipped side is on a white background — not blue**. Supplied designer note: use **`.noBG`** on the `.flipCard`.
 - **PDF resources are DEFERRED.** All PDFs are created as **separate lessons/resources** and are submitted as separate lessons, then linked in when ready. In the writers' templates these come out as **revision requests**. **For now: remove the PDF from the module and emit a visible `Designer/Developer To Do:` note listing the pending printable resources** (lesson name → intended resource), so the developer links them once delivered.
+
+  > **Carve-out — the eight AI Guidelines PDFs are DELIVERED and are never deferred.** `[AI Use Guidelines Traffic Light PDF]`, the three `[Ākonga AI Use Guide Years …]` tags and the four `[Kaimahi …]` tags resolve against real files in `AI-guidelines/` and always build their `embedPDF` / `centralFile` block, in CED as anywhere else. Do not strip them and do not raise a `Designer/Developer To Do:` note for them. See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs; constraint 84.
   > **Divergence from the source document — recorded decision.** The CED global-parameter document suggests holding these as **commented-out** printable-resource links in the sticky nav (`// ['Lesson 1: …', 192664], …`). That would place designer-facing information inside an HTML comment, which conflicts with the project's **"Comments Are Not a Communication Channel"** philosophy (constraint 5). Per the Update Mode decision that actioned this file (Fork C — bake deferred items in as visible red-note placeholders; **no new permitted-comment exception was granted**), the pending printable resources are rendered as a **visible `Designer/Developer To Do:` note** instead of commented-out links. If a commented-out-links approach is later preferred, it requires a **separate permitted-comment-exception sign-off** (it would join the Mode P / MTK / PAGEFORGE-marker exceptions in `02` → Comment & Red Flag Policy).
 
 ---

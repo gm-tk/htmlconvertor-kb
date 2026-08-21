@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026 6:30 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -11,7 +11,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (18 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
-- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (16 KB) — File reference index
+- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (17 KB) — File reference index
   - Sections: FILE REFERENCE INDEX
 - **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (28 KB) — Constraints quick reference, part 1 of 3 — **constraints 1–57**
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E` and `00G` as ONE continuous numbering
@@ -19,7 +19,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: (continuation of the numbered list from `00D` — no headings of its own)
 - **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (6 KB) — When to load which files
   - Sections: WHEN TO LOAD WHICH FILES
-- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (19 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward (latest: 83, no `loading="lazy"` inside moving interactives); THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (21 KB) — Constraints quick reference, part 3 of 3 — **constraints 75 onward (latest: 84, the eight AI Guidelines PDF tags → the `embedPDF`/`centralFile` block with the exact supplied filename); THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -29,9 +29,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: Module Menu Structures · Footer and Acknowledgements
 - **`01_PIPELINE_EXTRACTION_TAGS/01C_CONTENT_SOURCE_FORMATS.md`** (28 KB) — Content source formats: PageForge txt, raw WT docx, Media List, iStock acks
   - Sections: 02 — Content Source Formats · Overview · PageForge Text File Format · File Structure · Format Conventions · Content Integrity · What to IGNORE in the Text File · What to CONVERT · Raw Writers Template Docx Format · Media List Companion Document · iStock Acknowledgements File
-- **`01_PIPELINE_EXTRACTION_TAGS/01D_PAGE_BOUNDARIES_TAG_TAXONOMY.md`** (19 KB) — Page boundary system; tag taxonomy & normalisation
+- **`01_PIPELINE_EXTRACTION_TAGS/01D_PAGE_BOUNDARIES_TAG_TAXONOMY.md`** (20 KB) — Page boundary system; tag taxonomy & normalisation (incl. the five tolerant-match `ai_guidelines_pdf` media rows — constraint 84)
   - Sections: 03 — Page Boundary System · Standard Page Structure · Page Boundary Validation Rules · Page-to-File Mapping · Lesson Numbering · Multi-Page vs Single-Page Modules (and when to offer Split Mode) · 04 — Tag Taxonomy & Normalisation Rules · Normalisation Algorithm · Complete Normalisation Table · Red Text Handling · Writer Intent Interpretation (Ambiguous Requests) · Document Parsing: What to IGNORE · What to CONVERT
-- **`01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md`** (27 KB) — Tag interpretation: structural, headings, body, media (incl. the constraint-83 no-`loading="lazy"`-inside-moving-interactives table), styling, activities, links
+- **`01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md`** (28 KB) — Tag interpretation: structural, headings, body, media (incl. the constraint-83 no-`loading="lazy"`-inside-moving-interactives table and the eight AI Guidelines PDF teacher tags — constraint 84), styling, activities, links
   - Sections: 05 — Tag Interpretation · Structural & Page Tags · Headings · Body Text · Media · Content Styling · Activities · Links & Buttons · Interactive Components
 
 ## 02_DATA_CONTENT_VERIFICATION
@@ -69,8 +69,8 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: COMP_09 — Speech Bubbles · Basic Conversation Layout · No-Hover Rule · imageCentral Rule · Bubble Direction Classes · Colour Modifier Classes · Other Modifier Classes · With Audio · Height Equalisation · Single Character Speech Bubble · Writer Tag Variants · COMP_10 — Diagrams & Timelines · Shape Hover · Timeline · …
 
 ## 05_COMP_LANGUAGE_MEDIA_LAYOUT
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (9 KB) — COMP_12 language & specialist; COMP_13 media & embeds
-  - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF · Embed Padlet · Embed Desmos Graph
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (14 KB) — COMP_12 language & specialist; COMP_13 media & embeds (incl. **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags, their tag→filename registry and the `embedPDF`/`centralFile` block; constraint 84)
+  - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF (generic — scoped to non-AI-Guidelines PDFs) · AI Guidelines PDFs (the eight teacher tags) · Embed Padlet · Embed Desmos Graph
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (12 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
   - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (18 KB) — COMP_14 acknowledgements
@@ -128,7 +128,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_0071.md`** (24 KB) — PART 3 change history: CL-0063 to CL-0071 (continued) — CLOSED at CL-0071 (7 August 2026, 30 KB soft limit)
 - **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_0077.md`** (24 KB) — PART 3 change history: CL-0072 to CL-0077 (continued) — CLOSED at CL-0077 (13 August 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0072 to CL-0077
-- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_ONWARD.md`** (24 KB) — PART 3 change history: CL-0078 onward (continued) — THE OPEN PART: append new CL entries here (close it and start the next part at 30 KB)
+- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_ONWARD.md`** (29 KB) — PART 3 change history: CL-0078 to CL-0084 (continued) — THE OPEN PART: append new CL entries here. **At 29.9 KB it is a whisker under the 30 KB soft limit — the NEXT row must close it to its range and open `12E5_…_ONWARD.md` (`CLAUDE.md` §4)**
   - Sections: 
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -140,7 +140,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 13 — Split Mode (Mode 5) · PURPOSE — what Split Mode is, and the problem it solves · 1. SPLIT MODE ≠ THE PAGE BOUNDARY SYSTEM (read first) · 2. PROACTIVE SINGLE-PAGE IDENTIFICATION + OFFERING SPLIT MODE · 3. TRIGGER, TRIAGE & APPLICABILITY · 4. OUTPUT #1 — THE BASE HOMEPAGE (`<CODE>-base.html`) · 5. OUTPUT #2 — ONE SECTION FILE PER SLOT (`<CODE>-lesson-<id>.html`) · 5A. EMISSION CADENCE — ONE FILE PER RESPONSE · 5B. MANUAL-STITCH GUIDANCE BLOCKS (`PAGEFORGE-GUIDE`) · 6. ID AND FILENAME CONVENTIONS · 7. KEYWORD / MARKER REFERENCE (reproduce these EXACTLY) · 8. THE ROUND-TRIP GUARANTEE (why the exactness matters) · 9. HOW PAGEFORGE'S PAGE STITCHER CONSUMES THE OUTPUT (so the split is valid) · 10. VALIDATION AND FAILURE HANDLING THE CONVERTER MUST HONOUR · …
 
 ## 14_SUBJECT_GLOBAL_PARAMETERS
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (21 KB) — Purpose + families 14.1-14.5 (Languages — finalised Audiovisual Package rules, registry data in `14C` —, Pathways, Taonga, CED, FUNdamentals)
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (22 KB) — Purpose + families 14.1-14.5 (Languages — finalised Audiovisual Package rules, registry data in `14C` —, Pathways, Taonga, CED — incl. the AI Guidelines carve-out on the §14.4 PDF deferral —, FUNdamentals)
   - Sections: 14 — Subject Global Parameters · PURPOSE · 14.1 Languages Phase 1–4 · 14.2 Pathways · 14.3 Taonga (The Arts) · 14.4 ConnectED (CED) Phase 5 · 14.5 FUNdamentals (Health & PE, Y1–10)
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (27 KB) — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ)
   - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons (celebration .gif DELIVERED — deferral retired) · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing

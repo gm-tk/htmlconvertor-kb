@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026 6:30 PM
 > **Granular part C (3 of 7) of `00_MASTER_INSTRUCTIONS.md`** — File reference index.
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -43,7 +43,7 @@
 | COMP_10 — Diagrams & Timelines | `04_COMP_SEGMENTS_OVERLAYS.md` | Shape Hover, Timeline, Venn Diagram |
 | COMP_11 — Drawing Tools | `04_COMP_SEGMENTS_OVERLAYS.md` | Sketcher, Number Line, Stop Watch |
 | COMP_12 — Language | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Glossary, Kanji Cards, Language Fonts, Translate Section, MathJax |
-| COMP_13 — Media & Embeds | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Video Embed, Audio Player, Embed PDF, Embed Padlet, Embed Desmos |
+| COMP_13 — Media & Embeds | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Video Embed, Audio Player, Embed PDF (generic), **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags and their `embedPDF`/`centralFile` block (constraint 84), Embed Padlet, Embed Desmos |
 | COMP_14 — Layout & Structure | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Activities, Alerts, Buttons, Supervisor Button, Tables, Columns, Quotes, Whakatauki, Acknowledgements, Rhetorical Question |
  
 ---

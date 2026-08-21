@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Friday, 21st August, 2026 6:30 PM
 > **Granular part D (4 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -181,6 +181,13 @@ The offer is an **offer, not an automatic action.** Split Mode runs **only** whe
 | `audio image`, `audioimage`, `audioImage` | `audio_image` |
 | `image zoom` | `image_zoom` |
 | `image label` | `image_label` |
+| `AI use guidelines traffic light PDF` | `ai_guidelines_pdf` + `traffic_light` |
+| `Ākonga`/`Akonga` `AI use guide years 1-6`/`7-10`/`11-13 and NCEA` + `PDF` | `ai_guidelines_pdf` + akonga variant |
+| `Kaimahi AI use guidelines years 1-6`/`7-10` + `PDF` | `ai_guidelines_pdf` + kaimahi variant |
+| `Kaimahi AI guidelines - authenticity guidelines for years 11-13 and NCEA PDF` | `ai_guidelines_pdf` + `authenticity` |
+| `Kaimahi AI guidelines - responding to suspected use in assessments for years 11-13 and NCEA PDF` | `ai_guidelines_pdf` + `responding` |
+
+> **The eight `ai_guidelines_pdf` tags normalise tolerantly but emit exactly.** Match is case-insensitive, a hyphen / en dash / em dash in the year range are the **same** tag, and `Akonga` without the macron is accepted. The **emitted filename is always the exact supplied string** (en dash, macron, spaced hyphen and all) from the registry table in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs. Constraint 84.
 
 ### Activity Tags
 | Writer Variants | Normalised |

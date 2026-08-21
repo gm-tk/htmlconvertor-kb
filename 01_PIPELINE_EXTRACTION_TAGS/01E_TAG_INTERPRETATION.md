@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Friday, 21st August, 2026 6:30 PM
 > **Granular part E (5 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation: structural, headings, body, media, styling, activities, links.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -306,6 +306,22 @@ Clickable image that plays associated audio. See COMP_08 in `04_COMP_SEGMENTS_OV
     </div>
 </div>
 ```
+
+---
+
+### AI Guidelines PDFs (eight teacher tags)
+
+Eight **delivered** central PDFs, each with its own writer tag. Any of these tags builds the dedicated `embedPDF` / `centralFile` block — **not** the generic `embed-responsive` PDF embed, and never a placeholder or a deferral note:
+
+```html
+<div class="embedPDF" layout="portrait">
+<object class="centralFile" data="AI-guidelines/FILENAME.pdf#view=fit&amp;toolbar=0" type="application/pdf">
+<p>Unable to display PDF file. <a href="AI-guidelines/FILENAME.pdf" target="_blank" class="centralFile">Download</a> here</p>
+</object>
+</div>
+```
+
+The tags are `[AI Use Guidelines Traffic Light PDF]`, `[Ākonga AI Use Guide Years 1-6 PDF]` / `Years 7-10` / `Years 11-13 and NCEA`, `[Kaimahi AI Use Guidelines Years 1-6 PDF]` / `Years 7-10`, `[Kaimahi AI Guidelines - Authenticity Guidelines for Years 11-13 and NCEA PDF]` and `[Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11-13 and NCEA PDF]`. **The filename is NOT the tag text** — the year ranges take an **en dash** in the filename where the tag uses a hyphen. The exact eight filenames, the twice-repeated path, the `&amp;` entity, `layout="portrait"`, the tolerant tag match and the never-correct-a-filename rule are all in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → **AI Guidelines PDFs (the eight teacher tags)** — read that table before emitting; constraint 84.
 
 ---
 

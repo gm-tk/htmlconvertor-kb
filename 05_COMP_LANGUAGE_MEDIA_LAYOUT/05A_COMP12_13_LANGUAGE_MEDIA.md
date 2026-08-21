@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 21st August, 2026 6:30 PM
 > **Granular part A (1 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist; COMP_13 media & embeds.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -253,6 +253,53 @@ Standard LaTeX syntax. Inline: `\( \)`. Block: `\[ \]`.
     <embed class="embed-responsive-item" src="pdf/filename.pdf" type="application/pdf">
 </div>
 ```
+
+> **Scope — this generic shape is for ordinary writer-supplied PDFs only.** It stays in force for every PDF embed that is *not* an AI Guidelines document. The eight **AI Guidelines** PDFs are a delivered central asset set with their **own** markup and their **own** eight writer tags — see *AI Guidelines PDFs (the eight teacher tags)* immediately below. **Whenever the embedded PDF is an AI Guidelines document, that block applies and this one does not.**
+
+---
+
+## AI Guidelines PDFs (the eight teacher tags)
+
+**Container class:** `embedPDF` · **Object class:** `centralFile` · **Asset folder:** `AI-guidelines/`
+
+Eight **delivered** central PDFs — Te Kura's AI use guidelines for ākonga and kaimahi. Each has its **own writer tag**. When any of the eight tags appears in a Writers Template, emit the block below with that tag's filename substituted — **never** the generic `embed-responsive` shape above, and never a placeholder, a link-only fallback or a `Designer/Developer To Do:` note: these assets exist and resolve.
+
+**The block (Traffic Light shown — the only thing that changes between the eight is the filename):**
+
+```html
+<div class="embedPDF" layout="portrait">
+<object class="centralFile" data="AI-guidelines/AI Use Guidelines Traffic Light.pdf#view=fit&amp;toolbar=0" type="application/pdf">
+<p>Unable to display PDF file. <a href="AI-guidelines/AI Use Guidelines Traffic Light.pdf" target="_blank" class="centralFile">Download</a> here</p>
+</object>
+</div>
+```
+
+### The tag → filename registry
+
+Copy the filename **character-for-character** from the right-hand column. Note that the tag spells the year ranges with a plain hyphen (`11-13`) while the **filename uses an en dash** (`11–13`) — that mismatch is real and deliberate; the file on the server carries the en dash.
+
+| Writer tag (as the WT types it) | PDF filename — exact, copy verbatim |
+|---|---|
+| `[AI Use Guidelines Traffic Light PDF]` | `AI Use Guidelines Traffic Light.pdf` |
+| `[Ākonga AI Use Guide Years 11-13 and NCEA PDF]` | `Ākonga AI Use Guide Years 11–13 and NCEA.pdf` |
+| `[Ākonga AI Use Guide Years 1-6 PDF]` | `Ākonga AI Use Guide Years 1–6.pdf` |
+| `[Ākonga AI Use Guide Years 7-10 PDF]` | `Ākonga AI Use Guide Years 7–10.pdf` |
+| `[Kaimahi AI Guidelines - Authenticity Guidelines for Years 11-13 and NCEA PDF]` | `Kaimahi AI Guidelines - Authenticity Guidelines for Years 11–13 and NCEA.pdf` |
+| `[Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11-13 and NCEA PDF]` | `Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA.pdf` |
+| `[Kaimahi AI Use Guidelines Years 1-6 PDF]` | `Kaimahi AI Use Guidelines Years 1–6.pdf` |
+| `[Kaimahi AI Use Guidelines Years 7-10 PDF]` | `Kaimahi AI Use Guidelines Years 7–10.pdf` |
+
+### Build rules (all eight)
+
+- **The filename appears TWICE** in the block and the two forms differ: in `data=` it carries the viewer fragment `#view=fit&amp;toolbar=0`; in the fallback `href=` it is **bare** — no fragment.
+- **`&amp;` is an entity, not a bare `&`.** `#view=fit&amp;toolbar=0` is copied exactly.
+- **`layout="portrait"` on all eight.** No landscape variant exists (designer decision, Chris, 21 August 2026).
+- **Path is `AI-guidelines/` + the filename** — hyphen, lower-case `g`, no `pdf/` directory. **Spaces in the path are NOT URL-encoded** — the path is written with real spaces exactly as shown.
+- **The fallback paragraph is verbatim:** `Unable to display PDF file. <a …>Download</a> here` — the word *here* sits **outside** the anchor, and `class="centralFile"` sits on the anchor as well as the `<object>`.
+- **Never "correct" a filename.** The en dashes, the macron on `Ākonga`, the spaced hyphen in `Kaimahi AI Guidelines - Authenticity …`, and the lower-case `use` in `Responding to Suspected use in Assessments` are the real strings on the server. A tidied path is a broken path — the same rule that governs `congradulations/` (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.12).
+- **Tolerant tag matching, exact filename out.** Recognise the tag **case-insensitively**, treat a hyphen / en dash / em dash in the year range as the **same** tag, and accept `Akonga` without the macron. Whatever form the writer typed, the emitted filename is the exact string in the table above. A near-miss is matched, never flagged.
+- **These tags are DELIVERED assets and are never deferred.** Where a family rule defers PDF resources — CED Phase 5, `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.4 — that deferral does **not** apply to these eight; build the block.
+- **Never render the tag as visible text** (`02_DATA_CONTENT_VERIFICATION.md` → Square-Bracket Tags).
 
 ---
 
