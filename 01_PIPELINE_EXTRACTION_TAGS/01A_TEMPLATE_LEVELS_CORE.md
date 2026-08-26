@@ -1,4 +1,4 @@
-> **Last updated:** Sunday, 3rd August, 2026
+> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
 > **Granular part A (1 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Template levels: structural reference workflow, levels, head/heading/title patterns.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -279,6 +279,18 @@ The **overview page (`-00`) is unchanged** — it keeps the module title, dual w
 **Te Reo title sourcing:** The Te Reo **module** title (for the overview page) may come from the PageForge metadata, the overview page content, or the `[TITLE BAR]` section. If no Te Reo title is found in any of these sources, ask the user for it before proceeding. Do NOT omit the Te Reo title on a Years 9–10/NCEA **overview** page. A **lesson** page needs a Te Reo title only when the writer gave that lesson a bilingual name — never ask for, or invent, a Te Reo lesson title that the writer did not supply.
 
 **TITLE BAR PARSING RULE:** English and Te Reo titles MUST be split into two separate `<h1><span>` elements. Never merge into one.
+
+**THREE-PART `[TITLE BAR]` — LANGUAGES COHORT ONLY (corpus-validated).** *For a **Languages-cohort** module only* (Chinese, French, Gagana Samoan, German, Japanese, Spanish — see `14_SUBJECT_GLOBAL_PARAMETERS.md` § 14.1), a `[TITLE BAR]` carrying **three** `|`-separated parts is the **target language + English + Te Reo** title set, and **each part becomes its own `<h1><span>`** — three headings, never two:
+
+```html
+<h1><span>Begrüßung und Vorstellung</span></h1>
+<h1><span>Welcome and Introduction</span></h1>
+<h1><span>Mihi Whakatau me te Kupu Whakataki</span></h1>
+```
+
+The parts are emitted **in the order the writer wrote them** — the cohort uses both orders (`GENO901`, `GEFUN01`, `SPA1004` and the Samoan `1005 Sasa` lead with the target language; `GEFUN06` leads with English) and the conversion never re-orders them. **Skip a part that is empty or is an unfilled placeholder** — `TE REO`, `MODULE TITLE TE REO`, `INSERT MODULE TITLE TE REO` and the like are the writer's un-replaced prompt text, not a title. This is the `TEFUN01` / `TEFUN04` case: writer title bar `TE REO | Working with and for people | Te mahi tahi me te mahi mō te tangata`, human-built module ships **two** headings (`Working with and for people` / `Te mahi tahi me te mahi mō te tangata`). If skipping leaves fewer than two real titles, raise a `Red Flag:` rather than guessing. The standard title-casing rules below apply to each of the three spans.
+
+> **⚠️ EVERY OTHER SUBJECT — a `|` is NOT automatically a title boundary; do NOT split a three-part title bar.** Outside the Languages cohort the two-title rule above is unchanged, and a **second** `|` is normally punctuation *inside* one of the titles, not a third language. Measured across **all 1,472** `[TITLE BAR]` lines in the Writers Template corpus (3,981 `.docx` scanned): 941 carry no `|`, 513 carry one, and only **11 modules** carry two — of which just **5 are genuinely trilingual, every one of them Languages-cohort**. The human-built HTML for the other **6** ships **two** headings: `ANZH304` keeps the pipe *inside* the heading (`<h1><span>Mana Motuhake | Te Tiriti o Waitangi</span></h1>`), `XGF9003` joins an English title and its English subtitle with an en-dash into one heading, and `HIS1007` / `HIS1008` drop a second title pair entirely. Three finished modules ship a `|` inside a single `<h1>` — `ANZH304`, `HIS1001` (`Independence | Colonisation | Independence`) and `XMES201` (`My Pets | Aku Mokai`, on all six pages). Where a **non**-Languages title bar carries two or more `|`, emit the English + Te Reo pair and raise a visible `Red Flag:` quoting the original so the designer can confirm the intended split. Constraint 85 / ledger `CL-0085`.
 
 **Title casing — normalise a MULTI-WORD ALL-CAPS title (corpus-validated).** If the writer's `[TITLE BAR]` text is a **multi-word phrase in ALL CAPS**, render the header `<h1><span>` in **sentence case** (capitalise the first letter, lowercase the rest) — e.g. `ROARS AND WHISPERS` → `Roars and whispers`; the Te Reo span is normalised the same way (macrons preserved), e.g. `HARURUTANGA ME NGĀ KŌHIMUHIMU` → `Harurutanga me ngā kōhimuhimu`. Human-developed modules never ship an all-caps multi-word header title — verified directly against the finalized corpus, **0 of 105** multi-word header title spans are all-caps — so an all-caps multi-word writer title is a casing artefact to normalise, exactly like the lesson-menu label / list-item normalisation below, NOT a content edit. Titles already in sentence / title / mixed case are rendered **exactly as written** (trust them — never force casing on them).
 

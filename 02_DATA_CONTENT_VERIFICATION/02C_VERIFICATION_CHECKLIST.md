@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -50,6 +50,8 @@ Run ALL checks before presenting output:
 - [ ] `<span>` wrappers used ONLY inside `<h1>` header titles
 - [ ] No full-heading italic wrapping
 - [ ] English and Te Reo titles in separate `<h1><span>` elements
+- [ ] Languages-cohort module (Chinese, French, Gagana Samoan, German, Japanese, Spanish) with a **three**-part `[TITLE BAR]`: THREE separate `<h1><span>` elements (target language + English + Te Reo), in the writer's order, with any empty or placeholder part (`TE REO`, `MODULE TITLE TE REO`, `INSERT MODULE TITLE TE REO`) skipped — constraint 85
+- [ ] NON-Languages module: a second `|` in the title bar has NOT been split into a third `<h1>` — the English + Te Reo pair is emitted, the pipe stays inside its title where it belongs, and a visible `Red Flag:` quotes the original (constraint 85)
 - [ ] `<title>` element: overview pages use `MODULE_CODE English Title`; lesson pages use `MODULE_CODE lesson#` only (no lesson-specific title, no Te Reo)
 - [ ] Lesson pages: `#module-code` contains zero-padded lesson number only (e.g., `01`), NOT full module code, NOT decimal format (e.g., `1.0`)
 - [ ] Lesson pages: `<h1><span>` uses THAT LESSON'S OWN title (never the module title) — constraint 79; any leading `Lesson N` / `Lesson N:` prefix stripped; the duplicate body heading dropped, not the header title; a lesson name the writer supplied twice (boundary tag + `[H2]`) has NOT caused a fallback to the module title; where no lesson title exists anywhere, the module title is used AND a visible `Designer/Developer To Do:` note is present

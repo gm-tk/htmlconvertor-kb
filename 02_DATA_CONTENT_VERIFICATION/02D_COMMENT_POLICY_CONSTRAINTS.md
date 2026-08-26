@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
 > **Granular part D (4 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Comment & red flag policy; constraints.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -88,7 +88,7 @@ PageForge captures the **actionable** native Word margin comments authored by th
 14. **never_fabricate_overview_content:** Don't invent Learning Intentions etc.
 15. **scope_boundaries:** Don't convert the metadata block, submission checklists, LOT tags tables, Section A merging-resources tables, Section B guidance boxes, contents pages, or sign-off lines. Convert ONLY content from the first `[TITLE BAR]` tag onward. This applies to all content-source formats — and is especially important for the raw Writers Template `.docx`, which contains all of this front-matter in full (PageForge strips most of it).
 16. **interactive_parity:** Verify element count parity.
-17. **always_split_dual_titles:** Separate English / Te Reo Māori titles.
+17. **always_split_dual_titles:** Separate English / Te Reo Māori titles. **Languages cohort only** (Chinese, French, Gagana Samoan, German, Japanese, Spanish): a **three**-part `|`-separated `[TITLE BAR]` is target language + English + Te Reo and becomes **three** `<h1><span>` elements in the writer's order, with empty/placeholder parts (`TE REO`, `MODULE TITLE TE REO`) skipped. Every other subject: a second `|` is punctuation inside a title — emit the English + Te Reo pair and `Red Flag:` it, never a third heading. Constraint 85.
 18. **always_verify_completeness:** Check for mid-sentence truncation.
 19. **shuffle_default:** No `noShuffle` unless writer requested.
 20. **always_apply_boundary_validation:** All 4 rules.

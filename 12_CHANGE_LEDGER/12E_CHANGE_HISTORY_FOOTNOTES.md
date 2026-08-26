@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 13th August, 2026
-> **Granular part E (8 of 9) of `12_CHANGE_LEDGER.md`** — PART 3 footnotes (locked-decision and grouped-change notes).
+> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
+> **Granular part E (9 of 10) of `12_CHANGE_LEDGER.md`** — PART 3 footnotes (locked-decision and grouped-change notes).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

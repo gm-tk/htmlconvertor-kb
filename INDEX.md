@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Friday, 21st August, 2026 6:30 PM
+> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -128,8 +128,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12E2_CHANGE_HISTORY_CL0063_0071.md`** (24 KB) — PART 3 change history: CL-0063 to CL-0071 (continued) — CLOSED at CL-0071 (7 August 2026, 30 KB soft limit)
 - **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_0077.md`** (24 KB) — PART 3 change history: CL-0072 to CL-0077 (continued) — CLOSED at CL-0077 (13 August 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0072 to CL-0077
-- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_ONWARD.md`** (29 KB) — PART 3 change history: CL-0078 to CL-0084 (continued) — THE OPEN PART: append new CL entries here. **At 29.9 KB it is a whisker under the 30 KB soft limit — the NEXT row must close it to its range and open `12E5_…_ONWARD.md` (`CLAUDE.md` §4)**
-  - Sections: 
+- **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_0084.md`** (29 KB) — PART 3 change history: CL-0078 to CL-0084 (continued) — CLOSED at CL-0084 (26 August 2026, 30 KB soft limit)
+- **`12_CHANGE_LEDGER/12E5_CHANGE_HISTORY_CL0085_ONWARD.md`** (4 KB) — PART 3 change history: CL-0085 onward (continued) — THE OPEN PART: append new CL entries here
+  - Sections: PART 3 history rows CL-0085 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
 - **`12_CHANGE_LEDGER/12F_LEDGER_LOGS_AND_NOTES.md`** (2 KB) — Blocked-request log, housekeeping, notes

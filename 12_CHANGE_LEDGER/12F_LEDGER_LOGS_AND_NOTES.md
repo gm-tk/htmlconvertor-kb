@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 13th August, 2026
-> **Granular part F (9 of 9) of `12_CHANGE_LEDGER.md`** — Blocked-request log, housekeeping, notes.
+> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
+> **Granular part F (10 of 10) of `12_CHANGE_LEDGER.md`** — Blocked-request log, housekeeping, notes.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
