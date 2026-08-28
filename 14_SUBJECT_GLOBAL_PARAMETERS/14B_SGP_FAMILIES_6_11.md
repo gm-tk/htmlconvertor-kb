@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Friday, 28th August, 2026 2:51 PM
 > **Granular part B (2 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ). Cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -6,8 +6,10 @@
 ## 14.6 LS — Learning Support
 **Scope — (b) Module-series:** **LS** modules (including the **XLP** Learning Partner Toolkits and **XDLS** exemplars). Reference exemplar: `XDLS501`.
 
-- **`.learningSupport` on `<html>`.** Add the `learningSupport` class to the root tag, e.g. `<html lang="en" level="" template="NCEA" class="notranslate learningSupport" translate="no">`. (This is the existing CSS hook already noted in `06` §3.3 / the sub-type detection tree — LS modules always carry it.)
-- **Larger font.** The module font is **bigger — the same font as the LS Whakatau.**
+> **Two different scopes live in this section.** The **`.learningSupport` class** bullet below is **cohort-scoped to every `X`-prefixed module code** (constraint 89) — wider than this section's series scope. **Every other convention in § 14.6** — terminology and brackets, removed tab navs, the clickDrop layout, speech-bubble prompts, the 6-activity pattern, dropbox copy, move-forward alerts, XLP overviews — stays scoped to **LS / XLP / XDLS** and is never inferred for another X-prefixed series. Where an X-prefixed module outside LS appears to want an LS convention, raise a `Red Flag:` rather than applying it.
+
+- **`.learningSupport` on `<html>` — required by the `X` code prefix (constraint 89).** Add the `learningSupport` class to the root tag, e.g. `<html lang="en" level="" template="NCEA" class="notranslate learningSupport" translate="no">`. **The test is the module code:** any module whose code begins with `X` is a learning support module and carries the class on every page — which covers LS, XLP and XDLS, and equally `XFUN`, `XWHA`, `XMES`, `XTAS` and any other X-prefixed series. The `template=` value is unaffected and is still derived from the module code (constraint 21); the example above shows `NCEA` only because `XDLS501` is an NCEA module. Full rule: `06_TEMPLATE_RECOGNITION.md` § 4.4.
+- **Larger font — delivered BY the class.** The bigger module font (the same font as the LS Whakatau) is the stylesheet's response to `learningSupport`. Applying the class is the whole of the Convertor's job here: **never** write font-size CSS, and never add an inline style to achieve it (constraint 2).
 - **Terminology + brackets.** Correct spelling **hoa ako (learning partner)**; **hua ako** → check → **hoa ako**; learner → **ākonga**; WE/US → **you**. **Brackets are used only on the first instance** a term is used in a module (first mention `hoa ako (learning partner)`, plain `hoa ako` thereafter).
 - **Remove tab navs.** LS modules are **lesson-based, not inquiry-based** — remove tab navs (they carry too much media). **Prompts to move on go at the bottom of each page.**
 - **clickDrop activity layout (supplied).** LS activities use the choicePage clickDrop pattern with per-choice icons; the `choicePage` **wrapper** sits below in `col-md-8 col-12` (constraint 56 — activity wrappers off `col-md-10`). Note this is the OUTER wrapper width: an activity's *inner* column is `col-12` (constraint 63). Representative supplied structure:

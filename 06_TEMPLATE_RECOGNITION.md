@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Friday, 28th August, 2026 2:51 PM
 
 # 06 — Template Recognition & Structural Validation
 
@@ -78,7 +78,9 @@ Once confirmed as Refresh, determine which sub-type the reference files represen
        └─ Neither → COMBO (Standalone)
 
 2. Cross-cutting modifier check:
-   └─ <html> has "learningSupport" class → note it (CSS hook, not a separate sub-type)
+   └─ Module code begins with "X" → learning support → <html> class list MUST carry
+      "learningSupport" (CSS hook, not a separate sub-type; constraint 89).
+      Present in a reference but code is not X-prefixed → follow the sibling, Red Flag.
 ```
 
 ---
@@ -254,7 +256,11 @@ This is a CSS class on `<html>`, not a separate template sub-type. It can appear
 - XDLS9004_03_0 (combo)
 - XWHA01-02 (standard 1-3, but also has `inquiry-nav` on footer)
 
-**Action:** If the new module is a learning support module, add `learningSupport` to the `<html>` class list. The reference files should indicate whether this is needed. **The LS module-series carries `learningSupport` as standard** — for LS look-and-feel and structural conventions (larger font, terminology/brackets, no tab navs, clickDrop activity layout, speech-bubble prompts, the 6-activity pattern, XLP unique overviews) see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.6.
+**Action — the test is the MODULE CODE, not the reference files (constraint 89).** A module whose code begins with the letter **`X`** is a **learning support module** and ships `learningSupport` in the `<html>` class list on **every page**: `<html lang="en" level="" template="…" class="notranslate learningSupport" translate="no">`. The class is appended to the existing class list; it never replaces `notranslate`, and it never changes the `template=` value, which is still derived from the module code (constraint 21). This **supersedes** the former reference-dependent test ("the reference files should indicate whether this is needed") — a reference file that omits the class on an X-prefixed module is corrected in the output, never copied, exactly as with the missing `<body>` tag (§ 4.2). Conversely, a **non**-X-prefixed module never receives the class unless a Mode B sibling carries it, in which case follow the sibling and raise a `Red Flag:`.
+
+The class is a **CSS hook, not a sub-type** — it can sit on any sub-type, and the corpus bears this out across `XFUN01_00` (fundamentals), `XDLS9004_03_0` (combo) and `XWHA01-02` (standard 1-3). Its effect is a **larger font throughout the module**, delivered entirely by the stylesheet: the Convertor adds the class and never writes font CSS of its own (constraint 2).
+
+**The X-prefix test governs THIS CLASS ONLY.** The wider LS look-and-feel conventions of `14_SUBJECT_GLOBAL_PARAMETERS.md` § 14.6 — terminology and brackets, removed tab navs, the clickDrop activity layout, speech-bubble prompts, the 6-activity pattern, XLP overviews — remain scoped to the **LS / XLP / XDLS** series and are **not** extended to every X-prefixed code by this rule.
 
 ---
 
@@ -272,7 +278,7 @@ Run this checklist when analyzing uploaded reference files, BEFORE starting the 
     - **BLLR is NOT BLL2.** BLLR2xx modules are **phase 2 → `template="4-6"`**. A `BLLR…` code never matches the `BLL2` prefix — its fourth character is `R`, not `2` — so the phase-1 exception never applies to BLLR (see `14` §14.9). Beware sloppy pattern tests (`BLL` plus "contains a 2") that would wrongly catch BLLR codes; the test is the literal four-character prefix `BLL2`.
     - Mirroring a sibling's `template=` value remains prohibited (constraint 21) even where the sibling's value happens to coincide — the value comes from this code→phase mapping only. (Cross-referenced from `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.7.)
   - **Languages Phase 1–4 — all combo.** Every Languages-cohort module ships `template="combo"` (the sub-type — Fundamentals / Inquiry / standalone Combo — then comes from the `<body>` class per §2 above), so the expected value for this cohort is `combo`, not a year-band value. See `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.1.
-- [ ] **Cross-cutting modifiers:** `learningSupport` on `<html>`? `reoTranslate` on `<body>`?
+- [ ] **Cross-cutting modifiers:** `learningSupport` on `<html>`? **Required whenever the NEW module code begins with `X`** — derived from the code, never from the reference (constraint 89; § 4.4). `reoTranslate` on `<body>`?
 
 ### Structural Integrity
 - [ ] **`<body>` tag present in the REFERENCE?** (MXFU401 and XTAS101 are known to be missing it — never inherit the omission)

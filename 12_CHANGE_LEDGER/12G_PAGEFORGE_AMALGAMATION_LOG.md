@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Friday, 28th August, 2026 2:51 PM
 > **Granular part G (11 of 11) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -72,6 +72,16 @@ Backfilling them into this format is a **separate, one-off pass** that has not b
 
 ## LOG
 
-*No entries yet.* The log was created on Friday, 28th August, 2026 and the round that created it (`CL-0086` to `CL-0088`) contained **no front-facing change** — Admin Mode itself, this log, and the designer-facing output policy are all Lane 1 mechanism changes (`17_ADMIN_MODE.md` → Section 5.2), so none of them is entered here. The first entry will be appended by the next Admin Mode or Update Mode run that changes the generated HTML or CSS.
+The first entries were appended on Friday, 28th August, 2026 (CL-0089 to CL-0091). The log was created on Friday, 28th August, 2026 and the round that created it (`CL-0086` to `CL-0088`) contained **no front-facing change** — Admin Mode itself, this log, and the designer-facing output policy are all Lane 1 mechanism changes (`17_ADMIN_MODE.md` → Section 5.2), so none of them is entered here. The first entry will be appended by the next Admin Mode or Update Mode run that changes the generated HTML or CSS.
 
 Append new entries below this line, in CL order, newest last, using the format above.
+
+### CL-0089 — `learningSupport` on `<html>` is driven by an `X` module-code prefix
+- **Date:** Friday, 28th August, 2026
+- **Scope:** Cohort — every module whose code begins with the letter `X`
+- **Source:** ADMIN MODE (authorised — Persephone Samuels, Design Team Lead)
+- **Writer input (what triggers it):** none in the template — the trigger is the **module code itself**. First character of the code is `X` (case-sensitive): LS, XLP, XDLS, XFUN, XWHA, XMES, XTAS and any future X-prefixed series.
+- **Required output:** `learningSupport` appended to the `<html>` class list on **every page** of the module, e.g. `<html lang="en" level="" template="NCEA" class="notranslate learningSupport" translate="no">`. Appended, never replacing `notranslate`; `template=` is unchanged and still derived from the code. Non-X-prefixed code → class NOT emitted (unless a Mode B sibling carries it, in which case follow the sibling and emit a `Red Flag:`). The larger font is the stylesheet's response to the class — emit **no** font-size CSS and **no** inline font style.
+- **Supersedes:** — (extends CL-0020, which required the class for LS but left identification to the reference files)
+- **KB rule:** `06_TEMPLATE_RECOGNITION.md` §4.4 / §2 / §5; `14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md` §14.6; `00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md` constraint 89
+- **PageForge status:** Not yet amalgamated

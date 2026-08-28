@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Friday, 28th August, 2026 2:51 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -18,6 +18,7 @@ Run ALL checks before presenting output:
 ### Template & Structure
 - [ ] `<!doctype html>` (lowercase), html tag, head section, script URLs match structural reference (template file or reference module files)
 - [ ] **Opening `<body class="…">` tag PRESENT on every page** — `</head>` is never followed straight by `<div id="header">`; the class is the derived sub-type value (`container-fluid` Standard · `container-fluid reoTranslate` Bilingual · `fundamentals container-fluid` · `inquiry container-fluid`), and a reference module missing the tag (MXFU401, XTAS101) is corrected, not copied (constraint 82)
+- [ ] **`learningSupport` in the `<html>` class list on every page when the module code begins with `X`** (constraint 89) — appended to the existing class list, never replacing `notranslate`, and never altering the derived `template=` value; a reference module missing it on an X-prefixed code is corrected, not copied
 - [ ] Closing `</body></html>` present and the shell balanced — `#header`, `#body`, `#footer` all inside `<body>`
 - [ ] Void elements use XHTML-style self-closing syntax (e.g., `<meta ... />`, `<img ... />`, `<link ... />`)
 - [ ] If Mode B (reference module): ALL reference module codes replaced with new module code
