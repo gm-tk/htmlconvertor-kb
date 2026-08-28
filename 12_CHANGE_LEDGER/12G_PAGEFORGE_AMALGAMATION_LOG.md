@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 2:51 PM
+> **Last updated:** Friday, 28th August, 2026 2:53 PM
 > **Granular part G (11 of 11) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -84,4 +84,24 @@ Append new entries below this line, in CL order, newest last, using the format a
 - **Required output:** `learningSupport` appended to the `<html>` class list on **every page** of the module, e.g. `<html lang="en" level="" template="NCEA" class="notranslate learningSupport" translate="no">`. Appended, never replacing `notranslate`; `template=` is unchanged and still derived from the code. Non-X-prefixed code → class NOT emitted (unless a Mode B sibling carries it, in which case follow the sibling and emit a `Red Flag:`). The larger font is the stylesheet's response to the class — emit **no** font-size CSS and **no** inline font style.
 - **Supersedes:** — (extends CL-0020, which required the class for LS but left identification to the reference files)
 - **KB rule:** `06_TEMPLATE_RECOGNITION.md` §4.4 / §2 / §5; `14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md` §14.6; `00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md` constraint 89
+- **PageForge status:** Not yet amalgamated
+
+### CL-0090 — acks: `acksTemplate` / `acksAI` generate three statements; never emit them as text
+- **Date:** Friday, 28th August, 2026
+- **Scope:** (c) Universal — every module, every conversion route (PageForge `.txt`, raw Writers Template `.docx`, MTK `.docx`)
+- **Source:** ADMIN MODE (authorised — Persephone Samuels, Design Team Lead)
+- **Writer input (what triggers it):** none — this is unconditional acknowledgements-block construction. It applies to every module that emits an acks block, i.e. every module (constraint 33: bottom of the overview page, after the footer).
+- **Required output:** the wrapper is `<div class="acks acksTemplate">`, or `<div class="acks acksTemplate acksAI">` where the module has AI-generated or AI-requested media (constraint 72). Inside `accContent`, emit **only** the per-page media `acksLesson` divs (each opening `<!-- Lesson N.N -->`, constraint 73) followed by ONE unlabelled boilerplate div:
+```html
+  <div class="acksLesson">
+      <p>All other images © Te Aho o Te Kura Pounamu, Wellington, New Zealand.</p>
+  </div>
+```
+  Emit **NO** `<p>` containing any of the following — the template generates all three, and typing them double-ups the statement on the published page:
+  - *Every effort has been made to acknowledge and contact copyright holders. Te Aho o Te Kura Pounamu apologises for any omissions and welcomes more accurate information.* (from `acksTemplate`)
+  - *Parts of this resource were created with assistance from AI tools. For more information on the extent and nature of this AI usage, please contact Te Aho o Te Kura Pounamu.* (from `acksAI`)
+  - *Copyright © [year] Board of Trustees of Te Aho o Te Kura Pounamu, Private Bag 39992, Wellington Mail Centre, Lower Hutt 5045, New Zealand. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means without the written permission of Te Aho o Te Kura Pounamu.* (from `acksTemplate`)
+  `<span class="currentYear"></span>` must not appear anywhere in the block — it belonged only to the typed copyright line. Reported example of the incorrect double-up: `WJFUN105_0.0.html`.
+- **Supersedes:** —
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md` → Basic block / Accordion structure / Structure notes; `07_MTK_DOCX_CONVERSION/07C`, `07D`; `00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md` constraint 90
 - **PageForge status:** Not yet amalgamated
