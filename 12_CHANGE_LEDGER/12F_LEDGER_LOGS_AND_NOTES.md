@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
-> **Granular part F (10 of 10) of `12_CHANGE_LEDGER.md`** — Blocked-request log, housekeeping, notes.
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Granular part F (10 of 11) of `12_CHANGE_LEDGER.md`** — Blocked-request log, housekeeping, notes.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -22,5 +22,6 @@ Requests that were **not** actioned because they clashed with a locked decision 
 
 ## NOTES
 
+- **PART 4 — the PageForge Amalgamation Log** lives in `12G_PAGEFORGE_AMALGAMATION_LOG.md`: the front-facing decisions only (those that change the generated HTML or CSS), in an implementable form for a future PageForge amalgamation pass. Both Admin Mode and Update Mode write to it; the front-facing test is constraint 87 and `17_ADMIN_MODE.md` → Section 5.1. It is append-only and **starts at CL-0086** — CL-0001 to CL-0085 remain in the Part 3 history and would need a separate one-off backfill.
 - The ledger lives as the `12_CHANGE_LEDGER/` parts in the `htmlconvertor-kb` repository and syncs into project knowledge from there. If any part is ever missing from project knowledge, say so and treat it as a sync problem to raise with the designer — never invent or re-seed ledger content in chat.
 - Keep this ledger in the project-knowledge area alongside the other project files so every Update Mode run can read it.

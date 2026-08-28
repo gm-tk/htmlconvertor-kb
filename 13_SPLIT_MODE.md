@@ -1,8 +1,8 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 
 # 13 — Split Mode (Mode 5)
 
-> **When to load:** Whenever a message contains the trigger phrase **`SPLIT MODE`** (case-insensitive), and whenever the conversion pipeline identifies a **single-page** module and you are deciding whether to offer Split Mode. This is **Mode 5 — Split** (see `00_MASTER_INSTRUCTIONS.md` → Operating Modes). Together with `COMPARISON MODE` and `UPDATE MODE`, the `SPLIT MODE` trigger takes precedence over the ordinary Conversion / Advisory / Support mode signals.
+> **When to load:** Whenever a message contains the trigger phrase **`SPLIT MODE`** (case-insensitive), and whenever the conversion pipeline identifies a **single-page** module and you are deciding whether to offer Split Mode. This is **Mode 5 — Split** (see `00_MASTER_INSTRUCTIONS.md` → Operating Modes). Together with `COMPARISON MODE` and `UPDATE MODE`, the `SPLIT MODE` trigger takes precedence over the ordinary Conversion / Advisory / Support mode signals. **`ADMIN MODE` outranks all of them** — a message carrying both is a **Mode 8 — Admin** run (`17_ADMIN_MODE.md`, constraint 86).
 
 ---
 

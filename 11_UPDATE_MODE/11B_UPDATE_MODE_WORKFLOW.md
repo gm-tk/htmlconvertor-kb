@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part B (2 of 3) of `11_UPDATE_MODE.md`** — Update Mode: the Repo Update Brief, exclusions, workflow pseudo-code, timestamps (SS10-16).
 > All sibling parts live in `11_UPDATE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -16,6 +16,7 @@ The brief must contain, in this order:
    - the **target part file path(s)** in granular form (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`). If the exact part letter is uncertain from project knowledge, name the topic folder plus the section heading and tell Claude Code to confirm the part via the repo `INDEX.md`;
    - the **precise edit**: quote the existing wording to be changed and give the exact replacement wording — or, for an addition, the exact new text and its anchor ("insert after the paragraph beginning …"). **Never** write "update the rule accordingly" — the brief carries the finished wording, so Claude Code performs edits, not drafting.
 3. **The drafted ledger row(s)** in the exact PART 3 table format, ready to append verbatim.
+3a. **The drafted PageForge Amalgamation Log entry (or entries)** — for every change that passes the front-facing test (constraint 87, `17_ADMIN_MODE.md` → Section 5.1: *would the generated HTML or CSS differ before vs after?* — yes or borderline), in the block format given in `12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`, ready to append verbatim to that part. A change that leaves the generated HTML byte-identical (mode machinery, chat wording, KB housekeeping) gets **no** entry here.
 4. **A standing-instructions block** (include verbatim in every brief): *Follow the repo `CLAUDE.md` ritual — edit the named parts in place (never regenerate a topic); refresh each touched part's header `Last updated` line (Section 13 format); append the ledger row(s) to the LATEST history part, starting a new part first if it exceeds 30 KB; update `INDEX.md` if any file's section list changed; run `python3 tools/check_kb.py` and fix any failure; commit as `CL-nnnn: <summary>`; report back a summary of the diff.*
 5. **The `_project_instructions_.md` reminder** — only when that file is a target: after the commit, the designer must manually re-paste its content into the Claude.ai project's **Instructions** field (that file does not sync from the repo).
 
@@ -95,9 +96,13 @@ FUNCTION update_mode(designer_input):
 
     # ── STEP 8: LEDGER ROWS & THE BRIEF (Sections 4 / 10 / 13) ──
     DRAFT the new 12_CHANGE_LEDGER row(s) in exact PART 3 table format (next CL-nnnn)
+    FOR EACH actioned change: APPLY the front-facing test (constraint 87)
+        HTML/CSS would differ (or borderline) → DRAFT its 12G PageForge Amalgamation Log entry
+        HTML/CSS byte-identical (mechanism)  → ledger row only
     ASSEMBLE the Repo Update Brief (Section 10): header; numbered precise edits with
         granular part paths; the ledger rows; the standing-instructions block
         (timestamps, INDEX.md, check_kb.py, commit convention);
+        any 12G amalgamation entries;
         the _project_instructions_ re-paste reminder IF that file is targeted
 
     # ── STEP 9: DELIVER ──
@@ -157,6 +162,8 @@ Rules:
 - It does **not** produce a finalized difference report for the designer (Gavin) — never, in any run (constraint 76). The run's restated change list and per-file change log are the record. The Persephone conflict catalog is a separate artefact and is unaffected.
 - It does **not** change conversion behaviour for **(e) Ignore always** items — those only add a Comparison Mode exclusion (Section 11).
 - It does **not** include edits in the brief for parts that no change affected.
+- It does **not** log a mechanism change to the PageForge Amalgamation Log — only a change that alters the generated HTML or CSS earns an entry there (constraint 87).
+- It does **not** outrank `ADMIN MODE`. A message carrying both is an Admin Mode run (`17_ADMIN_MODE.md`, constraint 86).
 - It does **not** default an unscoped change to a breadth — scope comes from the designer (Section 3).
 
 ---
@@ -167,7 +174,7 @@ A completed Update Mode run delivers:
 
 1. **A restated, normalised list** of the changes as understood (Step 0), with each change's resolved scope, intake channel, and Routine/Major classification.
 2. **A conflict report** — any change blocked by a locked decision, any change that would overturn a prior unlocked (non-report) decision (with the old vs new result), and a pointer to the Persephone catalog (item 6) for any report-vs-report conflict.
-3. **The Repo Update Brief** (Section 10) — ONE fenced markdown block for the Claude Code session on the `htmlconvertor-kb` repository: numbered precise edits with granular part paths, the drafted `12_CHANGE_LEDGER` row(s), the standing-instructions block (timestamps, `INDEX.md`, `check_kb.py`, commit convention), and the `_project_instructions_.md` re-paste reminder when applicable. **No project files are regenerated or presented for download.**
+3. **The Repo Update Brief** (Section 10) — ONE fenced markdown block for the Claude Code session on the `htmlconvertor-kb` repository: numbered precise edits with granular part paths, the drafted `12_CHANGE_LEDGER` row(s), any **PageForge Amalgamation Log entry** for a front-facing change (constraint 87), the standing-instructions block (timestamps, `INDEX.md`, `check_kb.py`, commit convention), and the `_project_instructions_.md` re-paste reminder when applicable. **No project files are regenerated or presented for download.**
 4. **NO difference report for the designer.** Update Mode does **not** produce a finalized difference report of the actioned changes for Gavin — not for any run, any intake channel, or any classification (constraint 76). The restated change list (item 1), the conflict report (item 2), and the per-file change log (item 5) are the complete record. Do not offer one; do not remind anyone to send one.
 5. **A per-change log** — for each edit in the brief: which part file(s) it targets, what changes, at what scope, and why (citing the change number); plus a roll-up of any **(d)** items noted-no-action and any **(e)** exclusions added to `09`.
 6. **The "Cataloged differences that require approval" block (Section 7.1) — only if at least one report-vs-report conflict occurred this run; otherwise omitted entirely** — listing each conflicting pair (previous + current difference) for **Persephone** to resolve.

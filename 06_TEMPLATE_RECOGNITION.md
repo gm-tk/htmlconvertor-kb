@@ -1,8 +1,10 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 
 # 06 — Template Recognition & Structural Validation
 
 > **When to load:** At the start of EVERY Mode B conversion (reference module files), and whenever you need to validate structural patterns in uploaded HTML files. Also consult when a user asks about template differences or why a particular file looks "different."
+
+> **"Note in the verification summary" — re-scoped by constraint 88 (28 August 2026).** Wherever this file says to *note*, *flag* or *report* something *in the verification summary*, that now means: **record it internally, and surface it to the designer only if it passes the Designer Summary test** — a convention departure, a red flag, a `Designer/Developer To Do:` item, a fallback, or a choice the designer still owes. A check that resolved cleanly, and a correction this file describes as silent, **stay silent**. A check that failed or is uncertain is **never** silent — it is promoted to a plain-English red flag. See `02_DATA_CONTENT_VERIFICATION.md` → Output Specifications → The Designer Summary.
 
 ---
 

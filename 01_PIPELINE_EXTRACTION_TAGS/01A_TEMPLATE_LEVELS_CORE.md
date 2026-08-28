@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part A (1 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Template levels: structural reference workflow, levels, head/heading/title patterns.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -8,6 +8,8 @@
 # 01 — Template Levels Reference
 
 > **When to load:** At the start of every conversion. This file defines the structural skeleton.
+
+> **"Note in the verification summary" — re-scoped by constraint 88 (28 August 2026).** Wherever this file says to *note*, *flag* or *report* something *in the verification summary*, that now means: **record it internally, and surface it to the designer only if it passes the Designer Summary test** — a convention departure, a red flag, a `Designer/Developer To Do:` item, a fallback, or a choice the designer still owes. A check that resolved cleanly, and a correction this file describes as silent, **stay silent**. A check that failed or is uncertain is **never** silent — it is promoted to a plain-English red flag. See `02_DATA_CONTENT_VERIFICATION.md` → Output Specifications → The Designer Summary.
 
 ---
 

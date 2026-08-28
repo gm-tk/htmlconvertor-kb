@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part A (1 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — Mode purpose, trigger + precedence + the never-advertise rule, where it sits in the tester workflow, the three required inputs, why PageForge's ORIGINAL output is the one to upload, the two PageForge upload formats and how to tell them apart, the workflow.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -69,14 +69,16 @@ attachment.
 |---|---|
 | `COMPARISON MODE` **without** the word PageForge in front of it | **Mode 3** — Comparison (the project's own feedback loop) |
 | `PAGEFORGE COMPARE MODE` / `PAGEFORGE COMPARISON MODE` / `PAGEFORGE COMPARE` | **Mode 7** — this file |
-| `UPDATE MODE` | **Mode 4** — always takes precedence |
+| `UPDATE MODE` | **Mode 4** — takes precedence over this mode |
+| `ADMIN MODE` | **Mode 8** — **outranks every trigger in the project**, `UPDATE MODE` included (`17_ADMIN_MODE.md`, constraint 86) |
 
 **The word `PAGEFORGE` immediately before COMPARE/COMPARISON MODE is the discriminator.** A
 message reading `PAGEFORGE COMPARISON MODE` contains the substring `COMPARISON MODE`; it is
 **Mode 7, not Mode 3**. Check for the PageForge prefix first.
 
-`UPDATE MODE` still outranks everything. A PageForge Compare request arriving inside an Update
-Mode run is not actioned — say so and ask which the designer wants first.
+`ADMIN MODE` outranks everything, and `UPDATE MODE` outranks everything below it. A PageForge
+Compare request arriving inside an Update Mode or Admin Mode run is not actioned — say so and ask
+which the designer wants first.
 
 An uploaded `{CODE}_interactives.txt` worklist normally triggers **Mode 6**. Inside a PageForge
 Compare run it does **not** — here a worklist is *evidence*, never a work order (§4.3). The mode no

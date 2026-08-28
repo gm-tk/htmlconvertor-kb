@@ -1,4 +1,4 @@
-> **Last updated:** Sunday, 3rd August, 2026
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part E (5 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Edge cases, component whitelist, output specifications.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -67,21 +67,37 @@ Most components are FULL MATCH. Remaining items:
  
 **Module code source:** Extract from the PageForge metadata block (`Module Code:` field), the raw `.docx` metadata table, the `[TITLE BAR]` content, or the filename.
  
-**Post-output verification summary:**
-- Content source format used (PageForge `.txt`, raw Writers Template `.docx`, or MTK `.docx`)
-- Whether a Media List `.docx` was supplied and used (for media verification + acks)
-- Template source identified (Mode A: dedicated template file, or Mode B: reference module files + which files used)
-- If Mode B: confirmation all reference module codes/titles replaced with new module values
-- Level confirmed (template attribute matches module code prefix)
-- Image output mode used (Mode P — Placeholder, or Mode D — Direct Link)
-- Page Boundary Validation results
-- Total div open/close count
-- Interactive component count and types
-- Data patterns identified
-- Speech bubble instances (with `no-hover` confirmation)
-- Click drop grouping confirmed
-- Acknowledgements placement confirmed (bottom of overview page 0.0)
-- Red flags and reasons
-- Tag normalisation decisions
-- Ambiguities encountered
-- Confirmation all student content is visible HTML
+**Post-output — THE DESIGNER SUMMARY (constraint 88):**
+
+The audience for a conversion run is a **designer, not a developer** — most have no coding background, which is why this project exists. So the run **verifies in full and reports by exception.**
+
+**Every verification step still runs, unchanged** — the full checklist in `02C`, the Phase 7 confirmations in `00_MASTER_INSTRUCTIONS.md`, the div open/close count, the page-boundary validation, the class-attribute integrity check, all of it. **Nothing about the checking changes. Only what reaches the chat changes.**
+
+What follows the HTML is a short **Designer Summary** carrying **only** what a designer must act on, decide, or be aware of:
+
+1. **CONVENTION DEPARTURES — always FIRST, always its own labelled block, never merged into a list.** Anything the conversion produced that is **not** what this project's rules would normally produce, because the writer's template demanded it. State three things in plain English: **what was done**, **what the rule normally says**, and **where in the writer's template it came from**. *(The case this exists for: a module whose writer repeated the module title as the heading of every page. The conversion followed the writer, correctly — but that decision contradicted the project's own convention and the designer needed to see it. It was reported, and then lost among two dozen lines of counts and confirmations. A convention departure is the single most important thing a run can tell a designer; it is never buried and never abbreviated.)*
+2. **Red flags raised in the output** — how many, on which pages, and what the designer must resolve for each.
+3. **`Designer/Developer To Do:` items** — the deferred assets, URLs and setup the developer must supply during production.
+4. **`Writers Note:` / `Note from {author}:` messages surfaced** — count and pages only, not the full text (it is already visible in the HTML).
+5. **Anything the conversion could not do, guessed at, or fell back on** — an unbuildable structure, an ambiguous component, a documented fallback used.
+6. **Any choice still owed by the designer** — e.g. an image output mode that was assumed rather than stated.
+
+**NEVER emitted.** These checks are still performed; they are simply not narrated. Mention one **only** when it fails or is uncertain:
+
+- div open/close counts · interactive component counts and types · data patterns identified
+- page-boundary validation results · template source and level confirmation
+- Mode B confirmation that reference codes/titles were replaced · heading-pattern, domain (`tekuradev`) and `stickyNav` notes
+- class-attribute integrity · speech-bubble `no-hover` confirmation · click-drop grouping confirmation
+- acknowledgements placement confirmation · "all student content is visible HTML" confirmation
+- tag normalisation decisions · content-source format and media-list usage
+- an **image output mode the designer stated** — it is not echoed back to them; one that had to be **assumed** is category (6) above
+
+**A FAILED OR UNCERTAIN CHECK IS NEVER SILENT.** If any of the above fails, is ambiguous, or produced a correction the designer would want to know about, it is **promoted into category (2)** as a red flag and stated in plain English. Silence means *checked and clean* — never *not checked*.
+
+**Plain English, no jargon.** Write "the same title appears at the top of every page", not "duplicate `<h1><span>` across page scaffolds". Name pages the way the designer names them.
+
+**"Note in the verification summary" now means this.** Every instruction elsewhere in the knowledge base to *note X in the verification summary* (`01_PIPELINE_EXTRACTION_TAGS.md`, `06_TEMPLATE_RECOGNITION.md`, the Edge Cases table above, `00_MASTER_INSTRUCTIONS.md` → Phase 7) is re-scoped by this rule: **record it internally, and surface it in the Designer Summary only if it passes the test above.** A correction the project describes as silent stays silent.
+
+**If nothing falls into categories (1)–(6), the Designer Summary is ONE LINE:** *"No red flags; nothing outstanding."*
+
+**This changes the chat only — the generated HTML is byte-identical either way.** It is a mechanism change under constraint 87 and is not recorded in the PageForge Amalgamation Log.

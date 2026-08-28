@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
-> **Granular part A (1 of 10) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions, PART 2 pending approval.
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Granular part A (1 of 11) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions, PART 2 pending approval. (PART 3 is the history parts; **PART 4 is the PageForge Amalgamation Log** in `12G`.)
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -15,11 +15,12 @@
 
 This ledger (in the repository: the `12_CHANGE_LEDGER/` folder of parts — Parts 1 and 2 in this part, the Part 3 history across the `12x_CHANGE_HISTORY_…` parts) is the project's **complete, permanent, in-house record** of every change actioned through Update Mode. **Nothing is stored externally** — there is no spreadsheet, no export, and no manual step for the designer to maintain. Every Repo Update Brief carries the drafted row(s), and the linked Claude Code session appends them, so the ledger stays current as a by-product of actioning changes (`11_UPDATE_MODE.md` → Section 4).
 
-It does three jobs:
+It does four jobs:
 
 1. **Conflict source** — what has already been decided, and was it decided differently before? (Conflict checking reads **Part 1** first.)
 2. **Lock registry** — which decisions has the design authority (Persephone) resolved in favour of and **locked** against future override? (**Part 1**.)
 3. **Audit trail** — a dated history of everything that has changed, at what scope, from which report, and who approved it. (**Part 3**.)
+4. **PageForge amalgamation record** — the sorted, implementable subset of **front-facing** decisions (those that change the generated HTML or CSS), kept so PageForge's own development can mirror them later. (**Part 4** — `12G_PAGEFORGE_AMALGAMATION_LOG.md`; the front-facing test is constraint 87 and `17_ADMIN_MODE.md` → Section 5.1.)
 
 ---
 
@@ -42,6 +43,7 @@ So this ledger can accumulate for years with no practical downside. **The design
 | **Implemented** | A change that is actioned and in effect. Covers both routine changes **and non-conflicting Major changes** — any non-conflicting change is actioned directly via the Repo Update Brief and accounted for in the run's restated change list and per-change log (**no difference report is produced for the designer** — constraint 76, `CL-0052`). No authority sign-off needed. Lives in Part 3. |
 | **Pending approval** | A **report-vs-report conflict** actioned provisionally, awaiting the design authority's (Persephone's) resolution — i.e. a change that arrived via a finalized difference report and clashes with a prior change that *also* arrived via a finalized difference report. Lives in Part 2 until resolved. *(Legacy note: CL-0001–CL-0004 carry this status under the pre-19-June model, in which every Major change awaited sign-off; CL-0005 was reverted on 30th June 2026, superseded by CL-0007 — see the note under Part 3.)* |
 | **Locked** | Major change the design authority approved. **Immutable.** Lives in Part 1; also recorded in Part 3. |
+| **Locked (admin)** | A change actioned through **Admin Mode** (`17_ADMIN_MODE.md`) by an authorised individual — Gavin or the lead designer. Binding on Update Mode exactly like `Locked`: a conflicting Update Mode change is `Blocked (conflict)`. Released **without** an unlock — another `ADMIN MODE` message supersedes it, and the newest Admin Mode instruction always wins. Lives in Part 1; also recorded in Part 3. |
 | **Reverted** | A change rejected, withdrawn, superseded, or unlocked. Edit undone in the repository via a follow-up Repo Update Brief; row kept in Part 3 for audit. |
 | **Blocked (conflict)** | A requested change **not** actioned because it clashed with a `Locked` row. Logged in Part 3 + the Blocked-request log; needs an unlock decision to proceed. |
 
@@ -55,18 +57,22 @@ So this ledger can accumulate for years with no practical downside. **The design
 - **Append-only.** New changes are added as new rows. A row's `Status` may be updated in place (e.g. `Pending approval` → `Locked`), but history stays legible (note supersessions, e.g. "superseded by CL-0042").
 - **Conflict scan order:** check **Part 1 (Locked)** first — those are the rows that can *block* a new change. Then scan **Part 3** for any prior *unlocked* decision on the same thing (a soft duplicate/reversal check). Match on the affected file/section/constraint and the behaviour described, not just on wording.
 - **Locked rows are protected.** A new change that contradicts a Part 1 row is logged `Blocked (conflict)` and not actioned (see `11_UPDATE_MODE.md` → Section 6).
-- **Source = intake channel.** The `Source` column records *how* each change entered the project — `Finalized difference report`, `Direct-typed (Update Mode)`, or `Project instruction` — and this is what drives conflict routing. A clash is escalated to the design authority (Persephone) **only when both sides arrived via a finalized difference report**. If the new change contradicts a `Locked` row it is **blocked** regardless of channel; if it clashes with a prior change that came in by any non-report channel (direct-typed or project instruction), Update Mode **pauses for the designer to confirm** rather than escalating. See `11_UPDATE_MODE.md` → Sections 6–7.
+- **Source = intake channel.** The `Source` column records *how* each change entered the project — `Finalized difference report`, `Direct-typed (Update Mode)`, `Project instruction`, or **`ADMIN MODE (authorised)`** — and this is what drives conflict routing. A clash is escalated to the design authority (Persephone) **only when both sides arrived via a finalized difference report**. If the new change contradicts a `Locked` row it is **blocked** regardless of channel; if it clashes with a prior change that came in by any non-report channel (direct-typed or project instruction), Update Mode **pauses for the designer to confirm** rather than escalating. An **`ADMIN MODE (authorised)`** row is never escalated either — it is a decision, not a proposal, and it blocks. See `11_UPDATE_MODE.md` → Sections 6–7.
 - Every ledger part the Claude Code session touches gets its header **Last updated** timestamp refreshed (per the Repo Update Brief's standing instructions).
 
 ---
 
 ## PART 1 — LOCKED DECISIONS (binding & immutable — conflict check reads this FIRST)
 
-The authoritative "do not override" list. A newly-requested change that contradicts any row here is **blocked** until the design authority explicitly unlocks it. This section stays small by nature (it is the set of standing, signed-off rules).
+The authoritative "do not override" list. A newly-requested **Update Mode** change that contradicts any row here is **blocked**. This section stays small by nature (it is the set of standing, signed-off rules).
+
+**Two kinds of row live here, and they are released differently.** A **`Locked`** row is the design authority's decision and only Persephone can unlock it. A **`Locked (admin)`** row came in through **Admin Mode** from an authorised individual (`17_ADMIN_MODE.md`) — it blocks Update Mode identically, but needs **no unlock**: the next `ADMIN MODE` message supersedes it. **An `ADMIN MODE` run overrides EITHER kind with no unlock step** (constraint 86): the superseded row leaves this list and is recorded in Part 3 as `Reverted — superseded by [new ID] (ADMIN MODE)`.
 
 | ID | Date locked | Locked decision | Scope | Affected file(s) / rule(s) | Approved by (date) |
 |----|-------------|-----------------|-------|----------------------------|--------------------|
-| _—_ | _—_ | _No locked decisions yet._ | _—_ | _—_ | _—_ |
+| CL-0086 | Friday, 28th August, 2026 | **`ADMIN MODE` exists and outranks every other trigger.** An authorised change (Gavin or the lead designer) is actioned without approval; an unscoped one defaults to **(c) Universal**; it overrides ANY conflicting decision including a `Locked` one, with no unlock; it never escalates to the design authority. Recorded `Locked (admin)`, which blocks a contradicting Update Mode change until another `ADMIN MODE` message releases it. | (c) Universal | `17_ADMIN_MODE.md`; `00A` OPERATING MODES + triage; `00F`; `00H` constraint 86; `11A` §3/§4.2/§4.3/§6/§7; `11B` §15; `11C` §8/§9; `12A`; `_project_instructions_.md` | **Locked (admin)** — authorised channel, 28 August 2026 (Chris). Released only by a later `ADMIN MODE` message. |
+| CL-0087 | Friday, 28th August, 2026 | **The front-facing test and the PageForge Amalgamation Log (Part 4, `12G`).** Both Admin Mode and Update Mode ask, for every actioned change: *would the generated HTML or CSS differ before vs after?* Yes or borderline → ledger row **plus** a `12G` entry (front-facing); no → ledger row only (mechanism). `12G` is append-only, starts at CL-0086, and is a record for a future PageForge amalgamation pass — never a work order, and no mode ever edits PageForge's code. | (c) Universal | `12G` (new); `00H` constraint 87; `12A`; `12F`; `11A` §4.1; `11B` §10/§12/§15/§16; `11C` §9; `17_ADMIN_MODE.md` §5; `_project_instructions_.md` | **Locked (admin)** — authorised channel, 28 August 2026 (Chris). Released only by a later `ADMIN MODE` message. |
+| CL-0088 | Friday, 28th August, 2026 | **Designer-facing output policy — verify in full, report by exception.** Every verification step still runs; the chat carries only a short **Designer Summary**: convention departures FIRST in their own block, then red flags, `Designer/Developer To Do:` items, surfaced writer/reviewer notes (count only), fallbacks and guesses, and choices still owed. Counts, confirmations and clean check results are never narrated; a failed or uncertain check is never silent (promoted to a plain-English red flag). Re-scopes every "note in the verification summary" instruction across the KB. Generated HTML unchanged — mechanism lane, no `12G` entry. | (c) Universal | `00H` constraint 88; `02E` The Designer Summary; `02C` banner; `00B` Phase 7; `01A`/`01B`/`06` banners; `_project_instructions_.md` | **Locked (admin)** — authorised channel, 28 August 2026 (Chris). Released only by a later `ADMIN MODE` message. |
 
 ---
 

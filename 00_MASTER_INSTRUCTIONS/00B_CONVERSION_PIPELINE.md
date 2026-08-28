@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 21st August, 2026
-> **Granular part B (2 of 7) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Granular part B (2 of 8) of `00_MASTER_INSTRUCTIONS.md`** — Conversion pipeline (Mode 1 pseudo-code).
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -220,7 +220,8 @@ FUNCTION convert_writer_template(content_source, structural_reference, media_lis
         - ENSURE all reference module codes are replaced with the new module code
         - ENSURE all reference module titles are replaced with new module titles
         - FIX any known structural issues identified during validation (missing <body>, malformed paths)
-        - NOTE in verification summary that reference module files were used (not a dedicated template)
+        - RECORD internally that reference module files were used (not a dedicated template).
+          Do NOT narrate it — constraint 88; surface it only if it could not be resolved cleanly
  
     # ── PHASE 7: VERIFY ──
     # → See: section 08 in 02_DATA_CONTENT_VERIFICATION.md
@@ -232,15 +233,34 @@ FUNCTION convert_writer_template(content_source, structural_reference, media_lis
         pairing and content-driven omission (constraint 67), and every supervisor button
         uses the super-content-button family (constraint 68)
     CONFIRM acknowledgements (if generated) are at the bottom of page 0.0 — not elsewhere
-    REPORT: content source format (PageForge .txt / standard Writers Template .docx / MTK .docx),
-            whether a media list was supplied and used,
-            template source (dedicated or reference module + which files),
-            level confirmed, boundary results, div counts,
-            interactive counts, red flags, ambiguities,
-            image output mode used (Mode P or Mode D)
+    # ── REPORTING: THE DESIGNER SUMMARY (constraint 88) ──
+    # Every check above still RUNS IN FULL. Only what reaches the chat is trimmed.
+    # The reader is a designer with no coding background — plain English, no jargon.
+    # → See: Output Specifications -> The Designer Summary in 02_DATA_CONTENT_VERIFICATION.md
+    REPORT, in this order, and ONLY these:
+        1. CONVENTION DEPARTURES — FIRST, in their own labelled block, never merged
+           into a list: anything produced that is NOT what the project's rules would
+           normally produce, because the writer's template demanded it. State what was
+           done, what the rule normally says, and where in the template it came from
+        2. RED FLAGS raised in the output — how many, which pages, what to resolve
+        3. Designer/Developer To Do: items — deferred assets, URLs, setup
+        4. Writers Note: / Note from {author}: messages surfaced — count and pages only
+        5. Anything that could not be done, was guessed at, or fell back
+        6. Any choice still owed by the designer (e.g. an assumed image output mode)
+    DO NOT REPORT (perform silently — mention ONLY on failure or uncertainty):
+        content source format, media-list usage, template source, level confirmation,
+        boundary results, div open/close counts, interactive counts and types,
+        data patterns, class-attribute integrity, acknowledgements placement,
+        speech-bubble no-hover and click-drop grouping confirmations,
+        tag normalisation decisions, "all student content visible" confirmation,
+        an image output mode the designer STATED (an ASSUMED one is category 6)
     IF Mode B:
-        REPORT: detected sub-type, any pitfalls found and how they were handled,
-                heading pattern used (standard or reference-matched), domain (prod or dev)
+        DO NOT REPORT the sub-type, the code/title replacement, the heading pattern used,
+            the domain (prod or dev) or stickyNav presence — all silent when clean
+        DO REPORT any of them that could NOT be resolved cleanly, as a red flag under (2)
+    A FAILED OR UNCERTAIN CHECK IS NEVER SILENT — promote it into (2).
+    IF nothing falls into (1)-(6) → the summary is ONE LINE:
+        "No red flags; nothing outstanding." 
 ```
  
 ---

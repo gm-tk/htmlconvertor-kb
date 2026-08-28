@@ -1,0 +1,77 @@
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Granular part G (11 of 11) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
+> All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
+
+<!-- KB-PART-BODY-START -->
+# PART 4 — THE PAGEFORGE AMALGAMATION LOG
+
+> **When to load:** At the end of any **Admin Mode** (`17_ADMIN_MODE.md`) or **Update Mode** (`11_UPDATE_MODE.md`) run in which at least one actioned change is **front-facing** — i.e. it changes the generated HTML or CSS. Conversion, Comparison, Split, Interactives, Support and **PageForge Compare** modes never read or write this log — Mode 7 reports PageForge's faults on ONE module to Gavin, which is a different artefact from this standing record of what PageForge must be taught in general (`17_ADMIN_MODE.md` → Section 11).
+
+---
+
+## WHY THIS LOG EXISTS
+
+**PageForge** — the standalone HTML Generator (`pageforge-site` / `CONVERTER_V2`) — is being developed to do automatically what this project does by instruction. The two must eventually agree: every decision made here about **what the finished module looks like** is a decision PageForge will have to mirror, or the same Writers Template will produce two different modules depending on which tool built it.
+
+Those decisions are already recorded in **Part 3 (Change History)** — but Part 3 is an *audit trail*. Its rows are written to answer "what was decided, by whom, when, and what did it displace", and they are interleaved with mechanism changes that PageForge has no equivalent of (chat wording, mode triage, ledger machinery, repo housekeeping). A PageForge developer picking the thread up months later should not have to read the whole audit history and sort the relevant rows out of it.
+
+**This log is that sorted, implementable subset**: front-facing decisions only, newest last, each written so it can be built from without reading the rest of the knowledge base.
+
+**Nothing in this log obliges anyone to change PageForge now.** No mode in this project ever edits PageForge's code, and writing an entry here is not a work order. The log is a **standing record for a future amalgamation pass**, at whatever time PageForge development next takes it up.
+
+---
+
+## WHAT GOES IN — THE FRONT-FACING TEST
+
+> **Would a developer comparing two generated modules — one built before the change, one after, from the same Writers Template — see any difference in the HTML or CSS?**
+
+- **YES → log it here** (as well as in Part 3).
+- **NO → Part 3 only.**
+- **Borderline → log it here.** An unnecessary entry costs one block; a missing one costs PageForge a silent divergence.
+
+**IN (front-facing):** which element a writer tag becomes · what content appears, is omitted or is added · nesting, wrappers, grid/column structure · page scaffold, head, header, footer, menus · page boundaries and page-to-file mapping · class names, ids, data attributes, answer-key attributes, component defaults (`autoCheck`, shuffle, …) · any CSS-affecting or layout rule · titles and headings · red flags, `Writers Note:`, `Note from {author}:` and `Designer/Developer To Do:` messages *as rendered into the page* · acknowledgements format and placement · image output modes and alt text · interactive build rules · subject global parameters (`14`) that alter output.
+
+**OUT (mechanism — Part 3 only):** mode definitions, triggers and triage · what the Convertor *says in the chat* (progress messages, verification reporting, summaries, phrasing to a designer) · how the knowledge base is structured, split, indexed or committed · intake, conflict-checking, ledger and approval machinery · which files to load for which task.
+
+The full statement of the two lanes is `17_ADMIN_MODE.md` → Section 5.
+
+---
+
+## ENTRY FORMAT
+
+One block per decision, **appended in CL order, newest last**. The `CL-nnnn` id is the same id the change carries in Part 3 — never a separate numbering.
+
+```
+### CL-nnnn — <one-line title of the decision>
+- **Date:** Weekday, Dth Month, YYYY
+- **Scope:** (a/b/c) + the resolved breadth in plain English
+- **Source:** ADMIN MODE (authorised — <who>) | UPDATE MODE (finalized difference report <ref>) | UPDATE MODE (direct-typed)
+- **Writer input (what triggers it):** the tag, pattern or condition in the Writers Template / Media List that this rule reacts to
+- **Required output:** exactly what the Convertor now produces — the markup itself where it is short enough to quote
+- **Supersedes:** CL-nnnn (what it replaced) — or `—`
+- **KB rule:** the part file(s) and constraint number that own this rule
+- **PageForge status:** Not yet amalgamated | Amalgamated (date, round)
+```
+
+**Rules for maintaining it:**
+
+- **Append-only.** Never rewrite or delete an entry. A later decision that changes an earlier one is a **new entry** naming the earlier in its `Supersedes:` line; the superseded entry stays, and its `PageForge status:` is left as it was.
+- **`PageForge status:` is the only field ever edited in place** — updated to `Amalgamated (date, round)` when a PageForge development round implements the rule.
+- **Split at 30 KB.** When this part passes the soft limit, close it to its CL range and open the next part (`12H_PAGEFORGE_AMALGAMATION_LOG_CLnnnn_ONWARD.md`) per the repo `CLAUDE.md` §4, updating `INDEX.md` for both.
+- Every run that touches this part refreshes its header `Last updated` stamp.
+
+---
+
+## BACKFILL NOTE — THIS LOG STARTS AT CL-0086
+
+The log was created on **Friday, 28th August, 2026** (`CL-0087`). Decisions **CL-0001 to CL-0085** predate it, and many of them are front-facing — they are all recorded in the **Part 3 history parts** (`12B` through `12E5`), which remain complete and authoritative.
+
+Backfilling them into this format is a **separate, one-off pass** that has not been run. It is not automatic and no mode performs it in passing. When PageForge development is ready to amalgamate, either run that backfill as its own Admin Mode round, or read Part 3 directly for anything earlier than `CL-0086`. **Do not assume this log is the complete front-facing history until that backfill is recorded here.**
+
+---
+
+## LOG
+
+*No entries yet.* The log was created on Friday, 28th August, 2026 and the round that created it (`CL-0086` to `CL-0088`) contained **no front-facing change** — Admin Mode itself, this log, and the designer-facing output policy are all Lane 1 mechanism changes (`17_ADMIN_MODE.md` → Section 5.2), so none of them is entered here. The first entry will be appended by the next Admin Mode or Update Mode run that changes the generated HTML or CSS.
+
+Append new entries below this line, in CL order, newest last, using the format above.

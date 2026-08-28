@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 26th August, 2026 3:20 PM
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -12,6 +12,8 @@
 ## Verification Checklist
  
 Run ALL checks before presenting output:
+
+> **RUN EVERY CHECK; REPORT ALMOST NONE OF THEM (constraint 88).** This checklist is unchanged and is still run in full — every box below is ticked before output is presented. What changed on 28 August 2026 is **what is said about it in the chat**. A check that **passes** is never narrated: the designer is not told the div counts balanced, the boundaries validated, the class attributes were intact, or the acknowledgements landed on page 0.0. A check that **fails or is uncertain** is never silent — it becomes a **red flag in the Designer Summary**, written in plain English for a reader with no coding background. **Silence means checked and clean, never not checked.** The Designer Summary's six categories, and the full list of what is performed silently, live in `02E_EDGE_CASES_OUTPUT.md` → Output Specifications → The Designer Summary.
  
 ### Template & Structure
 - [ ] `<!doctype html>` (lowercase), html tag, head section, script URLs match structural reference (template file or reference module files)

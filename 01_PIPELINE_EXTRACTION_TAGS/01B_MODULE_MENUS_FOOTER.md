@@ -1,8 +1,11 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part B (2 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Module menu structures; footer and acknowledgements.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
+
+> **"Note in the verification summary" — re-scoped by constraint 88 (28 August 2026).** Wherever this file says to *note*, *flag* or *report* something *in the verification summary*, that now means: **record it internally, and surface it to the designer only if it passes the Designer Summary test** — a convention departure, a red flag, a `Designer/Developer To Do:` item, a fallback, or a choice the designer still owes. A check that resolved cleanly, and a correction this file describes as silent, **stay silent**. A check that failed or is uncertain is **never** silent — it is promoted to a plain-English red flag. See `02_DATA_CONTENT_VERIFICATION.md` → Output Specifications → The Designer Summary.
+
 ## Module Menu Structures
 
 ### STANDARD LEVELS (Years 1–3 through 9–10)

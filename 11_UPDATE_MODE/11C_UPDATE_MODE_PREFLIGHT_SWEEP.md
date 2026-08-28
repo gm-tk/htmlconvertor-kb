@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 28th August, 2026 1:30 PM
 > **Granular part C (3 of 3) of `11_UPDATE_MODE.md`** — Sections 8-9: the pre-flight confirmations and the blast-radius sweep. Split from `11A` on 13 August 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `11_UPDATE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -6,6 +6,8 @@
 ## 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING
 
 Before drafting any edit for the Repo Update Brief, resolve these. Ask only about what is genuinely unresolved — keep it to one concise round of questions where possible.
+
+> **NONE OF THIS SECTION APPLIES TO AN `ADMIN MODE` RUN.** Admin Mode is pre-approved by definition: it never asks for a missing scope (unscoped defaults to **(c) Universal**), never asks the designer to confirm a guardrail change, never pauses on a conflict, and never escalates. The only question it may ask is one of **comprehension** — items 4 and 5 below, where an instruction is self-contradictory or targets nothing that exists. Items 6 and 7 (the settled-constraint rule and the retired-wording sweep) still bind, because they are about doing the edit correctly, not about seeking permission. See `17_ADMIN_MODE.md` → Sections 2, 3, 7 and constraint 86.
 
 1. **Scope for every change.** Each normalised change must have exactly one breadth (a/b/c/d/e or a clear paraphrase, or a permitted multi-scope like `A&B`). List any change missing a scope and ask.
 2. **Conflicts (Section 6).** Surface every `Blocked (conflict)` item. For a **non-report conflict** that overturns a prior unlocked decision, get the designer's confirmation before editing. For a **report-vs-report conflict**, catalog it for Persephone (Section 7.1) rather than resolving it in-chat.
@@ -30,9 +32,9 @@ For each change, before editing, locate **all** of these that apply:
 3. **The FILE REFERENCE INDEX and "WHEN TO LOAD WHICH FILES" map in `00`** — if a topic moves, is added, or is renamed.
 4. **Cross-references in other files** — any `See \`0X_...\` → Section` pointer, any duplicated statement of the rule, any example that would now be wrong. Search for the rule's keywords across all files and fix every hit.
 5. **`09_COMPARISON_MODE.md`** — for any **(e) Ignore always** change (add the Section 4.1 exclusion), and whenever a changed rule is one Comparison Mode cites or depends on.
-6. **`12_CHANGE_LEDGER.md`** — always, for any change that is actioned, blocked, pending, locked, or reverted (Section 4).
+6. **`12_CHANGE_LEDGER.md`** — always, for any change that is actioned, blocked, pending, locked, or reverted (Section 4). **Plus `12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** whenever the change is **front-facing** — i.e. the generated HTML or CSS would differ before vs after (constraint 87, `17_ADMIN_MODE.md` → Section 5.1). A mechanism change gets no `12G` entry.
 7. **The project-instructions field (`_project_instructions_.md`)** — if the change affects mode triage, the file map, the always-active ABSOLUTE RULES, the core philosophy, or the output expectation summarised there.
-8. **This file (`11_UPDATE_MODE.md`)** — if the change affects Update Mode itself.
+8. **This file (`11_UPDATE_MODE.md`)** — if the change affects Update Mode itself; **and `17_ADMIN_MODE.md`** if it affects Admin Mode, the trigger precedence, the override rule, or the front-facing / mechanism lane test.
 
 > **Search, don't recall.** Use `project_knowledge_search` (and a literal text scan of the files) for the rule's distinctive keywords to catch every occurrence. Do not rely on memory of where a rule appears. Missing a downstream reference is the most likely failure of Update Mode — sweep thoroughly.
 
