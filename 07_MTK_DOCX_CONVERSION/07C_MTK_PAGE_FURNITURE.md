@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Friday, 28th August, 2026 2:53 PM
 > **Granular part C (3 of 4) of `07_MTK_DOCX_CONVERSION.md`** — MTK: header, footer, acks, word/image, Kiwi Kaiarahi, checklist, pitfalls (SS12-18).
 > All sibling parts live in `07_MTK_DOCX_CONVERSION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -92,15 +92,12 @@ The acknowledgements accordion goes AFTER the footer **on the overview page (pag
 ```html
 <div class="row">
     <div class="col-md-8 col-12">
-        <div class="acks">
+        <div class="acks acksTemplate">
             <div class="accordion">
                 <div class="accHead">
                     <h4>Acknowledgements</h4>
                 </div>
                 <div class="accContent">
-                    <div class="acksLesson">
-                        <p><i>Every effort has been made to acknowledge and contact copyright holders. Te Aho o Te Kura Pounamu apologises for any omissions and welcomes more accurate information.</i></p>
-                    </div>
                     <div class="acksLesson"><!-- Lesson 0.0 -->
                         <p>Attribution text...</p>
                     </div>
@@ -111,15 +108,14 @@ The acknowledgements accordion goes AFTER the footer **on the overview page (pag
                     <div class="acksLesson">
                         <p>All other images © Te Aho o Te Kura Pounamu, Wellington, New Zealand.</p>
                     </div>
-                    <div class="acksLesson">
-                        <p><i>Copyright © <span class="currentYear"></span> Board of Trustees of Te Aho o Te Kura Pounamu, Private Bag 39992, Wellington Mail Centre, Lower Hutt 5045, New Zealand. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means without the written permission of Te Aho o Te Kura Pounamu.</i></p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 ```
+
+> **The wrapper carries `acksTemplate` (add `acksAI` for AI-generated or AI-requested media), and the classes generate the apology, AI-usage and Te Kura copyright statements — never type them as `<p>` text as well (constraint 90).** Only the `All other images ©…` line is typed. MTK follows the universal acknowledgements rules of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` in full.
 
 ---
 

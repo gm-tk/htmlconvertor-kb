@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Friday, 28th August, 2026 2:53 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -18,6 +18,7 @@ Run ALL checks before presenting output:
 ### Template & Structure
 - [ ] `<!doctype html>` (lowercase), html tag, head section, script URLs match structural reference (template file or reference module files)
 - [ ] **Opening `<body class="…">` tag PRESENT on every page** — `</head>` is never followed straight by `<div id="header">`; the class is the derived sub-type value (`container-fluid` Standard · `container-fluid reoTranslate` Bilingual · `fundamentals container-fluid` · `inquiry container-fluid`), and a reference module missing the tag (MXFU401, XTAS101) is corrected, not copied (constraint 82)
+- [ ] **`learningSupport` in the `<html>` class list on every page when the module code begins with `X`** (constraint 89) — appended to the existing class list, never replacing `notranslate`, and never altering the derived `template=` value; a reference module missing it on an X-prefixed code is corrected, not copied
 - [ ] Closing `</body></html>` present and the shell balanced — `#header`, `#body`, `#footer` all inside `<body>`
 - [ ] Void elements use XHTML-style self-closing syntax (e.g., `<meta ... />`, `<img ... />`, `<link ... />`)
 - [ ] If Mode B (reference module): ALL reference module codes replaced with new module code
@@ -137,7 +138,8 @@ Run ALL checks before presenting output:
 - [ ] No `imageCentral` class on writer-specified images
 - [ ] Image caption paragraphs (a `<p>` describing/naming an adjacent image) carry `class="captionText"` — in every context (standalone, in columns, inside accordion content); ordinary prose `<p>` stays unclassed
 - [ ] Acknowledgements wrapper is `<div class="acks acksTemplate">` (the `acksTemplate` modifier is standard); add `acksAI` → `<div class="acks acksTemplate acksAI">` when the module uses AI-generated media — **including where the writer has only REQUESTED an AI asset that does not exist yet**, paired with a `Designer/Developer To Do:` note (constraint 72)
-- [ ] Each media-carrying `acksLesson` div opens with a `<!-- Lesson N.N -->` page-label annotation — the word is **Lesson**, never **Page**; the three boilerplate divs carry no label (constraint 73)
+- [ ] Each media-carrying `acksLesson` div opens with a `<!-- Lesson N.N -->` page-label annotation — the word is **Lesson**, never **Page**; the one remaining boilerplate div ("All other images ©…") carries no label (constraints 73, 90)
+- [ ] **No generated statement is duplicated as text (constraint 90):** the acks block contains NO `<p>` carrying the "Every effort has been made…" apology, the "Parts of this resource were created with assistance from AI tools…" statement, or the "Copyright © … Board of Trustees…" line — `acksTemplate` / `acksAI` generate all three. `<span class="currentYear"></span>` should not appear anywhere in the block
 ### Class Attribute Integrity
 - [ ] NO class attribute values begin with a leading space (e.g., `class="activityButton reset"` not `class=" activityButton reset"`)
 - [ ] Text+image side-by-side layouts: text on LEFT, image on RIGHT (except speech bubbles)

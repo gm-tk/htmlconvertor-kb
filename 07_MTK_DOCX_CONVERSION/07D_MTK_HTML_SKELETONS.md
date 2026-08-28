@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Friday, 28th August, 2026 2:53 PM
 > **Granular part D (4 of 4) of `07_MTK_DOCX_CONVERSION.md`** — MTK: embedded HTML skeletons (SS19).
 > All sibling parts live in `07_MTK_DOCX_CONVERSION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -153,15 +153,12 @@ These are the complete, self-contained HTML skeletons for MTK module pages. Use 
     <!-- Acknowledgements — AFTER the footer, at the bottom of the OVERVIEW page (0.0) -->
     <div class="row">
         <div class="col-md-8 col-12">
-            <div class="acks">
+            <div class="acks acksTemplate">
                 <div class="accordion">
                     <div class="accHead">
                         <h4>Acknowledgements</h4>
                     </div>
                     <div class="accContent">
-                        <div class="acksLesson">
-                            <p><i>Every effort has been made to acknowledge and contact copyright holders. Te Aho o Te Kura Pounamu apologises for any omissions and welcomes more accurate information.</i></p>
-                        </div>
                         <div class="acksLesson"><!-- Lesson 0.0 -->
                             <!-- {ACKS_PAGE_0} -->
                         </div>
@@ -171,9 +168,6 @@ These are the complete, self-contained HTML skeletons for MTK module pages. Use 
                         <!-- One acksLesson div per page in the module -->
                         <div class="acksLesson">
                             <p>All other images © Te Aho o Te Kura Pounamu, Wellington, New Zealand.</p>
-                        </div>
-                        <div class="acksLesson">
-                            <p><i>Copyright © <span class="currentYear"></span> Board of Trustees of Te Aho o Te Kura Pounamu, Private Bag 39992, Wellington Mail Centre, Lower Hutt 5045, New Zealand. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means without the written permission of Te Aho o Te Kura Pounamu.</i></p>
                         </div>
                     </div>
                 </div>
