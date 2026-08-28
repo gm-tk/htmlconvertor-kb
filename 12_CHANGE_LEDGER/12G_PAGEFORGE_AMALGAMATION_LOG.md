@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 2:53 PM
+> **Last updated:** Friday, 28th August, 2026 2:54 PM
 > **Granular part G (11 of 11) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -72,7 +72,7 @@ Backfilling them into this format is a **separate, one-off pass** that has not b
 
 ## LOG
 
-The first entries were appended on Friday, 28th August, 2026 (CL-0089 to CL-0091). The log was created on Friday, 28th August, 2026 and the round that created it (`CL-0086` to `CL-0088`) contained **no front-facing change** — Admin Mode itself, this log, and the designer-facing output policy are all Lane 1 mechanism changes (`17_ADMIN_MODE.md` → Section 5.2), so none of them is entered here. The first entry will be appended by the next Admin Mode or Update Mode run that changes the generated HTML or CSS.
+The first entries were appended on Friday, 28th August, 2026 (CL-0089 to CL-0091). The log was created on Friday, 28th August, 2026 and the round that created it (`CL-0086` to `CL-0088`) contained **no front-facing change** — Admin Mode itself, this log, and the designer-facing output policy are all Lane 1 mechanism changes (`17_ADMIN_MODE.md` → Section 5.2), so none of them is entered here. The next Admin Mode or Update Mode run that changes the generated HTML or CSS appends its entry below, in CL order.
 
 Append new entries below this line, in CL order, newest last, using the format above.
 
@@ -104,4 +104,14 @@ Append new entries below this line, in CL order, newest last, using the format a
   `<span class="currentYear"></span>` must not appear anywhere in the block — it belonged only to the typed copyright line. Reported example of the incorrect double-up: `WJFUN105_0.0.html`.
 - **Supersedes:** —
 - **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md` → Basic block / Accordion structure / Structure notes; `07_MTK_DOCX_CONVERSION/07C`, `07D`; `00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md` constraint 90
+- **PageForge status:** Not yet amalgamated
+
+### CL-0091 — iStock ID is the FIRST (gm-leading) number, never the trailing segment
+- **Date:** Friday, 28th August, 2026
+- **Scope:** (c) Universal
+- **Source:** ADMIN MODE (authorised — Persephone Samuels, Design Team Lead)
+- **Writer input (what triggers it):** any iStock asset URL in the Writers Template, Media List, or iStock acknowledgements file. Current format is dual-ID — `…/photo/{slug}-gm{A}-{B}` (e.g. `gm2219277340-935873810`); the legacy format carries one number, `gm{A}`.
+- **Required output:** the ID is **`A`**, the number immediately following `gm` — equal to the asset page's **"Stock photo ID"** field and the preview watermark. Extraction aid: `gm(\d+)(?:-\d+)?`, capture group 1. The trailing `B` is a secondary catalogue identifier and is **NEVER** used. The same `A` must appear in all three places for a given asset: the Mode D / Mode P filename `images/iStock-{A}.jpg`, the acknowledgements citation `iStock {A}`, and the key used to match a line in a supplied iStock acknowledgements file (matching on `B` falsely reports "no matching line" and raises a spurious red flag). **Position decides — never digit count, recency, or proximity to the query string.**
+- **Supersedes:** — (originating decision CL-0029, 14 July 2026, unchanged and still in force; this entry carries it into the log, which begins at CL-0086)
+- **KB rule:** `00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md` constraint 61; `01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md` (Mode D + Mode P filename construction); `01C` (iStock Acknowledgements File → How To Use It); `05C` (Entry format → iStock ID consistency); `02C` (iStock ID cross-check)
 - **PageForge status:** Not yet amalgamated

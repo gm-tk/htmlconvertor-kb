@@ -11,7 +11,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (18 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
-- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (17 KB) — File reference index
+- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (19 KB) — File reference index
   - Sections: FILE REFERENCE INDEX
 - **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (28 KB) — Constraints quick reference, part 1 of 4 — **constraints 1–57**
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E`, `00G` and `00H` as ONE continuous numbering
@@ -21,7 +21,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: WHEN TO LOAD WHICH FILES
 - **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (24 KB) — Constraints quick reference, part 3 of 4 — **constraints 75–85** (latest: 85, a three-part `[TITLE BAR]` builds three `<h1><span>` titles in the Languages cohort only). **CLOSED** at 85 on 28 August 2026 — appending constraints 86-88 would have taken it past the 30 KB soft limit, so they were written into the new `00H` instead and nothing was moved out of this part
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
-- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (9 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text). **THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (12 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text). **THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00G` — no headings of its own). Opened 28 August 2026 when `00G` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -43,7 +43,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 07 — Content Rules · Content Preservation Rules · Grid Structure Rules · Content Merging Rules · Writer Perspective Notes · Red Text Rules · Heading Formatting · Numbered Instructions in Activities · Square-Bracket Tags
 - **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (23 KB) — Verification checklist (unchanged and still run in full; **constraint 88** banner — run every check, narrate almost none: a passing check is silent, a failing one becomes a plain-English red flag)
   - Sections: 08 — Verification, Constraints & Output · Verification Checklist
-- **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (27 KB) — Comment & red flag policy; constraints (incl. 28 `never_lazy_load_moving_interactive_images`)
+- **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (28 KB) — Comment & red flag policy; constraints (incl. 28 `never_lazy_load_moving_interactive_images`)
   - Sections: Comment & Red Flag Policy · Constraints
 - **`02_DATA_CONTENT_VERIFICATION/02E_EDGE_CASES_OUTPUT.md`** (10 KB) — Edge cases, component whitelist, output specifications — incl. **THE DESIGNER SUMMARY** (constraint 88: verify in full, report by exception; convention departures first; counts and clean confirmations never narrated)
   - Sections: Edge Cases · Component Whitelist — Known Partial/No-Match (v6) · Output Specifications · Post-output — The Designer Summary
@@ -75,13 +75,13 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF (generic — scoped to non-AI-Guidelines PDFs) · AI Guidelines PDFs (the eight teacher tags) · Embed Padlet · Embed Desmos Graph
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (12 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
   - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (18 KB) — COMP_14 acknowledgements
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (20 KB) — COMP_14 acknowledgements
   - Sections: Acknowledgements
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** (21 KB) — COMP_14 Layout & Structure, second half: Buttons (incl. the "Go to website" default label for an unlabelled standalone external link, and the MTK Quiz activity shell — the four-element box, and the never-generate-the-quiz-content rule), Supervisor Button, Tables, Columns
   - Sections: Buttons (MTK Quiz — the activity shell `[MTKquiz]` builds) · Supervisor Button (Shape A/B/C · the reveal panel · edge cases) · Tables · Columns & Floating Columns (Standard Grid · Floating clearfix) · Quote Text · Whakatauki · Rhetorical Question
 
 ## 06_TEMPLATE_RECOGNITION
-- **`06_TEMPLATE_RECOGNITION.md`** (22 KB) — single-file topic (small enough to stay whole)
+- **`06_TEMPLATE_RECOGNITION.md`** (24 KB) — single-file topic (small enough to stay whole)
   - Sections: 06 — Template Recognition & Structural Validation · PURPOSE · 1. TEMPLATE SYSTEM DETECTION — Legacy vs Refresh · 2. REFRESH SUB-TYPE IDENTIFICATION · 3. STRUCTURAL NORMS BY SUB-TYPE · 4. KNOWN PITFALLS IN REFERENCE FILES · 5. VALIDATION CHECKLIST — Mode B Reference Files · 6. ELEMENT REFERENCE — Refresh Baseline
 
 ## 07_MTK_DOCX_CONVERSION
@@ -91,7 +91,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 7. BODY CONTENT PATTERNS · 8. ALERT AND SIDEBAR PATTERNS · 9. INTERACTIVE COMPONENT MAPPING · 10. MEDIA ASSET HANDLING · 11. BILINGUAL BUTTON PATTERNS
 - **`07_MTK_DOCX_CONVERSION/07C_MTK_PAGE_FURNITURE.md`** (10 KB) — MTK: header, footer, acks, word/image, Kiwi Kaiarahi, checklist, pitfalls (SS12-18)
   - Sections: 12. HEADER CONSTRUCTION · 13. FOOTER CONSTRUCTION · 14. ACKNOWLEDGEMENTS STRUCTURE · 15. WORD/IMAGE DISPLAY PATTERN · 16. KIWI KAIĀRAHI (LEARNING GUIDE) PATTERN · 17. CONVERSION CHECKLIST (MTK Docx-to-HTML) · 18. COMMON PITFALLS
-- **`07_MTK_DOCX_CONVERSION/07D_MTK_HTML_SKELETONS.md`** (15 KB) — MTK: embedded HTML skeletons (SS19)
+- **`07_MTK_DOCX_CONVERSION/07D_MTK_HTML_SKELETONS.md`** (14 KB) — MTK: embedded HTML skeletons (SS19)
   - Sections: 19. EMBEDDED HTML SKELETONS
 
 ## 08_MODULE_SUPPORT_DEBUGGING
@@ -119,7 +119,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
 
 ## 12_CHANGE_LEDGER
-- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (13 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086/0087/0088**), PART 2 pending approval
+- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (15 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086/0087/0088**), PART 2 pending approval
   - Sections: 12 — Change Ledger (Conflict & Lock Registry) · PURPOSE · WHY ONE IN-HOUSE FILE IS FINE (feasibility note) · STATUS VALUES · HOW TO READ / MAINTAIN THIS LEDGER · PART 1 — LOCKED DECISIONS (binding & immutable — conflict check reads this FIRST) · PART 2 — PENDING APPROVAL (report-vs-report conflicts awaiting the design authority's resolution)
 - **`12_CHANGE_LEDGER/12B_CHANGE_HISTORY_CL0001_0028.md`** (28 KB) — PART 3 change history: CL-0001 to CL-0028
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
@@ -131,13 +131,13 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_0077.md`** (24 KB) — PART 3 change history: CL-0072 to CL-0077 (continued) — CLOSED at CL-0077 (13 August 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0072 to CL-0077
 - **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_0084.md`** (29 KB) — PART 3 change history: CL-0078 to CL-0084 (continued) — CLOSED at CL-0084 (26 August 2026, 30 KB soft limit)
-- **`12_CHANGE_LEDGER/12E5_CHANGE_HISTORY_CL0085_ONWARD.md`** (17 KB) — PART 3 change history: CL-0085 onward (continued) — THE OPEN PART: append new CL entries here
+- **`12_CHANGE_LEDGER/12E5_CHANGE_HISTORY_CL0085_ONWARD.md`** (24 KB) — PART 3 change history: CL-0085 onward (continued) — THE OPEN PART: append new CL entries here
   - Sections: PART 3 history rows CL-0085 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
 - **`12_CHANGE_LEDGER/12F_LEDGER_LOGS_AND_NOTES.md`** (2 KB) — Blocked-request log, housekeeping, notes
   - Sections: BLOCKED-REQUEST LOG (audit) · HOUSEKEEPING (optional — nothing here is a recurring task) · NOTES
-- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (7 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
+- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (12 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
   - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG
 
 ## 13_SPLIT_MODE
@@ -147,7 +147,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 14_SUBJECT_GLOBAL_PARAMETERS
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (22 KB) — Purpose + families 14.1-14.5 (Languages — finalised Audiovisual Package rules, registry data in `14C` —, Pathways, Taonga, CED — incl. the AI Guidelines carve-out on the §14.4 PDF deferral —, FUNdamentals)
   - Sections: 14 — Subject Global Parameters · PURPOSE · 14.1 Languages Phase 1–4 · 14.2 Pathways · 14.3 Taonga (The Arts) · 14.4 ConnectED (CED) Phase 5 · 14.5 FUNdamentals (Health & PE, Y1–10)
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (27 KB) — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ)
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (28 KB) — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ)
   - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons (celebration .gif DELIVERED — deferral retired) · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14C_LANGUAGES_AV_ASSET_REGISTRY.md`** (15 KB) — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (CL-0070) — the supplied HTML no longer needs to be consulted
   - Sections: 14C — Languages Audiovisual Package: the complete asset registry · 1. Delivery forms (the supplied markup shapes) · 2. Language icons · 3. German · 4. French · 5. Chinese · 6. Japanese · 7. Spanish · 8. Samoan · 9. Acknowledgements for the iStock-derived registry assets
