@@ -7,7 +7,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 
 
 ## 00_MASTER_INSTRUCTIONS
-- **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (25 KB) — Role, philosophy, timestamps, operating modes, input files
+- **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (29 KB) — Role, philosophy, timestamps, operating modes, input files
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (18 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
@@ -21,7 +21,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: WHEN TO LOAD WHICH FILES
 - **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (24 KB) — Constraints quick reference, part 3 of 4 — **constraints 75–85** (latest: 85, a three-part `[TITLE BAR]` builds three `<h1><span>` titles in the Languages cohort only). **CLOSED** at 85 on 28 August 2026 — appending constraints 86-88 would have taken it past the 30 KB soft limit, so they were written into the new `00H` instead and nothing was moved out of this part
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
-- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (12 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text). **THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (16 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up). **THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00G` — no headings of its own). Opened 28 August 2026 when `00G` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -119,7 +119,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
 
 ## 12_CHANGE_LEDGER
-- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (15 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086/0087/0088**), PART 2 pending approval
+- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (16 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0092**), PART 2 pending approval
   - Sections: 12 — Change Ledger (Conflict & Lock Registry) · PURPOSE · WHY ONE IN-HOUSE FILE IS FINE (feasibility note) · STATUS VALUES · HOW TO READ / MAINTAIN THIS LEDGER · PART 1 — LOCKED DECISIONS (binding & immutable — conflict check reads this FIRST) · PART 2 — PENDING APPROVAL (report-vs-report conflicts awaiting the design authority's resolution)
 - **`12_CHANGE_LEDGER/12B_CHANGE_HISTORY_CL0001_0028.md`** (28 KB) — PART 3 change history: CL-0001 to CL-0028
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
@@ -131,7 +131,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`12_CHANGE_LEDGER/12E3_CHANGE_HISTORY_CL0072_0077.md`** (24 KB) — PART 3 change history: CL-0072 to CL-0077 (continued) — CLOSED at CL-0077 (13 August 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0072 to CL-0077
 - **`12_CHANGE_LEDGER/12E4_CHANGE_HISTORY_CL0078_0084.md`** (29 KB) — PART 3 change history: CL-0078 to CL-0084 (continued) — CLOSED at CL-0084 (26 August 2026, 30 KB soft limit)
-- **`12_CHANGE_LEDGER/12E5_CHANGE_HISTORY_CL0085_ONWARD.md`** (24 KB) — PART 3 change history: CL-0085 onward (continued) — THE OPEN PART: append new CL entries here
+- **`12_CHANGE_LEDGER/12E5_CHANGE_HISTORY_CL0085_ONWARD.md`** (29 KB) — PART 3 change history: CL-0085 onward (continued) — THE OPEN PART: append new CL entries here
   - Sections: PART 3 history rows CL-0085 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (16 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -171,7 +171,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 1. REPORT HEADER · 2. SECTION 1 — FINDINGS (class B extra requirement · confidence) · 3. SECTION 2 — FOR GAVIN TO JUDGE · 4. SECTION 3 — INTERACTIVE INVENTORY · 5. SECTION 4 — SCOPE AND COVERAGE · 6. WORKED EXAMPLES · 7. HOW THE RUN CLOSES IN CHAT
 
 ## 17_ADMIN_MODE
-- **`17_ADMIN_MODE.md`** (22 KB) — single-file topic (small enough to stay whole)
+- **`17_ADMIN_MODE.md`** (28 KB) — single-file topic; §10 is the **front-end / hidden output split** (`<omit_from_frontend>`, the plain-English visible half, the conflict heads-up — constraint 91)
   - Sections: 17 — Admin Mode (Mode 8) · PURPOSE · 1. THE TRIGGER AND ITS PRECEDENCE · 2. ACCEPTED INPUT · 3. SCOPE — UNIVERSAL BY DEFAULT · 4. THE OVERRIDE RULE — ADMIN MODE WINS (4.1 an Admin decision is locked against ordinary Update Mode) · 5. THE TWO LANES — WHAT GETS LOGGED WHERE (5.1 the front-facing test · 5.2 mechanism · 5.3 front-facing) · 6. THE LEDGER ROW · 7. WHAT ADMIN MODE STILL DOES · 8. WHAT ADMIN MODE DOES NOT DO · 9. WORKFLOW (pseudo-code) · 10. OUTPUT EXPECTATION · 11. RELATIONSHIP TO THE OTHER MODES
 
 ## Repo infrastructure

@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Sunday, 30th August, 2026 3:30 PM
 
 # 17 — Admin Mode (Mode 8)
 
@@ -39,7 +39,7 @@ The change to action may arrive **in the same message** as the trigger or **in t
 
 Admin Mode accepts a change in **any format**, exactly as Update Mode does (`11_UPDATE_MODE.md` → Section 2): a typed instruction, a bullet list, a one-liner, a pasted note, or an uploaded file. Normalise the input into a discrete, numbered list of changes and restate that list back — the restatement is a comprehension check, not a request for approval, and the run continues in the same turn.
 
-**A finalized Comparison Mode difference report belongs in Update Mode, not here.** Update Mode remains the mode for actioning a designer's difference report, with its conflict routing and its escalation path intact. Admin Mode is for a change an authorised person has already decided. If a finalized difference report is submitted under `ADMIN MODE`, action it as an Admin Mode change (the trigger governs) but say plainly in the run summary that a difference report would normally be routed through Update Mode, so the designer can correct the routing next time if that was a mistake.
+**A finalized Comparison Mode difference report belongs in Update Mode, not here.** Update Mode remains the mode for actioning a designer's difference report, with its conflict routing and its escalation path intact. Admin Mode is for a change an authorised person has already decided. If a finalized difference report is submitted under `ADMIN MODE`, action it as an Admin Mode change (the trigger governs) but say plainly — **on screen**, as one of the "worth checking" items of Section 10.2 — that a difference report would normally be routed through Update Mode, so the designer can correct the routing next time if that was a mistake.
 
 **The one question Admin Mode may still ask** is a question of *comprehension*, never of approval: if an instruction is genuinely unintelligible, or names a target that does not exist, or is internally self-contradictory, ask about that specific item rather than guessing. Never invent a change. Everything else proceeds without asking.
 
@@ -54,9 +54,9 @@ Admin Mode uses the **same five-scope vocabulary** as Update Mode and Comparison
 | | Update Mode | Admin Mode |
 |---|---|---|
 | Change arrives with a stated or clearly-implied scope | Use it | Use it |
-| Change arrives with **no** scope | **Ask** — never default | **Default to (c) Universal** and say so in the run summary |
+| Change arrives with **no** scope | **Ask** — never default | **Default to (c) Universal**, and record the defaulting in the run's hidden block and in the brief (Section 10.3) |
 
-An Admin Mode change applies **everywhere** unless the message names a narrower cohort. A narrower scope is recognised from any of: a subject or series name, a module code or code prefix, a year level or template band, a named cohort or family documented in `14_SUBJECT_GLOBAL_PARAMETERS.md`, or a phrase such as *"for the Languages modules only"* / *"just the FUNdamentals templates"*. When one is named, scope the rule's wording to it exactly as Update Mode would.
+An Admin Mode change applies **everywhere** unless the message names a narrower cohort. A narrower scope is recognised from any of: a subject or series name, a module code or code prefix, a year level or template band, a named cohort or family documented in `14_SUBJECT_GLOBAL_PARAMETERS.md`, or a phrase such as *"for the Languages modules only"* / *"just the FUNdamentals templates"*. When one is named, scope the rule's wording to it exactly as Update Mode would. Either way the resolved scope is written into the brief and the ledger row; it is **not** displayed in the chat (Section 10.3).
 
 This carve-out **overrides** Update Mode's standing rule that an unscoped change is never defaulted (`11_UPDATE_MODE.md` → Section 3, and the pre-flight in `11C` → Section 8.1). It applies **only** to Admin Mode runs.
 
@@ -78,7 +78,9 @@ For each proposed change, search the ledger for a prior entry on the same rule, 
 | Prior entry is a previous **Admin Mode** decision | — | **Override.** The newest Admin Mode instruction always wins |
 | Two changes **within the same Admin Mode run** contradict each other | — | **Ask** — this is a comprehension question (Section 2), not an approval question |
 
-**Overriding is never silent.** Every override is stated in the run summary — *"this replaces `CL-nnnn` (…), which said …"* — and both rows are written: the new one, and the reversal on the old one. The point of the ledger is that the history stays legible, so an override that is not recorded defeats the purpose of applying it through this mode at all.
+**Overriding is never unrecorded.** Every override is written out in full — *"this replaces `CL-nnnn` (…), which said …"* — and both rows are drafted: the new one, and the reversal on the old one. The point of the ledger is that the history stays legible, so an override that is not recorded defeats the purpose of applying it through this mode at all.
+
+That full account belongs to the **hidden half** of the run's output (Section 10.3), not to the chat. What reaches the chat is a **short plain-English heads-up, and only where the contradiction is clear-cut and wide-reaching** (Section 10.4) — so the person relaying the instruction can confirm the reversal was intended. It is a courtesy flag, never a pause: the brief is drafted in full regardless, and the change is applied.
 
 **Admin Mode never escalates to the design authority.** The "Cataloged differences that require approval" block (`11_UPDATE_MODE.md` → Section 7.1) is **never produced by an Admin Mode run**, whatever the conflict. Persephone's approval path exists to resolve two designers' reports disagreeing; an Admin Mode change is already the answer to that question.
 
@@ -107,7 +109,7 @@ This is the distinction that decides a change's paperwork. **Every** Admin Mode 
 Changes to **how this project operates**, which leave the generated HTML byte-for-byte unchanged:
 
 - Mode definitions, triage, trigger phrases, precedence.
-- What the Convertor says in the chat — progress messages, verification reporting, summaries, how it phrases things to a designer (**constraint 88** — the Designer-Facing Output Policy — is the worked example: it changed only what is *said*, never what is *built*).
+- What the Convertor says in the chat — progress messages, verification reporting, summaries, how it phrases things to a designer (**constraint 88** — the Designer-Facing Output Policy — is the worked example: it changed only what is *said*, never what is *built*; **constraint 91**, the Admin Mode Front-End Output Policy of Section 10, is the same shape).
 - How the knowledge base itself is structured, maintained, indexed, split or committed.
 - The intake, conflict-checking, ledger and approval machinery — including this file.
 - Which files to load for which task; how a mode gathers its inputs.
@@ -151,7 +153,7 @@ Removing the approval gate removes questions — not discipline. Every one of th
 3. **The Repo Update Brief** (`11_UPDATE_MODE.md` → Section 10) — precise, finished old→new wording per part file. Never "update the rule accordingly". No project file is ever regenerated or presented for download.
 4. **The repo maintenance ritual** — edit parts in place, refresh each touched part's `Last updated` stamp (Section 13 format), update `INDEX.md`, run `python3 tools/check_kb.py`, commit. Admin authority does not exempt a change from the guard.
 5. **The `_project_instructions_.md` re-paste reminder** when that file is a target — it does not sync from the repository.
-6. **A full account in the run summary** (Section 10).
+6. **A full account of the run** (Section 10) — produced in full, and split between what is displayed and what is written inside `<omit_from_frontend>` tags. Splitting the account is not the same as shortening it: nothing is dropped.
 
 ## 8. WHAT ADMIN MODE DOES NOT DO
 
@@ -184,7 +186,7 @@ FUNCTION admin_mode(authorised_input):
     FOR EACH change:
         IF a cohort / series / module code / year level / subject is named → scope to it
         ELSE                                                              → (c) UNIVERSAL   # Section 3
-        STATE the resolved scope in the run summary
+        RECORD the resolved scope for the brief and the ledger row   # hidden, not displayed
 
     # ── STEP 2: CONFLICT CHECK — TO RECORD, NOT TO DECIDE ──   # Section 4
     FOR EACH change:
@@ -214,27 +216,85 @@ FUNCTION admin_mode(authorised_input):
     FOR EACH Lane 2 change: DRAFT the 12G amalgamation entry
     SWEEP for stale statements / contradictions / dangling cross-references; draft those too
 
-    # ── STEP 6: DELIVER ──
-    OUTPUT ONE Repo Update Brief (11 → Section 10) as a single fenced block
-    WRITE the run summary (Section 10): what changed, at what scope, what it overrode,
-        which lane each change fell in, and what the designer must do next
+    # ── STEP 6: DELIVER — TWO READERS ──                        # Section 10
+    DISPLAY, in order:
+        the opening line(s); WHAT IS CHANGING in plain English (no scope / class / CL id)
+        IF a change clearly contradicts a decision on record AND the effect is wide
+            → DISPLAY a short plain-English heads-up: old rule, new rule,
+              'I have gone ahead as instructed', 'worth confirming before it is pushed'
+              # courtesy only — NEVER a pause, NEVER an approval question   # Section 10.4
+        THE REPO UPDATE BRIEF (11 → Section 10) in full, untouched, one fenced block
+        anything genuinely uncertain, in plain English
+        what to do next: run the brief, commit + push, wait for knowledge sync
+    WRAP IN <omit_from_frontend> … </omit_from_frontend>, produced in FULL detail:
+        resolved scope + Routine/Major class per change (including a defaulted scope)
+        the override account; the lane per change; the per-change file log
     # NO approval request, NO Persephone catalog, NO difference report
 ```
 
 ---
 
-## 10. OUTPUT EXPECTATION
+## 10. OUTPUT EXPECTATION — TWO READERS, ONE RUN
 
-A completed Admin Mode run delivers:
+An Admin Mode run has **two readers**, and they need opposite things.
 
-1. **The restated change list** — each change as understood, with its **resolved scope** (and, where the scope was defaulted, the words *"no scope was given, so this applies universally"*), and its Routine/Major class.
-2. **The override account** — for every change that contradicted something on record: the prior decision's ID, what it said, and the plain statement that the Admin Mode change replaces it. If nothing was overridden, one line saying so.
-3. **The lane for each change** — mechanism (ledger only) or front-facing (ledger + PageForge Amalgamation Log), with a one-line reason.
-4. **ONE Repo Update Brief** for the Claude Code session on the `htmlconvertor-kb` repository — numbered precise edits with granular part paths, the drafted ledger row(s) including supersessions, any `12G` entries, the standing repo-ritual block, and the `_project_instructions_.md` re-paste reminder where applicable.
-5. **A per-change log** — which part files each edit targets, what changes, and why.
-6. **A reminder** to run the brief in Claude Code, commit and push, and wait for the project's GitHub knowledge sync before relying on the new rule in a conversion.
+- **The person in the chat** is often relaying someone else's instruction and is not the person who will apply it. They need to know what is about to change, in plain English, and whether anything is worth checking before it ships. Nothing else.
+- **The Claude Code session** on the `htmlconvertor-kb` repository needs the **Repo Update Brief** exactly as it has always been: complete, precise, and as technical as the edits require.
 
-**No approval request, no conflict catalog, no difference report, no regenerated files.** An authorised instruction in, a precise brief and a complete account of what it displaced out.
+The run therefore still produces **everything it produced before** — the resolved scope, the Routine/Major class, the full override account, the lane per change, the per-change file log. **None of that work is skipped**, because the ledger rows, the supersession rows and the brief are all drafted from it. What changes is **which parts are put on screen**.
+
+### 10.1 The `<omit_from_frontend>` convention
+
+Anything the reader in the chat does not need is written **inside a pair of tags**:
+
+```
+<omit_from_frontend>
+…internal bookkeeping, in its usual form and full detail…
+</omit_from_frontend>
+```
+
+The tagged content is still produced, in full — the tags mark it as **not for display**, so the front end can hide it and the reader is not asked to skim past it. **Never abbreviate, summarise or drop tagged content to save space**: it is the audit trail, and it is where the ledger rows come from. Tag whole blocks, never a fragment of a sentence.
+
+**The Repo Update Brief is NEVER tagged.** It is displayed in full, jargon and all. It is the thing the reader copies into Claude Code, and trimming it would break the run.
+
+### 10.2 What the reader sees — in this order, and nothing else
+
+1. **One or two opening lines** — that Admin Mode is active, where the change came from, and how many changes are being actioned. No narration of which files were loaded or read.
+2. **What is changing** — each change as understood, numbered, in **plain English**: what the Convertor will do differently once this ships, and why it matters. Written for someone with no coding background. Element names, class names, file paths and section numbers appear **only** where the change is literally about one of them, and are explained the first time. **No scope label, no Routine/Major label, no `CL-nnnn` id.**
+3. **A heads-up — only if there is one** (Section 10.4).
+4. **THE REPO UPDATE BRIEF** — untouched, in full, as one fenced block.
+5. **Anything genuinely uncertain** — an instruction that could be read two ways, or an interpretation that was made and could be wrong. Plain English, phrased as something to check, never as a question that holds up the run. If there is nothing, the heading does not appear at all.
+6. **What to do next** — run the brief in Claude Code, commit and push, and wait for the project's GitHub knowledge sync before relying on the new rule in a conversion. Plus the `_project_instructions_.md` re-paste reminder when that file is a target.
+
+### 10.3 What is hidden
+
+Written inside `<omit_from_frontend>` tags, in the run's usual detail:
+
+- **The resolved scope and the Routine/Major class** of every change — **including** where an unscoped change was defaulted to universal (Section 3). Hidden even then: the brief and the ledger row both state it in full, and the reader in the chat is not the person who decides it.
+- **The override account** — every prior decision contradicted, its id, what it said, and the plain statement that this replaces it; or the single line recording that nothing was overridden (Section 4).
+- **The lane each change fell in** and the one-line reason (Section 5).
+- **The per-change file log** — which part files each edit targets, what changes in each, and why.
+
+### 10.4 The conflict heads-up
+
+Admin Mode **never pauses, never asks for approval and never blocks on a conflict** (Section 4). That is settled, and nothing here changes it: the brief is always drafted as though the change is correct, because it is authorised.
+
+But the reader in the chat usually cannot see the ledger, and may be relaying an instruction from someone who did not know what it displaces. So where a change **clearly contradicts a decision already on record, and that contradiction has a wide effect**, a short note appears on screen — as a courtesy, not a gate:
+
+> **Worth a quick check:** change 2 reverses an earlier decision. The rule up to now has been *(the old rule, in plain English)*; this instruction asks for *(the new one, in plain English)* instead. I have gone ahead as instructed — the brief below is complete. If the reversal was not intended, it is worth confirming with whoever authorised it before this is pushed.
+
+Rules for the note:
+
+- **Plain English only.** No `CL-nnnn` id, no file path, no constraint number, no section reference — all of that is already in the hidden block and in the brief.
+- **Assume the change is correct.** The wording is *"I have gone ahead"*, never *"should I proceed?"*. The brief is produced in full either way.
+- **Only for a clear, wide-reaching contradiction.** A change that supersedes wording nothing depends on, that narrows or clarifies an existing scope, or that restates something already in effect gets **no** note. **If in doubt, leave it out** — a note on every override would restore exactly the noise this section removes.
+- **One short paragraph per conflicting change, three at most.** Beyond three, write one note saying that several earlier decisions are being reversed and that the set as a whole is worth confirming.
+
+### 10.5 Tone of the visible half
+
+Write it the way constraint 88 has the Convertor write a Designer Summary: short, plain, and about **consequences rather than mechanics**. *"Learning support modules will now be identified by their module code instead of by whatever the reference file happened to contain — so one can no longer ship without its larger font"* — not *"the § 4.4 reference-dependent test is superseded by a deterministic code test"*. The second sentence belongs in the brief, where it already is.
+
+**No approval request, no conflict catalog, no difference report, no regenerated files.** An authorised instruction in; a short plain-English account, one complete brief, and a full hidden record out.
 
 ---
 
