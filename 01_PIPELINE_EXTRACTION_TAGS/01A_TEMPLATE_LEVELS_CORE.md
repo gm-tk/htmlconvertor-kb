@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
-> **Granular part A (1 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Template levels: structural reference workflow, levels, head/heading/title patterns.
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Granular part A (1 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Template levels: structural reference workflow, levels, head/heading/title patterns.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 21st August, 2026 6:30 PM
-> **Granular part D (4 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Granular part D (4 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -185,9 +185,11 @@ The offer is an **offer, not an automatic action.** Split Mode runs **only** whe
 | `Ākonga`/`Akonga` `AI use guide years 1-6`/`7-10`/`11-13 and NCEA` + `PDF` | `ai_guidelines_pdf` + akonga variant |
 | `Kaimahi AI use guidelines years 1-6`/`7-10` + `PDF` | `ai_guidelines_pdf` + kaimahi variant |
 | `Kaimahi AI guidelines - authenticity guidelines for years 11-13 and NCEA PDF` | `ai_guidelines_pdf` + `authenticity` |
-| `Kaimahi AI guidelines - responding to suspected use in assessments for years 11-13 and NCEA PDF` | `ai_guidelines_pdf` + `responding` |
+| `Kaimahi AI guidelines- responding to suspected Use in assessments PDF` (current) · `…for years 11-13 and NCEA PDF` (retired wording, still matched) | `ai_guidelines_pdf` + `responding` |
 
-> **The eight `ai_guidelines_pdf` tags normalise tolerantly but emit exactly.** Match is case-insensitive, a hyphen / en dash / em dash in the year range are the **same** tag, and `Akonga` without the macron is accepted. The **emitted filename is always the exact supplied string** (en dash, macron, spaced hyphen and all) from the registry table in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs. Constraint 84.
+> **The eight `ai_guidelines_pdf` tags normalise tolerantly but emit exactly.** Match is case-insensitive, a hyphen / en dash / em dash in the year range are the **same** tag — **spaced or unspaced** — and `Akonga` without the macron is accepted. The **emitted filename is always the exact supplied string** (en dash, macron, spaced hyphen and all) from the registry table in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs. Constraint 84.
+>
+> **`responding` was RENAMED on 13 September 2026 (CL-0094).** Its filename is now `Kaimahi AI Guidelines Responding to Suspected Use in Assessments.pdf` — **no hyphen, no year range, capital `Use`** — and it is the only form emitted. The retired tag wording (with `for Years 11-13 and NCEA`, and with `use` lower-case) still **matches**, so templates already in flight keep working; it is never emitted.
 
 ### Activity Tags
 | Writer Variants | Normalised |

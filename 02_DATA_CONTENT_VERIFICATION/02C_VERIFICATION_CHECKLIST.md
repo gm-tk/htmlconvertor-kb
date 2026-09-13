@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 2:53 PM
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -55,6 +55,7 @@ Run ALL checks before presenting output:
 - [ ] English and Te Reo titles in separate `<h1><span>` elements
 - [ ] Languages-cohort module (Chinese, French, Gagana Samoan, German, Japanese, Spanish) with a **three**-part `[TITLE BAR]`: THREE separate `<h1><span>` elements (target language + English + Te Reo), in the writer's order, with any empty or placeholder part (`TE REO`, `MODULE TITLE TE REO`, `INSERT MODULE TITLE TE REO`) skipped — constraint 85
 - [ ] NON-Languages module: a second `|` in the title bar has NOT been split into a third `<h1>` — the English + Te Reo pair is emitted, the pipe stays inside its title where it belongs, and a visible `Red Flag:` quotes the original (constraint 85)
+- [ ] Body heading **label prefix stripped** (constraint 1, `CL-0095`): a leading `Lesson N` form, or a label such as `FUNdamental:`, has been removed from the body heading where the remainder is the `<h1>` header title — e.g. `FUNdamental: Audience and Purpose` emitted as `<h2>Audience and Purpose</h2>`. On an introduction/overview page the stripped heading is KEPT; on a lesson page it then meets the duplicate-heading rule as normal. A colon carrying meaning (`Activity 2: Commas in lists`, `Links to: …`) has NOT been stripped
 - [ ] `<title>` element: overview pages use `MODULE_CODE English Title`; lesson pages use `MODULE_CODE lesson#` only (no lesson-specific title, no Te Reo)
 - [ ] Lesson pages: `#module-code` contains zero-padded lesson number only (e.g., `01`), NOT full module code, NOT decimal format (e.g., `1.0`)
 - [ ] Lesson pages: `<h1><span>` uses THAT LESSON'S OWN title (never the module title) — constraint 79; any leading `Lesson N` / `Lesson N:` prefix stripped; the duplicate body heading dropped, not the header title; a lesson name the writer supplied twice (boundary tag + `[H2]`) has NOT caused a fallback to the module title; where no lesson title exists anywhere, the module title is used AND a visible `Designer/Developer To Do:` note is present
@@ -133,6 +134,7 @@ Run ALL checks before presenting output:
 - [ ] All images: `class="img-fluid"` and `loading="lazy"`
 - [ ] **EXCEPTION — no `loading="lazy"` inside a moving-or-draggable interactive (constraint 83):** every `<img>` inside `.rotateBanner`, `.carousel`/`.viewer`/`.item`, `.dragAndDrop` (`.drag`/`.drop`/`.ddContainer`/`.ddColumn`), `.clickDrop`/`.clickDropContent`, `.flipCard`, `.memoryGame` (`.memCard`/`.cardHidden`) and sketcher `.canvasContainer` carries **no** `loading="lazy"` — real images and `placehold.co` placeholders alike, in both output modes
 - [ ] Images the student only clicks or hovers **without movement** (`infoImage`/`infoTrigger` hotspots, `imageLabel` diagrams), plus `alertImage`, speech-bubble characters, accordion/tab-panel images and self-reflection emoji, DO still carry `loading="lazy"` (constraint 83)
+- [ ] AI Guidelines PDF embeds cite the CURRENT filename (constraint 84, `CL-0094`): the *Responding to Suspected Use* asset is emitted as `AI-guidelines/Kaimahi AI Guidelines Responding to Suspected Use in Assessments.pdf` — **no hyphen, no year range, capital `Use`**. The retired `…Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA.pdf` appears NOWHERE in the output, in either the `data=` or the fallback `href=`
 - [ ] YouTube: `youtube-nocookie.com/embed/`
 - [ ] No TikTok embeds
 - [ ] No `imageCentral` class on writer-specified images
@@ -140,6 +142,12 @@ Run ALL checks before presenting output:
 - [ ] Acknowledgements wrapper is `<div class="acks acksTemplate">` (the `acksTemplate` modifier is standard); add `acksAI` → `<div class="acks acksTemplate acksAI">` when the module uses AI-generated media — **including where the writer has only REQUESTED an AI asset that does not exist yet**, paired with a `Designer/Developer To Do:` note (constraint 72)
 - [ ] Each media-carrying `acksLesson` div opens with a `<!-- Lesson N.N -->` page-label annotation — the word is **Lesson**, never **Page**; the one remaining boilerplate div ("All other images ©…") carries no label (constraints 73, 90)
 - [ ] **No generated statement is duplicated as text (constraint 90):** the acks block contains NO `<p>` carrying the "Every effort has been made…" apology, the "Parts of this resource were created with assistance from AI tools…" statement, or the "Copyright © … Board of Trustees…" line — `acksTemplate` / `acksAI` generate all three. `<span class="currentYear"></span>` should not appear anywhere in the block
+### Language Fonts
+- [ ] **Every** run of Japanese text carries `jp-text`, **every** run of Chinese text carries `ch-text`, and **every** run of pinyin carries `pinyin` (constraint 92) — in headings, paragraphs, bold/italic runs, list items, table headers and cells, and nested inside the `<h1><span>` header title; not just the first occurrence and not just the vocabulary tables
+- [ ] The whole run is wrapped, internal punctuation included (brackets, slashes, a trailing full stop inside the run); surrounding English sits outside the wrapper
+- [ ] **No te reo Māori or English word carries a language class** — macronised vowels (`ā ē ī ō ū`) are New Zealand letters, so `Māori`, `Manawatū`, `ākonga` are unwrapped. Anything marked `pinyin` is identified by a non-te-reo tone mark (`á ǎ à`, `ü`), by pairing with the Chinese it sounds out, or by the writer; genuinely ambiguous romanisation is left unwrapped with a visible `Red Flag:`
+- [ ] Japanese vs Chinese resolved correctly where the characters are shared Han: class taken from the module's language (JPN/JPNFUN → `jp-text`, CH/CHFUN → `ch-text`), any run containing kana treated as Japanese, and an undeterminable case red-flagged rather than guessed
+- [ ] A colour class sits alongside the language class (`class="jp-text green-text"`), never in place of it
 ### Class Attribute Integrity
 - [ ] NO class attribute values begin with a leading space (e.g., `class="activityButton reset"` not `class=" activityButton reset"`)
 - [ ] Text+image side-by-side layouts: text on LEFT, image on RIGHT (except speech bubbles)

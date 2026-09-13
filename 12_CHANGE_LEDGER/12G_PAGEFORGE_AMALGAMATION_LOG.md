@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 28th August, 2026 2:54 PM
-> **Granular part G (11 of 11) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Granular part G (12 of 12) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -114,4 +114,42 @@ Append new entries below this line, in CL order, newest last, using the format a
 - **Required output:** the ID is **`A`**, the number immediately following `gm` — equal to the asset page's **"Stock photo ID"** field and the preview watermark. Extraction aid: `gm(\d+)(?:-\d+)?`, capture group 1. The trailing `B` is a secondary catalogue identifier and is **NEVER** used. The same `A` must appear in all three places for a given asset: the Mode D / Mode P filename `images/iStock-{A}.jpg`, the acknowledgements citation `iStock {A}`, and the key used to match a line in a supplied iStock acknowledgements file (matching on `B` falsely reports "no matching line" and raises a spurious red flag). **Position decides — never digit count, recency, or proximity to the query string.**
 - **Supersedes:** — (originating decision CL-0029, 14 July 2026, unchanged and still in force; this entry carries it into the log, which begins at CL-0086)
 - **KB rule:** `00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md` constraint 61; `01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md` (Mode D + Mode P filename construction); `01C` (iStock Acknowledgements File → How To Use It); `05C` (Entry format → iStock ID consistency); `02C` (iStock ID cross-check)
+- **PageForge status:** Not yet amalgamated
+
+### CL-0093 — Japanese, Chinese and pinyin text must carry `jp-text` / `ch-text` / `pinyin`, everywhere
+- **Date:** Sunday, 13th September, 2026
+- **Scope:** (c) Universal
+- **Source:** ADMIN MODE (authorised — design-team instruction relayed to Gavin)
+- **Writer input (what triggers it):** any run of Japanese text (hiragana, katakana, kanji), Chinese text (Han characters, simplified or traditional) or pinyin (romanised Chinese, with or without tone marks) anywhere in the content source — body prose, headings, list items, table cells, or the `[TITLE BAR]` title itself.
+- **Required output:** every such run is wrapped in its class — `jp-text`, `ch-text`, `pinyin` — with the **whole run** inside the wrapper including its internal punctuation (`<span class="ch-text">他(她)是我的(哥哥/弟弟/姐姐/妹妹</span>`, `<span class="pinyin">Tā jīntiān bā suì.</span>`) and surrounding English outside it. The class sits on a `<span>` around the run **or** directly on an inline element containing only that run — `<b class="ch-text">x</b>`, `<span class="ch-text"><b>x</b></span>`, `<b><span class="ch-text">x</span></b>` are all valid. Inside an `<h1>` header title it nests within the title `<span>`. A colour class is appended in the same attribute (`class="jp-text green-text"`), never substituted. **Detection:** kana ⇒ Japanese always. **Han characters are shared and cannot be separated by character range** — take the class from the module's language (JPN/JPNFUN ⇒ `jp-text`, CH/CHFUN ⇒ `ch-text`); bilingual or undeterminable ⇒ red flag, no guess. **Pinyin vs te reo Māori:** `ā ē ī ō ū` are shared and decide nothing — pinyin requires a non-te-reo tone mark (`á ǎ à`, `ü`, `ǖǘǚǜ`), adjacency to the Chinese it romanises, or a writer label; te reo and English words are **never** wrapped; ambiguous romanisation is left bare with a red flag.
+- **Supersedes:** — (the `05A` five-class table is pre-ledger documentation, extended not reversed)
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md` → Language Fonts; `00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md` constraint 92; `02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md` → Language Fonts
+- **PageForge status:** Not yet amalgamated
+
+### CL-0094 — AI Guidelines PDF renamed: *Responding to Suspected Use in Assessments*
+- **Date:** Sunday, 13th September, 2026
+- **Scope:** (c) Universal
+- **Source:** ADMIN MODE (authorised — Central Files naming change relayed to Gavin)
+- **Writer input (what triggers it):** the *Responding to Suspected Use* AI Guidelines tag in a Writers Template, in either its current form `[Kaimahi AI Guidelines- Responding to Suspected Use in Assessments PDF]` or its retired form `[Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11-13 and NCEA PDF]` (still matched — templates in flight carry it).
+- **Required output:** the `embedPDF` / `centralFile` block with the **new** filename in both positions, and the retired filename nowhere:
+  ```html
+  <div class="embedPDF" layout="portrait">
+  <object class="centralFile" data="AI-guidelines/Kaimahi AI Guidelines Responding to Suspected Use in Assessments.pdf#view=fit&amp;toolbar=0" type="application/pdf">
+  <p>Unable to display PDF file. <a href="AI-guidelines/Kaimahi AI Guidelines Responding to Suspected Use in Assessments.pdf" target="_blank" class="centralFile">Download</a> here</p>
+  </object>
+  </div>
+  ```
+  **No hyphen** after `Guidelines` in the filename (the tag keeps an unspaced one — do not carry it across), **no year range**, **capital `Use`**. The old path `AI-guidelines/Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA.pdf` no longer resolves on the server: any module still emitting it has a broken embed. The other seven assets, `layout="portrait"`, the `&amp;` entity, the unencoded path spaces and the verbatim fallback paragraph are all unchanged.
+- **Supersedes:** CL-0084 (21 August 2026) — one registry row only; the rest of CL-0084 stands in full.
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md` → AI Guidelines PDFs (registry + RENAMED/RETIRED note); `00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md` constraint 84 (amended); `01D` Media tag taxonomy; `01E` Media → AI Guidelines PDFs; `02C`
+- **PageForge status:** Not yet amalgamated
+
+### CL-0095 — Strip a leading label prefix (e.g. `FUNdamental:`) from a body heading
+- **Date:** Sunday, 13th September, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `WJFUN112`, Difference 1
+- **Writer input (what triggers it):** a body heading opening with a label and a colon where the text after the colon is the module's or lesson's `<h1>` header title — reported case: body `[H1]`/`[H2]` `FUNdamental: Audience and Purpose` under the header title `Audience and Purpose`.
+- **Required output:** the label and its colon removed, the heading emitted bare — `<h2>Audience and Purpose</h2>`. **Boundary (this is the part that must not be over-applied):** strip only the documented labels — any `Lesson N` form, and `FUNdamental:` — or a short leading `Word:` / `Word Word:` label whose remainder is **identical** (ignoring case and punctuation) to the `<h1>` header title. If stripping does not leave the header title, it is not a label: emit the heading unchanged. Never strip a meaning-bearing colon (`Activity 2: Commas in lists`, `Links to: …`). **Strip, then drop, as two steps:** on an introduction/overview page the stripped heading is **kept**; on a lesson page it then meets the existing duplicate-heading rule and is dropped if it now matches that lesson's own header title. No red flag, no comment — this is a format normalisation, not a wording change.
+- **Supersedes:** — (extends the pre-ledger duplicate-heading rule by adding a prior step; that rule's own behaviour is unchanged)
+- **KB rule:** `01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md` → Headings → label-prefix strip; `00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md` constraint 1; `02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md` → Headings & Titles
 - **PageForge status:** Not yet amalgamated

@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
-> **Granular part C (3 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Content source formats: PageForge txt, raw WT docx, Media List, iStock acks.
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Granular part C (3 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Content source formats: PageForge txt, raw WT docx, Media List, iStock acks.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

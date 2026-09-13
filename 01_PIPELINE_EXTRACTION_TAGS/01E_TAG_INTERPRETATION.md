@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 21st August, 2026 6:30 PM
-> **Granular part E (5 of 5) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation: structural, headings, body, media, styling, activities, links.
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Granular part E (5 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation, first half: structural, headings (incl. the duplicate-heading drop and the **label-prefix strip**), body, media. **Styling, activities, links and interactive components continue in `01F_TAG_INTERPRETATION_STYLING_ACTIVITIES.md`** (split 14 September 2026 at the 30 KB soft limit).
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -34,6 +34,12 @@
 | `heading` level 5 | `<h5>` (no span) |
 
 **⚠️ Drop a body heading that duplicates the `<h1>` header title.** On a lesson page the **lesson's own title** already appears in the header `<h1><span>` (constraint 79), so the heading this normally drops is the lesson's opening `[H2]` — compare ignoring any leading `Lesson N` / `Lesson N:` prefix, and note that dropping the duplicate is **never** a reason to leave the header title empty or fall back to the module title. If the writer's body heading (typically an `[H2]` or `[H3]`) repeats that same title text — e.g. header `<h1><span>Inside animal cells</span></h1>` followed by a body `<h3>Inside animal cells</h3>` — **omit the redundant body heading entirely** and let the first body `<p>` follow directly. This is a documented *casing/format* normalisation, not a wording change: it removes a duplicate, it does not alter any writer text. Only drop the body heading when its text is **identical** (ignoring case/punctuation) to the h1 header title; a body heading that introduces a *different* sub-topic is kept as a normal `<h3>`.
+
+**⚠️ Strip a leading LABEL PREFIX from a body heading (universal, `CL-0095`).** Writers sometimes prefix a body heading with a label naming what kind of page or resource it is — `FUNdamental: Audience and Purpose`, where the module's header title is already `Audience and Purpose`. **Strip the label and its colon, and emit the heading bare:** `<h2>Audience and Purpose</h2>`. This is the **same shape** as the `Lesson N` / `Lesson N:` / `Lesson N -` / `Lesson N.N` prefix strip already documented for lesson **titles** (`01A_TEMPLATE_LEVELS_CORE.md` → Template Title Patterns → Normalisation), now extended to body **headings**. Like that one, it is a documented *casing/format* normalisation and **not** a wording change — constraint 1 lists it among the permitted normalisations — so it needs no `Red Flag:` and is not narrated.
+
+- **What counts as a label prefix:** the documented labels — `Lesson N` in any of its forms, and **`FUNdamental:`** — **plus** any short leading `Word:` / `Word Word:` label whose **remainder is identical** (ignoring case and punctuation) to the module's or lesson's `<h1>` header title. That identity test is what makes it a label rather than content: if stripping the prefix does **not** leave the header title, it is not a label — **leave the heading exactly as the writer wrote it.**
+- **Never strip a colon that is carrying meaning.** `Activity 2: Commas in lists`, `Links to: the wider programme` and any heading whose text after the colon is a *different* sub-topic keep their full text. When in doubt, keep it — a wrongly-kept prefix is visible and fixable; a wrongly-stripped one is lost writer wording.
+- **Stripping is a separate step from dropping.** Strip first, then apply the duplicate rule above to what is left. On the **introduction / overview** page the bare heading is **kept** (the duplicate rule is a lesson-page rule) — this is exactly the reported case, `WJFUN112`, whose designer-approved output is `<h2>Audience and Purpose</h2>` sitting under the `Audience and Purpose | Te Whakaminenga me te Whāinga` header. On a **lesson** page the stripped heading then meets the duplicate rule in the normal way and is dropped if it now matches that lesson's own header title.
 
 ---
 
@@ -321,73 +327,8 @@ Eight **delivered** central PDFs, each with its own writer tag. Any of these tag
 </div>
 ```
 
-The tags are `[AI Use Guidelines Traffic Light PDF]`, `[Ākonga AI Use Guide Years 1-6 PDF]` / `Years 7-10` / `Years 11-13 and NCEA`, `[Kaimahi AI Use Guidelines Years 1-6 PDF]` / `Years 7-10`, `[Kaimahi AI Guidelines - Authenticity Guidelines for Years 11-13 and NCEA PDF]` and `[Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11-13 and NCEA PDF]`. **The filename is NOT the tag text** — the year ranges take an **en dash** in the filename where the tag uses a hyphen. The exact eight filenames, the twice-repeated path, the `&amp;` entity, `layout="portrait"`, the tolerant tag match and the never-correct-a-filename rule are all in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → **AI Guidelines PDFs (the eight teacher tags)** — read that table before emitting; constraint 84.
+The tags are `[AI Use Guidelines Traffic Light PDF]`, `[Ākonga AI Use Guide Years 1-6 PDF]` / `Years 7-10` / `Years 11-13 and NCEA`, `[Kaimahi AI Use Guidelines Years 1-6 PDF]` / `Years 7-10`, `[Kaimahi AI Guidelines - Authenticity Guidelines for Years 11-13 and NCEA PDF]` and `[Kaimahi AI Guidelines- Responding to Suspected Use in Assessments PDF]`. **The filename is NOT the tag text** — the year ranges take an **en dash** in the filename where the tag uses a hyphen, and the *Responding to Suspected Use* filename carries **no hyphen at all** where its tag does. **That last asset was renamed on 13 September 2026** (year range dropped, hyphen removed from the filename, `Use` capitalised — CL-0094); its retired tag wording is still matched but never emitted. The exact eight filenames, the twice-repeated path, the `&amp;` entity, `layout="portrait"`, the tolerant tag match and the never-correct-a-filename rule are all in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → **AI Guidelines PDFs (the eight teacher tags)** — read that table before emitting; constraint 84.
 
 ---
 
-## Content Styling
-
-| Normalised | HTML |
-|---|---|
-| `alert` | `<div class="alert"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
-| `important` | `<div class="alert solid"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
-| `alert_cultural_wananga` | `<div class="alert cultural" layout="wananga"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
-| `alert_cultural_talanoa` | `<div class="alert cultural" layout="talanoa"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
-| `alert_cultural_combined` | `<div class="alert cultural" layout="combined"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
-| `whakatauki` | `<div class="whakatauki"><p>Māori text</p><p>English text</p></div>` |
-| `quote` | `<p class="quoteText">"Quote"</p><p class="quoteAck">Attribution</p>` |
-| `rhetorical_question` | `<div class="rhetoricalQuestion"><p>Question text</p></div>` |
-| `reo_translate` | Body class `reoTranslate` + `language`/`translation` attributes. See COMP_12 in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` |
-
----
-
-## Activities
-
-| Normalised | HTML |
-|---|---|
-| `activity` + ID (interactive) | `<div class="activity interactive" number="ID">` |
-| `activity` + ID (text/workbook) | `<div class="activity alertPadding" number="ID">` |
-| `activity` + ID (dropbox) | `<div class="activity alertPadding dropbox" number="ID">` |
-| `activity_heading` | `<h3>Activity heading text</h3>` within activity |
-| `end_activity` | Closing `</div>` for activity container |
-
-**Dropbox trigger — BLL series:** *for BLL-series modules,* append the `dropbox` modifier to any activity that ends in an **Upload to dropbox** button (or carries `[trigger engagement]` on it) — e.g. `activity dropbox` (no interactive) or `activity interactive dropbox` (with an interactive). Applies to BLL modules only; see `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Activities for the full condition.
-
-Activity sidebar:
-```html
-<div class="col-md-4 offset-md-0 col-12">
-    <div class="alertActivity"><h4>Note</h4><p>Text</p></div>
-</div>
-```
-
----
-
-## Links & Buttons
-
-| Normalised | HTML |
-|---|---|
-| `button` | `<a href="URL" target="_blank"><div class="button">Text</div></a>` |
-| `external_link_button` | `<a href="URL" target="_blank"><div class="externalButton">Text</div></a>` |
-| `external_link` — **standalone** (own line/paragraph) | `<a href="URL" target="_blank"><div class="externalButton">Text</div></a>` (constraint 75) |
-| `external_link` — **inline** (inside prose, a list item, or a table cell) | `<a href="URL" target="_blank">Text</a>` |
-| `engagement_quiz_button` | External quiz link button |
-| `mtk_quiz` | **A numbered `activity` box (next consecutive number, even where the writer assigned none) holding ONLY these children, in order:** `<h3>` quiz title (default `Quiz`, or the writer's own title verbatim) → the writer's quiz instructions as normal `<p>` text (**omitted where the writer supplied none**) → a visible `Designer/Developer To Do:` note (create the quiz in MTK DEV and orgunit link it to the module) → `<a href="#" target="_blank"><div class="button">Go to quiz</div></a>`. **NEVER the quiz's own questions, options or answers** — silently omitted, no `Red Flag:` (constraint 65 / CL-0082). **NEVER a dropbox button.** See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Buttons → MTK Quiz |
-| `supervisor_button` | The **`super-content-button` family** (Shape A activity-integrated / Shape B section standalone / Shape C section paired — outer `<div class="row supervisor">`); the legacy `supervisorContainer`/`supervisorButton`/`supervisorContent` trio is **RETIRED — never emit it** (constraint 68). See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Supervisor Button for the full decision tree and templates |
-| `modal_button` | `<div class="button TKmodalButton">Text</div>` + `<div class="TKmodal" size="S"><p>Content</p></div>` |
-| `audio_button` | `<div class="audioButton" audioName="">` |
-
----
-
-## Interactive Components
-
-**For every interactive, consult the relevant component section from `03_COMP_CORE_INTERACTIVES.md`, `04_COMP_SEGMENTS_OVERLAYS.md`, or `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`.**
-
-The normalised tag tells you which component; the data pattern (see section 06 in `02_DATA_CONTENT_VERIFICATION.md`) tells you how to extract the data; the component section gives you the exact HTML structure.
-
-### Info Trigger Image
-
-| Normalised | HTML |
-|---|---|
-| `info_trigger_image` | `infoImage` container with positioned `infoTrigger` elements. See COMP_08 in `04_COMP_SEGMENTS_OVERLAYS.md` for full structure. |
-
-**⚠️ CRITICAL:** This is a DOCUMENTED component. Do NOT fall back to flip cards, accordions, or other alternatives. Use the `infoImage` pattern with `infoTrigger` elements positioned over the image using percentage-based `top` and `left` inline styles. See Pattern 12 in section 06 of `02_DATA_CONTENT_VERIFICATION.md` for data extraction and COMP_08 in `04_COMP_SEGMENTS_OVERLAYS.md` for the HTML structure.
+> **Content Styling, Activities, Links & Buttons and Interactive Components moved to `01F_TAG_INTERPRETATION_STYLING_ACTIVITIES.md`** on 14 September 2026, when this part passed the 30 KB soft limit (`CLAUDE.md` §4). The content was moved verbatim; nothing was reworded or re-ordered.

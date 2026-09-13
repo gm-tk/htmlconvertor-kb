@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 21st August, 2026 6:30 PM
-> **Granular part A (1 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist; COMP_13 media & embeds.
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Granular part A (1 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist (incl. the **mandatory** `jp-text` / `ch-text` / `pinyin` rule, constraint 92); COMP_13 media & embeds.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -92,6 +92,55 @@ Searchable table for vocabulary/terminology:
 | `pinyin` | Pinyin |
 | `sassoon-text` | Sassoon font |
 | `sassoonI-text` | Sassoon Infant font |
+
+### ⚠️ `jp-text`, `ch-text` and `pinyin` are MANDATORY on EVERY occurrence (constraint 92)
+
+These three are **not** optional styling a designer adds afterwards — **the conversion applies them itself**, to **every** run of that text anywhere in the module. Not only the first occurrence, not only the vocabulary tables, not only the headings. A run that is missed renders in the wrong typeface, which is the fault the design team is asking the conversion to eliminate.
+
+| Text | Class | Covers |
+|---|---|---|
+| **Japanese** — hiragana, katakana and kanji | `jp-text` | every Japanese character in the module |
+| **Chinese** — Han characters, simplified or traditional | `ch-text` | every Chinese character in the module |
+| **Pinyin** — the romanised sounding-out of Chinese words, with or without tone marks (`nǎinai`, `Tā jīntiān bā suì.`) | `pinyin` | the whole pinyin run |
+
+**Wrap the whole run, its internal punctuation included.** A run is the unbroken stretch of that language, not one character at a time. Brackets, slashes and a trailing full stop that sit **inside** the run stay inside the wrapper: `<span class="ch-text">他(她)是我的(哥哥/弟弟/姐姐/妹妹</span>`, `<span class="pinyin">Tā jīntiān bā suì.</span>`. Surrounding English is left outside it.
+
+**Four equivalent ways to carry the class — all four are in the design team's reference page and all four are correct.** Put it on a `<span>` around the run, or directly on an inline element that contains **only** that run:
+
+```html
+<p>paragraph <span class="ch-text">奶奶</span></p>
+<p>paragraph <b class="ch-text">奶奶</b></p>
+<p>paragraph <span class="ch-text"><b>奶奶</b></span></p>
+<p>paragraph <b><span class="ch-text">奶奶</span></b></p>
+```
+
+**Every context counts** — `<h2>`–`<h5>`, `<p>`, `<li>`, `<th>` and `<td>` all take the class on an **inner** span, never on the block element itself (the no-span-on-body-headings rule, `02_DATA_CONTENT_VERIFICATION.md` → Headings & Titles, is unaffected: this is a nested inline span, not a heading wrapper):
+
+```html
+<h3>h3 <span class="ch-text">奶奶</span></h3>
+<li>list <span class="jp-text">しちがつ</span></li>
+<td><span class="pinyin">nǎinai</span></td>
+```
+
+**Inside an `<h1>` header title** the language span nests inside the title `<span>` — the title span is still the only `<span>` wrapper the heading rule is about:
+
+```html
+<h1><span>Language fonts <span class="ch-text">是我的</span> and coloured fonts <span class="jp-text green-text">しちがつ</span></span></h1>
+```
+
+**A colour class joins in the same attribute**, language class first: `class="jp-text green-text"`. It never replaces the language class.
+
+### ⚠️ Telling these apart from te reo Māori and English — the macron trap
+
+The design team's instruction came with one open question: *how do you tell Japanese and Chinese apart from New Zealand letters?* This is the answer, and it is the part to get right.
+
+- **Te reo Māori and English are NEVER wrapped.** The macronised vowels `ā ē ī ō ū Ā Ē Ī Ō Ū` are ordinary New Zealand letters. `Māori`, `Manawatū`, `ākonga`, `Ākonga`, `kaiako` and every other te reo word take **no** language class — not `pinyin`, not anything else. Wrapping them is a fault, not a near-miss.
+- **A macron on its own is NEVER enough to call something pinyin.** `ā ē ī ō ū` are shared between te reo Māori and pinyin's first tone, so they decide nothing by themselves.
+- **What DOES identify pinyin:** a tone mark that te reo does not use — the acute `á é í ó ú`, the caron `ǎ ě ǐ ǒ ǔ`, the grave `à è ì ò ù`, or any `ǖ ǘ ǚ ǜ ü` — **or** the romanised text sitting alongside the Chinese it sounds out (the standard pairing of a `ch-text` run with its romanisation, typically in the adjacent cell, the adjacent line, or immediately after the characters in the same sentence), **or** the writer having labelled it as pinyin. Any one of these is enough.
+- **Untagged, unpaired, tone-markless romanisation in a Chinese module is a judgement call, not a guess** — apply `pinyin` where it is plainly the sounding-out of a Chinese term that appears nearby, and where it is genuinely ambiguous leave it unwrapped and raise a visible `Red Flag:` naming the word and the page. Never wrap an English or te reo word to be safe.
+- **Japanese vs Chinese, where the characters alone cannot decide it.** Kana (`しちがつ`, `カタカナ`) is Japanese, always. **Han characters are shared** — a kanji and a Chinese character are the same character, so the characters cannot tell you which language it is. Decide by **the module's language**: a Japanese-subject module (JPN / JPNFUN codes) takes `jp-text`, a Chinese-subject module (CH / CHFUN codes) takes `ch-text`, and a run that contains any kana is Japanese regardless. Where a module genuinely carries both languages, or the module's language cannot be established, raise a `Red Flag:` naming the run rather than guessing — a wrong class is a wrong typeface on the page.
+
+**Reference:** the design team's supplied reference page **`refresh_languageFonts.html`** (13 September 2026) shows all three classes in every context — headings, paragraphs, bold, lists and tables — and is the source for the forms above.
 
 ---
 
@@ -285,9 +334,17 @@ Copy the filename **character-for-character** from the right-hand column. Note t
 | `[Ākonga AI Use Guide Years 1-6 PDF]` | `Ākonga AI Use Guide Years 1–6.pdf` |
 | `[Ākonga AI Use Guide Years 7-10 PDF]` | `Ākonga AI Use Guide Years 7–10.pdf` |
 | `[Kaimahi AI Guidelines - Authenticity Guidelines for Years 11-13 and NCEA PDF]` | `Kaimahi AI Guidelines - Authenticity Guidelines for Years 11–13 and NCEA.pdf` |
-| `[Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11-13 and NCEA PDF]` | `Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA.pdf` |
+| `[Kaimahi AI Guidelines- Responding to Suspected Use in Assessments PDF]` | `Kaimahi AI Guidelines Responding to Suspected Use in Assessments.pdf` |
 | `[Kaimahi AI Use Guidelines Years 1-6 PDF]` | `Kaimahi AI Use Guidelines Years 1–6.pdf` |
 | `[Kaimahi AI Use Guidelines Years 7-10 PDF]` | `Kaimahi AI Use Guidelines Years 7–10.pdf` |
+
+> **⚠️ RENAMED IN CENTRAL FILES — 13 September 2026 (constraint 84 as amended; CL-0094).** The *Responding to Suspected Use in Assessments* asset was renamed by the design team: the **year range was dropped**, the **hyphen after `Guidelines` was removed from the filename**, and **`Use` is now capitalised**. The row above is the current, correct pair and is the **only** form ever emitted.
+>
+> **RETIRED — never emit either of these again:**
+> - old tag `[Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA PDF]`
+> - old filename `Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA.pdf` (the file no longer exists on the server — emitting it is a broken embed)
+>
+> **The retired tag is still MATCHED, not flagged.** Writers Templates already in flight carry the old tag text. Under the standing tolerant-tag rule below, a template carrying the old tag — with or without the year range, with `use` in either case, with any dash — resolves to the **new** filename. Tolerant in, exact out: the tag the writer typed never reaches the output.
 
 ### Build rules (all eight)
 
@@ -296,8 +353,8 @@ Copy the filename **character-for-character** from the right-hand column. Note t
 - **`layout="portrait"` on all eight.** No landscape variant exists (designer decision, Chris, 21 August 2026).
 - **Path is `AI-guidelines/` + the filename** — hyphen, lower-case `g`, no `pdf/` directory. **Spaces in the path are NOT URL-encoded** — the path is written with real spaces exactly as shown.
 - **The fallback paragraph is verbatim:** `Unable to display PDF file. <a …>Download</a> here` — the word *here* sits **outside** the anchor, and `class="centralFile"` sits on the anchor as well as the `<object>`.
-- **Never "correct" a filename.** The en dashes, the macron on `Ākonga`, the spaced hyphen in `Kaimahi AI Guidelines - Authenticity …`, and the lower-case `use` in `Responding to Suspected use in Assessments` are the real strings on the server. A tidied path is a broken path — the same rule that governs `congradulations/` (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.12).
-- **Tolerant tag matching, exact filename out.** Recognise the tag **case-insensitively**, treat a hyphen / en dash / em dash in the year range as the **same** tag, and accept `Akonga` without the macron. Whatever form the writer typed, the emitted filename is the exact string in the table above. A near-miss is matched, never flagged.
+- **Never "correct" a filename.** The en dashes, the macron on `Ākonga`, the spaced hyphen in `Kaimahi AI Guidelines - Authenticity …`, and the **absence** of any hyphen in `Kaimahi AI Guidelines Responding to Suspected Use in Assessments` are the real strings on the server. A tidied path is a broken path — the same rule that governs `congradulations/` (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.12). This cuts both ways: do not *add* the hyphen back to the *Responding to Suspected Use* filename to make it match its siblings, and do not carry the hyphen across from its **tag**, which does carry one (`Guidelines-`, unspaced).
+- **Tolerant tag matching, exact filename out.** Recognise the tag **case-insensitively**, treat a hyphen / en dash / em dash — spaced or unspaced — as the **same** character, accept `Akonga` without the macron, and accept a *Responding to Suspected Use* tag **with or without** the `for Years 11-13 and NCEA` ending (the retired form). Whatever form the writer typed, the emitted filename is the exact string in the table above. A near-miss is matched, never flagged.
 - **These tags are DELIVERED assets and are never deferred.** Where a family rule defers PDF resources — CED Phase 5, `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.4 — that deferral does **not** apply to these eight; build the block.
 - **Never render the tag as visible text** (`02_DATA_CONTENT_VERIFICATION.md` → Square-Bracket Tags).
 

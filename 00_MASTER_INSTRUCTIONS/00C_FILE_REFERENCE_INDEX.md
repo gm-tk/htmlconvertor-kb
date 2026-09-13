@@ -1,4 +1,4 @@
-> **Last updated:** Sunday, 30th August, 2026 3:30 PM
+> **Last updated:** Monday, 14th September, 2026 10:51 AM
 > **Granular part C (3 of 8) of `00_MASTER_INSTRUCTIONS.md`** — File reference index.
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -43,8 +43,8 @@
 | COMP_09 — Speech Bubbles | `04_COMP_SEGMENTS_OVERLAYS.md` | Speech Bubbles (all variants, colours, audio) |
 | COMP_10 — Diagrams & Timelines | `04_COMP_SEGMENTS_OVERLAYS.md` | Shape Hover, Timeline, Venn Diagram |
 | COMP_11 — Drawing Tools | `04_COMP_SEGMENTS_OVERLAYS.md` | Sketcher, Number Line, Stop Watch |
-| COMP_12 — Language | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Glossary, Kanji Cards, Language Fonts, Translate Section, MathJax |
-| COMP_13 — Media & Embeds | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Video Embed, Audio Player, Embed PDF (generic), **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags and their `embedPDF`/`centralFile` block (constraint 84), Embed Padlet, Embed Desmos |
+| COMP_12 — Language | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Glossary, Kanji Cards, **Language Fonts** — `jp-text` / `ch-text` / `pinyin` are MANDATORY on every occurrence, with the te reo macron boundary and the shared-Han Japanese-vs-Chinese resolution rule (constraint 92) —, Translate Section, MathJax |
+| COMP_13 — Media & Embeds | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Video Embed, Audio Player, Embed PDF (generic), **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags and their `embedPDF`/`centralFile` block (constraint 84; *Responding to Suspected Use* renamed 13 Sept 2026, CL-0094), Embed Padlet, Embed Desmos |
 | COMP_14 — Layout & Structure | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Activities, Alerts, Buttons, Supervisor Button, Tables, Columns, Quotes, Whakatauki, Acknowledgements, Rhetorical Question |
  
 ---
