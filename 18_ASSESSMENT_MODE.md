@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 16th September, 2026 6:00 PM
+> **Last updated:** Wednesday, 16th September, 2026 8:30 PM
 
 # 18 — Assessment Mode (Mode 9)
 
@@ -10,7 +10,7 @@
 
 Te Kura's NCEA assessment activities (internal and external, achievement standards and unit standards) are written by writers in one of two Word templates — **"Blank Assessment Activities Template.docx"** and **"Blank External Assessment Activities Template.docx"** — and published as a **single HTML page** hosted in D2L's public files area (`/shared/assessment/…`), not inside a module. The page has a coloured header bar naming the activity and linking to the standard on NZQA, and an accordion for each section of the template, ending with the dropbox. This mode turns the filled-in Word template into that page. It builds nothing else, never edits student content, and never adds CSS or JavaScript beyond the two fixed inline styles in Section 6.4 (constraint 2 exception).
 
-The authoritative example of the finished output is `Assessment-AS91956-example.html` (NCEA Level 1 Japanese, AS91956); the skeleton in Section 5 is taken from it verbatim and must be reproduced exactly.
+The authoritative example of the finished output is `Assessment-AS91956-example.html` (NCEA Level 1 Japanese, AS91956). The skeleton in Section 5 is taken from it with **three corrections the example itself gets wrong** (live script host, `<div id="body">`, and indentation — Section 5.1) and must be reproduced exactly as printed there, never as printed in the example.
 
 ---
 
@@ -94,68 +94,84 @@ Everything between one section heading and the next is that accordion's content.
 
 ```html
 <!DOCTYPE html>
-<html lang="en" level="" template="NCEA" class="notranslate" translate="no"><head>
+<html lang="en" level="" template="NCEA" class="notranslate" translate="no">
+<head>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>NCEA Level {n} {CODE}</title>
-    <script type="text/javascript" src="https://tekuradev.desire2learn.com/shared/refresh_template/js/idoc_scripts.js"></script>
-     <script type="text/javascript" src="https://tekuradev.desire2learn.com/shared/Assessment/assessmentLinker.js"></script>
-</head><body class="container-fluid"><div id="header">
-<div class="alertAssessment">
-<div class="row">
-<div class="col-md-8 col-12 assessment">
-<h3>{Title}</h3>
-<p>{Activity name}</p>
-</div>
-<div class="col-md-4 col-12 achievement"><a href="{NZQA link}" target="_blank" rel="noopener">
-<p class="standard"><b>{code}, {subject}</b></p>
-<p class="description">{standard title}</p>
-<p class="credits">Level {n} {Internal|External} Assessment <br>{n} Credits <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
-</a></div>
-</div>
-</div>
-</div>
-<div>
-<div class="row">
-<div class="col-md-8 col-12 assessment">
-<div class="accordion assessment">
-<div class="accHead">
-<h4>{section heading}</h4>
-</div>
-<div class="accContent">
-{section content}
-</div>
-… one accHead/accContent pair per filled-in section, in template order …
-<div class="accHead dropBox">
-<h4>Final Dropbox</h4>
-</div>
-<div class="accContent dropBox">
-<div class="col-12">
-<div class="row">
-<div class="col-12">
-<h3>{CODE}</h3>
-<p>{dropbox body}</p>
-<a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={{orgUnitId}}&amp;type=dropbox&amp;rcode={TCS-nnnnnn}" target="_blank" rel="noopener">
-<div class="button">Upload to dropbox</div>
-</a></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="footer">
-<ul class="footer-nav">
-<li><a href="/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/" id="prev-lesson" target="_self"></a></li>
-<!-- <li><a href="" id="next-lesson" target="_self"></a></li> -->
-<li><a href="/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/" class="home-nav" target="_parent"></a></li>
-</ul>
-</div></body></html>
+    <script type="text/javascript" src="https://tekura.desire2learn.com/shared/refresh_template/js/idoc_scripts.js"></script>
+    <script type="text/javascript" src="https://tekura.desire2learn.com/shared/Assessment/assessmentLinker.js"></script>
+</head>
+<body class="container-fluid">
+    <div id="header">
+        <div class="alertAssessment">
+            <div class="row">
+                <div class="col-md-8 col-12 assessment">
+                    <h3>{Title}</h3>
+                    <p>{Activity name}</p>
+                </div>
+                <div class="col-md-4 col-12 achievement">
+                    <a href="{NZQA link}" target="_blank" rel="noopener">
+                        <p class="standard"><b>{code}, {subject}</b></p>
+                        <p class="description">{standard title}</p>
+                        <p class="credits">Level {n} {Internal|External} Assessment <br>{n} Credits <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+        <div class="row">
+            <div class="col-md-8 col-12 assessment">
+                <div class="accordion assessment">
+                    <div class="accHead">
+                        <h4>{section heading}</h4>
+                    </div>
+                    <div class="accContent">
+                        {section content}
+                    </div>
+                    … one accHead/accContent pair per filled-in section, in template order …
+                    <div class="accHead dropBox">
+                        <h4>Final Dropbox</h4>
+                    </div>
+                    <div class="accContent dropBox">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>{CODE}</h3>
+                                    <p>{dropbox body}</p>
+                                    <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou={{orgUnitId}}&amp;type=dropbox&amp;rcode={TCS-nnnnnn}" target="_blank" rel="noopener">
+                                        <div class="button">Upload to dropbox</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="footer-nav">
+            <li><a href="/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/" id="prev-lesson" target="_self"></a></li>
+            <!-- <li><a href="" id="next-lesson" target="_self"></a></li> -->
+            <li><a href="/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/" class="home-nav" target="_parent"></a></li>
+        </ul>
+    </div>
+</body>
+</html>
 ```
 
-Notes on the skeleton: the two `<script>` lines, the `{{orgUnitId}}` token, the `&amp;` entities, the commented-out `next-lesson` line and the leading spaces on the head lines are all **verbatim** — they are part of the example, not comments to police. `level=""` stays empty and `template="NCEA"` stays as written. No `stickyNav`, no lesson menu, no acknowledgements block, no `<!-- N -->` delimiters — this is not a module page. Output is **one file**, named `Assessment-{CODE}.html` (e.g. `Assessment-US4249.html`), delivered as a downloadable file.
+### 5.1 The three corrections to the example — and the indentation rule
+
+`Assessment-AS91956-example.html` is the structural authority, but it was captured from the **dev** server and hand-edited, so three things in it are **not** to be copied (designer feedback, 16 September 2026):
+
+1. **Script host — live, never dev.** Both `<script>` lines point at `https://tekura.desire2learn.com/…` (the example's `tekuradev.desire2learn.com` is the dev domain — a mistake in the training files, never reproduced). The two paths (`/shared/refresh_template/js/idoc_scripts.js` and `/shared/Assessment/assessmentLinker.js`) are unchanged.
+2. **`<div id="body">`.** The wrapper that follows the closing `</div>` of `#header` is `<div id="body">`, not a bare `<div>` — the template's padding depends on the id (the example has the bare `<div>` and gets the padding wrong).
+3. **Indentation.** The page is indented — **four spaces per nesting level**, one block-level element per line, closing tags on their own line — from `<head>` down to the last `</div>`. Inline elements (`<b>`, `<i>`, `<u>`, `<br>`, `<a>` around running text, the `<i class="fa-solid …">` icon) stay inside their line; `<li>`, `<th>`, `<td>`, `<p>`, `<h4>`, `<h5>` each take one line, and a `<li>` that holds nested paragraphs, lists or a table opens on its own line, indents its children one level, and closes on its own line. Section content in `{section content}` is indented to the level of its `accContent` div's children (six levels, 24 spaces). The example's unindented body is **not** the standard.
+
+Everything else in the skeleton is **verbatim**: the `{{orgUnitId}}` token, the `&amp;` entities, the commented-out `next-lesson` line, `level=""` (stays empty) and `template="NCEA"`. No `stickyNav`, no lesson menu, no acknowledgements block, no `<!-- N -->` delimiters — this is not a module page. Output is **one file**, named **`{CODE}.html`** (e.g. `US4249.html`, `AS91956.html` — never `Assessment-{CODE}.html`), delivered as a downloadable file.
 
 ---
 
@@ -282,9 +298,10 @@ Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">
               lettered sub-lists; tables classed + padded; layout boxes flattened; empty boxes dropped
 5. DROPBOX    always emit the dropBox pair (§6.7); rcode from the user or TCS-XXXXXX + To Do
 6. GAPS       one visible Designer/Developer To Do per §7 item, at its spot
-7. VERIFY     skeleton byte-matches §5 apart from the placeholders; all writer text present and unchanged;
+7. VERIFY     skeleton matches §5 apart from the placeholders — live `tekura.` scripts, `<div id="body">`, four-space
+              indentation throughout (§5.1); all writer text present and unchanged;
               no <h1>–<h3> in accordions; no inline CSS beyond §6.4 + the red-note style; no HTML comments
-              other than the skeleton's own next-lesson line; file named Assessment-{CODE}.html
+              other than the skeleton's own next-lesson line; file named {CODE}.html
 8. DELIVER    the file + the Designer Summary (constraint 88): departures first, then To Dos, then anything
               guessed or owed — or "No red flags; nothing outstanding."
 ```
@@ -294,6 +311,7 @@ Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">
 ## 9. WHAT THIS MODE NEVER DOES
 
 - Never emits a module page, menu, lesson delimiters, `stickyNav` or acknowledgements; never offers Split Mode.
+- Never copies the example's `tekuradev` script host, its bare `<div>` after the header, or its unindented body; never names the file `Assessment-{CODE}.html`.
 - Never rewords, reorders or summarises writer text; never drops a filled-in section; never renders `Brief description:` or the 3rd-party row.
 - Never invents an alert box, a journal, a rubric table or a dropbox code.
 - Never adds CSS/JS beyond the two §6.4 styles and the red-note style; never uses `<strong>`/`<em>` where the example uses `<b>`/`<i>`.
