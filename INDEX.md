@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Monday, 14th September, 2026 11:10 AM
+> **Last updated:** Wednesday, 16th September, 2026 6:00 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -7,17 +7,19 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 
 
 ## 00_MASTER_INSTRUCTIONS
-- **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (29 KB) — Role, philosophy, timestamps, operating modes, input files
-  - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · OPERATING MODES · INPUT FILES
+- **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (9 KB) — Role, philosophy, timestamps, input files (operating modes moved to `00A2` on 16 September 2026 at the 30 KB soft limit)
+  - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · INPUT FILES
+- **`00_MASTER_INSTRUCTIONS/00A2_OPERATING_MODES.md`** (23 KB) — Operating modes (Modes 1–9, incl. **Mode 9 — Assessment**) and mode triage. Split from `00A` on 16 September 2026
+  - Sections: OPERATING MODES · Mode 1 — Conversion · Mode 2 — Advisory & Support · Mode 3 — Comparison · Mode 4 — Update · Mode 5 — Split · Mode 6 — Interactives Build · Mode 7 — PageForge Compare · Mode 8 — Admin · Mode 9 — Assessment · Mode triage
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (19 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
-- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (19 KB) — File reference index
+- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (20 KB) — File reference index (now lists `18_ASSESSMENT_MODE.md`)
   - Sections: FILE REFERENCE INDEX
-- **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (28 KB) — Constraints quick reference, part 1 of 4 — **constraints 1–57** (constraint 1 now lists the label-prefix strip among the permitted format normalisations — CL-0095)
+- **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (29 KB) — Constraints quick reference, part 1 of 4 — **constraints 1–57** (constraint 1 now lists the label-prefix strip among the permitted format normalisations — CL-0095) — constraint 2 now records the Assessment Mode inline-style exception (`18` §6.4)
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E`, `00G` and `00H` as ONE continuous numbering
 - **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (22 KB) — Constraints quick reference, part 2 of 4 — **constraints 58–74**
   - Sections: (continuation of the numbered list from `00D` — no headings of its own)
-- **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (6 KB) — When to load which files
+- **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (6 KB) — When to load which files (now routes the `ASSESSMENT MODE` phrase / Assessment Activity `.docx` to `18`)
   - Sections: WHEN TO LOAD WHICH FILES
 - **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (24 KB) — Constraints quick reference, part 3 of 4 — **constraints 75–85** (latest: 85, a three-part `[TITLE BAR]` builds three `<h1><span>` titles in the Languages cohort only; **84 amended 13 Sept 2026** — the *Responding to Suspected Use* AI Guidelines PDF renamed, CL-0094). **CLOSED** at 85 on 28 August 2026 — appending constraints 86-88 would have taken it past the 30 KB soft limit, so they were written into the new `00H` instead and nothing was moved out of this part
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
@@ -97,7 +99,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 19. EMBEDDED HTML SKELETONS
 
 ## 08_MODULE_SUPPORT_DEBUGGING
-- **`08_MODULE_SUPPORT_DEBUGGING.md`** (17 KB) — single-file topic (small enough to stay whole)
+- **`08_MODULE_SUPPORT_DEBUGGING.md`** (18 KB) — single-file topic (small enough to stay whole) — the mode-triage table now sends an Assessment Activity `.docx` to Mode 9
   - Sections: 08 — Module Support, Advisory & Debugging Mode · PURPOSE · 1. SHARED DISCIPLINE — CARRIES OVER FROM CONVERSION MODE · 2. ADVISORY QUESTIONS — answering "how does X work?" · 3. MODULE COMPLETION — finishing a half-finished module · 4. INTERACTIVE DEBUGGING — diagnosing a broken interactive · 5. ONE-OFF MODULE OVERRIDES — applying a documented-pattern deviation for a single module · 6. SCOPE BOUNDARIES — what Support Mode does NOT do · 7. MODE TRIAGE — recap · 8. OUTPUT EXPECTATION FOR SUPPORT MODE
 
 ## 09_COMPARISON_MODE
@@ -177,6 +179,10 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 17_ADMIN_MODE
 - **`17_ADMIN_MODE.md`** (28 KB) — single-file topic; §10 is the **front-end / hidden output split** (`<omit_from_frontend>`, the plain-English visible half, the conflict heads-up — constraint 91)
   - Sections: 17 — Admin Mode (Mode 8) · PURPOSE · 1. THE TRIGGER AND ITS PRECEDENCE · 2. ACCEPTED INPUT · 3. SCOPE — UNIVERSAL BY DEFAULT · 4. THE OVERRIDE RULE — ADMIN MODE WINS (4.1 an Admin decision is locked against ordinary Update Mode) · 5. THE TWO LANES — WHAT GETS LOGGED WHERE (5.1 the front-facing test · 5.2 mechanism · 5.3 front-facing) · 6. THE LEDGER ROW · 7. WHAT ADMIN MODE STILL DOES · 8. WHAT ADMIN MODE DOES NOT DO · 9. WORKFLOW (pseudo-code) · 10. OUTPUT EXPECTATION · 11. RELATIONSHIP TO THE OTHER MODES
+
+## 18_ASSESSMENT_MODE
+- **`18_ASSESSMENT_MODE.md`** (23 KB) — single-file topic; **Mode 9 — Assessment**: the `ASSESSMENT MODE` trigger (any capitalisation) **and** the self-identifying NCEA Assessment Activity `.docx` fingerprint, the details-table → header-bar mapping and NZQA link patterns, the verbatim `Assessment-AS91956-example.html` skeleton, one accordion per bold template section ending in `Final Dropbox`, heading step-down, the nest-under-the-numbered-item rule with lettered sub-lists, the two permitted inline styles (constraint 2), table shapes (answer table kept / layout box flattened / empty box dropped), and the visible `Designer/Developer To Do:` list (dropbox code, footer folder path, merged-in rubric image)
+  - Sections: 18 — Assessment Mode (Mode 9) · PURPOSE · 1. THE TRIGGER · 2. THE FINGERPRINT · 3. INPUTS · 4. THE MAPPING (4.1 details table → header bar · 4.2 the NZQA link · 4.3 section headings → accordions) · 5. THE SKELETON · 6. CONTENT RULES INSIDE AN ACCORDION (6.1 text · 6.2 headings · 6.3 lists and the hierarchy rule · 6.4 tables — the constraint-2 exception · 6.5 alert boxes · 6.6 links, buttons and files · 6.7 the dropbox accordion) · 7. WHAT THE DOCUMENT CANNOT TELL YOU · 8. WORKFLOW · 9. WHAT THIS MODE NEVER DOES
 
 ## Repo infrastructure
 - **`_project_instructions_.md`** — the Claude.ai project's system-prompt text (paste into Project Instructions when it changes)

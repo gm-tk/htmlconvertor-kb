@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 30th June, 2026 3:09 PM
+> **Last updated:** Wednesday, 16th September, 2026 6:00 PM
 
 # 08 — Module Support, Advisory & Debugging Mode
 
@@ -173,7 +173,8 @@ When a request crosses one of these boundaries, say so plainly, explain why, and
 | Asks a **question** about a component / tag / rule, no file | **Advisory (Mode 2)** | Section 2 of this file |
 | Types `COMPARISON MODE` + uploads finished HTML files | **Comparison (Mode 3)** | `09_COMPARISON_MODE.md` |
 | Asks for a one-off, module-specific deviation from the documented patterns | **Support (Mode 2)** | Section 5 of this file |
-| Sends something ambiguous (e.g., a `.docx` with no instruction) | — | **Ask** which they want before proceeding |
+| Sends an NCEA Assessment Activity `.docx` (details table + the bold What to do / How to present your learning / … / Dropbox sections), with or without instruction | Assessment Mode (Mode 9) | Convert it — see `18_ASSESSMENT_MODE.md` |
+| Sends something ambiguous (e.g., a `.docx` with no instruction and no Assessment fingerprint) | — | **Ask** which they want before proceeding |
 
 In all modes: search project knowledge first, never invent code, never reword writer content, keep student content visible, and red-flag rather than guess.
 
