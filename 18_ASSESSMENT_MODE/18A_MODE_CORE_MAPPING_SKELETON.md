@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 18th September, 2026 1:00 PM
+> **Last updated:** Friday, 18th September, 2026 3:30 PM
 > **Granular part A (1 of 3) of `18_ASSESSMENT_MODE.md`** — Mode 9 core: trigger, fingerprint, inputs (incl. multi-document uploads), the details-table → header-bar mapping, NZQA links, section → accordion mapping, the corrected skeleton (with the acknowledgements block).
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -13,7 +13,7 @@
 
 Te Kura's NCEA assessment activities (internal and external, achievement standards and unit standards) are written by writers in one of two Word templates — **"Blank Assessment Activities Template.docx"** and **"Blank External Assessment Activities Template.docx"** — and published as a **single HTML page** hosted in D2L's public files area (`/shared/assessment/…`), not inside a module. The page has a coloured header bar naming the activity and linking to the standard on NZQA, and an accordion for each section of the template, ending with the dropbox. This mode turns the filled-in Word template into that page. It builds nothing else, never edits student content, and never adds CSS or JavaScript beyond the two fixed inline styles in `18B` Section 6.4 (constraint 2 exception). Every page ends with the acknowledgements block (`18B` Section 6.8) — always, even with no media.
 
-The authoritative example of the finished output is `Assessment-AS91956-example.html` (NCEA Level 1 Japanese, AS91956). The skeleton in Section 5 is taken from it with **three corrections the example itself gets wrong** (live script host, `<div id="body">`, and indentation — Section 5.1) — plus the acknowledgements block the example lacks — and must be reproduced exactly as printed there, never as printed in the example.
+The authoritative example of the finished output is `Assessment-AS91956-example.html` (NCEA Level 1 Japanese, AS91956). The skeleton in Section 5 is taken from it with **four corrections the example itself gets wrong** (live script host, `<div id="body">`, blank footer links, and indentation — Section 5.1) — plus the acknowledgements block the example lacks — and must be reproduced exactly as printed there, never as printed in the example.
 
 ---
 
@@ -46,7 +46,7 @@ The two blank templates differ only in the **Dropbox** section: the ordinary tem
 
 - **Required:** the filled-in assessment `.docx`. Nothing else is needed to produce the page. There is **never a Media List** for an assessment — every acknowledgement is derived from the document's own content (`18B` Section 6.8).
 - **Several `.docx` files at once.** Every upload is fingerprinted on its own; each one that passes becomes its own `{CODE}.html`, and **all of the pages are emitted in the same response** — never one per turn, never "say next" (the Mode 6 discipline, not the Mode 5 cadence) — each page followed by its own Designer Summary headed with the file name. An upload that does not pass the fingerprint is named in one line and handled by the normal triage after the assessment pages, never silently dropped. Two documents carrying the same standard code → build both, name the second `{CODE}-2.html`, and raise a `Designer/Developer To Do:` on each saying so.
-- **Optional:** the dropbox code (`TCS-nnnnnn`), the D2L folder path for the footer links, and any image the writer merged in (typically the rubric). When these are not supplied the page is still produced in full, with a visible `Designer/Developer To Do:` note at each spot (`18B` Section 7) — **never ask for them first, never stall the conversion on them.**
+- **Optional:** the dropbox code (`TCS-nnnnnn`) and any image the writer merged in (typically the rubric) as a separate file. The footer links are never an input — they are always left blank (Section 5.1). When these are not supplied the page is still produced in full, with a visible `Designer/Developer To Do:` note at each spot (`18B` Section 7) — **never ask for them first, never stall the conversion on them.**
 - No image-mode prompt (constraint 9 does not apply): the assessment page carries no module images; a writer-supplied picture is handled by `18B` Section 7.3, and credited per `18B` Section 6.8.
 
 ---
@@ -158,9 +158,9 @@ Everything between one section heading and the next is that accordion's content.
     </div>
     <div id="footer">
         <ul class="footer-nav">
-            <li><a href="/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/" id="prev-lesson" target="_self"></a></li>
+            <li><a href="" id="prev-lesson" target="_self"></a></li>
             <!-- <li><a href="" id="next-lesson" target="_self"></a></li> -->
-            <li><a href="/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/" class="home-nav" target="_parent"></a></li>
+            <li><a href="" class="home-nav" target="_parent"></a></li>
         </ul>
     </div>
     <div class="row">
@@ -182,13 +182,14 @@ Everything between one section heading and the next is that accordion's content.
 </html>
 ```
 
-### 5.1 The three corrections to the example — and the indentation rule
+### 5.1 The four corrections to the example — and the indentation rule
 
-`Assessment-AS91956-example.html` is the structural authority, but it was captured from the **dev** server and hand-edited, so three things in it are **not** to be copied (designer feedback, 16 September 2026):
+`Assessment-AS91956-example.html` is the structural authority, but it was captured from the **dev** server and hand-edited, so four things in it are **not** to be copied (designer feedback, 16 and 18 September 2026):
 
 1. **Script host — live, never dev.** Both `<script>` lines point at `https://tekura.desire2learn.com/…` (the example's `tekuradev.desire2learn.com` is the dev domain — a mistake in the training files, never reproduced). The two paths (`/shared/refresh_template/js/idoc_scripts.js` and `/shared/Assessment/assessmentLinker.js`) are unchanged.
 2. **`<div id="body">`.** The wrapper that follows the closing `</div>` of `#header` is `<div id="body">`, not a bare `<div>` — the template's padding depends on the id (the example has the bare `<div>` and gets the padding wrong).
-3. **Indentation.** The page is indented — **four spaces per nesting level**, one block-level element per line, closing tags on their own line — from `<head>` down to the last `</div>`. Inline elements (`<b>`, `<i>`, `<u>`, `<br>`, `<a>` around running text, the `<i class="fa-solid …">` icon) stay inside their line; `<li>`, `<th>`, `<td>`, `<p>`, `<h4>`, `<h5>` each take one line, and a `<li>` that holds nested paragraphs, lists or a table opens on its own line, indents its children one level, and closes on its own line. Section content in `{section content}` is indented to the level of its `accContent` div's children (six levels, 24 spaces). The example's unindented body is **not** the standard.
+3. **Footer links are ALWAYS blank.** Both footer anchors are emitted with `href=""` exactly as the skeleton shows — never the example's `/shared/assessment/…` paths, never a guessed folder. Each assessment's footer links are unique and are filled in by the developer on the server; the Convertor does not attempt them and raises **no** To Do for them (designer instruction, 18 September 2026).
+4. **Indentation.** The page is indented — **four spaces per nesting level**, one block-level element per line, closing tags on their own line — from `<head>` down to the last `</div>`. Inline elements (`<b>`, `<i>`, `<u>`, `<br>`, `<a>` around running text, the `<i class="fa-solid …">` icon) stay inside their line; `<li>`, `<th>`, `<td>`, `<p>`, `<h4>`, `<h5>` each take one line, and a `<li>` that holds nested paragraphs, lists or a table opens on its own line, indents its children one level, and closes on its own line. Section content in `{section content}` is indented to the level of its `accContent` div's children (six levels, 24 spaces). The example's unindented body is **not** the standard.
 
 Everything else in the skeleton is **verbatim**: the `{{orgUnitId}}` token, the `&amp;` entities, the commented-out `next-lesson` line, `level=""` (stays empty) and `template="NCEA"`. No `stickyNav`, no lesson menu, no `<!-- N -->` delimiters — this is not a module page. The acknowledgements block after the footer **is** part of every page (`18B` Section 6.8). Output is **one file**, named **`{CODE}.html`** (e.g. `US4249.html`, `AS91956.html` — never `Assessment-{CODE}.html`), delivered as a downloadable file.
 

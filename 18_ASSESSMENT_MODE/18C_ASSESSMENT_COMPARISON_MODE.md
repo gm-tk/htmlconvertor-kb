@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 18th September, 2026 1:00 PM
+> **Last updated:** Friday, 18th September, 2026 3:30 PM
 > **Granular part C (3 of 3) of `18_ASSESSMENT_MODE.md`** — Assessment Comparison Mode: the `COMPARISON MODE` phrase in an assessment chat, per-file routing, inputs, partial re-uploads, no scopes, the one finalized report for Gavin.
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -41,7 +41,8 @@ Every assessment is built on the one template, so the `09` scope question does n
 
 The `09A` Section 4 definition of a difference and every `09B` Section 4.1 exclusion apply as written (a red note, `Designer/Developer To Do:` or `Red Flag:` edited or removed → Exclusion 1; bespoke presentation → Exclusion 3; supplied metadata → Exclusion 4). Assessment-specific readings of those exclusions:
 
-- **Filling in what the document could not supply is not a rule change.** The real dropbox `rcode`, the confirmed footer folder path, the rubric image dropped into its To Do spot, a real dropbox sentence replacing the stock one, the NZQA year, a completed acknowledgement title/author, `acksAI` removed because the asset turned out to be hand-made — all Exclusion 4/7 material, dropped silently.
+- **URLs are never reported — any of them.** The footer `href`s (blank when generated, filled in by the developer), the dropbox quickLink and its `rcode`, an image `src`, a PDF or button link, the NZQA link: every assessment's addresses are unique to it, so a changed, added or removed URL value is dropped silently and never logged. Only a change to the **element** around a URL (a link moved, a button restyled, an `<img>` given a new class) is a difference.
+- **Filling in what the document could not supply is not a rule change.** The real dropbox `rcode`, the rubric image dropped into its To Do spot, a real dropbox sentence replacing the stock one, the NZQA year, a completed acknowledgement title/author, `acksAI` removed because the asset turned out to be hand-made — all Exclusion 4/7 material, dropped silently.
 - **Editorial changes to the writer's words** (a fixed typo, a reworded sentence, a moved paragraph) are content editing, not conversion — excluded — **unless** the same transformation is applied to every instance of a pattern (e.g. every `Requirement n:` label loses its colon, every prompt paragraph loses its italics): that is a conversion rule and is reported.
 - **Anything structural is reported:** a changed skeleton element, class, id or attribute; a different heading level; a list nested or un-nested; lettering changed; a table class or inline style changed; an accordion added, dropped, renamed or re-ordered; the acknowledgements block's structure; indentation style; script host; filename convention.
 - Ordinary Comparison Mode's "template-derived" filter never removes an assessment difference, because R is a rule (10.2).
@@ -86,5 +87,5 @@ Present the file, then three or four plain-English lines: which pages were compa
 
 - Never converts, rebuilds or edits a page; never regenerates any knowledge file.
 - Never asks which scope to apply, never produces a Phase 1 report, never asks for pages the developer did not re-upload.
-- Never reports a filled-in To Do, an edited red note or an editorial wording change as a rule.
+- Never reports a filled-in To Do, an edited red note, a changed URL (footer, dropbox, image, PDF, NZQA) or an editorial wording change as a rule.
 - Never runs the module procedure on an assessment page, or this procedure on a module page.

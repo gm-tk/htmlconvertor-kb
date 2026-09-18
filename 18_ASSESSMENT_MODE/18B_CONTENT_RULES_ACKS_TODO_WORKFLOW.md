@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 18th September, 2026 1:00 PM
+> **Last updated:** Friday, 18th September, 2026 3:30 PM
 > **Granular part B (2 of 3) of `18_ASSESSMENT_MODE.md`** — Content rules inside the accordions (text, headings, the nesting rule, tables, alerts, links, dropbox), the acknowledgements block (6.8), the `Designer/Developer To Do:` list, workflow, never-does list.
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -95,7 +95,7 @@ Three table shapes need interpretation, all seen in US4249:
 The example's coloured "Before you begin" box (`<div class="alert"><div class="row"><div class="col-12">…</div></div></div>`) is used **only** when the writer marks a block for it (a Word callout/shaded box, or an explicit `[ALERT]` / "Before you begin" heading). A plain paragraph such as `Conditions:` followed by text is **not** an alert — render it as paragraphs. Never invent an alert to make the page look like the example.
 
 ### 6.6 Links, buttons and files
-A hyperlink in the Word text → `<a href="…" target="_blank" rel="noopener">`. A cover-sheet or resource PDF the writer names becomes the example's button pattern — `<a href="{path}" target="_blank" rel="noopener"><div class="button">{label}</div></a>` — inside the accordion where the writer placed it, with a `Designer/Developer To Do:` if the file path is not known. Module codes the writer cites (e.g. `PWY1001`) are plain text, not links.
+A hyperlink in the Word text → `<a href="…" target="_blank" rel="noopener">`. A cover-sheet or resource PDF the writer names becomes the example's button pattern — `<a href="{URL}" target="_blank" rel="noopener"><div class="button">{label}</div></a>` — inside the accordion where the writer placed it, its `{URL}` built on the server convention in Section 7.2 (`…/{CODE}/pdf/{file}.pdf`) and paired with the Section 7.2 upload To Do. Module codes the writer cites (e.g. `PWY1001`) are plain text, not links.
 
 ### 6.7 The dropbox accordion
 The `Dropbox` section always produces the `dropBox` accordion pair from the skeleton, even when the writer left `[H3]` and `[body]` empty:
@@ -124,7 +124,7 @@ Every assessment page ends with the standard acknowledgements accordion, placed 
 | **Third-party text or a document reproduced on the page** (a story, an article excerpt, a scanned page, a journal or book cover) | `Story:` / `Image:` entry per `05C`, with byline and licence; unconfirmable byline → `Red Flag:`. |
 | A **Te Kura-owned asset** — the rubric, the assessment cover sheet, a PWY/JPN module reference, a Te Kura diagram, the writer's own photo | **No entry** — the typed "All other images © Te Aho o Te Kura Pounamu…" line covers it. |
 | The **NZQA standard link**, a **plain hyperlink** the student visits (a website, a government page, a dropbox), a module code, an email address | **Not media** — no entry. |
-| A picture the document **names but does not contain** (the broken `[Merged content: …]` rubric link, an asset the writer asks CS to create) | No entry yet; the Section 7.3 `Designer/Developer To Do:` already says the asset is pending — extend it with "and add its acknowledgement entry if it is not Te Kura's own". |
+| A picture the document **names but does not contain** (the broken `[Merged content: …]` rubric link, an asset the writer asks CS to create) | No entry yet; the Section 7.3 `Designer/Developer To Do:` already says the asset is pending and where to upload it — extend it with "and add its acknowledgement entry if it is not Te Kura's own". |
 
 Order the entries as the items appear on the page. A `Red Flag:` inside the acks block is a visible red `<p>` in the media `acksLesson` div, exactly as in a module.
 
@@ -147,9 +147,13 @@ Order the entries as the items appear on the page. A `Red Flag:` inside the acks
 
 Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">Designer/Developer To Do: …</p>` at the exact spot (constraint 5 — never an HTML comment), and is listed in the Designer Summary. The page is always produced in full around them.
 
-1. **Dropbox code** — always, unless supplied: placeholder `TCS-XXXXXX` in the link + a To Do under the button.
-2. **Footer folder path** — `/shared/assessment/NCEA Level {n}/{COURSE}/{CODE}/`, where `{COURSE}` is the subject's course-folder code (the example uses `JPN1000` for Japanese). Derive it from the first module code the writer cites (`PWY1001` → `PWY1000`), or from the subject's Languages/Pathways code in `14`; state the assumption in the same To Do as the dropbox code.
-3. **Images** — the assessment `.docx` has typically been saved out of SharePoint/Teams, so a picture the writer merged in (usually the rubric) is often a broken link with no image inside the file. Where the writer's placeholder sentence exists (`[Merged content: The assessment rubric on … – page 2]`) it is **not rendered**; emit a To Do at that spot asking for the image, quoting the writer's placeholder. Where the image **is** embedded, emit `<img>` per the Mode D rules in `01` with the writer's alt text and a To Do to confirm the hosted path, and credit it per Section 6.8 unless it is Te Kura's own.
+1. **Dropbox code** — always, unless supplied: placeholder `TCS-XXXXXX` in the link + a To Do under the button. (No footer-path question rides along with it — the footer links are always blank.)
+2. **Media files — where they live on the server, how they are named, and the To Do that says so.** Every assessment page is published in D2L's public files area at `https://tekura.desire2learn.com/shared/assessment/NCEA%20Level%20{n}/{COURSE}/{CODE}/{CODE}.html`, and its media sit in two fixed sub-folders beside it: **`images/`** for pictures and **`pdf/`** for PDFs and other documents (e.g. `…/NCEA%20Level%201/AGH1000/AS91929/images/climate.jpg`, `…/AS91929/pdf/Cover Sheet.pdf`). `{n}` is the NCEA level; `{COURSE}` is the subject's course-folder code — the subject's three-letter code followed by the level digit and `000` (`AGH1000`, `JPN1000`, `PWY1000`), derived from the module code the writer cites (`PWY1001` → `PWY1000`) or from the subject family in `14`; `{CODE}` is the standard code (`AS91929`, `US4249`). Spaces in the path are written `%20`. **File names** are lowercase, descriptive, hyphenated, without spaces or special characters, keeping the original extension — `us4249-assessment-rubric.jpg`, `nzmap.jpg`, `climate.jpg`. An `<img>` therefore reads `<img src="https://tekura.desire2learn.com/shared/assessment/NCEA%20Level%201/PWY1000/US4249/images/us4249-assessment-rubric.jpg" alt="{writer's alt text or caption}">`. Because the developer must physically put the file there, **every media item gets a To Do that names the exact destination**, in this form:
+
+   `Designer/Developer To Do: export this image from the Word document, save it as us4249-assessment-rubric.jpg, and upload it in D2L → Manage Files → shared › assessment › NCEA Level 1 › PWY1000 › US4249 › images. If the US4249 folder does not exist yet, create it there with images and pdf sub-folders. Confirm PWY1000 is the correct course folder for this subject; the link above assumes it.`
+
+   The Designer Summary repeats the list: one line per media file → its destination folder. The footer links are **not** part of this — they stay blank (`18A` Section 5.1) and get no To Do.
+3. **Images that are not in the file** — the assessment `.docx` has typically been saved out of SharePoint/Teams, so a picture the writer merged in (usually the rubric) is often a broken link with no image inside the file. Where the writer's placeholder sentence exists (`[Merged content: The assessment rubric on … – page 2]`) it is **not** rendered; emit a To Do at that spot asking for the image, quoting the writer's placeholder and naming the destination folder per item 2. Where the image **is** embedded, emit the `<img>` per item 2 with the writer's alt text, the item-2 To Do, and an acknowledgement per Section 6.8 unless it is Te Kura's own.
 4. **Writer left a required field empty** (`Title:`, `Credits:`, the Standard row) — build the bar with what exists and a To Do naming the missing field. Never guess a credit count or a standard title.
 5. **Anything the Convertor cannot interpret** (a table shape not in 6.4, a heading level that cannot be placed) → `Red Flag:` with a visible fallback, per the universal rule.
 
@@ -167,7 +171,8 @@ Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">
 5. DROPBOX    always emit the dropBox pair (§6.7); rcode from the user or TCS-XXXXXX + To Do
 5a. ACKS      always emit the acknowledgements block after #footer (§6.8): sweep the document for media,
               one unlabelled acksLesson of entries (or none) + the typed "All other images" div; acksAI if AI media
-6. GAPS       one visible Designer/Developer To Do per §7 item, at its spot
+6. GAPS       one visible Designer/Developer To Do per §7 item, at its spot — media To Dos name the exact
+              D2L destination (shared › assessment › NCEA Level {n} › {COURSE} › {CODE} › images | pdf); footer hrefs stay ""
 6a. REPEAT    steps 2–5a for every fingerprinted .docx in the upload; all pages emitted in ONE response
 7. VERIFY     skeleton matches `18A` §5 apart from the placeholders — live `tekura.` scripts, `<div id="body">`, four-space
               indentation throughout (§5.1); all writer text present and unchanged;
@@ -186,5 +191,6 @@ Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">
 - Never rewords, reorders or summarises writer text; never drops a filled-in section; never renders `Brief description:` or the 3rd-party row.
 - Never invents an alert box, a journal, a rubric table, a dropbox code or an acknowledgement entry; never omits the acknowledgements block or types the statements `acksTemplate` generates.
 - Never adds CSS/JS beyond the two §6.4 styles and the red-note style; never uses `<strong>`/`<em>` where the example uses `<b>`/`<i>`.
-- Never asks for the dropbox code, folder path or images before converting — it converts first and flags them.
+- Never asks for the dropbox code or images before converting — it converts first and flags them, naming the exact D2L folder each media file must be uploaded to.
+- Never fills in the footer links, never guesses them, never raises a To Do for them — they are always `href=""`.
 - Never emits a batch of pages one per turn, and never asks for a Media List.
