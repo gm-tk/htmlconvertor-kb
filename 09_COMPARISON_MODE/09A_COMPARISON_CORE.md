@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Friday, 18th September, 2026 1:00 PM
 > **Granular part A (1 of 3) of `09_COMPARISON_MODE.md`** — Comparison Mode: trigger (incl. the PageForge discriminator and the prohibition on ever raising Mode 7 here), inputs, workflow, what counts as a difference (SS1-4).
 > All sibling parts live in `09_COMPARISON_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -40,6 +40,8 @@ There are two entry points, for the two stages.
 The designer types `COMPARISON MODE` **into the same chat that originally performed the conversion**. This is deliberate: that chat already contains the original raw content source, the supplied structural reference, and the project's original HTML output. Comparison Mode reuses all three.
  
 If `COMPARISON MODE` appears **without** any uploaded HTML files, do not start the analysis — ask the designer to upload their refined HTML files for the module.
+
+**Assessment pages route elsewhere.** An uploaded file carrying `class="alertAssessment"` and `template="NCEA"` (the Assessment Mode skeleton), in a chat that ran Assessment Mode, is compared under `18_ASSESSMENT_MODE/18C_ASSESSMENT_COMPARISON_MODE.md` — same phrase, but no scope question and a finalized report produced directly. Route each uploaded file on its own evidence; a module page is always handled here, unchanged.
  
 **Phase 2 trigger — assign scopes.** Entered when the **immediately-preceding** comparison step in this chat produced a Phase 1 report (numbered differences + the scope legend) **and** the designer's new message consists of one or more **difference-number → scope-letter pairings** (e.g. `1-A`, `2 B`, `3: D`). No keyword is required — the pairing pattern itself is the trigger. See Section 8 for parsing. If the pairings arrive but no Phase 1 report exists in the chat, ask the designer to run `COMPARISON MODE` first.
  

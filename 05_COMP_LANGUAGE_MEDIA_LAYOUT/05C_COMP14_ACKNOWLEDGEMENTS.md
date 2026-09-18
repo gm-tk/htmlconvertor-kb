@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 2:53 PM
+> **Last updated:** Friday, 18th September, 2026 1:00 PM
 > **Granular part C (3 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 acknowledgements.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -6,6 +6,8 @@
 ## Acknowledgements
 
 > ⚠️ **PLACEMENT — READ FIRST:** The acknowledgements block is **ALWAYS placed at the bottom of the FIRST page of the module — the overview page (`-00`, i.e. lesson 0.0).** It sits **after (outside) the `#footer` `<div>`**, at the very end of the page, using the accordion structure shown below.
+>
+> **Assessment pages (Mode 9)** are one page, so the same block sits after that page's `#footer` — always present, one unlabelled `acksLesson` for the media entries, media isolated from the document itself (no Media List exists): see `18_ASSESSMENT_MODE/18B` Section 6.8. Entry formats below apply unchanged.
 >
 > Acknowledgements are **NEVER** placed on the last page or on any other lesson page. This is a firm rule for **every** conversion — PageForge, raw Writers Template `.docx`, and MTK alike. If a Mode B reference module carries its acknowledgements on its last page (an older convention), do **not** copy that placement: take the accordion *structure* from the reference but position the populated block at the bottom of the new module's overview page.
 
