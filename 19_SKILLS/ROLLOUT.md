@@ -12,14 +12,19 @@ you should see when it worked, and what to do if it did not.
 
 ## Before you start — two things to know
 
-**1. There is no skill picker in a Claude chat.** Designers will not choose a mode from a
-menu. Claude picks the skill itself, by matching what the designer typed against each skill's
-short description. That is why the typed trigger phrases keep working: `COMPARISON MODE` is
-written into the Comparison skill's description, so typing it is what makes the skill fire.
+**1. There are two ways into a mode, and both work.**
 
-The place designers *can* browse the list is **Customize → Skills** (`claude.ai/customize/skills`).
-There they see each skill's name and its one-line description, and clicking a skill shows its
-full contents.
+**Typing `/`** in the message box opens a picker that filters as you type and shows each matching
+skill's name and its full description. Typing `/tekura` lists all ten of these together — which is
+the reason for the shared name prefix. A skill only appears here once it is installed; a `/` search
+that finds nothing means it has not been uploaded yet, not that it is broken.
+
+**Typing anything else** — a trigger phrase, or a plain-English description of the job — selects a
+skill automatically, by matching the request against those same descriptions. This is why the typed
+trigger phrases keep working: `COMPARISON MODE` is written into the Comparison skills' descriptions.
+
+Designers can also browse the full list at **Customize → Skills** (`claude.ai/customize/skills`),
+where clicking a skill shows its whole contents.
 
 **2. The mode card is how a designer knows they are in the right mode.** Each skill's first
 instruction is to print a short panel naming the mode, what it does, what it needs, what comes
@@ -94,27 +99,32 @@ it.
 
 Open a **new chat inside the HTML Convertor project** and try these.
 
-1. **In a chat that converted a module, type `COMPARISON MODE` with your refined files attached.**
+1. **Type `/tekura` in the message box.**
+   *You should see:* all ten skills listed, each with its description. This is the fastest proof
+   that the upload worked at all — if the list is empty, nothing was installed, and every test
+   below will fail for that reason alone. Do this one first.
+
+2. **In a chat that converted a module, type `COMPARISON MODE` with your refined files attached.**
    *You should see:* the **Module** Comparison Mode card, then the mode running as it always
    has. This is the backwards-compatibility test — the old way still works, and the bare phrase
    still works out which comparison to run by itself.
 
-2. **Type, in plain English, "I want to compare my finished HTML against what you generated".**
+3. **Type, in plain English, "I want to compare my finished HTML against what you generated".**
    *You should see:* the same card. This is the new way in, for designers who never learned the
    phrase.
 
-3. **In that same module chat, deliberately ask for the assessment one** — "use the assessment
+4. **In that same module chat, deliberately ask for the assessment one** — "use the assessment
    comparison skill".
    *You should see:* **a warning, and nothing else.** It should say this looks like a module
    chat, name the evidence, explain that the assessment one scopes everything Universal, and
    offer *"module"* or *"continue"*. It must **not** start comparing. This is the wrong-skill
    safeguard.
 
-4. **In an assessment chat, type `COMPARISON MODE` with a refined `{CODE}.html` attached.**
+5. **In an assessment chat, type `COMPARISON MODE` with a refined `{CODE}.html` attached.**
    *You should see:* the **Assessment** Comparison Mode card, and one finalized report straight
    away — no scope question, no first-pass report.
 
-5. **Open a chat OUTSIDE the project and type `COMPARISON MODE`.**
+6. **Open a chat OUTSIDE the project and type `COMPARISON MODE`.**
    *You should see:* a one-line refusal saying the skill only works inside the HTML Convertor
    project. This is the guard that stops these skills misfiring in unrelated work.
 
@@ -136,8 +146,9 @@ Something like:
 > you can also just describe what you want in plain English, and that whichever mode starts,
 > you now get a short panel at the top of the reply telling you what that mode does, what it
 > needs from you and what it will hand back — so you can tell straight away if you have landed
-> in the wrong one. If you have, just say so and it will switch. You can read what every mode
-> does at Customize → Skills.
+> in the wrong one. If you have, just say so and it will switch. You can also **type `/tekura`**
+> to see all of them listed with a description of each, and pick one straight from the list — or
+> read them at Customize → Skills.
 >
 > One thing worth knowing: **Comparison Mode now shows up as two skills** — *Module
 > Comparison* and *Assessment Comparison*. They work differently: the module one gives you a

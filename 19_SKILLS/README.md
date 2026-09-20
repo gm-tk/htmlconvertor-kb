@@ -35,8 +35,15 @@ specifications.
 
 ## Why the typed trigger phrases still work
 
-Claude.ai has no in-chat skill picker: a skill fires because its `description` matches what the
-user typed. Each trigger-phrase mode carries its phrase — `COMPARISON MODE`, `UPDATE MODE`,
+There are **two** ways a skill starts in a claude.ai chat, and the skills here are built for both.
+
+**Typing `/`** opens a picker in the message box that filters as you type and shows each matching
+skill's name and its full description. Because every skill here is named `tekura-…`, typing
+`/tekura` lists all ten together. This is why the `description` field is written for a human to
+read at the moment of choosing, not only for Claude to match on.
+
+**Typing anything else** selects a skill automatically, by matching the request against those same
+descriptions. Each trigger-phrase mode carries its phrase — `COMPARISON MODE`, `UPDATE MODE`,
 `SPLIT MODE`, `INTERACTIVES MODE`, `PAGEFORGE COMPARE MODE`, `ADMIN MODE`, `ASSESSMENT MODE` —
 verbatim in its description, so typing the phrase still works exactly as before.
 
