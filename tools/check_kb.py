@@ -14,6 +14,11 @@ Checks:
   4. STAMPS    — every content file carries a '> **Last updated:**' line.
   5. LEDGER    — across the 12_CHANGE_LEDGER history parts, CL-nnnn IDs are unique
                  and strictly ascending (catches lost/duplicated ledger rows).
+  6. SKILLS    — 19_SKILLS/<name>/SKILL.md carries YAML frontmatter whose `name`
+                 matches its folder (<= 64 chars) and whose `description` is within
+                 Claude.ai's 200-character limit. 19_SKILLS is exempt from checks
+                 1-4: a SKILL.md opens with frontmatter and cannot carry the
+                 '> **Last updated:**' stamp or the KB-PART-BODY-START sentinel.
 """
 import os, re, sys
 
@@ -22,13 +27,15 @@ SOFT_LIMIT = 30_000   # bytes — WARN: split at next update
 HARD_LIMIT = 40_000   # bytes — FAIL: must split before committing
 SENTINEL = "<!-- KB-PART-BODY-START -->"
 NON_CONTENT = {"README.md", "CLAUDE.md", "INDEX.md"}
+# Not KB content parts: the tooling, and the Claude Skill sources (check 6 covers those).
+SKIP_DIRS = {"tools", "19_SKILLS"}
 
 fails, warns = [], []
 
 def content_files():
     out = []
     for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if not d.startswith(".") and d != "tools"]
+        dirnames[:] = [d for d in dirnames if not d.startswith(".") and d not in SKIP_DIRS]
         for fn in sorted(filenames):
             if fn.endswith(".md") and not (dirpath == ROOT and fn in NON_CONTENT):
                 out.append(os.path.join(dirpath, fn))
@@ -94,9 +101,42 @@ if os.path.isdir(ledger_dir):
         if missing:
             warns.append(f"LEDGER: gaps in CL id sequence (may be intentional): {missing}")
 
+
+# 6. SKILLS — the Claude Skill sources in 19_SKILLS/
+n_skills = 0
+skills_dir = os.path.join(ROOT, "19_SKILLS")
+if os.path.isdir(skills_dir):
+    for d in sorted(os.listdir(skills_dir)):
+        sub = os.path.join(skills_dir, d)
+        if d == "dist" or not os.path.isdir(sub):
+            continue
+        sp = os.path.join(sub, "SKILL.md")
+        if not os.path.exists(sp):
+            fails.append(f"SKILL: 19_SKILLS/{d}/ has no SKILL.md")
+            continue
+        n_skills += 1
+        text = open(sp, encoding="utf-8").read()
+        m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+        if not m:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md has no YAML frontmatter block")
+            continue
+        fm = m.group(1)
+        nm = re.search(r"^name:\s*(.+?)\s*$", fm, re.M)
+        ds = re.search(r"^description:\s*(.+?)\s*$", fm, re.M)
+        if not nm:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter has no 'name:'")
+        elif nm.group(1) != d:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md name '{nm.group(1)}' != folder name — Claude.ai will reject the upload")
+        elif len(nm.group(1)) > 64:
+            fails.append(f"SKILL: 19_SKILLS/{d} name is {len(nm.group(1))} chars (> 64 limit)")
+        if not ds:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter has no 'description:'")
+        elif len(ds.group(1)) > 200:
+            fails.append(f"SKILL: 19_SKILLS/{d} description is {len(ds.group(1))} chars (> 200 limit) — Claude.ai will reject the upload")
+
 for w in warns:
     print(f"WARN  {w}")
 for f in fails:
     print(f"FAIL  {f}")
-print(f"\ncheck_kb: {len(files)} content files, {len(warns)} warnings, {len(fails)} failures")
+print(f"\ncheck_kb: {len(files)} content files, {n_skills} skills, {len(warns)} warnings, {len(fails)} failures")
 sys.exit(1 if fails else 0)

@@ -94,5 +94,13 @@ out. They were therefore split (2026-07-27, byte-identical — proof in
   The authoritative stamp is the header (first) line of each part.
 - **The ledger CL sequence is checked** — `check_kb.py` fails on duplicate or
   out-of-order CL ids across the history parts.
+- **`19_SKILLS/` is not knowledge — it is the nine modes published as Claude Skills.**
+  Each `SKILL.md` is a signpost: a wrong-project guard, a precedence check, a plain-English
+  mode card, and pointers to the KB files that own the rules. **Never restate a conversion
+  rule in one.** The folder is exempt from checks 1-4 (frontmatter cannot carry the stamp or
+  the sentinel) and is validated by check 6 instead: `name` must equal the folder name and be
+  ≤ 64 chars, `description` ≤ 200 chars, or Claude.ai rejects the upload. Skills **do not
+  sync** from this repo — after changing one, run `sh 19_SKILLS/build_skills.sh` and tell the
+  designer to re-upload that zip at Organization settings → Skills (`19_SKILLS/ROLLOUT.md`).
 - **Sync lag** — after pushing, the Claude.ai project reflects changes only when
   its GitHub-synced knowledge re-syncs. Remind the designer if a change is urgent.

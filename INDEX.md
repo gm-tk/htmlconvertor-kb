@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Friday, 18th September, 2026 3:30 PM
+> **Last updated:** Sunday, 20th September, 2026 7:52 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -188,9 +188,20 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 - **`18_ASSESSMENT_MODE/18C_ASSESSMENT_COMPARISON_MODE.md`** (9 KB) — the **assessment variant of Comparison Mode**: same `COMPARISON MODE` phrase, routed per uploaded file (`alertAssessment` page in an assessment chat → here; module page → `09`), inputs with the fixed `18A` skeleton as R, partial re-uploads compared alone (the rest assumed unchanged), URL changes never logged, **no scopes** — one phase straight to the finalized report, assessment readings of the `09B` exclusions, the one report for Gavin (per-file sections, continuous numbering, every difference (c) Universal, Actioning summary)
   - Sections: 10. ASSESSMENT COMPARISON MODE (10.1 purpose, trigger and routing · 10.2 inputs · 10.3 no scopes · 10.4 what counts and what is excluded · 10.5 the report · 10.6 how the run closes · 10.7 what this mode never does)
 
+## 19_SKILLS
+The nine operating modes, also published as **Claude Skills** so a designer can reach a mode by describing it in plain English as well as by typing its trigger phrase. Paths here are deliberately NOT listed in the `**`path`**` form used above: a `SKILL.md` opens with YAML frontmatter and cannot carry the `> **Last updated:**` stamp or the `KB-PART-BODY-START` sentinel, so `19_SKILLS/` is exempt from the content checks and validated by check 6 of `tools/check_kb.py` instead (frontmatter present, `name` matches the folder, `description` within Claude.ai's 200-character limit).
+
+- 19_SKILLS/README.md — what a skill here is (a signpost, never a rule book), the two upload limits, how to change a mode card
+- 19_SKILLS/ROLLOUT.md — click-by-click instructions for provisioning the nine skills organisation-wide, the five-minute proving test, and what each upload error means
+- 19_SKILLS/build_skills.sh — packages each skill folder into `19_SKILLS/dist/<name>.zip` in the shape Claude.ai's uploader requires
+- 19_SKILLS/dist/ — the nine built `.zip` files, ready to upload
+- One folder per mode, each holding a single `SKILL.md`: tekura-conversion-mode (Mode 1) · tekura-advisory-support-mode (2) · tekura-comparison-mode (3) · tekura-update-mode (4) · tekura-split-mode (5) · tekura-interactives-mode (6) · tekura-pageforge-compare-mode (7) · tekura-admin-mode (8) · tekura-assessment-mode (9)
+
+Each `SKILL.md` does three things and nothing more: it **guards** (refuses to run outside the HTML Convertor project, and defers to a higher-precedence trigger), it **prints a mode card** — a plain-English panel naming the mode, what it needs, what it returns and what it will not do, so a designer can tell at once whether they picked the right mode — and it **points at the KB files** that own the mode's real rules. It restates no conversion rule, no constraint and no markup pattern: the knowledge base stays the single source of truth, and the mode triage in `00A2_OPERATING_MODES.md` and `_project_instructions_.md` is unchanged and still authoritative, so every trigger phrase works with the skills switched off.
+
 ## Repo infrastructure
 - **`_project_instructions_.md`** — the Claude.ai project's system-prompt text (paste into Project Instructions when it changes)
 - **`CLAUDE.md`** — maintenance rules for Claude Code (the update ritual, size limits, how to split a growing file)
 - **`README.md`** — plain-English overview for humans
-- **`tools/check_kb.py`** — the guard script (size limits, index completeness, part headers, ledger integrity)
+- **`tools/check_kb.py`** — the guard script (size limits, index completeness, part headers, ledger integrity, and the `19_SKILLS` frontmatter/limits check)
 - **`tools/kb_manifest.json`** — the one-time migration record proving the split was byte-identical to the 2026-07-16 originals
