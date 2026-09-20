@@ -15,8 +15,9 @@ you should see when it worked, and what to do if it did not.
 **1. There are two ways into a mode, and both work.**
 
 **Typing `/`** in the message box opens a picker that filters as you type and shows each matching
-skill's name and its full description. Typing `/tekura` lists all ten of these together — which is
-the reason for the shared name prefix. A skill only appears here once it is installed; a `/` search
+skill's name and its full description. The names are grouped so that one keyword shows only the
+modes that could be relevant — typing `/tk` gives a designer the six they normally need, and keeps
+the four specialist ones out of the way. A skill only appears here once it is installed; a `/` search
 that finds nothing means it has not been uploaded yet, not that it is broken.
 
 **Typing anything else** — a trigger phrase, or a plain-English description of the job — selects a
@@ -67,11 +68,11 @@ The ten files are in the connected folder at:
 00-Other-TK-Resources/htmlconvertor-kb/19_SKILLS/dist/
 ```
 
-They are named after their modes: `tekura-conversion-mode.zip`,
-`tekura-advisory-support-mode.zip`, `tekura-module-comparison-mode.zip`,
-`tekura-assessment-comparison-mode.zip`, `tekura-update-mode.zip`,
-`tekura-split-mode.zip`, `tekura-interactives-mode.zip`,
-`tekura-pageforge-compare-mode.zip`, `tekura-admin-mode.zip`, `tekura-assessment-mode.zip`.
+They are named after their modes: `tk-module-conversion-mode.zip`,
+`tk-support-mode.zip`, `tk-module-comparison-mode.zip`,
+`tk-assessment-comparison-mode.zip`, `update-mode.zip`,
+`tk-module-split-mode.zip`, `pageforge-interactives-mode.zip`,
+`pageforge-compare-mode.zip`, `admin-mode.zip`, `tk-assessment-mode.zip`.
 
 For **each** zip, one at a time:
 
@@ -99,10 +100,12 @@ it.
 
 Open a **new chat inside the HTML Convertor project** and try these.
 
-1. **Type `/tekura` in the message box.**
-   *You should see:* all ten skills listed, each with its description. This is the fastest proof
-   that the upload worked at all — if the list is empty, nothing was installed, and every test
-   below will fail for that reason alone. Do this one first.
+1. **Type `/tk` in the message box.**
+   *You should see:* six skills — the three `tk-module-…`, `tk-support-mode`, and the two
+   `tk-assessment-…`. Then try `/pageforge` (two, plus the unrelated `pageforge` code-project
+   skill), `/admin` (one) and `/update` (one). This is the fastest proof that the upload worked
+   at all — if a list is empty, nothing was installed, and every test below will fail for that
+   reason alone. Do this one first.
 
 2. **In a chat that converted a module, type `COMPARISON MODE` with your refined files attached.**
    *You should see:* the **Module** Comparison Mode card, then the mode running as it always
@@ -146,9 +149,10 @@ Something like:
 > you can also just describe what you want in plain English, and that whichever mode starts,
 > you now get a short panel at the top of the reply telling you what that mode does, what it
 > needs from you and what it will hand back — so you can tell straight away if you have landed
-> in the wrong one. If you have, just say so and it will switch. You can also **type `/tekura`**
-> to see all of them listed with a description of each, and pick one straight from the list — or
-> read them at Customize → Skills.
+> in the wrong one. If you have, just say so and it will switch. You can also **type `/tk`** to see
+> the modes you need listed with a description of each, and pick one straight from the list — or
+> read them at Customize → Skills. (`/tk-module` narrows it to module work, `/tk-assessment` to
+> assessment work.)
 >
 > One thing worth knowing: **Comparison Mode now shows up as two skills** — *Module
 > Comparison* and *Assessment Comparison*. They work differently: the module one gives you a

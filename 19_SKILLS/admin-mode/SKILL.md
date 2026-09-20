@@ -1,5 +1,5 @@
 ---
-name: tekura-admin-mode
+name: admin-mode
 description: ADMIN MODE — an authorised change to the Te Kura HTML Convertor's rules, actioned without the approval gate. Highest precedence; outranks every other mode trigger. Mode 8.
 ---
 

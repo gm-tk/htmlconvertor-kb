@@ -38,9 +38,9 @@ specifications.
 There are **two** ways a skill starts in a claude.ai chat, and the skills here are built for both.
 
 **Typing `/`** opens a picker in the message box that filters as you type and shows each matching
-skill's name and its full description. Because every skill here is named `tekura-…`, typing
-`/tekura` lists all ten together. This is why the `description` field is written for a human to
-read at the moment of choosing, not only for Claude to match on.
+skill's name and its full description. **The names are grouped so that one keyword shows only the
+modes that could be relevant** — see *The naming scheme* below. This is why the `description` field
+is written for a human to read at the moment of choosing, not only for Claude to match on.
 
 **Typing anything else** selects a skill automatically, by matching the request against those same
 descriptions. Each trigger-phrase mode carries its phrase — `COMPARISON MODE`, `UPDATE MODE`,
@@ -51,6 +51,33 @@ The mode triage in `_project_instructions_.md` and `00A2_OPERATING_MODES.md` is 
 still authoritative**. Even with every skill switched off, typing a trigger phrase works. The
 skills are an additional way in, never a replacement.
 
+## The naming scheme
+
+The `/` picker filters as you type, so the **name is the filter**. The names are therefore chosen so
+that one keyword surfaces only the modes that could be relevant to the job in hand, and a designer
+is never scrolling past modes that make no sense for what they are doing.
+
+| Type | You get | Who it is for |
+|---|---|---|
+| `/tk` | all six below | the everyday designer set |
+| `/tk-module` | `tk-module-conversion-mode` · `tk-module-split-mode` · `tk-module-comparison-mode` | building and refining a module |
+| `/tk-assessment` | `tk-assessment-mode` · `tk-assessment-comparison-mode` | building and refining an NCEA assessment |
+| `/tk-support` | `tk-support-mode` | a question, a half-built module, a broken interactive |
+| `/pageforge` | `pageforge-interactives-mode` · `pageforge-compare-mode` | work that starts from a PageForge run |
+| `/admin` | `admin-mode` | the design authority only |
+| `/update` | `update-mode` | maintaining the Convertor's own rules |
+
+`admin-mode` and `update-mode` deliberately sit **outside** the `tk` group so an ordinary designer
+does not meet them while browsing. **That is obscurity, not permission.** They are provisioned to
+everyone like the rest, so `/admin` still finds Admin Mode for anyone who types it — and the typed
+`ADMIN MODE` phrase always will, because `17_ADMIN_MODE.md` says the phrase itself is the assertion
+of authority and the Convertor never asks who is speaking. If these ever need to be genuinely
+restricted, that is a provisioning decision (upload them to individual accounts instead of
+org-wide) or a KB decision, not a naming one.
+
+`/pageforge` also surfaces the unrelated `pageforge` skill, which routes development requests to the
+HTML Generator's code project. Different thing, adjacent enough not to confuse.
+
 ## The two comparison skills
 
 `COMPARISON MODE` is **one** mode in the knowledge base with **two** procedures behind it, and
@@ -58,7 +85,7 @@ the KB decides which runs from the evidence in the chat, never by asking (`09A` 
 §10.1). They are not variations on a theme — they behave differently enough that landing in the
 wrong one wastes a run:
 
-| | `tekura-module-comparison-mode` (`09`) | `tekura-assessment-comparison-mode` (`18C`) |
+| | `tk-module-comparison-mode` (`09`) | `tk-assessment-comparison-mode` (`18C`) |
 |---|---|---|
 | Passes | Two: initial report → designer scopes each difference → finalized report | One: the finalized report, immediately |
 | Scope question | Yes — five options, `number-letter` reply | None. Every difference is Universal by rule |
@@ -102,16 +129,16 @@ click-by-click instructions.
 
 | Skill folder | Mode | Typed trigger |
 |---|---|---|
-| `tekura-conversion-mode` | 1 — Conversion | *(none — content source upload)* |
-| `tekura-advisory-support-mode` | 2 — Advisory & Support | *(none — a question)* |
-| `tekura-module-comparison-mode` | 3 — Comparison, `09` module procedure | `COMPARISON MODE` |
-| `tekura-assessment-comparison-mode` | 3 — Comparison, `18C` assessment procedure | `COMPARISON MODE` |
-| `tekura-update-mode` | 4 — Update | `UPDATE MODE` |
-| `tekura-split-mode` | 5 — Split | `SPLIT MODE` |
-| `tekura-interactives-mode` | 6 — Interactives Build | `INTERACTIVES MODE` |
-| `tekura-pageforge-compare-mode` | 7 — PageForge Compare | `PAGEFORGE COMPARE MODE` |
-| `tekura-admin-mode` | 8 — Admin | `ADMIN MODE` |
-| `tekura-assessment-mode` | 9 — Assessment | `ASSESSMENT MODE` |
+| `tk-module-conversion-mode` | 1 — Conversion | *(none — content source upload)* |
+| `tk-support-mode` | 2 — Advisory & Support | *(none — a question)* |
+| `tk-module-comparison-mode` | 3 — Comparison, `09` module procedure | `COMPARISON MODE` |
+| `tk-assessment-comparison-mode` | 3 — Comparison, `18C` assessment procedure | `COMPARISON MODE` |
+| `update-mode` | 4 — Update | `UPDATE MODE` |
+| `tk-module-split-mode` | 5 — Split | `SPLIT MODE` |
+| `pageforge-interactives-mode` | 6 — Interactives Build | `INTERACTIVES MODE` |
+| `pageforge-compare-mode` | 7 — PageForge Compare | `PAGEFORGE COMPARE MODE` |
+| `admin-mode` | 8 — Admin | `ADMIN MODE` |
+| `tk-assessment-mode` | 9 — Assessment | `ASSESSMENT MODE` |
 
 This folder is deliberately **excluded from the KB content checks** in `tools/check_kb.py`: a
 `SKILL.md` opens with YAML frontmatter and cannot carry the `> **Last updated:**` stamp or the

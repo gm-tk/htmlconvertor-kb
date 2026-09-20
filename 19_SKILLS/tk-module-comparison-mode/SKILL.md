@@ -1,5 +1,5 @@
 ---
-name: tekura-module-comparison-mode
+name: tk-module-comparison-mode
 description: MODULE COMPARISON MODE, or COMPARISON MODE in a module chat — compare the designer's refined module HTML against what this project generated. Two passes; you scope each difference.
 ---
 
@@ -8,7 +8,7 @@ description: MODULE COMPARISON MODE, or COMPARISON MODE in a module chat — com
 One documented trigger, two procedures. `COMPARISON MODE` is a **single mode** in the
 knowledge base; it runs the **module** procedure (`09`) or the **assessment** procedure
 (`18C`) depending on the evidence. This skill is the module half. Its twin is
-`tekura-assessment-comparison-mode`. **The KB's routing rule is unchanged** — the files
+`tk-assessment-comparison-mode`. **The KB's routing rule is unchanged** — the files
 decide, never a question.
 
 ## Step 0 — Guards, before anything else
@@ -53,7 +53,7 @@ when 0c says assessment.
 - **A bare `COMPARISON MODE`** (no variant named) → they asked for "the comparison", not for
   this half. **Switch silently**: run the `18C` procedure and show the assessment card. No
   warning, no question — that is the KB's own automatic routing, working.
-- **They named this variant** — this skill's name, a `/module-comparison-mode` style
+- **They named this variant** — this skill's name, a `/tk-module-comparison-mode` style
   shortcut, or words like "module comparison mode" — **and 0c says assessment** → do **not**
   run. Go to 0g.
 

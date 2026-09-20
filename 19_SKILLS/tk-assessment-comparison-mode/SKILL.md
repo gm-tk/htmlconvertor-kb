@@ -1,5 +1,5 @@
 ---
-name: tekura-assessment-comparison-mode
+name: tk-assessment-comparison-mode
 description: ASSESSMENT COMPARISON MODE, or COMPARISON MODE in an assessment chat — compare a refined NCEA assessment page against the one generated here. One finalized report for Gavin, straight away.
 ---
 
@@ -8,7 +8,7 @@ description: ASSESSMENT COMPARISON MODE, or COMPARISON MODE in an assessment cha
 One documented trigger, two procedures. `COMPARISON MODE` is a **single mode** in the
 knowledge base; it runs the **module** procedure (`09`) or the **assessment** procedure
 (`18C`) depending on the evidence. This skill is the assessment half. Its twin is
-`tekura-module-comparison-mode`. **The KB's routing rule is unchanged** — the files decide,
+`tk-module-comparison-mode`. **The KB's routing rule is unchanged** — the files decide,
 never a question.
 
 ## Step 0 — Guards, before anything else
@@ -46,7 +46,7 @@ when 0c says module.
   this half. **Switch silently**: run the `09` procedure and show the module card. No warning,
   no question — that is the KB's own automatic routing, working. The same applies to a
   `number-letter` pairings reply, which can only belong to the module procedure.
-- **They named this variant** — this skill's name, an `/assessment-comparison-mode` style
+- **They named this variant** — this skill's name, an `/tk-assessment-comparison-mode` style
   shortcut, or words like "assessment comparison mode" — **and 0c says module** → do **not**
   run. Go to 0f.
 

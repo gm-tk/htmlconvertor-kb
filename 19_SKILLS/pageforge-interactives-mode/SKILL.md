@@ -1,5 +1,5 @@
 ---
-name: tekura-interactives-mode
+name: pageforge-interactives-mode
 description: INTERACTIVES MODE — build the un-built interactives listed in a PageForge {CODE}_interactives.txt worklist as anchored cv2-built fragments. Te Kura HTML Convertor Mode 6.
 ---
 

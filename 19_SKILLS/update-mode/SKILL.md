@@ -1,5 +1,5 @@
 ---
-name: tekura-update-mode
+name: update-mode
 description: UPDATE MODE — permanently change how the Te Kura HTML Convertor behaves. Produces one Repo Update Brief to paste into Claude Code on the htmlconvertor-kb repository. Mode 4.
 ---
 

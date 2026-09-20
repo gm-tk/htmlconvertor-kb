@@ -1,5 +1,5 @@
 ---
-name: tekura-split-mode
+name: tk-module-split-mode
 description: SPLIT MODE — package a single-page Te Kura module that is too long to emit at once as a base file plus one lesson section file per slot, for PageForge's Page Stitcher. Mode 5.
 ---
 

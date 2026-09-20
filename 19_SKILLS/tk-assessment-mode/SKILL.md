@@ -1,5 +1,5 @@
 ---
-name: tekura-assessment-mode
+name: tk-assessment-mode
 description: ASSESSMENT MODE — convert a filled-in NCEA Assessment Activity Word template into its single-page {CODE}.html for D2L's shared assessment area. HTML Convertor Mode 9.
 ---
 
@@ -69,7 +69,7 @@ anything written here.** Search project knowledge and follow, as written there:
 
 ## Step 3 — If `COMPARISON MODE` is typed later in this chat
 
-It is the **assessment variant** (`18C`), not the module one — the `tekura-assessment-comparison-mode`
+It is the **assessment variant** (`18C`), not the module one — the `tk-assessment-comparison-mode`
 skill covers it, and the routing is decided by the uploaded files, never by asking: only the re-uploaded pages are
 compared, URL changes are never logged, there is no scope question, and the output is one
 finalized report for Gavin with every difference scoped (c) Universal.

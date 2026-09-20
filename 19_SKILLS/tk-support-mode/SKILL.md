@@ -1,5 +1,5 @@
 ---
-name: tekura-advisory-support-mode
+name: tk-support-mode
 description: Answer a Te Kura module-development question, finish a half-built module, or debug a broken interactive. HTML Convertor Mode 2 — advisory and support, not a full conversion.
 ---
 

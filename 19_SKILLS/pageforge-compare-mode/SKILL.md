@@ -1,5 +1,5 @@
 ---
-name: tekura-pageforge-compare-mode
+name: pageforge-compare-mode
 description: PAGEFORGE COMPARE MODE, PAGEFORGE COMPARISON MODE or PAGEFORGE COMPARE — compare PageForge's generated HTML against the developer's finished HTML and report its faults to Gavin. Mode 7.
 ---
 
