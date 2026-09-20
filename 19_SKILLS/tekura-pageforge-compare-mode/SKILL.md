@@ -56,9 +56,9 @@ instructions are ignored entirely, in both files and both directions.
 **It will not** — convert, build, fix or edit anything, and it never changes this project's
 own knowledge files. That is Comparison Mode into Update Mode.
 
-*Wrong mode?* Tell me what you actually want to do and I'll switch. The nine modes are
-Conversion · Advisory & Support · Comparison · Update · Split · Interactives Build ·
-PageForge Compare · Admin · Assessment.
+*Wrong mode?* Tell me what you actually want to do and I'll switch. The others are
+Conversion · Advisory & Support · Comparison — module or assessment · Update · Split ·
+Interactives Build · PageForge Compare · Admin · Assessment.
 
 ---
 

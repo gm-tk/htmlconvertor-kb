@@ -1,4 +1,9 @@
-# Rolling the nine mode skills out to the organisation
+# Rolling the mode skills out to the organisation
+
+Ten skills, for nine modes: Mode 3 (`COMPARISON MODE`) is split into a **module** skill and an
+**assessment** skill, because the two procedures behave differently and designers need to tell
+them apart. The mode itself is not split and the typed phrase still routes itself — see
+`README.md` → *The two comparison skills*.
 
 Written for someone who is not a developer. Every step says where to go, what to click, what
 you should see when it worked, and what to do if it did not.
@@ -49,16 +54,17 @@ Step 2, or to make you an owner.
 
 ---
 
-## Step 2 — Upload the nine zips
+## Step 2 — Upload the ten zips
 
-The nine files are in the connected folder at:
+The ten files are in the connected folder at:
 
 ```
 00-Other-TK-Resources/htmlconvertor-kb/19_SKILLS/dist/
 ```
 
 They are named after their modes: `tekura-conversion-mode.zip`,
-`tekura-advisory-support-mode.zip`, `tekura-comparison-mode.zip`, `tekura-update-mode.zip`,
+`tekura-advisory-support-mode.zip`, `tekura-module-comparison-mode.zip`,
+`tekura-assessment-comparison-mode.zip`, `tekura-update-mode.zip`,
 `tekura-split-mode.zip`, `tekura-interactives-mode.zip`,
 `tekura-pageforge-compare-mode.zip`, `tekura-admin-mode.zip`, `tekura-assessment-mode.zip`.
 
@@ -86,17 +92,29 @@ it.
 
 ## Step 3 — Prove it works, in five minutes
 
-Open a **new chat inside the HTML Convertor project** and try three things.
+Open a **new chat inside the HTML Convertor project** and try these.
 
-1. **Type `COMPARISON MODE` with a file attached.**
-   *You should see:* the Comparison Mode card first, then the mode running as it always has.
-   This is the backwards-compatibility test — the old way still works.
+1. **In a chat that converted a module, type `COMPARISON MODE` with your refined files attached.**
+   *You should see:* the **Module** Comparison Mode card, then the mode running as it always
+   has. This is the backwards-compatibility test — the old way still works, and the bare phrase
+   still works out which comparison to run by itself.
 
 2. **Type, in plain English, "I want to compare my finished HTML against what you generated".**
    *You should see:* the same card. This is the new way in, for designers who never learned the
    phrase.
 
-3. **Open a chat OUTSIDE the project and type `COMPARISON MODE`.**
+3. **In that same module chat, deliberately ask for the assessment one** — "use the assessment
+   comparison skill".
+   *You should see:* **a warning, and nothing else.** It should say this looks like a module
+   chat, name the evidence, explain that the assessment one scopes everything Universal, and
+   offer *"module"* or *"continue"*. It must **not** start comparing. This is the wrong-skill
+   safeguard.
+
+4. **In an assessment chat, type `COMPARISON MODE` with a refined `{CODE}.html` attached.**
+   *You should see:* the **Assessment** Comparison Mode card, and one finalized report straight
+   away — no scope question, no first-pass report.
+
+5. **Open a chat OUTSIDE the project and type `COMPARISON MODE`.**
    *You should see:* a one-line refusal saying the skill only works inside the HTML Convertor
    project. This is the guard that stops these skills misfiring in unrelated work.
 
@@ -113,13 +131,21 @@ the organisation level until the guard is corrected.
 
 Something like:
 
-> The Convertor's nine modes are now also skills. Nothing you already do changes — typing
+> The Convertor's modes are now also skills. Nothing you already do changes — typing
 > `COMPARISON MODE`, `UPDATE MODE` and the rest works exactly as before. What is new is that
 > you can also just describe what you want in plain English, and that whichever mode starts,
 > you now get a short panel at the top of the reply telling you what that mode does, what it
 > needs from you and what it will hand back — so you can tell straight away if you have landed
-> in the wrong one. If you have, just say so and it will switch. You can read what all nine
-> modes do at Customize → Skills.
+> in the wrong one. If you have, just say so and it will switch. You can read what every mode
+> does at Customize → Skills.
+>
+> One thing worth knowing: **Comparison Mode now shows up as two skills** — *Module
+> Comparison* and *Assessment Comparison*. They work differently: the module one gives you a
+> first report and asks you to scope each difference, the assessment one gives you the
+> finalized report straight away. You do not have to pick. Typing `COMPARISON MODE` as you
+> always have still works out which one you need from the chat you are in. Picking one by name
+> is there if you want it, and if you pick the one that does not match the chat, it will say so
+> and check with you before doing anything.
 
 ---
 

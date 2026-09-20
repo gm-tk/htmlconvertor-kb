@@ -1,7 +1,9 @@
-# 19_SKILLS — the nine operating modes as Claude Skills
+# 19_SKILLS — the operating modes as Claude Skills
 
 Each of the Convertor's nine operating modes (`00_MASTER_INSTRUCTIONS/00A2_OPERATING_MODES.md`)
-also exists here as a **Claude Skill**. This folder holds the skill source; `build_skills.sh`
+also exists here as a **Claude Skill**. There are **ten** skills for those nine modes, because
+Mode 3 has two procedures that behave quite differently and are worth telling apart by name —
+see *The two comparison skills* below. This folder holds the skill source; `build_skills.sh`
 turns each sub-folder into the `.zip` that Claude.ai's uploader accepts, in `dist/`.
 
 ## What a skill here does and does not do
@@ -42,6 +44,35 @@ The mode triage in `_project_instructions_.md` and `00A2_OPERATING_MODES.md` is 
 still authoritative**. Even with every skill switched off, typing a trigger phrase works. The
 skills are an additional way in, never a replacement.
 
+## The two comparison skills
+
+`COMPARISON MODE` is **one** mode in the knowledge base with **two** procedures behind it, and
+the KB decides which runs from the evidence in the chat, never by asking (`09A` §1, `18C`
+§10.1). They are not variations on a theme — they behave differently enough that landing in the
+wrong one wastes a run:
+
+| | `tekura-module-comparison-mode` (`09`) | `tekura-assessment-comparison-mode` (`18C`) |
+|---|---|---|
+| Passes | Two: initial report → designer scopes each difference → finalized report | One: the finalized report, immediately |
+| Scope question | Yes — five options, `number-letter` reply | None. Every difference is Universal by rule |
+| Why | Modules differ by year level, subject, series and module, so a correction has to be scoped | Every assessment shares one template, so there is nothing to scope against |
+| Report goes to | Whoever actions changes, via Update or Admin Mode | Gavin |
+
+Splitting them into two skills is what makes them tellable apart in the skills list. **It does
+not split the mode**: both skills point at the same documented trigger, and the KB's file-based
+routing is untouched. What the split adds is a safeguard, in each skill's Step 0:
+
+- **A bare `COMPARISON MODE`** — the designer asked for "the comparison", not for a particular
+  half. Whichever skill fires, it reads the evidence and, if it is the wrong half, **switches
+  silently** and shows the other card. The old behaviour, unchanged.
+- **A deliberately named variant** — the designer typed this skill's name or a
+  `/module-comparison-mode` style shortcut — **and the evidence disagrees** → the skill
+  **stops and warns** rather than running, names the evidence, explains in one short paragraph
+  why the other one is probably right, and waits. It never silently overrides a deliberate
+  choice, and it never silently obeys one that looks mistaken.
+- **A mixed upload** — module pages and assessment pages together — is not a mistake:
+  `18C` §10.1 says run both procedures and produce two reports. Neither skill treats it as one.
+
 ## The two hard limits Claude.ai enforces on upload
 
 - `name` — 64 characters max, and it **must match the folder name exactly**.
@@ -66,7 +97,8 @@ click-by-click instructions.
 |---|---|---|
 | `tekura-conversion-mode` | 1 — Conversion | *(none — content source upload)* |
 | `tekura-advisory-support-mode` | 2 — Advisory & Support | *(none — a question)* |
-| `tekura-comparison-mode` | 3 — Comparison | `COMPARISON MODE` |
+| `tekura-module-comparison-mode` | 3 — Comparison, `09` module procedure | `COMPARISON MODE` |
+| `tekura-assessment-comparison-mode` | 3 — Comparison, `18C` assessment procedure | `COMPARISON MODE` |
 | `tekura-update-mode` | 4 — Update | `UPDATE MODE` |
 | `tekura-split-mode` | 5 — Split | `SPLIT MODE` |
 | `tekura-interactives-mode` | 6 — Interactives Build | `INTERACTIVES MODE` |

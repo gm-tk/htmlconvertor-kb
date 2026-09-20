@@ -50,9 +50,9 @@ anchor so PageForge's Page Stitcher can splice it into the exact right spot auto
 activity boxes or head scripts. The generator has already produced all of that; each section
 starts at the widget's own wrapper.
 
-*Wrong mode?* Tell me what you actually want to do and I'll switch. The nine modes are
-Conversion · Advisory & Support · Comparison · Update · Split · Interactives Build ·
-PageForge Compare · Admin · Assessment.
+*Wrong mode?* Tell me what you actually want to do and I'll switch. The others are
+Conversion · Advisory & Support · Comparison — module or assessment · Update · Split ·
+Interactives Build · PageForge Compare · Admin · Assessment.
 
 ---
 

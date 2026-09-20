@@ -48,9 +48,9 @@ reviewer notes surfaced, anything guessed at, and any choice still owed by you.
 **It will not** — reword writer content, invent classes or components, write new CSS or JS,
 or design anything new.
 
-*Wrong mode?* Tell me what you actually want to do and I'll switch. The nine modes are
-Conversion · Advisory & Support · Comparison · Update · Split · Interactives Build ·
-PageForge Compare · Admin · Assessment.
+*Wrong mode?* Tell me what you actually want to do and I'll switch. The others are
+Conversion · Advisory & Support · Comparison — module or assessment · Update · Split ·
+Interactives Build · PageForge Compare · Admin · Assessment.
 
 ---
 

@@ -50,9 +50,9 @@ other are catalogued for Persephone to resolve.
 **Afterwards** — run the brief in Claude Code, push, and wait for the project's knowledge to
 re-sync before the new rules take effect in conversations.
 
-*Wrong mode?* Tell me what you actually want to do and I'll switch. The nine modes are
-Conversion · Advisory & Support · Comparison · Update · Split · Interactives Build ·
-PageForge Compare · Admin · Assessment.
+*Wrong mode?* Tell me what you actually want to do and I'll switch. The others are
+Conversion · Advisory & Support · Comparison — module or assessment · Update · Split ·
+Interactives Build · PageForge Compare · Admin · Assessment.
 
 ---
 

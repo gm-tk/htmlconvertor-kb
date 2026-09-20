@@ -41,9 +41,9 @@ from; or the completed or corrected code, with a short note on what was added or
 **It will not** — convert a whole module, invent a component, write new CSS or JS, or make a
 one-off rule permanent. Making a rule permanent is Update Mode.
 
-*Wrong mode?* Tell me what you actually want to do and I'll switch. The nine modes are
-Conversion · Advisory & Support · Comparison · Update · Split · Interactives Build ·
-PageForge Compare · Admin · Assessment.
+*Wrong mode?* Tell me what you actually want to do and I'll switch. The others are
+Conversion · Advisory & Support · Comparison — module or assessment · Update · Split ·
+Interactives Build · PageForge Compare · Admin · Assessment.
 
 ---
 
