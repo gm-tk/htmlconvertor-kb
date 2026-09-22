@@ -60,7 +60,8 @@ is never scrolling past modes that make no sense for what they are doing.
 | Type | You get | Who it is for |
 |---|---|---|
 | `/tk` | all six below | the everyday designer set |
-| `/tk-module` | `tk-module-conversion-mode` · `tk-module-split-mode` · `tk-module-comparison-mode` | building and refining a module |
+| `/tk-standard` | `tk-standard-module-mode` | the ordinary module conversion |
+| `/tk-module` | `tk-module-split-mode` · `tk-module-comparison-mode` | packaging and refining a module |
 | `/tk-assessment` | `tk-assessment-mode` · `tk-assessment-comparison-mode` | building and refining an NCEA assessment |
 | `/tk-support` | `tk-support-mode` | a question, a half-built module, a broken interactive |
 | `/pageforge` | `pageforge-interactives-mode` · `pageforge-compare-mode` | work that starts from a PageForge run |
@@ -145,7 +146,7 @@ click-by-click instructions.
 
 | Skill folder | Mode | Typed trigger |
 |---|---|---|
-| `tk-module-conversion-mode` | 1 — Conversion | *(none — content source upload)* |
+| `tk-standard-module-mode` | 1 — Conversion | *(none — content source upload)* |
 | `tk-support-mode` | 2 — Advisory & Support | *(none — a question)* |
 | `tk-module-comparison-mode` | 3 — Comparison, `09` module procedure | `COMPARISON MODE` |
 | `tk-assessment-comparison-mode` | 3 — Comparison, `18C` assessment procedure | `COMPARISON MODE` |

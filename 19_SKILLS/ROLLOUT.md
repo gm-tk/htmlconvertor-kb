@@ -68,7 +68,7 @@ The ten files are in the connected folder at:
 00-Other-TK-Resources/htmlconvertor-kb/19_SKILLS/dist/
 ```
 
-They are named after their modes: `tk-module-conversion-mode.zip`,
+They are named after their modes: `tk-standard-module-mode.zip`,
 `tk-support-mode.zip`, `tk-module-comparison-mode.zip`,
 `tk-assessment-comparison-mode.zip`, `update-mode.zip`,
 `tk-module-split-mode.zip`, `pageforge-interactives-mode.zip`,
