@@ -1,6 +1,6 @@
 ---
 name: tk-module-split-mode
-description: SPLIT MODE — package a single-page Te Kura module that is too long to emit at once as a base file plus one lesson section file per slot, for PageForge's Page Stitcher. Mode 5.
+description: Splits a long single-page Te Kura module that is being converted into separate files that are then fed into PageForge's Page Stitcher to output the single HTML file.
 ---
 
 # Split Mode — Te Kura HTML Convertor (Mode 5)

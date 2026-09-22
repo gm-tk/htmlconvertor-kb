@@ -1,6 +1,6 @@
 ---
 name: tk-assessment-comparison-mode
-description: ASSESSMENT COMPARISON MODE, or COMPARISON MODE in an assessment chat — compare a refined NCEA assessment page against the one generated here. One finalized report for Gavin, straight away.
+description: ASSESSMENT COMPARISON MODE — compare a refined NCEA assessment page against the one generated here. One finalized report for Gavin, straight away.
 ---
 
 # Assessment Comparison Mode — Te Kura HTML Convertor (Mode 3, the `18C` assessment variant)

@@ -1,6 +1,6 @@
 ---
 name: tk-module-conversion-mode
-description: Convert a Te Kura Writers Template, a PageForge .txt or an MTK .docx into finished D2L/Brightspace module HTML. HTML Convertor Mode 1 — the ordinary conversion job.
+description: Convert a Te Kura Writers Template, a PageForge .txt or an MTK .docx into finished D2L/Brightspace module HTML. The ordinary module conversion process for WT to HTML files for MTK.
 ---
 
 # Conversion Mode — Te Kura HTML Convertor (Mode 1)

@@ -1,6 +1,6 @@
 ---
 name: tk-module-comparison-mode
-description: MODULE COMPARISON MODE, or COMPARISON MODE in a module chat — compare the designer's refined module HTML against what this project generated. Two passes; you scope each difference.
+description: MODULE COMPARISON MODE — IMPORTANT! This will generate an initial document that you use to let Claude know the scope for each change to generate the final document to send to Gavin!
 ---
 
 # Module Comparison Mode — Te Kura HTML Convertor (Mode 3, the `09` module variant)

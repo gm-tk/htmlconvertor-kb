@@ -1,6 +1,6 @@
 ---
 name: tk-assessment-mode
-description: ASSESSMENT MODE — convert a filled-in NCEA Assessment Activity Word template into its single-page {CODE}.html for D2L's shared assessment area. HTML Convertor Mode 9.
+description: ASSESSMENT MODE — convert a filled-in NCEA Assessment Activity Word template into its single-page {CODE}.html for D2L's shared assessment area.
 ---
 
 # Assessment Mode — Te Kura HTML Convertor (Mode 9)
