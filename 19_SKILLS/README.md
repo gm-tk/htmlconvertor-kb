@@ -112,17 +112,22 @@ routing is untouched. What the split adds is a safeguard, in each skill's Step 0
 - `name` — 64 characters max, and it **must match the folder name exactly**.
 - `description` — **200 characters max**. Measured on the parsed value, so the quotes below
   do not count against it.
-- **The frontmatter must parse as YAML.** A value that begins with a YAML indicator —
-  `!` `&` `*` `{` `[` `|` `>` `%` `@` or a backtick — is read as a *tag* or as structure
-  rather than as text, and the upload is refused. **Wrap any such value in double quotes:**
+- **The frontmatter must parse as YAML**, and it must contain **no explicit YAML tag**.
+  These are two separate checks at Claude.ai's end, and passing the first does not get you
+  past the second.
 
-  ```yaml
-  description: "!!!PAGEFORGE TESTING ONLY!!! Compare PageForge's generated HTML …"
-  ```
+  A value beginning with a YAML indicator — `!` `&` `*` `{` `[` `>` `%` `@`, a pipe or a
+  backtick — is read as a tag or as structure rather than as text. Wrapping it in **double**
+  quotes fixes the parse (double, not single, so apostrophes need no escaping).
 
-  Double quotes, not single, so apostrophes inside the text need no escaping. This is easy
-  to miss because the file still *looks* right — which is why `tools/check_kb.py` check 6
-  now parses the frontmatter with PyYAML rather than reading it with a pattern.
+  **But quoting does NOT rescue a `!!` or `!<` sequence.** The uploader scans the raw
+  frontmatter text for those two and refuses the file *even inside quotes*, because parsers
+  disagree about them. There is only one fix: **write the value literally without them.**
+  `!!!PAGEFORGE TESTING ONLY!!!` had to become `PAGEFORGE TESTING ONLY!`.
+
+  This is easy to miss because the file still *looks* right, and because quoting genuinely
+  is the answer to the first problem. `tools/check_kb.py` check 6 now runs both tests — a
+  real PyYAML parse, and the same explicit-tag scan the uploader performs.
 
 ## Changing a mode card
 

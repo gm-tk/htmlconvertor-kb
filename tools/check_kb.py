@@ -20,7 +20,10 @@ Checks:
                  `name` matching its folder (<= 64 chars) and a `description` within
                  Claude.ai's 200-character limit. The parse matters: a value starting with
                  a YAML indicator (! & * { [ | > % @ `) is read as a tag or structure, not
-                 as text, and the upload is rejected — such a value must be double-quoted. 19_SKILLS is exempt from checks
+                 as text, and the upload is rejected — such a value must be double-quoted.
+                 Claude.ai ALSO scans the raw frontmatter text for an explicit tag ("!!" or
+                 "!<") and rejects it EVEN WHEN QUOTED, so both checks must pass: the value
+                 has to parse AND be free of those two sequences. Write it literally. 19_SKILLS is exempt from checks
                  1-4: a SKILL.md opens with frontmatter and cannot carry the
                  '> **Last updated:**' stamp or the KB-PART-BODY-START sentinel.
 """
@@ -170,6 +173,14 @@ if os.path.isdir(skills_dir):
                 if raw and raw.group(1)[:1] in "!&*{[|>%@`":
                     fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md '{key}' starts with a YAML indicator "
                                  f"('{raw.group(1)[:1]}') and is not quoted — wrap the value in double quotes")
+
+        # 6a-ii. Claude.ai also scans the RAW frontmatter for an explicit YAML tag and
+        #        refuses the upload even when the value is quoted. Quoting is not a fix here.
+        for seq in ("!!", "!<"):
+            if seq in fm:
+                fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter contains an explicit YAML tag "
+                             f"('{seq}') \u2014 Claude.ai rejects this even inside quotes. Write the value "
+                             f"literally without it")
 
         # 6b. The two limits Claude.ai enforces, measured on the PARSED value.
         if not name:
