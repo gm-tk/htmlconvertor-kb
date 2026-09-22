@@ -1,6 +1,6 @@
 ---
 name: tk-module-comparison-mode
-description: MODULE COMPARISON MODE — IMPORTANT! This will generate an initial document that you use to let Claude know the scope for each change to generate the final document to send to Gavin!
+description: Upload your refined HTML files back into the initial Claude Chat to generate a report of differences - tell Claude where to apply these changes to generate a final doc for Gavin.
 ---
 
 # Module Comparison Mode — Te Kura HTML Convertor (Mode 3, the `09` module variant)
