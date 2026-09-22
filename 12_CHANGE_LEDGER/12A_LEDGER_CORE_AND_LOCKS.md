@@ -1,5 +1,5 @@
 > **Last updated:** Monday, 14th September, 2026 10:51 AM
-> **Granular part A (1 of 13) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions (CL-0086 to CL-0094), PART 2 pending approval. (PART 3 is the history parts; **PART 4 is the PageForge Amalgamation Log** in `12G`.)
+> **Granular part A (1 of 14) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions (CL-0086 to CL-0094), PART 2 pending approval. (PART 3 is the history parts; **PART 4 is the PageForge Amalgamation Log** in `12G`.)
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
