@@ -7,6 +7,8 @@ part can go missing. Exits non-zero on any FAIL (used by the pre-commit hook and
 Checks:
   1. SIZE      — no content .md over HARD_LIMIT bytes (FAIL); over SOFT_LIMIT is a WARN
                  meaning "split this file at its next update" (see CLAUDE.md ritual).
+                 FILE_LIMITS overrides both for a file that CANNOT be split, and
+                 its warning says TRIM rather than SPLIT.
   2. HEADERS   — every part file inside a topic folder carries the provenance header
                  ('> **Granular part') and the KB-PART-BODY-START sentinel.
   3. INDEX     — every content .md on disk is listed in INDEX.md, and every path
@@ -30,6 +32,14 @@ NON_CONTENT = {"README.md", "CLAUDE.md", "INDEX.md"}
 # Not KB content parts: the tooling, and the Claude Skill sources (check 6 covers those).
 SKIP_DIRS = {"tools", "19_SKILLS"}
 
+# Per-file (soft, hard) overrides. `_project_instructions_.md` is pasted WHOLE into the
+# Claude.ai project's Instructions field, so it can never be split — which makes the
+# ordinary "split it at its next update" warning an instruction it cannot obey, and turns
+# the 30 KB soft limit into a silent ceiling that forces a trim for every correction.
+# It gets its own ceiling instead, and a warning that says TRIM.
+FILE_LIMITS = {"_project_instructions_.md": (33_000, 36_000)}
+CANNOT_SPLIT = set(FILE_LIMITS)
+
 fails, warns = [], []
 
 def content_files():
@@ -47,10 +57,13 @@ files = content_files()
 for p in files:
     size = os.path.getsize(p)
     rel = os.path.relpath(p, ROOT)
-    if size > HARD_LIMIT:
-        fails.append(f"SIZE: {rel} is {size:,} bytes (> hard limit {HARD_LIMIT:,}) — split it NOW per CLAUDE.md")
-    elif size > SOFT_LIMIT:
-        warns.append(f"SIZE: {rel} is {size:,} bytes (> soft limit {SOFT_LIMIT:,}) — split it at its next update")
+    soft, hard = FILE_LIMITS.get(rel, (SOFT_LIMIT, HARD_LIMIT))
+    if size > hard:
+        remedy = "trim it NOW — this file cannot be split" if rel in CANNOT_SPLIT else "split it NOW per CLAUDE.md"
+        fails.append(f"SIZE: {rel} is {size:,} bytes (> hard limit {hard:,}) — {remedy}")
+    elif size > soft:
+        remedy = "trim it — this file cannot be split (see CLAUDE.md §2)" if rel in CANNOT_SPLIT else "split it at its next update"
+        warns.append(f"SIZE: {rel} is {size:,} bytes (> soft limit {soft:,}) — {remedy}")
 
 # 2. HEADERS + 4. STAMPS
 for p in files:

@@ -30,7 +30,7 @@ out. They were therefore split (2026-07-27, byte-identical — proof in
 1. **EDIT IN PLACE, NEVER REGENERATE A TOPIC.** A change touches only the specific
    part file(s) that own the affected rule. Find them via `INDEX.md` (or grep).
    Full-topic regeneration is the failure mode this repo exists to eliminate.
-2. **SIZE LIMITS ARE HARD.** No content `.md` may exceed **40,000 bytes** (the check
+2. **SIZE LIMITS ARE HARD — with one documented exception.** `_project_instructions_.md` is pasted whole into the project's Instructions field and **cannot be split**, so the ordinary soft limit would ask it to do the impossible and act as a silent ceiling. It has its own `FILE_LIMITS` entry in `tools/check_kb.py` (warn 33 KB, fail 36 KB) and its warning says **trim**, not split. Everything else:  No content `.md` may exceed **40,000 bytes** (the check
    script FAILS the commit). At **30,000 bytes** a file is due to be split as part of
    the very next update that touches it (§4). Aim for parts of 10–25 KB.
 3. **RUN THE GUARD AFTER EVERY CHANGE:** `python3 tools/check_kb.py` must pass
