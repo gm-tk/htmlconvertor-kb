@@ -1,6 +1,6 @@
 ---
 name: pageforge-compare-mode
-description: PAGEFORGE COMPARE MODE, PAGEFORGE COMPARISON MODE or PAGEFORGE COMPARE — compare PageForge's generated HTML against the developer's finished HTML and report its faults to Gavin. Mode 7.
+description: !!!PAGEFORGE TESTING ONLY!!! Compare PageForge's generated HTML against the developer's finished HTML and report its differences to Gavin for refining the module conversion process.
 ---
 
 # PageForge Compare Mode — Te Kura HTML Convertor (Mode 7)

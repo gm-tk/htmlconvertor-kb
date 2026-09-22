@@ -1,6 +1,6 @@
 ---
 name: pageforge-interactives-mode
-description: INTERACTIVES MODE — build the un-built interactives listed in a PageForge {CODE}_interactives.txt worklist as anchored cv2-built fragments. Te Kura HTML Convertor Mode 6.
+description: !!!PAGEFORGE TESTING ONLY!!! Build the un-built complex interactives listed in a PageForge {CODE}_interactives.txt file that is later stitched back into the original HTML files.
 ---
 
 # Interactives Build Mode — Te Kura HTML Convertor (Mode 6)
