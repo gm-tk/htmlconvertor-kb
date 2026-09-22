@@ -107,11 +107,22 @@ routing is untouched. What the split adds is a safeguard, in each skill's Step 0
 - **A mixed upload** — module pages and assessment pages together — is not a mistake:
   `18C` §10.1 says run both procedures and produce two reports. Neither skill treats it as one.
 
-## The two hard limits Claude.ai enforces on upload
+## The three ways an upload gets rejected
 
 - `name` — 64 characters max, and it **must match the folder name exactly**.
-- `description` — **200 characters max**. This is the one that bites: a longer description is
-  rejected at upload with a generic error. `tools/check_kb.py` checks both.
+- `description` — **200 characters max**. Measured on the parsed value, so the quotes below
+  do not count against it.
+- **The frontmatter must parse as YAML.** A value that begins with a YAML indicator —
+  `!` `&` `*` `{` `[` `|` `>` `%` `@` or a backtick — is read as a *tag* or as structure
+  rather than as text, and the upload is refused. **Wrap any such value in double quotes:**
+
+  ```yaml
+  description: "!!!PAGEFORGE TESTING ONLY!!! Compare PageForge's generated HTML …"
+  ```
+
+  Double quotes, not single, so apostrophes inside the text need no escaping. This is easy
+  to miss because the file still *looks* right — which is why `tools/check_kb.py` check 6
+  now parses the frontmatter with PyYAML rather than reading it with a pattern.
 
 ## Changing a mode card
 

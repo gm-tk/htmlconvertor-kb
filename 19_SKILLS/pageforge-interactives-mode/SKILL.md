@@ -1,6 +1,6 @@
 ---
 name: pageforge-interactives-mode
-description: !!!PAGEFORGE TESTING ONLY!!! Build the un-built complex interactives listed in a PageForge {CODE}_interactives.txt file that is later stitched back into the original HTML files.
+description: "!!!PAGEFORGE TESTING ONLY!!! Build the un-built complex interactives listed in a PageForge {CODE}_interactives.txt file that is later stitched back into the original HTML files."
 ---
 
 # Interactives Build Mode — Te Kura HTML Convertor (Mode 6)

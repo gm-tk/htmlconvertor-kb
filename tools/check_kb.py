@@ -16,13 +16,19 @@ Checks:
   4. STAMPS    — every content file carries a '> **Last updated:**' line.
   5. LEDGER    — across the 12_CHANGE_LEDGER history parts, CL-nnnn IDs are unique
                  and strictly ascending (catches lost/duplicated ledger rows).
-  6. SKILLS    — 19_SKILLS/<name>/SKILL.md carries YAML frontmatter whose `name`
-                 matches its folder (<= 64 chars) and whose `description` is within
-                 Claude.ai's 200-character limit. 19_SKILLS is exempt from checks
+  6. SKILLS    — 19_SKILLS/<name>/SKILL.md's frontmatter PARSES as YAML, and carries a
+                 `name` matching its folder (<= 64 chars) and a `description` within
+                 Claude.ai's 200-character limit. The parse matters: a value starting with
+                 a YAML indicator (! & * { [ | > % @ `) is read as a tag or structure, not
+                 as text, and the upload is rejected — such a value must be double-quoted. 19_SKILLS is exempt from checks
                  1-4: a SKILL.md opens with frontmatter and cannot carry the
                  '> **Last updated:**' stamp or the KB-PART-BODY-START sentinel.
 """
 import os, re, sys
+try:
+    import yaml            # PyYAML: lets check 6 prove a SKILL.md's frontmatter really parses
+except ImportError:
+    yaml = None
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOFT_LIMIT = 30_000   # bytes — WARN: split at next update
@@ -134,18 +140,48 @@ if os.path.isdir(skills_dir):
             fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md has no YAML frontmatter block")
             continue
         fm = m.group(1)
-        nm = re.search(r"^name:\s*(.+?)\s*$", fm, re.M)
-        ds = re.search(r"^description:\s*(.+?)\s*$", fm, re.M)
-        if not nm:
-            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter has no 'name:'")
-        elif nm.group(1) != d:
-            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md name '{nm.group(1)}' != folder name — Claude.ai will reject the upload")
-        elif len(nm.group(1)) > 64:
-            fails.append(f"SKILL: 19_SKILLS/{d} name is {len(nm.group(1))} chars (> 64 limit)")
-        if not ds:
-            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter has no 'description:'")
-        elif len(ds.group(1)) > 200:
-            fails.append(f"SKILL: 19_SKILLS/{d} description is {len(ds.group(1))} chars (> 200 limit) — Claude.ai will reject the upload")
+
+        # 6a. It must PARSE. A value beginning with a YAML indicator is read as a tag or
+        #     structure rather than text, and Claude.ai rejects the upload outright.
+        name = desc = None
+        if yaml is not None:
+            try:
+                data = yaml.safe_load(fm)
+            except Exception as exc:
+                fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter is not valid YAML — {exc}. "
+                             f"A value starting with ! & * {{ [ | > % @ or ` must be wrapped in double quotes")
+                continue
+            if not isinstance(data, dict):
+                fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter did not parse to a mapping")
+                continue
+            name, desc = data.get("name"), data.get("description")
+            for key, val in (("name", name), ("description", desc)):
+                if val is not None and not isinstance(val, str):
+                    fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md '{key}' parsed as {type(val).__name__}, not text — "
+                                 f"wrap the value in double quotes")
+                    name = desc = None
+        else:
+            warns.append("SKILL: PyYAML not installed — frontmatter parsed by pattern only (pip install pyyaml)")
+            nm = re.search(r"^name:[ \t]*(.+?)[ \t]*$", fm, re.M)
+            ds = re.search(r"^description:[ \t]*(.+?)[ \t]*$", fm, re.M)
+            name = nm.group(1).strip('"') if nm else None
+            desc = ds.group(1).strip('"') if ds else None
+            for key, raw in (("name", nm), ("description", ds)):
+                if raw and raw.group(1)[:1] in "!&*{[|>%@`":
+                    fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md '{key}' starts with a YAML indicator "
+                                 f"('{raw.group(1)[:1]}') and is not quoted — wrap the value in double quotes")
+
+        # 6b. The two limits Claude.ai enforces, measured on the PARSED value.
+        if not name:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter has no usable 'name:'")
+        elif name != d:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md name '{name}' != folder name — Claude.ai will reject the upload")
+        elif len(name) > 64:
+            fails.append(f"SKILL: 19_SKILLS/{d} name is {len(name)} chars (> 64 limit)")
+        if not desc:
+            fails.append(f"SKILL: 19_SKILLS/{d}/SKILL.md frontmatter has no usable 'description:'")
+        elif len(desc) > 200:
+            fails.append(f"SKILL: 19_SKILLS/{d} description is {len(desc)} chars (> 200 limit) — Claude.ai will reject the upload")
 
 for w in warns:
     print(f"WARN  {w}")
