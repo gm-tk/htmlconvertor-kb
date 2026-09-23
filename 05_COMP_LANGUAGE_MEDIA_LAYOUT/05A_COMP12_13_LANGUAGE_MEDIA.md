@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Wednesday, 23rd September, 2026 11:37 AM
 > **Granular part A (1 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist (incl. the **mandatory** `jp-text` / `ch-text` / `pinyin` rule, constraint 92); COMP_13 media & embeds.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -83,6 +83,23 @@ Searchable table for vocabulary/terminology:
 
 ---
 
+## Writing Font — `writeFont` (Playwrite NZ) — CL-0109, constraint 93
+
+The **writing font** is the typeface that shows ākonga the exact way a letter should look in their own writing (BLL and phase-1 modules, and wherever a Writers Template calls for a writing / handwriting font). Supplied reference: `writeFont.html` (design team, September 2026 — *"Sassoon font has been replaced by PlaywriteNZ font by the MOE"*).
+
+| Class | Font | Use |
+|-------|------|-----|
+| `writeFont` | Playwrite NZ Basic | **THE DEFAULT** — use this wherever a writing font is called for, unless the Writers Template stipulates another of the classes below |
+| `writeFontGuide` | Playwrite NZ Basic Guide | the basic font drawn on guide lines |
+| `writeFontCursive` | Playwrite NZ Cursive | only when the Writers Template asks for cursive |
+| `writeFontCursiveGuide` | Playwrite NZ Cursive Guide | cursive on guide lines |
+| `writeFontLinked` | Playwrite NZ Linked | only when the Writers Template asks for linked (joined) writing |
+| `writeFontLinkedGuide` | Playwrite NZ Linked Guide | linked writing on guide lines |
+
+- The class goes on the element that holds the text — a heading, `<p>`, `<ol>` / `<ul>`, a table cell, or an interactive's own text element (e.g. `<p class="memText writeFont">`, `<div class="wordHighlighter writeFont">`, `class="crossword row writeFont"`). It adds no inline CSS (constraint 2).
+- **Linked does not link across spaces.** To carry the guide lines over a space, replace the space with an underscore (`_`).
+- **The sassoon classes are LEGACY.** `sassoon-text`, `sassoonI-text` and `sassoonIB-text` are still valid on the server (it now renders them in Playwrite NZ Basic), so existing markup keeps working — but they are **never emitted in a new build**. Sassoon markup already present in a module being edited is **left alone** (the September 2026 builds show both side by side, e.g. WJFUN108).
+
 ## Language Fonts
 
 | Class | Language |
@@ -90,8 +107,8 @@ Searchable table for vocabulary/terminology:
 | `jp-text` | Japanese |
 | `ch-text` | Chinese |
 | `pinyin` | Pinyin |
-| `sassoon-text` | Sassoon font |
-| `sassoonI-text` | Sassoon Infant font |
+| `sassoon-text` | Sassoon font — **LEGACY** (read-only: valid on the server, rendered in Playwrite NZ Basic; never emitted in a new build — use `writeFont`, above) |
+| `sassoonI-text` | Sassoon Infant font — **LEGACY** (as above; `sassoonIB-text`, the bold infant form, likewise) |
 
 ### ⚠️ `jp-text`, `ch-text` and `pinyin` are MANDATORY on EVERY occurrence (constraint 92)
 
@@ -216,10 +233,19 @@ Full-page bilingual toggle. Applies to the `<body>` element, not an inner contai
 
 ## MathJax / Equations
 
-Standard LaTeX syntax. Inline: `\( \)`. Block: `\[ \]`.
+**Equations — output is always MathML (CL-0115).** Emit `<math xmlns="http://www.w3.org/1998/Math/MathML">…</math>` (the form that renders in MTK; `display="block"` for a displayed equation) and put `mathJax` on the `<body>` class. The input may arrive in any of these forms and **every one is converted to MathML**:
+
+- a Word equation (OMML) in the `.docx`;
+- LaTeX typed as text (`\( … \)`, `\[ … \]`, `\frac{}{}`, `$…$`);
+- pasted MathML;
+- a `[Math]` / `[Mathjax]`-tagged plain expression such as `[Math] 4/5` (a fraction).
+
+LaTeX may be kept in an HTML comment beside the MathML, as the developers do (`<!-- \((\frac{a+b}{2})\) --><math …>`, MXDB301). **Never emit raw LaTeX or a bare `[Mathjax]` tag as visible text.**
 
 ```html
-<p>The quadratic formula is \(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</p>
+<body class="container-fluid mathJax">
+…
+<p>The mean is <!-- \((\frac{a+b}{2})\) --><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mn>2</mn></mfrac></math></p>
 ```
 
 

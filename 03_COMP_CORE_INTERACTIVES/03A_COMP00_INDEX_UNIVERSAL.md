@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026 6:30 PM
+> **Last updated:** Wednesday, 23rd September, 2026 11:37 AM
 > **Granular part A (1 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_00 component index & universal rules.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -63,7 +63,7 @@ then `autoCheck` MUST be applied automatically to **every interactive that suppo
 | `COMP_09` | `04_COMP_SEGMENTS_OVERLAYS.md` | Speech Bubbles (all variants) |
 | `COMP_10` | `04_COMP_SEGMENTS_OVERLAYS.md` | Shape Hover, Timeline, Venn Diagram |
 | `COMP_11` | `04_COMP_SEGMENTS_OVERLAYS.md` | Sketcher, Number Line, Stop Watch |
-| `COMP_12` | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Glossary, Kanji Cards, Language Fonts, Translate Section, Reo Translate, MathJax |
+| `COMP_12` | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Glossary, Kanji Cards, Language Fonts, Translate Section, Reo Translate, Equations (MathML) |
 | `COMP_13` | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Video, Audio, PDF (generic + the eight AI Guidelines teacher tags), Padlet, Desmos |
 | `COMP_14` | `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` | Activities, Alerts, Cultural Alerts, Buttons, Tables, Columns, Quotes, etc. |
 

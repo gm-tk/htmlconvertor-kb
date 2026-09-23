@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
 > **Granular part D (4 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -171,6 +171,7 @@ The offer is an **offer, not an automatic action.** Split Mode runs **only** whe
 | `quote` | `quote` |
 | `rhetorical question` | `rhetorical_question` |
 | `full page translate`, `reo translate` | `reo_translate` |
+| `writing font`, `handwriting font`, `write font` | `writing_font` (CL-0109) |
 
 ### Media Tags
 | Writer Variants | Normalised |

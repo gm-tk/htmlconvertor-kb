@@ -1,5 +1,5 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
-> **Granular part A (1 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
+> **Last updated:** Wednesday, 23rd September, 2026 11:36 AM
+> **Granular part A (1 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -41,7 +41,7 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
 - **All Languages modules are combo.** Every page of every Languages-cohort module ships `template="combo"` on `<html>` — e.g. `<html lang="en" level="" template="combo" class="notranslate" translate="no">`, per the supplied `20260511_Language_HTML` reference ("Languages are all combo — should be reflected in the code"). The sub-type within combo (Fundamentals tiles / Inquiry crumbs / standalone) still comes from the `<body>` class per `06_TEMPLATE_RECOGNITION.md` §2, and `06` §5's Mode B template-level check expects `combo` — not a year-band value — for this cohort. Consequence: `combo` is **not** one of the three autoCheck auto-apply template files (constraint 38 / `03` COMP_00), so `autoCheck` is applied in Languages output only when the writer's intended behaviour calls for it.
 - **The Audiovisual Package is FINALISED (5 August 2026).** "All packages have been finalised for each of the languages" — every language panel in the final reference is marked *finalised and will be in use in upcoming modules*. This **supersedes** the former "provisional asset state" and "videos are added manually" bullets **for registry-listed assets**: where a writer's `[Audiovisual package …]` tag names an asset in the registry below, emit the supplied form exactly as the reference shows (Vimeo `videoSection` embed, `audioImage`, `audioButton`, `audioPlayer`, or `imageCentral` image). A tagged Audiovisual asset **not** in the registry still gets the visible `Designer/Developer To Do:` note (*Audiovisual item to be added by designer/developer from Audiovisual*) — and a pending video slot still uses the pending-ID **Vimeo scaffold** of constraint 64 (`05` → Video Embed → Creative Services Videos).
 - **The `[Audiovisual package …]` tag family.** Writers reference the finalised assets as `[Audiovisual package <asset name> item N]`. Variants ride in **nested brackets**: `[full body]`, `[headshot]`, `[neutral]`, `[certificate]`, `[holding books]`, `[ice cream]`, `[expression]`. For a character with multiple expressions (Spanish Pablo / María) the writer puts the number in correlation to the expression — e.g. `[Audiovisual package Pablo [expression] item 1]`. Item numbers are per-language (Japanese legitimately starts at item 0); the asset **name** is the primary key, the item number the cross-check.
-- **Language icons.** Eight icons — **Reading, Listening, Speaking, Writing, Interact, Think, Idea, Linguist** — tagged `[Audiovisual package Icon <Name>]`; files `images/Icons/black icons/Language icons_<Name>.jpg`. **The icons are identical throughout the phases and automatically match the module's phase colour** (phase-coloured files exist under `images/Icons/phase colour/`) — the writer never specifies a phase colour and the conversion never asks for one; use the tag as-is.
+- **Language icons.** Eight icons — **Reading, Listening, Speaking, Writing, Interact, Think, Idea, Linguist** — tagged `[Audiovisual package Icon <Name>]`; files are **central** — `Language icons/Language icons_<Name>.jpg` with `class="img-fluid imageCentral"`, plus phase-coloured `… P1.jpg` – `P4.jpg` variants (the module-local `images/Icons/…` folders are retired; exact filenames in `14C` §2; CL-0112). **The icons are identical throughout the phases and automatically match the module's phase colour** — the writer never specifies a phase colour and the conversion never asks for one; use the tag as-is.
 - **Asset registry (finalised) — the complete registry lives in `14C_LANGUAGES_AV_ASSET_REGISTRY.md`.** Every finalised asset — tag name, item number, delivery form, **full Vimeo URL (including the required `h=` hash)**, `audioName`, `audioImage` id and exact central-asset filename — is absorbed there verbatim from `20260511_Language_HTML`, together with the supplied markup shapes (Vimeo `videoSection` embed, `audioImage`, `audioButton`, `audioPlayer`, headshot + speech-bubble pairing, scene/expression carousels), the eight-icon filename table, the Spanish accents rule (one audio runs Spain → Latin America → Mexico), the iStock-derived-asset rules (the writer still puts an i-Stock link in the WT; "Adapted. Used with permission." acknowledgements per `05C`) and the tag-tolerance notes. **The supplied HTML no longer needs to be consulted** — `14C` is the source of truth for the registry data; this section keeps the rules.
 - **Central images — `imageCentral` character/persona assets.** The recurring Languages characters and persona images are **centralised template assets**: they are served from the design team's central per-language asset folders and carry `class="img-fluid imageCentral"` (the class that applies the central-store filepath prefix). Canonical supplied form:
   ```html
@@ -66,7 +66,25 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
   - `[Photograph in a circle]` — the persona image
   - `[Audiovisual item N {name}]` — the audio recording (the persona transcripts are **real audio recordings, not AI**)
   - `[Transcript button]` — reveals the transcript
-- **Persona details are DEFERRED.** The persona identities and images (Section 1: **Whai**; Section 2: **Leilani** and **Bailey**; Section 3: **Māia**) are still being finalised — the interactive and central images are under development as an EDR, and some images are TBC (e.g. Māia). **Emit the persona pattern with a `Designer/Developer To Do:` placeholder** (persona identity + circle image + audio to be confirmed once the EDR is finalised); use a placeholder image in the meantime.
+- **Persona details DELIVERED — the `pathwaysPersona` component (CL-0113; `refresh_pathwaysPersonas.html`; gold PWY1001 / PWY1002 / PWY1007).** Section 1: **Whai**; Section 2: **Leilani** and **Bailey**; Section 3: **Māia**. Central images: `pathwaysPersonas/whai.jpg`, `pathwaysPersonas/bailey.jpg`, `pathwaysPersonas/leilani.jpg`, `pathwaysPersonas/māia.jpg` (`pathwaysPersonas/archive/` holds drafts — never reference it). The persona tags above build this markup (copied from the snippet):
+  ```html
+  <div class="pathwaysPersona" id="whaiIntro">
+      <div class="pathwaysPersonaImage">
+          <img class="img-fluid imageCentral" src="pathwaysPersonas/whai.jpg" alt="" />
+          <div class="pathwaysPersonaText">
+              <h5>Whai</h5>
+          </div>
+      </div>
+      <div class="pathwaysPersonaControls">
+          <button type="button" class="pathwaysPersonaBtn pathwaysPersonaPlay" aria-label="Play audio" title="Play"></button>
+          <button type="button" class="pathwaysPersonaBtn pathwaysPersonaTranscript" aria-label="Show transcript" title="Transcript"></button>
+      </div>
+      <div class="pathwaysPersonaTranscriptContent">
+          <p class="marB0">Transcript text</p>
+      </div>
+  </div>
+  ```
+  The **`id` names the audio file** (`id="whaiIntro"` plays `audio/whaiIntro.mp3`); **both buttons stay empty**; the `.pathwaysPersonaText` overlay is optional; the component **must sit inside a `row` and a `col`** (e.g. `col-md-4 col-6` per persona). **`noAudio`** on `.pathwaysPersona` strips it back to just the circular image. The former persona `Designer/Developer To Do:` placeholder is **retired**.
 - **Knowledge & Practice (Ks/Ps) statements.** There is **no new Pathways curriculum yet**, so the overview does **not** include new-curriculum K/P statements — the writers' template leaves a placeholder. In the meanwhile, only short **learning intentions and success criteria** are included. **Do NOT add curriculum K/P statements in-module**; this is a **revision request** once the curriculum is announced — emit a `Designer/Developer To Do:` note to that effect at the placeholder.
 - **Overview is DEFERRED.** The Pathways overview is **to be set once the first module is complete** — emit the overview scaffold with a `Designer/Developer To Do:` note rather than a finalised overview.
 

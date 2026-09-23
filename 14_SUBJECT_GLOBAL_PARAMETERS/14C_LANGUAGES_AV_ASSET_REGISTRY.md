@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 13th August, 2026
-> **Granular part C (3 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (5 August 2026) so the supplied HTML file no longer needs to be consulted or kept in project knowledge.
+> **Last updated:** Wednesday, 23rd September, 2026 11:32 AM
+> **Granular part C (4 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (5 August 2026) so the supplied HTML file no longer needs to be consulted or kept in project knowledge.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -75,20 +75,20 @@ Emit each registry asset in the form recorded for it below, using these supplied
 
 ## 2. Language icons
 
-Tag: `[Audiovisual package Icon <Name>]`. Files: `images/Icons/black icons/<filename>`. **The icons are identical throughout the phases and automatically match the module's phase colour** (phase-coloured files exist under `images/Icons/phase colour/`) — the writer never specifies a colour and the conversion never asks for one. Emit the black-icons file; the phase colouring is a template/production concern.
+Tag: `[Audiovisual package Icon <Name>]`. **The icons are now CENTRAL (CL-0112, September 2026 package):** `Language icons/Language icons_<Name>.jpg` (black) plus the phase-coloured variants `Language icons/Language icons_<Name> P1.jpg` … `P4.jpg` on the central store, carrying `class="img-fluid imageCentral"`. The module-local `images/Icons/black icons/` and `images/Icons/phase colour/` folders are **retired** — never emit them. **The icons are identical throughout the phases and automatically match the module's phase colour** — the writer never specifies a colour and the conversion never asks for one. Emit the black file; a `P1`–`P4` file only where the Writers Template names it.
 
-| Icon | Filename (exact case) |
-|---|---|
-| Reading | `Language icons_Reading.jpg` |
-| Listening | `Language icons_Listening.jpg` |
-| Speaking | `Language icons_Speaking.jpg` |
-| Writing | `Language icons_Writing.jpg` |
-| Interact | `Language icons_Interact.jpg` |
-| Think | `Language icons_Think.jpg` |
-| Idea | `Language icons_idea.jpg` |
-| Linguist | `Language icons_linguist.jpg` |
+| Icon | Black file (exact case) | Phase-coloured files (exact case — the server's mixed case is copied verbatim) |
+|---|---|---|
+| Reading | `Language icons_Reading.jpg` | `Language icons_Reading p1.jpg` … `Language icons_Reading p4.jpg` (lower-case `p`) |
+| Listening | `Language icons_Listening.jpg` | `Language icons_Listening P1.jpg` … `P4.jpg` |
+| Speaking | `Language icons_Speaking.jpg` | `Language icons_Speaking P1.jpg` … `P4.jpg` |
+| Writing | `Language icons_Writing.jpg` | `Language icons_Writing P1.jpg` … `P4.jpg` |
+| Interact | `Language icons_Interact.jpg` | `Language icons_Interact P1.jpg` … `P4.jpg` |
+| Think | `Language icons_Think.jpg` | `Language icons_Think P1.jpg` … `P4.jpg` |
+| Idea | `Language icons_idea.jpg` (lower-case `idea`) | `Language icons_Idea P1.jpg` … `P4.jpg` (capital `Idea`) |
+| Linguist | `Language icons_linguist.jpg` | `Language icons_linguist P1.jpg` … `P4.jpg` |
 
-Supplied form: `<img class="img-fluid" loading="lazy" src="images/Icons/black icons/Language icons_Reading.jpg" alt="reading" />`.
+Supplied form: `<img class="img-fluid imageCentral" loading="lazy" src="Language icons/Language icons_Reading.jpg" alt="reading" />`.
 
 ---
 
@@ -106,6 +106,8 @@ Supplied form: `<img class="img-fluid" loading="lazy" src="images/Icons/black ic
 | Salzi the pretzel (mascot) | 8 | audioImage + image variants | neutral = audioImage id `German_Salzi`, img `German assets/Salsi_neutral.jpg`; `[certificate]` → `Salsi_certificate.jpg`; `[holding books]` → `Salsi_books.jpg`; `[ice cream]` → `Salsi_ice cream.jpg` (all `imageCentral`; note the **Salsi** filename spelling vs the **Salzi** character/tag name). All variant tags are item 8, e.g. `[Audiovisual package Salzi [certificate] item 8]` |
 
 Module-local scene example (not `imageCentral`): `images/German/Family playing board game.png` — "a couple of the characters within a scene".
+
+**Felix is the Vimeo character (item 4) only.** The two Felix Hoffmann "Co-pilot test" images of the 31 July draft package (`Felix Hoffmann_Co-pilot test.png` / `_headshot.jpg`) are **removed from the package** — never reference them (CL-0112).
 
 ---
 
@@ -167,6 +169,7 @@ Speech-bubble pairing observed: Yuka headshot + a bubble containing her `audioBu
 | Pablo | 1 | audioButton + expression carousel | `audioName="Spanish_Pablo"` · iStock **2214853643** · expressions `Spanish assets/Spanish assets_Pablo_<neutral|angry|happy|scared>.jpg` |
 | María | 1 | audioButton + expression carousel | `audioName="Spanish_Maria"` · iStock **2214816016** · expressions `Spanish assets/Spanish assets_Maria_<neutral|happy|sad|scared|smile>.jpg` |
 | family tree | 3 | image | `Spanish assets/Spanish_Family tree.jpg` · iStock **1675300511** (people) + **2207512167** (pets) |
+| family tree — no numbers | 3 (variant) | image | `Spanish assets/Spanish_Family tree_no numbers.jpg` — the same tree without the numbers (server, September 2026; CL-0112). Use it only where the Writers Template asks for the un-numbered tree |
 | family portait | 4 | image | `Spanish assets/Spanish_Portait.jpg` (the reference's own `portait` spelling in both tag and filename — match tolerantly, keep the filename as supplied) |
 
 ---
@@ -178,6 +181,30 @@ Speech-bubble pairing observed: Yuka headshot + a bubble containing her `audioBu
 | Fa'auiga | 1 | image (`[full body]` / `[headshot]`) | `Samoan character assets/Fa'auiga.jpg` · `Samoan character assets/Fa'auiga_headshot.jpg` |
 | Si'iolo | 2 | image (`[full body]` / `[head shot]`) | `Samoan character assets/Si'iolo.jpg` · `Samoan character assets/Si'iolo_headshot.jpg` |
 | NZ to Samoa | 3 | image (animated gif) | `Samoan character assets/Adobe Express - nz to samoa.gif` · iStock **926176050** (NZ map) + **2215778947** (Samoa map) |
+
+**Phrase images (CL-0112, September 2026 package — 19 files).** Central, `class="img-fluid imageCentral"`, `alt=""` as supplied; each shows the phrase in its filename. Filenames verbatim from the server list (note the `-` standing for a question mark, and the macrons):
+
+| Phrase image | File | Supplied iStock |
+|---|---|---|
+| Fa'a fetai | `Samoan character assets/Samoan_Fa'a fetai.jpg` | **1162479162** |
+| Manuia faafetai | `Samoan character assets/Samoan_Manuia faafetai.jpg` | **949402928** |
+| O a mai oe | `Samoan character assets/Samoan_O a mai oe-.jpg` | **1368170177** |
+| O lo'u igoa o | `Samoan character assets/Samoan_O lo'u igoa o.jpg` | **1363289818** |
+| Talofa | `Samoan character assets/Samoan_Talofa.jpg` | **1162479162** |
+| Tōfā | `Samoan character assets/Samoan_Tōfā.jpg` | **949402928** |
+| Goodbye | `Samoan character assets/Samoan_Goodbye.jpg` | — (none supplied beside it) |
+| Hello | `Samoan character assets/Samoan_Hello.jpg` | — (none supplied beside it) |
+| How are you | `Samoan character assets/Samoan_How are you-.jpg` | — (none supplied beside it) |
+| My name is | `Samoan character assets/Samoan_My name is.jpg` | — (none supplied beside it) |
+| Very well thank you | `Samoan character assets/Samoan_Very well thank you.jpg` | — (none supplied beside it) |
+| Taeao Manuia | `Samoan character assets/Samoan_Taeao Manuia.jpg` | **1162479162** |
+| Manuia le aoauli | `Samoan character assets/Samoan_Manuia le aoauli.jpg` | **949402928** |
+| Manuia le afiafi | `Samoan character assets/Samoan_Manuia le afiafi.jpg` | **1363289818** |
+| Manuia le po | `Samoan character assets/Samoan_Manuia le po.jpg` | **1162479162** |
+| Talofa o lo'u igoa o | `Samoan character assets/Samoan_Talofa o lo'u igoa o.jpg` | **949402928** |
+| Mālo le soifua | `Samoan character assets/Samoan_Mālo le soifua.jpg` | **949402928** |
+| Taeao Manuia-19 | `Samoan character assets/Samoan_Taeao Manuia-19.jpg` | **1368170177** |
+| Talofa o a mai oe | `Samoan character assets/Samoan_Talofa o a mai oe-.jpg` | **1162479162** |
 
 ---
 

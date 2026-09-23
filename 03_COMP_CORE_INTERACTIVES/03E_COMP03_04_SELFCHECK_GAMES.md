@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
 > **Granular part E (5 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_03 self check & reflection; COMP_04 games & word components.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -102,7 +102,7 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
     <div class="memCard" match="1">
         <div class="cardFace"><h3>?</h3></div>
         <div class="cardHidden">
-            <p class="memText sassoonIB-text">Meerkat</p>
+            <p class="memText writeFont">Meerkat</p>
         </div>
     </div>
     <div class="memCard" match="1">
@@ -120,14 +120,14 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 **Attributes:**
 - `memCardSize`: card size on the `.memoryGame` container — `"lg"` is the production value used for Years 1–3 word/picture matching. There is NO `grid` attribute — sizing is the named `memCardSize` attribute.
 - `match="N"`: numeric pair id on each `.memCard`. The two cards with the same `match` value form the matching pair. Matching is by this attribute — NOT by identical hidden content.
-- Text cards: `<p class="memText sassoonIB-text">…</p>` inside `.cardHidden`. Note the bold infant font class is `sassoonIB-text` (not `sassoonI-text`).
+- Text cards: `<p class="memText writeFont">…</p>` inside `.cardHidden` — the writing font `writeFont` (WJFUN210 gold form; constraint 93, CL-0109). The older `memText sassoonIB-text` (bold infant Sassoon) is **legacy** — left alone in an existing module, never emitted in a new build.
 - Image cards: `<img class="img-fluid" src="…" alt="…" />` inside `.cardHidden` — **no `loading="lazy"`** (constraint 83). The card faces are hidden until the student turns them, so the browser never judges them "near the viewport"; a lazily-deferred face turns up blank on the first reveal and the flip animation measures the wrong size.
 
 **Card structure:** every `.memCard` has exactly two children — `<div class="cardFace"><h3>?</h3></div>` (the face-down "?" the student sees first) and `<div class="cardHidden">…</div>` (revealed on click).
 
 **Reset:** a `<div class="clearDiv"></div>` separator followed by a bare `<div class="activityButton memGameReset">Reset</div>` — both placed directly inside the `.memoryGame` container (NOT wrapped in a `<div class="row">`).
 
-> **Inline-style boundary note (constraint #2).** Production module files have historically also carried an inline `style="font-family: SassoonInfantStd, Sassoon, sans-serif; font-size: 22px; font-weight: bold; line-height: 1.2;"` on every `memText` text card. The `memText sassoonIB-text` **class** is the supported, constraint-#2-compliant styling hook and is what this project emits. The inline font block is a known boundary item: do NOT auto-emit it — constraint #2 forbids invented inline CSS. If a specific module requires it, treat it as an explicit per-module / one-off designer instruction (see `08` → One-Off Module Overrides); it is not a standing rule.
+> **Inline-style boundary note (constraint #2).** Production module files have historically also carried an inline `style="font-family: SassoonInfantStd, Sassoon, sans-serif; font-size: 22px; font-weight: bold; line-height: 1.2;"` on every `memText` text card. The `memText writeFont` **class** is the supported, constraint-#2-compliant styling hook and is what this project emits (the legacy `sassoonIB-text` class played the same role before CL-0109). The inline font block is a known boundary item: do NOT auto-emit it — constraint #2 forbids invented inline CSS. If a specific module requires it, treat it as an explicit per-module / one-off designer instruction (see `08` → One-Off Module Overrides); it is not a standing rule.
 
 ---
 
@@ -159,7 +159,7 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 **Attributes:**
 - `accents`: samoan, maori, french, german, spanish (leave empty if not needed)
 - `crosswordData`: Data file name
-- Optional classes: `jpnFont`, `chiFont`, `sassoon-text`, `sassoonI-text`, `secondary`, `tertiary`, `echSize`, `prmSize`
+- Optional classes: `jpnFont`, `chiFont`, `writeFont`, `secondary`, `tertiary`, `echSize`, `prmSize` (the legacy `sassoon-text` / `sassoonI-text` are read-only — left alone in an existing module, never emitted; the design team's own crossword now carries `class="crossword row writeFont"`)
 
 **Script path:** component scripts are referenced same-level (`js/…`), matching how the module's own `idoc_scripts.js` is referenced — never the parent-relative `../js/…` form. (HPRE203 finalized report, Difference 3, 29 July 2026.)
 
@@ -177,7 +177,7 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 
 **Attributes:**
 - `wordFindData`: Data file name
-- Optional classes: `jpnFont`, `chiFont`, `sassoonI-text`
+- Optional classes: `jpnFont`, `chiFont`, `writeFont` (the legacy `sassoonI-text` is read-only — left alone in an existing module, never emitted)
 
 ---
 

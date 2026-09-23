@@ -1,5 +1,5 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
-> **Granular part G (14 of 14) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
+> **Last updated:** Wednesday, 23rd September, 2026 11:40 AM
+> **Granular part G (15 of 15) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -153,3 +153,73 @@ Append new entries below this line, in CL order, newest last, using the format a
 - **Supersedes:** — (extends the pre-ledger duplicate-heading rule by adding a prior step; that rule's own behaviour is unchanged)
 - **KB rule:** `01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md` → Headings → label-prefix strip; `00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md` constraint 1; `02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md` → Headings & Titles
 - **PageForge status:** Not yet amalgamated
+
+### CL-0109 — The writing font is `writeFont`; sassoon classes are legacy (never emitted, never removed)
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (c) Universal
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A; design-team Teams thread 2–4 September 2026; `writeFont.html`
+- **Writer input (what triggers it):** any place a writing / handwriting font is called for — a BLL / phase-1 interactive or text the ākonga reads or writes, a letter grid, a memory-game text card, a typing quiz — and the new writer tag `[writing font]` (aliases `handwriting font`, `write font`).
+- **Required output:** class `writeFont` on the element holding the text (`<p class="memText writeFont">`, `<td class="writeFont">`, `class="crossword row writeFont"`); `writeFontGuide` / `writeFontCursive` / `writeFontCursiveGuide` / `writeFontLinked` / `writeFontLinkedGuide` only where the Writers Template names them. `sassoon-text` / `sassoonI-text` / `sassoonIB-text` are never emitted in a new build and never stripped from an existing one.
+- **Supersedes:** the sassoon guidance of CL-0021 (BLL writing font) and the pre-ledger `05A` / `03E` / `03D` examples
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md` → Writing Font; `00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md` constraint 93; `01D` / `01F` `writing_font`
+- **PageForge status:** Not yet amalgamated
+
+### CL-0110 — Fundamentals: plain intro + content panels numbered from 1
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (a) Template — Fundamentals
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A (answer 2)
+- **Writer input (what triggers it):** a Fundamentals-template module.
+- **Required output:** `<div class="introduction">` (no phase attribute) holding the `row phaseContainer` tile row; content panels `<div class="fundamentalsPanel" phase="1">` … N; tiles `phaseLink phase="1"` …; `noPhase` on `phaseContainer`, or on the body's `fundamentals` class where there is no `phaseContainer`. The older `introduction fundamentalsPanel phase="1"` form only where a same-series sibling uses it. **Never `phase="0"`.**
+- **Supersedes:** — (pre-ledger `06` §3.3 wording, which described the minority HPFUN form)
+- **KB rule:** `06_TEMPLATE_RECOGNITION.md` §3.3
+- **PageForge status:** No change needed — PageForge already emits the plain-intro majority form (claude-audit answer 2, 23 September 2026)
+
+### CL-0111 — HPE: the Health-and-Safety supervisor block, the WATER alert rule, all five characters delivered, the two-bubble rule
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (b) Cohort — HPE content lessons
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A; Global Edits HPE (September 2026); `imageCentral_server_file_list.txt`
+- **Writer input (what triggers it):** `[Supervisor Button RHS activity] [H4] Guidance for supervisors [Body] … [End supervisor button]` on an HPE activity; water-safety content; a character reference; a character conversation longer than two bubbles.
+- **Required output:** the supervisor block as the Shape A (activity-bound) supervisor button, wording verbatim; water-safety content in a visible `alert`, never behind the supervisor button; every character image as a real `imageCentral` reference (`health & PE characters/phase #/HP_<Name>_<pose>_phase_#.png`, head-only under `head_only/`, pairs under `phase 1/combination/` — filenames copied from the server list) with **no** missing-character `Designer/Developer To Do:` note; beyond two bubbles, faces only, and a longer conversation in a carousel.
+- **Supersedes:** CL-0067's availability note (the missing-character To Do)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md` §14.8
+- **PageForge status:** Not yet amalgamated (the SGP 14.8 family is CAPTURED-INERT; its text is refreshed in the same kickoff's Phase 3b)
+
+### CL-0112 — Languages: central language icons, the Samoan phrase images, the Spanish un-numbered family tree
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (b) Cohort — Languages
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A; `languages_html_versions/current.html`; `imageCentral_server_file_list.txt`
+- **Writer input (what triggers it):** `[Audiovisual package Icon <Name>]`; a Samoan phrase-image reference; the Spanish family tree without numbers.
+- **Required output:** `<img class="img-fluid imageCentral" loading="lazy" src="Language icons/Language icons_<Name>.jpg" alt="…" />` (phase-coloured `… P1.jpg`–`P4.jpg` only when named; the server's mixed case verbatim); never `images/Icons/black icons/…` or `images/Icons/phase colour/…`. Samoan: `Samoan character assets/Samoan_<phrase>.jpg` (19 files, `14C` §8). Spanish: `Spanish assets/Spanish_Family tree_no numbers.jpg`. Never the Felix 'Co-pilot test' images.
+- **Supersedes:** CL-0070's icon path (`images/Icons/…`)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14C_LANGUAGES_AV_ASSET_REGISTRY.md` §2, §3, §7, §8; `14A` §14.1
+- **PageForge status:** Not yet amalgamated (inert 14.1 family refreshed in Phase 3b)
+
+### CL-0113 — BLLR bookworms + the bookshelf, MiW kea + the writing process, Pathways personas: deferrals retired
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (b) Module-series — BLLR, MiW, Pathways
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A; `bookshelf.html`, `refresh_pathwaysPersonas.html`, `writingProcess.html`; `imageCentral_server_file_list.txt`
+- **Writer input (what triggers it):** a BLLR bookworm or secret-shelf reference; a MiW kea or writing-process reference; a Pathways `[Persona box]`.
+- **Required output:** real `imageCentral` references with no art To Do note — `bookworms/bookworm_N.jpg`, `kea_characters/kea_N.jpg` (+ `customKea/…`), `pathwaysPersonas/<name>.jpg`; the `bookshelf` markup (`div.bookshelf.row > div.shelf > div.bookCover`, one `bookContent` carousel per cover); `<div class="writingProcess" phase="…">` / `singleStage stage="…"` in its own row; the `pathwaysPersona` markup (`id` = audio filename, empty buttons, inside a row and col, optional `noAudio`). Audio To Do notes stay for bookworm and kea audio; the Whispering Archives red note stays. Kea 5: the server's `Kea_5.jpg` vs the modules' `kea_5.jpg` is unresolved — follow the modules and raise a Red Flag.
+- **Supersedes:** the bookworm and secret-shelf deferrals of CL-0024 (§14.9), the kea-art deferral of CL-0025 (§14.10) and the persona deferral of CL-0016 (§14.2)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14B2_SGP_FAMILIES_BLLR_MIW.md` §14.9, §14.10; `14A` §14.2
+- **PageForge status:** Not yet amalgamated (inert SGP families refreshed in Phase 3b)
+
+### CL-0114 — `[thought bubble]` / `[thinking speech bubble]` builds `speechBubble layout="thought"`
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (c) Universal
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A (answer 7 re-check)
+- **Writer input (what triggers it):** `[thought bubble]`, `[thinking speech bubble]`, `[green thought bubble]` and similar.
+- **Required output:** `<div class="row speechBubble" layout="thought">` with the standard bubble children; no thought-bubble red flag.
+- **Supersedes:** — (the pre-ledger `04C` Writer Tag Variants row that asked for a red flag)
+- **KB rule:** `04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md` → COMP_09 → Writer Tag Variants
+- **PageForge status:** Amalgamated (pre-existing — the `thought bubble` lexicon family already builds `layout="thought"`; verified 23 September 2026)
+
+### CL-0115 — Equations: output is always MathML, whatever the input form
+- **Date:** Wednesday, 23rd September, 2026
+- **Scope:** (c) Universal
+- **Source:** claude-audit decisions (Chris, 23 September 2026) — kickoff Phase 1, brief A (answer 3 — the owed D10-7 edit)
+- **Writer input (what triggers it):** a Word equation (OMML); LaTeX typed as text (`\( … \)`, `\[ … \]`, `\frac`, `$…$`); pasted MathML; a `[Math]` / `[Mathjax]`-tagged plain expression (`[Math] 4/5`).
+- **Required output:** `<math xmlns="http://www.w3.org/1998/Math/MathML">…</math>` (`display="block"` when displayed) and `mathJax` on the `<body>` class; LaTeX optionally kept in an HTML comment beside it; never raw LaTeX or a bare `[Mathjax]` tag as visible text.
+- **Supersedes:** — (the pre-ledger `05A` LaTeX-output example)
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md` → MathJax / Equations
+- **PageForge status:** Partly amalgamated — OMML → MathML is live (`MATHML_OFF`); LaTeX-text and `[Math]`-fraction inputs are a future round

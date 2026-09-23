@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 2:51 PM
+> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
 
 # 06 — Template Recognition & Structural Validation
 
@@ -141,13 +141,15 @@ Container-level elements (rows, lists) are also duplicated with language attribu
 
 **Body class:** `fundamentals container-fluid` (usually with `language="eng" translation="reo"`).
 
-**Navigation:** Phase-based — `div.phases` containing phase tabs, then `div.fundamentalsPanel[phase]` content panels. First panel usually has class `introduction fundamentalsPanel`.
+**Navigation:** Phase-based — `div.phases` containing phase tabs, then `div.fundamentalsPanel[phase]` content panels. **The intro is a plain `<div class="introduction">` (no phase attribute) holding the `row phaseContainer` tile row; the content panels are `<div class="fundamentalsPanel" phase="1">` … N, numbered from 1** (66 of 81 built modules and every 2026 build — the 28 Fundamentals modules of the September 2026 batch all use it; CL-0110). The older `class="introduction fundamentalsPanel" phase="1"` form with content from `phase="2"` (the HPFUN family) is reproduced only where a same-series sibling uses it.
+
+**`noPhase`:** on `phaseContainer` it drops the phase colours from the tile row; where a page has no `phaseContainer`, `noPhase` goes on the body's `fundamentals` class instead (28 built pages; the XFUN01 / FRFUN forms).
 
 **Phase link cards:**
 ```html
 <div class="row phaseContainer">
   <div class="col-md-3 col-6">
-    <div class="phaseLink" phase="2">
+    <div class="phaseLink" phase="1">
       <h3>Phase title</h3>
       <img src="..." alt="..." class="phaseImg">
     </div>

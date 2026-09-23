@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 14th July, 2026 5:39 PM
+> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
 > **Granular part D (4 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_02 quizzes: graded multi-select, radio, typing.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -258,7 +258,7 @@ The student types the missing word(s) into an inline `form-control` input. Every
                 <img class="img-fluid" loading="lazy" src="images/iStock-XXXXXXX.jpg" alt="A car driving across a narrow bridge" />
             </div>
             <div class="col-md-8 col-12 paddingL">
-                <p class="sassoonI-text">The bridge was narrow, <input class="form-control" type="text" answer="so" placeholder="Type here" caseSensitive="false" /> the car moved slowly.</p>
+                <p class="writeFont">The bridge was narrow, <input class="form-control" type="text" answer="so" placeholder="Type here" caseSensitive="false" /> the car moved slowly.</p>
             </div>
         </div>
         <!-- repeat one <div class="row"> per question, all inside typingContainer -->

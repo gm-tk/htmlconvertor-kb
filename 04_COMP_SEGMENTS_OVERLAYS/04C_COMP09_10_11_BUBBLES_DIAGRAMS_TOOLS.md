@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Wednesday, 23rd September, 2026 11:37 AM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -271,7 +271,7 @@ When the character image column is adjacent to the bubble in a horizontal layout
 | `[speech bubble front]` | Same as standard `[speech bubble]` |
 | `[speech bubble tiles]` | Multiple bubbles with `bubble-basic no-hover` in grid |
 | `[speech bubble two people]` | Two characters, alternating bubble-right/bubble-left + `no-hover` on text-only bubbles |
-| `[thinking speech bubble]` | Standard bubble + `no-hover` + **RED FLAG** for thought bubble CSS |
+| `[thought bubble]`, `[thinking speech bubble]` (and colour variants such as `[green thought bubble]`) | **The thought-bubble form (CL-0114):** `<div class="row speechBubble" layout="thought">` with the standard bubble children — the image column(s) and `bubble-basic` bubbles exactly as for a speech bubble; only the `layout` value changes. The corpus norm (gold: ENGR202, TEDC401 / TEDC402, XLP06, ENGI202, OSAI101). The former red flag for thought-bubble CSS is retired — the template supplies it |
  
  
  

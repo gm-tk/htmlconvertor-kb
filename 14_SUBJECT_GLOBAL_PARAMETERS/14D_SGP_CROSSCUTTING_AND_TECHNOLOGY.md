@@ -1,5 +1,5 @@
-> **Last updated:** Thursday, 13th August, 2026
-> **Granular part D (4 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Cross-cutting notes (14.11) and the Technology family (14.12). Split from `14B` on 13 August 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
+> **Last updated:** Wednesday, 23rd September, 2026 2:23 PM
+> **Granular part D (5 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Cross-cutting notes (14.11) and the Technology family (14.12). Split from `14B` on 13 August 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

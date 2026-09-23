@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Tuesday, 22nd September, 2026 9:50 PM
+> **Last updated:** Wednesday, 23rd September, 2026 11:40 AM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -9,7 +9,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 00_MASTER_INSTRUCTIONS
 - **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (9 KB) — Role, philosophy, timestamps, input files (operating modes moved to `00A2` on 16 September 2026 at the 30 KB soft limit)
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · INPUT FILES
-- **`00_MASTER_INSTRUCTIONS/00A2_OPERATING_MODES.md`** (25 KB) — Operating modes (Modes 1–9, incl. **Mode 9 — Assessment**) and mode triage. Split from `00A` on 16 September 2026
+- **`00_MASTER_INSTRUCTIONS/00A2_OPERATING_MODES.md`** (26 KB) — Operating modes (Modes 1–9, incl. **Mode 9 — Assessment**) and mode triage. Split from `00A` on 16 September 2026
   - Sections: OPERATING MODES · Mode 1 — Conversion · Mode 2 — Advisory & Support · Mode 3 — Comparison · Mode 4 — Update · Mode 5 — Split · Mode 6 — Interactives Build · Mode 7 — PageForge Compare · Mode 8 — Admin · Mode 9 — Assessment · Mode triage
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (19 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
@@ -23,7 +23,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: WHEN TO LOAD WHICH FILES
 - **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (24 KB) — Constraints quick reference, part 3 of 4 — **constraints 75–85** (latest: 85, a three-part `[TITLE BAR]` builds three `<h1><span>` titles in the Languages cohort only; **84 amended 13 Sept 2026** — the *Responding to Suspected Use* AI Guidelines PDF renamed, CL-0094). **CLOSED** at 85 on 28 August 2026 — appending constraints 86-88 would have taken it past the 30 KB soft limit, so they were written into the new `00H` instead and nothing was moved out of this part
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
-- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (18 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up; 92 `jp-text` / `ch-text` / `pinyin` mandatory on every occurrence, with the te reo macron boundary). **THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (19 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up; 92 `jp-text` / `ch-text` / `pinyin` mandatory on every occurrence, with the te reo macron boundary; 93 the writing font is `writeFont`, sassoon classes legacy). **THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00G` — no headings of its own). Opened 28 August 2026 when `00G` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -61,7 +61,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: COMP_02 — Quizzes · Dropdown Quiz · Multiple Choice Quiz (MCQ) · Multi Choice Quiz — Survey/Self-Assessment Variant (multiChoiceQuiz)
 - **`03_COMP_CORE_INTERACTIVES/03D_COMP02_QUIZZES_2.md`** (15 KB) — COMP_02 quizzes: graded multi-select, radio, typing
   - Sections: Multi Choice Quiz — Graded Multi-Select Variant (multiChoiceQuiz mcqSomeSelected) · Radio Quiz · Typing Quiz
-- **`03_COMP_CORE_INTERACTIVES/03E_COMP03_04_SELFCHECK_GAMES.md`** (9 KB) — COMP_03 self check & reflection; COMP_04 games & word components
+- **`03_COMP_CORE_INTERACTIVES/03E_COMP03_04_SELFCHECK_GAMES.md`** (10 KB) — COMP_03 self check & reflection; COMP_04 games & word components
   - Sections: COMP_03 — Self Check & Reflection · Self Check · Self Reflection · Reflection Slider · COMP_04 — Games & Word Components · Memory Game · Puzzle · Crossword · Word Find · Bingo · Word Drag
 - **`03_COMP_CORE_INTERACTIVES/03F_COMP05_06_ORDERING_SLIDERS.md`** (11 KB) — COMP_05 ordering & selecting; COMP_06 sliders
   - Sections: COMP_05 — Ordering & Selecting · Reorder · Clicking Order · Word Select · Checklist / Selection Box · COMP_06 — Sliders · Slider (Scale/Survey) · Slider Chart
@@ -71,12 +71,12 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: COMP_07 — Content Segmentation · Accordion · Carousel · Rotating Banner · Click Drop · Flip Card · Tabs · Hint · Hint Slider · Modal
 - **`04_COMP_SEGMENTS_OVERLAYS/04B_COMP08_TRIGGERS_OVERLAYS.md`** (15 KB) — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter)
   - Sections: COMP_08 — Triggers & Overlays · Info Trigger / Hover Trigger · Info Trigger Image · Audio Trigger · Audio Image · Image Label · Image Zoom · Word Highlighter
-- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (19 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
+- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (20 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
   - Sections: COMP_09 — Speech Bubbles · Basic Conversation Layout · No-Hover Rule · imageCentral Rule · Bubble Direction Classes · Colour Modifier Classes · Other Modifier Classes · With Audio · Height Equalisation · Single Character Speech Bubble · Writer Tag Variants · COMP_10 — Diagrams & Timelines · Shape Hover · Timeline · …
 
 ## 05_COMP_LANGUAGE_MEDIA_LAYOUT
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (20 KB) — COMP_12 language & specialist (incl. **Language Fonts** — `jp-text` / `ch-text` / `pinyin` **mandatory on every occurrence**, the four markup carriers, the te reo macron boundary and the shared-Han Japanese-vs-Chinese resolution rule; constraint 92); COMP_13 media & embeds (incl. **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags, their tag→filename registry — *Responding to Suspected Use* **renamed 13 Sept 2026, CL-0094** — and the `embedPDF`/`centralFile` block; constraint 84)
-  - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF (generic — scoped to non-AI-Guidelines PDFs) · AI Guidelines PDFs (the eight teacher tags) · Embed Padlet · Embed Desmos Graph
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (23 KB) — COMP_12 language & specialist (incl. **Writing Font** — `writeFont` Playwrite NZ default, six classes, sassoon legacy, constraint 93; **Equations** — output always MathML, every input form converted; **Language Fonts** — `jp-text` / `ch-text` / `pinyin` **mandatory on every occurrence**, the four markup carriers, the te reo macron boundary and the shared-Han Japanese-vs-Chinese resolution rule; constraint 92); COMP_13 media & embeds (incl. **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags, their tag→filename registry — *Responding to Suspected Use* **renamed 13 Sept 2026, CL-0094** — and the `embedPDF`/`centralFile` block; constraint 84)
+  - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Writing Font — `writeFont` (Playwrite NZ) · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF (generic — scoped to non-AI-Guidelines PDFs) · AI Guidelines PDFs (the eight teacher tags) · Embed Padlet · Embed Desmos Graph
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (11 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
   - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (19 KB) — COMP_14 acknowledgements
@@ -139,15 +139,17 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 history rows CL-0085 to CL-0092
 - **`12_CHANGE_LEDGER/12E6_CHANGE_HISTORY_CL0093_0097.md`** (24 KB) — PART 3 change history: CL-0093 to CL-0097 (continued) — CLOSED at CL-0097 (20 September 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0093 to CL-0097
-- **`12_CHANGE_LEDGER/12E7_CHANGE_HISTORY_CL0098_0103.md`** (27 KB) — PART 3 change history: CL-0098 to CL-0103 (continued) — CLOSED at CL-0103 (22 September 2026, 30 KB soft limit)
+- **`12_CHANGE_LEDGER/12E7_CHANGE_HISTORY_CL0098_0103.md`** (28 KB) — PART 3 change history: CL-0098 to CL-0103 (continued) — CLOSED at CL-0103 (22 September 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0098 to CL-0103
-- **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_ONWARD.md`** (21 KB) — PART 3 change history: CL-0104 onward (continued) — **THE OPEN PART: append new CL entries here**
-  - Sections: PART 3 history rows CL-0104 onward
+- **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_0111.md`** (27 KB) — PART 3 change history: CL-0104 to CL-0111 (continued) — CLOSED at CL-0111 (23 September 2026, 30 KB soft limit)
+  - Sections: PART 3 history rows CL-0104 to CL-0111
+- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0112_ONWARD.md`** (8 KB) — PART 3 change history: CL-0112 onward (continued) — **THE OPEN PART: append new CL entries here**
+  - Sections: PART 3 history rows CL-0112 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (15 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
 - **`12_CHANGE_LEDGER/12F_LEDGER_LOGS_AND_NOTES.md`** (2 KB) — Blocked-request log, housekeeping, notes
   - Sections: BLOCKED-REQUEST LOG (audit) · HOUSEKEEPING (optional — nothing here is a recurring task) · NOTES
-- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (18 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
+- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (27 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
   - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG
 
 ## 13_SPLIT_MODE
@@ -155,11 +157,13 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 13 — Split Mode (Mode 5) · PURPOSE — what Split Mode is, and the problem it solves · 1. SPLIT MODE ≠ THE PAGE BOUNDARY SYSTEM (read first) · 2. PROACTIVE SINGLE-PAGE IDENTIFICATION + OFFERING SPLIT MODE · 3. TRIGGER, TRIAGE & APPLICABILITY · 4. OUTPUT #1 — THE BASE HOMEPAGE (`<CODE>-base.html`) · 5. OUTPUT #2 — ONE SECTION FILE PER SLOT (`<CODE>-lesson-<id>.html`) · 5A. EMISSION CADENCE — ONE FILE PER RESPONSE · 5B. MANUAL-STITCH GUIDANCE BLOCKS (`PAGEFORGE-GUIDE`) · 6. ID AND FILENAME CONVENTIONS · 7. KEYWORD / MARKER REFERENCE (reproduce these EXACTLY) · 8. THE ROUND-TRIP GUARANTEE (why the exactness matters) · 9. HOW PAGEFORGE'S PAGE STITCHER CONSUMES THE OUTPUT (so the split is valid) · 10. VALIDATION AND FAILURE HANDLING THE CONVERTER MUST HONOUR · …
 
 ## 14_SUBJECT_GLOBAL_PARAMETERS
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (23 KB) — Purpose + families 14.1-14.5 (Languages — finalised Audiovisual Package rules, registry data in `14C` —, Pathways, Taonga, CED — incl. the AI Guidelines carve-out on the §14.4 PDF deferral —, FUNdamentals)
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md`** (24 KB) — Purpose + families 14.1-14.5 (Languages — finalised Audiovisual Package rules, registry data in `14C` —, Pathways — the `pathwaysPersona` component, personas DELIVERED —, Taonga, CED — incl. the AI Guidelines carve-out on the §14.4 PDF deferral —, FUNdamentals)
   - Sections: 14 — Subject Global Parameters · PURPOSE · 14.1 Languages Phase 1–4 · 14.2 Pathways · 14.3 Taonga (The Arts) · 14.4 ConnectED (CED) Phase 5 · 14.5 FUNdamentals (Health & PE, Y1–10)
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (28 KB) — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ)
-  - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons (celebration .gif DELIVERED — deferral retired) · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14C_LANGUAGES_AV_ASSET_REGISTRY.md`** (14 KB) — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (CL-0070) — the supplied HTML no longer needs to be consulted
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14B_SGP_FAMILIES_6_11.md`** (24 KB) — Families 14.6-14.8 (LS, BLL — writing font `writeFont` —, HPE — Health-and-Safety supervisor block + WATER alert rule, all five characters DELIVERED, two-bubble / carousel rule). 14.9-14.10 moved to `14B2` on 23 September 2026
+  - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons (celebration .gif DELIVERED — deferral retired)
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14B2_SGP_FAMILIES_BLLR_MIW.md`** (10 KB) — Families 14.9 BLLR (bookworm art DELIVERED, the `bookshelf` secret-shelf component, Whispering Archives still pending) and 14.10 MiW/WJ (kea art DELIVERED — the `Kea_5.jpg` casing mismatch recorded —, the `writingProcess` component). Split from `14B` on 23 September 2026 (30 KB soft limit)
+  - Sections: 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14C_LANGUAGES_AV_ASSET_REGISTRY.md`** (17 KB) — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (CL-0070) — the supplied HTML no longer needs to be consulted; refreshed to the September 2026 package (CL-0112: central `Language icons/` with P1–P4 variants, 19 Samoan phrase images, the Spanish un-numbered family tree)
   - Sections: 14C — Languages Audiovisual Package: the complete asset registry · 1. Delivery forms (the supplied markup shapes) · 2. Language icons · 3. German · 4. French · 5. Chinese · 6. Japanese · 7. Spanish · 8. Samoan · 9. Acknowledgements for the iStock-derived registry assets
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** (6 KB) — Cross-cutting notes (14.11) and the Technology family (14.12 — five `Technology/strand/active-*.svg` strand icons copied verbatim including their supplied spelling, the DELIVERED shared `congradulations/` celebration gif whose misspelling is a recorded design decision and is never corrected, suggested `col-8` text / `col-4` gif layout)
   - Sections: 14.11 Cross-cutting notes · 14.12 Technology — strand icons + the celebration gif

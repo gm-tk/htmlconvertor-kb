@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 28th August, 2026 2:51 PM
-> **Granular part B (2 of 4) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.10 (LS, BLL, HPE, BLLR, MiW/WJ). Cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
+> **Last updated:** Wednesday, 23rd September, 2026 11:36 AM
+> **Granular part B (2 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.8 (LS, BLL, HPE). BLLR (14.9) and MiW/WJ (14.10) live in `14B2`; cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -52,7 +52,7 @@
 **Scope — (b) Module-series:** **BLL** modules.
 
 - **Template level — split by sub-series (CL-0035, 14 July 2026).** **BLL2xx modules — any code beginning with the literal prefix `BLL2` (BLL253, BLL261, BLL262, BLL263, BLL266, …) — are phase 1 → `template="1-3"`**, a standing designer-directed exception that supersedes the 13 July BLL262-report value of `"4-6"` (CL-0031, now `Reverted`). **All other BLL codes default to Years 4–6 → `template="4-6"`.** **Contrast: BLLR2xx modules are phase 2 → `template="4-6"`** — a `BLLR…` code never matches the `BLL2` prefix (fourth character `R`, not `2`), so the phase-1 exception never applies to BLLR (§14.9). Derive the value from this code→phase mapping; **never mirror `template=` from sibling files** (constraint 21), even where the sibling's value happens to coincide. Full rule: `06_TEMPLATE_RECOGNITION.md` §5 (Detection → Template level).
-- **Sassoon "writing font."** Any interactive or text the ākonga must read or interact with uses a **writing font** — use **`refresh_sassoon_font.html`**. Ensure specifically: **`a`** is a single-storey a, **`I`** (capital i) reads as a capital I, **`g`** is a single-storey g. (These ākonga are just learning to read and write, so the letters they read must match the letters they write — `l` and `I` are confusing when identical.)
+- **Writing font.** Any text the ākonga must read or interact with uses **`writeFont`** (`writeFont.html`, Playwrite NZ Basic — `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Writing Font; constraint 93; CL-0109). The sassoon classes of the earlier `refresh_sassoon_font.html` are legacy — never emitted in a new build. The letterform check still applies: **`a`** is a single-storey a, **`I`** (capital i) reads as a capital I, **`g`** is a single-storey g. (These ākonga are just learning to read and write, so the letters they read must match the letters they write — `l` and `I` are confusing when identical.)
 - **Page-1 animated-person intro.** The **1st page** of each module has an **animated person** introducing what is in the module; the "person" is **different for each set**. Emit the video scaffold with a visible `Designer/Developer To Do:` note (supplied):
   ```html
   <p style="color: red; font-weight: bold;">Designer/Developer To Do: Audiovisual item to be added by designer/developer</p>
@@ -93,6 +93,10 @@
 - **Sticky / floating nav — Fundamentals + Help page only.** Add `<script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>` to the `<head>`, with the sticky nav offering **Fundamentals and the Help page**. At the top of the 0.0 content emit a visible `Designer/Developer To Do:` note: *set up the `stickyNav.js` file.*
 - **Dropboxes — up to 3, suggest 2.** Up to three dropboxes are allowed; **two is suggested — one Checkpoint and one end-of-module.** Additional activities can be linked to the **checkpoint** dropbox so kaiako know the ākonga is still working through the module.
 - **Quiz rules.** `[MTKquiz]` **does not trigger engagement.** `[Multichoice]` is **autograded**; `[Written Response]` is **teacher-marked** (*What do you think about…?*) and lets learners insert images and add attachments. **Max one quiz per every 2–3 lessons.** **Output shape (universal — constraint 65):** an `[MTKquiz]` builds its own numbered activity box holding only these in order — quiz-title `<h3>`, the writer's quiz instructions where supplied, a `Designer/Developer To Do:` note (create the quiz in MTK DEV + orgunit link it), and a blank-href **"Go to quiz"** button — never a dropbox button, and **never the quiz's own questions or answers**; see `05` → Buttons → MTK Quiz.
+- **Health and Safety — the supervisor guidance block (CL-0111).** Where an activity carries a health-and-safety consideration, the writer supplies a supervisor block (Global Edits HPE, September 2026):
+  `[Supervisor Button RHS activity] [H4] Guidance for supervisors [Body] This activity… (state the risk / what they are asked to do) As a supervisor, you can: • support your ākonga to choose an option that aligns with their values, beliefs, and level of comfort • guide learning in a way that reflects your context • select resources or approaches that feel age-appropriate and respectful. Some ākonga may prefer: • general or science-based learning • discussion with a trusted adult • private or reflective approaches. You are encouraged to work alongside your ākonga … [End supervisor button]`
+  It renders with the **supervisor-button component, Shape A (activity-bound)** — `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Supervisor Button (constraint 68): `<h4>Guidance for supervisors</h4>`, the body paragraphs, and each `•` run as a `<ul>` list. The writer's wording is copied verbatim; nothing is added to it.
+  - **WATER — health-and-safety content is forefronted in an alert box, never in a supervisor note.** Safety content about water goes in a visible `alert` in the lesson body, not behind the supervisor button.
 - **Checkpoint (midway).** `[ActivityDropbox] [H3] [Body]` — midway through the module, for ākonga to upload their learning journal. Phase-specific wording (supplied):
   - **Phase 1 — Checkpoint:** *It's time to show your kaiako what you've been working on! Upload your work to the dropbox so they can see how you're going. They will tell you what you're doing well and give you some ideas to help you with your next steps. If you have any questions or want to say something about your learning, you can write a message in the comment box.*
   - **Phase 2 — Checkpoint:** *Please upload the work you've done so far to the dropbox. This helps your kaiako see how you're going in this module. They'll give you feedback on what you're doing well and share some next steps to help you keep improving. If you have any questions or thoughts about your learning, you can message your kaiako in the comment box.*
@@ -113,7 +117,7 @@
 - **"Working toward" dropbox.** A working-toward dropbox uses the **same link as the checkpoint dropbox** unless otherwise stated.
 - **Characters (CL-0067).** Characters appear in a `[Speech bubble]` with an `[imageCentral]` image. Character set: **Sura, Afi, Alex, Kai, Leila.**
   - **Folder + filename conventions.** Full-body (pose 1): `health & PE characters/phase #/HP_{Name}_1_phase_#.png`. Head-only (pose 3): `health & PE characters/phase #/head_only/HP_{Name}_3_phase_#.png`. **The folder's phase number and the filename's phase number always match.** All character images carry `class="img-fluid imageCentral"` and `alt=""`. (This corrects the previous `health and PE characters/` folder spelling — the ampersand form is canonical.)
-  - **Availability.** **Sura**, **Alex**, and **Kai** — **Kai and Alex are in use** (observed throughout the designer-refined HPRE301 files, 29 July 2026). If a required character is **not yet available**, emit a visible `Designer/Developer To Do:` note in its place. **Developers do not sign off 2nd proof until the missing characters have been created and added.** (Writers have offered to help CS generate characters via a supplied PowerPoint asset.)
+  - **Availability — all five characters are DELIVERED for phases 1–4 (CL-0111; server list, September 2026).** Full body, poses 1 and 2, for every character in every phase: `health & PE characters/phase #/HP_{Sura|Afi|Alex|Kai|Leila}_{1|2}_phase_#.png`. Head-only: `health & PE characters/phase #/head_only/HP_{Name}_3_phase_#.png` (pose 3) and, for most characters, pose 4 (`HP_{Name}_4_phase_#.png`) — **the head-only set is not uniform, so copy the exact filename from the server list, never construct it**: phase 4 Sura has pose 4 only (`head_only/HP_Sura_4_phase_4.png`), and phase 3 also holds `HP_Afi_3_phase_3.png` in the full-body folder. Pairs: `health & PE characters/phase 1/combination/Kai and Afi phase 1.png` and `health & PE characters/phase 1/combination/Sura and Leila phase 1.png` (phase 1 only on the server today). **The missing-character `Designer/Developer To Do:` note is RETIRED** — every character is available, so the former "developers do not sign off 2nd proof until the missing characters are added" hold no longer applies.
   - **Two-character lesson-intro/outro strip (canonical HPE pattern).** Bubble order follows speaker order (the `secondary-light bubble-left` bubble may come first). This full-body strip DOES follow the universal padding rule (left image `paddingR`, right image `paddingL` — CL-0055 / constraint 29):
     ```html
     <div class="row speechBubble" layout="speech">
@@ -145,72 +149,10 @@
     ```
     Speaker-on-right rows reverse the column order, and the image column **STILL takes `paddingR`** — a **deliberate HPE exception** to CL-0055's universal right-positioned → `paddingL` rule, **scoped to HPE head-only dialogue strips only**.
   - **Bubble colour classes in use:** `primary-light` and `secondary-light` — existing template classes observed in the designer's files (also recorded in `04_COMP_SEGMENTS_OVERLAYS.md` → COMP_09 → Colour Modifier Classes as observed values; nothing is invented beyond these).
+  - **Beyond two speech bubbles: faces only (CL-0111).** A strip carries at most two speech bubbles; beyond that the characters are shown as faces only (the head-only images), and **a conversation longer than two bubbles goes into a slideshow (carousel)** — `04_COMP_SEGMENTS_OVERLAYS.md` → COMP_07 → Carousel.
   - **Speaker comments are NOT codified.** The `<!-- Alex -->` / `<!-- Kai -->` speaker comments seen in the designer's files are production annotations — the comments policy is unchanged and the Convertor never emits them.
 - **Button label: "Upload to Dropbox"** (see §14.11).
 
 ---
 
-## 14.9 BLLR — Blended Literacy (Reading)
-**Scope — (b) Module-series:** **BLLR** modules. Source: Persephone Samuels → Gavin McGruddy, *"BLLR Global Parameters"*, 9 July 2026.
-
-> **BLLR is a distinct prefix from BLL.** The BLL conventions of §14.7 (Sassoon font, elkonin boxes, `.dropbox` carve-out, etc.) are scoped to the **BLL** series and do **not** automatically bind BLLR. Where a BLLR module needs a BLL convention, it must be recorded here explicitly or raised as a `Red Flag:`.
-
-> **Parameters incomplete.** The source email states *"Most of the parameters still to come."* Treat this section as **current-but-partial**: prefer a built BLLR sibling (Mode B) where one exists, and raise a `Red Flag:` for any BLLR convention this section does not yet cover rather than inferring one from §14.7.
-
-- **Template level = phase 2 → `template="4-6"`.** BLLR2xx modules are **phase 2** and ship `template="4-6"` on every page (designer-confirmed 14 July 2026, CL-0035). The **BLL2xx phase-1 exception (§14.7) never applies here** — a `BLLR…` code does not match the literal `BLL2` prefix (its fourth character is `R`, not `2`). Consistent with the bookworm ranges below (BLLR201–230 → Year suites 4–6). See `06_TEMPLATE_RECOGNITION.md` §5 (Detection → Template level).
-- **Bookworm avatar (second avatar).** A cartoon bookworm — plump, brimming with energy and enthusiasm — per the explanation/example in the AVR form. The image varies by **module-code range**, one bookworm per year suite:
-
-  | Image | Module-code range | Year suite |
-  |---|---|---|
-  | `bookworm_1.jpg` | BLLR201 – BLLR210 | Year 4 |
-  | `bookworm_2.jpg` | BLLR211 – BLLR220 | Year 5 |
-  | `bookworm_3.jpg` | BLLR221 – BLLR230 | Year 6 |
-
-  Folder: `bookworms/`. Supplied markup (select the image for the module's code range):
-  ```html
-  <img class="img-fluid imageCentral" loading="lazy" src="bookworms/bookworm_1.jpg" alt="Bookworm" >
-  ```
-  > The source email writes the first filename capitalised (`Bookworm_1.jpg`) and the other two lower-case (`bookworm_2.jpg`, `bookworm_3.jpg`), while its supplied `<img>` tag uses the lower-case `bookworms/bookworm_1.jpg`. Follow the **supplied `<img>` tag** — lower-case `bookworm_N.jpg` — and emit a `Designer/Developer To Do:` note asking the developer to confirm the exact filename casing when the assets are delivered.
-
-- **Bookworm art + audio are DEFERRED.** The worm characters are **still under development**, and the **audio with audiovisual is yet to be developed**. Emit the `<img>` scaffold above with a visible `Designer/Developer To Do:` note — *bookworm character art still under development; audio/audiovisual to be developed* — never a placeholder silently swapped in and never a hidden comment.
-
-- **"Secret shelf" and "Whispering Archives" map — design under construction.** Both features are **explicitly required to carry a red note**. Emit each in place with a visible note:
-  ```html
-  <p style="color: red; font-weight: bold;">Designer/Developer To Do: Design is under construction with the development team.</p>
-  ```
-  This is a **direct instruction from the design authority**, not a Convertor-detected gap — it takes the `Designer/Developer To Do:` prefix (right-but-pending), not `Red Flag:`.
-
----
-
-## 14.10 MiW — My Te Kura Writing
-**Scope — Cohort:** all **MiW (Writing)** FUNdamentals and modules. **Module codes always begin `WJ`.** Source: *"Writing – Global Parameters"* (FUNdamentals and Modules).
-
-- **FUN vs module — trailing-digit test.** Within the `WJ` prefix, a **FUNdamentals templated resource ends in `0`** (e.g. `WJ200`, `WJ210`); a **normal module ends in a non-zero digit** (e.g. `WJ201`, `WJ218`). This is a **naming test only** — structural sub-type recognition (body class `fundamentals container-fluid`, `div.phases` → `div.fundamentalsPanel`, `footer-nav fundamentals-nav`) still comes from `06_TEMPLATE_RECOGNITION.md` §3.3, and Mode B sibling authority still wins where they disagree.
-
-- **NZ map on every intro page.** Each intro page of the FUNs **and** the modules carries an image of **New Zealand on the right-hand side**, with a **star and road sign placed at the town being learned about**. Supplied markup (the label `<p>` carries the placename; `top`/`left`/`pointTop`/`pointLeft` are positioned per town):
-  ```html
-  <div class="imageLabel" layout="map">
-    <img class="img-fluid imageCentral imgLabel" src="New Zealand/iStock-1454804075.png" alt="New zealand map">
-    <div class="label" direction="horizontal" top="20%" left="20%" pointTop="50%" pointLeft="50%"><p>Placename</p></div>
-  </div>
-  ```
-  Supplied acknowledgement entry for the map image:
-  ```html
-  <p>Photo: New Zealand Topographic Relief Map - 3D Render, iStock 1454804075, Getty Images. Used with permission.</p>
-  ```
-  > The per-town `top` / `left` / `pointTop` / `pointLeft` percentages and the placename are **content-specific** — the supplied values are the reference example, not a default. Where the town's coordinates are not given in the source, emit the pattern with the supplied values and a `Designer/Developer To Do:` note to position the star/road sign for the named town.
-
-- **FUN layout: intro page + clickable lesson tiles, any order.** The FUNs are set out like other FUNs — an **introduction page**, then **images to click** taking the ākonga to specific lessons. **Lessons can be done in any order.** Tile images must be **consistent across each phase** for each FUN topic (Number Sense / Place Value / Operations / Fractions in the supplied example), and **all tiles in a FUN should be the same phase.**
-
-- **Side-navigation tabs inside each lesson.** Each lesson carries **side-nav tabs** so ākonga can work through it as they please — the same pattern as the **Maths 1-10 FUNS**.
-
-- **Kea character, varying by phase.** A character **Kea** features **within each lesson**. The character **varies slightly from phase to phase** (e.g. different medallion placement / wing colours). Folder `kea_characters/`; one image per phase — `kea_1.jpg`, `kea_2.jpg`, `kea_3.jpg`. Supplied markup:
-  ```html
-  <img class="img-fluid imageCentral" loading="lazy" src="kea_characters/kea_1.jpg" alt="Kea character" >
-  ```
-- **Kea speech bubble + audio.** When the Kea appears in a module he **also has a speech bubble and audio** (speech-bubble mechanics stay in `04_COMP_SEGMENTS_OVERLAYS.md`).
-- **Kea art + audio are DEFERRED.** The **Kea characters are still under development, as well as the audio.** Emit the `<img>` scaffold and the speech bubble/audio slot with a visible `Designer/Developer To Do:` note — *Kea character art and audio still under development.*
-
----
-
-> **Sections 14.11 and 14.12 continue in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** — the cross-cutting notes and the Technology family. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), this part (14.6-14.10) and `14D` (14.11-14.12).
+> **Sections 14.9 and 14.10 continue in `14B2_SGP_FAMILIES_BLLR_MIW.md`** (split from this part on 23 September 2026 when it passed the 30 KB soft limit, `CLAUDE.md` §4; content moved verbatim), and 14.11-14.12 in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), this part (14.6-14.8), `14B2` (14.9-14.10) and `14D` (14.11-14.12).

@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 2:53 PM
+> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
 > **Granular part C (3 of 4) of `07_MTK_DOCX_CONVERSION.md`** — MTK: header, footer, acks, word/image, Kiwi Kaiarahi, checklist, pitfalls (SS12-18).
 > All sibling parts live in `07_MTK_DOCX_CONVERSION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -221,7 +221,7 @@ Final verification:
 
 3. **Forgetting the Māori-first order** — In the `.docx`, English is column 1. But in the HTML output, Māori content (`reo`) typically appears FIRST in the source order (the template CSS handles display based on language toggle).
 
-4. **Applying `sassoonI-text` universally** — The `sassoonI-text` class is specific to the letter "I" modules. Other letter modules may use `sassoon-text` (general) or no special font class at all (e.g., TRR107, TRR108 consonants modules).
+4. **Applying `sassoonI-text` universally** — The `sassoonI-text` class is specific to the letter "I" modules. Other letter modules may use `sassoon-text` (general) or no special font class at all (e.g., TRR107, TRR108 consonants modules). **For a NEW build the class is `writeFont`** (constraint 93, CL-0109); `sassoonI-text` / `sassoon-text` are read-only legacy — recognised in existing modules, never emitted.
 
 5. **Carrying over stale module codes** — When building from skeletons or copy-pasting, ensure ALL `<title>`, `<h1>`, and `#module-code` elements are updated to the new module's values. TRR108's finalized HTML had stale `TRR102` references in `<title>` elements — this is a known human error to avoid.
 

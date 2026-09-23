@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
 > **Granular part F (6 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation, second half: content styling, activities, links & buttons, interactive components. Opened 14 September 2026 when `01E` passed the 30 KB soft limit; the content below was **moved verbatim** from `01E_TAG_INTERPRETATION.md` (`CLAUDE.md` §4) — nothing reworded, nothing re-ordered.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -16,6 +16,7 @@
 | `quote` | `<p class="quoteText">"Quote"</p><p class="quoteAck">Attribution</p>` |
 | `rhetorical_question` | `<div class="rhetoricalQuestion"><p>Question text</p></div>` |
 | `reo_translate` | Body class `reoTranslate` + `language`/`translation` attributes. See COMP_12 in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` |
+| `writing_font` | Add class `writeFont` to the tagged element — a `<p>`, a `<span>`, or the interactive's own text element (`<p class="writeFont">…</p>`). A different Playwrite class only where the tag names it (cursive / linked / guide). See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Writing Font; constraint 93 (CL-0109) |
 
 ---
 
