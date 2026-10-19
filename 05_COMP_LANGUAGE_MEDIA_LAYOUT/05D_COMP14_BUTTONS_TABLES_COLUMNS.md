@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part D (4 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, second half: Buttons, Supervisor Button, Tables, Columns & Floating Columns, Quote Text, Whakatauki, Rhetorical Question. Split from `05B` on 13 August 2026 as it approached the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *This part continues COMP_14 from `05B` (Activities, Alerts) — COMP_14 is ONE section split across the two.*
@@ -34,7 +34,7 @@
 <td><a href="https://report.netsafe.org.nz/hc/en-au/requests/new" target="_blank">Netsafe report form</a></td>
 ```
 
-**The test:** would removing the link leave a grammatically incomplete sentence? If yes, it is inline (anchor). If the link occupies its own line with nothing depending on it grammatically, it is standalone (button). A link inside an `alert`, an accordion panel, or a speech bubble follows the same test — it is the **prose relationship** that decides, not the containing component. Where a link is genuinely borderline, render the **anchor** and raise a `Red Flag:` — an anchor inside prose always reads correctly, whereas a button mid-sentence breaks the line.
+**The test:** would removing the link leave a grammatically incomplete sentence? If yes, it is inline (anchor). If the link occupies its own line with nothing depending on it grammatically, it is standalone (button). A link inside an `alert`, an accordion panel, a click-drop panel (`clickDropContent` — CL-0119), or a speech bubble follows the same test — it is the **prose relationship** that decides, not the containing component. Where a link is genuinely borderline, render the **anchor** and raise a `Red Flag:` — an anchor inside prose always reads correctly, whereas a button mid-sentence breaks the line.
 
 **An unlabelled external-link button reads "Go to website" (constraint 75).** A **standalone** external link needs button *text*, and the writer often supplies only the **destination's name** — or nothing at all. The test is what the writer's words *do*:
 
@@ -52,7 +52,7 @@
 
 The resource's own name is never used as the button text. This sits **alongside** the submission-button labels below and does not overturn them: "Go to dropbox" / "Go to portfolio" (constraint 55) still govern their own buttons, and the MTK quiz button still reads "Go to quiz" (constraint 65).
 
-**Submission button labels — keep the "Go to" prefix.** A button that sends the student to the **dropbox** or to their **portfolio** keeps its full label: **"Go to dropbox"** and **"Go to portfolio"**. Do **not** drop the leading "Go to" to a bare "Dropbox" / "Portfolio" — the full "Go to …" wording is the standard and is what students expect. **Series exception (BLL / LS / HPE):** these three families label the dropbox button **"Upload to Dropbox"** — a series-scoped label that sits **alongside** (does not overturn) this universal "Go to …" default; see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.11 / `00` constraint 55. (In the HPE end-of-module celebration, a **"Go to your journal"** button also sits beside the "Upload to dropbox" button.)
+**Submission button labels — keep the "Go to" prefix.** A button that sends the student to the **dropbox** or to their **portfolio** keeps its full label: **"Go to dropbox"** and **"Go to portfolio"**. Do **not** drop the leading "Go to" to a bare "Dropbox" / "Portfolio" — the full "Go to …" wording is the standard and is what students expect. **Series exception (BLL / LS / HPE):** these three families label the dropbox button **"Upload to Dropbox"** — a series-scoped label that sits **alongside** (does not overturn) this universal "Go to …" default; see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.11 / `00` constraint 55. (In the HPE end-of-module celebration, the journal reference beside the "Upload to dropbox" button is the `<h4 class="goJournal">Go to your journal</h4>` heading — see Journal references below, constraint 93.)
 
 ```html
 <a href="URL" target="_blank"><div class="button">Go to dropbox</div></a>
@@ -60,6 +60,34 @@ The resource's own name is never used as the button text. This sits **alongside*
 ```
 
 This is the button **label** convention. It is separate from — and additional to — the `dropbox` modifier on the activity *wrapper* (see Activities, above, and constraint 43): an activity that ends in a "Go to dropbox" button both carries the `dropbox` wrapper modifier **and** keeps the full "Go to dropbox" label on the button itself.
+
+### Journal references — download block first, `goJournal` heading after (constraint 93)
+
+A writer's journal reference — `[button] Go to journal`, `[journal] Go to journal`, `[button] Go to your journal`, `[button] Download journal`, or any variant that sends the student to their learning journal — is **never** built as the generic internal button with a blank link and a `Designer/Developer To Do:` note. It takes one of two fixed forms, decided by **position in the module**:
+
+**1. The FIRST journal reference in the module (page order, across all pages) → the download block.**
+```html
+<a href="docs/{CODE} Journal.docx" target="_blank"><div class="button downloadButton">Download journal</div></a>
+<div class="hint"></div>
+<div class="hintDropContent" hintType="oneDrive"></div>
+```
+- The label is always **Download journal**, whatever wording the writer used.
+- `href` is `docs/{CODE} Journal.docx` — the module code, a space, then `Journal.docx` (e.g. `docs/MXEX105 Journal.docx`) — unless the writer supplied a journal link, in which case use that link.
+- The empty `hint` and `hintDropContent` sit **directly** under the anchor, not wrapped in a row or column. The template supplies the help text from `hintType`, so the Convertor types none.
+- **`hintType` follows the journal link:**
+  - A Word-file download → `oneDrive`. This covers any `.docx` link, including a Google `…/export?format=docx` link.
+  - A Google Docs "make a copy" link (`…/copy`) → `googleDrive`.
+  - The default `docs/{CODE} Journal.docx` is a Word file, so the default is **`oneDrive`**.
+- No `Designer/Developer To Do:` note.
+
+**2. Every LATER journal reference → the `goJournal` heading.**
+```html
+<h4 class="goJournal">Go to your journal</h4>
+```
+- The text is always **Go to your journal**. No link, no anchor, no button wrapper, no `Designer/Developer To Do:` note.
+- Every series, the HPE end-of-module celebration page included (`14` §14.8), where it sits beside the "Upload to dropbox" button.
+
+*(Source: MXEX105 Differences 7–8 and SCBI202 Difference 1; the designer chose MXEX's download form and set the `hintType` rule, 20 Oct 2026 — CL-0114.)*
 
 ### MTK Quiz — the activity shell `[MTKquiz]` builds (constraint 65)
 
@@ -255,8 +283,8 @@ The `<h3>` heading defaults to **"Supervisor note"**; a heading the writer expli
 ### Standard Grid
 ```html
 <div class="row">
-    <div class="col-md-8 col-12">Content</div>
-    <div class="col-md-4 col-12">Sidebar</div>
+    <div class="col-md-8 col-12 paddingR">Content</div>
+    <div class="col-md-4 col-12 paddingL">Sidebar</div>
 </div>
 ```
 

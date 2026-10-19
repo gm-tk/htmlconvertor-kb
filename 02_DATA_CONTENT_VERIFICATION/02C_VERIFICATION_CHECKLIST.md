@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -25,7 +25,7 @@ Run ALL checks before presenting output:
 - [ ] If Mode B (reference module): ALL reference module titles replaced with new module titles
 - [ ] If Mode B (reference module): template level attribute matches expected year level for new module code (auto-corrected if mismatch)
 - [ ] If Mode B (reference module): NO module-specific CSS `<link>` elements carried over from reference
-- [ ] If Mode B (reference module): stickyNav.js NOT automatically carried over (omit if uncertain)
+- [ ] If Mode B (reference module): stickyNav.js NOT automatically carried over (omit if uncertain) — **unless** the writer asked for a floating-nav glossary, which puts it on every page and builds `{CODE}_glossary.html` (CL-0122)
 - [ ] Content source format identified (PageForge `.txt` / raw Writers Template `.docx` / MTK `.docx`)
 - [ ] If raw Writers Template `.docx`: ALL front-matter skipped (submission checklist, LOT tags, Section A merging, Section B guidance, contents, sign-off); conversion begins at first `[TITLE BAR]`
 - [ ] All 4 Page Boundary Validation Rules applied; anomalies resolved
@@ -69,6 +69,7 @@ Run ALL checks before presenting output:
 - [ ] Module menu (lesson pages, simplified): `tooltip="Overview"` on `#module-menu-button` (NOT on `#module-menu-content`)
 - [ ] Module menu: content inside `col-md-8 col-12`
 - [ ] List items in module menu: no full-item italic (`<i>` wrapping), lowercase start, verb form matches heading context
+- [ ] Every activity opens with an `<h3>`: the writer's own title; else the title of the matching journal task in the template; else no heading plus a visible `Red Flag:` — never an invented title (CL-0115)
 ### Interactive Components
 - [ ] Every component cross-referenced with component files
 - [ ] Drag items = drop zones (parity)
@@ -79,7 +80,7 @@ Run ALL checks before presenting output:
 - [ ] clickDrop: NO `active` class on any `.clickDrop` button (JS handles initial state)
 - [ ] clickDrop: NO inline `style` attributes on any `.clickDropContent` div (JS handles visibility)
 - [ ] clickDrop: NO `rel` attribute by default — pairing is auto-calculated from document order; a single clickDrop pair never carries `rel`; only add `rel="N"` to override out-of-order multi-pair authoring
-- [ ] Memory cards in matching pairs
+- [ ] Memory cards in matching pairs — each `match` value on exactly two cards; extra writer cards listed in a visible `Red Flag:`, never built and never commented out (CL-0117)
 - [ ] Shapes = shapeContents (parity)
 - [ ] Shape hover: `layout="clockwise"` when content shows sequential steps
 - [ ] All option/answer/match attributes correct
@@ -125,6 +126,13 @@ Run ALL checks before presenting output:
 - [ ] Audio triggers in table cells: use `audioButton` (not `audioTrigger`)
 - [ ] WJFUN `[Audio image]` grids: built as `audioImage`/`audioImageOption` (audio filename on the option `id`) — never `audioTrigger` spans wrapping images
 - [ ] Activity + alertImage pairing: `col-md-8 col-12` outer container; alertImage `col-md-4` nested inside with inner row/col structure (8 + 4 = 12)
+- [ ] D&D: drags with identical answer text that may fill each other's slots carry a space-separated `option` list, own slot first — no red flag (CL-0112)
+- [ ] D&D labelled image drags: the image and its label share ONE `<p>` inside the `.drag`; no inline styles (CL-0113)
+- [ ] Journal: the FIRST reference = `downloadButton` "Download journal" block + empty `hint` / `hintDropContent hintType` (`oneDrive` for a Word / `.docx` link — the default; `googleDrive` for a Google Docs copy link); every LATER one = `<h4 class="goJournal">Go to your journal</h4>`; no blank-link journal button, no journal To Do (constraint 93)
+- [ ] autoCheck auto-applied on every ECH / Years 1–3 / Years 4–6 module, whether built from the template file or a sibling; no Undo / Check button left on any autoCheck interactive except the typing quiz (constraint 38, CL-0116)
+- [ ] Static labels with lines (no click-reveal) built as `imageLabel layout="line"`, evenly spaced starting positions + one `Designer/Developer To Do:` to position them; a two-picture request adds a To Do for a combined image (CL-0118)
+- [ ] clickDrop choice sets: no picture tiles above the buttons (pictures go inside the panels); "click the picture" requests put `clickDrop imgBorder` on the `<img>` with an `<h5>` caption above (CL-0120)
+- [ ] Text + side image (and text + sidebar alert) are sibling columns of one row with `paddingR` on the left column and `paddingL` on the right — never an inner row nested in the text column (CL-0121)
 ### Media & Image Output Mode
 - [ ] Image output mode (Mode P or Mode D) confirmed with user before generating HTML — not silently defaulted
 - [ ] Image output mode applied uniformly to ALL images (no mixing within a single file)
@@ -137,7 +145,7 @@ Run ALL checks before presenting output:
 - [ ] AI Guidelines PDF embeds cite the CURRENT filename (constraint 84, `CL-0094`): the *Responding to Suspected Use* asset is emitted as `AI-guidelines/Kaimahi AI Guidelines Responding to Suspected Use in Assessments.pdf` — **no hyphen, no year range, capital `Use`**. The retired `…Kaimahi AI Guidelines - Responding to Suspected use in Assessments for Years 11–13 and NCEA.pdf` appears NOWHERE in the output, in either the `data=` or the fallback `href=`
 - [ ] YouTube: `youtube-nocookie.com/embed/`
 - [ ] No TikTok embeds
-- [ ] No `imageCentral` class on writer-specified images
+- [ ] No `imageCentral` class on writer-specified images (a subject central-asset tag recorded in `14` — e.g. MXEX `[Image Centralised {Name}]` — is a template asset and does take it; CL-0109)
 - [ ] Image caption paragraphs (a `<p>` describing/naming an adjacent image) carry `class="captionText"` — in every context (standalone, in columns, inside accordion content); ordinary prose `<p>` stays unclassed
 - [ ] Acknowledgements wrapper is `<div class="acks acksTemplate">` (the `acksTemplate` modifier is standard); add `acksAI` → `<div class="acks acksTemplate acksAI">` when the module uses AI-generated media — **including where the writer has only REQUESTED an AI asset that does not exist yet**, paired with a `Designer/Developer To Do:` note (constraint 72)
 - [ ] Each media-carrying `acksLesson` div opens with a `<!-- Lesson N.N -->` page-label annotation — the word is **Lesson**, never **Page**; the one remaining boilerplate div ("All other images ©…") carries no label (constraints 73, 90)
@@ -153,7 +161,7 @@ Run ALL checks before presenting output:
 - [ ] Text+image side-by-side layouts: text on LEFT, image on RIGHT (except speech bubbles)
 - [ ] Reorder (re-standard): uses `layout="re-standard"`, `row` class, `reorderList col-12`, NO `item` attributes, NO `grid` attribute
 - [ ] Radio Quiz (True/False): includes `row headings` with T/F columns and Description label
-- [ ] D&D column with many images: uses `col-12` / `col-md-11 col-12` wrapper (by module type, never `col-md-10`) and empty `.ddColumn` elements for image distribution
+- [ ] D&D column with many images: uses `col-12` / `col-md-11 col-12` wrapper (by module type, never `col-md-10`) and empty `.ddColumn` elements for image distribution — the `dragContainer` has exactly as many `.ddColumn` elements as the `dropContainer` (CL-0113)
 - [ ] Writer visual element requests (marquees, banners, etc.) are implemented as visible components, not hidden in comments only
 ### Flags & Fallbacks
 - [ ] Undocumented components → Tiered Fallback with visible content
@@ -163,7 +171,7 @@ Run ALL checks before presenting output:
 - [ ] NO HTML comment discloses an interactive's correct answer(s) or answer key
 - [ ] All designer-facing notes, CS instructions, and ambiguities are VISIBLE red **bold** flags — not hidden comments — each carrying its source-specific prefix (`Note from {author}:` / `Writers Note:` / `Red Flag:` / `Designer/Developer To Do:` — see Source-Specific Red-Note Prefixes)
 - [ ] **No emoji anywhere in the output** except the exempt ticks/crosses (`✅ ✓ ✔ ☑ ✗ ✘ ❌ ❎`); every page from which emoji were removed carries exactly ONE visible `Red Flag: Emoji have been removed…` note at the first removal; a run of 2+ emoji-prefixed lines became a `<ul>`/`<li>` list; wording is otherwise untouched (constraint 74)
-- [ ] Every standalone `[external link]` (own line / call to action) renders as `<div class="externalButton">`; every inline one (prose, list item, table cell) stays a plain `<a>` (constraint 75)
+- [ ] Every standalone `[external link]` (own line / call to action) renders as `<div class="externalButton">`; every inline one (prose, list item, table cell) stays a plain `<a>` (constraint 75) — including a link on its own line inside a click-drop panel (CL-0119)
 - [ ] **All series, all year levels (constraint 79 — universal; the former OSSC-only framing described the corpus norm, not an exception):** each lesson page carries a SINGLE `<h1><span>` holding the lesson title (no dual module title at any level, no duplicate body `<h3>`) — a second `<h1><span>` only where the writer gave that lesson its own bilingual name. **OSSC series:** a `[Lesson Overview]` descriptive sentence, where present, sits as a `<p>` ABOVE the first `<h5>` in the module menu — constraint 70
 - [ ] Any captured whitelisted reviewer comment (the `Note from {author}:` red-text lead) is rendered as a VISIBLE red bold designer message (`<p style="color: red; font-weight: bold;">Note from {Author}: …</p>`), lead + author + text verbatim, in position — never a hidden comment, never dropped
 - [ ] Every red designer note renders **red and bold** in the `<p style="color: red; font-weight: bold;">…</p>` form (the bold weight is required)

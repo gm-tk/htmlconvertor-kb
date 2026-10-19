@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026 6:30 PM
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part A (1 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_00 component index & universal rules.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -27,7 +27,7 @@
 
 `autoCheck` is a modifier that gives the student instant feedback on each selection (and removes the separate Undo / Check buttons). Normally it is applied only when the writer's intended behaviour calls for it.
 
-**EXCEPTION — three templates always get autoCheck.** When the structural reference is one of these dedicated template files:
+**EXCEPTION — ECH, Years 1–3 and Years 4–6 modules always get autoCheck.** When the module's own derived level is ECH, `1-3` or `4-6` — whether the structural reference is one of these dedicated template files **or a Mode B sibling module at any level** (CL-0116; SCBI202, a Years 4–6 module built from a Years 7–8 sibling, missed it under the former file-based test):
 
 - `refresh_template_0.0_1_template_ECH`
 - `refresh_template_0.0_2_template_1-3`
@@ -40,11 +40,11 @@ then `autoCheck` MUST be applied automatically to **every interactive that suppo
 **Interactives that do NOT support `autoCheck`** — leave unchanged: components with no right/wrong answer (Self Check, Self Reflection, reflection sliders/surveys, Sketcher, Stop Watch, free-form Area-layout D&D) and content-segmentation components (accordion, carousel, tabs, etc.).
 
 **Rules:**
-- If a component's COMP section documents both a plain and an `autoCheck` form, use the `autoCheck` form for these three templates.
+- If a component's COMP section documents both a plain and an `autoCheck` form, use the `autoCheck` form for these three levels.
 - If the writer ALSO explicitly requested instant feedback, there is no conflict — `autoCheck` is applied either way.
-- For any OTHER template, do NOT auto-apply `autoCheck` — apply it only when the writer's behaviour calls for it.
+- For any OTHER level, do NOT auto-apply `autoCheck` — apply it only when the writer's behaviour calls for it.
 - **Typing Quiz exception:** the typing quiz supports `autoCheck` (add `autoCheck` to the `.typing` container), but — unlike every other interactive — it KEEPS its `reset` / `checkAnswer hidden` / `showAnswer hidden` buttons under `autoCheck`. Do NOT drop the buttons for a typing quiz. See COMP_02 — Typing Quiz.
-- A designer may issue a one-off instruction to suppress `autoCheck` on a specific interactive even within these three templates — honour that as a one-off override (see `08_MODULE_SUPPORT_DEBUGGING.md` → One-Off Module Overrides).
+- A designer may issue a one-off instruction to suppress `autoCheck` on a specific interactive even within these three levels — honour that as a one-off override (see `08_MODULE_SUPPORT_DEBUGGING.md` → One-Off Module Overrides).
 
 ---
 

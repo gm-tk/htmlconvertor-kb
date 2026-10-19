@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Tuesday, 22nd September, 2026 9:50 PM
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -9,21 +9,23 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 00_MASTER_INSTRUCTIONS
 - **`00_MASTER_INSTRUCTIONS/00A_CONTROL_CORE.md`** (9 KB) — Role, philosophy, timestamps, input files (operating modes moved to `00A2` on 16 September 2026 at the 30 KB soft limit)
   - Sections: Te Kura HTML Template Conversion — Master Instructions · ROLE · CORE PHILOSOPHY · FILE TIMESTAMP CONVENTION · INPUT FILES
-- **`00_MASTER_INSTRUCTIONS/00A2_OPERATING_MODES.md`** (25 KB) — Operating modes (Modes 1–9, incl. **Mode 9 — Assessment**) and mode triage. Split from `00A` on 16 September 2026
+- **`00_MASTER_INSTRUCTIONS/00A2_OPERATING_MODES.md`** (26 KB) — Operating modes (Modes 1–9, incl. **Mode 9 — Assessment**) and mode triage. Split from `00A` on 16 September 2026
   - Sections: OPERATING MODES · Mode 1 — Conversion · Mode 2 — Advisory & Support · Mode 3 — Comparison · Mode 4 — Update · Mode 5 — Split · Mode 6 — Interactives Build · Mode 7 — PageForge Compare · Mode 8 — Admin · Mode 9 — Assessment · Mode triage
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (19 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
 - **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (21 KB) — File reference index (now lists `18_ASSESSMENT_MODE.md`)
   - Sections: FILE REFERENCE INDEX
-- **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (29 KB) — Constraints quick reference, part 1 of 4 — **constraints 1–57** (constraint 1 now lists the label-prefix strip among the permitted format normalisations — CL-0095) — constraint 2 now records the Assessment Mode inline-style exception (`18` §6.4)
-  - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E`, `00G` and `00H` as ONE continuous numbering
+- **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (18 KB) — Constraints quick reference, part 1 of 4 — **constraints 1–48** (constraint 1 now lists the label-prefix strip among the permitted format normalisations — CL-0095) — constraint 2 now records the Assessment Mode inline-style exception (`18` §6.4) — **constraint 38 widened 20 October 2026**: autoCheck keys on the module's own level (ECH / `1-3` / `4-6`), not on the template file (CL-0116). **Split at the 30 KB soft limit, 20 October 2026** — constraints 49–57 moved verbatim to `00D2`
+  - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00D2`, `00E`, `00G` and `00H` as ONE continuous numbering
+- **`00_MASTER_INSTRUCTIONS/00D2_CONSTRAINTS_1B.md`** (11 KB) — Constraints quick reference, part 1 continued — **constraints 49–57** (49 the `UPDATE MODE` trigger; 50 the `Last updated` stamp; 51 the change ledger; 52 image `alt` text; 53 iStock acknowledgements; 54 video acknowledgements; 55 submission-button labels; 56 activity/interactive wrappers never `col-md-10`; 57 captured whitelisted reviewer comments). Split from `00D` on 20 October 2026 when it passed the 30 KB soft limit; content moved verbatim
+  - Sections: (continuation of the numbered list from `00D` — no headings of its own)
 - **`00_MASTER_INSTRUCTIONS/00E_CONSTRAINTS_2.md`** (22 KB) — Constraints quick reference, part 2 of 4 — **constraints 58–74**
   - Sections: (continuation of the numbered list from `00D` — no headings of its own)
 - **`00_MASTER_INSTRUCTIONS/00F_WHEN_TO_LOAD.md`** (7 KB) — When to load which files (now routes the `ASSESSMENT MODE` phrase / Assessment Activity `.docx` to `18`)
   - Sections: WHEN TO LOAD WHICH FILES
 - **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (24 KB) — Constraints quick reference, part 3 of 4 — **constraints 75–85** (latest: 85, a three-part `[TITLE BAR]` builds three `<h1><span>` titles in the Languages cohort only; **84 amended 13 Sept 2026** — the *Responding to Suspected Use* AI Guidelines PDF renamed, CL-0094). **CLOSED** at 85 on 28 August 2026 — appending constraints 86-88 would have taken it past the 30 KB soft limit, so they were written into the new `00H` instead and nothing was moved out of this part
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
-- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (18 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up; 92 `jp-text` / `ch-text` / `pinyin` mandatory on every occurrence, with the te reo macron boundary). **THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (19 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up; 92 `jp-text` / `ch-text` / `pinyin` mandatory on every occurrence, with the te reo macron boundary; 93 journal references — the FIRST builds the `downloadButton` "Download journal" block + empty `hint` / `hintDropContent hintType`, every later one the `<h4 class="goJournal">` heading, CL-0114). **THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00G` — no headings of its own). Opened 28 August 2026 when `00G` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -45,7 +47,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 06 — Interactive Data Pattern Recognition · Overview · Pattern 1: Single Data Table (Most Common) · Pattern 2: Front/Back Table Rows · Pattern 3: Hint/Slide Table · Pattern 4: Numbered Items (Dropdown Paragraph) · Pattern 5: Numbered Slides · Pattern 6: Numbered Shapes/Tabs · Pattern 7: Numbered Accordions · Pattern 8: Speech Bubble in Table Row · Pattern 9: Conversation Layout · Pattern 10: Word Select Table · Pattern 11: Axis Labels (Slider Chart) · Pattern 12: Info Trigger Image (Labelled Image Overlay) · …
 - **`02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md`** (18 KB) — Content rules: preservation, grids, merging, perspective, red text, headings
   - Sections: 07 — Content Rules · Content Preservation Rules · Grid Structure Rules · Content Merging Rules · Writer Perspective Notes · Red Text Rules · Heading Formatting · Numbered Instructions in Activities · Square-Bracket Tags
-- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (25 KB) — Verification checklist, incl. a **Language Fonts** block (constraint 92) (unchanged and still run in full; **constraint 88** banner — run every check, narrate almost none: a passing check is silent, a failing one becomes a plain-English red flag)
+- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (27 KB) — Verification checklist, incl. a **Language Fonts** block (constraint 92) (unchanged and still run in full; **constraint 88** banner — run every check, narrate almost none: a passing check is silent, a failing one becomes a plain-English red flag)
   - Sections: 08 — Verification, Constraints & Output · Verification Checklist
 - **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (27 KB) — Comment & red flag policy; constraints (incl. 28 `never_lazy_load_moving_interactive_images`)
   - Sections: Comment & Red Flag Policy · Constraints
@@ -55,34 +57,34 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 03_COMP_CORE_INTERACTIVES
 - **`03_COMP_CORE_INTERACTIVES/03A_COMP00_INDEX_UNIVERSAL.md`** (11 KB) — COMP_00 component index & universal rules
   - Sections: COMP_00 — Component Index & Universal Rules · Universal Rules · autoCheck Auto-Application · Component File Index · Button Class Quick Reference · Deprecated Components — DO NOT USE · Show/Hide Answer Pattern (Cross-Component) · Key Rules (Repeated for Emphasis)
-- **`03_COMP_CORE_INTERACTIVES/03B_COMP01_DRAG_AND_DROP.md`** (15 KB) — COMP_01 drag and drop (all layouts)
+- **`03_COMP_CORE_INTERACTIVES/03B_COMP01_DRAG_AND_DROP.md`** (16 KB) — COMP_01 drag and drop (all layouts) — incl. the multi-value `option` for drags with identical answer text (CL-0112), the `.ddColumn` count rule (drag columns = drop columns; the former maximum-of-3 cap retired) and labelled image drags (image + label in one `<p>`) (CL-0113)
   - Sections: COMP_01 — Drag and Drop · Available Layouts · Modifier Classes (on `dragAndDrop` div) · Standard Layout · Column Layout · FIB (Fill in Blank) Layout · Scatter Layout · Area Layout (Free-form, no correct answer) · Venn Layout
 - **`03_COMP_CORE_INTERACTIVES/03C_COMP02_QUIZZES_1.md`** (17 KB) — COMP_02 quizzes: dropdown, MCQ, survey variant
   - Sections: COMP_02 — Quizzes · Dropdown Quiz · Multiple Choice Quiz (MCQ) · Multi Choice Quiz — Survey/Self-Assessment Variant (multiChoiceQuiz)
 - **`03_COMP_CORE_INTERACTIVES/03D_COMP02_QUIZZES_2.md`** (15 KB) — COMP_02 quizzes: graded multi-select, radio, typing
   - Sections: Multi Choice Quiz — Graded Multi-Select Variant (multiChoiceQuiz mcqSomeSelected) · Radio Quiz · Typing Quiz
-- **`03_COMP_CORE_INTERACTIVES/03E_COMP03_04_SELFCHECK_GAMES.md`** (9 KB) — COMP_03 self check & reflection; COMP_04 games & word components
+- **`03_COMP_CORE_INTERACTIVES/03E_COMP03_04_SELFCHECK_GAMES.md`** (10 KB) — COMP_03 self check & reflection; COMP_04 games & word components
   - Sections: COMP_03 — Self Check & Reflection · Self Check · Self Reflection · Reflection Slider · COMP_04 — Games & Word Components · Memory Game · Puzzle · Crossword · Word Find · Bingo · Word Drag
 - **`03_COMP_CORE_INTERACTIVES/03F_COMP05_06_ORDERING_SLIDERS.md`** (11 KB) — COMP_05 ordering & selecting; COMP_06 sliders
   - Sections: COMP_05 — Ordering & Selecting · Reorder · Clicking Order · Word Select · Checklist / Selection Box · COMP_06 — Sliders · Slider (Scale/Survey) · Slider Chart
 
 ## 04_COMP_SEGMENTS_OVERLAYS
-- **`04_COMP_SEGMENTS_OVERLAYS/04A_COMP07_SEGMENTATION.md`** (20 KB) — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal) — each moving component now carries its own no-`loading="lazy"` rule (constraint 83)
-  - Sections: COMP_07 — Content Segmentation · Accordion · Carousel · Rotating Banner · Click Drop · Flip Card · Tabs · Hint · Hint Slider · Modal
-- **`04_COMP_SEGMENTS_OVERLAYS/04B_COMP08_TRIGGERS_OVERLAYS.md`** (15 KB) — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter)
-  - Sections: COMP_08 — Triggers & Overlays · Info Trigger / Hover Trigger · Info Trigger Image · Audio Trigger · Audio Image · Image Label · Image Zoom · Word Highlighter
-- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (19 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
+- **`04_COMP_SEGMENTS_OVERLAYS/04A_COMP07_SEGMENTATION.md`** (23 KB) — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal) — each moving component now carries its own no-`loading="lazy"` rule (constraint 83); Click Drop adds the MXEX one-content-column note (CL-0111), standalone links in a panel → `externalButton` (CL-0119) and **Choice Sets and Picture Triggers** (CL-0120); Hint adds the empty `hintType` hint used by the journal download block (CL-0114)
+  - Sections: COMP_07 — Content Segmentation · Accordion · Carousel · Rotating Banner · Click Drop (Choice Sets and Picture Triggers) · Flip Card · Tabs · Hint · Hint Slider · Modal
+- **`04_COMP_SEGMENTS_OVERLAYS/04B_COMP08_TRIGGERS_OVERLAYS.md`** (17 KB) — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter) — incl. **Static Labels with Leader Lines** (`imageLabel layout="line"`, built with starting positions + a To Do, CL-0118)
+  - Sections: COMP_08 — Triggers & Overlays · Info Trigger / Hover Trigger · Info Trigger Image · Audio Trigger · Audio Image · Image Label (Static Labels with Leader Lines) · Image Zoom · Word Highlighter
+- **`04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`** (20 KB) — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools
   - Sections: COMP_09 — Speech Bubbles · Basic Conversation Layout · No-Hover Rule · imageCentral Rule · Bubble Direction Classes · Colour Modifier Classes · Other Modifier Classes · With Audio · Height Equalisation · Single Character Speech Bubble · Writer Tag Variants · COMP_10 — Diagrams & Timelines · Shape Hover · Timeline · …
 
 ## 05_COMP_LANGUAGE_MEDIA_LAYOUT
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (20 KB) — COMP_12 language & specialist (incl. **Language Fonts** — `jp-text` / `ch-text` / `pinyin` **mandatory on every occurrence**, the four markup carriers, the te reo macron boundary and the shared-Han Japanese-vs-Chinese resolution rule; constraint 92); COMP_13 media & embeds (incl. **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags, their tag→filename registry — *Responding to Suspected Use* **renamed 13 Sept 2026, CL-0094** — and the `embedPDF`/`centralFile` block; constraint 84)
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (21 KB) — COMP_12 language & specialist (incl. the **floating-nav glossary** — its own `{CODE}_glossary.html` page + `stickyNav.js` on every page, CL-0122; **Language Fonts** — `jp-text` / `ch-text` / `pinyin` **mandatory on every occurrence**, the four markup carriers, the te reo macron boundary and the shared-Han Japanese-vs-Chinese resolution rule; constraint 92); COMP_13 media & embeds (incl. **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags, their tag→filename registry — *Responding to Suspected Use* **renamed 13 Sept 2026, CL-0094** — and the `embedPDF`/`centralFile` block; constraint 84)
   - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF (generic — scoped to non-AI-Guidelines PDFs) · AI Guidelines PDFs (the eight teacher tags) · Embed Padlet · Embed Desmos Graph
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (11 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (12 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
   - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (19 KB) — COMP_14 acknowledgements
   - Sections: Acknowledgements
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** (21 KB) — COMP_14 Layout & Structure, second half: Buttons (incl. the "Go to website" default label for an unlabelled standalone external link, and the MTK Quiz activity shell — the four-element box, and the never-generate-the-quiz-content rule), Supervisor Button, Tables, Columns
-  - Sections: Buttons (MTK Quiz — the activity shell `[MTKquiz]` builds) · Supervisor Button (Shape A/B/C · the reveal panel · edge cases) · Tables · Columns & Floating Columns (Standard Grid · Floating clearfix) · Quote Text · Whakatauki · Rhetorical Question
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05D_COMP14_BUTTONS_TABLES_COLUMNS.md`** (23 KB) — COMP_14 Layout & Structure, second half: Buttons (incl. the "Go to website" default label for an unlabelled standalone external link, **Journal references** — the FIRST builds the download block, every later one the `goJournal` heading, constraint 93 — and the MTK Quiz activity shell — the four-element box, and the never-generate-the-quiz-content rule), Supervisor Button, Tables, Columns
+  - Sections: Buttons (Journal references · MTK Quiz — the activity shell `[MTKquiz]` builds) · Supervisor Button (Shape A/B/C · the reveal panel · edge cases) · Tables · Columns & Floating Columns (Standard Grid · Floating clearfix) · Quote Text · Whakatauki · Rhetorical Question
 
 ## 06_TEMPLATE_RECOGNITION
 - **`06_TEMPLATE_RECOGNITION.md`** (24 KB) — single-file topic (small enough to stay whole)
@@ -139,15 +141,17 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 history rows CL-0085 to CL-0092
 - **`12_CHANGE_LEDGER/12E6_CHANGE_HISTORY_CL0093_0097.md`** (24 KB) — PART 3 change history: CL-0093 to CL-0097 (continued) — CLOSED at CL-0097 (20 September 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0093 to CL-0097
-- **`12_CHANGE_LEDGER/12E7_CHANGE_HISTORY_CL0098_0103.md`** (27 KB) — PART 3 change history: CL-0098 to CL-0103 (continued) — CLOSED at CL-0103 (22 September 2026, 30 KB soft limit)
+- **`12_CHANGE_LEDGER/12E7_CHANGE_HISTORY_CL0098_0103.md`** (28 KB) — PART 3 change history: CL-0098 to CL-0103 (continued) — CLOSED at CL-0103 (22 September 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0098 to CL-0103
-- **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_ONWARD.md`** (21 KB) — PART 3 change history: CL-0104 onward (continued) — **THE OPEN PART: append new CL entries here**
-  - Sections: PART 3 history rows CL-0104 onward
+- **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_0119.md`** (28 KB) — PART 3 change history: CL-0104 to CL-0119 (continued) — CLOSED at CL-0119 (20 October 2026, 30 KB soft limit)
+  - Sections: PART 3 history rows CL-0104 to CL-0119
+- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0120_ONWARD.md`** (2 KB) — PART 3 change history: CL-0120 onward (continued) — **THE OPEN PART: append new CL entries here**
+  - Sections: PART 3 history rows CL-0120 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (15 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
 - **`12_CHANGE_LEDGER/12F_LEDGER_LOGS_AND_NOTES.md`** (2 KB) — Blocked-request log, housekeeping, notes
   - Sections: BLOCKED-REQUEST LOG (audit) · HOUSEKEEPING (optional — nothing here is a recurring task) · NOTES
-- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (18 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
+- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (28 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
   - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG
 
 ## 13_SPLIT_MODE
@@ -161,8 +165,8 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 14.6 LS — Learning Support · 14.7 BLL — Blended Literacy · 14.8 HPE — Health & PE content lessons (celebration .gif DELIVERED — deferral retired) · 14.9 BLLR — Blended Literacy (Reading) · 14.10 MiW — My Te Kura Writing
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14C_LANGUAGES_AV_ASSET_REGISTRY.md`** (14 KB) — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (CL-0070) — the supplied HTML no longer needs to be consulted
   - Sections: 14C — Languages Audiovisual Package: the complete asset registry · 1. Delivery forms (the supplied markup shapes) · 2. Language icons · 3. German · 4. French · 5. Chinese · 6. Japanese · 7. Spanish · 8. Samoan · 9. Acknowledgements for the iStock-derived registry assets
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** (6 KB) — Cross-cutting notes (14.11) and the Technology family (14.12 — five `Technology/strand/active-*.svg` strand icons copied verbatim including their supplied spelling, the DELIVERED shared `congradulations/` celebration gif whose misspelling is a recorded design decision and is never corrected, suggested `col-8` text / `col-4` gif layout)
-  - Sections: 14.11 Cross-cutting notes · 14.12 Technology — strand icons + the celebration gif
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** (9 KB) — Cross-cutting notes (14.11), the Technology family (14.12 — five `Technology/strand/active-*.svg` strand icons copied verbatim including their supplied spelling, the DELIVERED shared `congradulations/` celebration gif whose misspelling is a recorded design decision and is never corrected, suggested `col-8` text / `col-4` gif layout) and **MXEX** (14.13 — the central `Maths Characters/` assets with the character + bubble in one row, `[RHS alert]` → `alert top`, the whole click drop inside one content column; CL-0109–CL-0111)
+  - Sections: 14.11 Cross-cutting notes · 14.12 Technology — strand icons + the celebration gif · 14.13 MXEX — Maths (central characters, right-hand alerts, click drops)
 
 ## 15_INTERACTIVES_BUILD_MODE
 - **`15_INTERACTIVES_BUILD_MODE/15A_MODE_CORE_AND_CONTRACT.md`** (14 KB) — Mode 6 core: trigger/auto-detection, the `cv2-built` anchor contract, output files + splitting (ALL files in one response), quality gate, authority order

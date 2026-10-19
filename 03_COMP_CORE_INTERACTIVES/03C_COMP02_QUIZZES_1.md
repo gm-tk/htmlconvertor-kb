@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part C (3 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_02 quizzes: dropdown, MCQ, survey variant.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -112,7 +112,6 @@ When the writer provides numbered sentences/questions where dropdowns replace bl
     </div>
     <div class="row">
         <div class="activityButton reset">Reset</div>
-        <div class="activityButton checkAnswer hidden">Check answers</div>
     </div>
 </div>
 ```
@@ -122,6 +121,7 @@ When the writer provides numbered sentences/questions where dropdowns replace bl
 - Each dropdown: `<div class="dropQuestion"><div class="dropDown" answer="..."><p class="placeholder">Select one</p><div class="options"><p>option</p>...</div></div></div>`
 - `answer` attribute: 1-based index of correct option(s). Space-separated for multiple correct (e.g., `answer="1 2 3"`)
 - For exploratory dropdowns where ALL options are correct, add `autoCheck` to the `dropQuiz` div and set `answer="1 2 3"` (all indices)
+- **With `autoCheck`, the button row holds `Reset` only — never a Check button** (CL-0116), as COMP_00's autoCheck rule says for every component except the typing quiz
 - Use `<ol><li>` when writer provides numbered items
 
 ### List Layout (Question-Answer Pairs)

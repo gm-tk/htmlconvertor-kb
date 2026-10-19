@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part B (2 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Content rules: preservation, grids, merging, perspective, red text, headings.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -69,10 +69,10 @@ ALL content inside `<div id="body">` must be inside Bootstrap grid:
 | Use Case | Column Classes |
 |---|---|
 | Standard content (DEFAULT) | `col-md-8 col-12` |
-| Content + sidebar image (inner row) | Outer: `col-md-8 col-12` containing inner `row` with `col-md-6 offset-md-0 col-12 paddingR` + `col-md-6 offset-md-0 col-12 paddingL` |
-| Content + sidebar alert | `col-md-8 col-12` + `col-md-4 offset-md-0 col-6 offset-3` |
+| Content + side image | Sibling columns in ONE row: text `col-md-8 col-12 paddingR` + image `col-md-4 col-12 paddingL` — never an inner row nested in the text column (CL-0121) |
+| Content + sidebar alert | `col-md-8 col-12 paddingR` + `col-md-4 offset-md-0 col-6 offset-3 paddingL` (CL-0121) |
 | Two equal images | `col-md-4 col-6 paddingR` + `col-md-4 col-6 paddingL` |
-| Standard text + image side-by-side | Text: `col-md-8 col-12` (LEFT) + Image: `col-md-4 col-12` (RIGHT) — text always left, image always right (except speech bubbles) |
+| Standard text + image side-by-side | Text: `col-md-8 col-12 paddingR` (LEFT) + Image: `col-md-4 col-12 paddingL` (RIGHT) — text always left, image always right (except speech bubbles) |
 | Info trigger image (needs full width for trigger positioning) | `col-md-12 col-12` |
 | Drag & Drop column layout (`layout="column"`) | `col-md-12 col-12` — needs wider container for multiple drop columns + drag items |
 | Drag & Drop column with many images (`images` class, 6+ items) | `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) — never `col-md-10` (see constraint 56) |
@@ -131,16 +131,16 @@ A **text-only** activity (no interactive) needs no split at either width. Patter
 </div>
 ```
  
-**Content + Sidebar Image — Inner Row Pattern:** When body text and an image need to appear side-by-side within the content area, maintain the `col-md-8 col-12` outer wrapper and create an inner `<div class="row">` with two columns inside it. Do NOT break the outer `col-md-8` default for text+image layouts within body content.
+**Content + Side Image — sibling columns, never a nested row (CL-0121).** When body text and an image sit side by side, they are **sibling columns of the same row**: text `col-md-8 col-12 paddingR`, image `col-md-4 col-12 paddingL`. The text's heading and paragraphs all go inside the text column. Do **not** nest an inner `row` inside the text column to hold them. **Padding classes go on every side-by-side column pair** — the left column takes `paddingR`, the right column `paddingL` — for text + image and text + sidebar alert alike.
  
 **⚠️ CRITICAL — Text/Image Side-by-Side Ordering:** When standard body text appears alongside a standard image (e.g., from a writer's table with an image in one column and text in another), the text ALWAYS goes on the LEFT and the image ALWAYS goes on the RIGHT:
  
 ```html
 <div class="row">
-    <div class="col-md-8 col-12">
+    <div class="col-md-8 col-12 paddingR">
         <p>Text content goes on the left (8 columns wide)</p>
     </div>
-    <div class="col-md-4 col-12">
+    <div class="col-md-4 col-12 paddingL">
         <img class="img-fluid" loading="lazy" src="images/image.jpg" alt="">
     </div>
 </div>
@@ -148,33 +148,34 @@ A **text-only** activity (no interactive) needs no split at either width. Patter
  
 This applies regardless of the order in which the writer's template presents the image and text (e.g., even if the writer's table shows the image in the left column and text in the right column, the HTML output should place text on the left and image on the right). **The only exception** to this rule is when using the `speechBubble` design pattern, which has its own documented layout structure — see COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md`.
  
-When text and image are WITHIN the standard `col-md-8` content area (inner row pattern):
- 
+When the text block has its own heading and several paragraphs, the whole block goes in the text column:
+
 ```html
-<!-- CORRECT: Inner row within col-md-8 outer wrapper -->
-<div class="row">
-    <div class="col-md-8 col-12">
-        <div class="row">
-            <div class="col-md-6 offset-md-0 col-12 paddingR">
-                <p>Body text here</p>
-            </div>
-            <div class="col-md-6 offset-md-0 col-12 paddingL">
-                <img class="img-fluid" loading="lazy" src="images/image.jpg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
- 
-<!-- WRONG: Breaking outer col-md-8 default -->
+<!-- CORRECT: sibling columns, padding on the inner sides (CL-0121) -->
 <div class="row">
     <div class="col-md-8 col-12 paddingR">
+        <h3>Heading</h3>
         <p>Body text here</p>
     </div>
     <div class="col-md-4 col-12 paddingL">
         <img class="img-fluid" loading="lazy" src="images/image.jpg" alt="">
     </div>
 </div>
+
+<!-- WRONG: an inner row nested inside the text column -->
+<div class="row">
+    <div class="col-md-8 col-12">
+        <h3>Heading</h3>
+        <div class="row">
+            <div class="col-md-8 col-12 paddingR"><p>Body text here</p></div>
+            <div class="col-md-4 col-12 paddingL">
+                <img class="img-fluid" loading="lazy" src="images/image.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 ```
+*(Reverses the former "inner row pattern", which marked the sibling-column form WRONG — CL-0121, SCBI202 Difference 13.)*
  
 **Activity and interactive divs** MUST be inside `<div class="row"><div class="col-md-8 col-12">`, EXCEPT for wide interactive components (D&D column layout) which use `col-md-12 col-12`, and a D&D column with many images which uses `col-12` / `col-md-11 col-12` by module type (never `col-md-10`). Activity wrappers never use `col-md-10` — where more width than `col-md-8` is needed use `col-12` (Standard) / `col-md-11 col-12` (Inquiry & Fundamentals) / `col-md-8 col-12` with an alertImage at `col-md-4` (see constraint 56). Note: carousel `.viewer` width is contextual — `col-md-12 col-12` when nested inside a `col-md-8` wrapper, `col-md-8 col-12` standalone — see COMP_07 in `04_COMP_SEGMENTS_OVERLAYS.md` and constraint 17.
  

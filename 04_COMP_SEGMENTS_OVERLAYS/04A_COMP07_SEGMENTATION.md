@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part A (1 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_07 content segmentation (accordion, carousel, banner, clickDrop, flipCard, tabs, hint, modal).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -251,6 +251,38 @@ When multiple clickDrop items exist, wrap all buttons in a `.row` with column cl
 - 2 items: `col-md-6`
 - 3 items: `col-md-4`
 - 4 items: `col-md-3`
+
+**"Outside this row wrapper" means outside the TRIGGER row.** **MXEX series (CL-0111):** the trigger row and every `clickDropContent` panel sit together inside one `col-md-8 col-12` content column, never loose at page level; a speech bubble revealed in a panel uses `col-md-12 col-12` + `bubble-basic no-hover bubble-bottom`. See `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.13.
+
+### Choice Sets and Picture Triggers (CL-0120)
+
+**A choice-style click drop with pictures → buttons only; the pictures go inside the panels.** When a click drop offers a set of choices (e.g. `[click drop activity] [6 activities to choose from] [with image tile and title]`), the trigger row holds **the buttons alone**, with no picture tile above any button. Each picture moves into its own revealed panel, under that panel's `<h3>` title:
+```html
+<div class="row">
+    <div class="col-12">
+        <div class="button clickDrop">Mushroom Spore prints</div>
+        <!-- further choice buttons -->
+    </div>
+</div>
+<div class="clickDropContent">
+    <h3>Mushroom Spore prints</h3>
+    <img class="img-fluid" src="images/iStock-1352128711.jpg" alt="Dark spore prints showing the gills of a mushroom">
+    <!-- the rest of this choice's content -->
+</div>
+```
+
+**"Click the picture" → the picture IS the trigger.** When the writer asks for captioned pictures to be clicked (e.g. `[click drop] [3 images with captions side by side]`), put `clickDrop` on the `<img>` itself together with `imgBorder`. The caption goes above it as an `<h5>`, one picture per `col` in the trigger row:
+```html
+<div class="row">
+    <div class="col"><h5>Environmental causes</h5><img class="img-fluid clickDrop imgBorder" src="images/iStock-1319688417.jpg" alt="Volcanic eruption in Iceland"></div>
+    <!-- further picture triggers -->
+</div>
+```
+- No inline styles: the designer's `width: 50%` and `margin-left: 5%` are not part of the pattern.
+- No HTML comment.
+- No `loading="lazy"` (constraint 83).
+- The panels follow the grouping rule above unchanged.
+
 ### Attributes
  
 | Attribute | Purpose |
@@ -258,6 +290,8 @@ When multiple clickDrop items exist, wrap all buttons in a `.row` with column cl
 | `rel="N"` | **Optional — omit by default.** Pairing is auto-calculated from document order. Only supply `rel` (0-indexed) to override that order when multiple pairs are authored out of sequence. Never needed for a single pair. |
  
 **⚠️ CRITICAL — No initial state attributes:** Do NOT add an `active` class to any `.clickDrop` button, and do NOT add inline `style` attributes (such as `style=""` or `style="display: none;"`) to any `.clickDropContent` div. The JavaScript handles the initial active/visible state automatically. Adding these attributes manually causes the interactive to malfunction.
+
+**Links inside a panel (CL-0119).** A writer link on its own line inside a `clickDropContent` panel is a **standalone** link: it renders `<a href="URL" target="_blank"><div class="externalButton">Text</div></a>` (constraint 75), never a plain anchor in a `<p>`.
  
 ### In Activity with Accordion
  
@@ -379,6 +413,8 @@ When flip cards contain images:
 </div>
 ```
  
+**Empty `hintType` hint — template-supplied text (CL-0114).** A `hintDropContent` carrying `hintType` (`oneDrive` / `googleDrive`) is left **empty** — the template supplies the standard help text — and its trigger is an empty `<div class="hint"></div>` placed directly before it. Used by the journal download block (constraint 93, `05` → Buttons → Journal references).
+
 ---
  
 ## Hint Slider

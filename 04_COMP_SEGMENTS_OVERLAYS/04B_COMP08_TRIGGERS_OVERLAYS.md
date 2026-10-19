@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 29th July, 2026 6:41 PM
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part B (2 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -185,6 +185,28 @@ Clickable image that plays an associated audio file. The `id` attribute on `.aud
 </div>
 ```
  
+### Static Labels with Leader Lines — `layout="line"` (CL-0118)
+
+When the writer asks for an image **labelled with lines** — static labels naming parts of the picture, not click-to-reveal text (e.g. `[image] [similar to this image but labelled, see below]` with a label list; `[2 labelled images side by side, 4 labels … with lines to both images]`) — **build it**, never defer the whole diagram to a To Do:
+```html
+<div class="imageLabel" layout="line">
+    <img class="img-fluid imgLabel" src="images/iStock-1214149278.jpg" alt="Child boy skeleton anatomy vector">
+    <div class="label" direction="horizontal" top="11%" left="53%" pointTop="10%||10%" pointLeft="35%||68%">
+        <p>Skull</p>
+    </div>
+</div>
+```
+- The wrapper is `imageLabel` with `layout="line"`, and the image carries `imgLabel`.
+- Each writer label is a `<div class="label">` with its text in a `<p>`. It is positioned by `direction` / `top` / `left` / `pointTop` / `pointLeft` **attributes**, never inline `style`. (The `padding-bottom` style on the designer's SCBI202 image is not part of the pattern.)
+- **One label, several lines:** separate the leader-line endpoints with `||` in `pointTop` and `pointLeft`, paired in order. `pointTop="25%||25%" pointLeft="80%||30%"` draws two lines.
+- **Positions are starting values.** The Convertor cannot see where each part sits, so it spaces the labels evenly down the image and raises one `Designer/Developer To Do:` directly above the component: *position the labels and their leader lines on the image*.
+- **Labels pointing at TWO pictures** (e.g. two animals compared):
+  - Build ONE `imageLabel` on the first picture's file.
+  - Put each picture's caption above it as an `<h5>` in a `<div class="row paddingB">` holding two `col-6` columns.
+  - Give each label two leader points, one per picture.
+  - Raise a `Designer/Developer To Do:` to supply a single combined image of both pictures.
+- Click-to-reveal diagrams are unchanged and keep `layout="labelLine"` + `label infoTrigger` (below).
+
 ### Clickable Labelled Diagram (label + infoTrigger)
  
 Use this when each label must **reveal a description on click** (the "drop down text when students click the labels" request on a diagram). Each label is a `<div class="label infoTrigger">` carrying the description in its `info` attribute, positioned with `top`/`left`, with the leader-line endpoint set by `pointTop`/`pointLeft`. The label text is wrapped in `<p>`. The whole block sits inside the standard `col-md-8 col-12` content column.
