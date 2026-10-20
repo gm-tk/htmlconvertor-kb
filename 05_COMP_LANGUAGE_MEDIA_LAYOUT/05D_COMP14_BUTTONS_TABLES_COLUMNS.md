@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 > **Granular part D (4 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, second half: Buttons, Supervisor Button, Tables, Columns & Floating Columns, Quote Text, Whakatauki, Rhetorical Question. Split from `05B` on 13 August 2026 as it approached the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *This part continues COMP_14 from `05B` (Activities, Alerts) — COMP_14 is ONE section split across the two.*
@@ -59,7 +59,7 @@ The resource's own name is never used as the button text. This sits **alongside*
 <a href="URL" target="_blank"><div class="button">Go to portfolio</div></a>
 ```
 
-This is the button **label** convention. It is separate from — and additional to — the `dropbox` modifier on the activity *wrapper* (see Activities, above, and constraint 43): an activity that ends in a "Go to dropbox" button both carries the `dropbox` wrapper modifier **and** keeps the full "Go to dropbox" label on the button itself.
+This is the button **label** convention. It is separate from — and additional to — the `dropbox` modifier on the activity *wrapper* (see Activities, above, and constraint 43): an activity that contains a "Go to dropbox" button both carries the `dropbox` wrapper modifier **and** keeps the full "Go to dropbox" label on the button itself.
 
 ### Journal references — download block first, `goJournal` heading after (constraint 93)
 
@@ -119,7 +119,7 @@ The **`[MTKquiz]`** tag (any variant/modifier combination — `[MTKquiz] [engage
 
 - **Tag precedence — WJ series.** In WJ-series modules, when `[MTK Quiz]` co-occurs with an in-page quiz tag on the same activity (e.g. `[Multichoice quiz]`, `[Radio quiz]`), `[MTK Quiz]` wins: emit this section's activity-shell pattern, NOT the in-page quiz component. An in-page quiz tag with no co-occurring `[MTK Quiz]` still builds the in-page component as normal. (WJFUN107 finalized report, Difference 1, scope (b), 29 July 2026.)
 - The finished production form is a D2L quiz quicklink (`/d2l/common/dialogs/quickLink/quickLink.d2l?ou={orgUnitId}&type=quiz&rcode=…`) — the developer supplies it; the Convertor never invents an `rcode`.
-- The `dropbox` wrapper modifier of constraint 43 does **not** attach (the activity does not end in a dropbox button). A `dropbox` token observed on a designer-refined MTKquiz activity is a leftover, not a rule.
+- The `dropbox` wrapper modifier of constraint 43 does **not** attach (the activity contains no dropbox button). A `dropbox` token observed on a designer-refined MTKquiz activity is a leftover, not a rule.
 - `MTK` here means **My Te Kura** (the D2L quiz tool) and **MTK DEV** its authoring environment — not the MTK (Te Reo Rangatira) Writers Template pathway of `07_MTK_DOCX_CONVERSION.md`.
 
 ---

@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 > **Granular part F (6 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation, second half: content styling, activities, links & buttons, interactive components. Opened 14 September 2026 when `01E` passed the 30 KB soft limit; the content below was **moved verbatim** from `01E_TAG_INTERPRETATION.md` (`CLAUDE.md` §4) — nothing reworded, nothing re-ordered.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -29,7 +29,7 @@
 | `activity_heading` | `<h3>Activity heading text</h3>` within activity |
 | `end_activity` | Closing `</div>` for activity container |
 
-**Dropbox trigger — BLL series:** *for BLL-series modules,* append the `dropbox` modifier to any activity that ends in an **Upload to dropbox** button (or carries `[trigger engagement]` on it) — e.g. `activity dropbox` (no interactive) or `activity interactive dropbox` (with an interactive). Applies to BLL modules only; see `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Activities for the full condition.
+**Dropbox trigger — every series except BLL:** append the `dropbox` modifier to any activity that **contains a dropbox submission button** — "Go to dropbox", "Upload to dropbox" or a writer `[trigger engagement]` — wherever in the activity it sits (most often as its last element), e.g. `activity dropbox` (no interactive) or `activity interactive dropbox` (with an interactive). **BLL is the one exception:** BLL activities keep the dropbox button but do **not** take the `dropbox` modifier (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.7); BLLR is not BLL and follows the universal rule. See constraint 43 and `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Activities for the full condition. *(Corrected 21 October 2026, CL-0124: this line previously said the modifier applied to BLL modules **only** — the reverse of constraint 43.)*
 
 Activity sidebar:
 ```html

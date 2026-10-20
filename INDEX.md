@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -25,7 +25,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: WHEN TO LOAD WHICH FILES
 - **`00_MASTER_INSTRUCTIONS/00G_CONSTRAINTS_3.md`** (24 KB) — Constraints quick reference, part 3 of 4 — **constraints 75–85** (latest: 85, a three-part `[TITLE BAR]` builds three `<h1><span>` titles in the Languages cohort only; **84 amended 13 Sept 2026** — the *Responding to Suspected Use* AI Guidelines PDF renamed, CL-0094). **CLOSED** at 85 on 28 August 2026 — appending constraints 86-88 would have taken it past the 30 KB soft limit, so they were written into the new `00H` instead and nothing was moved out of this part
   - Sections: (continuation of the numbered list from `00E` — no headings of its own). Opened 6 August 2026 when `00E` passed the 30 KB soft limit
-- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (19 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up; 92 `jp-text` / `ch-text` / `pinyin` mandatory on every occurrence, with the te reo macron boundary; 93 journal references — the FIRST builds the `downloadButton` "Download journal" block + empty `hint` / `hintDropContent hintType`, every later one the `<h4 class="goJournal">` heading, CL-0114). **THE OPEN PART, new constraints are appended here**
+- **`00_MASTER_INSTRUCTIONS/00H_CONSTRAINTS_4.md`** (21 KB) — Constraints quick reference, part 4 of 4 — **constraints 86 onward** (86 `ADMIN MODE` precedence + override; 87 the front-facing test + the PageForge Amalgamation Log; 88 the designer-facing output policy; 89 `learningSupport` required by an `X` module-code prefix; 90 `acksTemplate`/`acksAI` generate their statements — never typed as text; 91 the Admin Mode front-end output policy — `<omit_from_frontend>`, the plain-English visible half and the conflict heads-up; 92 `jp-text` / `ch-text` / `pinyin` mandatory on every occurrence, with the te reo macron boundary; 93 journal references — the FIRST builds the `downloadButton` "Download journal" block + empty `hint` / `hintDropContent hintType`, every later one the `<h4 class="goJournal">` heading, CL-0114; 94 no `<h5>` inside a drag and drop — a requested heading is `<p><b>` (CL-0123); 95 every task interactive inside an activity box, tools exempt (CL-0125)). **THE OPEN PART, new constraints are appended here**
   - Sections: (continuation of the numbered list from `00G` — no headings of its own). Opened 28 August 2026 when `00G` passed the 30 KB soft limit
 
 ## 01_PIPELINE_EXTRACTION_TAGS
@@ -47,7 +47,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 06 — Interactive Data Pattern Recognition · Overview · Pattern 1: Single Data Table (Most Common) · Pattern 2: Front/Back Table Rows · Pattern 3: Hint/Slide Table · Pattern 4: Numbered Items (Dropdown Paragraph) · Pattern 5: Numbered Slides · Pattern 6: Numbered Shapes/Tabs · Pattern 7: Numbered Accordions · Pattern 8: Speech Bubble in Table Row · Pattern 9: Conversation Layout · Pattern 10: Word Select Table · Pattern 11: Axis Labels (Slider Chart) · Pattern 12: Info Trigger Image (Labelled Image Overlay) · …
 - **`02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md`** (18 KB) — Content rules: preservation, grids, merging, perspective, red text, headings
   - Sections: 07 — Content Rules · Content Preservation Rules · Grid Structure Rules · Content Merging Rules · Writer Perspective Notes · Red Text Rules · Heading Formatting · Numbered Instructions in Activities · Square-Bracket Tags
-- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (27 KB) — Verification checklist, incl. a **Language Fonts** block (constraint 92) (unchanged and still run in full; **constraint 88** banner — run every check, narrate almost none: a passing check is silent, a failing one becomes a plain-English red flag)
+- **`02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md`** (28 KB) — Verification checklist, incl. a **Language Fonts** block (constraint 92) (unchanged and still run in full; **constraint 88** banner — run every check, narrate almost none: a passing check is silent, a failing one becomes a plain-English red flag)
   - Sections: 08 — Verification, Constraints & Output · Verification Checklist
 - **`02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`** (27 KB) — Comment & red flag policy; constraints (incl. 28 `never_lazy_load_moving_interactive_images`)
   - Sections: Comment & Red Flag Policy · Constraints
@@ -55,9 +55,9 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: Edge Cases · Component Whitelist — Known Partial/No-Match (v6) · Output Specifications · Post-output — The Designer Summary
 
 ## 03_COMP_CORE_INTERACTIVES
-- **`03_COMP_CORE_INTERACTIVES/03A_COMP00_INDEX_UNIVERSAL.md`** (11 KB) — COMP_00 component index & universal rules
+- **`03_COMP_CORE_INTERACTIVES/03A_COMP00_INDEX_UNIVERSAL.md`** (12 KB) — COMP_00 component index & universal rules
   - Sections: COMP_00 — Component Index & Universal Rules · Universal Rules · autoCheck Auto-Application · Component File Index · Button Class Quick Reference · Deprecated Components — DO NOT USE · Show/Hide Answer Pattern (Cross-Component) · Key Rules (Repeated for Emphasis)
-- **`03_COMP_CORE_INTERACTIVES/03B_COMP01_DRAG_AND_DROP.md`** (16 KB) — COMP_01 drag and drop (all layouts) — incl. the multi-value `option` for drags with identical answer text (CL-0112), the `.ddColumn` count rule (drag columns = drop columns; the former maximum-of-3 cap retired) and labelled image drags (image + label in one `<p>`) (CL-0113)
+- **`03_COMP_CORE_INTERACTIVES/03B_COMP01_DRAG_AND_DROP.md`** (17 KB) — COMP_01 drag and drop (all layouts) — incl. the multi-value `option` for drags with identical answer text (CL-0112), the `.ddColumn` count rule (drag columns = drop columns; the former maximum-of-3 cap retired) and labelled image drags (image + label in one `<p>`) (CL-0113)
   - Sections: COMP_01 — Drag and Drop · Available Layouts · Modifier Classes (on `dragAndDrop` div) · Standard Layout · Column Layout · FIB (Fill in Blank) Layout · Scatter Layout · Area Layout (Free-form, no correct answer) · Venn Layout
 - **`03_COMP_CORE_INTERACTIVES/03C_COMP02_QUIZZES_1.md`** (17 KB) — COMP_02 quizzes: dropdown, MCQ, survey variant
   - Sections: COMP_02 — Quizzes · Dropdown Quiz · Multiple Choice Quiz (MCQ) · Multi Choice Quiz — Survey/Self-Assessment Variant (multiChoiceQuiz)
@@ -79,7 +79,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 05_COMP_LANGUAGE_MEDIA_LAYOUT
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md`** (21 KB) — COMP_12 language & specialist (incl. the **floating-nav glossary** — its own `{CODE}_glossary.html` page + `stickyNav.js` on every page, CL-0122; **Language Fonts** — `jp-text` / `ch-text` / `pinyin` **mandatory on every occurrence**, the four markup carriers, the te reo macron boundary and the shared-Han Japanese-vs-Chinese resolution rule; constraint 92); COMP_13 media & embeds (incl. **AI Guidelines PDFs** — the eight delivered `AI-guidelines/` teacher tags, their tag→filename registry — *Responding to Suspected Use* **renamed 13 Sept 2026, CL-0094** — and the `embedPDF`/`centralFile` block; constraint 84)
   - Sections: COMP_12 — Language & Specialist · Glossary · Kanji Cards / Language Letter · Language Fonts · Translate Section · Reo Translate (Full Page Translate) · MathJax / Equations · COMP_13 — Media & Embeds · Video Embed · Audio Player · Embed PDF (generic — scoped to non-AI-Guidelines PDFs) · AI Guidelines PDFs (the eight teacher tags) · Embed Padlet · Embed Desmos Graph
-- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (12 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
+- **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05B_COMP14_LAYOUT_STRUCTURE.md`** (13 KB) — COMP_14 Layout & Structure, first half: Activities (inner column `col-12`; one shared inner row at default wrapper width, split only when widened — constraint 63) and Alerts
   - Sections: COMP_14 — Layout & Structure · Activities · Alerts (Cultural Alert · Translate Section in Alert Solid · Activity Image Sidebar · Activity + AlertImage Pairing)
 - **`05_COMP_LANGUAGE_MEDIA_LAYOUT/05C_COMP14_ACKNOWLEDGEMENTS.md`** (19 KB) — COMP_14 acknowledgements
   - Sections: Acknowledgements
@@ -125,7 +125,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
 
 ## 12_CHANGE_LEDGER
-- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (17 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0094**), PART 2 pending approval
+- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (18 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0094**, plus the ADMIN MODE locks **CL-0123 to CL-0125**), PART 2 pending approval
   - Sections: 12 — Change Ledger (Conflict & Lock Registry) · PURPOSE · WHY ONE IN-HOUSE FILE IS FINE (feasibility note) · STATUS VALUES · HOW TO READ / MAINTAIN THIS LEDGER · PART 1 — LOCKED DECISIONS (binding & immutable — conflict check reads this FIRST) · PART 2 — PENDING APPROVAL (report-vs-report conflicts awaiting the design authority's resolution)
 - **`12_CHANGE_LEDGER/12B_CHANGE_HISTORY_CL0001_0028.md`** (28 KB) — PART 3 change history: CL-0001 to CL-0028
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
@@ -145,14 +145,16 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 history rows CL-0098 to CL-0103
 - **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_0119.md`** (28 KB) — PART 3 change history: CL-0104 to CL-0119 (continued) — CLOSED at CL-0119 (20 October 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0104 to CL-0119
-- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0120_ONWARD.md`** (2 KB) — PART 3 change history: CL-0120 onward (continued) — **THE OPEN PART: append new CL entries here**
+- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0120_ONWARD.md`** (6 KB) — PART 3 change history: CL-0120 onward (continued; now holds CL-0120 to CL-0125) — **THE OPEN PART: append new CL entries here**
   - Sections: PART 3 history rows CL-0120 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (15 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
 - **`12_CHANGE_LEDGER/12F_LEDGER_LOGS_AND_NOTES.md`** (2 KB) — Blocked-request log, housekeeping, notes
   - Sections: BLOCKED-REQUEST LOG (audit) · HOUSEKEEPING (optional — nothing here is a recurring task) · NOTES
-- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (28 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **THE OPEN PART: append new entries here**
-  - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG
+- **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (28 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **CLOSED at CL-0122** (21 October 2026, 30 KB soft limit) — new entries go in `12G2`
+  - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG (entries to CL-0122)
+- **`12_CHANGE_LEDGER/12G2_PAGEFORGE_AMALGAMATION_LOG_CONTINUED.md`** (2 KB) — **PART 4 — the PageForge Amalgamation Log, continued** from `12G` (opened 21 October 2026 when `12G` reached the 30 KB soft limit; same entry format — see `12G`). **THE OPEN PART: append new entries here**
+  - Sections: LOG entries CL-0123 onward
 
 ## 13_SPLIT_MODE
 - **`13_SPLIT_MODE.md`** (28 KB) — single-file topic (small enough to stay whole)
@@ -171,7 +173,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
 ## 15_INTERACTIVES_BUILD_MODE
 - **`15_INTERACTIVES_BUILD_MODE/15A_MODE_CORE_AND_CONTRACT.md`** (14 KB) — Mode 6 core: trigger/auto-detection, the `cv2-built` anchor contract, output files + splitting (ALL files in one response), quality gate, authority order
   - Sections: 15 — Interactives Build Mode (Mode 6) · 1. TRIGGER & AUTO-DETECTION · 2. WHERE THIS MODE SITS IN THE PIPELINE · 3. FIRST ACTION on every uploaded worklist · 4. THE ANCHOR CONTRACT — the golden rule · 5. WHAT THE PAGE STITCHER DOES WITH IT · 6. OUTPUT FILES + THE SPLITTING SAFEGUARD (all files emitted in ONE response) · 7. QUALITY CHECK before emitting each file · 8. WHICH KNOWLEDGE TO LOAD — and the authority order · 9. MULTI-COMPONENT ENTRIES AND THE ACTIVITY-BOX CARVE-OUT · 10. TONE + INTERACTION
-- **`15_INTERACTIVES_BUILD_MODE/15B_WORKLIST_FORMAT_AND_BUILD_RULES.md`** (12 KB) — The `{CODE}_interactives.txt` anatomy and the fragment-specific build rules
+- **`15_INTERACTIVES_BUILD_MODE/15B_WORKLIST_FORMAT_AND_BUILD_RULES.md`** (13 KB) — The `{CODE}_interactives.txt` anatomy and the fragment-specific build rules
   - Sections: 15B — The worklist format, and how to build from it · 1. THE INPUT FILE — `{CODE}_interactives.txt` (file header · one entry line by line · reading the `Content:` block) · 2. THE BUILD RULES (declarative only · build the widget not the page · writer content verbatim · media placeholders · choosing the type · answer keys — the load-bearing attributes · shuffle, feedback and buttons · never emit) · 3. FAMILY CONVENTIONS STILL APPLY
 - **`15_INTERACTIVES_BUILD_MODE/15C_WORKED_EXAMPLE.md`** (6 KB) — One worklist entry end to end: input, reading, output, why it is right
   - Sections: 15C — Worked example: one worklist entry → one finished build · The input entry · Reading it · The output · Why this is right

@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -405,6 +405,8 @@ See COMP_01 in `03_COMP_CORE_INTERACTIVES.md` — Venn Layout section.
  
  
 # COMP_11 — Drawing Tools & Utilities
+
+> **Activity or tool? (constraint 95, CL-0125)** The **sketcher** is a task the student completes, so it keeps its documented `activity` wrapper. The **number line** and **stop watch** are **tools** — utilities used alongside the learning — and need no activity box; place them in the body or in an `alertActivity` sidebar as below.
  
 ---
  

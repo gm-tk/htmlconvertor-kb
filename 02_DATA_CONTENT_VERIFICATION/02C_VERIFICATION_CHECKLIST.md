@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -113,7 +113,8 @@ Run ALL checks before presenting output:
 - [ ] Simple hotspot overlay (labels float over an image, NO leader lines to parts): uses `infoImage` with positioned `<p class="infoTrigger">` elements
 - [ ] Numbered activity/interactive instructions use `<ol><li>` (with `start="N"` for continuation) — NEVER `<p>1. …</p>` manual numbering; no typed leading number left inside a quiz question string
 - [ ] Each `activity` wrapper contains at most ONE interactive component; two or more interactives under one writer activity heading are split into separate sequential activities, the following activities renumbered, and the split flagged with a visible `Red Flag:` note (constraint 62)
-- [ ] Activity containing a dropbox / "Go to dropbox" / "Upload to dropbox" button carries the `dropbox` modifier on the activity wrapper (`activity dropbox` or `activity interactive dropbox`) — applies to ALL module series
+- [ ] Every task interactive (D&D, quizzes, self check, games, ordering, sliders, sketcher) sits inside an `activity` wrapper; one the writer left outside any activity has its own box with the next consecutive number, later activities renumbered, and a visible `Red Flag:`; tools (stop watch, number line) need no box (constraint 95, CL-0125)
+- [ ] Activity containing a dropbox / "Go to dropbox" / "Upload to dropbox" button (anywhere in the activity) carries the `dropbox` modifier on the activity wrapper (`activity dropbox` or `activity interactive dropbox`) — every series **except BLL**, which keeps the button but not the modifier; BLLR follows the universal rule (constraint 43, CL-0124)
 - [ ] `[MTKquiz]`: own `activity` wrapper carrying the **next consecutive activity number** even where the writer assigned none (constraint 65)
 - [ ] `[MTKquiz]` activity contains ONLY these children, in this order and nothing else — (1) `<h3>` quiz title (default `Quiz`, or the writer's title verbatim) as the FIRST child, (2) the writer's quiz instructions as normal `<p>` text **— omitted entirely where the writer supplied none, giving a valid three-child box**, (3) visible `Designer/Developer To Do:` note (create the quiz in MTK DEV + orgunit link it to the module), (4) `"Go to quiz"` button with blank `href="#"` — NEVER a dropbox button; no `dropbox` wrapper modifier (constraint 65)
 - [ ] `[MTKquiz]`: **NO quiz questions, options or answers anywhere in the output** — not visible, not listed, not in the red note, not in an HTML comment. The omission is silent — no `Red Flag:` (constraint 65 / CL-0082; reverses CL-0038)
@@ -128,6 +129,7 @@ Run ALL checks before presenting output:
 - [ ] Activity + alertImage pairing: `col-md-8 col-12` outer container; alertImage `col-md-4` nested inside with inner row/col structure (8 + 4 = 12)
 - [ ] D&D: drags with identical answer text that may fill each other's slots carry a space-separated `option` list, own slot first — no red flag (CL-0112)
 - [ ] D&D labelled image drags: the image and its label share ONE `<p>` inside the `.drag`; no inline styles (CL-0113)
+- [ ] D&D: no `<h5>` anywhere inside the `dragAndDrop` (any layout); a heading the writer asked for inside it is `<p><b>…</b></p>` (constraint 94, CL-0123)
 - [ ] Journal: the FIRST reference = `downloadButton` "Download journal" block + empty `hint` / `hintDropContent hintType` (`oneDrive` for a Word / `.docx` link — the default; `googleDrive` for a Google Docs copy link); every LATER one = `<h4 class="goJournal">Go to your journal</h4>`; no blank-link journal button, no journal To Do (constraint 93)
 - [ ] autoCheck auto-applied on every ECH / Years 1–3 / Years 4–6 module, whether built from the template file or a sibling; no Undo / Check button left on any autoCheck interactive except the typing quiz (constraint 38, CL-0116)
 - [ ] Static labels with lines (no click-reveal) built as `imageLabel layout="line"`, evenly spaced starting positions + one `Designer/Developer To Do:` to position them; a two-picture request adds a To Do for a combined image (CL-0118)

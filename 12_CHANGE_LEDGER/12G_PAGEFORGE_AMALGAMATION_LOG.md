@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
-> **Granular part G (15 of 15) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
+> **Granular part G (15 of 16) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. CLOSED at CL-0122 on 21 October 2026 — new entries go in `12G2_PAGEFORGE_AMALGAMATION_LOG_CONTINUED.md`.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

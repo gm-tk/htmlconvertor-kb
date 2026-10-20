@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 > **Granular part B (2 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The five finding classes, the boundary check (reading PageForge's captured content from the reference box on the page), the complex/non-complex interactive rule, the exclusions (incl. the total notes-and-comments exclusion), and the uncertainty rule.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -155,13 +155,18 @@ A complex interactive that PageForge correctly left un-built, but whose referenc
 following section's heading and three paragraphs, is a **class B finding** and must be reported.
 Its internals are not — see §5.2.
 
-### 3.4 Activity boxes the human invented
+### 3.4 Activity boxes for interactives the writer left untagged
 
-Human developers sometimes wrap a standalone task widget in an activity box the writer never
-tagged. Where the human has an activity box with **no** writer `[Activity …]` opener behind it,
-that is a human structural decision — record it in "For Gavin to judge" (§6) rather than as a
-class B finding, and say plainly that no writer tag backs it. (PageForge has its own rules about
-inventing these boxes; whether they should fire here is Gavin's call, not this report's.)
+Since constraint 95 (CL-0125), **every task interactive sits inside an activity box**, and one the
+writer placed outside any tagged activity gets its own box with the next consecutive number. So
+where the human wrapped a standalone **task interactive** in an activity box with no writer
+`[Activity …]` opener behind it, the human followed the rule: if PageForge left that interactive
+loose (no activity wrapper), report it as a **class B** finding — the writer's interactive tag is
+the thing to point at. Numbering differences that follow from it (the human renumbered the later
+activities) belong to the same finding, not separate ones. Where the human wrapped a **tool**
+(stop watch, number line) or a display component in a box the writer never tagged, that is still
+a human structural decision — record it in "For Gavin to judge" (§6) rather than as a finding,
+and say plainly that no writer tag backs it.
 
 ---
 

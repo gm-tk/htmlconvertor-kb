@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
+> **Last updated:** Wednesday, 21st October, 2026 11:46 AM
 > **Granular part B (2 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_01 drag and drop (all layouts).
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -31,6 +31,18 @@
 | `noBG` | Removes background styling |
 | `hoverBoxes` | Drag items show alternate text on hover |
 | `row` | Side-by-side drop/drag areas (column/area) |
+
+---
+
+## Headings inside a drag and drop — never `<h5>` (CL-0123, constraint 94)
+
+**No `<h5>` anywhere inside a `dragAndDrop`** — in any layout (standard, column, FIB, scatter, area, Venn), whether in a column heading, a question, a drop zone, a drag item or a group label. Where the writer asks for a heading inside the drag and drop (a heading tag such as `[H5]`, or a label the writer marks as a heading), render it as a **bold paragraph** instead:
+
+```html
+<p><b>Heading text</b></p>
+```
+
+In a column layout that means `<div class="ddColumn"><p><b>Column heading</b></p> …`. A column heading the writer did **not** ask to be a heading stays the plain `<p>` shown in the Column Layout pattern below — the bold form is for a requested heading only. No inline style on the paragraph (constraint 2). The activity's own `<h3>` title sits **outside** the `dragAndDrop` div and is unaffected.
 
 ---
 
