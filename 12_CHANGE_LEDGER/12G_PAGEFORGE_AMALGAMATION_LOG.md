@@ -1,5 +1,5 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
-> **Granular part G (14 of 14) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
+> **Granular part G (15 of 15) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -152,4 +152,144 @@ Append new entries below this line, in CL order, newest last, using the format a
 - **Required output:** the label and its colon removed, the heading emitted bare — `<h2>Audience and Purpose</h2>`. **Boundary (this is the part that must not be over-applied):** strip only the documented labels — any `Lesson N` form, and `FUNdamental:` — or a short leading `Word:` / `Word Word:` label whose remainder is **identical** (ignoring case and punctuation) to the `<h1>` header title. If stripping does not leave the header title, it is not a label: emit the heading unchanged. Never strip a meaning-bearing colon (`Activity 2: Commas in lists`, `Links to: …`). **Strip, then drop, as two steps:** on an introduction/overview page the stripped heading is **kept**; on a lesson page it then meets the existing duplicate-heading rule and is dropped if it now matches that lesson's own header title. No red flag, no comment — this is a format normalisation, not a wording change.
 - **Supersedes:** — (extends the pre-ledger duplicate-heading rule by adding a prior step; that rule's own behaviour is unchanged)
 - **KB rule:** `01_PIPELINE_EXTRACTION_TAGS/01E_TAG_INTERPRETATION.md` → Headings → label-prefix strip; `00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md` constraint 1; `02_DATA_CONTENT_VERIFICATION/02C_VERIFICATION_CHECKLIST.md` → Headings & Titles
+- **PageForge status:** Not yet amalgamated
+
+### CL-0109 — MXEX central Maths characters + character/bubble row
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (b) Module-series — MXEX
+- **Source:** Finalized difference report — `MXEX105`, Difference 1
+- **Writer input (what triggers it):** `[Image Centralised {Name}]` (e.g. `Archi`) followed by a `[Speech bubble]`, in an MXEX module.
+- **Required output:** inside `col-md-8 col-12`, one `row speechBubble` (`layout="speech"`): image column `col-md-3 col-4 paddingR` holding `<img class="img-fluid imageCentral" loading="lazy" src="Maths Characters/Maths Characters_DRAFT_{Name}.jpg" alt="{Name}">`; bubble column `col-md-9 col-10 paddingL` holding `<div class="bubble-right no-hover"><p>…</p></div>`.
+- **Supersedes:** — (generic `bubble-basic` single-character form for MXEX central characters only)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14D` §14.13; `04_COMP_SEGMENTS_OVERLAYS/04C` → imageCentral Rule
+- **PageForge status:** Not yet amalgamated
+
+### CL-0110 — MXEX `[RHS alert]` → `alert top`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (b) Module-series — MXEX
+- **Source:** Finalized difference report — `MXEX105`, Difference 2
+- **Writer input (what triggers it):** `[RHS alert]` beside body content in an MXEX module.
+- **Required output:** `<div class="alert top">…</div>` in the `col-md-4` sidebar column — not `alertActivity`.
+- **Supersedes:** —
+- **KB rule:** `14D` §14.13; `05_COMP_LANGUAGE_MEDIA_LAYOUT/05B` → Activity sidebar
+- **PageForge status:** Not yet amalgamated
+
+### CL-0111 — MXEX click drop inside one content column
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (b) Module-series — MXEX
+- **Source:** Finalized difference report — `MXEX105`, Difference 5
+- **Writer input (what triggers it):** any click-drop set in an MXEX module.
+- **Required output:** `row` > `col-md-8 col-12` holding the trigger row then every `clickDropContent` (grouping unchanged); a revealed bubble is `col-md-12 col-12` + `bubble-basic no-hover bubble-bottom`.
+- **Supersedes:** —
+- **KB rule:** `14D` §14.13; `04A` → Click Drop
+- **PageForge status:** Not yet amalgamated
+
+### CL-0112 — Multi-value `option` for identical drag answers
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `MXEX105`, Difference 3
+- **Writer input (what triggers it):** two or more drag items with the same answer text, each correct in either slot.
+- **Required output:** each such drag lists every slot it may fill, own slot first (`option="3 4"`, `option="4 3"`); drops keep single values; no red flag.
+- **Supersedes:** —
+- **KB rule:** `03_COMP_CORE_INTERACTIVES/03B` → Standard Layout
+- **PageForge status:** Not yet amalgamated
+
+### CL-0113 — Drag columns match drop columns; labelled image drags
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference reports — `MXEX105` Difference 10; `SCBI202` Difference 5
+- **Writer input (what triggers it):** a column-layout drag and drop; drag items given as image + label.
+- **Required output:** `dragContainer` `.ddColumn` count = `dropContainer` `.ddColumn` count (first populated, rest empty); a labelled image drag is `<div class="drag" option="N"><p><img …> Label</p></div>`; no inline styles.
+- **Supersedes:** the "maximum of 3 `.ddColumn`" cap and the 4–6 / 7+ table (pre-ledger)
+- **KB rule:** `03B` → Column Layout
+- **PageForge status:** Not yet amalgamated
+
+### CL-0114 — Journal references (constraint 93)
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference reports — `MXEX105` Differences 7–8; `SCBI202` Difference 1
+- **Writer input (what triggers it):** any journal reference — `[button]` / `[journal]` "Go to journal", "Go to your journal", "Download journal".
+- **Required output:** FIRST in the module → `<a href="docs/{CODE} Journal.docx" target="_blank"><div class="button downloadButton">Download journal</div></a><div class="hint"></div><div class="hintDropContent" hintType="oneDrive"></div>` (`googleDrive` when the writer's link is a Google Docs "make a copy" link; a writer-supplied link replaces the `docs/` href). Every later → `<h4 class="goJournal">Go to your journal</h4>`. No To Do notes. The HPE celebration page included.
+- **Supersedes:** CL-0022 / CL-0023 "Go to your journal button" wording (HPE)
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05D` → Buttons → Journal references; `00_MASTER_INSTRUCTIONS/00H` constraint 93
+- **PageForge status:** Not yet amalgamated
+
+### CL-0115 — Untitled activity still gets an `<h3>`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 2
+- **Writer input (what triggers it):** an `[Activity nX]` with no title.
+- **Required output:** `<h3>` = the matching journal task's title from the template, verbatim; if none, no heading + a visible `Red Flag:` asking for one.
+- **Supersedes:** —
+- **KB rule:** `05B` → Activities
+- **PageForge status:** Not yet amalgamated
+
+### CL-0116 — autoCheck by module level; no Check button under autoCheck
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 3
+- **Writer input (what triggers it):** any autoCheck-capable interactive in an ECH / `1-3` / `4-6` module, however the module was built.
+- **Required output:** `autoCheck` applied; Undo / Check buttons dropped (typing quiz excepted) — e.g. `<div class="dropQuiz autoCheck" layout="paragraph">` with a Reset-only button row.
+- **Supersedes:** constraint 38's template-FILE trigger
+- **KB rule:** `00D` constraint 38; `03A` → autoCheck Auto-Application; `03C` → Dropdown Quiz
+- **PageForge status:** Not yet amalgamated
+
+### CL-0117 — Memory game: exactly two cards per match
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 6
+- **Writer input (what triggers it):** `[memory game]` with groups of three or more matching cards.
+- **Required output:** one pair per group from its first two cards (`match="1"`, `"2"`, …); remaining cards listed in one visible `Red Flag:` above the game; never commented out.
+- **Supersedes:** —
+- **KB rule:** `03E` → Memory Game
+- **PageForge status:** Not yet amalgamated
+
+### CL-0118 — Static labels with lines → `imageLabel layout="line"`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Differences 8–9
+- **Writer input (what triggers it):** a request for an image labelled with lines (non-clickable), with a label list.
+- **Required output:** `<div class="imageLabel" layout="line">` + `img.imgLabel` + one `<div class="label" direction top left pointTop pointLeft><p>…</p></div>` per label (`||` for multiple lines), evenly spaced starting positions, one `Designer/Developer To Do:` to position them; two-picture requests add `<h5>` captions in a `row paddingB` and a To Do for a combined image.
+- **Supersedes:** the To-Do-only fallback for these requests
+- **KB rule:** `04_COMP_SEGMENTS_OVERLAYS/04B` → Image Label
+- **PageForge status:** Not yet amalgamated
+
+### CL-0119 — Standalone link in a click-drop panel → `externalButton`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 11
+- **Writer input (what triggers it):** a link on its own line inside `clickDropContent`.
+- **Required output:** `<a href="URL" target="_blank"><div class="externalButton">Text</div></a>`.
+- **Supersedes:** —
+- **KB rule:** `00G` constraint 75; `05D` → Buttons
+- **PageForge status:** Not yet amalgamated
+
+### CL-0120 — Click-drop choice sets and picture triggers
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 12
+- **Writer input (what triggers it):** a choice-style click drop "with image tile and title"; or "images with captions" to be clicked.
+- **Required output:** choice set — buttons only in the trigger row, each picture inside its panel under the panel's `<h3>`; picture triggers — `<div class="col"><h5>Caption</h5><img class="img-fluid clickDrop imgBorder" …></div>`; no inline styles, no comments.
+- **Supersedes:** —
+- **KB rule:** `04A` → Click Drop → Choice Sets and Picture Triggers
+- **PageForge status:** Not yet amalgamated
+
+### CL-0121 — Text + side image as sibling columns with padding
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 13
+- **Writer input (what triggers it):** body text with an image (or sidebar alert) beside it.
+- **Required output:** one `row`: `col-md-8 col-12 paddingR` (text, heading included) + `col-md-4 col-12 paddingL` (image) — never an inner row inside the text column; `paddingR` / `paddingL` on every side-by-side pair.
+- **Supersedes:** the pre-ledger `02B` "inner row pattern"
+- **KB rule:** `02_DATA_CONTENT_VERIFICATION/02B` → Column Class Reference; `05D` → Columns
+- **PageForge status:** Not yet amalgamated
+
+### CL-0122 — Floating-nav glossary → glossary page + stickyNav
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 15
+- **Writer input (what triggers it):** a writer request for a glossary in a floating / sticky nav.
+- **Required output:** a separate `{CODE}_glossary.html` page (standard skeleton, `<h1><span>Glossary</span></h1>`, `glossary` / `search-table` in `#body`); `<script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>` in every page's `<head>`; no glossary on 0.0; no red flag.
+- **Supersedes:** —
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A` → Glossary
 - **PageForge status:** Not yet amalgamated

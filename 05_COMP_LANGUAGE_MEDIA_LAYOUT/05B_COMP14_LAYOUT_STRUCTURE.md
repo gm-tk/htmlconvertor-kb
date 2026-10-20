@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part B (2 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, first half: Activities and Alerts. Buttons onward (Buttons, Supervisor Button, Tables, Columns, Quote/Whakatauki/Rhetorical) live in `05D`.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -42,6 +42,8 @@
     </div></div>
 </div>
 ```
+
+**An activity always opens with an `<h3>` (CL-0115).** Where the writer gives an activity a title, that title is the `<h3>`. Where the writer gives **none** (a bare `[Activity 2D]` followed straight by instructions), use the title of the **matching task in the writer's journal content** in the template, verbatim (e.g. Activity 2D → its journal task *What is a species?*). If the template holds no matching titled task, do **not** invent one: emit the activity without a heading and raise a visible `Red Flag:` asking for the title. A title taken this way is the writer's own text reused, so constraint 1 is unaffected.
 
 **Dropbox trigger condition — ALL modules except BLL.** Add the `dropbox` modifier class to **any** activity that ends in an **Upload to dropbox** button (equivalently, whose writer source carries `[trigger engagement]` / a "Go to dropbox" or "Upload to dropbox" button). This applies to **every module series except the BLL series**. **BLL carve-out:** BLL activities add the dropbox **button** but do **not** append the `dropbox` modifier to the `.activity` wrapper (see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.7 / `00` constraint 43). For every non-BLL series, keep the activity's existing classes and append `dropbox`:
 - An activity with no interactive that ends in an upload → `<div class="activity dropbox" number="ID">`.
@@ -106,6 +108,8 @@ A **text-only** activity (no interactive) needs no split at either width — its
     </div>
 </div>
 ```
+
+**MXEX series (CL-0110):** a writer's `[RHS alert]` beside body content uses `<div class="alert top">` in the sidebar column, **not** `alertActivity` — see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.13. Outside MXEX this sidebar example is unchanged.
 
 ---
 

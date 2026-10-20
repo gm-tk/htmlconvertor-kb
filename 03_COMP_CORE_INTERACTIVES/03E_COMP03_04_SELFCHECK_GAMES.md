@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part E (5 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_03 self check & reflection; COMP_04 games & word components.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -119,9 +119,14 @@ Cards come in MATCHING PAIRS. Each card is a `<div class="memCard">` carrying a 
 
 **Attributes:**
 - `memCardSize`: card size on the `.memoryGame` container — `"lg"` is the production value used for Years 1–3 word/picture matching. There is NO `grid` attribute — sizing is the named `memCardSize` attribute.
-- `match="N"`: numeric pair id on each `.memCard`. The two cards with the same `match` value form the matching pair. Matching is by this attribute — NOT by identical hidden content.
+- `match="N"`: numeric pair id on each `.memCard`. The two cards with the same `match` value form the matching pair. Matching is by this attribute — NOT by identical hidden content. **Each `match` value appears on EXACTLY two cards — never three or more** (the game supports one pair per number; CL-0117).
 - Text cards: `<p class="memText sassoonIB-text">…</p>` inside `.cardHidden`. Note the bold infant font class is `sassoonIB-text` (not `sassoonI-text`).
 - Image cards: `<img class="img-fluid" src="…" alt="…" />` inside `.cardHidden` — **no `loading="lazy"`** (constraint 83). The card faces are hidden until the student turns them, so the browser never judges them "near the viewport"; a lazily-deferred face turns up blank on the first reveal and the flip animation measures the wrong size.
+
+**Writer groups of more than two (CL-0117).** When the writer supplies groups of three or more cards meant to match one another (e.g. `[memory game] [20 cards]` as five groups of four), build **one pair per group from the group's first two cards** in the writer's order, numbered `match="1"`, `"2"`, …. The remaining cards are **neither built nor commented out** (constraint 4). List their content in one visible `Red Flag:` directly above the game, so the designer can swap any in:
+```html
+<p style="color: red; font-weight: bold;">Red Flag: The memory game supports one pair per match, so only the first two cards of each group have been built. Unused cards — group 1: …, …; group 2: …, …. Swap any of these in if preferred.</p>
+```
 
 **Card structure:** every `.memCard` has exactly two children — `<div class="cardFace"><h3>?</h3></div>` (the face-down "?" the student sees first) and `<div class="cardHidden">…</div>` (revealed on click).
 

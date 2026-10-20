@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Tuesday, 20th October, 2026 12:14 PM
 > **Granular part E (5 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation, first half: structural, headings (incl. the duplicate-heading drop and the **label-prefix strip**), body, media. **Styling, activities, links and interactive components continue in `01F_TAG_INTERPRETATION_STYLING_ACTIVITIES.md`** (split 14 September 2026 at the 30 KB soft limit).
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -215,7 +215,7 @@ Emit a single clean `<img>` tag pointing at the anticipated final filename in th
 
 #### Rules Common to Both Modes
 
-**⚠️ CRITICAL — No imageCentral:** Do NOT add the `imageCentral` class to any writer-specified images, in either mode. This class is reserved for centralised template assets only (e.g., self-reflection emoji). Adding it to writer images causes a filepath prefix that breaks the image path. See COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md` for details.
+**⚠️ CRITICAL — No imageCentral:** Do NOT add the `imageCentral` class to any writer-specified images, in either mode. This class is reserved for centralised template assets only (e.g., self-reflection emoji). Adding it to writer images causes a filepath prefix that breaks the image path. See COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md` for details. **A subject central-asset tag recorded in `14` (e.g. MXEX `[Image Centralised {Name}]` → `Maths Characters/`, §14.13) is a template asset, not a writer image, and does take the class (CL-0109).**
 
 **⚠️ CRITICAL — No `loading="lazy"` inside moving interactives (constraint 83).** `loading="lazy"` defers an image until the browser decides it is near the viewport. That is right for ordinary page images and **wrong** for an image the student drags, flips, or watches slide past: a deferred image can arrive late, arrive mid-animation, or arrive with the wrong measured size, which breaks the interactive's positioning and hit-detection. **Omit `loading="lazy"` from EVERY `<img>` inside these components** — in both image output modes, for real images and placeholders alike:
 
