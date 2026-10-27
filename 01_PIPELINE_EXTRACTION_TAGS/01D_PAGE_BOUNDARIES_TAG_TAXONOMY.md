@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
+> **Last updated:** Tuesday, 27th October, 2026 5:28 PM
 > **Granular part D (4 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -188,7 +188,8 @@ The offer is an **offer, not an automatic action.** Split Mode runs **only** whe
 | `Kaimahi AI guidelines - authenticity guidelines for years 11-13 and NCEA PDF` | `ai_guidelines_pdf` + `authenticity` |
 | `Kaimahi AI guidelines- responding to suspected Use in assessments PDF` (current) · `…for years 11-13 and NCEA PDF` (retired wording, still matched) | `ai_guidelines_pdf` + `responding` |
 | `Writing Process`, `Writing Process all`, `Writing Process all year 1` / `… year 2-3`, `Writing Process all activeStage <stage>` | `writing_process` + `all` (+ year / active stage) — the centralised component, never an image (CL-0116; `14B2` §14.10) |
-| `Writing Process single <stage>`, `<stage> icon from the Writing Process English Universal parameters` | `writing_process` + `single` + stage (CL-0116) |
+| `Writing Process single <stage>`, `<stage> icon from the Writing Process English Universal parameters`, `<stage> icon from English universal parameters` | `writing_process` + `single` + stage (CL-0116; `-ing` stage forms accepted, CL-0120) |
+| the older loose wording — `insert image of writing process from …`, `image of … MTK writing cycle`, `add writing process image in from TK`, `<stage> icon … writing cycle`, `[image] [<Stage> icon from English universal parameters]` | `writing_process` — `single` + stage when a stage is named, else `all` (CL-0120). A button / link to ENFUN09, a flowchart to re-create, or a span carrying a pasted picture stays `image` / `button` |
 | `Centralised image: <name>`, `Central image: <name>`, `Image centralised <name>` (+ optional pose number) | `central_image` + name — a REGISTERED central-store asset (Science / Maths characters, `14E`; CL-0117). A name no registry knows stays an ordinary `image` request |
 
 > **The eight `ai_guidelines_pdf` tags normalise tolerantly but emit exactly.** Match is case-insensitive, a hyphen / en dash / em dash in the year range are the **same** tag — **spaced or unspaced** — and `Akonga` without the macron is accepted. The **emitted filename is always the exact supplied string** (en dash, macron, spaced hyphen and all) from the registry table in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs. Constraint 84.

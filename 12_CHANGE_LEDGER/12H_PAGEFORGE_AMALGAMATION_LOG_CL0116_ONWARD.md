@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 5:15 PM
+> **Last updated:** Tuesday, 27th October, 2026 5:28 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -46,3 +46,13 @@
 - **Supersedes:** CL-0117 (its `science characters/` paths only)
 - **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md` §14.13; `00H` constraint 95
 - **PageForge status:** Amalgamated (27 October 2026, round 1043 — `Emit_Templates.elements.central_image.assets` `src` paths)
+
+### CL-0120 — The older loose writing-process wording builds the component (widens CL-0116)
+- **Date:** Tuesday, 27th October, 2026
+- **Scope:** (c) Universal
+- **Source:** ADMIN MODE (authorised — Gavin, 27 October 2026)
+- **Writer input (what triggers it):** an image-tagged span whose bracket asks for an image / icon(s) / picture / graphic of the writing process or the MTK writing cycle (`[insert image of writing process from ENFUN09 …]`, `[Insert right, image of the draft icon from the global parameters image of MTK writing cycle]`, `[add writing process image in from TK …]`), or `[<Stage> icon from English universal parameters]` — also inside a layout-table image cell.
+- **Required output:** as CL-0116: a named stage (`plan` / `planning`, `draft` / `drafting`, `edit` / `editing`, `revise` / `revising`, `publish` / `publishing`, `reflect` / `reflecting`, `checkpoint [N]`) → `<div class="writingProcess singleStage" stage="…"></div>`; no stage → `<div class="writingProcess" phase="…"></div>` in its own row; no writer-image placeholder, no red note for the fulfilled request. A button link, a flowchart to re-create or a span with a pasted picture renders as before.
+- **Supersedes:** — (widens CL-0116; its no-retrofit sentence is rewritten)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14B2_SGP_FAMILIES_BLLR_MIW.md` §14.10; `00H` constraint 94; `01D`
+- **PageForge status:** Amalgamated (27 October 2026, round 1043 — `Emit_Templates.elements.writing_process.legacy_cue` + stage synonyms, `ContentConverter.#writingProcessLegacy` / `WritingProcessCell` (layout-grid cells); env `WRITEPROCLEGACY_OFF`)
