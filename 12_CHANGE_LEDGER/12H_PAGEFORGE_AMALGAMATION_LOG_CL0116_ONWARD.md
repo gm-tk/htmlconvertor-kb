@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 5:28 PM
+> **Last updated:** Tuesday, 27th October, 2026 5:33 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -56,3 +56,13 @@
 - **Supersedes:** — (widens CL-0116; its no-retrofit sentence is rewritten)
 - **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14B2_SGP_FAMILIES_BLLR_MIW.md` §14.10; `00H` constraint 94; `01D`
 - **PageForge status:** Amalgamated (27 October 2026, round 1043 — `Emit_Templates.elements.writing_process.legacy_cue` + stage synonyms, `ContentConverter.#writingProcessLegacy` / `WritingProcessCell` (layout-grid cells); env `WRITEPROCLEGACY_OFF`)
+
+### CL-0121 — Maths: the Global Edits conventions — three-tab overview, Lesson Summary alert, phase dropbox copy
+- **Date:** Tuesday, 27th October, 2026
+- **Scope:** (b) Cohort — Maths modules
+- **Source:** ADMIN MODE (authorised — Gavin, 27 October 2026; Meredith Lees's *Global Edits Maths.docx*)
+- **Writer input (what triggers it):** a Maths module's `[Overview]` with `[Tab 1]` … `[Tab 3]` lines (Information / Maths No Problem / Curriculum content); a lesson `[Overview]`; the `[Alert] [H3] Lesson summary … [Hint button] Need help? … [End summary]` block; `[ActivityDropbox] [H3] Checkpoint` and `[H3] Share Your Learning` boxes with or without body copy; `[Math] **4/5**`.
+- **Required output:** the module menu as three tabs with those labels and the MNP tab's fixed lead / closing lines around the writer's verbatim book, chapter and lesson lines; lesson menus with that lesson's LI / SC; an alert holding `<h3>Lesson summary</h3>`, the body, and a hint button revealing the kaiako paragraph (*Email or phone your kaiako. You can ring 0800 65 99 88 …*); dropbox activity boxes whose empty body takes the phase's suggested copy (14E §14.14, Phases 1–4) and whose writer copy is kept verbatim; `[Math]` fractions as MathML. No intro alert is invented.
+- **Supersedes:** — (extends CL-0117's §14.14)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md` §14.14
+- **PageForge status:** Not yet amalgamated — recorded inertly 27 October 2026 (round 1043, `Subject_Global_Parameters.json` 14.14, active:false); the builds await Maths Writers Templates in the corpus (a measured round)

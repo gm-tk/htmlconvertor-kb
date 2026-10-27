@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Tuesday, 27th October, 2026 5:28 PM
+> **Last updated:** Tuesday, 27th October, 2026 5:33 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -13,7 +13,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: OPERATING MODES · Mode 1 — Conversion · Mode 2 — Advisory & Support · Mode 3 — Comparison · Mode 4 — Update · Mode 5 — Split · Mode 6 — Interactives Build · Mode 7 — PageForge Compare · Mode 8 — Admin · Mode 9 — Assessment · Mode triage
 - **`00_MASTER_INSTRUCTIONS/00B_CONVERSION_PIPELINE.md`** (19 KB) — Conversion pipeline (Mode 1 pseudo-code)
   - Sections: CONVERSION PIPELINE (Mode 1 — Pseudo-code)
-- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (21 KB) — File reference index (now lists `18_ASSESSMENT_MODE.md`; row 14 names the Science / Maths families, the Writing Process tags and the First Steps / Next Steps tiles)
+- **`00_MASTER_INSTRUCTIONS/00C_FILE_REFERENCE_INDEX.md`** (22 KB) — File reference index (now lists `18_ASSESSMENT_MODE.md`; row 14 names the Science / Maths families, the Writing Process tags and the First Steps / Next Steps tiles)
   - Sections: FILE REFERENCE INDEX
 - **`00_MASTER_INSTRUCTIONS/00D_CONSTRAINTS_1.md`** (29 KB) — Constraints quick reference, part 1 of 4 — **constraints 1–57** (constraint 1 now lists the label-prefix strip among the permitted format normalisations — CL-0095) — constraint 2 now records the Assessment Mode inline-style exception (`18` §6.4)
   - Sections: CONSTRAINTS (Quick Reference) — the list opens here and runs on through `00E`, `00G` and `00H` as ONE continuous numbering
@@ -123,7 +123,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
 
 ## 12_CHANGE_LEDGER
-- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (20 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0094, CL-0116 to CL-0120**), PART 2 pending approval
+- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (21 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0094, CL-0116 to CL-0121**), PART 2 pending approval
   - Sections: 12 — Change Ledger (Conflict & Lock Registry) · PURPOSE · WHY ONE IN-HOUSE FILE IS FINE (feasibility note) · STATUS VALUES · HOW TO READ / MAINTAIN THIS LEDGER · PART 1 — LOCKED DECISIONS (binding & immutable — conflict check reads this FIRST) · PART 2 — PENDING APPROVAL (report-vs-report conflicts awaiting the design authority's resolution)
 - **`12_CHANGE_LEDGER/12B_CHANGE_HISTORY_CL0001_0028.md`** (28 KB) — PART 3 change history: CL-0001 to CL-0028
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
@@ -143,7 +143,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 history rows CL-0098 to CL-0103
 - **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_0111.md`** (27 KB) — PART 3 change history: CL-0104 to CL-0111 (continued) — CLOSED at CL-0111 (23 September 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0104 to CL-0111
-- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0112_ONWARD.md`** (18 KB) — PART 3 change history: CL-0112 onward (continued; latest CL-0120 — the older writing-process wording builds the component; CL-0117 the Science / Maths characters; CL-0116 the Writing Process tags) — **THE OPEN PART: append new CL entries here**
+- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0112_ONWARD.md`** (21 KB) — PART 3 change history: CL-0112 onward (continued; latest CL-0121 — the Global Edits Maths conventions folded in; CL-0117 the Science / Maths characters; CL-0116 the Writing Process tags) — **THE OPEN PART: append new CL entries here**
   - Sections: PART 3 history rows CL-0112 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (15 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -151,7 +151,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: BLOCKED-REQUEST LOG (audit) · HOUSEKEEPING (optional — nothing here is a recurring task) · NOTES
 - **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (27 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **CLOSED at CL-0115 (27 October 2026, 30 KB soft limit; filename kept because twelve files cite it as the log's home)** — its rules sections still govern every part of the log
   - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG
-- **`12_CHANGE_LEDGER/12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md`** (8 KB) — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward (CL-0116 the Writing Process writer tags; CL-0117 the Science and Maths characters; CL-0118 the Languages FUN level names; CL-0119 the Science folder casing corrected to `Science Characters/`) — **THE OPEN PART: append new entries here**, in `12G`'s ENTRY FORMAT
+- **`12_CHANGE_LEDGER/12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md`** (10 KB) — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward (CL-0116 the Writing Process writer tags; CL-0117 the Science and Maths characters; CL-0118 the Languages FUN level names; CL-0119 the Science folder casing corrected to `Science Characters/`) — **THE OPEN PART: append new entries here**, in `12G`'s ENTRY FORMAT
   - Sections: PART 4 — The PageForge Amalgamation Log (continued from `12G`: CL-0116 onward)
 
 ## 13_SPLIT_MODE
@@ -169,7 +169,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 14C — Languages Audiovisual Package: the complete asset registry · 1. Delivery forms (the supplied markup shapes) · 2. Language icons · 3. German · 4. French · 5. Chinese · 6. Japanese · 7. Spanish · 8. Samoan · 9. Acknowledgements for the iStock-derived registry assets
 - **`14_SUBJECT_GLOBAL_PARAMETERS/14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** (6 KB) — Cross-cutting notes (14.11 — the central-asset bullet now also names Science and Maths) and the Technology family (14.12 — five `Technology/strand/active-*.svg` strand icons copied verbatim including their supplied spelling, the DELIVERED shared `congradulations/` celebration gif whose misspelling is a recorded design decision and is never corrected, suggested `col-8` text / `col-4` gif layout)
   - Sections: 14.11 Cross-cutting notes · 14.12 Technology — strand icons + the celebration gif
-- **`14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md`** (6 KB) — Families 14.13 **Science** (the four centralised characters Aroha / Lani / Max / Quinn — `Science Characters/<Name>-<n>.jpg`, poses 1–3 body, 4–5 head shots, Quinn 4–7; the two designer-made comic scenes) and 14.14 **Maths** (the five centralised characters Ada / Omar / Hypi / Erni / Lara — `Maths Characters/maths_characters_<name>.jpg`; the superseded Global Edits snippets recorded; the rest of that document NOT folded in). Opened 27 October 2026 (CL-0117)
+- **`14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md`** (12 KB) — Families 14.13 **Science** (the four centralised characters Aroha / Lani / Max / Quinn — `Science Characters/<Name>-<n>.jpg`, poses 1–3 body, 4–5 head shots, Quinn 4–7; the two designer-made comic scenes) and 14.14 **Maths** (the five centralised characters Ada / Omar / Hypi / Erni / Lara — `Maths Characters/maths_characters_<name>.jpg`; the superseded Global Edits snippets recorded; **the Global Edits Maths conventions folded in — three-tab overview, lesson intro, Lesson Summary alert, dropbox copy by phase, image rules — CL-0121**). Opened 27 October 2026 (CL-0117)
   - Sections: 14.13 Science — the four characters + the comic scenes · 14.14 Maths — the five characters
 
 ## 15_INTERACTIVES_BUILD_MODE
