@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:36 AM
-> **Granular part B (2 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.8 (LS, BLL, HPE). BLLR (14.9) and MiW/WJ (14.10) live in `14B2`; cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
+> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
+> **Granular part B (2 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.8 (LS, BLL, HPE). BLLR (14.9) and MiW/WJ (14.10) live in `14B2`; cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -155,4 +155,4 @@
 
 ---
 
-> **Sections 14.9 and 14.10 continue in `14B2_SGP_FAMILIES_BLLR_MIW.md`** (split from this part on 23 September 2026 when it passed the 30 KB soft limit, `CLAUDE.md` §4; content moved verbatim), and 14.11-14.12 in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), this part (14.6-14.8), `14B2` (14.9-14.10) and `14D` (14.11-14.12).
+> **Sections 14.9 and 14.10 continue in `14B2_SGP_FAMILIES_BLLR_MIW.md`** (split from this part on 23 September 2026 when it passed the 30 KB soft limit, `CLAUDE.md` §4; content moved verbatim), 14.11-14.12 in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`, and 14.13-14.14 (Science, Maths) in `14E_SGP_FAMILIES_SCIENCE_MATHS.md`. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), this part (14.6-14.8), `14B2` (14.9-14.10), `14D` (14.11-14.12) and `14E` (14.13-14.14).

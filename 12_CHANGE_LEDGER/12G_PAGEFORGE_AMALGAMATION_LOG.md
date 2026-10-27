@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:40 AM
-> **Granular part G (15 of 15) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: every FRONT-FACING decision, in a form PageForge's developer can implement. THE OPEN PART: append new entries here.
+> **Last updated:** Tuesday, 27th October, 2026 2:44 PM
+> **Granular part G (15 of 16) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: its rules (WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL) and the entries CL-0089 to CL-0115. **CLOSED at CL-0115 on 27 October 2026** (the next entries would have taken it past the 30 KB soft limit, `CLAUDE.md` §4); the filename is kept because twelve files cite it as the log's home. **New entries go in `12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md` — THE OPEN PART.**
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -57,7 +57,7 @@ One block per decision, **appended in CL order, newest last**. The `CL-nnnn` id 
 
 - **Append-only.** Never rewrite or delete an entry. A later decision that changes an earlier one is a **new entry** naming the earlier in its `Supersedes:` line; the superseded entry stays, and its `PageForge status:` is left as it was.
 - **`PageForge status:` is the only field ever edited in place** — updated to `Amalgamated (date, round)` when a PageForge development round implements the rule.
-- **Split at 30 KB.** When this part passes the soft limit, close it to its CL range and open the next part (`12H_PAGEFORGE_AMALGAMATION_LOG_CLnnnn_ONWARD.md`) per the repo `CLAUDE.md` §4, updating `INDEX.md` for both.
+- **Split at 30 KB.** When the open part passes the soft limit, close it to its CL range and open the next part (`12I_…_CLnnnn_ONWARD.md`) per the repo `CLAUDE.md` §4, updating `INDEX.md` for both. *(Done once already: this part closed at CL-0115 on 27 October 2026 and `12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md` is the open part — the rules above still govern every part.)*
 - Every run that touches this part refreshes its header `Last updated` stamp.
 
 ---
@@ -223,3 +223,7 @@ Append new entries below this line, in CL order, newest last, using the format a
 - **Supersedes:** — (the pre-ledger `05A` LaTeX-output example)
 - **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A_COMP12_13_LANGUAGE_MEDIA.md` → MathJax / Equations
 - **PageForge status:** Partly amalgamated — OMML → MathML is live (`MATHML_OFF`); LaTeX-text and `[Math]`-fraction inputs are a future round
+
+---
+
+> **This part is CLOSED at CL-0115.** Entries from CL-0116 continue in `12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md`, in the format above.

@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:36 AM
-> **Granular part A (1 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
+> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
+> **Granular part A (1 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -7,7 +7,7 @@
 
 # 14 — Subject Global Parameters
 
-> **When to load:** When converting or advising on a module that belongs to one of the subject **cohorts / series** documented below (Languages Phase 1–4, Pathways, Taonga, CED Phase 5, FUNdamentals H&PE, LS, BLL, BLLR, MiW/WJ, HPE content lessons), and whenever these conventions are changed in Update Mode. These are the design team's per-subject "global parameters" — the standing look-and-feel and structural conventions each subject wants applied to every one of its modules.
+> **When to load:** When converting or advising on a module that belongs to one of the subject **cohorts / series** documented below (Languages Phase 1–4, Pathways, Taonga, CED Phase 5, FUNdamentals H&PE, LS, BLL, BLLR, MiW/WJ, HPE content lessons, Technology, Science, Maths), and whenever these conventions are changed in Update Mode. These are the design team's per-subject "global parameters" — the standing look-and-feel and structural conventions each subject wants applied to every one of its modules.
 
 ---
 

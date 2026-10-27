@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:31 AM
+> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
 > **Granular part D (4 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Page boundary system; tag taxonomy & normalisation.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -187,6 +187,9 @@ The offer is an **offer, not an automatic action.** Split Mode runs **only** whe
 | `Kaimahi AI use guidelines years 1-6`/`7-10` + `PDF` | `ai_guidelines_pdf` + kaimahi variant |
 | `Kaimahi AI guidelines - authenticity guidelines for years 11-13 and NCEA PDF` | `ai_guidelines_pdf` + `authenticity` |
 | `Kaimahi AI guidelines- responding to suspected Use in assessments PDF` (current) · `…for years 11-13 and NCEA PDF` (retired wording, still matched) | `ai_guidelines_pdf` + `responding` |
+| `Writing Process`, `Writing Process all`, `Writing Process all year 1` / `… year 2-3`, `Writing Process all activeStage <stage>` | `writing_process` + `all` (+ year / active stage) — the centralised component, never an image (CL-0116; `14B2` §14.10) |
+| `Writing Process single <stage>`, `<stage> icon from the Writing Process English Universal parameters` | `writing_process` + `single` + stage (CL-0116) |
+| `Centralised image: <name>`, `Central image: <name>`, `Image centralised <name>` (+ optional pose number) | `central_image` + name — a REGISTERED central-store asset (Science / Maths characters, `14E`; CL-0117). A name no registry knows stays an ordinary `image` request |
 
 > **The eight `ai_guidelines_pdf` tags normalise tolerantly but emit exactly.** Match is case-insensitive, a hyphen / en dash / em dash in the year range are the **same** tag — **spaced or unspaced** — and `Akonga` without the macron is accepted. The **emitted filename is always the exact supplied string** (en dash, macron, spaced hyphen and all) from the registry table in `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs. Constraint 84.
 >

@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:32 AM
-> **Granular part C (4 of 5) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (5 August 2026) so the supplied HTML file no longer needs to be consulted or kept in project knowledge.
+> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
+> **Granular part C (4 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (5 August 2026) so the supplied HTML file no longer needs to be consulted or kept in project knowledge.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

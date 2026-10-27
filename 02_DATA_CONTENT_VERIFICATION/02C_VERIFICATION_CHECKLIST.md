@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -138,6 +138,8 @@ Run ALL checks before presenting output:
 - [ ] YouTube: `youtube-nocookie.com/embed/`
 - [ ] No TikTok embeds
 - [ ] No `imageCentral` class on writer-specified images
+- [ ] `[Writing Process …]` tags built as the centralised `writingProcess` component — `phase` from the template band (phase 1 from the named year), `stage` capitalised with `Checkpoint_N` underscored, the full circle alone in its own row — never an image, never a To Do (constraint 94, `CL-0116`)
+- [ ] Science / Maths character tags built from the central store with the exact folder casing and pose number (`science characters/Quinn-4.jpg`, `Maths Characters/maths_characters_ada.jpg`) and `class="img-fluid imageCentral"`; an unknown name or pose is a `Red Flag:`, never a guessed file (constraint 95, `CL-0117`)
 - [ ] Image caption paragraphs (a `<p>` describing/naming an adjacent image) carry `class="captionText"` — in every context (standalone, in columns, inside accordion content); ordinary prose `<p>` stays unclassed
 - [ ] Acknowledgements wrapper is `<div class="acks acksTemplate">` (the `acksTemplate` modifier is standard); add `acksAI` → `<div class="acks acksTemplate acksAI">` when the module uses AI-generated media — **including where the writer has only REQUESTED an AI asset that does not exist yet**, paired with a `Designer/Developer To Do:` note (constraint 72)
 - [ ] Each media-carrying `acksLesson` div opens with a `<!-- Lesson N.N -->` page-label annotation — the word is **Lesson**, never **Page**; the one remaining boilerplate div ("All other images ©…") carries no label (constraints 73, 90)
