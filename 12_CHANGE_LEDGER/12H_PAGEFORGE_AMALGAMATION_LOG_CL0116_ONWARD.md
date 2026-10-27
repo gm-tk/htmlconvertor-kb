@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 4:16 PM
+> **Last updated:** Tuesday, 27th October, 2026 5:15 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -36,3 +36,13 @@
 - **Supersedes:** — (the pre-ledger `14A` two-tile wording named the tiles Novice / Emergent)
 - **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md` §14.1 (two-tile bullet)
 - **PageForge status:** Amalgamated (Tuesday, 27th October, 2026, round 1042, build 260625.71 — `Emit_Templates.body_region.fundamentals_panels.level_labels` display map, `ContentConverter.LevelDisplayLabel`; env `LEVELNAMES_OFF`; eleven level-dialect golds diverge by these words only, NAMED)
+
+### CL-0119 — Science characters: the folder is `Science Characters/` (server spelling) — casing correction to CL-0117
+- **Date:** Tuesday, 27th October, 2026
+- **Scope:** (b) Cohort — Science modules
+- **Source:** ADMIN MODE (authorised — Gavin, 27 October 2026)
+- **Writer input (what triggers it):** as CL-0117 — `[Centralised image: Quinn 4]`, `[Central image: clubhouse]` and the other Science character / scene names.
+- **Required output:** `<img class="img-fluid imageCentral" loading="lazy" src="Science Characters/Quinn-4.jpg" alt="Quinn" />`; scenes `Science Characters/comic scenes/clubhouse_1.png` / `kowhai_reserve_1.png`. The capitalised, spaced folder exactly as on the server; never the template page's lower-case form.
+- **Supersedes:** CL-0117 (its `science characters/` paths only)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md` §14.13; `00H` constraint 95
+- **PageForge status:** Amalgamated (27 October 2026, round 1043 — `Emit_Templates.elements.central_image.assets` `src` paths)

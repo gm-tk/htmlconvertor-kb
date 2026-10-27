@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
+> **Last updated:** Tuesday, 27th October, 2026 5:13 PM
 > **Granular part E (6 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.13 (Science) and 14.14 (Maths): the centralised character images. Opened 27 October 2026 (CL-0117) as a new part rather than growing `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -7,15 +7,15 @@
 **Scope — Cohort:** all **Science** modules. *(The module-code prefix was not stated in the source; identify these modules by subject until a prefix is recorded here. Do not guess one.)* Source: Meredith Lees → Gavin McGruddy, *"New template items"*, 23 October 2026 — `Global Edits Science.docx`, the template's Centralised Images page (`refresh_imageCentral.html` → *Science Characters*) and the server folder `imageCentral\Science Characters`. Actioned through the authorised channel 27 October 2026 (CL-0117; constraint 95).
 
 - **Four characters — Aroha, Lani, Max, Quinn.** Each has **three full-body poses, numbered 1–3**, and **two head shots, numbered 4–5**. **Quinn is the exception with FOUR head shots:** 4–5 with her safety goggles **on**, 6–7 with them **on her head**. Every image is a `.jpg`.
-- **Folder and filename — copy verbatim.** `science characters/<Name>-<n>.jpg` — the folder **lower-case** exactly as the template page writes it, the name capitalised, a hyphen, the pose number: `science characters/Aroha-1.jpg`, `science characters/Quinn-6.jpg`. *(The server folder itself is listed as `Science Characters`; the template page — the design team's own working reference — writes `science characters/`, and that is the form to emit. A `draft/` sub-folder exists on the server and is never referenced.)*
+- **Folder and filename — copy verbatim.** `Science Characters/<Name>-<n>.jpg` — the folder **capitalised with a space, exactly as it is on the server** (`imageCentral\Science Characters`), the name capitalised, a hyphen, the pose number: `Science Characters/Aroha-1.jpg`, `Science Characters/Quinn-6.jpg`. *(The template's Centralised Images page writes the folder lower-case, `Science Characters/`; Chris ruled on 27 October 2026 — CL-0119 — that the server's spelling is the one to emit, since that is the folder that exists. A `draft/` sub-folder exists on the server and is never referenced.)*
 - **Supplied markup** (the Global Edits document's form — the `alt` is the character's name; the template page leaves it empty, use the name):
   ```html
-  <img class="img-fluid imageCentral" loading="lazy" src="science characters/Quinn-1.jpg" alt="Quinn" >
+  <img class="img-fluid imageCentral" loading="lazy" src="Science Characters/Quinn-1.jpg" alt="Quinn" >
   ```
 - **Writer tag.** `[Centralised image: Quinn 4]`, `[Image centralised Quinn 4]`, `[Central image: Quinn]` — the centralised-image tag in any of its forms (`01` → Tag Taxonomy) plus the character's name and, optionally, the pose number. **No number → pose 1** (the full-body image the Global Edits document shows first). A name or number that does not exist in the set (`Aroha-6`, `Max-7`) is a `Red Flag:` naming the request, never a guessed file. The characters appear in `[Speech bubble]`s like every other character set — mechanics stay in `04_COMP_SEGMENTS_OVERLAYS.md` → COMP_09 (its `imageCentral` rule already covers central characters).
-- **Comic scenes — designer-made, always `.png`.** `science characters/comic scenes/clubhouse_1.png` (*Clubhouse*) and `science characters/comic scenes/kowhai_reserve_1.png` (*Kōwhai Reserve*). Writer tag `[Centralised image: clubhouse]` / `[Centralised image: kowhai reserve]`. **A scene not in this list must be created by a designer** — emit a visible `Designer/Developer To Do:` naming the scene the writer asked for; never compose one from the character images.
+- **Comic scenes — designer-made, always `.png`.** `Science Characters/comic scenes/clubhouse_1.png` (*Clubhouse*) and `Science Characters/comic scenes/kowhai_reserve_1.png` (*Kōwhai Reserve*). Writer tag `[Centralised image: clubhouse]` / `[Centralised image: kowhai reserve]`. **A scene not in this list must be created by a designer** — emit a visible `Designer/Developer To Do:` naming the scene the writer asked for; never compose one from the character images.
   ```html
-  <img class="img-fluid imageCentral" loading="lazy" src="science characters/comic scenes/clubhouse_1.png" alt="Clubhouse" >
+  <img class="img-fluid imageCentral" loading="lazy" src="Science Characters/comic scenes/clubhouse_1.png" alt="Clubhouse" >
   ```
 
 ---
