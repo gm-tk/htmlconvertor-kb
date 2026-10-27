@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:37 AM
+> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -153,22 +153,22 @@ Add `bubbleHeight` class to the `speechBubble` row:
  
 When there is only one character (common pattern: a character introducing themselves, text on one side, character image on the other). This is NOT a conversation — use `bubble-basic` combined with a positional class.
  
-**⚠️ CRITICAL:** Single-character speech bubbles use `bubble-basic` COMBINED with a positional class (`bubble-left`, `bubble-right`, `bubble-top`, or `bubble-bottom`) on the same element. The positional class is determined by the layout in the Writers Template. The character image does NOT need `bubble-img` class when using wider column sizing.
+**⚠️ CRITICAL:** Single-character speech bubbles use `bubble-basic` COMBINED with a positional class (`bubble-left`, `bubble-top`, or `bubble-bottom`) on the same element. **The horizontal form is always `bubble-left` — the text on the left, the character image on the right — whatever order the Writers Template presents the two (CL-0122).** A Writers Template table with the image in the left cell and the text in the right cell, or an "RHS" / "LHS" note, still renders text-left / image-right. The character image does NOT need `bubble-img` class when using wider column sizing.
  
 ### Positional Class Selection
  
 | Writers Template Layout | Positional Class | Reasoning |
 |---|---|---|
-| Text on LEFT, image on RIGHT | `bubble-left` | Character/speaker is on the right; tail points left toward speaker |
-| Image on LEFT, text on RIGHT | `bubble-right` | Character/speaker is on the left; tail points right toward speaker |
+| Text and image side by side — EITHER order in the Writers Template | `bubble-left` | The house layout: text on the left, character/speaker on the right; tail points left toward the speaker (CL-0122) |
+| *(not a standard bubble)* | `bubble-right` | Only the conversation layout's prompt turn and the MiW / WJ Kea bubble (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.10) — never a standard single-character bubble |
 | Writer specifies "above" the image | `bubble-top` | Bubble appears above the character; image moves to separate row below |
 | Writer specifies "below" the image | `bubble-bottom` | Bubble appears below the character; image moves to separate row above |
  
-**⚠️ CRITICAL — Writer positional instructions override default layout.** If a writer includes a CS instruction specifying where the speech bubble should appear relative to the character image (e.g., "CS: can the speech bubble come out above the cat's head"), that instruction takes precedence over the default left/right positioning derived from the table layout. Apply the corresponding positional class (`bubble-top`, `bubble-bottom`, etc.) as instructed.
+**⚠️ CRITICAL — A writer's above / below instruction is the only override.** If a writer includes a CS instruction specifying that the speech bubble should appear above or below the character image (e.g., "CS: can the speech bubble come out above the cat's head"), that instruction takes precedence over the horizontal text-left / image-right form. Apply the corresponding positional class (`bubble-top`, `bubble-bottom`) as instructed. A writer's left / right wording or cell order does NOT override it.
  
 ### Standard Layout — Text Left, Image Right (bubble-left)
  
-When the Writers Template has the speech bubble text on the left and the image on the right (and no other positional instructions from the writer):
+Every horizontal single-character bubble, whichever way round the Writers Template presents the text and the image (and with no above / below instruction from the writer):
  
 ```html
 <div class="row speechBubble" layout="speech">
@@ -184,9 +184,9 @@ When the Writers Template has the speech bubble text on the left and the image o
 </div>
 ```
  
-### Standard Layout — Image Left, Text Right (bubble-right)
+### Image Left, Text Right (bubble-right) — NOT a standard layout
  
-When the Writers Template has the image on the left and the speech bubble text on the right:
+This form is NOT used for a standard single-character bubble, even when the Writers Template puts the image in the left cell (CL-0122) — that still builds the Standard Layout above. It is kept here as the reference markup for the two cases that do carry the picture on the left: the conversation layout's prompt turn (above) and the MiW / WJ Kea bubble (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.10):
  
 ```html
 <div class="row speechBubble" layout="speech">
@@ -267,7 +267,7 @@ When the character image column is adjacent to the bubble in a horizontal layout
  
 | Tag | Implementation |
 |-----|---------------|
-| `[speech bubble]` | Single character: `bubble-basic` + positional class from layout + `no-hover` on text-only bubbles. Conversation: alternating `bubble-right`/`bubble-left` + `no-hover` |
+| `[speech bubble]` | Single character: `bubble-basic` + `bubble-left` (text left, image right, whatever the Writers Template's order — CL-0122; `bubble-top` / `bubble-bottom` on a writer's instruction) + `no-hover` on text-only bubbles. Conversation: alternating `bubble-right`/`bubble-left` + `no-hover` |
 | `[speech bubble front]` | Same as standard `[speech bubble]` |
 | `[speech bubble tiles]` | Multiple bubbles with `bubble-basic no-hover` in grid |
 | `[speech bubble two people]` | Two characters, alternating bubble-right/bubble-left + `no-hover` on text-only bubbles |

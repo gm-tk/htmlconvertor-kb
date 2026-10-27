@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 5:13 PM
+> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
 > **Granular part C (3 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -89,7 +89,7 @@ Run ALL checks before presenting output:
 - [ ] Exact button classes per component (see COMP_00 in `03_COMP_CORE_INTERACTIVES.md`)
 - [ ] Speech bubbles: `no-hover` on all text-only/display-only bubbles
 - [ ] Speech bubbles: single-character uses `bubble-basic` + positional class (`bubble-left`/`bubble-right`/`bubble-top`/`bubble-bottom`) — see COMP_09
-- [ ] Speech bubbles: positional class matches writer template layout (text-left/image-right → `bubble-left`; image-left/text-right → `bubble-right`)
+- [ ] Speech bubbles: every standard single-character bubble is text-left / image-right → `bubble-left` with `paddingL` on the image column, whatever order the Writers Template used (CL-0122); `bubble-right` only in a conversation layout or the MiW / WJ Kea bubble
 - [ ] Speech bubbles: writer CS positional instructions (e.g., "above the cat's head") override default layout → use `bubble-top`/`bubble-bottom` with image in separate row
 - [ ] Speech bubbles: multi-paragraph content wrapped in `<div>` inside bubble element; single-paragraph content has no wrapper
 - [ ] Speech bubbles: image column has `paddingL` (image on right) or `paddingR` (image on left) in horizontal layouts

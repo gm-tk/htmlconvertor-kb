@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 16th September, 2026 6:00 PM
+> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
 > **Granular part D (4 of 8) of `00_MASTER_INSTRUCTIONS.md`** — Constraints quick reference (first part: constraints 1–57).
 > *The numbered constraint list runs on into `00E` (58–74), `00G` (75–85) and `00H` (86 onward — the open part).*
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
@@ -34,7 +34,7 @@
 26. D&D standard with `images` class: text in `questionContainer` (col-7), images in `dragContainer` (col-5) — NEVER images in questionContainer
 27. DropQuiz standalone Q&A pairs: use list layout (no `layout` attribute, `<ol><li>` with row columns) — NOT paragraph layout
 28. Use lowercase `<!doctype html>` and XHTML-style self-closing tags on void elements
-29. Single-character speech bubbles: use `bubble-basic` + positional class from writer template layout (`bubble-left`/`bubble-right`/`bubble-top`/`bubble-bottom`); writer CS positional instructions override default layout; multi-paragraph content needs wrapping `<div>` inside bubble; image column needs `paddingL`/`paddingR` in horizontal layouts — a **left-positioned** image column takes `paddingR` and a **right-positioned** image column takes `paddingL` (padding on the inner side, between image and bubble); never mirror a sibling reference that applies the same padding class to both image columns (**scoped exception, CL-0067:** HPE head-only dialogue strips deliberately take `paddingR` on both sides — see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.8)
+29. Single-character speech bubbles: `bubble-basic` + a positional class — ALWAYS `bubble-left` (text left, image right) whatever the Writers Template's order (CL-0122; `bubble-right` = conversation turn / WJ Kea only); a writer's above / below note gives `bubble-top` / `bubble-bottom`; multi-paragraph content needs wrapping `<div>` inside bubble; image column needs `paddingL`/`paddingR` in horizontal layouts — a **left-positioned** image column takes `paddingR` and a **right-positioned** image column takes `paddingL` (padding on the inner side, between image and bubble); never mirror a sibling reference that applies the same padding class to both image columns (**scoped exception, CL-0067:** HPE head-only dialogue strips deliberately take `paddingR` on both sides — see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.8)
 30. ALWAYS prompt the user for image output mode (Placeholder or Direct Link) if they have not stated a preference — do NOT silently default to either mode
 31. In Direct Link Mode (Mode D), emit clean `<img>` tags with no HTML comment blocks — the actual filename in `src` is sufficient; comment blocks are only used in Placeholder Mode (Mode P)
 32. Apply the chosen image output mode uniformly to ALL images in the conversion — do NOT mix modes within a single output file

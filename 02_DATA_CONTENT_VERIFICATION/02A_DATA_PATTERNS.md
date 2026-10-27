@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 16th July, 2026 9:30 PM
+> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
 > **Granular part A (1 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Interactive data pattern recognition (patterns 1-13, speech bubbles, tag primacy).
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -263,19 +263,19 @@ Use the documented `speechBubble` component from COMP_09 in `04_COMP_SEGMENTS_OV
 ### Variant Mapping
 | Writer Tag | Implementation |
 |---|---|
-| `[speech bubble]` | Single character: `bubble-basic` + positional class from layout (`bubble-left`/`bubble-right`/`bubble-top`/`bubble-bottom`) + `no-hover` on text-only bubbles. Conversation: alternating `bubble-right`/`bubble-left` + `no-hover` |
+| `[speech bubble]` | Single character: `bubble-basic` + `bubble-left` (text left, image right whatever the Writers Template's order — CL-0122; `bubble-top` / `bubble-bottom` on a writer's instruction) + `no-hover` on text-only bubbles. Conversation: alternating `bubble-right`/`bubble-left` + `no-hover` |
 | `[speech bubble front]` | Same as standard |
 | `[speech bubble tiles]` | Multiple bubbles with `bubble-basic no-hover` in grid |
 | `[speech bubble two people]` | Two characters, alternating bubble-right/bubble-left + `no-hover` |
 | `[thinking speech bubble]` | Standard bubble + `no-hover` + **RED FLAG** for thought bubble CSS variant |
  
 ### Positional Class for Single-Character Bubbles
-The positional class on single-character speech bubbles is determined by the layout in the Writers Template:
-- Text on LEFT, image on RIGHT → `bubble-left` (tail points left toward speaker on right)
-- Image on LEFT, text on RIGHT → `bubble-right` (tail points right toward speaker on left)
+A single-character speech bubble with a character image is ALWAYS laid out text on the LEFT, image on the RIGHT (CL-0122) — the Writers Template's own order (image cell first, text cell first, an "RHS" / "LHS" note) does not change it:
+- Standard (horizontal) bubble → `bubble-left` (tail points left toward the speaker on the right); the image column takes `paddingL`
+- `bubble-right` is NOT used for a standard single-character bubble; it remains the conversation layout's prompt turn and the MiW / WJ Kea bubble (`14_SUBJECT_GLOBAL_PARAMETERS.md` §14.10)
 - Writer CS instruction specifies "above" → `bubble-top` (image in separate row below)
 - Writer CS instruction specifies "below" → `bubble-bottom` (image in separate row above)
-**Writer positional instructions always override** the default left/right positioning derived from the table cell order.
+**A writer's above / below instruction is the only override** of the horizontal text-left / image-right layout.
  
 ### Content Merging
 Speech bubble data from tables (text in one cell, image ref in another) MUST be merged into a single visual component — NOT rendered as separate table + paragraph.

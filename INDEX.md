@@ -123,7 +123,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: 8. PRE-FLIGHT — WHAT TO CONFIRM BEFORE EDITING · 9. THE BLAST-RADIUS SWEEP — FIND *EVERY* FILE THAT MUST CHANGE
 
 ## 12_CHANGE_LEDGER
-- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (21 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0094, CL-0116 to CL-0121**), PART 2 pending approval
+- **`12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`** (21 KB) — Ledger purpose, status values (incl. **`Locked (admin)`**), PART 1 locked decisions (**CL-0086 to CL-0094, CL-0116 to CL-0122**), PART 2 pending approval
   - Sections: 12 — Change Ledger (Conflict & Lock Registry) · PURPOSE · WHY ONE IN-HOUSE FILE IS FINE (feasibility note) · STATUS VALUES · HOW TO READ / MAINTAIN THIS LEDGER · PART 1 — LOCKED DECISIONS (binding & immutable — conflict check reads this FIRST) · PART 2 — PENDING APPROVAL (report-vs-report conflicts awaiting the design authority's resolution)
 - **`12_CHANGE_LEDGER/12B_CHANGE_HISTORY_CL0001_0028.md`** (28 KB) — PART 3 change history: CL-0001 to CL-0028
   - Sections: PART 3 — CHANGE HISTORY (full append-only log — every actioned change)
@@ -143,7 +143,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 history rows CL-0098 to CL-0103
 - **`12_CHANGE_LEDGER/12E8_CHANGE_HISTORY_CL0104_0111.md`** (27 KB) — PART 3 change history: CL-0104 to CL-0111 (continued) — CLOSED at CL-0111 (23 September 2026, 30 KB soft limit)
   - Sections: PART 3 history rows CL-0104 to CL-0111
-- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0112_ONWARD.md`** (21 KB) — PART 3 change history: CL-0112 onward (continued; latest CL-0121 — the Global Edits Maths conventions folded in; CL-0117 the Science / Maths characters; CL-0116 the Writing Process tags) — **THE OPEN PART: append new CL entries here**
+- **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0112_ONWARD.md`** (24 KB) — PART 3 change history: CL-0112 onward (continued; latest CL-0122 — the standard speech bubble is always text-left / image-right; CL-0121 the Global Edits Maths conventions folded in; CL-0117 the Science / Maths characters; CL-0116 the Writing Process tags) — **THE OPEN PART: append new CL entries here**
   - Sections: PART 3 history rows CL-0112 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (15 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
@@ -151,7 +151,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: BLOCKED-REQUEST LOG (audit) · HOUSEKEEPING (optional — nothing here is a recurring task) · NOTES
 - **`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`** (27 KB) — **PART 4 — the PageForge Amalgamation Log**: every FRONT-FACING decision (one that changes the generated HTML or CSS), in a form PageForge's developer can implement. Written by both Admin Mode and Update Mode; append-only; starts at CL-0086 (earlier decisions stay in the Part 3 history and would need a one-off backfill). First entries appended 28 August 2026 (CL-0089 onward). **CLOSED at CL-0115 (27 October 2026, 30 KB soft limit; filename kept because twelve files cite it as the log's home)** — its rules sections still govern every part of the log
   - Sections: PART 4 — The PageForge Amalgamation Log · WHY THIS LOG EXISTS · WHAT GOES IN — THE FRONT-FACING TEST · ENTRY FORMAT · BACKFILL NOTE — THIS LOG STARTS AT CL-0086 · LOG
-- **`12_CHANGE_LEDGER/12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md`** (10 KB) — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward (CL-0116 the Writing Process writer tags; CL-0117 the Science and Maths characters; CL-0118 the Languages FUN level names; CL-0119 the Science folder casing corrected to `Science Characters/`) — **THE OPEN PART: append new entries here**, in `12G`'s ENTRY FORMAT
+- **`12_CHANGE_LEDGER/12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_ONWARD.md`** (12 KB) — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward (CL-0122 the speech bubble's fixed side; CL-0116 the Writing Process writer tags; CL-0117 the Science and Maths characters; CL-0118 the Languages FUN level names; CL-0119 the Science folder casing corrected to `Science Characters/`) — **THE OPEN PART: append new entries here**, in `12G`'s ENTRY FORMAT
   - Sections: PART 4 — The PageForge Amalgamation Log (continued from `12G`: CL-0116 onward)
 
 ## 13_SPLIT_MODE

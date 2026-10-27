@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 13th August, 2026
+> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
 > **Granular part B (2 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Content rules: preservation, grids, merging, perspective, red text, headings.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -146,7 +146,7 @@ A **text-only** activity (no interactive) needs no split at either width. Patter
 </div>
 ```
  
-This applies regardless of the order in which the writer's template presents the image and text (e.g., even if the writer's table shows the image in the left column and text in the right column, the HTML output should place text on the left and image on the right). **The only exception** to this rule is when using the `speechBubble` design pattern, which has its own documented layout structure — see COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md`.
+This applies regardless of the order in which the writer's template presents the image and text (e.g., even if the writer's table shows the image in the left column and text in the right column, the HTML output should place text on the left and image on the right). **The `speechBubble` design pattern follows the same rule (CL-0122):** a standard single-character speech bubble always renders the bubble text on the left and the character image on the right (`bubble-left`), whatever order the Writers Template used — see COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md`. The only layouts outside it are the ones that are not a side-by-side text + image pair: the conversation layout, a bubble the writer asks for above or below the image (`bubble-top` / `bubble-bottom`), and the MiW / WJ Kea bubble (its picture column is that series' convention, `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.10).
  
 When text and image are WITHIN the standard `col-md-8` content area (inner row pattern):
  
@@ -199,7 +199,7 @@ When text and image are WITHIN the standard `col-md-8` content area (inner row p
  
 When content clearly belongs together across structural boundaries, merge into a single component. Do NOT create duplicates.
  
-**Speech bubble merging:** Table rows with text + image reference → merge into single visual component (text + image side by side or vertically stacked per writer instruction), NOT separate table + paragraph. Determine positional class from writer template layout; apply `paddingL`/`paddingR` on image column in horizontal layouts. See COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md`.
+**Speech bubble merging:** Table rows with text + image reference → merge into single visual component (text + image side by side or vertically stacked per writer instruction), NOT separate table + paragraph. Horizontal layout: text left, image right (`bubble-left`, image column `paddingL`) whatever the Writers Template's order (CL-0122); vertical only on a writer's instruction. See COMP_09 in `04_COMP_SEGMENTS_OVERLAYS.md`.
  
 **Content in Word tables (NOT tagged `[TABLE]`):** Render as Bootstrap grid, NOT HTML tables.
  

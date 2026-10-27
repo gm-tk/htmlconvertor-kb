@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 5:33 PM
+> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -66,3 +66,13 @@
 - **Supersedes:** — (extends CL-0117's §14.14)
 - **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md` §14.14
 - **PageForge status:** Not yet amalgamated — recorded inertly 27 October 2026 (round 1043, `Subject_Global_Parameters.json` 14.14, active:false); the builds await Maths Writers Templates in the corpus (a measured round)
+
+### CL-0122 — The standard speech bubble is always text-left / image-right, whatever the Writers Template's order
+- **Date:** Wednesday, 28th October, 2026
+- **Scope:** (c) Universal — every standard single-character speech bubble (text + image side by side)
+- **Source:** ADMIN MODE (authorised — Gavin, 28 October 2026, with a Writers Template screenshot: `[image] <iStock link>` in the left cell, the bubble text in the right cell)
+- **Writer input (what triggers it):** a `[speech bubble]` paired with an `[image]` — the 1x2 table in either cell order, or the one-paragraph `[Image] … [speech bubble] …` form; a writer's "RHS" / "LHS" note
+- **Required output:** `<div class="row speechBubble" layout="speech">` with the bubble column FIRST (`bubble-basic no-hover bubble-left`, or `bubble-left no-hover` for a one-paragraph bubble) and the image column SECOND (`paddingL` where the column carries padding) — never `bubble-right` for a standard bubble; a writer's above / below instruction still gives `bubble-top` / `bubble-bottom`; the conversation layout and the WJ Kea bubble are unchanged
+- **Supersedes:** the `speechBubble` exception in constraint 35 and the "positional class from the Writers Template layout" wording of constraint 29 / 45 and COMP_09
+- **KB rule:** `02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md` (constraint 35 paragraph); `02D` 35 / 45; `00D` 29; `02A`; `02C`; `04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`; `14B2` §14.10 (Kea exception)
+- **PageForge status:** Amalgamated 28 October 2026 (round 1055, build 260625.83 — `Emit_Templates.interactive_builders.speechBubble.fixed_side`, env `SBSIDE_OFF`, read by the table form, the paragraph form, the composer's avatar rows and the placeholder character; the human pages are a recorded gold override, `Subject_Global_Parameters._universal_conventions.bubble_text_left_image_right`); the corpus follows on the next regeneration
