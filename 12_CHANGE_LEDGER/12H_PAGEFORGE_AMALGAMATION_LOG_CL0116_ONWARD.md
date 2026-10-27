@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 2:44 PM
+> **Last updated:** Tuesday, 27th October, 2026 4:16 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -26,3 +26,13 @@
 - **Supersedes:** —
 - **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14E_SGP_FAMILIES_SCIENCE_MATHS.md` §14.13 / §14.14; `01D` Media Tags; `01E`; `00H` constraint 95
 - **PageForge status:** Amalgamated (Tuesday, 27th October, 2026, round 1041, build 260625.70 — `Emit_Templates.elements.central_image` registry; env `CENTRALIMG_OFF`)
+
+### CL-0118 — Languages FUN level tiles: *Novice* → `First Steps`, *Emergent* → `Next Steps`
+- **Date:** Tuesday, 27th October, 2026
+- **Scope:** (b) Cohort — Languages Fundamentals (every Language FUN module)
+- **Source:** ADMIN MODE (authorised — Gavin, relaying Persephone Samuels, 27 October 2026; the curriculum leads' request of 16 October 2026, example CHFUN08)
+- **Writer input (what triggers it):** a Language FUN module's level markers — `[PAGE N Novice]`, `[Novice Page 1]`, `[Novice Content starts here]`, `[Tab 1] Novice Learning Intentions` and their Emergent twins (or templates already typing the new names).
+- **Required output:** the level name shown as `First Steps` / `Next Steps` wherever it is displayed — module-menu level tabs `<li><a>First Steps</a></li>`, `.phases` strip `<div phase="1"><p>First Steps</p></div>`, `phaseLink` tile `<h3>First Steps</h3>` + image `alt`, the multi-file levels overview's panel `<h2>`. The writer's word remains the key the level is matched on; prose is never renamed; nothing structural changes.
+- **Supersedes:** — (the pre-ledger `14A` two-tile wording named the tiles Novice / Emergent)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14A_SGP_PURPOSE_FAMILIES_1_5.md` §14.1 (two-tile bullet)
+- **PageForge status:** Amalgamated (Tuesday, 27th October, 2026, round 1042, build 260625.71 — `Emit_Templates.body_region.fundamentals_panels.level_labels` display map, `ContentConverter.LevelDisplayLabel`; env `LEVELNAMES_OFF`; eleven level-dialect golds diverge by these words only, NAMED)
