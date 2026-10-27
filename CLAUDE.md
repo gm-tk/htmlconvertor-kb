@@ -44,6 +44,11 @@ out. They were therefore split (2026-07-27, byte-identical — proof in
 
 ## 3. The update ritual (every change request)
 
+0. **Fetch first.** Run `git fetch origin` and confirm `git log --oneline HEAD..origin/main`
+   prints nothing before editing anything. If it prints commits, GitHub has work this copy
+   lacks (another session pushed) — merge it BEFORE taking the next CL number, or two
+   branches will both use the same ids (this happened on 19–28 October 2026: CL-0109
+   onward was used twice and had to be renumbered in CL-0140). Push after every round.
 1. **Locate** — use `INDEX.md` + grep to find every part that owns the affected rule
    (the Update Mode "blast-radius sweep" in `11_UPDATE_MODE/` still applies: one
    change often touches a component part AND `00_MASTER_INSTRUCTIONS/00D/00E`
