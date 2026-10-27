@@ -1,14 +1,14 @@
-> **Last updated:** Tuesday, 27th October, 2026 5:13 PM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part D (5 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Cross-cutting notes (14.11) and the Technology family (14.12). Science (14.13) and Maths (14.14) live in `14E`. Split from `14B` on 13 August 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
 ## 14.11 Cross-cutting notes
 
-- **"Upload to Dropbox" series label (BLL / LS / HPE).** These three families label the dropbox submission button **"Upload to Dropbox"** (also seen as *Upload to dropbox*). This is a **series-scoped label** that sits **alongside** — and does **not** overturn — the universal **"Go to dropbox" / "Go to portfolio"** default (constraint 55 / `05` → Buttons). For any module outside these three families, the universal "Go to …" label still applies. (The HPE celebration page also carries a **"Go to your journal"** button next to its "Upload to dropbox" button.)
+- **"Upload to Dropbox" series label (BLL / LS / HPE).** These three families label the dropbox submission button **"Upload to Dropbox"** (also seen as *Upload to dropbox*). This is a **series-scoped label** that sits **alongside** — and does **not** overturn — the universal **"Go to dropbox" / "Go to portfolio"** default (constraint 55 / `05` → Buttons). For any module outside these three families, the universal "Go to …" label still applies. (The HPE celebration page also carries the `goJournal` **"Go to your journal"** heading next to its "Upload to dropbox" button — constraint 96.)
 - **Central `imageCentral` assets recur across families.** Languages (per-language `… assets/` folders — §14.1), Taonga (`tui_characters/` — §14.3), HPE (`health & PE characters/` + the celebration `.gif` — §14.8), BLLR (`bookworms/` — §14.9), MiW (`kea_characters/` + the NZ map — §14.10), Technology (`Technology/strand/` + the shared `congradulations/` celebration gif — §14.12), Science (`Science Characters/` — §14.13) and Maths (`Maths Characters/` — §14.14) all use centralised template assets carrying `class="img-fluid imageCentral"`. These are design-team central-store assets — the `imageCentral` reservation in `01` (never on writer-specified images) is unchanged.
 - **BLL dropbox-wrapper carve-out.** BLL is the **one** series that does **not** append the `dropbox` modifier to the `.activity` wrapper (§14.7). This carve-out is **scoped to BLL only** — it does **not** extend to the separate **BLLR** series (§14.9). Every other series follows constraint 43 unchanged.
-- **`stickyNav` in the `<head>`.** The sticky-nav script recurs across Languages Phase 1–4 (every page), CED Phase 5 (dictionary links), and HPE (Fundamentals + Help page). Each is documented in its section above. (Split Mode base files are the exception — they carry **no** `stickyNav`; see `13_SPLIT_MODE.md`.)
+- **`stickyNav` in the `<head>`.** The sticky-nav script recurs across Languages Phase 1–4 (every page), CED Phase 5 (dictionary links), and HPE (Fundamentals + Help page), and in any module whose writer asks for a floating-nav glossary (every page — `05` → Glossary, CL-0122). Each is documented in its section above. (Split Mode base files are the exception — they carry **no** `stickyNav`; see `13_SPLIT_MODE.md`.)
 - **Deferred-item convention.** Every "TO DO / TBC / placeholder / under development" item across these families is emitted as a **visible `Designer/Developer To Do:` red-note placeholder** (red + bold), never a hidden comment and never silently dropped — the pattern is built and the pending asset/URL/setup is flagged for production. See `02_DATA_CONTENT_VERIFICATION.md` → Source-Specific Red-Note Prefixes; `00` constraint 59.
 
 ---
@@ -41,4 +41,4 @@
 
 ---
 
-> **Sections 14.13 and 14.14 continue in `14E_SGP_FAMILIES_SCIENCE_MATHS.md`** — the Science and Maths character families (added 27 October 2026, CL-0117). The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), `14B` (14.6-14.8), `14B2` (14.9-14.10), this part (14.11-14.12) and `14E` (14.13-14.14).
+> **Sections 14.13, 14.14 and 14.15 continue in `14E_SGP_FAMILIES_SCIENCE_MATHS.md`** — the Science and Maths character families (added 27 October 2026, CL-0117) and the MXEX series layouts (CL-0123–CL-0125). The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), `14B` (14.6-14.8), `14B2` (14.9-14.10), this part (14.11-14.12) and `14E` (14.13-14.15).

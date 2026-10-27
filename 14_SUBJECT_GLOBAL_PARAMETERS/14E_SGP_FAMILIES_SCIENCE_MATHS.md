@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 27th October, 2026 5:30 PM
-> **Granular part E (6 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.13 (Science) and 14.14 (Maths): the centralised character images. Opened 27 October 2026 (CL-0117) as a new part rather than growing `14D`.
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Granular part E (6 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.13 (Science), 14.14 (Maths) and 14.15 (the MXEX series): the centralised character images, the Maths conventions, the MXEX layouts. Opened 27 October 2026 (CL-0117) as a new part rather than growing `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -51,3 +51,50 @@
   - **Where the dropbox copy is missing.** A Maths `[ActivityDropbox]` checkpoint or end-of-module box whose writer supplied **no body copy** takes the phase's suggested wording above (the design team's standard for the family), and the run notes that it did so in the Designer Summary; where the writer wrote their own copy it is kept verbatim (constraint 1).
   - **Image library — consistency.** The design team is building a document of consistent Maths images (shapes, arrows …); until the Educational Design Review is complete, image-consistency guidance comes from Eliza. Creative Services rules recorded verbatim: *use object `.svg`s where possible to ensure text is highlightable (or manually place the text on top of the image); use templated colours where possible; ensure text on an image passes WCAG.* (The document writes "WAAG"; the standard meant is WCAG.) These govern developer-made images — the Convertor emits the writer's image references as usual.
   - **Marking guide** (*identify progress marker*, *LOTs*) and **Characters across the curriculum** (`Characters.pptx`) are listed with no convention yet — nothing recorded.
+
+## 14.15 MXEX — Maths modules of the MXEX series (right-hand alerts, click drops; the character row)
+**Scope — (b) Module-series:** every **`MXEX`** module, all year levels. Source: MXEX105 finalized difference report, Differences 1, 2 and 5 (CL-0123, CL-0124, CL-0125 — the GitHub session's rows, renumbered by the ledger merge CL-0140).
+
+- **Central Maths characters — `[Image Centralised {Name}]` (CL-0123, read with §14.14).** The Maths characters are design-team **central-store assets**, not writer images, so an MXEX writer tag `[Image Centralised Archi]` (any character name) takes `class="img-fluid imageCentral"` with `alt` = the character's name. **The path is §14.14's** (CL-0117 / CL-0121): `Maths Characters/maths_characters_<name>.jpg`. MXEX105's finished module shipped the pre-delivery names `Maths Characters/Maths Characters_DRAFT_{Name}.jpg`; that form is recorded here as what that module carries, not as the path to emit. Never derive a variant filename from a writer's costume or pose request.
+- **The character and its speech bubble share ONE row (CL-0123), on the universal side rule (CL-0122).** The whole `speechBubble` row sits inside a `col-md-8 col-12` content column; the bubble column comes first — `col-md-9 col-10 paddingR` holding `bubble-left no-hover` — and the character column second — `col-md-3 col-4 paddingL`. MXEX105's finished module has the picture on the left (`paddingR` image column, `bubble-right`); it predates CL-0122 and is not the form to copy:
+  ```html
+  <div class="col-md-8 col-12">
+      <div class="row speechBubble" layout="speech">
+          <div class="col-md-9 col-10 paddingR">
+              <div class="bubble-left no-hover">
+                  <p>“Beep! Boop! Calling all robot inventors!”</p>
+              </div>
+          </div>
+          <div class="col-md-3 col-4 paddingL">
+              <img class="img-fluid imageCentral" loading="lazy" src="Maths Characters/maths_characters_archi.jpg" alt="Archi">
+          </div>
+      </div>
+  </div>
+  ```
+  This MXEX column pairing (`col-md-9 col-10` / `col-md-3 col-4`, a plain `bubble-left no-hover`) replaces the generic `bubble-basic` form of constraint 29 for MXEX central characters; the side and the inner-side padding (image right → `paddingL`) follow CL-0122 / constraint 29.
+- **`[RHS alert]` beside body content → `alert top` (CL-0124).** In MXEX modules a writer's right-hand-side alert sitting beside body content renders as `<div class="alert top">` inside its sidebar column — **not** `alertActivity`. Column classes follow `05` → Columns (sidebar column at `col-md-4`, padding per CL-0135). Content inside follows the alert's normal rules:
+  ```html
+  <div class="alert top">
+      <p>Did you see some 3D shapes that you have seen before? …</p>
+  </div>
+  ```
+- **A click drop sits inside ONE content column (CL-0125).** The whole block — the trigger row **and** every `clickDropContent` panel — sits inside a single `col-md-8 col-12` content column, never loose at page level. The grouping rule is unchanged: all triggers first in their own row, then all panels. The panels are outside the **trigger row** but inside the **same content column**. A speech bubble revealed in a panel fills that column: `col-md-12 col-12` with `bubble-basic no-hover bubble-bottom`.
+  ```html
+  <div class="row">
+      <div class="col-md-8 col-12">
+          <div class="row">
+              <!-- trigger columns: every clickDrop trigger -->
+          </div>
+          <div class="clickDropContent">
+              <div class="row speechBubble" layout="speech">
+                  <div class="col-md-12 col-12">
+                      <div class="bubble-basic no-hover bubble-bottom">
+                          <p>I have one curved side and no corners. I am round. I am a circle.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- further clickDropContent panels -->
+      </div>
+  </div>
+  ```

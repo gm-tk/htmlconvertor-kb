@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:37 AM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part A (1 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_00 component index & universal rules.
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -13,7 +13,7 @@
 
 ## Universal Rules
 
-- All interactives MUST be inside `<div class="activity">` wrapper (typically `class="activity interactive"`)
+- **⚠️ CRITICAL — Every task interactive sits inside an activity box; a tool does not have to (UNIVERSAL, constraint 8, CL-0139).** Every interactive the student completes and the page checks or records — every component in this file (drag and drop in every layout, the quizzes, self check, games, ordering, sliders) plus the D&D Venn and the sketcher — MUST be inside an `activity` wrapper (typically `class="activity interactive"`). **Activity vs tool:** a *tool* is a utility the student uses alongside the learning rather than a task they complete — the stop watch and the number line (`04_COMP_SEGMENTS_OVERLAYS.md` → COMP_11) — and needs no activity box (it may sit in the body or in an `alertActivity` sidebar). Display components (accordion, carousel, tabs, modal, flip card, click drop, info triggers, speech bubbles, diagrams) are outside this rule and follow their own placement rules. **A task interactive the writer placed outside any tagged activity** gets its own activity box with the **next consecutive activity number** (as `[MTKquiz]` does — constraint 65); renumber the following activities and open the new box with one visible note, e.g. `<p style="color: red; font-weight: bold;">Red Flag: The writer placed this drag and drop outside an activity — it has been given its own activity box as Activity 2C (every interactive sits in an activity); the following activities are renumbered.</p>` Where no title can be taken for it under the activity-title rule (`05` → Activities, CL-0129), the same note asks for one. Supporting elements inside an activity (audio buttons, images, hover translations) are not interactives.
 - **⚠️ CRITICAL — One interactive per activity (UNIVERSAL, constraint 62):** Each `activity` wrapper contains **at most ONE interactive component**. When the writer places two or more interactives under a single activity heading, **split them into separate sequential activities** — the first interactive keeps the writer's activity number; each subsequent interactive becomes the next activity letter — and **renumber the following activities accordingly** (e.g. two drag-and-drops under a writer's "Activity 1D" become Activities 1D and 1E, and a trailing 1E Word Find becomes 1F). Flag the split with a visible red note at the head of each newly created activity, e.g. `<p style="color: red; font-weight: bold;">Red Flag: Writer placed two interactives under Activity 1D — split into 1D and 1E (one interactive per activity); subsequent activities renumbered.</p>`, so the renumbering is auditable against the writer's source. Supporting elements inside the activity — audio buttons/triggers, images, hover translations, instructional text and lists — are NOT counted as interactives; the count applies to the whitelisted interactive components that form the activity's task (D&D, quizzes, self check, games, ordering, sliders, etc.). See `02_DATA_CONTENT_VERIFICATION.md` → Verification Checklist.
 - Activity wrapper goes inside: `<div class="row"><div class="col-12">`
 - **⚠️ CRITICAL — No leading spaces in class attributes:** Class attribute values must NEVER begin with a leading space. Always write `class="activityButton reset"` (no space before `activityButton`), never `class=" activityButton reset"`
@@ -27,7 +27,7 @@
 
 `autoCheck` is a modifier that gives the student instant feedback on each selection (and removes the separate Undo / Check buttons). Normally it is applied only when the writer's intended behaviour calls for it.
 
-**EXCEPTION — three templates always get autoCheck.** When the structural reference is one of these dedicated template files:
+**EXCEPTION — ECH, Years 1–3 and Years 4–6 modules always get autoCheck.** When the module's own derived level is ECH, `1-3` or `4-6` — whether the structural reference is one of these dedicated template files **or a Mode B sibling module at any level** (CL-0130; SCBI202, a Years 4–6 module built from a Years 7–8 sibling, missed it under the former file-based test):
 
 - `refresh_template_0.0_1_template_ECH`
 - `refresh_template_0.0_2_template_1-3`
@@ -40,11 +40,11 @@ then `autoCheck` MUST be applied automatically to **every interactive that suppo
 **Interactives that do NOT support `autoCheck`** — leave unchanged: components with no right/wrong answer (Self Check, Self Reflection, reflection sliders/surveys, Sketcher, Stop Watch, free-form Area-layout D&D) and content-segmentation components (accordion, carousel, tabs, etc.).
 
 **Rules:**
-- If a component's COMP section documents both a plain and an `autoCheck` form, use the `autoCheck` form for these three templates.
+- If a component's COMP section documents both a plain and an `autoCheck` form, use the `autoCheck` form for these three levels.
 - If the writer ALSO explicitly requested instant feedback, there is no conflict — `autoCheck` is applied either way.
-- For any OTHER template, do NOT auto-apply `autoCheck` — apply it only when the writer's behaviour calls for it.
+- For any OTHER level, do NOT auto-apply `autoCheck` — apply it only when the writer's behaviour calls for it.
 - **Typing Quiz exception:** the typing quiz supports `autoCheck` (add `autoCheck` to the `.typing` container), but — unlike every other interactive — it KEEPS its `reset` / `checkAnswer hidden` / `showAnswer hidden` buttons under `autoCheck`. Do NOT drop the buttons for a typing quiz. See COMP_02 — Typing Quiz.
-- A designer may issue a one-off instruction to suppress `autoCheck` on a specific interactive even within these three templates — honour that as a one-off override (see `08_MODULE_SUPPORT_DEBUGGING.md` → One-Off Module Overrides).
+- A designer may issue a one-off instruction to suppress `autoCheck` on a specific interactive even within these three levels — honour that as a one-off override (see `08_MODULE_SUPPORT_DEBUGGING.md` → One-Off Module Overrides).
 
 ---
 

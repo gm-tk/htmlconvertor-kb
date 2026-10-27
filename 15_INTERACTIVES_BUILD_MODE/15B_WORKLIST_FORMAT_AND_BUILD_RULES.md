@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 31st July, 2026 10:30 AM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part B (2 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — The `{CODE}_interactives.txt` worklist anatomy and the fragment-specific build rules.
 > All sibling parts live in `15_INTERACTIVES_BUILD_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -76,6 +76,17 @@ please place outside the table for this activity for learners to drag to the cor
 | `Activity:` | The activity box the interactive belongs to (e.g. `1A`), or `(none — inline component)`. **The page already renders that box — never rebuild it.** | Context only. |
 | `Type:` | The widget type(s) detected from the writer's tags. Multiple types joined with ` + ` = the captured region holds several components: build them ALL, in `Content:` order, inside the one section (`15A` §9). The reference code carries only the FIRST type. | **YES — what to build.** |
 | `Content:` | The writer's raw captured material, verbatim. | **YES — the build spec.** |
+
+**A task interactive with no activity (constraint 8, CL-0139).** Every task interactive must sit
+inside an activity box, but this mode never builds one. So where an entry's `Type:` is a task
+interactive and its `Activity:` line reads `(none — inline component)`, build the widget as normal
+and open its section with one visible note:
+
+```html
+<p style="color: red; font-weight: bold;">Designer/Developer To Do: this interactive sits outside an activity box — wrap it in its own activity (next consecutive number, following activities renumbered) per constraint 8 when finalising the page.</p>
+```
+
+A tool (stop watch, number line) or an inline display component needs no note.
 
 ### Reading the `Content:` block
 

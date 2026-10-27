@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part D (4 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Comment & red flag policy; constraints.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -96,7 +96,7 @@ PageForge captures the **actionable** native Word margin comments authored by th
 22. **always_recognise_data_patterns:** Identify pattern before extracting data.
 23. **always_use_documented_components:** Use documented patterns from component files.
 24. **always_no_hover_display_bubbles:** Add `no-hover` to all text-only/display-only speech bubbles.
-25. **never_imageCentral_on_writer_images:** Never add `imageCentral` to writer-specified images.
+25. **never_imageCentral_on_writer_images:** Never add `imageCentral` to writer-specified images. (A subject central-asset tag recorded in `14` — e.g. MXEX `[Image Centralised {Name}]` — is a template asset and does take it; CL-0123.)
 26. **always_canvasImage_in_sketcher:** Always include `canvasImage` class on images inside sketcher `.canvasContainer`.
 27. **always_group_clickDrop:** Group all clickDrop buttons first, then all clickDropContent divs.
 28. **never_lazy_load_moving_interactive_images:** NEVER add `loading="lazy"` to an image inside a **moving-or-draggable interactive** — the **rotating banner** (`.rotateBanner`), **carousel** (`.carousel`/`.viewer`/`.item`), **drag and drop** (`.dragAndDrop` — `.drag`/`.drop`/`.ddContainer`/`.ddColumn`), **click drop** (`.clickDrop`/`.clickDropContent`), **flip card** (`.flipCard`), **memory game** (`.memoryGame`/`.memCard`/`.cardHidden`) or sketcher **`.canvasContainer`**. A deferred image arrives late, mid-animation, or with the wrong measured size, breaking positioning, animation and hit-detection (for the sketcher specifically, canvas overlay alignment). Applies in both image output modes, to real images and placeholders alike. Every other image — including images the student only clicks or hovers without movement (`infoImage`/`infoTrigger`, `imageLabel`) — keeps `loading="lazy"`. **Widened from sketcher-only on 21 August 2026 (constraint 83 / CL-0083).**

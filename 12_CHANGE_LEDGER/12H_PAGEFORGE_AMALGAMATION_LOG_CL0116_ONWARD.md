@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -76,3 +76,173 @@
 - **Supersedes:** the `speechBubble` exception in constraint 35 and the "positional class from the Writers Template layout" wording of constraint 29 / 45 and COMP_09
 - **KB rule:** `02_DATA_CONTENT_VERIFICATION/02B_CONTENT_RULES.md` (constraint 35 paragraph); `02D` 35 / 45; `00D` 29; `02A`; `02C`; `04_COMP_SEGMENTS_OVERLAYS/04C_COMP09_10_11_BUBBLES_DIAGRAMS_TOOLS.md`; `14B2` §14.10 (Kea exception)
 - **PageForge status:** Amalgamated 28 October 2026 (round 1055, build 260625.83 — `Emit_Templates.interactive_builders.speechBubble.fixed_side`, env `SBSIDE_OFF`, read by the table form, the paragraph form, the composer's avatar rows and the placeholder character; the human pages are a recorded gold override, `Subject_Global_Parameters._universal_conventions.bubble_text_left_image_right`); the corpus follows on the next regeneration
+
+### CL-0123 — MXEX central Maths characters + character/bubble row (merged 28 October 2026: filenames per CL-0121 §14.14; the bubble's side per CL-0122 — text left, picture right)
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (b) Module-series — MXEX
+- **Source:** Finalized difference report — `MXEX105`, Difference 1
+- **Writer input (what triggers it):** `[Image Centralised {Name}]` (e.g. `Archi`) followed by a `[Speech bubble]`, in an MXEX module.
+- **Required output:** inside `col-md-8 col-12`, one `row speechBubble` (`layout="speech"`): image column `col-md-3 col-4 paddingR` holding `<img class="img-fluid imageCentral" loading="lazy" src="Maths Characters/Maths Characters_DRAFT_{Name}.jpg" alt="{Name}">`; bubble column `col-md-9 col-10 paddingL` holding `<div class="bubble-right no-hover"><p>…</p></div>`.
+- **Supersedes:** — (generic `bubble-basic` single-character form for MXEX central characters only)
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14D` §14.15; `04_COMP_SEGMENTS_OVERLAYS/04C` → imageCentral Rule
+- **PageForge status:** Not yet amalgamated
+
+### CL-0124 — MXEX `[RHS alert]` → `alert top`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (b) Module-series — MXEX
+- **Source:** Finalized difference report — `MXEX105`, Difference 2
+- **Writer input (what triggers it):** `[RHS alert]` beside body content in an MXEX module.
+- **Required output:** `<div class="alert top">…</div>` in the `col-md-4` sidebar column — not `alertActivity`.
+- **Supersedes:** —
+- **KB rule:** `14D` §14.15; `05_COMP_LANGUAGE_MEDIA_LAYOUT/05B` → Activity sidebar
+- **PageForge status:** Not yet amalgamated
+
+### CL-0125 — MXEX click drop inside one content column
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (b) Module-series — MXEX
+- **Source:** Finalized difference report — `MXEX105`, Difference 5
+- **Writer input (what triggers it):** any click-drop set in an MXEX module.
+- **Required output:** `row` > `col-md-8 col-12` holding the trigger row then every `clickDropContent` (grouping unchanged); a revealed bubble is `col-md-12 col-12` + `bubble-basic no-hover bubble-bottom`.
+- **Supersedes:** —
+- **KB rule:** `14D` §14.15; `04A` → Click Drop
+- **PageForge status:** Not yet amalgamated
+
+### CL-0126 — Multi-value `option` for identical drag answers
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `MXEX105`, Difference 3
+- **Writer input (what triggers it):** two or more drag items with the same answer text, each correct in either slot.
+- **Required output:** each such drag lists every slot it may fill, own slot first (`option="3 4"`, `option="4 3"`); drops keep single values; no red flag.
+- **Supersedes:** —
+- **KB rule:** `03_COMP_CORE_INTERACTIVES/03B` → Standard Layout
+- **PageForge status:** Not yet amalgamated
+
+### CL-0127 — Drag columns match drop columns; labelled image drags
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference reports — `MXEX105` Difference 10; `SCBI202` Difference 5
+- **Writer input (what triggers it):** a column-layout drag and drop; drag items given as image + label.
+- **Required output:** `dragContainer` `.ddColumn` count = `dropContainer` `.ddColumn` count (first populated, rest empty); a labelled image drag is `<div class="drag" option="N"><p><img …> Label</p></div>`; no inline styles.
+- **Supersedes:** the "maximum of 3 `.ddColumn`" cap and the 4–6 / 7+ table (pre-ledger)
+- **KB rule:** `03B` → Column Layout
+- **PageForge status:** Not yet amalgamated
+
+### CL-0128 — Journal references (constraint 6)
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference reports — `MXEX105` Differences 7–8; `SCBI202` Difference 1
+- **Writer input (what triggers it):** any journal reference — `[button]` / `[journal]` "Go to journal", "Go to your journal", "Download journal".
+- **Required output:** FIRST in the module → `<a href="docs/{CODE} Journal.docx" target="_blank"><div class="button downloadButton">Download journal</div></a><div class="hint"></div><div class="hintDropContent" hintType="oneDrive"></div>` (`googleDrive` when the writer's link is a Google Docs "make a copy" link; a writer-supplied link replaces the `docs/` href). Every later → `<h4 class="goJournal">Go to your journal</h4>`. No To Do notes. The HPE celebration page included.
+- **Supersedes:** CL-0022 / CL-0023 "Go to your journal button" wording (HPE)
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05D` → Buttons → Journal references; `00_MASTER_INSTRUCTIONS/00H` constraint 6
+- **PageForge status:** Not yet amalgamated
+
+### CL-0129 — Untitled activity still gets an `<h3>`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 2
+- **Writer input (what triggers it):** an `[Activity nX]` with no title.
+- **Required output:** `<h3>` = the matching journal task's title from the template, verbatim; if none, no heading + a visible `Red Flag:` asking for one.
+- **Supersedes:** —
+- **KB rule:** `05B` → Activities
+- **PageForge status:** Not yet amalgamated
+
+### CL-0130 — autoCheck by module level; no Check button under autoCheck
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 3
+- **Writer input (what triggers it):** any autoCheck-capable interactive in an ECH / `1-3` / `4-6` module, however the module was built.
+- **Required output:** `autoCheck` applied; Undo / Check buttons dropped (typing quiz excepted) — e.g. `<div class="dropQuiz autoCheck" layout="paragraph">` with a Reset-only button row.
+- **Supersedes:** constraint 38's template-FILE trigger
+- **KB rule:** `00D` constraint 38; `03A` → autoCheck Auto-Application; `03C` → Dropdown Quiz
+- **PageForge status:** Not yet amalgamated
+
+### CL-0131 — Memory game: exactly two cards per match
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 6
+- **Writer input (what triggers it):** `[memory game]` with groups of three or more matching cards.
+- **Required output:** one pair per group from its first two cards (`match="1"`, `"2"`, …); remaining cards listed in one visible `Red Flag:` above the game; never commented out.
+- **Supersedes:** —
+- **KB rule:** `03E` → Memory Game
+- **PageForge status:** Not yet amalgamated
+
+### CL-0132 — Static labels with lines → `imageLabel layout="line"`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Differences 8–9
+- **Writer input (what triggers it):** a request for an image labelled with lines (non-clickable), with a label list.
+- **Required output:** `<div class="imageLabel" layout="line">` + `img.imgLabel` + one `<div class="label" direction top left pointTop pointLeft><p>…</p></div>` per label (`||` for multiple lines), evenly spaced starting positions, one `Designer/Developer To Do:` to position them; two-picture requests add `<h5>` captions in a `row paddingB` and a To Do for a combined image.
+- **Supersedes:** the To-Do-only fallback for these requests
+- **KB rule:** `04_COMP_SEGMENTS_OVERLAYS/04B` → Image Label
+- **PageForge status:** Not yet amalgamated
+
+### CL-0133 — Standalone link in a click-drop panel → `externalButton`
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 11
+- **Writer input (what triggers it):** a link on its own line inside `clickDropContent`.
+- **Required output:** `<a href="URL" target="_blank"><div class="externalButton">Text</div></a>`.
+- **Supersedes:** —
+- **KB rule:** `00G` constraint 75; `05D` → Buttons
+- **PageForge status:** Not yet amalgamated
+
+### CL-0134 — Click-drop choice sets and picture triggers
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 12
+- **Writer input (what triggers it):** a choice-style click drop "with image tile and title"; or "images with captions" to be clicked.
+- **Required output:** choice set — buttons only in the trigger row, each picture inside its panel under the panel's `<h3>`; picture triggers — `<div class="col"><h5>Caption</h5><img class="img-fluid clickDrop imgBorder" …></div>`; no inline styles, no comments.
+- **Supersedes:** —
+- **KB rule:** `04A` → Click Drop → Choice Sets and Picture Triggers
+- **PageForge status:** Not yet amalgamated
+
+### CL-0135 — Text + side image as sibling columns with padding
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 13
+- **Writer input (what triggers it):** body text with an image (or sidebar alert) beside it.
+- **Required output:** one `row`: `col-md-8 col-12 paddingR` (text, heading included) + `col-md-4 col-12 paddingL` (image) — never an inner row inside the text column; `paddingR` / `paddingL` on every side-by-side pair.
+- **Supersedes:** the pre-ledger `02B` "inner row pattern"
+- **KB rule:** `02_DATA_CONTENT_VERIFICATION/02B` → Column Class Reference; `05D` → Columns
+- **PageForge status:** Not yet amalgamated
+
+### CL-0136 — Floating-nav glossary → glossary page + stickyNav
+- **Date:** Tuesday, 20th October, 2026
+- **Scope:** (c) Universal
+- **Source:** Finalized difference report — `SCBI202`, Difference 15
+- **Writer input (what triggers it):** a writer request for a glossary in a floating / sticky nav.
+- **Required output:** a separate `{CODE}_glossary.html` page (standard skeleton, `<h1><span>Glossary</span></h1>`, `glossary` / `search-table` in `#body`); `<script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>` in every page's `<head>`; no glossary on 0.0; no red flag.
+- **Supersedes:** —
+- **KB rule:** `05_COMP_LANGUAGE_MEDIA_LAYOUT/05A` → Glossary
+- **PageForge status:** Not yet amalgamated
+
+### CL-0137 — No `<h5>` inside a drag and drop
+- **Date:** Wednesday, 21st October, 2026
+- **Scope:** (c) Universal
+- **Source:** ADMIN MODE (authorised) — direct-typed
+- **Writer input (what triggers it):** any heading the writer asks for inside a drag and drop (e.g. an `[H5]` tag on a column heading or group label), in any layout.
+- **Required output:** `<p><b>Heading text</b></p>` — never `<h5>` anywhere inside `.dragAndDrop`; no inline style. An unrequested column heading stays `<p>Column heading</p>`.
+- **Supersedes:** —
+- **KB rule:** `03_COMP_CORE_INTERACTIVES/03B` → Headings inside a drag and drop; `00H` constraint 7
+- **PageForge status:** Not yet amalgamated
+
+### CL-0138 — `dropbox` modifier on any activity containing a dropbox button (not BLL)
+- **Date:** Wednesday, 21st October, 2026
+- **Scope:** (c) Universal — BLL excepted
+- **Source:** ADMIN MODE (authorised) — direct-typed
+- **Writer input (what triggers it):** an activity holding a "Go to dropbox" / "Upload to dropbox" button or a `[trigger engagement]` tag, anywhere in the activity.
+- **Required output:** append `dropbox` to the activity's classes — `activity dropbox` or `activity interactive dropbox` (keep any other modifiers). BLL: keep the button, no `dropbox` modifier. BLLR is not BLL.
+- **Supersedes:** the `01F` sentence saying the modifier applies to BLL modules only (stale; never the intended rule)
+- **KB rule:** `00D` constraint 43; `05_COMP_LANGUAGE_MEDIA_LAYOUT/05B` → Activities
+- **PageForge status:** Not yet amalgamated
+
+### CL-0139 — Every task interactive inside an activity box; tools exempt
+- **Date:** Wednesday, 21st October, 2026
+- **Scope:** (c) Universal
+- **Source:** ADMIN MODE (authorised) — direct-typed
+- **Writer input (what triggers it):** a task interactive tag (drag and drop, any quiz, self check, game, ordering, slider, sketcher) — including one the writer placed outside any `[Activity …]`.
+- **Required output:** the widget always sits inside `<div class="activity interactive" number="…">`. An untagged one gets its own activity with the next consecutive number, the following activities renumbered, and one visible `<p style="color: red; font-weight: bold;">Red Flag: …</p>` at the top of the new box. Stop watch and number line (tools) need no activity box. Display components unchanged.
+- **Supersedes:** —
+- **KB rule:** `03_COMP_CORE_INTERACTIVES/03A` → Universal Rules; `00H` constraint 8
+- **PageForge status:** Not yet amalgamated

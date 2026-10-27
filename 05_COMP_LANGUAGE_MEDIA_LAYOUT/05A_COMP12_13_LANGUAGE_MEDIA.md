@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 23rd September, 2026 11:37 AM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part A (1 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_12 language & specialist (incl. the **mandatory** `jp-text` / `ch-text` / `pinyin` rule, constraint 92); COMP_13 media & embeds.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -44,6 +44,13 @@ Searchable table for vocabulary/terminology:
 - `title-g` class: Makes row unsearchable (section headers)
 - `search-table` class: Enables search
 - Can include `audioTrigger` spans in cells
+
+**Glossary in a floating nav → its own page + `stickyNav.js` on every page (CL-0136).** This applies when the writer asks for the glossary to sit in a floating / sticky nav — e.g. *"Is it possible we could have a glossary in a floating nav?"*, or student copy telling ākonga to use the glossary via the floating-nav arrow:
+1. Build the glossary as a **separate page, `{CODE}_glossary.html`**, on the module's standard page skeleton. The header carries `<h1><span>Glossary</span></h1>`; `#body` holds the `glossary` / `search-table` markup above with all the writer's terms.
+2. Add `<script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>` to the `<head>` of **every** page of the module.
+3. Do **not** also place the glossary on page 0.0, and raise **no** `Red Flag:` about the request — it is a documented pattern. (Any writer note in the template still follows the normal red-note rules.)
+
+Split Mode is unchanged: its base and section files still carry no `stickyNav` (`13_SPLIT_MODE.md` §9).
 
 ---
 

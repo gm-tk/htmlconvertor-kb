@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part B (2 of 6) of `03_COMP_CORE_INTERACTIVES.md`** — COMP_01 drag and drop (all layouts).
 > All sibling parts live in `03_COMP_CORE_INTERACTIVES/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -34,6 +34,18 @@
 
 ---
 
+## Headings inside a drag and drop — never `<h5>` (CL-0137, constraint 7)
+
+**No `<h5>` anywhere inside a `dragAndDrop`** — in any layout (standard, column, FIB, scatter, area, Venn), whether in a column heading, a question, a drop zone, a drag item or a group label. Where the writer asks for a heading inside the drag and drop (a heading tag such as `[H5]`, or a label the writer marks as a heading), render it as a **bold paragraph** instead:
+
+```html
+<p><b>Heading text</b></p>
+```
+
+In a column layout that means `<div class="ddColumn"><p><b>Column heading</b></p> …`. A column heading the writer did **not** ask to be a heading stays the plain `<p>` shown in the Column Layout pattern below — the bold form is for a requested heading only. No inline style on the paragraph (constraint 2). The activity's own `<h3>` title sits **outside** the `dragAndDrop` div and is unaffected.
+
+---
+
 ## Standard Layout
 
 ```html
@@ -61,6 +73,13 @@
     </div>
 </div>
 ```
+
+**Two drags with the same answer — a multi-value `option` (CL-0126).** When two or more drag items carry the **same answer text** and either may correctly fill either slot (e.g. *Arms → Rectangle* and *Legs → Rectangle*), give each of those drags a **space-separated list of every slot it may fill**, its own slot first. The drops keep their single values (`option="3"`, `option="4"`):
+```html
+<div class="drag" option="3 4"><p>Rectangle</p></div>
+<div class="drag" option="4 3"><p>Rectangle</p></div>
+```
+This is a documented pattern — raise **no** `Red Flag:` for it. It applies to every answer-checked layout where drops are one-to-one.
 
 **With autoCheck** (only Reset needed):
 ```html
@@ -182,7 +201,7 @@
 
 **Key rules:**
 - `option` on drags matches column number
-- Empty `<div class="ddColumn"></div>` pads to match drop column count
+- **The `dragContainer` holds exactly as many `.ddColumn` elements as the `dropContainer`** — the first carries every drag item, the rest are empty `<div class="ddColumn"></div>` (five drop columns → one populated + four empty). CL-0127.
 - Optional `blanks` attribute specifies pre-filled slot count
 
 **⚠️ CRITICAL — Image distribution for many drag items:** When a D&D column layout uses images (`class="dragAndDrop images"`) and has a large number of drag items (6+), the images can become unwieldy if all placed in a single `.ddColumn` within the `dragContainer`. To solve this:
@@ -191,7 +210,7 @@
 
 2. **Add empty `.ddColumn` elements** after the main `.ddColumn` containing all the drag items. The underlying script will automatically distribute the images evenly across all available columns. For example, with 9 images and 3 `.ddColumn` elements, the script distributes 3 images per column.
 
-3. **Maximum of 3 `.ddColumn` elements total** in the `dragContainer` — having 4 or more causes the fourth column to wrap below the others, recreating the original problem.
+3. **The number of `.ddColumn` elements in the `dragContainer` equals the number in the `dropContainer`** — one populated plus the rest empty, never fewer and never more. *(Supersedes the former "maximum of 3" cap, CL-0127: MXEX105 shipped five drop columns over five drag columns.)*
 
 ```html
 <!-- CORRECT: Many images distributed across 3 columns; col-12 wrapper (Standard) — never col-md-10 -->
@@ -201,7 +220,7 @@
             <div class="row"><div class="col-12">
                 <div class="dragAndDrop images" layout="column">
                     <div class="row dropContainer" blanks="3">
-                        <!-- drop columns here -->
+                        <!-- three drop columns here -->
                     </div>
                     <div class="row dragContainer">
                         <div class="ddColumn">
@@ -225,10 +244,7 @@
 </div>
 ```
 
-**Choosing the number of empty `.ddColumn` elements:**
-- 4–6 drag items: Add **1** empty `.ddColumn` (2 columns total) — images split into 2 groups
-- 7+ drag items: Add **2** empty `.ddColumn` elements (3 columns total) — images split into 3 groups
-- NEVER exceed 3 `.ddColumn` elements total in the `dragContainer`
+**Choosing the number of empty `.ddColumn` elements:** drop columns minus one — two drop columns → 1 empty; three → 2; five → 4. The former drag-count table (4–6 items → 1, 7+ → 2, never more than 3) is **retired** (CL-0127).
 
 **Side-by-side variant:**
 ```html
@@ -245,6 +261,14 @@
     <p>Hover reveal text</p>
 </div>
 ```
+
+**Labelled image drags — image and label in ONE `<p>` (CL-0127).** When each draggable item is an image with a writer-supplied label (`[image]` + `Image label: Bee`), the drag holds a single `<p>` containing the image followed by the label text — not an image plus a separate `<p>`:
+```html
+<div class="drag" option="1">
+    <p><img class="img-fluid" src="images/iStock-1455581584.jpg" alt="honey bee on a flower close-up"> Bee</p>
+</div>
+```
+Add **no** inline `style` to that `<p>` or to the column headings (constraint 2). The designer's refined SCBI202 file carried `padding` / `color` / `text-align` styles there; they are not part of the pattern.
 
 **With images as column headers:** When images are used as column headings in `ddColumn`, wrap them in a sizing column for better proportions:
 ```html

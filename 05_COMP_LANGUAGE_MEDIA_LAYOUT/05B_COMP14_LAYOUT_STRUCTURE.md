@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part B (2 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, first half: Activities and Alerts. Buttons onward (Buttons, Supervisor Button, Tables, Columns, Quote/Whakatauki/Rhetorical) live in `05D`.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -43,15 +43,19 @@
 </div>
 ```
 
-**Dropbox trigger condition — ALL modules except BLL.** Add the `dropbox` modifier class to **any** activity that ends in an **Upload to dropbox** button (equivalently, whose writer source carries `[trigger engagement]` / a "Go to dropbox" or "Upload to dropbox" button). This applies to **every module series except the BLL series**. **BLL carve-out:** BLL activities add the dropbox **button** but do **not** append the `dropbox` modifier to the `.activity` wrapper (see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.7 / `00` constraint 43). For every non-BLL series, keep the activity's existing classes and append `dropbox`:
-- An activity with no interactive that ends in an upload → `<div class="activity dropbox" number="ID">`.
-- An activity that contains an interactive AND ends in an upload → `<div class="activity interactive dropbox" number="ID">`.
+**An activity always opens with an `<h3>` (CL-0129).** Where the writer gives an activity a title, that title is the `<h3>`. Where the writer gives **none** (a bare `[Activity 2D]` followed straight by instructions), use the title of the **matching task in the writer's journal content** in the template, verbatim (e.g. Activity 2D → its journal task *What is a species?*). If the template holds no matching titled task, do **not** invent one: emit the activity without a heading and raise a visible `Red Flag:` asking for the title. A title taken this way is the writer's own text reused, so constraint 1 is unaffected.
+
+**Dropbox trigger condition — ALL modules except BLL.** Add the `dropbox` modifier class to **any** activity that **contains** a dropbox submission button — "Go to dropbox", "Upload to dropbox" or a writer `[trigger engagement]` — wherever in the activity it sits (most often as its last element). This applies to **every module series except the BLL series**. **BLL carve-out:** BLL activities add the dropbox **button** but do **not** append the `dropbox` modifier to the `.activity` wrapper (see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.7 / `00` constraint 43). For every non-BLL series, keep the activity's existing classes and append `dropbox`:
+- An activity with no interactive that contains a dropbox button → `<div class="activity dropbox" number="ID">`.
+- An activity that contains an interactive AND a dropbox button → `<div class="activity interactive dropbox" number="ID">`.
 
 Do not force `alertPadding` onto a dropbox activity — follow the activity's own class set and simply append `dropbox`. The "square orange dropbox icon" example above (`activity alertPadding dropbox`) keeps `alertPadding` only because that specific source activity already carried it.
 
 **One interactive per activity (constraint 62).** Each activity wrapper holds **at most one interactive component**. When a writer's single activity heading carries two or more interactives, split them into separate sequential activities and renumber the following activities, flagging the split with a visible `Red Flag:` note — full rule in `03_COMP_CORE_INTERACTIVES.md` → COMP_00 (Universal Rules).
 
-**MTK quiz activities (constraint 65).** An `[MTKquiz]` tag (with any modifiers, e.g. `[engage]`, `[type the answer]`, `[Teacher marked …]`) builds its **own activity box, carrying the next consecutive activity number even where the writer assigned none**, holding only these children in order — quiz title `<h3>` (default `Quiz`), the writer's quiz instructions where supplied, a `Designer/Developer To Do:` note, and a **"Go to quiz" button** — and **never the quiz's own questions or answers**. See Buttons → MTK Quiz in `05D` for the full shell. Because the activity does not end in a dropbox button, the `dropbox` wrapper modifier of constraint 43 does **not** attach.
+**Every task interactive sits inside an activity box — a tool does not have to (constraint 8).** A drag and drop, quiz, self check, game, ordering task, slider or sketcher is always inside an `activity` wrapper; a writer's interactive that falls outside any tagged activity gets its own box with the next consecutive number, the following activities renumbered and a visible `Red Flag:` explaining it. A *tool* — the stop watch or number line (`04` → COMP_11), a utility rather than a task — needs no activity box. Full rule in `03_COMP_CORE_INTERACTIVES.md` → COMP_00 (Universal Rules).
+
+**MTK quiz activities (constraint 65).** An `[MTKquiz]` tag (with any modifiers, e.g. `[engage]`, `[type the answer]`, `[Teacher marked …]`) builds its **own activity box, carrying the next consecutive activity number even where the writer assigned none**, holding only these children in order — quiz title `<h3>` (default `Quiz`), the writer's quiz instructions where supplied, a `Designer/Developer To Do:` note, and a **"Go to quiz" button** — and **never the quiz's own questions or answers**. See Buttons → MTK Quiz in `05D` for the full shell. Because the activity contains no dropbox button, the `dropbox` wrapper modifier of constraint 43 does **not** attach.
 
 **The inner text column is `col-12`, and the split is conditional on the wrapper's width (constraint 63).** Two linked rules, both inside the activity wrapper:
 
@@ -106,6 +110,8 @@ A **text-only** activity (no interactive) needs no split at either width — its
     </div>
 </div>
 ```
+
+**MXEX series (CL-0124):** a writer's `[RHS alert]` beside body content uses `<div class="alert top">` in the sidebar column, **not** `alertActivity` — see `14_SUBJECT_GLOBAL_PARAMETERS.md` §14.15. Outside MXEX this sidebar example is unchanged.
 
 ---
 

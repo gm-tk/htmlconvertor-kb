@@ -1,4 +1,4 @@
-> **Last updated:** Monday, 14th September, 2026 10:51 AM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part A (1 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Template levels: structural reference workflow, levels, head/heading/title patterns.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -163,7 +163,7 @@ Local stickyNav:
 <script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>
 ```
 
-**`stickyNav.js` presence:** This script is NOT universal. When operating in Mode B, note whether the reference includes it, but do NOT automatically carry it into the new module. If unclear, omit it (it can be added later by the developer). Flag in the verification summary: "stickyNav.js was [included/omitted] in the reference — [included/omitted] in the output."
+**`stickyNav.js` presence:** This script is NOT universal. When operating in Mode B, note whether the reference includes it, but do NOT automatically carry it into the new module. If unclear, omit it (it can be added later by the developer). Flag in the verification summary: "stickyNav.js was [included/omitted] in the reference — [included/omitted] in the output." **Exception — a writer's floating-nav glossary request puts it on every page** (`05` → Glossary, CL-0136).
 
 **ALWAYS copy exact `idoc_scripts.js` URL from the provided structural reference (template file or reference module files).** Do NOT carry over module-specific CSS `<link>` elements from reference files.
 

@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -65,6 +65,8 @@
 **⚠️ CRITICAL:** The `imageCentral` class MUST NOT be added to any images that are specified within the Writers Template. This class causes a filepath prefix to be added which assumes the images are part of a predetermined centralised repository (e.g., `Character_assets/`). Since writer-specified images use the standard `images/` directory (or placeholder URLs), adding `imageCentral` will break the image path.
  
 **Use `imageCentral` ONLY for:** Pre-existing centralised assets such as self-reflection emoji images (`self-reflection-emoji/`) that are part of the template system itself — NOT for any content images from the writer.
+
+**Subject central-asset families are template assets too (CL-0123).** The per-family central folders recorded in `14_SUBJECT_GLOBAL_PARAMETERS.md` (§14.11 lists them — Languages, Taonga, HPE, BLLR, MiW, Technology, and MXEX `Maths Characters/`) belong to the template system. An image the writer requests **through that family's central tag** — e.g. MXEX `[Image Centralised Archi]` → `Maths Characters/Maths Characters_DRAFT_Archi.jpg` (§14.15) — therefore takes `imageCentral` and the central path. Any other image the writer specifies still never does.
  
 ```html
 <!-- CORRECT: Writer-specified character image — NO imageCentral -->
@@ -403,6 +405,8 @@ See COMP_01 in `03_COMP_CORE_INTERACTIVES.md` — Venn Layout section.
  
  
 # COMP_11 — Drawing Tools & Utilities
+
+> **Activity or tool? (constraint 8, CL-0139)** The **sketcher** is a task the student completes, so it keeps its documented `activity` wrapper. The **number line** and **stop watch** are **tools** — utilities used alongside the learning — and need no activity box; place them in the body or in an `alertActivity` sidebar as below.
  
 ---
  

@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 2:43 PM
+> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
 > **Granular part B (2 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.6-14.8 (LS, BLL, HPE). BLLR (14.9) and MiW/WJ (14.10) live in `14B2`; cross-cutting notes (14.11) and Technology (14.12) live in `14D`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -103,6 +103,7 @@
   - **Phase 3 — Checkpoint:** *Upload your work so far to the dropbox so your kaiako can check in on your progress. They'll let you know what's going well and give you helpful tips for your next steps. If you have any questions or want to share how you're finding the learning, feel free to message your kaiako in the comment box.*
   - **Phase 4 — Checkpoint:** *It's time to upload the work you've done so far to the dropbox. Your kaiako will let you know what you're doing well and give you helpful tips on what to work on next. If you've got any questions or want to share how you're finding things, just pop a message to your kaiako in the comment box.*
 - **End-of-module celebration page.** An **automated celebration** graphic, a congratulation statement, and an SC checklist: `[automated celebration] [H2] Congratulations! [body] Ka pai, you have completed this module about… [dropbox] [H3] Share your learning [body] [button] Go to your journal [button] Upload to dropbox [alert]/[Image] [Speech bubble] [body] If you enjoyed this learning, you may like to explore: … Talk to your kaiako about these and other learning opportunities.`
+  - **`[button] Go to your journal` is the journal heading, not a button (constraint 6, CL-0128).** Emit `<h4 class="goJournal">Go to your journal</h4>` — no link, no To Do. The "Upload to dropbox" button beside it is unchanged. (Supersedes the "Go to your journal **button**" wording recorded by CL-0022 / CL-0023 — designer confirmed, 20 Oct 2026.)
   - The celebration **.gif has been DELIVERED** (August 2026 — see §14.12, where the same central asset is recorded for Technology). The former "still under development" deferral and its `Designer/Developer To Do:` note are **retired**; emit it as a real asset reference:
     ```html
     <img class="img-fluid imageCentral" loading="lazy" src="congradulations/Congradulations animation.gif" alt="Congradulations animation">
