@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Tuesday, 3rd November, 2026 5:48 PM
 > **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -245,4 +245,14 @@
 - **Required output:** the widget always sits inside `<div class="activity interactive" number="…">`. An untagged one gets its own activity with the next consecutive number, the following activities renumbered, and one visible `<p style="color: red; font-weight: bold;">Red Flag: …</p>` at the top of the new box. Stop watch and number line (tools) need no activity box. Display components unchanged.
 - **Supersedes:** —
 - **KB rule:** `03_COMP_CORE_INTERACTIVES/03A` → Universal Rules; `00H` constraint 8
+- **PageForge status:** Not yet amalgamated
+
+### CL-0141 — The central-images registry: every centralised image named by its own `[Centralised image: <image name>]` tag
+- **Date:** Tuesday, 3rd November, 2026
+- **Scope:** (c) Universal — the family facts keep their cohorts (BLLR, Taonga, HPE, MiW/WJ, Technology, Science, Maths)
+- **Source:** ADMIN MODE (authorised — Gavin, 3 November 2026; the design team's refreshed `refresh_imageCentral.html`)
+- **Writer input (what triggers it):** `[Centralised image: <name>]` (or `[Central image: …]` / `[Image centralised …]`) naming any image in §14.16 — mostly its file name: `HP_Kai_3_phase_2`, `tui_4`, `kea_5`, `bookworm_1c`, `Aroha-1`, `clubhouse_1`, `maths_characters_ada`, `be_a_learner` / `be-a-learner`, `DTP Ideate Blue`, `Technology character Tina head`, `Technology Green hat`, `Tech DT`, `default avatar bobgal`, `weather 7`, `AI traffic light - green`, `Congradulations animation`.
+- **Required output:** `<img class="img-fluid imageCentral" loading="lazy" src="<registry path, verbatim>" alt="<registry alt>">`; the hats `<object class="imageCentral" data="technology/Hats/<Colour> hat.svg" type="image/svg+xml"><Colour> hat</object>`; the Phase 1–4 dispositions `<div class="beAKiwi disposition-<name>"></div>`. Tūī `tui_characters/phase <N>/tui_<P>.jpg`, `<N>` from the template band. Matching is case-insensitive with a space, `_` and `-` one separator; separator-only twins are decided by the writer's spelling, then the phase. Unknown name → an ordinary image (unchanged); unknown pose → `Red Flag:`; a tag that cannot pick one image → its row's build (or none) + a `Designer/Developer To Do:`. Corrected family facts: BLLR Year 5 `bookworm_3`, Year 6 `bookworm_2`; HPE head-only poses 3–4 complete; Kea `kea_5.jpg`.
+- **Supersedes:** CL-0024 (the bookworm Year 5 / 6 order), CL-0073 (the `phase_{N}` folder; "pose a designer choice" where a pose is named), CL-0111 (the head-only non-uniform note), CL-0113 (the `Kea_5.jpg` mismatch Red Flag) — each in part
+- **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14F_CENTRAL_IMAGES_REGISTRY.md` §14.16; `00H` constraint 99; `01D` Tag Taxonomy
 - **PageForge status:** Not yet amalgamated

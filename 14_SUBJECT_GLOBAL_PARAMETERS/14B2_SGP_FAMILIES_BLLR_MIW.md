@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 28th October, 2026 12:25 PM
-> **Granular part B2 (3 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.9 (BLLR) and 14.10 (MiW/WJ). Split from `14B` on 23 September 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
+> **Last updated:** Tuesday, 3rd November, 2026 5:48 PM
+> **Granular part B2 (3 of 7) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.9 (BLLR) and 14.10 (MiW/WJ). Split from `14B` on 23 September 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -15,9 +15,11 @@
 
   | Image | Module-code range | Year suite |
   |---|---|---|
-  | `bookworm_1.jpg` | BLLR201 – BLLR210 | Year 4 |
-  | `bookworm_2.jpg` | BLLR211 – BLLR220 | Year 5 |
-  | `bookworm_3.jpg` | BLLR221 – BLLR230 | Year 6 |
+  | `bookworm_1.jpg` (yellow) | BLLR201 – BLLR210 | Year 4 |
+  | `bookworm_3.jpg` (red) | BLLR211 – BLLR220 | Year 5 |
+  | `bookworm_2.jpg` (green) | BLLR221 – BLLR230 | Year 6 |
+
+  > **Year 5 and Year 6 corrected (CL-0141 — the design team's refreshed Centralised Images page, 3 November 2026):** Year 5 is the **red** worm `bookworm_3.jpg` and Year 6 the **green** worm `bookworm_2.jpg` — the reverse of the 9 July 2026 email's order, which this supersedes (the page keeps the old order only in a commented-out block). Year 4 is unchanged. The writer may also name a worm directly — `[Centralised image: bookworm_3]` (§14.16).
 
   Folder: `bookworms/`. Supplied markup (select the image for the module's code range):
   ```html
@@ -25,7 +27,7 @@
   ```
   > The source email writes the first filename capitalised (`Bookworm_1.jpg`) and the other two lower-case (`bookworm_2.jpg`, `bookworm_3.jpg`), while its supplied `<img>` tag uses the lower-case `bookworms/bookworm_1.jpg`. Follow the **supplied `<img>` tag** — lower-case `bookworm_N.jpg` — and emit a `Designer/Developer To Do:` note asking the developer to confirm the exact filename casing when the assets are delivered. **Settled (CL-0113):** the delivered files are lower-case, so the confirm-the-casing note is retired.
 
-- **Bookworm art DELIVERED (CL-0113, September 2026 server list); audio still to be developed.** The central `bookworms/` folder now holds `bookworms/bookworm_1.jpg`, `bookworms/bookworm_1a.jpg`, `bookworms/bookworm_2.jpg` and `bookworms/bookworm_3.jpg` (lower-case — which settles the casing question above: follow the lower-case `<img>` tag and **drop** the confirm-the-casing To Do note). Emit the real `<img>` for the module's code range — no art To Do note (gold: BLLR201–203 carry `bookworms/bookworm_1.jpg`). The **audio with audiovisual is still to be developed**: where the Writers Template calls for the bookworm's audio, emit a visible `Designer/Developer To Do:` note for the audio only. (`bookworms/archive/` and `bookworms/idk/` are the design team's working files — never reference them.)
+- **Bookworm art DELIVERED (CL-0113, September 2026 server list); audio still to be developed.** The central `bookworms/` folder now holds `bookworms/bookworm_1.jpg`, `bookworms/bookworm_1a.jpg`, `bookworms/bookworm_2.jpg` and `bookworms/bookworm_3.jpg`, and the refreshed page adds the yellow worm's other poses `bookworm_1b` … `bookworm_1e` (CL-0141 — each pose named in §14.16; the writer asks for one with `[Centralised image: bookworm_1c]`) (lower-case — which settles the casing question above: follow the lower-case `<img>` tag and **drop** the confirm-the-casing To Do note). Emit the real `<img>` for the module's code range — no art To Do note (gold: BLLR201–203 carry `bookworms/bookworm_1.jpg`). The **audio with audiovisual is still to be developed**: where the Writers Template calls for the bookworm's audio, emit a visible `Designer/Developer To Do:` note for the audio only. (`bookworms/archive/` and `bookworms/idk/` are the design team's working files — never reference them.)
 
 - **"Secret shelf" — BUILT: the `bookshelf` component (CL-0113; `bookshelf.html`; gold BLLR202 / BLLR203).** Book covers sit on a shelf (each cover styled 20 % wide); clicking a cover opens that book's carousel. Supplied markup (copied from the snippet):
   ```html
@@ -89,12 +91,12 @@
 
 - **Side-navigation tabs inside each lesson.** Each lesson carries **side-nav tabs** so ākonga can work through it as they please — the same pattern as the **Maths 1-10 FUNS**.
 
-- **Kea character, varying by phase.** A character **Kea** features **within each lesson**. The character **varies slightly from phase to phase** (e.g. different medallion placement / wing colours). Folder `kea_characters/`; one image per phase — `kea_1.jpg`, `kea_2.jpg`, `kea_3.jpg`. Supplied markup:
+- **Kea character.** A character **Kea** features **within each lesson**. The source document described the character as varying slightly from phase to phase (medallion placement / wing colours); **the design team's refreshed Centralised Images page (3 November 2026, CL-0141) numbers the six Kea images by POSE, not by phase** — `kea_1` default right, `kea_4` default left, `kea_2` walking right, `kea_5` walking left, `kea_3` pointing right, `kea_6` pointing left — and its phase 1, 2 and 3 examples all use `kea_3`, varying only the bubble's colour. Folder `kea_characters/`; the writer names a pose with `[Centralised image: kea_<n>]` (§14.16). Supplied markup:
   ```html
   <img class="img-fluid imageCentral" loading="lazy" src="kea_characters/kea_1.jpg" alt="Kea character" >
   ```
 - **Kea speech bubble + audio.** When the Kea appears in a module he **also has a speech bubble and audio** (speech-bubble mechanics stay in `04_COMP_SEGMENTS_OVERLAYS.md`). **Scoped exception to CL-0122:** the Kea bubble keeps the series' established form — the Kea picture column on the LEFT and a `bubble-right` bubble beside it (every finished WJ module builds it this way) — rather than the universal text-left / image-right layout of a standard single-character bubble.
-- **Kea art DELIVERED (CL-0113); audio still pending.** The central store now holds `kea_characters/kea_1.jpg`, `kea_2.jpg`, `kea_3.jpg`, `kea_4.jpg`, `Kea_5.jpg`, `kea_6.jpg`, plus the custom pair `kea_characters/customKea/kea_formal.jpg`, `kea_formal_text.jpg`, `kea_informal.jpg`, `kea_informal_text.jpg` (gold: 21 WJFUN modules). **Unresolved filename mismatch:** the server lists `Kea_5.jpg` with a **capital K**, while the built modules write `kea_characters/kea_5.jpg` (WJFUN108 / 205 / 210 / 212) — record both; until the design team confirms, follow the built modules (`kea_5.jpg`) and raise a `Red Flag:` naming the mismatch where kea 5 is used. The server does not say which image belongs to which phase — follow a same-phase sibling module. No art To Do note; the **audio** is still pending, so the speech bubble's audio slot keeps a visible `Designer/Developer To Do:` note.
+- **Kea art DELIVERED (CL-0113); audio still pending.** The central store now holds `kea_characters/kea_1.jpg`, `kea_2.jpg`, `kea_3.jpg`, `kea_4.jpg`, `Kea_5.jpg`, `kea_6.jpg`, plus the custom pair `kea_characters/customKea/kea_formal.jpg`, `kea_formal_text.jpg`, `kea_informal.jpg`, `kea_informal_text.jpg` (gold: 21 WJFUN modules). **Filename settled (CL-0141):** the server list wrote `Kea_5.jpg` with a capital K, but the design team's refreshed page writes `kea_characters/kea_5.jpg`, as the built modules do (WJFUN108 / 205 / 210 / 212) — emit **`kea_5.jpg`**; the former `Red Flag:` naming the mismatch is **retired**. Which pose a placement uses: the writer's `[Centralised image: kea_<n>]` tag where given, else a same-phase sibling module (the images are poses, not phases). No art To Do note; the **audio** is still pending, so the speech bubble's audio slot keeps a visible `Designer/Developer To Do:` note.
 - **Writing process (CL-0113; `writingProcess.html`; gold ENGC206 / ENGC403 / ENGS404).** The writing-process graphic is centralised and generated by the template from one empty div: `<div class="writingProcess" phase="1-yr-1"></div>` — `phase` values `1-yr-1`, `1-yr-23`, `2-yr-456`, `3-yr-78`, `4-yr9-10`, `5-NCEA1`. A single stage: `<div class="writingProcess singleStage" stage="Plan"></div>` — `stage` values `Plan` / `Draft` / `Revise` / `Edit` / `Publish` / `Reflect` / `Checkpoint` / `Checkpoint_1` / `Checkpoint_2` / `Checkpoint_3`. **The div must sit in its own row (inside a `col`) or it will bug.** The stage images live centrally under `writing process/phase N/` (e.g. `writing process/phase 2/plan.png`); never copy them into the module.
 - **Writing process WRITER TAGS (CL-0116; constraint 94; `writingProcess.html` — Design Team Lead, 27 October 2026).** From 27 October 2026 the Writers Template names the graphic by tag, and the tag is the whole instruction: it builds the component below — **never an image request, never a `Designer/Developer To Do:`**. Matching is case-insensitive.
 

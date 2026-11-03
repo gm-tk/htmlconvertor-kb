@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 27th October, 2026 6:01 PM
-> **Granular part A (1 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
+> **Last updated:** Tuesday, 3rd November, 2026 5:48 PM
+> **Granular part A (1 of 7) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -107,17 +107,17 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
 - **Unique overview.** Taonga modules use a **unique overview** (not the generic pattern).
 - **Overview + images are DEFERRED.** The overview is **to be set once the first module is complete**, and images are still to come — **use placeholder images until updated links come through from the first module's Comparison Mode run.** Emit a `Designer/Developer To Do:` note at the overview and at each pending image.
 - **Tui character (art DELIVERED — per-phase folders, multiple poses).** A tui character (**Tui Toi**) features in each Taonga module and **varies from phase to phase**. The illustrations are **now in the refresh template** (design-team upload, August 2026), so the tui is no longer a deferred item. The asset convention is a **folder per phase, several poses per folder**:
-  - **`tui_characters/phase_{N}/`** — **four phase folders**, `phase_1` … `phase_4`. `{N}` is the **module's phase**.
+  - **`tui_characters/phase {N}/`** — **four phase folders**, `phase 1` … `phase 4` — **a space, not an underscore** (the design team's refreshed Centralised Images page, 3 November 2026 — CL-0141; the August reference's `phase_1` form is superseded). `{N}` is the **module's phase**.
   - **`tui_{P}.jpg`** — the pose. **Poses 1–6** in phases 1–3; **phase 4 has only 4 poses** (`tui_1.jpg` … `tui_4.jpg`).
-  - Full path: **`tui_characters/phase_{N}/tui_{P}.jpg`**.
+  - Full path: **`tui_characters/phase {N}/tui_{P}.jpg`**. What each pose shows in each phase (flight / perched / perched singing / default, facing left or right) is tabled in §14.16 (`14F`).
 
   Supplied markup (phase 1, pose 1 shown):
   ```html
-  <img class="img-fluid imageCentral" loading="lazy" src="tui_characters/phase_1/tui_1.jpg" alt="Tui character" >
+  <img class="img-fluid imageCentral" loading="lazy" src="tui_characters/phase 1/tui_1.jpg" alt="Tui character" >
   ```
-  **Phase → folder is derived; pose is a designer choice.** Take `{N}` from the module's phase. Where the module's phase is not stated, raise a `Red Flag:` rather than guessing the folder. The design team has **not** stated how a pose is selected for a given placement, and nothing in the writer's template names one — so emit **`tui_1.jpg`** (the supplied example) as the scaffold and carry a visible `Designer/Developer To Do:` note (*Tui pose is a designer choice — confirm which pose belongs at this placement*). Never invent a pose beyond the phase's ceiling: a pose above **6** (or above **4** in phase 4) does not exist — raise a `Red Flag:` rather than emitting a path to a missing file.
+  **Phase → folder is derived; the writer's tag names the pose (CL-0141).** Take `{N}` from the module's phase. Where the module's phase is not stated, raise a `Red Flag:` rather than guessing the folder. The refreshed Centralised Images page gives every pose a writer tag, `[Centralised image: tui_<P>]` (§14.16) — where the writer names the pose, build that pose with no note. **Only where no pose is named**, emit **`tui_1.jpg`** (the supplied example) as the scaffold and carry a visible `Designer/Developer To Do:` note (*Tui pose is a designer choice — confirm which pose belongs at this placement*). Never invent a pose beyond the phase's ceiling: a pose above **6** (or above **4** in phase 4) does not exist — raise a `Red Flag:` rather than emitting a path to a missing file.
 
-  Reference: the design team's central-images snippet file, `Z:\Development\Online\Templates\Refresh Template - modules\refresh_template_HTML\tools snippets\refresh_imageCentral.html`, carries the full worked examples (updated in the same August 2026 delivery).
+  Reference: the design team's central-images snippet file, `Z:\Development\Online\Templates\Refresh Template - modules\refresh_template_HTML\tools snippets\refresh_imageCentral.html`, carried the full worked examples (updated in the same August 2026 delivery); its refreshed version (3 November 2026) is absorbed as **§14.16 (`14F`)** — read the registry there.
 
 ---
 

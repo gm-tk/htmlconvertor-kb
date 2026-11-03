@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Tuesday, 3rd November, 2026 5:48 PM
 > **Granular part C (3 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_09 speech bubbles; COMP_10 diagrams & timelines; COMP_11 drawing tools.
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -66,7 +66,7 @@
  
 **Use `imageCentral` ONLY for:** Pre-existing centralised assets such as self-reflection emoji images (`self-reflection-emoji/`) that are part of the template system itself — NOT for any content images from the writer.
 
-**Subject central-asset families are template assets too (CL-0123).** The per-family central folders recorded in `14_SUBJECT_GLOBAL_PARAMETERS.md` (§14.11 lists them — Languages, Taonga, HPE, BLLR, MiW, Technology, and MXEX `Maths Characters/`) belong to the template system. An image the writer requests **through that family's central tag** — e.g. MXEX `[Image Centralised Archi]` → `Maths Characters/Maths Characters_DRAFT_Archi.jpg` (§14.15) — therefore takes `imageCentral` and the central path. Any other image the writer specifies still never does.
+**Subject central-asset families are template assets too (CL-0123).** The per-family central folders recorded in `14_SUBJECT_GLOBAL_PARAMETERS.md` (§14.11 lists them — Languages, Taonga, HPE, BLLR, MiW, Technology, and MXEX `Maths Characters/`) belong to the template system. An image the writer requests **through that family's central tag** — e.g. `[Centralised image: HP_Kai_3_phase_2]` → `health & PE characters/phase 2/head_only/HP_Kai_3_phase_2.png`, or an MXEX Maths character → `Maths Characters/maths_characters_<name>.jpg` (§14.14 / §14.15) — therefore takes `imageCentral` and the central path. Any other image the writer specifies still never does. **Every tag the design team's Centralised Images page lists — and the path it builds — is in the central-images registry, §14.16 (`14F`; constraint 99; CL-0141); that registry, not this paragraph, is the list.**
  
 ```html
 <!-- CORRECT: Writer-specified character image — NO imageCentral -->
