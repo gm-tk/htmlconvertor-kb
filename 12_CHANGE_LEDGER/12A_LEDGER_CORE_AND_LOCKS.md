@@ -1,5 +1,5 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
-> **Granular part A (1 of 16) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions (CL-0086 to CL-0094, CL-0116 to CL-0122, CL-0137 to CL-0139), PART 2 pending approval. (PART 3 is the history parts; **PART 4 is the PageForge Amalgamation Log** — its rules and CL-0089–CL-0115 in `12G`, CL-0116 onward in `12H`, the open part.)
+> **Last updated:** Thursday, 12th November, 2026 1:25 AM
+> **Granular part A (1 of 16) of `12_CHANGE_LEDGER.md`** — Ledger purpose, status values, PART 1 locked decisions (CL-0086 to CL-0094, CL-0116 to CL-0122, CL-0137 to CL-0139, CL-0141), PART 2 pending approval. (PART 3 is the history parts; **PART 4 is the PageForge Amalgamation Log** — its rules and CL-0089–CL-0115 in `12G`, CL-0116 onward in `12H`, the open part.)
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -89,6 +89,7 @@ The authoritative "do not override" list. A newly-requested **Update Mode** chan
 | CL-0137 | Wednesday, 21st October, 2026 | No `<h5>` inside a drag and drop; a heading the writer asks for inside it is `<p><b>…</b></p>` (constraint 7) | (c) Universal | `03B`; `01E`; `00H` 97; `02C` | **Locked (admin)** — authorised channel, 21 October 2026. Released only by a later `ADMIN MODE` message. |
 | CL-0138 | Wednesday, 21st October, 2026 | An activity that CONTAINS a dropbox submission button carries the `dropbox` modifier — every series except BLL (constraint 43); `01F` corrected to match | (c) Universal (BLL carve-out) | `01F`; `00D` 43; `05B`; `05D`; `02C` | **Locked (admin)** — authorised channel, 21 October 2026. Released only by a later `ADMIN MODE` message. |
 | CL-0139 | Wednesday, 21st October, 2026 | Every task interactive sits inside an activity box (untagged ones get the next consecutive number + `Red Flag:`); tools (stop watch, number line) need not (constraint 8) | (c) Universal | `03A`; `05B`; `04C`; `00H` 98; `02C`; `15B`; `16B` §3.4 | **Locked (admin)** — authorised channel, 21 October 2026. Released only by a later `ADMIN MODE` message. |
+| CL-0141 | Thursday, 12th November, 2026 | The interactives worklist is `{CODE}_interactives.html` (`.txt` still accepted); recognised by its title, opening `<pre>` header and one `<section id>` per interactive; ONLY the HTML-decoded `<pre>` text is content, the `preview` div never; checkboxes and speech bubbles are no longer in the worklist (`selectionBox` joins Mode 7's non-complex list) | (c) Universal | `15A`; `15B` §1A; `15C`; `00A2`; `00C`; `00F`; `00G` 78/80/81; `16A`; `16B` §4.2; `_project_instructions_.md`; `19_SKILLS` | **Locked (admin)** — authorised channel, 12 November 2026. Released only by a later `ADMIN MODE` message. |
 
 ---
 

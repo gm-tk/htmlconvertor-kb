@@ -1,15 +1,44 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
-> **Granular part B (2 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — The `{CODE}_interactives.txt` worklist anatomy and the fragment-specific build rules.
+> **Last updated:** Thursday, 12th November, 2026 1:25 AM
+> **Granular part B (2 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — The interactives worklist anatomy (`{CODE}_interactives.html`, or the older `.txt`) and the fragment-specific build rules.
 > All sibling parts live in `15_INTERACTIVES_BUILD_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
 # 15B — The worklist format, and how to build from it
 
-## 1. THE INPUT FILE — `{CODE}_interactives.txt`
+## 1. THE INPUT FILE — the worklist (`{CODE}_interactives.html`, or the older `{CODE}_interactives.txt`)
 
 PageForge's HTML Generator writes this worklist on every conversion. It lists **only the un-built
 interactives** — anything the generator could build automatically is already live in the module
 pages and is deliberately omitted.
+
+### 1A. The `.html` worklist — what is content and what is not
+
+PageForge now writes the worklist as a web page, `{CODE}_interactives.html`, so a person can read it
+in a browser. The older `{CODE}_interactives.txt` is the same worklist in plain text and is still
+accepted. Everything from **File header** onward describes the worklist's **raw text**, which is
+identical in both forms.
+
+**The ONLY content is the text inside the `<pre>` blocks, read in document order** — the opening
+header `<pre>`, then each section's `<pre>`. A `<pre>` inside a **closed** `<details>` toggle is
+still content: "closed" only means folded away on screen.
+
+**Decode it first.** The `<pre>` text is HTML-escaped: `&lt;` is `<`, `&gt;` is `>`, `&amp;` is
+`&`. Decode `&lt;` and `&gt;` first and `&amp;` last, so a literal `&amp;lt;` correctly comes out
+as `&lt;` and not `<`. Once decoded, the text is exactly what the `.txt` worklist held, and the
+anatomy below and the build rules in §2 apply to it **unchanged**.
+
+**Never content — never used as build input and never copied into a build:**
+- **`<div class="preview">`** — a reading aid for people. It redraws the entry to look like the
+  Word document and drops the red-text markers. Never build from it, and never use it to check or
+  correct the raw text. **If the two ever seem to differ, the raw text is right.**
+- **The page's own markup and styling** — `<style>`, `<h1>`, `<h2>`, `<p class="facts">`, the
+  `<section>` wrappers, `<details>`, `<summary>`, and empty `<a id>` anchors. The `<h2>` and the
+  section `id` repeat the reference code for navigation only. The anchor is still the
+  `REFERENCE CODE:` line in the raw text (`15A` §4).
+
+**Not a worklist:** a module page (it has `#header`, `#body` and `#footer`), and the built output
+`{CODE}_interactives_built[_XofY].html` (its `<section class="cv2-built">` wrappers are this mode's
+own output) — `15A` §1.
 
 ### File header
 
@@ -43,6 +72,13 @@ content with it.
 (`15A` §3). The `MODE:` banner is informational — the hand-off is the generator's default and
 needs no toggle. (A worklist from an older generator build may instead read
 `MODE: EXTRACT (Phase-1 hand-off)`; if it carries reference codes it is still valid input.)
+
+**Types PageForge now builds itself.** PageForge builds checkboxes (`selectionBox`) and speech
+bubbles (`speechBubble`) itself, so they no longer appear as worklist entries — they are already
+live on the module pages. Every other interactive type still arrives in the worklist as before.
+If a worklist from an older generator build does list one, build it as normal. The header's
+`Tier 1` line may still name `speechBubble`; it is PageForge's internal routing line, not a
+workload.
 
 ### One entry, line by line
 

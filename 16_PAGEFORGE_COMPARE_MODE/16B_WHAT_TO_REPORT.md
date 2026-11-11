@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Thursday, 12th November, 2026 1:25 AM
 > **Granular part B (2 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — The five finding classes, the boundary check (reading PageForge's captured content from the reference box on the page), the complex/non-complex interactive rule, the exclusions (incl. the total notes-and-comments exclusion), and the uncertainty rule.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -132,7 +132,7 @@ For **every** activity box and **every** interactive in the module, in page orde
    neither the captured content nor the ownership decision survives on the page. This is why the mode
    asks for PageForge's **original** output (`16A` §4.3, §5.2). If only a stitched upload exists, judge
    the boundary from what is visible on the page against the writer's template and mark the interactive
-   `state unknown` — and if the tester happened to attach a `{CODE}_interactives.txt`, its `Activity:`
+   `state unknown` — and if the tester happened to attach the interactives worklist (`.html` or `.txt`), its `Activity:`
    and `Content:` lines restate PageForge's assignment and may be read as corroborating evidence.
 4. **Compare the two membership lists**, and report:
    - content in H's box but outside P's → **SPILL**;
@@ -184,11 +184,12 @@ and say plainly that no writer tag backs it.
 
 ### 4.2 The non-complex list
 
-These are the types PageForge's builder handles, as at **6 August 2026** (PageForge build
-`260618.44`):
+These are the types PageForge's builder handles, as at **12 November 2026** (`selectionBox`
+added — PageForge now builds checkboxes itself and no longer lists them in the worklist;
+`speechBubble` was already listed):
 
 `accordion` · `carousel` (including the rotating-banner variant) · `clickDrop` · `dragAndDrop` ·
-`flipCard` · `glossary` · `hint` · `hintSlider` · `modal` · `selfCheck` · `shapeHover` ·
+`flipCard` · `glossary` · `hint` · `hintSlider` · `modal` · `selectionBox` · `selfCheck` · `shapeHover` ·
 `speechBubble` · `tabs`
 
 Any other type — quizzes, crossword, word find, memory game, reorder, word select, slider,
