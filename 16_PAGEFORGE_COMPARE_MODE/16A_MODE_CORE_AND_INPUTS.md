@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Thursday, 12th November, 2026 1:25 AM
 > **Granular part A (1 of 3) of `16_PAGEFORGE_COMPARE_MODE.md`** — Mode purpose, trigger + precedence + the never-advertise rule, where it sits in the tester workflow, the three required inputs, why PageForge's ORIGINAL output is the one to upload, the two PageForge upload formats and how to tell them apart, the workflow.
 > All sibling parts live in `16_PAGEFORGE_COMPARE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -39,11 +39,12 @@ The mode runs when **both** of the following are true in one message:
 
 If the phrase appears with no PageForge files uploaded, do not start — ask the tester to upload
 the HTML files PageForge produced (the set they saved aside, clearly marked as PageForge output).
-**Do not ask for the `{CODE}_interactives.txt` worklist** — it is not needed (§4.3).
+**Do not ask for the interactives worklist** (`{CODE}_interactives.html`, or the older `.txt`) — it is
+not needed (§4.3).
 
 **The typed phrase is the ONLY way in.** Nothing else starts this mode: not the presence of
-PageForge-looking files, not a `cv2-int-ref` box spotted in an upload, not a `{CODE}_interactives.txt`
-arriving on its own, and not the tester having just finished `COMPARISON MODE`. See §1.3.
+PageForge-looking files, not a `cv2-int-ref` box spotted in an upload, not an interactives worklist
+(`.html` or `.txt`) arriving on its own, and not the tester having just finished `COMPARISON MODE`. See §1.3.
 
 ### 1.1 Same chat only — this is a hard requirement
 
@@ -80,7 +81,7 @@ message reading `PAGEFORGE COMPARISON MODE` contains the substring `COMPARISON M
 Compare request arriving inside an Update Mode or Admin Mode run is not actioned — say so and ask
 which the designer wants first.
 
-An uploaded `{CODE}_interactives.txt` worklist normally triggers **Mode 6**. Inside a PageForge
+An uploaded interactives worklist (`{CODE}_interactives.html`, or the older `.txt`) normally triggers **Mode 6**. Inside a PageForge
 Compare run it does **not** — here a worklist is *evidence*, never a work order (§4.3). The mode no
 longer asks for one, but a tester may still attach it out of habit: read it as corroborating
 evidence, say so, and **never silently start building interactives**.
@@ -100,8 +101,7 @@ Concretely, in **every** other mode — and most importantly at the end of a `CO
   now type `PAGEFORGE COMPARE MODE`", or any wording like it;
 - do **not** ask whether the developer has PageForge files, or whether they are on the PageForge
   test programme;
-- do **not** name Mode 7, the report for Gavin, or the `{CODE}_interactives.txt` worklist as a
-  next step;
+- do **not** name Mode 7, the report for Gavin, or the interactives worklist as a next step;
 - do **not** list Mode 7 when summarising what the project can do, unless the developer asked
   about PageForge specifically.
 
@@ -122,8 +122,8 @@ The tester follows five steps. This mode is step 5.
 1. **PageForge run.** The tester converts the module's Writers Template + Media List in
    PageForge's HTML Generator and downloads the results. The **HTML pages** are stored in a folder
    **clearly marked as PageForge-generated** and are **not edited** — this untouched set is what
-   this mode compares. (PageForge also writes a `{CODE}_interactives.txt` worklist for Mode 6; this
-   mode does not need it.)
+   this mode compares. (PageForge also writes an interactives worklist, `{CODE}_interactives.html`,
+   for Mode 6; this mode does not need it.)
 2. **Normal build.** In a fresh chat with **this** project, the tester uploads the same Writers
    Template + Media List and converts the module the normal way (Mode 1).
 3. **Refinement.** The developer takes that output away and refines it by hand until it is good
@@ -186,7 +186,7 @@ recovered, ask the tester to re-upload it. Do not proceed without it — see §1
 ### 4.3 Upload PageForge's ORIGINAL output — and why no worklist is needed
 
 **The tester uploads the PageForge HTML pages, and nothing else.** Do **not** ask for
-`{CODE}_interactives.txt`. Everything this mode used to take from the worklist is already in the
+the interactives worklist. Everything this mode used to take from the worklist is already in the
 two artefacts it has: **the writer's template**, which is in this chat from the original conversion
 turn, and **PageForge's own pages**, provided they are the set PageForge generated.
 
@@ -248,7 +248,9 @@ whose box has since been stitched away, and its header counts (`TOTAL INTERACTIV
 `BUILT AUTOMATICALLY this run` / `STILL UN-BUILT`) are a useful cross-check on the inventory — note
 any disagreement in the report rather than resolving it silently (`16C` §4). Say that you are
 reading it as evidence, and **never start building from it**. Its absence is normal and is never
-remarked on in the report.
+remarked on in the report. An `.html` worklist (`{CODE}_interactives.html`) is **not one of
+PageForge's pages**: never count it in P and never compare it. Read only the decoded text inside its
+`<pre>` blocks as evidence, never its `preview` div (`15B` §1A).
 
 ---
 
@@ -332,7 +334,7 @@ FUNCTION pageforge_compare(W_writers_template, H_human_html, P_pageforge_html):
     IF H missing → ASK for the developer's refined files; STOP until supplied
     IF W missing → SEARCH the chat history; if still missing → ASK; STOP until supplied
                    (a successful recovery just continues — nothing to stop for)
-    NEVER ask for {CODE}_interactives.txt — it is not an input   (§4.3)
+    NEVER ask for the interactives worklist (.html or .txt) — it is not an input   (§4.3)
     ASK the tester, in one line: are these PageForge's ORIGINAL files, or have
         they been through the Page Stitcher?   (§4.3)
         NEVER infer this from whether cv2-* markers are present — a fully-built
