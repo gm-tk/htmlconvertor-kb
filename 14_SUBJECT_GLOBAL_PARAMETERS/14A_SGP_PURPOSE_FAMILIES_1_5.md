@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 27th October, 2026 6:01 PM
+> **Last updated:** Sunday, 15th November, 2026 7:15 PM
 > **Granular part A (1 of 6) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -87,6 +87,7 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
   The **`id` names the audio file** (`id="whaiIntro"` plays `audio/whaiIntro.mp3`); **both buttons stay empty**; the `.pathwaysPersonaText` overlay is optional; the component **must sit inside a `row` and a `col`** (e.g. `col-md-4 col-6` per persona). **`noAudio`** on `.pathwaysPersona` strips it back to just the circular image. The former persona `Designer/Developer To Do:` placeholder is **retired**.
 - **Knowledge & Practice (Ks/Ps) statements.** There is **no new Pathways curriculum yet**, so the overview does **not** include new-curriculum K/P statements — the writers' template leaves a placeholder. In the meanwhile, only short **learning intentions and success criteria** are included. **Do NOT add curriculum K/P statements in-module**; this is a **revision request** once the curriculum is announced — emit a `Designer/Developer To Do:` note to that effect at the placeholder.
 - **Overview is DEFERRED.** The Pathways overview is **to be set once the first module is complete** — emit the overview scaffold with a `Designer/Developer To Do:` note rather than a finalised overview.
+- **Assessments have their own template.** Level 1 Pathways unit-standard assessments are written on the **Pathways Assessment Activities Template** and converted in Assessment Mode by `18_ASSESSMENT_MODE.md` → `18D` (constraint 99, CL-0142) — these module conventions do not apply to them.
 
 > **Pathways Level 2 — HELD (no action this scope).** Level 2 is on pause. Six Level 2 "green" edit-proof modules exist for the refreshed template — **PWO2004, PWO2007, PWO2009, PWO2010, PWO2021, PWO2028** — with an edit-proof sheet set up. Developers revisit these next term when a Level 2 timeline is set and the edits are provided. Recorded here for reference only; no Level 2 conventions are active yet.
 

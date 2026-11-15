@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 18th September, 2026 3:30 PM
-> **Granular part B (2 of 3) of `18_ASSESSMENT_MODE.md`** — Content rules inside the accordions (text, headings, the nesting rule, tables, alerts, links, dropbox), the acknowledgements block (6.8), the `Designer/Developer To Do:` list, workflow, never-does list.
+> **Last updated:** Sunday, 15th November, 2026 7:15 PM
+> **Granular part B (2 of 4) of `18_ASSESSMENT_MODE.md`** — Content rules inside the accordions (text, headings, the nesting rule, tables, alerts, links, dropbox), the acknowledgements block (6.8), the `Designer/Developer To Do:` list, workflow, never-does list.
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -95,7 +95,7 @@ Three table shapes need interpretation, all seen in US4249:
 The example's coloured "Before you begin" box (`<div class="alert"><div class="row"><div class="col-12">…</div></div></div>`) is used **only** when the writer marks a block for it (a Word callout/shaded box, or an explicit `[ALERT]` / "Before you begin" heading). A plain paragraph such as `Conditions:` followed by text is **not** an alert — render it as paragraphs. Never invent an alert to make the page look like the example.
 
 ### 6.6 Links, buttons and files
-A hyperlink in the Word text → `<a href="…" target="_blank" rel="noopener">`. A cover-sheet or resource PDF the writer names becomes the example's button pattern — `<a href="{URL}" target="_blank" rel="noopener"><div class="button">{label}</div></a>` — inside the accordion where the writer placed it, its `{URL}` built on the server convention in Section 7.2 (`…/{CODE}/pdf/{file}.pdf`) and paired with the Section 7.2 upload To Do. Module codes the writer cites (e.g. `PWY1001`) are plain text, not links.
+A hyperlink in the Word text → `<a href="…" target="_blank" rel="noopener">`. A cover-sheet or resource PDF the writer names becomes the example's button pattern — `<a href="{URL}" target="_blank" rel="noopener"><div class="button">{label}</div></a>` — inside the accordion where the writer placed it, its `{URL}` built on the server convention in Section 7.2 (`…/{CODE}/pdf/{file}.pdf`) and paired with the Section 7.2 upload To Do. Module codes the writer cites (e.g. `PWY1001`) are plain text, not links — except the Pathways template's `[Link to module]` button (`18D` §11.6).
 
 ### 6.7 The dropbox accordion
 The `Dropbox` section always produces the `dropBox` accordion pair from the skeleton, even when the writer left `[H3]` and `[body]` empty:
@@ -164,6 +164,8 @@ Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">
 ```
 1. TRIAGE     phrase ASSESSMENT MODE (any case) OR .docx passes fingerprint (§2) → Mode 9
               (ADMIN / PAGEFORGE COMPARE / COMPARISON / UPDATE phrases still win)
+1a. PATHWAYS  Subject Pathways + a Classification row or the Option 1 / Option 2 lines → apply 18D (§11) on top,
+              wherever it differs from the steps below
 2. READ       the details table → header-bar fields (§4.1); standard code → NZQA link (§4.2), <title>, filename
 3. SECTIONS   split the body at the bold template headings (§4.3); strip [body] [H3] [Button] DROPBOX
 4. CONVERT    each section's content (§6): headings step down; numbered items nest their sub-material;
@@ -186,7 +188,7 @@ Every gap is a **visible** red, bold `<p style="color: red; font-weight: bold;">
 
 ## 9. WHAT THIS MODE NEVER DOES
 
-- Never emits a module page, menu, lesson delimiters, `stickyNav` or acknowledgements; never offers Split Mode.
+- Never emits a module page, menu, lesson delimiters or `stickyNav`; never offers Split Mode. (The acknowledgements block is not an exception to this list — it is on every page, §6.8.)
 - Never copies the example's `tekuradev` script host, its bare `<div>` after the header, or its unindented body; never names the file `Assessment-{CODE}.html`.
 - Never rewords, reorders or summarises writer text; never drops a filled-in section; never renders `Brief description:` or the 3rd-party row.
 - Never invents an alert box, a journal, a rubric table, a dropbox code or an acknowledgement entry; never omits the acknowledgements block or types the statements `acksTemplate` generates.
