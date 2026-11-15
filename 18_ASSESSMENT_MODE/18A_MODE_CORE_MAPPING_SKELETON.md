@@ -1,17 +1,19 @@
-> **Last updated:** Friday, 18th September, 2026 3:30 PM
-> **Granular part A (1 of 3) of `18_ASSESSMENT_MODE.md`** — Mode 9 core: trigger, fingerprint, inputs (incl. multi-document uploads), the details-table → header-bar mapping, NZQA links, section → accordion mapping, the corrected skeleton (with the acknowledgements block).
+> **Last updated:** Sunday, 15th November, 2026 7:15 PM
+> **Granular part A (1 of 4) of `18_ASSESSMENT_MODE.md`** — Mode 9 core: trigger, fingerprint, inputs (incl. multi-document uploads), the details-table → header-bar mapping, NZQA links, section → accordion mapping, the corrected skeleton (with the acknowledgements block).
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
 # 18 — Assessment Mode (Mode 9)
 
-> **When to load:** Whenever a message contains the trigger phrase **`ASSESSMENT MODE`** (case-insensitive), **or** an uploaded `.docx` matches the **Assessment Activity fingerprint** in Section 2 — whatever the user typed, including nothing at all, or a plain-English request such as "please convert this word doc" / "convert this assessment content". This is **Mode 9 — Assessment** (see `00_MASTER_INSTRUCTIONS.md` → Operating Modes). It is a **conversion variant with its own output**: one single-page assessment HTML file per document, not a module. This topic is split into three parts: **18A** (this part — trigger, fingerprint, inputs, mapping, skeleton), **18B** (content rules inside the accordions, the acknowledgements block, the `Designer/Developer To Do:` list, workflow) and **18C** (the assessment variant of Comparison Mode). `ADMIN MODE`, `PAGEFORGE COMPARE MODE`, `COMPARISON MODE` (which, in a chat that ran this mode, is the assessment variant in `18C`) and `UPDATE MODE` still outrank it; it outranks the ordinary Conversion / Support / Advisory signals and the "ambiguous `.docx` → ask" rule, because the fingerprint is unambiguous.
+> **When to load:** Whenever a message contains the trigger phrase **`ASSESSMENT MODE`** (case-insensitive), **or** an uploaded `.docx` matches the **Assessment Activity fingerprint** in Section 2 — whatever the user typed, including nothing at all, or a plain-English request such as "please convert this word doc" / "convert this assessment content". This is **Mode 9 — Assessment** (see `00_MASTER_INSTRUCTIONS.md` → Operating Modes). It is a **conversion variant with its own output**: one single-page assessment HTML file per document, not a module. This topic is split into four parts: **18A** (this part — trigger, fingerprint, inputs, mapping, skeleton), **18B** (content rules inside the accordions, the acknowledgements block, the `Designer/Developer To Do:` list, workflow), **18C** (the assessment variant of Comparison Mode) and **18D** (the Pathways Assessment Activities Template — Level 1 Pathways unit-standard assessments). `ADMIN MODE`, `PAGEFORGE COMPARE MODE`, `COMPARISON MODE` (which, in a chat that ran this mode, is the assessment variant in `18C`) and `UPDATE MODE` still outrank it; it outranks the ordinary Conversion / Support / Advisory signals and the "ambiguous `.docx` → ask" rule, because the fingerprint is unambiguous.
 
 ---
 
 ## PURPOSE
 
 Te Kura's NCEA assessment activities (internal and external, achievement standards and unit standards) are written by writers in one of two Word templates — **"Blank Assessment Activities Template.docx"** and **"Blank External Assessment Activities Template.docx"** — and published as a **single HTML page** hosted in D2L's public files area (`/shared/assessment/…`), not inside a module. The page has a coloured header bar naming the activity and linking to the standard on NZQA, and an accordion for each section of the template, ending with the dropbox. This mode turns the filled-in Word template into that page. It builds nothing else, never edits student content, and never adds CSS or JavaScript beyond the two fixed inline styles in `18B` Section 6.4 (constraint 2 exception). Every page ends with the acknowledgements block (`18B` Section 6.8) — always, even with no media.
+
+**Pathways has its own template.** Level 1 Pathways unit-standard assessments are written on a third Word template, **"Pathways Assessment Activities Template.docx"** (November 2026), which keeps this page layout but fixes the wording every Pathways assessment shares. It is recognised automatically and converted by `18D` on top of the rules here (CL-0142).
 
 The authoritative example of the finished output is `Assessment-AS91956-example.html` (NCEA Level 1 Japanese, AS91956). The skeleton in Section 5 is taken from it with **four corrections the example itself gets wrong** (live script host, `<div id="body">`, blank footer links, and indentation — Section 5.1) — plus the acknowledgements block the example lacks — and must be reproduced exactly as printed there, never as printed in the example.
 
@@ -33,12 +35,14 @@ Precedence: `ADMIN MODE` → `PAGEFORGE COMPARE MODE` → `COMPARISON MODE` → 
 
 A `.docx` is an Assessment Activity document when **both** hold:
 
-1. It opens with a **two-column details table** whose left-hand cells are labels drawn from: `Activity name:`, `Subject:`, `Achievement Standard:` **or** `Unit Standard:`, `Method of Assessment:`, `Credits:`, `Title:`, `Brief description:`, and (newer template only) `Are any 3rd Party Items required?`. The bold line above the table normally reads **"NCEA External Assessment Activity"** — note that **both** writers' templates carry this title, even for an internal assessment, so the word "External" in it means nothing; the `Method of Assessment:` row is what decides internal vs external.
+1. It opens with a **two-column details table** whose left-hand cells are labels drawn from: `Activity name:`, `Subject:`, `Achievement Standard:` **or** `Unit Standard:`, `Method of Assessment:`, `Credits:`, `Title:`, `Brief description:`, `Classification` (Pathways template — with or without a colon), and (newer templates only) `Are any 3rd Party Items required?`. The bold line above the table normally reads **"NCEA External Assessment Activity"** — note that **both** general templates carry this title, even for an internal assessment, so the word "External" in it means nothing; the `Method of Assessment:` row is what decides internal vs external. The Pathways template's line reads **"NCEA Internal Assessment Activity"**, and every assessment on it is internal (`18D` §11.2).
 2. Below the table, at least three of these **bold section headings** appear in this order: **What to do**, **How to present your learning**, **Timeframe**, **Getting started**, **Student Resources**, **Dropbox**.
 
 Template scaffolding markers such as `[body]`, `[H3]`, `[Button]` and the trailing `DROPBOX` title line confirm the match but are not required (a writer may have deleted them). A Writers Template for a module (`[TITLE BAR]`, `[LESSON]`, `--- CONTENT START ---`) never passes this fingerprint.
 
 The two blank templates differ only in the **Dropbox** section: the ordinary template has one `[H3]` / `[body]` / `[Button]` group; the External template offers two — one "for non-exam external assessments" (`[H3]` = the standard number) and an optional "formative dropbox for exam activities" (`[H3]` = *Activities*). `18B` Section 6.7 covers both.
+
+A document that passes this fingerprint and has `Subject:` **Pathways** plus a `Classification` row or the `Option 1:` / `Option 2:` lines is a **Pathways-template document**: `18D` applies on top of everything here (`18D` §11.1).
 
 ---
 
@@ -54,6 +58,8 @@ The two blank templates differ only in the **Dropbox** section: the ordinary tem
 ## 4. THE MAPPING — Word template → page
 
 ### 4.1 The details table → the header bar (`#header` → `.alertAssessment`)
+
+> **A Pathways-template document uses the table in `18D` §11.2 instead of this one** — there `Activity name:` is the big heading, `Classification` sits under it, `Title:` is the standard's own title and every assessment is Internal.
 
 | Word row | Goes to |
 |---|---|
