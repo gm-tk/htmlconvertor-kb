@@ -1,6 +1,6 @@
 ---
 name: pageforge-interactives-mode
-description: PAGEFORGE TESTING ONLY! Build the un-built complex interactives listed in a PageForge {CODE}_interactives.txt file that is later stitched back into the original HTML files.
+description: PAGEFORGE TESTING ONLY! Build the un-built complex interactives listed in a PageForge {CODE}_interactives.html worklist (or the older .txt) that is later stitched back into the original HTML files.
 ---
 
 # Interactives Build Mode — Te Kura HTML Convertor (Mode 6)
@@ -17,8 +17,11 @@ markup rules live. Please open a new chat in that project."* — and stop.
 This mode outranks the ordinary Conversion and Advisory signals, because a worklist upload is
 unambiguous.
 
-**0c. Is this really a worklist?** A PageForge interactives worklist identifies itself: an
-`INTERACTIVE REFERENCE — {CODE}` header plus a `REFERENCE CODE:` line per entry. A `.txt`
+**0c. Is this really a worklist?** A PageForge interactives worklist identifies itself:
+`{CODE}_interactives.html` (title `{CODE} — interactives to build`, the
+`INTERACTIVE REFERENCE — {CODE}` header in an opening `<pre>`, one section per reference code),
+or the older `.txt` with that header plus a `REFERENCE CODE:` line per entry. A module page or a
+`{CODE}_interactives_built.html` file is not a worklist. A `.txt`
 that opens `--- CONTENT START ---` or `[TITLE BAR]` is a **content source** and means
 Conversion Mode — never confuse the two. If the worklist carries no reference codes, ask for
 a re-conversion instead of building.
@@ -36,10 +39,10 @@ Open the reply with this card, before any other output.
 **INTERACTIVES BUILD MODE** · Te Kura HTML Convertor, Mode 6
 
 **What this does** — PageForge's HTML Generator built your pages but left the interactives it
-cannot yet build as reference-code placeholders, listing them in a `{CODE}_interactives.txt`
-worklist. This mode builds production-quality HTML for every one of them.
+cannot yet build as reference-code placeholders, listing them in a `{CODE}_interactives.html` (or the older
+`.txt`) worklist. This mode builds production-quality HTML for every one of them.
 
-**What it needs from you** — the `{CODE}_interactives.txt` worklist. Uploading it is enough;
+**What it needs from you** — the worklist. Uploading it is enough;
 you do not have to type the phrase.
 
 **What you get back** — an announced build plan, then **every** finished file in that same

@@ -1,5 +1,5 @@
-> **Last updated:** Friday, 18th September, 2026 3:30 PM
-> **Granular part C (3 of 3) of `18_ASSESSMENT_MODE.md`** — Assessment Comparison Mode: the `COMPARISON MODE` phrase in an assessment chat, per-file routing, inputs, partial re-uploads, no scopes, the one finalized report for Gavin.
+> **Last updated:** Sunday, 15th November, 2026 7:15 PM
+> **Granular part C (3 of 4) of `18_ASSESSMENT_MODE.md`** — Assessment Comparison Mode: the `COMPARISON MODE` phrase in an assessment chat, per-file routing, inputs, partial re-uploads, no scopes, the one finalized report for Gavin.
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -35,7 +35,7 @@ Match each C to its B by standard code (`{CODE}.html` filename, or the `<title>`
 
 ### 10.3 No scopes — one phase, straight to the finalized report
 
-Every assessment is built on the one template, so the `09` scope question does not exist here: there is **no Phase 1 report, no scope legend, no number-letter reply**. `COMPARISON MODE` produces the **finalized report directly**, with every difference treated as **(c) Universal** — as if the developer had answered "apply this everywhere" for each one. The report is written for **Gavin**, who actions it against these instructions in Update Mode or Admin Mode; nothing is actioned inside this mode.
+Every assessment is built on the one template, so the `09` scope question does not exist here: there is **no Phase 1 report, no scope legend, no number-letter reply**. `COMPARISON MODE` produces the **finalized report directly**, with every difference treated as **(c) Universal** — as if the developer had answered "apply this everywhere" for each one. The report is written for **Gavin**, who actions it against these instructions in Update Mode or Admin Mode; nothing is actioned inside this mode. **One exception — the Pathways template.** A difference in something only a Pathways-template page has (`18D` — its header-bar mapping, the two options, the AI traffic-light image, the module button, the full dropbox text) is scoped **(a) Series + level — Pathways Level 1**, not (c), so a Pathways correction is never carried into every other assessment.
 
 ### 10.4 What counts — and what is excluded
 

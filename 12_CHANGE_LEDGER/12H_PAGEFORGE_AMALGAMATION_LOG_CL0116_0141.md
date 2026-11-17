@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 3rd November, 2026 6:21 PM
-> **Granular part H (16 of 16) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
+> **Last updated:** Tuesday, 17th November, 2026 7:22 PM
+> **Granular part H (17 of 18) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 to CL-0141, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). **CLOSED at CL-0141 on 17 November 2026** (the ledger merge CL-0144 took it past the 30 KB soft limit, `CLAUDE.md` §4); its last entry, CL-0143, moved verbatim to `12I`. **New entries go in `12I_PAGEFORGE_AMALGAMATION_LOG_CL0143_ONWARD.md` — THE OPEN PART.** Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -256,3 +256,7 @@
 - **Supersedes:** CL-0024 (the bookworm Year 5 / 6 order), CL-0073 (the `phase_{N}` folder; "pose a designer choice" where a pose is named), CL-0111 (the head-only non-uniform note), CL-0113 (the `Kea_5.jpg` mismatch Red Flag) — each in part
 - **KB rule:** `14_SUBJECT_GLOBAL_PARAMETERS/14F_CENTRAL_IMAGES_REGISTRY.md` §14.16; `00H` constraint 99; `01D` Tag Taxonomy
 - **PageForge status:** Amalgamated (Tuesday, 3rd November, 2026, round 1092, build 260626.17 — `Emit_Templates.elements.central_image.catalogue`, 169 rows; `ContentConverter.#centralImage` reads the tag's own bracket; env `CENTRALIMGCAT_OFF`; not regenerated — MXDI211's two pages, where three false «no pose» notes become the Omar portrait, follow at the next regeneration; the iStock / MetService acknowledgement lines come from the module's Media List as for any image)
+
+---
+
+> **This part is CLOSED at CL-0141.** Entries from CL-0143 continue in `12I_PAGEFORGE_AMALGAMATION_LOG_CL0143_ONWARD.md`, in the format set out in `12G`.

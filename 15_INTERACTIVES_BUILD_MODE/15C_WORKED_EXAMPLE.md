@@ -1,11 +1,13 @@
-> **Last updated:** Friday, 31st July, 2026 10:30 AM
+> **Last updated:** Thursday, 12th November, 2026 1:25 AM
 > **Granular part C (3 of 3) of `15_INTERACTIVES_BUILD_MODE.md`** — One worklist entry taken end to end: input, reading, output, and why it is right.
 > All sibling parts live in `15_INTERACTIVES_BUILD_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
 # 15C — Worked example: one worklist entry → one finished build
 
-A real entry from `XDLS908_interactives.txt`, taken end to end. The output matches the documented
+A real entry from `XDLS908_interactives.txt` (an older plain-text worklist; in today's
+`XDLS908_interactives.html` the same entry's decoded `<pre>` text reads identically — `15B` §1A),
+taken end to end. The output matches the documented
 `dragAndDrop` column-layout pattern **and** matches, structure for structure, what the human
 developer shipped for this exact activity in the finished module.
 

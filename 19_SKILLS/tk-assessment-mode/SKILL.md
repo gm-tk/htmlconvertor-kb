@@ -17,7 +17,7 @@ assessment rules live. Please open a new chat in that project."* — and stop.
 `INTERACTIVES MODE` do not apply to an assessment at all.
 
 **0c. The document identifies itself.** A `.docx` with the details table (`Activity name:`
-… `Brief description:`) and the bold sections *What to do*, *How to present your learning*,
+… `Brief description:`, or `Classification` on the Pathways template) and the bold sections *What to do*, *How to present your learning*,
 *Timeframe*, *Getting started*, *Student Resources*, *Dropbox* is an Assessment Activity. It
 runs on a bare upload or a plain-English "please convert this word doc" — never fall through
 to the ambiguous-`.docx` question.
@@ -41,7 +41,9 @@ all in the same response.
 **What you get back** — the finished page, then the usual plain-English Designer Summary. The
 details table becomes the coloured header bar with its NZQA link; every bold heading becomes
 one accordion in order, the Dropbox section becoming the Final Dropbox accordion with its
-quickLink button; the standard acknowledgements block closes the page.
+quickLink button; the standard acknowledgements block closes the page. Level 1 Pathways
+unit-standard assessments written on the Pathways template are recognised automatically and
+follow that template's own rules.
 
 **What you will have to finish yourself** — the page marks each one with a visible
 `Designer/Developer To Do:` rather than asking you first: the dropbox code, and every image or
@@ -63,7 +65,7 @@ Interactives Build · PageForge Compare · Admin · Assessment.
 This skill is a signpost, not a rule book. **The knowledge base is the authority and outranks
 anything written here.** Search project knowledge and follow, as written there:
 
-- `18_ASSESSMENT_MODE.md` — `18A` trigger, mapping and skeleton · `18B` content rules, acknowledgements and the To Do list · `18C` the assessment variant of Comparison Mode. **Read `18A`'s skeleton section before emitting anything:** the example page it starts from is not used as-is, and the corrections to it are listed there. Take them from `18A`, never from memory
+- `18_ASSESSMENT_MODE.md` — `18A` trigger, mapping and skeleton · `18B` content rules, acknowledgements and the To Do list · `18C` the assessment variant of Comparison Mode · `18D` the Pathways Assessment Activities Template (Level 1 Pathways unit standards). **Read `18A`'s skeleton section before emitting anything:** the example page it starts from is not used as-is, and the corrections to it are listed there. Take them from `18A`, never from memory
 - `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → `05C` for the acknowledgements block
 - `00_MASTER_INSTRUCTIONS.md` — the hard constraints, including the constraint governing inline styles and this mode's narrow exception to it
 

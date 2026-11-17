@@ -38,8 +38,8 @@ the developer built by hand, and reports where PageForge mis-read the writer's t
 converter code can be fixed.
 
 **What it needs from you** — **PageForge's original, un-stitched HTML pages**, uploaded into
-the original conversion chat. That is the only thing to upload. The `{CODE}_interactives.txt`
-worklist is never needed; if you volunteer one it is treated as evidence, not as a build
+the original conversion chat. That is the only thing to upload. The interactives worklist (`.html`
+or `.txt`) is never needed; if you volunteer one it is treated as evidence, not as a build
 order.
 
 **What you get back** — one downloadable report written for Gavin: numbered findings grouped
