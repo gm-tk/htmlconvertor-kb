@@ -53,7 +53,7 @@ out. They were therefore split (2026-07-27, byte-identical — proof in
    (the Update Mode "blast-radius sweep" in `11_UPDATE_MODE/` still applies: one
    change often touches a component part AND `00_MASTER_INSTRUCTIONS/00D/00E`
    constraints AND `02_…/02D_COMMENT_POLICY_CONSTRAINTS.md`).
-2. **Check the ledger** — read `12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md`
+2. **Check the ledger** — read `12_CHANGE_LEDGER/12A_LEDGER_CORE_AND_LOCKS.md` and its PART 1 continuation `12A2_LOCKED_DECISIONS_CL0145_ONWARD.md`
    (locked decisions block conflicting changes; escalate per `11_UPDATE_MODE/`).
 3. **Edit** the part file(s) in place; refresh each touched part's timestamp.
 4. **Record** — append a new `| CL-nnnn | … |` row to the **latest**

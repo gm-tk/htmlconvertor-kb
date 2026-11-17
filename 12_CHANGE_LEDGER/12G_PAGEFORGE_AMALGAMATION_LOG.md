@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:22 PM
-> **Granular part G (15 of 16) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: its rules (WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL) and the entries CL-0089 to CL-0115. **CLOSED at CL-0115 on 27 October 2026** (the next entries would have taken it past the 30 KB soft limit, `CLAUDE.md` §4); the filename is kept because twelve files cite it as the log's home. **New entries go in `12I_PAGEFORGE_AMALGAMATION_LOG_CL0143_ONWARD.md` — THE OPEN PART** (`12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_0141.md` closed at CL-0141 on 17 November 2026).
+> **Last updated:** Tuesday, 17th November, 2026 7:41 PM
+> **Granular part G (18 of 20) of `12_CHANGE_LEDGER.md`** — the PageForge Amalgamation Log: its rules (WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL) and the entries CL-0089 to CL-0115. **CLOSED at CL-0115 on 27 October 2026** (the next entries would have taken it past the 30 KB soft limit, `CLAUDE.md` §4); the filename is kept because twelve files cite it as the log's home. **New entries go in `12I_PAGEFORGE_AMALGAMATION_LOG_CL0143_ONWARD.md` — THE OPEN PART** (`12H_PAGEFORGE_AMALGAMATION_LOG_CL0116_0141.md` closed at CL-0141 on 17 November 2026).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

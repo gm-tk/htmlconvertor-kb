@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 3rd November, 2026 5:48 PM
-> **Granular part B2 (3 of 7) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.9 (BLLR) and 14.10 (MiW/WJ). Split from `14B` on 23 September 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
+> **Last updated:** Tuesday, 17th November, 2026 7:37 PM
+> **Granular part B2 (4 of 9) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Families 14.9 (BLLR) and 14.10 (MiW/WJ). Split from `14B` on 23 September 2026 when it passed the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -28,6 +28,9 @@
   > The source email writes the first filename capitalised (`Bookworm_1.jpg`) and the other two lower-case (`bookworm_2.jpg`, `bookworm_3.jpg`), while its supplied `<img>` tag uses the lower-case `bookworms/bookworm_1.jpg`. Follow the **supplied `<img>` tag** — lower-case `bookworm_N.jpg` — and emit a `Designer/Developer To Do:` note asking the developer to confirm the exact filename casing when the assets are delivered. **Settled (CL-0113):** the delivered files are lower-case, so the confirm-the-casing note is retired.
 
 - **Bookworm art DELIVERED (CL-0113, September 2026 server list); audio still to be developed.** The central `bookworms/` folder now holds `bookworms/bookworm_1.jpg`, `bookworms/bookworm_1a.jpg`, `bookworms/bookworm_2.jpg` and `bookworms/bookworm_3.jpg`, and the refreshed page adds the yellow worm's other poses `bookworm_1b` … `bookworm_1e` (CL-0141 — each pose named in §14.16; the writer asks for one with `[Centralised image: bookworm_1c]`) (lower-case — which settles the casing question above: follow the lower-case `<img>` tag and **drop** the confirm-the-casing To Do note). Emit the real `<img>` for the module's code range — no art To Do note (gold: BLLR201–203 carry `bookworms/bookworm_1.jpg`). The **audio with audiovisual is still to be developed**: where the Writers Template calls for the bookworm's audio, emit a visible `Designer/Developer To Do:` note for the audio only. (`bookworms/archive/` and `bookworms/idk/` are the design team's working files — never reference them.)
+- **The first avatar — a human "library" character with audiovisual (CL-0153).** Each year suite has **two avatars**, changing for Year 5 and again for Year 6: the bookworm above, and a **human-looking library character delivered as audiovisual** — Year 4 (BLLR201–210) a woman in a cosy library with a fire and a big leather chair (the same "person" for all ten modules); Year 5 a man at a library desk; Year 6 *ideas to come*. Where the Writers Template calls for this avatar, emit the video scaffold with a visible `Designer/Developer To Do: Audiovisual item to be added by designer/developer` (the §14.7 page-1 pattern). The bookworm is named **Kōwhai Quill** in the modules.
+- **No image zoom in BLLR.** *"Do not use zoom interactive in BLLRs"*; texts never carry the `[image zoom]` feature. A writer's `[image zoom]` on a BLLR text builds the text per the next bullet, and the Designer Summary notes the zoom was not built.
+- **Reading texts.** Texts carry **only the text itself** — not the acknowledgements / teacher-guide pages at the end of the download. Texts are organised so ākonga **turn the page** (the book-style carousel) rather than scroll — *an EDR developer is investigating an alternative*. Where ākonga read a **whole text**, the **cover shows in the module and opens a clickDrop** holding it; where a text was broken up so ākonga read only a portion, the whole text may be shown instead, opening in a clickDrop if it is too small to read in place.
 
 - **"Secret shelf" — BUILT: the `bookshelf` component (CL-0113; `bookshelf.html`; gold BLLR202 / BLLR203).** Book covers sit on a shelf (each cover styled 20 % wide); clicking a cover opens that book's carousel. Supplied markup (copied from the snippet):
   ```html
@@ -60,10 +63,10 @@
       </div>
   </div>
   ```
-  One `bookCover` per book (a cover image, or `bookCover blank` with the title `<h4>` and author `<h5>` where there is no cover image), and one `bookContent` carousel per cover in the same order. Shelf acknowledgement (supplied): `Photo: Bookshelves with books for children, iStock 1423266435, Getty Images. Used with permission.` The former "design under construction" red note for the secret shelf is **retired**.
-- **"Whispering Archives" map — design under construction.** Still **explicitly required to carry a red note**. Emit it in place with a visible note:
+  One `bookCover` per book (a cover image, or `bookCover blank` with the title `<h4>` and author `<h5>` where there is no cover image), and one `bookContent` carousel per cover in the same order. The shelf sits on the **introduction page of every module from the second module of each suite onward** and looks the same every time (27 uses across the 30 modules). **Journal stories with no traditional cover use the text's title and first picture as the cover** — the first picture as the `bookCover` image; `bookCover blank` (title / author) only where there is no picture either (decision D7, CL-0153). Shelf acknowledgement (supplied): `Photo: Bookshelves with books for children, iStock 1423266435, Getty Images. Used with permission.` The former "design under construction" red note for the secret shelf is **retired**.
+- **"Whispering Archives" map — the end-of-module puzzle piece (CL-0153).** At the very end of each Year 4 module the ākonga earns **one of ten pieces** of the *Whispering Archives* library map (module N → piece N), shown with **Kōwhai Quill holding it up proudly above his head**; the map's name sits inside the "room" in the bottom-right corner. The final map, the puzzle pieces and the final puzzle are in the EDR folder `Z:\Development\Online\Te ara Tipu (Primary)\1-10 Blended Literacy\BLLR200\BLLR EDR Puzzle`. Still explicitly required to carry a red note — emit it in place:
   ```html
-  <p style="color: red; font-weight: bold;">Designer/Developer To Do: Design is under construction with the development team.</p>
+  <p style="color: red; font-weight: bold;">Designer/Developer To Do: Add Whispering Archives puzzle piece N (Kōwhai Quill holding it) from the BLLR EDR Puzzle folder.</p>
   ```
   This is a **direct instruction from the design authority**, not a Convertor-detected gap — it takes the `Designer/Developer To Do:` prefix (right-but-pending), not `Red Flag:`.
 
@@ -113,4 +116,4 @@
 
 ---
 
-> **Sections 14.11 and 14.12 continue in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** — the cross-cutting notes and the Technology family. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.5), `14B` (14.6-14.8), this part (14.9-14.10), `14D` (14.11-14.12) and `14E` (14.13-14.14).
+> **Sections 14.11 and 14.12 continue in `14D_SGP_CROSSCUTTING_AND_TECHNOLOGY.md`** — the cross-cutting notes and the Technology family. The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.3), `14A2` (14.4-14.5), `14B` (14.6-14.8), this part (14.9-14.10), `14D` (14.11-14.12), `14E` (14.13-14.15), `14F` (14.16) and `14G` (14.17 — Social Sciences, CL-0147).

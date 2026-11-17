@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:19 PM
-> **Granular part A (1 of 7) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.5 (Languages, Pathways, Taonga, CED, FUNdamentals). The Languages Audiovisual Package asset registry lives in `14C`.
+> **Last updated:** Tuesday, 17th November, 2026 7:37 PM
+> **Granular part A (1 of 9) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — Purpose + families 14.1-14.3 (Languages, Pathways, Taonga). CED (14.4) and FUNdamentals (14.5) moved verbatim to `14A2_SGP_FAMILIES_4_5.md` on 17 November 2026 when this part passed the 30 KB soft limit (`CLAUDE.md` §4); renamed from `14A_SGP_PURPOSE_FAMILIES_1_5.md` the same day. The Languages Audiovisual Package asset registry lives in `14C`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -7,7 +7,7 @@
 
 # 14 — Subject Global Parameters
 
-> **When to load:** When converting or advising on a module that belongs to one of the subject **cohorts / series** documented below (Languages Phase 1–4, Pathways, Taonga, CED Phase 5, FUNdamentals H&PE, LS, BLL, BLLR, MiW/WJ, HPE content lessons, Technology, Science, Maths), and whenever these conventions are changed in Update Mode. These are the design team's per-subject "global parameters" — the standing look-and-feel and structural conventions each subject wants applied to every one of its modules.
+> **When to load:** When converting or advising on a module that belongs to one of the subject **cohorts / series** documented below (Languages Phase 1–4, Pathways, Taonga, CED Phase 5, FUNdamentals H&PE, LS, BLL, BLLR, MiW/WJ, HPE content lessons, Technology, Science, Maths, Social Sciences), and whenever these conventions are changed in Update Mode. These are the design team's per-subject "global parameters" — the standing look-and-feel and structural conventions each subject wants applied to every one of its modules.
 
 ---
 
@@ -38,6 +38,11 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
 
 - **Language fonts are mandatory here above all (constraint 92, universal).** Every run of Japanese text carries `jp-text`, every run of Chinese text carries `ch-text`, and every run of pinyin carries `pinyin` — in headings, prose, bold runs, list items, table cells and inside the `<h1><span>` title — not just the first occurrence and not just the vocabulary tables. **Te reo Māori and English are never wrapped**, and a macron alone never identifies pinyin (`ā ē ī ō ū` are shared with te reo). Where Han characters cannot separate Japanese from Chinese, the class comes from the module's language — `JPNFUN`/`JPN` → `jp-text`, `CHFUN`/`CH` → `ch-text` — and a run containing kana is Japanese regardless. Full rules: `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → **Language Fonts**.
 - **Structural reference points (designer instruction, 5 August 2026).** The **CHFUN** modules are the structural reference point for **all** language fundamentals; **`JPNFUN05`** is the reference point for **all language 05 fundamentals**, whose layout is slightly different. Mode B sibling authority (`06_TEMPLATE_RECOGNITION.md`) is unchanged: a built same-language sibling still wins; where none exists, reference the CHFUN set (or JPNFUN05 for an 05 module).
+- **Course shape (CL-0150 — *2026 Refreshed 000 Language Global Parameters*).** Each beginning language course has a **Mihi Whakatau**; **5 Novice learning-content modules** (NO901–905) and **5 Novice + (old Emergent) learning-content modules** (NO906–910), **8 lessons each**; and **8 Fundamental modules** (Spanish has **7**). Every learning-content module has an **Introduction page**; Lesson 8 may carry an engagement trigger (MTK quiz or dropbox) — build only what the writer tags.
+- **FUN05 is a series of pages.** For every language the FUN05 (*Language Features*) layout differs: it is a **series of pages**, each **linkable from the exact language feature in a Learning Module** — a grid of feature buttons with **Phase 4 / Phase 5** level switches (Phase 4 = *First Steps*, Phase 5 = *Next Steps*). Reference: JPNFUN05.
+- **Floating navigation contents.** *Fundamental modules:* the eight Fundamentals as links — Language is Culture · Listening and Speaking · Reading and Writing · Identity and Culture · Language Features · **item 6, the language's own script page (e.g. *Japanese Script*) — different for every language** · Spoken and Written Language Differences · Mistakes Mean Progress — then **The Hub**. *Learning-content modules:* **Fundamentals** and **The Hub**, plus the **Module Word list** (vocabulary list). The `stickyNav` To Do note (below) names these links.
+- **Vocabulary quizzes — Learning Systems builds them (decision D5).** Vocabulary quizzes are **MTKQuiz question-pool** quizzes created by **Learning Systems** from the writer's word list, placed in **Lesson 7** (most languages in modules NO906–910; very few in NO901–905). Writer tags: `[Learning systems vocab quiz]` … `[Learning systems quiz end]` around the information for Learning Systems, plus `[quiz – vocab, module]` or `[quiz – vocab, course]` (a module quiz or a whole-course quiz). Build the MTK-quiz activity shell of constraint 65 — title *Vocabulary quiz* unless the writer gives one; the To Do reads *Learning Systems to create this vocabulary quiz (MTKQuiz question pool, \`module\`/\`course\` as tagged) from the writer's word list, then orgunit-link it and insert its quicklink*. Nothing between the two tags is emitted (CL-0082). An engagement trigger is **unlikely** unless the writer specifies it (approved by the Curriculum Liaison).
+- **Samoan.** The new Samoan course has its own key communication documents (Creative Services / SMS) — reference only; no conversion rule.
 - **All Languages modules are combo.** Every page of every Languages-cohort module ships `template="combo"` on `<html>` — e.g. `<html lang="en" level="" template="combo" class="notranslate" translate="no">`, per the supplied `20260511_Language_HTML` reference ("Languages are all combo — should be reflected in the code"). The sub-type within combo (Fundamentals tiles / Inquiry crumbs / standalone) still comes from the `<body>` class per `06_TEMPLATE_RECOGNITION.md` §2, and `06` §5's Mode B template-level check expects `combo` — not a year-band value — for this cohort. Consequence: `combo` is **not** one of the three autoCheck auto-apply template files (constraint 38 / `03` COMP_00), so `autoCheck` is applied in Languages output only when the writer's intended behaviour calls for it.
 - **The Audiovisual Package is FINALISED (5 August 2026).** "All packages have been finalised for each of the languages" — every language panel in the final reference is marked *finalised and will be in use in upcoming modules*. This **supersedes** the former "provisional asset state" and "videos are added manually" bullets **for registry-listed assets**: where a writer's `[Audiovisual package …]` tag names an asset in the registry below, emit the supplied form exactly as the reference shows (Vimeo `videoSection` embed, `audioImage`, `audioButton`, `audioPlayer`, or `imageCentral` image). A tagged Audiovisual asset **not** in the registry still gets the visible `Designer/Developer To Do:` note (*Audiovisual item to be added by designer/developer from Audiovisual*) — and a pending video slot still uses the pending-ID **Vimeo scaffold** of constraint 64 (`05` → Video Embed → Creative Services Videos).
 - **The `[Audiovisual package …]` tag family.** Writers reference the finalised assets as `[Audiovisual package <asset name> item N]`. Variants ride in **nested brackets**: `[full body]`, `[headshot]`, `[neutral]`, `[certificate]`, `[holding books]`, `[ice cream]`, `[expression]`. For a character with multiple expressions (Spanish Pablo / María) the writer puts the number in correlation to the expression — e.g. `[Audiovisual package Pablo [expression] item 1]`. Item numbers are per-language (Japanese legitimately starts at item 0); the asset **name** is the primary key, the item number the cross-check.
@@ -48,17 +53,25 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
   <img class="img-fluid imageCentral" loading="lazy" src="German assets/Salsi_certificate.jpg" alt="pretzel character holding certificate" />
   ```
   Central folders in the final reference: `German assets/`, `Chinese assets/`, `Japanese assets/` (observed in both `Japanese assets/` and `japanese assets/` casings — treat as one folder), `Samoan character assets/`, `Spanish assets/`. **French has no central image folder** — its characters are the Vimeo avatars; scene screenshots (e.g. `images/French/Sophie and Luc podcast.png`, `images/German/Family playing board game.png`) are module-local `images/…` and do **not** take `imageCentral`. **Writer-specified module images are unchanged** — they stay in `images/…` and **never** take `imageCentral` (`01_PIPELINE_EXTRACTION_TAGS.md` → Rules Common to Both Modes); the class is reserved for centralised template assets exactly like these.
-- **Two-tile Fundamentals split — the tiles are named *First Steps* and *Next Steps* (CL-0118).** A Fundamentals WT that carries **Novice** content and then **Emergent** content is separated into **two tiles**, one per proficiency level, each leading to that stream's content (per the JAPFUN01 / JAPFUN04 set-up — currently one tile for Phase 4 and one for Phase 5). **From 27 October 2026 the two levels are DISPLAYED as `First Steps` (the former *Novice*) and `Next Steps` (the former *Emergent*)** — the names the curriculum leads confirmed (Stephanie Charles → Kate Scanlon → Persephone Samuels, 16–27 October 2026; example CHFUN08) — **everywhere the level name shows on the page**: the module menu's level tabs (`<li><a>First Steps</a></li>`), the `.phases` strip (`<div phase="1"><p>First Steps</p></div>`), the `phaseLink` tiles' `<h3>` and image `alt`, and the per-level panel heading of the multi-file levels overview. The Writers Templates still carry the old words in their markers (`[PAGE 1 Novice]`, `[Novice Page 1]`, `[Novice Content starts here]`, `[Tab 1] Novice Learning Intentions`) until the Global Parameters document is updated: **read *Novice* / *Emergent* as the two levels exactly as before, and write the new names** — a template that already types *First Steps* / *Next Steps* is read the same way. Never rename a level word inside the writer's own prose. The eleven finished Language FUN modules (CHFUN01 / 04 / 05 / 06 / 07 / 08, FRFUN06 / 07 / 08, JPFUN01 / 02) were updated to the new names on 27 October 2026 — their menu tabs, level strip, tiles, tile `alt` and level headings only; comments, prose and filenames untouched — so a built sibling now shows the new names too. Use the `phaseContainer` / `choicePage` tile pattern the reference files use; the sub-type width follows constraint 56 (`col-md-11 col-12` for the Fundamentals sub-type, `col-md-8` when paired with an `alertImage`). The CHFUN set is now the structural reference point for this layout (JPNFUN05 for the 05 variant) — see the reference-points bullet.
+- **Two-tile Fundamentals split — the tiles are named *First Steps* and *Next Steps* (CL-0118).** A Fundamentals WT that carries **Novice** content and then **Emergent** content is separated into **two tiles**, one per proficiency level, each leading to that stream's content (per the JAPFUN01 / JAPFUN04 set-up — currently one tile for Phase 4 and one for Phase 5). **From 27 October 2026 the two levels are DISPLAYED as `First Steps` (the former *Novice*) and `Next Steps` (the former *Emergent*)** — the names the curriculum leads confirmed (Stephanie Charles → Kate Scanlon → Persephone Samuels, 16–27 October 2026; example CHFUN08) — **everywhere the level name shows on the page**: the module menu's level tabs (`<li><a>First Steps</a></li>`), the `.phases` strip (`<div phase="1"><p>First Steps</p></div>`), the `phaseLink` tiles' `<h3>` and image `alt`, and the per-level panel heading of the multi-file levels overview. The Global Parameters document was updated to the new names in November 2026 (*"(old Novice) now First Steps Tile and (old Emergent) now Next Steps Tile"* — example: Level 1 Japanese JPN1000's Fundamental set-up, one tile for Phase 4 and one for Phase 5), but older Writers Templates still carry the old words in their markers (`[PAGE 1 Novice]`, `[Novice Page 1]`, `[Novice Content starts here]`, `[Tab 1] Novice Learning Intentions`): **read *Novice* / *Emergent* as the two levels exactly as before, and write the new names** — a template that already types *First Steps* / *Next Steps* is read the same way. Never rename a level word inside the writer's own prose. The eleven finished Language FUN modules (CHFUN01 / 04 / 05 / 06 / 07 / 08, FRFUN06 / 07 / 08, JPFUN01 / 02) were updated to the new names on 27 October 2026 — their menu tabs, level strip, tiles, tile `alt` and level headings only; comments, prose and filenames untouched — so a built sibling now shows the new names too. Use the `phaseContainer` / `choicePage` tile pattern the reference files use; the sub-type width follows constraint 56 (`col-md-11 col-12` for the Fundamentals sub-type, `col-md-8` when paired with an `alertImage`). The CHFUN set is now the structural reference point for this layout (JPNFUN05 for the 05 variant) — see the reference-points bullet.
 - **Set characters in red brackets.** Languages define recurring characters written in red brackets (e.g. a named speaker/character tag). **Once a character has been introduced for the first time, that character is added every subsequent time its tag is used** — the tag is never left as bare bracket text (constraint 3) and the character is not dropped on later uses. The Audiovisual Package registry above is the concrete asset set behind this rule.
 - **Three-part `[TITLE BAR]` = three titles (target language + English + Te Reo).** A Languages writer may give the module title in **three** languages, `|`-separated — e.g. `[TITLE BAR] HALLO, DEUTSCH! | HELLO, GERMAN! | NAU MAI KI TE REO TIAMANA!` (`GENO901`). **Each part becomes its own `<h1><span>`** on the overview page — three headings, **in the writer's order**: the cohort uses both orders (`GENO901`, `GEFUN01`, `SPA1004`, and the Samoan `1005 Sasa` lead with the target language; `GEFUN06` leads with English), and the conversion never re-orders them. An **empty part, or an unfilled placeholder** such as `TE REO` / `MODULE TITLE TE REO` / `INSERT MODULE TITLE TE REO`, is **skipped** — it is the writer's un-replaced prompt text, not a title. **This three-way split is scoped to this cohort:** outside Languages a second `|` is punctuation inside a title, not a third language (corpus-verified — see `01_PIPELINE_EXTRACTION_TAGS.md` → Template Title Patterns → TITLE BAR PARSING RULE, and constraint 85). Ledger `CL-0085`.
-- **Sticky nav on every page.** Add `<script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>` to the `<head>` of **every** page. At the **top of the 0.0 content**, emit a visible `Designer/Developer To Do:` note: *set up the `stickyNav.js` file.*
+- **Sticky nav on every page.** Add `<script src="js/stickyNav.js" type="text/javascript" class="stickyNav"></script>` to the `<head>` of **every** page. At the **top of the 0.0 content**, emit a visible `Designer/Developer To Do:` note: *set up the `stickyNav.js` file — Fundamentals list + The Hub (Fundamental modules) or Fundamentals + The Hub + Module Word list (learning-content modules).*
 
 ---
 
 ## 14.2 Pathways
 **Scope — (a) Series + level:** **Pathways Level 1** (development focus Terms 2–3). **Level 2 is HELD** — see the note at the end of this section.
 
-- **Course navigation = "Sections", not "Fundamentals".** The course home reveals **Section** tiles, each opening to its modules. The three sections are: **1. Where am I going?**, **2. How do I get there?**, **3. What might the future hold?** (Te Reo translations pending — emit a `Designer/Developer To Do:` note where a Te Reo section title is required.)
+- **Course navigation = "Sections", not "Fundamentals" — Te Reo titles DELIVERED (CL-0151).** The course home reveals **Section** tiles, each opening to its modules:
+
+  | Section | Te Reo title | English title | Modules |
+  |---|---|---|---|
+  | 1 | Ka haere ahau ki hea? | Where am I going? | PWY1001 – PWY1005 |
+  | 2 | Me pehea ahau ki reira? | How do I get there? | PWY1006 – PWY1009 |
+  | 3 | He aha te heke mai? | What might the future hold? *(the translation table writes "What does the future hold?")* | PWY1010 – PWY1016 |
+
+  Build the wording the Writers Template uses (decision D6). The former *Te Reo translations pending* `Designer/Developer To Do:` is **retired**. (The document's own counts — 5 / 4 / 6 modules — disagree with the table's PWY1010–1016 range for Section 3; the range is recorded as given.)
 - **Lesson structure.** Most Level 1 Pathways modules have **three lessons with sub-parts** (`1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 3.1, 3.2, 3.3`). Some modules have fewer sub-parts depending on content. Content is a mixture of refreshed, new, and merged material from the old Pathways course.
 - **Persona tagging pattern.** Level 1 Pathways uses rangatahi **personas** that guide the learning, shown with a recognisable **circle image**. The tagging pattern is:
   - `[Persona box]`
@@ -89,7 +102,9 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
 - **Overview is DEFERRED.** The Pathways overview is **to be set once the first module is complete** — emit the overview scaffold with a `Designer/Developer To Do:` note rather than a finalised overview.
 - **Assessments have their own template.** Level 1 Pathways unit-standard assessments are written on the **Pathways Assessment Activities Template** and converted in Assessment Mode by `18_ASSESSMENT_MODE.md` → `18D` (constraint 100, CL-0143) — these module conventions do not apply to them.
 
-> **Pathways Level 2 — HELD (no action this scope).** Level 2 is on pause. Six Level 2 "green" edit-proof modules exist for the refreshed template — **PWO2004, PWO2007, PWO2009, PWO2010, PWO2021, PWO2028** — with an edit-proof sheet set up. Developers revisit these next term when a Level 2 timeline is set and the edits are provided. Recorded here for reference only; no Level 2 conventions are active yet.
+> **Pathways Level 2 — HELD (no action this scope).** Level 2 is on pause. Six Level 2 "green" edit-proof modules exist for the refreshed template — **PWO2004, PWO2007, PWO2009, PWO2010, PWO2021, PWO2028** — with an edit-proof sheet set up. Developers revisit these next term when a Level 2 timeline is set and the edits are provided. Recorded here for reference only; no Level 2 conventions are active yet. Level 2's sections, when it resumes: 1. *Where am I going?* (5 modules), 2. *How do I get there?* (8), 3. *How do I thrive moving forward?* (6 or 7).
+
+> **Pathways Fundamentals — space held.** Fundamentals *may* be developed later, once the brief on unit standards and vocational education is confirmed. Nothing to build yet.
 
 ---
 
@@ -98,17 +113,17 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
 
 - **Intro page + clickable lesson images.** Set out like a FUN: an **introduction page**, then **images to click** that take the ākonga to specific lessons. **Lessons can be done in any order** (use the Maths 1-10 FUNS pattern as the model).
 - **Side-navigation tabs inside each lesson.** Each lesson has **side-nav tabs** so ākonga work through it in any order, exactly like the Maths 1-10 FUNS.
-- **Per-lesson layout (A–F).** Every lesson follows the same layout:
+- **Per-lesson layout (A–E).** Every lesson follows the same layout:
   - **A. Overview** — LI and SC plus a **vocab pull-out box**.
   - **B. Engage (I do)** — a short, simple stimulus to spark interest.
   - **C. Explore (We do)** — a simple online activity or interactive to practise learning.
   - **D. Create (You do)** — a hands-on activity away from the screen, **kaiako-assessed through a dropbox**.
   - **E. Extend (Optional)** — a simple challenge for learners ready to go further.
-  - **F. Links to: (Optional)** — connects learning across the programme.
+  - *(The former **F. Links to (Optional)** step is struck through in the November 2026 document — **removed**, CL-0152. A lesson has steps A–E.)*
 - **Unique overview.** Taonga modules use a **unique overview** (not the generic pattern).
 - **Overview + images are DEFERRED.** The overview is **to be set once the first module is complete**, and images are still to come — **use placeholder images until updated links come through from the first module's Comparison Mode run.** Emit a `Designer/Developer To Do:` note at the overview and at each pending image.
 - **Tui character (art DELIVERED — per-phase folders, multiple poses).** A tui character (**Tui Toi**) features in each Taonga module and **varies from phase to phase**. The illustrations are **now in the refresh template** (design-team upload, August 2026), so the tui is no longer a deferred item. The asset convention is a **folder per phase, several poses per folder**:
-  - **`tui_characters/phase {N}/`** — **four phase folders**, `phase 1` … `phase 4` — **a space, not an underscore** (the design team's refreshed Centralised Images page, 3 November 2026 — CL-0141; the August reference's `phase_1` form is superseded). `{N}` is the **module's phase**.
+  - **`tui_characters/phase {N}/`** — **four phase folders**, `phase 1` … `phase 4` — **a space, not an underscore** (the design team's refreshed Centralised Images page, 3 November 2026 — CL-0141; the August reference's `phase_1` form is superseded). `{N}` is the **module's phase**. (The Arts document still shows the superseded `phase_1` path; the space form stands — CL-0141.)
   - **`tui_{P}.jpg`** — the pose. **Poses 1–6** in phases 1–3; **phase 4 has only 4 poses** (`tui_1.jpg` … `tui_4.jpg`).
   - Full path: **`tui_characters/phase {N}/tui_{P}.jpg`**. What each pose shows in each phase (flight / perched / perched singing / default, facing left or right) is tabled in §14.16 (`14F`).
 
@@ -122,49 +137,4 @@ The design team (Persephone / Gavin) maintains a set of **global-parameter docum
 
 ---
 
-## 14.4 ConnectED (CED) Phase 5
-**Scope — (a) Series + level:** **CED Phase 5**. Reference: the CED Phase 5 global-parameters document (CEDT501 shown).
-
-- **Overview = 3 tabs.** Overview, Information, Standards.
-- **Intro-page dictionary box.** The intro page carries the standard dictionary alert. Supplied code:
-  ```html
-  <div class="alert">
-    <h5>Want to use paper for this module?</h5>
-    <p>Use the <b>floating navigation arrow</b> at any time to access printable versions of the activities and resources for this module.</p>
-    <h4>Not sure about a word?</h4>
-    <p>Use the <b>floating navigation arrow</b> at any time to access the Collins Dictionary or Te Aka Māori Dictionary.</p>
-    <a href="https://www.collinsdictionary.com/" target="_blank"><div class="externalButton">Collins Dictionary</div></a>
-    <a href="https://maoridictionary.co.nz/" target="_blank"><div class="externalButton">Te Aka Māori Dictionary</div></a>
-  </div>
-  ```
-- **Sticky-nav dictionary links.** The sticky nav carries the two dictionary external links (supplied):
-  ```js
-  var links = [
-    ['Collins Dictionary', 'https://www.collinsdictionary.com/', 'externalLink'],
-    ['Te Aka Māori Dictionary', 'https://maoridictionary.co.nz/', 'externalLink'],
-  ]
-  ```
-- **Wānanga / talanoa boxes.** Framed with a **culturally appropriate border**, standardised across the modules, using the **green** option from the colour palette. Cropped/cut from iStock imagery; **koru and Pasifika imagery must be clearly differentiated.** Supplied designer note — **all alerts are combined unless otherwise specified**:
-  ```html
-  <div class="alert cultural" layout="combined">
-  ```
-- **Flip cards.** Thin border so images are as large as possible; the **text on the flipped side is on a white background — not blue**. Supplied designer note: use **`.noBG`** on the `.flipCard`.
-- **PDF resources are DEFERRED.** All PDFs are created as **separate lessons/resources** and are submitted as separate lessons, then linked in when ready. In the writers' templates these come out as **revision requests**. **For now: remove the PDF from the module and emit a visible `Designer/Developer To Do:` note listing the pending printable resources** (lesson name → intended resource), so the developer links them once delivered.
-
-  > **Carve-out — the eight AI Guidelines PDFs are DELIVERED and are never deferred.** `[AI Use Guidelines Traffic Light PDF]`, the three `[Ākonga AI Use Guide Years …]` tags and the four `[Kaimahi …]` tags resolve against real files in `AI-guidelines/` and always build their `embedPDF` / `centralFile` block, in CED as anywhere else. Do not strip them and do not raise a `Designer/Developer To Do:` note for them. See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → AI Guidelines PDFs; constraint 84.
-  > **Divergence from the source document — recorded decision.** The CED global-parameter document suggests holding these as **commented-out** printable-resource links in the sticky nav (`// ['Lesson 1: …', 192664], …`). That would place designer-facing information inside an HTML comment, which conflicts with the project's **"Comments Are Not a Communication Channel"** philosophy (constraint 5). Per the Update Mode decision that actioned this file (Fork C — bake deferred items in as visible red-note placeholders; **no new permitted-comment exception was granted**), the pending printable resources are rendered as a **visible `Designer/Developer To Do:` note** instead of commented-out links. If a commented-out-links approach is later preferred, it requires a **separate permitted-comment-exception sign-off** (it would join the Mode P / MTK / PAGEFORGE-marker exceptions in `02` → Comment & Red Flag Policy).
-
----
-
-## 14.5 FUNdamentals (Health & PE, Y1–10)
-**Scope — Cohort:** the H&PE **FUNdamentals** (16 FUNs coming). This **refines the existing Fundamentals sub-type** documented in `06_TEMPLATE_RECOGNITION.md` §3.3 — it does not replace it.
-
-- **Tab-nav layout, 5–6 tabs down the RHS.** Each module uses the Fundamentals tab-nav layout with **5–6 tabs** on the right-hand side.
-- **First tab = introduction; last tab = reflection.** In every instance the **first** tab is an introduction and the **last** tab is a reflection.
-- **Each tab is a short "lesson."**
-- **Inline interactives + one engagement quiz.** Each module has inline interactives and **one quiz to trigger engagement, placed in the reflection tab**.
-
-> Sub-type **recognition** (body class `fundamentals container-fluid`, `div.phases` → `div.fundamentalsPanel` navigation, `footer-nav fundamentals-nav`) stays in `06` §3.3. This section adds the H&PE FUNdamentals **content conventions** on top of that recognised structure.
-
----
-
+> **Sections 14.4 (CED Phase 5) and 14.5 (FUNdamentals H&PE) continue in `14A2_SGP_FAMILIES_4_5.md`** (split from this part on 17 November 2026 when it passed the 30 KB soft limit, `CLAUDE.md` §4; content moved verbatim). The §14.x numbering is ONE continuous sequence across this part (14.1-14.3), `14A2` (14.4-14.5), `14B` (14.6-14.8), `14B2` (14.9-14.10), `14D` (14.11-14.12), `14E` (14.13-14.15), `14F` (14.16) and `14G` (14.17).

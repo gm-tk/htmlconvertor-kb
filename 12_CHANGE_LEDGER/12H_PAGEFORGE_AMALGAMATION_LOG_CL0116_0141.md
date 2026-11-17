@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:22 PM
-> **Granular part H (17 of 18) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 to CL-0141, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). **CLOSED at CL-0141 on 17 November 2026** (the ledger merge CL-0144 took it past the 30 KB soft limit, `CLAUDE.md` §4); its last entry, CL-0143, moved verbatim to `12I`. **New entries go in `12I_PAGEFORGE_AMALGAMATION_LOG_CL0143_ONWARD.md` — THE OPEN PART.** Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
+> **Last updated:** Tuesday, 17th November, 2026 7:41 PM
+> **Granular part H (19 of 20) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0116 to CL-0141, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). **CLOSED at CL-0141 on 17 November 2026** (the ledger merge CL-0144 took it past the 30 KB soft limit, `CLAUDE.md` §4); its last entry, CL-0143, moved verbatim to `12I`. **New entries go in `12I_PAGEFORGE_AMALGAMATION_LOG_CL0143_ONWARD.md` — THE OPEN PART.** Opened 27 October 2026 when `12G` would have passed the 30 KB soft limit and was closed at CL-0115 (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

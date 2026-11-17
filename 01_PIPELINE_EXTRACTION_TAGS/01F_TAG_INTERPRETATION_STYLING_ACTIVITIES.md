@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:34 PM
 > **Granular part F (6 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation, second half: content styling, activities, links & buttons, interactive components. Opened 14 September 2026 when `01E` passed the 30 KB soft limit; the content below was **moved verbatim** from `01E_TAG_INTERPRETATION.md` (`CLAUDE.md` §4) — nothing reworded, nothing re-ordered.
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -9,6 +9,7 @@
 |---|---|
 | `alert` | `<div class="alert"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
 | `important` | `<div class="alert solid"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
+| `alert_warning` | `<div class="alert warning"><div class="row"><div class="col-12"><h4>heading</h4><p>content</p></div></div></div>` — health & safety; never phase-coloured; heading only if the writer gave one. See `05_COMP_LANGUAGE_MEDIA_LAYOUT.md` → Warning Alert; constraint 101 |
 | `alert_cultural_wananga` | `<div class="alert cultural" layout="wananga"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
 | `alert_cultural_talanoa` | `<div class="alert cultural" layout="talanoa"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |
 | `alert_cultural_combined` | `<div class="alert cultural" layout="combined"><div class="row"><div class="col-12"><p>content</p></div></div></div>` |

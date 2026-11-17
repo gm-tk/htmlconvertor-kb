@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:34 PM
 > **Granular part E (5 of 5) of `02_DATA_CONTENT_VERIFICATION.md`** — Edge cases, component whitelist, output specifications.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -71,7 +71,7 @@ Most components are FULL MATCH. Remaining items:
 
 The audience for a conversion run is a **designer, not a developer** — most have no coding background, which is why this project exists. So the run **verifies in full and reports by exception.**
 
-**Every verification step still runs, unchanged** — the full checklist in `02C`, the Phase 7 confirmations in `00_MASTER_INSTRUCTIONS.md`, the div open/close count, the page-boundary validation, the class-attribute integrity check, all of it. **Nothing about the checking changes. Only what reaches the chat changes.**
+**Every verification step still runs, unchanged** — the full checklist in `02C` / `02C2`, the Phase 7 confirmations in `00_MASTER_INSTRUCTIONS.md`, the div open/close count, the page-boundary validation, the class-attribute integrity check, all of it. **Nothing about the checking changes. Only what reaches the chat changes.**
 
 What follows the HTML is a short **Designer Summary** carrying **only** what a designer must act on, decide, or be aware of:
 

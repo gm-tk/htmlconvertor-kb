@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:34 PM
 > **Granular part B (2 of 4) of `05_COMP_LANGUAGE_MEDIA_LAYOUT.md`** — COMP_14 Layout & Structure, first half: Activities and Alerts. Buttons onward (Buttons, Supervisor Button, Tables, Columns, Quote/Whakatauki/Rhetorical) live in `05D`.
 > All sibling parts live in `05_COMP_LANGUAGE_MEDIA_LAYOUT/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -132,6 +132,9 @@ A **text-only** activity (no interactive) needs no split at either width — its
 
 <!-- Teacher (CS/developer — NOT student-facing) -->
 <div class="alert teacher"><div class="row"><div class="col-12"><p>Instructions</p></div></div></div>
+
+<!-- Warning — health & safety ([Alert warning] / [Safety Alert]) — NOT phase-coloured (constraint 101) -->
+<div class="alert warning"><div class="row"><div class="col-12"><h4>Heading</h4><p>Content</p></div></div></div>
 ```
 
 **Alert heading label — "Key points" (SCBI series).** *For SCBI-series modules,* when a lesson's alert presents a "Key points" summary, render the label as a heading with **no trailing colon** — `<h4>Key points</h4>` — not as a paragraph (`<p>Key points:</p>`):
@@ -150,6 +153,59 @@ A **text-only** activity (no interactive) needs no split at either width — its
 ```
 
 This is a **SCBI-series convention** (applies to every SCBI module across all year levels). For other series, follow that series' own reference; do not assume the `<h4>` form unless its reference shows it.
+
+### Warning Alert — health and safety (`[Alert warning]` / `[Safety Alert]`, constraint 101, CL-0145)
+
+The design team's alert for an activity that poses a **health and safety risk** to the ākonga — requested by the
+Design Team Lead (10 November 2026) from the curriculum team's *How to add Health and Safety alerts in Modules*
+guidance (approved by Te Kura's Senior Health and Safety Wellbeing Advisor and CTK), built by Creative Services
+(17 November 2026). Every other alert is phase-coloured so it blends in; **this one deliberately does not** — the
+template styles `alert warning` red with warning triangles in place of the wiggly left-hand line, so it stands out.
+
+**Triggers.** `[Alert warning]` and `[Safety Alert]` — case-insensitive; a hyphen or space between the words is
+the same tag (`[Alert-warning]`, `[Safety alert]`). The alert ends at the writer's closing tag where one is given
+(`[End alert]`, `[End safety alert]`), otherwise where the next structural tag begins — exactly as `[Alert]`.
+
+**Supplied markup** (`new-alert-warning-code.html`, Sam Sharpe, 17 November 2026):
+
+```html
+<div class="row">
+    <div class="col-md-8 col-12">
+        <div class="alert warning">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Health and safety</h4>
+                    <p>Text for the ākonga that we need them to see, as it concerns a health and safety risk.</p>
+                    <a href="" target="_blank"><div class="button">Button</div></a>
+                    <a href="https://…" target="_blank"><div class="externalButton">External link</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+**Rules.**
+1. **The class is exactly `alert warning`.** No phase or colour class, no inline `style`, no icon element — the red
+   box and the triangle come from the template stylesheet (constraint 2).
+2. **Heading** — the writer's heading (an `[H4]`, or a bold first line such as *Health and safety*) becomes the
+   `<h4>`. If the writer gives none, there is no heading — never invent one.
+3. **Body** — the writer's text verbatim (paragraphs, lists) per constraint 1.
+4. **Optional buttons** (the design brief: *buttons for more explicit instruction, support images, or links to
+   supporting websites or resources*): a standalone link to an outside site → `externalButton` (constraint 75);
+   an internal page or resource → `button`; more explicit instructions or support images revealed on click → the
+   standard **clickDrop** component (`04_COMP_SEGMENTS_OVERLAYS.md` → COMP_07) inside the alert's `col-12`.
+   Never a dropbox button.
+5. **Placement** — where the writer put it, normally directly before the activity it concerns. At page level it
+   takes its own `row` > `col-md-8 col-12` as above. Inside an activity's content run, the `div.alert.warning`
+   (with its own inner `row` > `col-12`) sits in the activity's content column with no extra outer row.
+6. **Student-facing.** It is not `alert teacher` (CS-facing) and not a supervisor note. Where the writer pairs
+   `[Safety Alert]` with a supervisor block (HPE, §14.8), build both: the warning alert for the ākonga, then the
+   supervisor button (constraint 68).
+7. **Not the health-and-safety pop-up.** The same email thread discusses a pre-module "health and safety" pop-up;
+   that is with the Learning Systems/technical lead and is **not** this component. A Writers Template that asks for
+   such a pop-up gets a visible `Designer/Developer To Do:` naming it; no modal is built.
+8. The snippet page's red `<h3>[Alert warning]</h3>` caption is the demo's own label — never emitted.
 
 ### Cultural Alert (Wānanga / Talanoa)
 

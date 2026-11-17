@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 28th August, 2026 1:30 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:41 PM
 > **Granular part A (1 of 3) of `11_UPDATE_MODE.md`** — Update Mode: purpose, trigger, input, scope, ledger use, classification, conflict check and escalation (§1-7). The pre-flight confirmations and the blast-radius sweep (§8-9) live in `11C`.
 > All sibling parts live in `11_UPDATE_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -91,7 +91,7 @@ The ledger serves four jobs, and is organised into four parts so the conflict-re
 
 ### 4.1 How Update Mode uses the ledger every run
 
-- **Read it first.** At the start of every run, read the ledger (it is project knowledge — retrieve it with `project_knowledge_search`; in the repo it is the `12_CHANGE_LEDGER/` folder of parts — Part 1 Locked and Part 2 Pending live in `12A_LEDGER_CORE_AND_LOCKS.md`, the Part 3 history spans the `12x_CHANGE_HISTORY_…` parts). Check Part 1 (Locked) and Part 2 (Pending) in full, and search the Part 3 history parts for prior decisions on the same rule.
+- **Read it first.** At the start of every run, read the ledger (it is project knowledge — retrieve it with `project_knowledge_search`; in the repo it is the `12_CHANGE_LEDGER/` folder of parts — Part 1 Locked and Part 2 Pending live in `12A_LEDGER_CORE_AND_LOCKS.md` (Part 1 continues in `12A2_LOCKED_DECISIONS_CL0145_ONWARD.md`), the Part 3 history spans the `12x_CHANGE_HISTORY_…` parts). Check Part 1 (Locked) and Part 2 (Pending) in full, and search the Part 3 history parts for prior decisions on the same rule.
 - **Log the front-facing ones to Part 4 as well.** For every actioned change, apply the front-facing test (constraint 87, `17_ADMIN_MODE.md` → Section 5.1): *would a developer comparing two generated modules — one built before the change, one after, from the same Writers Template — see any difference in the HTML or CSS?* **Yes, or borderline → draft an entry for the PageForge Amalgamation Log** (`12_CHANGE_LEDGER/12G_PAGEFORGE_AMALGAMATION_LOG.md`) into the same Repo Update Brief, alongside the ordinary ledger row. **No → the ledger row only.** This applies to Update Mode exactly as it applies to Admin Mode; the log is the project's front-facing decision record, not an Admin Mode artefact.
 - **Append via the brief, last.** Every Update Mode run that actions anything **drafts the new ledger row(s) in exact table format and includes them in the Repo Update Brief** (`11B` → Section 10); the Claude Code session appends them to the **latest** history part (starting a new part first if it exceeds 30 KB, per the repo `CLAUDE.md`) and refreshes that part's timestamp. The ledger is never regenerated in full.
 

@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 3rd November, 2026 5:48 PM
-> **Granular part F (7 of 7) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — §14.16, the central-images registry: every image on the design team's Centralised Images page (`refresh_imageCentral.html`, refreshed 3 November 2026) with the writer tag that asks for it and the exact path it builds. Opened 3 November 2026 (CL-0141) as a new part rather than growing `14E`.
+> **Last updated:** Tuesday, 17th November, 2026 7:37 PM
+> **Granular part F (8 of 9) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — §14.16, the central-images registry: every image on the design team's Centralised Images page (`refresh_imageCentral.html`, refreshed 3 November 2026) with the writer tag that asks for it and the exact path it builds. Opened 3 November 2026 (CL-0141) as a new part rather than growing `14E`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->
@@ -7,7 +7,7 @@
 **Scope — (c) Universal:** any module whose Writers Template asks for a centralised image by its tag. The family facts that decide *which* image a module uses (the BLLR code ranges, the Tūī phase folder, the HPE phase) stay in each family's section and are restated below only where the tag needs them. Source: the design team's Centralised Images page, `Z:\Development\Online\Templates\Refresh Template - modules\refresh_template_HTML\tools snippets\refresh_imageCentral.html`, refreshed and supplied by Gavin on 3 November 2026 (ADMIN MODE, CL-0141). This registry absorbs the page — it no longer needs to be consulted.
 
 ### The rule
-- **The tag.** The page's own form is `[Centralised image: <image name>]` (its header: *"[Centralised image: + image name]"*); the other centralised-image wordings in `01` → Tag Taxonomy (`[Central image: …]`, `[Image centralised …]`) are the same request. For almost every image the **name is the image's file name without its extension** (`[Centralised image: HP_Sura_1_phase_1]`, `[Centralised image: kea_3]`, `[Centralised image: bookworm_1a]`); the exceptions — the Technology, disposition and AI-icon names — are listed in their tables below.
+- **The tag.** The page's own form is `[Centralised image: <image name>]` (its header: *"[Centralised image: + image name]"*); the other centralised-image wordings in `01` → Tag Taxonomy (`[Central image: …]`, `[Image centralised …]`) are the same request. For almost every image the **name is the image's file name without its extension** (`[Centralised image: HP_Sura_1_phase_1]`, `[Centralised image: kea_3]`, `[Centralised image: bookworm_1a]`); the exceptions — the Technology, disposition and AI-icon names — are listed in their tables below. **Further wordings writers use (CL-0148 — the Technology and HPE Global Edits documents):** `[Centralised <name>]` (no "image"), `[Centralised image <name>]` (no colon), `[<prefix> Centralised <name>]` and `[<prefix>Centralised <name>]` where the prefix repeats the family (`[DTP Centralised Notice Blue]`, `[DTPCentralised Ideate Blue]`, `[DTP Centralised image Model White]`), and the bare family form `[DTP <Stage> <Colour>]` — all the same request.
 - **Matching.** Case is ignored, and a space, an underscore and a hyphen count as the same separator, so `[Centralised image: HP Sura 1 phase 1]` and `[Central image: Aroha 1]` are the same requests as the page's forms. Where two images differ **only** by that separator (the Phase 5 `be_a_communicator` image and the Phase 1–4 `be-a-communicator` disposition), the writer's exact spelling decides; failing that, the module's phase does.
 - **Output.** `<img class="img-fluid imageCentral" loading="lazy" src="<path>" alt="<alt>">` with the path **copied character-for-character from the tables** — folder casing, spaces, `&`, the design team's spellings (`congradulations`, `Spacial`, `think_like_a_innovator`) and all. Two families are not `<img>`: the Technology **hats** are `<object>` elements, and the **Phase 1–4 dispositions** are the template's `beAKiwi` div (tables below).
 - **Never guessed.** A name the registry does not hold is an ordinary image request (CL-0117's rule, unchanged). A known name asking for a pose or number the store does not hold is a visible `Red Flag:` naming the request — never a constructed filename. Where the tag cannot pick one image on its own (a Tūī with no pose, a default avatar or weather icon described in words, a Technology character with no *head* / *full*), the build follows the row's own instruction and raises a visible `Designer/Developer To Do:` naming what the writer asked for.
@@ -19,7 +19,7 @@
 |---|---|---|
 | `Congradulations animation` | `congradulations/Congradulations animation.gif` | `Congradulations animation` |
 
-The misspelling is the delivered asset's (§14.12) — a writer's correctly spelt *Congratulations animation* asks for the same file; the path is never corrected.
+The misspelling is the delivered asset's (§14.12) — a writer's correctly spelt *Congratulations animation* asks for the same file; the path is never corrected. `[Centralised image Congratulations]` (Social Sciences, §14.17) asks for the same file.
 
 ### Default avatars — `Character_assets/`
 Tag `[Centralised image: default avatar <description>]`. Ten avatars, `alt=""`: `buns`, `babyface`, `bobgal`, `sweatergal`, `shirtboy`, `hoodieboy`, `froboy`, `jacketgal`, `ladsladslads`, `harrypotter` → `Character_assets/<name>.png`. The page defines no descriptions, so the avatar is built when the description **is** one of the ten names (`[Centralised image: default avatar bobgal]`); any other description raises a `Designer/Developer To Do:` naming it and builds nothing.
@@ -51,9 +51,9 @@ Tag `[Centralised image: default avatar <description>]`. Ten avatars, `alt=""`: 
 | `be-a-social-scientist` | `<div class="beAKiwi disposition-be-a-social-scientist"></div>` |
 
 ### Technology (Phase 1–4) — folder `technology/` (lower-case)
-- **TENZ Design Thinking Process** — eighteen images `technology/TENZ/DTP <Stage> <Colour>.png`, tag `[Centralised image: DTP <Stage> <Colour>]`, `<Stage>` = `Model`, `Notice`, `Empathise`, `Define`, `Ideate`, `Analyse`, `Develop`, `Create`, `Evaluate`; `<Colour>` = `White` or `Blue`. `alt` = `TENZ Design Thinking Process <Stage>` (e.g. `technology/TENZ/DTP Ideate Blue.png`, `alt="TENZ Design Thinking Process Ideate"`).
-- **Mātauranga Māori connection** — `[Centralised image: Matauranga maori connection]` → `technology/Matauranga maori connection iStock-2243541508.svg`, `alt="Matauranga maori connection"`. Acknowledgement line (supplied): `Illustration: Curled Fern Frond in Minimalist Vector Style, iStock 2243541508, Getty Images. Used with permission.` The page's example places it in an `alert` headed *Mātauranga Māori connection*, the picture in a `col-md-4 offset-md-4 col-12 paddingL` column under the text.
-- **Technology characters** — Jo, Tina, Charlie, each a head and a full-body image:
+- **TENZ Design Thinking Process** — eighteen images `technology/TENZ/DTP <Stage> <Colour>.png`, tag `[Centralised image: DTP <Stage> <Colour>]`, `<Stage>` = `Model`, `Notice`, `Empathise`, `Define`, `Ideate`, `Analyse`, `Develop`, `Create`, `Evaluate`; `<Colour>` = `White` or `Blue`. `alt` = `TENZ Design Thinking Process <Stage>` (e.g. `technology/TENZ/DTP Ideate Blue.png`, `alt="TENZ Design Thinking Process Ideate"`). Writer forms seen: `[Centralised DTP Model Blue]`, `[DTP Centralised Notice White]`, `[DTP Empathise Blue]` — read as `DTP <Stage> <Colour>`; *White* = the transparent-background icon.
+- **Mātauranga Māori connection** — `[Centralised image: Matauranga maori connection]` → `technology/Matauranga maori connection iStock-2243541508.svg`, `alt="Matauranga maori connection"`. Acknowledgement line (supplied): `Illustration: Curled Fern Frond in Minimalist Vector Style, iStock 2243541508, Getty Images. Used with permission.` The page's example places it in an `alert` headed *Mātauranga Māori connection*, the picture in a `col-md-4 offset-md-4 col-12 paddingL` column under the text. Also tagged `[Centralised image Technology Matauranga māori fern]` (the Global Edits form) — same image.
+- **Technology characters** — Jo, Tina, Charlie, each a head and a full-body image. Also tagged `[Image Centralised Jo]` / `[Image] 'avatar' 'Tina'` / `[image] 'avatar' 'Charlie'` (Global Edits forms) — read as `Technology character <Name>`:
 
   | Tag name | Head | Full body | Acknowledgement (supplied) |
   |---|---|---|---|
@@ -81,6 +81,8 @@ The five icons of §14.12 now have tags. Each strand also has an **inactive** tw
 
 (The page writes the last tag without its closing bracket, `[Centralised image: Tech CS` — read as `[Centralised image: Tech CS]`.) **The strand strip** (the page's *Example*): all five icons in one `div.row.gap-3`, one `div.col` each, the module's own strands **active** with a `<p class="captionText center-text">` caption under them, the rest **inactive** with no caption.
 
+**New strand names (CL-0148, decision D3 — to be confirmed):** `[Centralised image Spatial and Product Design]` → `active-Spacial-and-Design.svg`; `[Centralised image Food and Processing Technology]` → `active-Materials-processing.svg`; `[Centralised image Systems and Control]` → `active-Electronics.svg`; `[Centralised image Digital Technology]` → `active-Computer-Science.svg` (note: before CL-0148, *Digital Technology* named the yellow `active-Digital-Technology.svg` — the writer's strand list decides: a module using the new five-strand list means green); `[Centralised image Materials Technology]` → no logo yet → `Designer/Developer To Do:`. `alt` / caption = the new strand name.
+
 ### English — Kea characters (Writing Journals) — `kea_characters/`
 Six images, **numbered by pose, not by phase** — the same six serve every phase: `kea_1` default right · `kea_4` default left · `kea_2` walking right · `kea_5` walking left · `kea_3` pointing right · `kea_6` pointing left. Path `kea_characters/kea_<n>.jpg` — **`kea_5.jpg` lower-case** — `alt="Kea character"`. The page's three phase examples all use `kea_3` and differ only in the bubble's colour (§14.10).
 
@@ -106,7 +108,7 @@ Tag `[Centralised image: tui_<pose>]`; the **folder's phase is the module's phas
 | 6 | perched — facing right | perched singing — facing right | flight — facing right | — |
 
 ### Health and PE characters — `health & PE characters/`
-Tag = the file name: `[Centralised image: HP_<Name>_<pose>_phase_<N>]`. **Every one of the five characters has all four poses in all four phases:** poses 1–2 full body in `health & PE characters/phase <N>/`, poses 3–4 head only in `health & PE characters/phase <N>/head_only/` — e.g. `health & PE characters/phase 4/head_only/HP_Sura_3_phase_4.png`. Pairs (phase 1 only): `[Centralised image: Kai and Afi phase 1]` → `health & PE characters/phase 1/combination/Kai and Afi phase 1.png`, `[Centralised image: Sura and Leila phase 1]` → `…/combination/Sura and Leila phase 1.png`. `alt=""` throughout. The full-body poses as the page describes them:
+Tag = the file name: `[Centralised image: HP_<Name>_<pose>_phase_<N>]`. **Every one of the five characters has all four poses in all four phases:** poses 1–2 full body in `health & PE characters/phase <N>/`, poses 3–4 head only in `health & PE characters/phase <N>/head_only/` — e.g. `health & PE characters/phase 4/head_only/HP_Sura_3_phase_4.png`. Pairs (phase 1 only): `[Centralised image: Kai and Afi phase 1]` → `health & PE characters/phase 1/combination/Kai and Afi phase 1.png`, `[Centralised image: Sura and Leila phase 1]` → `…/combination/Sura and Leila phase 1.png`. `alt=""` throughout. The HPE document's `[image Centralised Ph<N> <Name>]` → that character's pose 1 in phase N + a To Do to confirm the pose (§14.8, CL-0146). The full-body poses as the page describes them:
 
 | Character | Phase 1 (pose 1 · 2) | Phase 2 | Phase 3 | Phase 4 |
 |---|---|---|---|---|
@@ -136,3 +138,7 @@ Twenty icons `weatherIcons/weather-1.svg` … `weather-20.svg`, `alt=""`. The pa
 
 ### Acknowledgements
 The three iStock-derived Technology assets and the weather icons carry the supplied lines above in the module's acknowledgements, like any other credited image. The NZ map keeps its §14.10 line.
+
+---
+
+> **Section 14.17 (Social Sciences, CL-0147) continues in `14G_SGP_FAMILY_SOCIAL_SCIENCES.md`.** The §14.x numbering is ONE continuous sequence across `14A` (14.1-14.3), `14A2` (14.4-14.5), `14B` (14.6-14.8), `14B2` (14.9-14.10), `14D` (14.11-14.12), `14E` (14.13-14.15), this part (14.16) and `14G` (14.17).

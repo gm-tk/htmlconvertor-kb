@@ -1,5 +1,5 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:25 PM
-> **Granular part EA (13 of 17) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0123 onward (continued) — THE OPEN PART: APPEND NEW ENTRIES HERE. Opened 28 October 2026 by the ledger merge (CL-0140): CL-0123–CL-0139 are the GitHub session's rows of 19–21 October 2026, renumbered from CL-0109–CL-0125 (each old id + 14).
+> **Last updated:** Tuesday, 17th November, 2026 7:41 PM
+> **Granular part EA (14 of 20) of `12_CHANGE_LEDGER.md`** — PART 3 change history: CL-0123 to CL-0144 (continued). **CLOSED** at CL-0144 on 17 November 2026 (CL-0145–CL-0156 would have taken it past the 30 KB soft limit, `CLAUDE.md` §4) — new entries continue in `12EB_CHANGE_HISTORY_CL0145_ONWARD.md`, the OPEN part. Opened 28 October 2026 by the ledger merge (CL-0140): CL-0123–CL-0139 are the GitHub session's rows of 19–21 October 2026, renumbered from CL-0109–CL-0125 (each old id + 14).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *The table header row below is repeated for readability; the rows continue the PART 3 history table.*
 
