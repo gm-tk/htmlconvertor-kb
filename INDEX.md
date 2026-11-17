@@ -1,5 +1,5 @@
 # INDEX — Te Kura HTML Convertor Knowledge Base (granular layout)
-> **Last updated:** Tuesday, 17th November, 2026 7:19 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:25 PM
 
 This repository holds the complete knowledge base for the Te Kura **HTML Convertor** Claude project, split into **granular part files** so no single file is ever too large to read, edit, or regenerate. The original sixteen knowledge files still exist as **topics**: a large topic is now a **folder** of lettered parts (e.g. `02_DATA_CONTENT_VERIFICATION/02D_COMMENT_POLICY_CONSTRAINTS.md`); a small topic remains a single file. Any reference elsewhere in the KB to an original filename (e.g. "see `02_DATA_CONTENT_VERIFICATION.md`") resolves to the folder of the same name — each part's header states which original file it belongs to.
 
@@ -147,7 +147,7 @@ This repository holds the complete knowledge base for the Te Kura **HTML Convert
   - Sections: PART 3 history rows CL-0104 to CL-0111
 - **`12_CHANGE_LEDGER/12E9_CHANGE_HISTORY_CL0112_0122.md`** (24 KB) — PART 3 change history: CL-0112 to CL-0122 (continued; CLOSED at CL-0122, 28 October 2026 — the ledger merge; CL-0122 — the standard speech bubble is always text-left / image-right; CL-0121 the Global Edits Maths conventions folded in; CL-0117 the Science / Maths characters; CL-0116 the Writing Process tags) 
   - Sections: PART 3 history rows CL-0112 to CL-0122
-- **`12_CHANGE_LEDGER/12EA_CHANGE_HISTORY_CL0123_ONWARD.md`** (24 KB) — PART 3 change history: CL-0123 onward — CL-0123 to CL-0139 are the GitHub session's rows of 19–21 October 2026 (the MXEX105 / SCBI202 finalized reports; no `<h5>` in a drag and drop; the `dropbox` modifier; every task interactive in an activity box), renumbered from CL-0109–CL-0125 by the ledger merge CL-0140; CL-0143 the Pathways Assessment Activities Template (`18D`) — **THE OPEN PART: append new CL entries here**
+- **`12_CHANGE_LEDGER/12EA_CHANGE_HISTORY_CL0123_ONWARD.md`** (26 KB) — PART 3 change history: CL-0123 onward — CL-0123 to CL-0139 are the GitHub session's rows of 19–21 October 2026 (the MXEX105 / SCBI202 finalized reports; no `<h5>` in a drag and drop; the `dropbox` modifier; every task interactive in an activity box), renumbered from CL-0109–CL-0125 by the ledger merge CL-0140; CL-0143 the Pathways Assessment Activities Template (`18D`); CL-0144 the second ledger merge (GitHub's CL-0141 / CL-0142 → CL-0142 / CL-0143, its constraint 99 → 100; `12H` closed, `12I` opened) — **THE OPEN PART: append new CL entries here**
   - Sections: PART 3 history rows CL-0123 onward
 - **`12_CHANGE_LEDGER/12E_CHANGE_HISTORY_FOOTNOTES.md`** (15 KB) — PART 3 footnotes (locked-decision and grouped-change notes)
   - Sections: 
