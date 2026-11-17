@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:41 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:54 PM
 > **Granular part I (20 of 20) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0143 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 17 November 2026 when the ledger merge CL-0144 took `12H` past the 30 KB soft limit; `12H` was closed at CL-0141 and its last entry, CL-0143, moved here verbatim (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -125,4 +125,14 @@
 - **Required output:** The constraint-65 MTK quiz shell — the quiz-title `<h3>` from the `[H3]`, the writer's student-facing instructions, the To Do, the *Go to quiz* button; nothing else between the tags is emitted; ordinary content resumes after `[MTK quiz end]`.
 - **Supersedes:** —
 - **KB rule:** `05D` → MTK Quiz; `01D`
+- **PageForge status:** Not yet amalgamated
+
+### CL-0157 — Pathways assessments: the red AI traffic light is built from the registry (the To Do retired)
+- **Date:** Tuesday, 17th November, 2026
+- **Scope:** (a) Series + level — Pathways Level 1 unit-standard assessments (Assessment Mode single pages, not modules)
+- **Source:** ADMIN MODE (authorised — Gavin, 17 November 2026: the chat decision "Use the 14F image", resolving the clash recorded in CL-0144)
+- **Writer input (what triggers it):** `[Centralised image: AI traffic light - red]` in a Pathways Assessment Activities Template (also `… - orange` / *amber*, `… - green`).
+- **Required output:** `<img class="img-fluid imageCentral" loading="lazy" src="AI guidelines icons/AI guidelines icon 1.svg" alt="">` at the writer's spot (orange / *amber* → `AI guidelines icon 2.svg`, green → `AI guidelines icon 3.svg`); no `Designer/Developer To Do:`, no AI Guidelines PDF block, no acknowledgement.
+- **Supersedes:** CL-0143 in part — the traffic-light `Designer/Developer To Do:`
+- **KB rule:** `18D` §11.5; `14F` §14.16 (AI guidelines icons); `00H` constraint 100
 - **PageForge status:** Not yet amalgamated

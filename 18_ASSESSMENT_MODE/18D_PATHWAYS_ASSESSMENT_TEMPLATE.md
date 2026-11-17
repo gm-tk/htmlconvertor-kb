@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:19 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:54 PM
 > **Granular part D (4 of 4) of `18_ASSESSMENT_MODE.md`** — The Pathways Assessment Activities Template (Level 1 Pathways unit-standard assessments): recognition, the header-bar mapping that replaces `18A` §4.1 for it, template guidance that is never rendered, the two What-to-do options, the centralised AI traffic-light image, the module button, the dropbox text. Added by CL-0143 (ADMIN MODE).
 > All sibling parts live in `18_ASSESSMENT_MODE/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -67,13 +67,17 @@ The option labels and `OR` are never rendered (Section 11.3). **Both options lef
 
 `[Centralised image: AI traffic light - red]` is Te Kura's AI-use traffic light, a **centralised image that is the same on every Pathways assessment** (red = AI may not be used; Pathways assessment tasks are red). It sits where the writer places it — in the template, the end of the What-to-do accordion, after the option content (after the tasks, for Option 2).
 
-**Its file location on the server has not been recorded yet**, so it is not registered as a central asset (`01D` → `central_image`, constraint 95 lists only the Science and Maths characters). Until it is:
+**It is a registered central image (CL-0157).** The central-images registry (§14.16, `14F` → AI guidelines icons; constraint 99) records its file, so the tag builds the image itself — at the writer's spot, with the path and `alt` copied from the registry:
 
-- emit, at that spot, `<p style="color: red; font-weight: bold;">Designer/Developer To Do: insert the centralised AI traffic light image (red) here. It is the same shared image on every Pathways assessment; its file location has not yet been recorded in the Convertor's rules, so it could not be built automatically.</p>` — the colour copied from the tag (`red`, `amber`, `green`);
-- **never** an `<img>` with a guessed path, **never** the `imageCentral` class, and **never** the AI Guidelines *Traffic Light PDF* block (`05A`, constraint 84) — that is a different asset;
+```html
+<img class="img-fluid imageCentral" loading="lazy" src="AI guidelines icons/AI guidelines icon 1.svg" alt="">
+```
+
+- The colour in the tag picks the icon, as the registry lists them: **red** → `AI guidelines icon 1.svg` (*No AI use allowed* — Pathways assessment tasks are red); **orange** — which the Pathways template may write as *amber* — → `AI guidelines icon 2.svg`; **green** → `AI guidelines icon 3.svg`.
+- **never** the AI Guidelines *Traffic Light PDF* block (`05A`, constraint 84) — that is a different asset;
 - **no** acknowledgement entry and no `acksAI` — it is Te Kura's own image, not AI-generated media.
 
-When the path is supplied, a follow-up Admin Mode or Update Mode change records it here and replaces this To Do with the built image.
+*(Until 17 November 2026 this section emitted a `Designer/Developer To Do:` here, because the image's file location was thought to be unrecorded. The registry — absorbed on 3 November 2026, CL-0141 — already held it; CL-0157 replaced the To Do with the built image, as this section had said a later change would.)*
 
 ### 11.6 Student Resources — the module button
 

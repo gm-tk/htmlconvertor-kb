@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:37 PM
+> **Last updated:** Tuesday, 17th November, 2026 7:54 PM
 > **Granular part F (8 of 9) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — §14.16, the central-images registry: every image on the design team's Centralised Images page (`refresh_imageCentral.html`, refreshed 3 November 2026) with the writer tag that asks for it and the exact path it builds. Opened 3 November 2026 (CL-0141) as a new part rather than growing `14E`.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -134,7 +134,7 @@ Twenty icons `weatherIcons/weather-1.svg` … `weather-20.svg`, `alt=""`. The pa
 | `AI traffic light - orange` | `AI guidelines icons/AI guidelines icon 2.svg` | Using AI in tasks |
 | `AI traffic light - green` | `AI guidelines icons/AI guidelines icon 3.svg` | Task can be completed using AI |
 
-`alt=""` as supplied. These are icons, not the eight AI Guidelines PDFs of constraint 84.
+`alt=""` as supplied. These are icons, not the eight AI Guidelines PDFs of constraint 84. The Pathways Assessment Activities Template asks for the red icon (`18D` §11.5, CL-0157); a template that writes *amber* means the orange icon.
 
 ### Acknowledgements
 The three iStock-derived Technology assets and the weather icons carry the supplied lines above in the module's acknowledgements, like any other credited image. The NZ map keeps its §14.10 line.
