@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Thursday, 19th November, 2026 8:05 PM
 > **Granular part B (2 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -101,12 +101,14 @@ Right column: top: 10%, 30%, 60%, 80%  (each at left: 78%)
  
 **Container class:** `audioImage`
  
-Clickable image that plays an associated audio file. The `id` attribute on `.audioImageOption` maps to the audio filename (without extension).
+Clickable image that plays an associated audio file. The `audioName` attribute on `.audioImageOption` maps to the audio filename (without extension).
+ 
+> **`audioName`, not `id` (CL-0158, 19 November 2026).** The audioImage script reads the audio filename from `audioName` on `.audioImageOption` — the same attribute `audioButton` and `audioTrigger` use. It still falls back to `id` when `audioName` is absent, so modules already built with `id` keep working and are **never retrofitted**; but every audioImage the Convertor generates carries `audioName` and **never** `id`, even when a structural reference or sibling module still shows the old `id` form.
  
 ### Standard
 ```html
 <div class="audioImage">
-    <div id="AUDIO_FILENAME" class="audioImageOption">
+    <div audioName="AUDIO_FILENAME" class="audioImageOption">
         <img class="img-fluid" src="images/image.jpg">
     </div>
 </div>
@@ -115,7 +117,7 @@ Clickable image that plays an associated audio file. The `id` attribute on `.aud
 ### With Play Button Visible
 ```html
 <div class="audioImage">
-    <div id="AUDIO_FILENAME" class="audioImageOption playVisible">
+    <div audioName="AUDIO_FILENAME" class="audioImageOption playVisible">
         <img class="img-fluid" src="images/image.jpg">
     </div>
 </div>
@@ -124,7 +126,7 @@ Clickable image that plays an associated audio file. The `id` attribute on `.aud
 ### With Caption Popup
 ```html
 <div class="audioImage">
-    <div id="AUDIO_FILENAME" class="audioImageOption">
+    <div audioName="AUDIO_FILENAME" class="audioImageOption">
         <img class="img-fluid" src="images/image.jpg">
         <p class="popCaption">Caption text</p>
     </div>
@@ -132,13 +134,13 @@ Clickable image that plays an associated audio file. The `id` attribute on `.aud
 ```
  
 **Key rules:**
-- `id` on `.audioImageOption` = audio filename (no extension, no spaces). E.g., `id="loremFull"` → plays `audio/loremFull.mp3`
+- `audioName` on `.audioImageOption` = audio filename (no extension, no spaces). E.g., `audioName="loremFull"` → plays `audio/loremFull.mp3`. Never put the filename on `id` — the script's `id` fallback exists only for modules built before CL-0158
 - **⚠️ CRITICAL:** Audio filenames must NOT contain spaces — causes a known bug
 - `playVisible` class: Makes play button always visible (default: appears on hover)
 - `popCaption`: Shows caption text on hover/click
 - Typical column sizing: `col-md-4 col-6`
  
-**WJFUN series — mandatory component.** In WJFUN modules a writer's `[Audio image]` grid (click-the-picture-to-hear-the-word) MUST be built with this `audioImage` / `audioImageOption` component — the audio filename goes on the `id` of `.audioImageOption` — never as `audioTrigger` spans wrapping the images. (WJFUN108 finalized report, Difference 3, scope (b), 29 July 2026.)
+**WJFUN series — mandatory component.** In WJFUN modules a writer's `[Audio image]` grid (click-the-picture-to-hear-the-word) MUST be built with this `audioImage` / `audioImageOption` component — the audio filename goes on the `audioName` of `.audioImageOption` (attribute updated from `id` by CL-0158) — never as `audioTrigger` spans wrapping the images. (WJFUN108 finalized report, Difference 3, scope (b), 29 July 2026.)
  
 ---
  

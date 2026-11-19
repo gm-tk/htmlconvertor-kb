@@ -1,4 +1,4 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Thursday, 19th November, 2026 8:05 PM
 > **Granular part E (5 of 6) of `01_PIPELINE_EXTRACTION_TAGS.md`** — Tag interpretation, first half: structural, headings (incl. the duplicate-heading drop and the **label-prefix strip**), body, media. **Styling, activities, links and interactive components continue in `01F_TAG_INTERPRETATION_STYLING_ACTIVITIES.md`** (split 14 September 2026 at the 30 KB soft limit).
 > All sibling parts live in `01_PIPELINE_EXTRACTION_TAGS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -307,7 +307,7 @@ Clickable image that plays associated audio. See COMP_08 in `04_COMP_SEGMENTS_OV
 
 ```html
 <div class="audioImage">
-    <div id="AUDIO_FILENAME" class="audioImageOption">
+    <div audioName="AUDIO_FILENAME" class="audioImageOption">
         <img class="img-fluid" src="images/image.jpg">
     </div>
 </div>

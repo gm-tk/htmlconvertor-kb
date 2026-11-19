@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:37 PM
+> **Last updated:** Thursday, 19th November, 2026 8:05 PM
 > **Granular part C (5 of 9) of `14_SUBJECT_GLOBAL_PARAMETERS.md`** — The complete Languages Audiovisual Package asset registry, absorbed verbatim from the final `20260511_Language_HTML` (5 August 2026) so the supplied HTML file no longer needs to be consulted or kept in project knowledge.
 > All sibling parts live in `14_SUBJECT_GLOBAL_PARAMETERS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -38,11 +38,13 @@ Emit each registry asset in the form recorded for it below, using these supplied
 
 ```html
 <div class="audioImage">
-	<div id="German VA ONLY- Lina Hoffmann_1080p_01" class="audioImageOption">
+	<div audioName="German VA ONLY- Lina Hoffmann_1080p_01" class="audioImageOption">
 		<img class="img-fluid imageCentral" src="German assets/Lina.jpg" />
 	</div>
 </div>
 ```
+
+> The design team's original supplied shape carried this value on `id`; the attribute became `audioName` with the audioImage script update (CL-0158). The value itself is unchanged and is copied exactly as supplied.
 
 **audioButton** (voice only, named audio file — `04B`):
 
@@ -98,12 +100,12 @@ Supplied form: `<img class="img-fluid imageCentral" loading="lazy" src="Language
 |---|---|---|---|
 | Claudia Hoffmann (mother) | 1 | Vimeo | `player.vimeo.com/video/1193069697?h=ac5760a77d&…` · title `_Claudia Hoffmann (Mum)_1080p` · voice + avatar from Heygen |
 | Daniel Hoffmann (father) | 2 | Vimeo | `player.vimeo.com/video/1193069699?h=80d6eeee69&…` · title `German - Daniel Hoffmann (father)_1080p` · voice + avatar from Heygen |
-| Lina Hoffmann (sister) | 3 | audioImage | id `German VA ONLY- Lina Hoffmann_1080p_01` · img `German assets/Lina.jpg` · voice Heygen, avatar Co-pilot ("Click on the image to hear their voice.") |
+| Lina Hoffmann (sister) | 3 | audioImage | audioName `German VA ONLY- Lina Hoffmann_1080p_01` · img `German assets/Lina.jpg` · voice Heygen, avatar Co-pilot ("Click on the image to hear their voice.") |
 | Felix Hoffmann (brother) | 4 | Vimeo | `player.vimeo.com/video/1200277175?h=074b578675&…` · title `German - Felix Hoffmann` · avatar + voice from Heygen |
 | Der Lehrer (teacher) | 5 | Vimeo | `player.vimeo.com/video/1193069825?h=58aa168f6d&…` · title `German - Der Lehrer_1080p` · voice + avatar from Heygen |
-| Arihi | 6 | audioImage | id `German-Arihi_voice` · img `German assets/Ahirihi.jpg` · voice Heygen, picture/avatar Co-pilot |
+| Arihi | 6 | audioImage | audioName `German-Arihi_voice` · img `German assets/Ahirihi.jpg` · voice Heygen, picture/avatar Co-pilot |
 | Narrator voice (VOICE ONLY) | 7 | audioPlayer | `audio/German_Female narrator.mp3` · title `German female narrator` · voice from Heygen |
-| Salzi the pretzel (mascot) | 8 | audioImage + image variants | neutral = audioImage id `German_Salzi`, img `German assets/Salsi_neutral.jpg`; `[certificate]` → `Salsi_certificate.jpg`; `[holding books]` → `Salsi_books.jpg`; `[ice cream]` → `Salsi_ice cream.jpg` (all `imageCentral`; note the **Salsi** filename spelling vs the **Salzi** character/tag name). All variant tags are item 8, e.g. `[Audiovisual package Salzi [certificate] item 8]` |
+| Salzi the pretzel (mascot) | 8 | audioImage + image variants | neutral = audioImage audioName `German_Salzi`, img `German assets/Salsi_neutral.jpg`; `[certificate]` → `Salsi_certificate.jpg`; `[holding books]` → `Salsi_books.jpg`; `[ice cream]` → `Salsi_ice cream.jpg` (all `imageCentral`; note the **Salsi** filename spelling vs the **Salzi** character/tag name). All variant tags are item 8, e.g. `[Audiovisual package Salzi [certificate] item 8]` |
 
 Module-local scene example (not `imageCentral`): `images/German/Family playing board game.png` — "a couple of the characters within a scene".
 

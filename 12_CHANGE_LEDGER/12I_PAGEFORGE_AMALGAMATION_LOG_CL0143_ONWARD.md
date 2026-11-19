@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:54 PM
+> **Last updated:** Thursday, 19th November, 2026 8:05 PM
 > **Granular part I (20 of 20) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0143 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 17 November 2026 when the ledger merge CL-0144 took `12H` past the 30 KB soft limit; `12H` was closed at CL-0141 and its last entry, CL-0143, moved here verbatim (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -135,4 +135,14 @@
 - **Required output:** `<img class="img-fluid imageCentral" loading="lazy" src="AI guidelines icons/AI guidelines icon 1.svg" alt="">` at the writer's spot (orange / *amber* → `AI guidelines icon 2.svg`, green → `AI guidelines icon 3.svg`); no `Designer/Developer To Do:`, no AI Guidelines PDF block, no acknowledgement.
 - **Supersedes:** CL-0143 in part — the traffic-light `Designer/Developer To Do:`
 - **KB rule:** `18D` §11.5; `14F` §14.16 (AI guidelines icons); `00H` constraint 100
+- **PageForge status:** Not yet amalgamated
+
+### CL-0158 — audioImage carries the audio filename on `audioName`, not `id`
+- **Date:** Thursday, 19th November, 2026
+- **Scope:** (c) Universal — every audioImage generated, in every subject, series and pathway (incl. MTK and the Languages registry)
+- **Source:** ADMIN MODE (authorised — Gavin, relaying the audioImage script update from the script's developer)
+- **Writer input (what triggers it):** anything that builds the `audioImage` component — `[Audio image]`, MTK `[Interactive] [AudioImage Hover]` / `[Audio Hover Image]`, a Languages `[Audiovisual package …]` asset whose registry form is audioImage, or a click-the-picture-to-hear-it request
+- **Required output:** `<div class="audioImage"><div audioName="AUDIO_FILENAME" class="audioImageOption">` (+ `playVisible` when asked) `<img class="img-fluid" src="…">` (+ optional `<p class="popCaption">…</p>`) `</div></div>` — filename on `audioName`, no `id` on `.audioImageOption`; a reference or sibling showing `id` is not copied; built modules are not retrofitted (the script falls back to `id`)
+- **Supersedes:** CL-0059 (attribute only; predates this log) and the pre-ledger `04B` `id` convention
+- **KB rule:** `04B` → Audio Image; also `01E`, `07B`, `14C`, `14A` §14.1, `02C`
 - **PageForge status:** Not yet amalgamated
