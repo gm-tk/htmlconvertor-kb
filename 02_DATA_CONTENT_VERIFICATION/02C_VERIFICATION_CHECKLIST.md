@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:34 PM
+> **Last updated:** Thursday, 19th November, 2026 8:05 PM
 > **Granular part C (3 of 6) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist, first half (Template & Structure, Content Integrity, Headings & Titles, Interactive Components). The checklist continues in `02C2_VERIFICATION_CHECKLIST_MEDIA_TO_COMMENTS.md` (split 17 November 2026 at the 30 KB soft limit, `CLAUDE.md` §4).
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -125,7 +125,8 @@ Run ALL checks before presenting output:
 - [ ] Acknowledgements entry titles: official published title verbatim — casing, punctuation, and any trailing ". stock photo" suffix retained when part of the official title (constraint 66); alt text still NEVER contains "stock photo" (constraint 52)
 - [ ] Creative Services videos: Vimeo `videoSection` scaffold with pending ID + visible `Designer/Developer To Do:` note per audiovisual item — never a YouTube embed for a CS production (constraint 64)
 - [ ] Audio triggers in table cells: use `audioButton` (not `audioTrigger`)
-- [ ] WJFUN `[Audio image]` grids: built as `audioImage`/`audioImageOption` (audio filename on the option `id`) — never `audioTrigger` spans wrapping images
+- [ ] WJFUN `[Audio image]` grids: built as `audioImage`/`audioImageOption` (audio filename on the option `audioName`) — never `audioTrigger` spans wrapping images
+- [ ] Every `audioImageOption` carries its audio filename on `audioName` — never `id`, even where a reference or sibling module shows `id` (CL-0158)
 - [ ] Activity + alertImage pairing: `col-md-8 col-12` outer container; alertImage `col-md-4` nested inside with inner row/col structure (8 + 4 = 12)
 - [ ] D&D: drags with identical answer text that may fill each other's slots carry a space-separated `option` list, own slot first — no red flag (CL-0126)
 - [ ] D&D labelled image drags: the image and its label share ONE `<p>` inside the `.drag`; no inline styles (CL-0127)

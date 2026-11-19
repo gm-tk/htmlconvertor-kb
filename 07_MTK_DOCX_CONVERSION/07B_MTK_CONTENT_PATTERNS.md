@@ -1,4 +1,4 @@
-> **Last updated:** Friday, 21st August, 2026
+> **Last updated:** Thursday, 19th November, 2026 8:05 PM
 > **Granular part B (2 of 4) of `07_MTK_DOCX_CONVERSION.md`** — MTK: body content, alerts, interactive mapping, media, bilingual buttons (SS7-11).
 > All sibling parts live in `07_MTK_DOCX_CONVERSION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -205,7 +205,7 @@ MTK writers often describe interactives in natural language rather than using fo
 | `[Activity: Embedded] [Memory Game]` | Memory game | `memCard` pairs |
 | `[Activity: Embedded] [Radio Quiz]` | `multiChoiceQuiz` | Despite the name, TRR104 used MCQ for this |
 | `[Carousel Slideshow]` or `[Carousel]` | `carousel` with `carouselBorder` | Items with images and captions |
-| `[Interactive] [AudioImage Hover]` | `audioImage` | `audioImageOption` with `id` = audio filename |
+| `[Interactive] [AudioImage Hover]` | `audioImage` | `audioImageOption` with `audioName` = audio filename |
 | `[Interactive] [Audio Hover Image]` | `audioImage` | Same as above (variant naming) |
 | `[Interactive] Stopwatch` | `stopWatch` | `<div class="stopWatch reo"></div>` |
 | `[Speech Bubble]` | `speechBubble` | See COMP_09 |
@@ -307,9 +307,9 @@ Writer provides: `[Item N] [Image] [Description](SharePoint URL)`
 
 Writer provides: `[Item N] [Audio] [Description](SharePoint URL)`
 
-For `audioImage` components, the audio filename is set via the `id` attribute on `.audioImageOption`:
+For `audioImage` components, the audio filename is set via the `audioName` attribute on `.audioImageOption` (never `id` — CL-0158):
 ```html
-<div id="audio_filename_no_spaces" class="audioImageOption">
+<div audioName="audio_filename_no_spaces" class="audioImageOption">
 ```
 
 For `audioButton` components:
