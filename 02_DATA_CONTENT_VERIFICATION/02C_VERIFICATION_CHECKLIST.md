@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 19th November, 2026 8:05 PM
+> **Last updated:** Thursday, 26th November, 2026 1:45 AM
 > **Granular part C (3 of 6) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist, first half (Template & Structure, Content Integrity, Headings & Titles, Interactive Components). The checklist continues in `02C2_VERIFICATION_CHECKLIST_MEDIA_TO_COMMENTS.md` (split 17 November 2026 at the 30 KB soft limit, `CLAUDE.md` §4).
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -111,6 +111,7 @@ Run ALL checks before presenting output:
 - [ ] Sketcher images: NO `loading="lazy"` attribute on images inside `.canvasContainer` (constraint 83)
 - [ ] Clickable labelled DIAGRAM (labels point to parts of an image, reveal text on click): uses `imageLabel` + `layout="labelLine"` with `<div class="label infoTrigger" … direction/top/left/pointTop/pointLeft><p>…</p></div>` children and `imgLabel` on the image — NOT `infoImage` with `<span/p class="infoTrigger" style="top/left">`, NOT flip cards
 - [ ] Simple hotspot overlay (labels float over an image, NO leader lines to parts): uses `infoImage` with positioned `<p class="infoTrigger">` elements
+- [ ] Every `infoTrigger` `info="…"` value (span, `infoImage` hotspot, `label infoTrigger`): **one word** → capital first letter, no full stop (`info="Dog"`); **more than one word** → capital first letter + closing full stop (`info="Parts of the body."`); a closing `?` / `!` kept; the visible trigger word untouched (constraint 102)
 - [ ] Numbered activity/interactive instructions use `<ol><li>` (with `start="N"` for continuation) — NEVER `<p>1. …</p>` manual numbering; no typed leading number left inside a quiz question string
 - [ ] Each `activity` wrapper contains at most ONE interactive component; two or more interactives under one writer activity heading are split into separate sequential activities, the following activities renumbered, and the split flagged with a visible `Red Flag:` note (constraint 62)
 - [ ] Every task interactive (D&D, quizzes, self check, games, ordering, sliders, sketcher) sits inside an `activity` wrapper; one the writer left outside any activity has its own box with the next consecutive number, later activities renumbered, and a visible `Red Flag:`; tools (stop watch, number line) need no box (constraint 8, CL-0139)

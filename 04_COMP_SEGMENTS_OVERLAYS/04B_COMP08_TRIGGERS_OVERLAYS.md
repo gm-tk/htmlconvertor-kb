@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 19th November, 2026 8:05 PM
+> **Last updated:** Thursday, 26th November, 2026 1:45 AM
 > **Granular part B (2 of 3) of `04_COMP_SEGMENTS_OVERLAYS.md`** — COMP_08 triggers & overlays (infoTrigger, audio, image label/zoom, word highlighter).
 > All sibling parts live in `04_COMP_SEGMENTS_OVERLAYS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -12,7 +12,19 @@
 **Container class:** `infoTrigger`
  
 ```html
-<span class="infoTrigger" info="Tooltip/definition text">trigger word</span>
+<span class="infoTrigger" info="Tooltip/definition text.">trigger word</span>
+```
+
+**The hover text — the `info` value — is cased and stopped by its length (constraint 102; CL-0159).** This applies to **every** `infoTrigger` — the inline `<span>` above, the `<p class="infoTrigger">` hotspots of an Info Trigger Image, and the `<div class="label infoTrigger">` labels of a clickable labelled diagram (Image Label, below).
+
+- **One word** → a capital first letter and **no** full stop: `info="Dog"` — never `info="dog"` or `info="Dog."`. A hyphenated word (`Self-esteem`) is one word.
+- **More than one word** → a capital first letter **and** a closing full stop: `info="Parts of the body."` — never `info="parts of the body"`.
+- Only the **first letter** is raised (a macron is kept: `ā` → `Ā`); every other letter keeps the writer's casing. A value already ending in `?` or `!` keeps that mark and gets no full stop; a trailing comma, colon or semicolon gives way to the full stop. A value that opens with a digit or a symbol is not re-cased.
+- Only the `info` value changes — the visible trigger word and the rest of the sentence are never touched.
+
+```html
+<p>The <span class="infoTrigger" info="Dog">hound</span> bit me.</p>
+<p>We will be focusing on <span class="infoTrigger" info="Parts of the body.">ngā wāhanga o te tinana</span> in this module, so let's practice breaking up some te reo Māori words related to our body.</p>
 ```
  
 ---
@@ -33,10 +45,10 @@ Interactive overlay where hoverable trigger labels are positioned over an image 
 <div class="row">
     <div class="col-md-12 col-12 infoImage">
         <img src="images/image.jpg" alt="Description" class="img-fluid">
-        <p class="infoTrigger" info="Popup text for trigger 1" style="top:15%; left:25%;">Trigger label 1</p>
-        <p class="infoTrigger" info="Popup text for trigger 2" style="top:40%; left:25%;">Trigger label 2</p>
-        <p class="infoTrigger" info="Popup text for trigger 3" style="top:65%; left:25%;">Trigger label 3</p>
-        <p class="infoTrigger" info="Popup text for trigger 4" style="top:90%; left:25%;">Trigger label 4</p>
+        <p class="infoTrigger" info="Popup text for trigger 1." style="top:15%; left:25%;">Trigger label 1</p>
+        <p class="infoTrigger" info="Popup text for trigger 2." style="top:40%; left:25%;">Trigger label 2</p>
+        <p class="infoTrigger" info="Popup text for trigger 3." style="top:65%; left:25%;">Trigger label 3</p>
+        <p class="infoTrigger" info="Popup text for trigger 4." style="top:90%; left:25%;">Trigger label 4</p>
     </div>
 </div>
 ```
@@ -79,7 +91,7 @@ Right column: top: 10%, 30%, 60%, 80%  (each at left: 78%)
 **Key rules:**
 - The `.infoImage` div contains the image AND all `.infoTrigger` elements as siblings
 - Triggers use `<p class="infoTrigger">` (paragraph tags, not spans) when inside `.infoImage`
-- The `info` attribute holds the popup/tooltip text
+- The `info` attribute holds the popup/tooltip text — cased and stopped by its length (one word: `Capital`, no full stop; more: `Capital … .` — constraint 102)
 - The text content of the `<p>` tag is the visible label shown on the image
 - Inline `style` with percentage `top` and `left` is the ONLY permitted inline style (this is a documented pattern, NOT an invented style)
 - The image should use `col-md-12 col-12` since triggers need space across the full width
@@ -165,7 +177,7 @@ Clickable image that plays an associated audio file. The `audioName` attribute o
 ### With Info Trigger
  
 ```html
-<div class="label infoTrigger" top="40%" left="65%" info="Definition text"><p>Label</p></div>
+<div class="label infoTrigger" top="40%" left="65%" info="Definition text."><p>Label</p></div>
 ```
  
 ### Map Pin Layout

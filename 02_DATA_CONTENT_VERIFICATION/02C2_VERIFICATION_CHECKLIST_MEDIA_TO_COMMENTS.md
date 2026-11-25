@@ -1,4 +1,4 @@
-> **Last updated:** Tuesday, 17th November, 2026 7:34 PM
+> **Last updated:** Thursday, 26th November, 2026 1:45 AM
 > **Granular part C2 (4 of 6) of `02_DATA_CONTENT_VERIFICATION.md`** — Verification checklist, second half: Media & Image Output Mode, Language Fonts, Class Attribute Integrity, Flags & Fallbacks, Comments & Designer-Facing Notes. Split from `02C` on 17 November 2026 when it reached the 30 KB soft limit (`CLAUDE.md` §4); content moved verbatim.
 > All sibling parts live in `02_DATA_CONTENT_VERIFICATION/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 > *(Continuation of `02C`'s Verification Checklist — the two parts are ONE checklist and every check in both is run.)*
@@ -10,6 +10,7 @@
 - [ ] Mode P: visible placehold.co placeholder + commented-out real reference for each writer-specified image
 - [ ] Mode D: clean `<img>` tags with direct filenames — no HTML comment blocks above images
 - [ ] iStock ID cross-check (constraint 61): every `images/iStock-{ID}.jpg` emitted has `{ID}` equal to the first capture of `gm(\d+)` in the corresponding writer URL — the gm-leading number, which equals the asset page's "Stock photo ID"; NEVER the trailing segment of a dual-ID `gm{A}-{B}` URL — and the acknowledgements block cites the identical ID. Any mismatch is a build error — fix before presenting
+- [ ] Maths template library images (constraint 103, `14E` §14.14): `src="images/<library file name>"` verbatim (misspellings kept), a correctly spelled `alt`, one copy-it `Designer/Developer To Do:` each; arrows by the module's phase; an angle outside Phase 3 carries the adapt-and-save To Do; each lesson using a 2D set / the 3D set carries that set's `… Getty Images. Adapted. Used with permission.` line once; angles carry no line
 - [ ] All images: `class="img-fluid"` and `loading="lazy"`
 - [ ] **EXCEPTION — no `loading="lazy"` inside a moving-or-draggable interactive (constraint 83):** every `<img>` inside `.rotateBanner`, `.carousel`/`.viewer`/`.item`, `.dragAndDrop` (`.drag`/`.drop`/`.ddContainer`/`.ddColumn`), `.clickDrop`/`.clickDropContent`, `.flipCard`, `.memoryGame` (`.memCard`/`.cardHidden`) and sketcher `.canvasContainer` carries **no** `loading="lazy"` — real images and `placehold.co` placeholders alike, in both output modes
 - [ ] Images the student only clicks or hovers **without movement** (`infoImage`/`infoTrigger` hotspots, `imageLabel` diagrams), plus `alertImage`, speech-bubble characters, accordion/tab-panel images and self-reflection emoji, DO still carry `loading="lazy"` (constraint 83)

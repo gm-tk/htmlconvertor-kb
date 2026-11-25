@@ -1,6 +1,6 @@
-> **Last updated:** Wednesday, 28th October, 2026 1:05 PM
+> **Last updated:** Thursday, 26th November, 2026 1:45 AM
 > **Granular part D (4 of 8) of `00_MASTER_INSTRUCTIONS.md`** — Constraints quick reference (first part: constraints 1–48). Constraints 49–57 moved verbatim to `00D2_CONSTRAINTS_1B.md` on 20 October 2026, when CL-0130 took this part past the 30 KB soft limit (`CLAUDE.md` §4).
-> *The numbered constraint list runs on into `00D2` (49–57), `00E` (58–74), `00G` (75–85) and `00H` (86 onward — the open part).*
+> *The numbered constraint list runs on into `00D2` (49–57), `00E` (58–74), `00G` (75–85), `00H` (86–101) and `00I` (102 onward — the open part).*
 > All sibling parts live in `00_MASTER_INSTRUCTIONS/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
 <!-- KB-PART-BODY-START -->

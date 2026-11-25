@@ -1,4 +1,4 @@
-> **Last updated:** Thursday, 19th November, 2026 8:05 PM
+> **Last updated:** Thursday, 26th November, 2026 1:45 AM
 > **Granular part I (20 of 20) of `12_CHANGE_LEDGER.md`** — PART 4, the PageForge Amalgamation Log, continued: entries CL-0143 onward. **THE OPEN PART: append new entries here**, in CL order, newest last, in the ENTRY FORMAT set out in `12G` (whose WHY / WHAT GOES IN / ENTRY FORMAT / BACKFILL sections govern every part of this log). Opened 17 November 2026 when the ledger merge CL-0144 took `12H` past the 30 KB soft limit; `12H` was closed at CL-0141 and its last entry, CL-0143, moved here verbatim (`CLAUDE.md` §4).
 > All sibling parts live in `12_CHANGE_LEDGER/`; see `INDEX.md` at the repo root. Body below is verbatim source-of-truth content.
 
@@ -146,3 +146,23 @@
 - **Supersedes:** CL-0059 (attribute only; predates this log) and the pre-ledger `04B` `id` convention
 - **KB rule:** `04B` → Audio Image; also `01E`, `07B`, `14C`, `14A` §14.1, `02C`
 - **PageForge status:** Not yet amalgamated
+
+### CL-0159 — An `infoTrigger`'s hover text is cased and stopped by its length
+- **Date:** Thursday, 26th November, 2026
+- **Scope:** (c) Universal — every `infoTrigger` generated, in every subject, series and pathway
+- **Source:** Authorised direct change (Gavin, 26 November 2026, relaying Sam Sharpe's request of 25 November 2026 and his two examples)
+- **Writer input (what triggers it):** any hover / info-trigger definition the page builds — an inline `[hover …]` / `[info trigger …]` definition, an `[info trigger image]` hotspot, a clickable labelled diagram's label
+- **Required output:** the `info="…"` value — one word: capital first letter, no full stop (`<span class="infoTrigger" info="Dog">hound</span>`); more than one word: capital first letter and a closing full stop (`<span class="infoTrigger" info="Parts of the body.">ngā wāhanga o te tinana</span>`); first letter only, macrons kept; a closing `?` / `!` kept; a trailing `,` / `:` / `;` gives way to the full stop; a value opening with a digit or symbol not re-cased; the visible trigger word untouched
+- **Supersedes:** nothing (the `04B` examples' placeholder values given their full stops)
+- **KB rule:** `04B` → Info Trigger; `00I` constraint 102; `02C`
+- **PageForge status:** Amalgamated (26 November 2026, round 1324 — `elements.info_trigger_text_case`, env `INFOCASE_OFF`)
+
+### CL-0160 — The Maths templates' shapes and angles library (always acknowledged as *Adapted*)
+- **Date:** Thursday, 26th November, 2026
+- **Scope:** Cohort — Maths modules
+- **Source:** Authorised direct change (Gavin, 26 November 2026, relaying Eliza Rogers's message of 25 November 2026 and copying the library's files into the connected folder)
+- **Writer input (what triggers it):** a Maths image request (`[Image]` or a Media List image row) that says *2D shape*, *shape with arrows*, *3D shape*, *angle* / *°* / *degree(s)*, or names *Maths templates* / *Math assets*, and names a shape or angle the library holds, with no web address of its own
+- **Required output:** `<img class="img-fluid" loading="lazy" src="images/<library file name>" alt="<shape name>">` (file name verbatim) + one `Designer/Developer To Do:` to copy it from its library folder; 2D shapes with arrows take `Phase <N>_` from the module's phase (Phase 5 / unknown → To Do only); an angle outside Phase 3 adds the adapt-and-save-back To Do; each lesson group using a 2D set carries `Illustrations: Basic shapes geometric form collection for primary school or preschool. Colored kids geometry figures for learning, children education, educational set on white background, iStock 1388076960, Getty Images. Adapted. Used with permission.`, each using the 3D set `Illustrations: Realistic 3d geometric shapes. Basic geometry prism, cube, cylinder figures, geometric polygon and hexagon shapes vector illustration icons set stock illustration, iStock 1251354077, Getty Images. Adapted. Used with permission.`; angles no line
+- **Supersedes:** nothing
+- **KB rule:** `14E` §14.14 (Maths template asset library); `00I` constraint 103; `05C` → Sourcing; `02C2`
+- **PageForge status:** Amalgamated (26 November 2026, round 1324 — `elements.maths_asset_library`, env `MATHSLIB_OFF`)
